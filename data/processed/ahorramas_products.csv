@@ -1,0 +1,394 @@
+﻿searched_item,supermarket,product_id,name,quantity_raw,price_raw,price,price_per_unit_raw,price_per_unit,unit,url,scraped_at
+leche,AhorraMás,,Leche Alipende 1l semidesnatada,,"0,83 €",0.83,,0.83,LITRO,https://www.ahorramas.com/leche-alipende-1l-semidesnatada-70865.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Lauki 1l entera,,"1,18 €",1.18,,1.18,LITRO,https://www.ahorramas.com/leche-lauki-1l-entera-62533.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Alipende 1l entera,,"0,96 €",0.96,,0.96,LITRO,https://www.ahorramas.com/leche-alipende-1l-entera-70864.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Alipende 1l desnatada,,"0,81 €",0.81,,0.81,LITRO,https://www.ahorramas.com/leche-alipende-1l-desnatada-70866.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Puleva calcio 1l semidesnatada,,"1,59 €",1.59,,1.59,LITRO,https://www.ahorramas.com/leche-puleva-calcio-1l-semidesnatada-53804.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Asturiana 1l semidesnatada,,"1,17 €",1.17,,1.17,LITRO,https://www.ahorramas.com/leche-asturiana-1l-semidesnatada-46423.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Asturiana 1l entera,,"1,29 €",1.29,,1.29,LITRO,https://www.ahorramas.com/leche-asturiana-1l-entera-46422.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Lauki 1l semidesnatada,,"1,09 €",1.09,,1.09,LITRO,https://www.ahorramas.com/leche-lauki-1l-semidesnatada-62534.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Pascual 1l entera,,"1,39 €",1.39,,1.39,LITRO,https://www.ahorramas.com/leche-pascual-1l-entera-69878.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Pascual 1l semidesnatada,,"1,35 €",1.35,,1.35,LITRO,https://www.ahorramas.com/leche-pascual-1l-semidesnatada-69877.html,2026-10-04T16:35:31
+leche,AhorraMás,,"Leche Asturiana 1,5l semidesnatada",,"1,19 €",1.19,,0.7933,LITRO,https://www.ahorramas.com/leche-asturiana-15l-semidesnatada-72025.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Pascual 1l desnatada,,"1,29 €",1.29,,1.29,LITRO,https://www.ahorramas.com/leche-pascual-1l-desnatada-69879.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Lauki 1l desnatada,,"1,05 €",1.05,,1.05,LITRO,https://www.ahorramas.com/leche-lauki-1l-desnatada-62535.html,2026-10-04T16:35:31
+leche,AhorraMás,,"Leche Asturiana 1,5l entera",,"1,31 €",1.31,,0.8733,LITRO,https://www.ahorramas.com/leche-asturiana-15l-entera-72024.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Río 1l entera,,"1,14 €",1.14,,1.14,LITRO,https://www.ahorramas.com/leche-rio-1l-entera-68442.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Río 1l semidesnatada,,"1,08 €",1.08,,1.08,LITRO,https://www.ahorramas.com/leche-rio-1l-semidesnatada-68433.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Asturiana 1l desnatada,,"1,13 €",1.13,,1.13,LITRO,https://www.ahorramas.com/leche-asturiana-1l-desnatada-46424.html,2026-10-04T16:35:31
+leche,AhorraMás,,"Leche Pascual Entera 1,5l",,"1,26 €",1.26,,0.84,LITRO,https://www.ahorramas.com/leche-pascual-entera-15l-71217.html,2026-10-04T16:35:31
+leche,AhorraMás,,"Leche Asturiana 1,5l desnatada",,"1,15 €",1.15,,0.7667,LITRO,https://www.ahorramas.com/leche-asturiana-15l-desnatada-72026.html,2026-10-04T16:35:31
+leche,AhorraMás,,"Leche Pascual Semi 1,5l",,"1,19 €",1.19,,0.7933,LITRO,https://www.ahorramas.com/leche-pascual-semi-15l-71218.html,2026-10-04T16:35:31
+leche,AhorraMás,,Leche Río 1l desnatada,,"1,02 €",1.02,,1.02,LITRO,https://www.ahorramas.com/leche-rio-1l-desnatada-68431.html,2026-10-04T16:35:31
+huevos,AhorraMás,,"Huevos de gallinas sueltas en el gallinero Alipende 12u ""clase l""",,"3,05 €",3.05,,0.2542,UNIDAD,https://www.ahorramas.com/huevos-de-gallinas-sueltas-en-el-gallinero-alipende-12u-clase-l-34649.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos camperos Alipende 12 unidades,,"3,35 €",3.35,,0.2792,UNIDAD,https://www.ahorramas.com/huevos-camperos-alipende-12-unidades-42845.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos de gallinas sueltas en el gallinero Alipende 24u ""clase m""",,"2,63 €",2.63,,0.1096,UNIDAD,https://www.ahorramas.com/huevos-de-gallinas-sueltas-en-el-gallinero-alipende-24u-clase-m-31201.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos camperos Pazo de Vilane 12 unidades,,"4,69 €",4.69,,0.3908,UNIDAD,https://www.ahorramas.com/huevos-camperos-pazo-de-vilane-12-unidades-42483.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos de codorniz 18u,,"1,23 €",1.23,,0.0683,UNIDAD,https://www.ahorramas.com/huevos-de-codorniz-18u-82112.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos camperos Alipende 6u ""clase l-xl""",,"5,40 €",5.4,,0.9,UNIDAD,https://www.ahorramas.com/huevos-camperos-alipende-6u-clase-l-xl-25268.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Claras de huevo Dovo 1kg,,"2,85 €",2.85,,2.85,KILO,https://www.ahorramas.com/claras-de-huevo-dovo-1kg-87798.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos de gallinas sueltas en el gallinero Alipende 12u ""clase l-xl""",,"4,30 €",4.3,,0.3583,UNIDAD,https://www.ahorramas.com/huevos-de-gallinas-sueltas-en-el-gallinero-alipende-12u-clase-l-xl-37066.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos de gallinas sueltas en el gallinero Alipende 6u ""clase l""",,"3,50 €",3.5,,0.5833,UNIDAD,https://www.ahorramas.com/huevos-de-gallinas-sueltas-en-el-gallinero-alipende-6u-clase-l-34647.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos ecológicos M-L Rujamar 8 unidades,,"5,93 €",5.93,,0.7412,UNIDAD,https://www.ahorramas.com/huevos-ecologicos-m-l-rujamar-8-unidades-62045.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos cocidos camperos de Corral de Monegros 6 unid,,"7,97 €",7.97,,,,https://www.ahorramas.com/huevos-cocidos-camperos-de-corral-de-monegros-6-unid-70453.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevo cocido entero pelado Dovo 4 unidades,,"9,75 €",9.75,,2.4375,UNIDAD,https://www.ahorramas.com/huevo-cocido-entero-pelado-dovo-4-unidades-99224.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos de gallinas sueltas en el gallinero Alipende 12u ""clase m""",,"2,85 €",2.85,,0.2375,UNIDAD,https://www.ahorramas.com/huevos-de-gallinas-sueltas-en-el-gallinero-alipende-12u-clase-m-31204.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos ecológicos Alipende 6u clase l-xl,,"7,30 €",7.3,,1.2167,UNIDAD,https://www.ahorramas.com/huevos-ecologicos-alipende-6u-clase-l-xl-25267.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos ecológicos Alipende 6u ""clase m-l""",,"5,98 €",5.98,,0.9967,UNIDAD,https://www.ahorramas.com/huevos-ecologicos-alipende-6u-clase-m-l-34686.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos camperos La Quintería de Rujamar 12 unidades M-L,,"4,25 €",4.25,,0.3542,UNIDAD,https://www.ahorramas.com/huevos-camperos-la-quinteria-de-rujamar-12-unidades-m-l-37449.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevos camperos tamaño M-L Corral Monegros 6 unidades,,"6,10 €",6.1,,1.0167,UNIDAD,https://www.ahorramas.com/huevos-camperos-tamano-m-l-corral-monegros-6-unidades-70377.html,2026-10-04T16:35:45
+huevos,AhorraMás,,"Huevos de gallinas criadas con maíz sueltas en el gallinero Alipende 12u ""clase m-l""",,"3,50 €",3.5,,0.2917,UNIDAD,https://www.ahorramas.com/huevos-de-gallinas-criadas-con-maiz-sueltas-en-el-gallinero-alipende-12u-clase-m-l-31199.html,2026-10-04T16:35:45
+huevos,AhorraMás,,Huevo sorpresa de chocolate 3u Paw Patrol,,"31,67 €",31.67,,10.5567,UNIDAD,https://www.ahorramas.com/huevo-sorpresa-de-chocolate-3u-paw-patrol-48595.html,2026-10-04T16:35:45
+manzana,AhorraMás,,Manzana golden,,"2,99 €",2.99,,,,https://www.ahorramas.com/manzana-golden-1660.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Manzana roja,,"2,99 €",2.99,,,,https://www.ahorramas.com/manzana-roja-59970.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Vinagre Alipende 1l manzana,,"0,90 €",0.9,,0.9,LITRO,https://www.ahorramas.com/vinagre-alipende-1l-manzana-83960.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Zumo de manzana Alipende brik 1l,,"0,80 €",0.8,,0.8,LITRO,https://www.ahorramas.com/zumo-de-manzana-alipende-brik-1l-48020.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Zumo de manzana Alipende pack 6,,"1,08 €",1.08,,,,https://www.ahorramas.com/zumo-de-manzana-alipende-pack-6-84639.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Manzana Pink Lady bandeja 750g,,"4,79 €",4.79,,6.3867,KILO,https://www.ahorramas.com/manzana-pink-lady-bandeja-750g-71030.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Manzana reineta,,"2,99 €",2.99,,,,https://www.ahorramas.com/manzana-reineta-1661.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Zumo Exprimido Summum 750 ml Manzana,,"2,40 €",2.4,,3.2,LITRO,https://www.ahorramas.com/zumo-exprimido-summum-750-ml-manzana-87846.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Manzana Granny Smith,,"2,99 €",2.99,,,,https://www.ahorramas.com/manzana-granny-smith-1227.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Zumo de manzana 100% exprimido Don Simón 1l,,"2,30 €",2.3,,2.3,LITRO,https://www.ahorramas.com/zumo-de-manzana-100-exprimido-don-simon-1l-44825.html,2026-10-04T16:36:03
+manzana,AhorraMás,,"Manzana golden bolsa 1,5k",,"2,20 €",2.2,,1.4667,KILO,https://www.ahorramas.com/manzana-golden-bolsa-15k-33156.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Manzana roja bolsa 1.5kg,,"1,80 €",1.8,,1.2,KILO,https://www.ahorramas.com/manzana-roja-bolsa-1.5kg-18961.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Bizcocho 600g manzana,,"9,08 €",9.08,,15.1333,KILO,https://www.ahorramas.com/bizcocho-600g-manzana-99894.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Tarta de manzana Dulcesol 135g,,"7,69 €",7.69,,56.963,KILO,https://www.ahorramas.com/tarta-de-manzana-dulcesol-135g-82833.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Compota de manzana Andros 750g,,"4,12 €",4.12,,5.4933,KILO,https://www.ahorramas.com/compota-de-manzana-andros-750g-57944.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Manzana Ambrosia bolsa 1kg,,"2,99 €",2.99,,2.99,KILO,https://www.ahorramas.com/manzana-ambrosia-bolsa-1kg-85801.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Yogur Griego Danone Pack 4 Manzana Y Canela,,"4,07 €",4.07,,,,https://www.ahorramas.com/yogur-griego-danone-pack-4-manzana-y-canela-87982.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Refresco Aquarius Extra 33CL Manzana-kiwi,,"3,00 €",3.0,,,,https://www.ahorramas.com/refresco-aquarius-extra-33cl-manzana-kiwi-98189.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Pouch Hero manzana y plátano 4x100g,,"12,47 €",12.47,,124.7,KILO,https://www.ahorramas.com/pouch-hero-manzana-y-platano-4x100g-52135.html,2026-10-04T16:36:03
+manzana,AhorraMás,,Whisky Jack Daniel's 70cl manzana,,"33,21 €",33.21,,,,https://www.ahorramas.com/whisky-jack-daniels-70cl-manzana-55867.html,2026-10-04T16:36:03
+plátano,AhorraMás,,Plátano canario Gabaceras,,"2,85 €",2.85,,,,https://www.ahorramas.com/platano-canario-gabaceras-75248.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Plátano canario bolsa,,"2,29 €",2.29,,,,https://www.ahorramas.com/platano-canario-bolsa-44078.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Plátano Canario bandeja,,"2,99 €",2.99,,,,https://www.ahorramas.com/platano-canario-bandeja-15050.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Plátano macho,,"3,39 €",3.39,,,,https://www.ahorramas.com/platano-macho-44085.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Petit Danonino pack 6 fresa y plátano,,"5,63 €",5.63,,,,https://www.ahorramas.com/petit-danonino-pack-6-fresa-y-platano-6218.html,2026-10-04T16:36:18
+plátano,AhorraMás,,"Smoothie frambuesa,fresa y plátano 250ML",,"6,00 €",6.0,,24.0,LITRO,https://www.ahorramas.com/smoothie-frambuesafresa-y-platano-250ml-87834.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Barritas cereales con plátano y chocolate Alipende 156g,,"10,83 €",10.83,,69.4231,KILO,https://www.ahorramas.com/barritas-cereales-con-platano-y-chocolate-alipende-156g-37675.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Actimel pack 6 sabor fresa plátano,,"6,65 €",6.65,,,,https://www.ahorramas.com/actimel-pack-6-sabor-fresa-platano-60301.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Kéfir líquido 0% fresa y plátano Margui 250g,,"3,60 €",3.6,,14.4,KILO,https://www.ahorramas.com/kefir-liquido-0-fresa-y-platano-margui-250g-95135.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Yogur líquido sin glúten Alipende 1kg fresa y plátano,,"1,50 €",1.5,,1.5,KILO,https://www.ahorramas.com/yogur-liquido-sin-gluten-alipende-1kg-fresa-y-platano-40774.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Pouch Smileat zanahoria plátano y pera 6meses 100g,,"16,90 €",16.9,,169.0,KILO,https://www.ahorramas.com/pouch-smileat-zanahoria-platano-y-pera-6meses-100g-65691.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Yogur Alipende pack 8 platano-macedonia-galleta,,"1,45 €",1.45,,,,https://www.ahorramas.com/yogur-alipende-pack-8-platano-macedonia-galleta-95747.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Yogur Danone pack 4 plátano,,"2,00 €",2.0,,,,https://www.ahorramas.com/yogur-danone-pack-4-platano-55026.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Petit maxi Danonino pack 4 fresa y plátano,,"6,23 €",6.23,,,,https://www.ahorramas.com/petit-maxi-danonino-pack-4-fresa-y-platano-2650.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Snack de plátano con sal Tortolines Goya 100g,,"14,90 €",14.9,,149.0,KILO,https://www.ahorramas.com/snack-de-platano-con-sal-tortolines-goya-100g-73635.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Yogur estilo griego Alipende pack 4 plátano y caramelo,,"3,40 €",3.4,,,,https://www.ahorramas.com/yogur-estilo-griego-alipende-pack-4-platano-y-caramelo-44304.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Yogur líquido Alipende pack 4 fresa plátano,,"2,13 €",2.13,,,,https://www.ahorramas.com/yogur-liquido-alipende-pack-4-fresa-platano-85057.html,2026-10-04T16:36:18
+plátano,AhorraMás,,Bebida sabor plátano Lindahls Nestlé 345g pro+,,"6,93 €",6.93,,20.087,KILO,https://www.ahorramas.com/bebida-sabor-platano-lindahls-nestle-345g-pro-72044.html,2026-10-04T16:36:18
+tomate,AhorraMás,,Tomate rojo rama,,"2,39 €",2.39,,,,https://www.ahorramas.com/tomate-rojo-rama-39076.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Salsa de tomate frito receta artesana Solís 350g,,"7,14 €",7.14,,20.4,KILO,https://www.ahorramas.com/salsa-de-tomate-frito-receta-artesana-solis-350g-51413.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate triturado categoría extra sin gluten Alipende 400g,,"1,38 €",1.38,,3.45,KILO,https://www.ahorramas.com/tomate-triturado-categoria-extra-sin-gluten-alipende-400g-95857.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate frito Hida 340g estilo casero,,"3,97 €",3.97,,11.6765,KILO,https://www.ahorramas.com/tomate-frito-hida-340g-estilo-casero-82960.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate frito con aceite de oliva Solis 360g,,"4,69 €",4.69,,13.0278,KILO,https://www.ahorramas.com/tomate-frito-con-aceite-de-oliva-solis-360g-70078.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate frito origen nacional sin gluten Alipende p3 400g,,"1,13 €",1.13,,2.825,KILO,https://www.ahorramas.com/tomate-frito-origen-nacional-sin-gluten-alipende-p3-400g-54138.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Pulpa de tomate Mutti 400g,,"7,38 €",7.38,,18.45,KILO,https://www.ahorramas.com/pulpa-de-tomate-mutti-400g-67294.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate doble concentrado Mutti 130g,,"22,31 €",22.31,,171.6154,KILO,https://www.ahorramas.com/tomate-doble-concentrado-mutti-130g-78253.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate rosa,,"4,49 €",4.49,,,,https://www.ahorramas.com/tomate-rosa-49640.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate triturado sin gluten categoría extra Alipende 800 g,,"1,25 €",1.25,,1.5625,KILO,https://www.ahorramas.com/tomate-triturado-sin-gluten-categoria-extra-alipende-800-g-95858.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate frito casero en aceite oliva Alipende 350g,,"4,29 €",4.29,,12.2571,KILO,https://www.ahorramas.com/tomate-frito-casero-en-aceite-oliva-alipende-350g-48076.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate troceado pelado Alipende 390g,,"1,79 €",1.79,,4.5897,KILO,https://www.ahorramas.com/tomate-troceado-pelado-alipende-390g-95856.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate Hida bote 170g doble concentrado,,"8,24 €",8.24,,48.4706,KILO,https://www.ahorramas.com/tomate-hida-bote-170g-doble-concentrado-24259.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate seco en aceite Leyenda 110g,,"20,91 €",20.91,,190.0909,KILO,https://www.ahorramas.com/tomate-seco-en-aceite-leyenda-110g-46972.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate natural triturado Passata Mutti 400g,,"7,48 €",7.48,,18.7,KILO,https://www.ahorramas.com/tomate-natural-triturado-passata-mutti-400g-67346.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate frito receta tradicional Alipende 300g,,"4,67 €",4.67,,15.5667,KILO,https://www.ahorramas.com/tomate-frito-receta-tradicional-alipende-300g-88055.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate frito estilo casero Hida 350g,,"5,29 €",5.29,,15.1143,KILO,https://www.ahorramas.com/tomate-frito-estilo-casero-hida-350g-98405.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate natural rallado La Gergaleña 200g,,"6,95 €",6.95,,34.75,KILO,https://www.ahorramas.com/tomate-natural-rallado-la-gergalena-200g-83683.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate triturado natural categoria extra Apis 400g,,"3,72 €",3.72,,9.3,KILO,https://www.ahorramas.com/tomate-triturado-natural-categoria-extra-apis-400g-61921.html,2026-10-04T16:36:33
+tomate,AhorraMás,,Tomate triturado natural categoria extra Apis 800g,,"2,87 €",2.87,,3.5875,KILO,https://www.ahorramas.com/tomate-triturado-natural-categoria-extra-apis-800g-61638.html,2026-10-04T16:36:33
+arroz,AhorraMás,,Arroz redondo Brillante pack 2 xl,,"5,88 €",5.88,,,,https://www.ahorramas.com/arroz-redondo-brillante-pack-2-xl-23413.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz especial Sos 500g caldoSos y meloSos,,"2,90 €",2.9,,5.8,KILO,https://www.ahorramas.com/arroz-especial-sos-500g-caldosos-y-melosos-25689.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz largo Brillante pack 2 xl,,"5,37 €",5.37,,,,https://www.ahorramas.com/arroz-largo-brillante-pack-2-xl-23414.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz especial paellas Sos 1kg,,"3,59 €",3.59,,3.59,KILO,https://www.ahorramas.com/arroz-especial-paellas-sos-1kg-60250.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz basmati Tilda Sundari 1kg,,"3,49 €",3.49,,3.49,KILO,https://www.ahorramas.com/arroz-basmati-tilda-sundari-1kg-65906.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz Sos 1kg granza,,"1,88 €",1.88,,1.88,KILO,https://www.ahorramas.com/arroz-sos-1kg-granza-56601.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz Alipende 1kg largo,,"1,20 €",1.2,,1.2,KILO,https://www.ahorramas.com/arroz-alipende-1kg-largo-67686.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz Alipende 1kg redondo,,"1,15 €",1.15,,1.15,KILO,https://www.ahorramas.com/arroz-alipende-1kg-redondo-69384.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz redondo Brillante pack 2,,"4,80 €",4.8,,,,https://www.ahorramas.com/arroz-redondo-brillante-pack-2-77212.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz basmati Brillante pack 2,,"5,20 €",5.2,,,,https://www.ahorramas.com/arroz-basmati-brillante-pack-2-64382.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz Alipende 1kg basmati,,"2,10 €",2.1,,2.1,KILO,https://www.ahorramas.com/arroz-alipende-1kg-basmati-84670.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz integral Alipende 1kg redondo,,"1,65 €",1.65,,1.65,KILO,https://www.ahorramas.com/arroz-integral-alipende-1kg-redondo-84669.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz Alipende 1kg vaporizado,,"1,55 €",1.55,,1.55,KILO,https://www.ahorramas.com/arroz-alipende-1kg-vaporizado-67685.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz sabroz Brillante 1kg redondo,,"2,78 €",2.78,,2.78,KILO,https://www.ahorramas.com/arroz-sabroz-brillante-1kg-redondo-19768.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz de Valencia Dacsa 1kg,,"2,07 €",2.07,,2.07,KILO,https://www.ahorramas.com/arroz-de-valencia-dacsa-1kg-46205.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz Brillante 1kg vaporizado,,"1,98 €",1.98,,1.98,KILO,https://www.ahorramas.com/arroz-brillante-1kg-vaporizado-69945.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz bomba Sos 1kg,,"4,99 €",4.99,,4.99,KILO,https://www.ahorramas.com/arroz-bomba-sos-1kg-65872.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz largo La Rueda 1kg,,"1,09 €",1.09,,1.09,KILO,https://www.ahorramas.com/arroz-largo-la-rueda-1kg-91008.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz DO Calasparra Esperanza 1kg,,"3,54 €",3.54,,3.54,KILO,https://www.ahorramas.com/arroz-do-calasparra-esperanza-1kg-60976.html,2026-10-04T16:36:49
+arroz,AhorraMás,,Arroz integral Sos 1kg,,"2,08 €",2.08,,2.08,KILO,https://www.ahorramas.com/arroz-integral-sos-1kg-54767.html,2026-10-04T16:36:49
+pasta,AhorraMás,,Pluma Nº3 Gallo 400g,,"2,87 €",2.87,,7.175,KILO,https://www.ahorramas.com/pluma-n3-gallo-400g-97902.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Macarron integral Gallo 450g,,"4,18 €",4.18,,9.2889,KILO,https://www.ahorramas.com/macarron-integral-gallo-450g-73249.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Tagliatelle nido Garofalo 500g,,"5,92 €",5.92,,11.84,KILO,https://www.ahorramas.com/tagliatelle-nido-garofalo-500g-15960.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Tallarín Gallo 400g,,"2,87 €",2.87,,7.175,KILO,https://www.ahorramas.com/tallarin-gallo-400g-97895.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Cous cous Gallo 500g mediano,,"4,04 €",4.04,,8.08,KILO,https://www.ahorramas.com/cous-cous-gallo-500g-mediano-75007.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Fideo chino de arroz sin gluten Shuang he brand 400g,,"5,92 €",5.92,,14.8,KILO,https://www.ahorramas.com/fideo-chino-de-arroz-sin-gluten-shuang-he-brand-400g-37225.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Fideo Gallo 450g nº4,,"2,67 €",2.67,,5.9333,KILO,https://www.ahorramas.com/fideo-gallo-450g-n4-30376.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Spaghetti integral Gallo 450g,,"4,18 €",4.18,,9.2889,KILO,https://www.ahorramas.com/spaghetti-integral-gallo-450g-73250.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Hélices de lenteja roja sin gluten Gallo nature 250g,,"8,36 €",8.36,,33.44,KILO,https://www.ahorramas.com/helices-de-lenteja-roja-sin-gluten-gallo-nature-250g-47272.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Fideo fino nº1 Gallo 400g,,"2,87 €",2.87,,7.175,KILO,https://www.ahorramas.com/fideo-fino-n1-gallo-400g-97896.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Noodles fideos tradicionales Tiger Khan Gold 400g,,"7,30 €",7.3,,18.25,KILO,https://www.ahorramas.com/noodles-fideos-tradicionales-tiger-khan-gold-400g-71725.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Helice con + proteína Gallo 400g,,"4,25 €",4.25,,10.625,KILO,https://www.ahorramas.com/helice-con-proteina-gallo-400g-96766.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Hélices de garbanzo Gallo Nature 250g,,"8,36 €",8.36,,33.44,KILO,https://www.ahorramas.com/helices-de-garbanzo-gallo-nature-250g-62494.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Pluma con proteína Gallo 400g,,"4,25 €",4.25,,10.625,KILO,https://www.ahorramas.com/pluma-con-proteina-gallo-400g-96802.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Pluma Alipende 1kg nº5,,"1,15 €",1.15,,1.15,KILO,https://www.ahorramas.com/pluma-alipende-1kg-n5-49402.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Spaghetti Alipende 1kg,,"1,15 €",1.15,,1.15,KILO,https://www.ahorramas.com/spaghetti-alipende-1kg-73146.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Tallarín Alipende 500g,,"1,60 €",1.6,,3.2,KILO,https://www.ahorramas.com/tallarin-alipende-500g-49927.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Espirales Alipende 500g con vegetales,,"1,80 €",1.8,,3.6,KILO,https://www.ahorramas.com/espirales-alipende-500g-con-vegetales-49960.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Fideo Alipende 1kg cabellín,,"1,15 €",1.15,,1.15,KILO,https://www.ahorramas.com/fideo-alipende-1kg-cabellin-44983.html,2026-10-04T16:37:04
+pasta,AhorraMás,,Placas de lasaña El Pavo 18unid,,"8,25 €",8.25,,,,https://www.ahorramas.com/placas-de-lasana-el-pavo-18unid-46376.html,2026-10-04T16:37:04
+pan,AhorraMás,,Pan de molde sin corteza Alipende 450g,,"2,33 €",2.33,,5.1778,KILO,https://www.ahorramas.com/pan-de-molde-sin-corteza-alipende-450g-73387.html,2026-10-04T16:37:20
+pan,AhorraMás,,Chocolate con leche Milka 125g,,"13,20 €",13.2,,105.6,KILO,https://www.ahorramas.com/chocolate-con-leche-milka-125g-75802.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde Alipende 820g Familiar,,"1,40 €",1.4,,1.7073,KILO,https://www.ahorramas.com/pan-de-molde-alipende-820g-familiar-86818.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de pueblo 700g,,"2,71 €",2.71,,3.8714,KILO,https://www.ahorramas.com/pan-de-pueblo-700g-14955.html,2026-10-04T16:37:20
+pan,AhorraMás,,Bizcochito Tender Moo Milka 140g,,"17,14 €",17.14,,122.4286,KILO,https://www.ahorramas.com/bizcochito-tender-moo-milka-140g-87085.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde Pan Milagros de 675 g con pipas de girasol y calabaza,,"4,13 €",4.13,,6.1185,KILO,https://www.ahorramas.com/pan-de-molde-pan-milagros-de-675-g-con-pipas-de-girasol-y-calabaza-99507.html,2026-10-04T16:37:20
+pan,AhorraMás,,"Pan de molde 100% integral de espelta Milagros, 460 g",,"3,00 €",3.0,,6.5217,KILO,https://www.ahorramas.com/pan-de-molde-100-integral-de-espelta-milagros-460-g-99483.html,2026-10-04T16:37:20
+pan,AhorraMás,,Bizcocho Lulu Fontaneda relleno de chocolate 5 uds,,"15,67 €",15.67,,3.134,UNIDAD,https://www.ahorramas.com/bizcocho-lulu-fontaneda-relleno-de-chocolate-5-uds-71829.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde Milagros 675G 52% Centeno,,"4,13 €",4.13,,6.1185,KILO,https://www.ahorramas.com/pan-de-molde-milagros-675g-52-centeno-99482.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan molde 100% Integral MIlagros 675g,,"4,13 €",4.13,,6.1185,KILO,https://www.ahorramas.com/pan-molde-100-integral-milagros-675g-99481.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de picos 300g,,"3,33 €",3.33,,11.1,KILO,https://www.ahorramas.com/pan-de-picos-300g-64735.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde integral Alipende 460g,,"1,96 €",1.96,,4.2609,KILO,https://www.ahorramas.com/pan-de-molde-integral-alipende-460g-50416.html,2026-10-04T16:37:20
+pan,AhorraMás,,Barra horno super 250g,,"2,00 €",2.0,,8.0,KILO,https://www.ahorramas.com/barra-horno-super-250g-60527.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde Milagros 675G con 12 cereales y semillas,,"4,13 €",4.13,,6.1185,KILO,https://www.ahorramas.com/pan-de-molde-milagros-675g-con-12-cereales-y-semillas-99488.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde tradicional Alipende 550g,,"2,33 €",2.33,,4.2364,KILO,https://www.ahorramas.com/pan-de-molde-tradicional-alipende-550g-65308.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde sin corteza Bimbo 450 g,,"4,70 €",4.7,,10.4444,KILO,https://www.ahorramas.com/pan-de-molde-sin-corteza-bimbo-450-g-54398.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde artesencia Bimbo 500g,,"5,98 €",5.98,,11.96,KILO,https://www.ahorramas.com/pan-de-molde-artesencia-bimbo-500g-41956.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde integral sin corteza Alipende 450g,,"2,44 €",2.44,,5.4222,KILO,https://www.ahorramas.com/pan-de-molde-integral-sin-corteza-alipende-450g-50417.html,2026-10-04T16:37:20
+pan,AhorraMás,,Serranitos de pan Alipende 200g,,"3,75 €",3.75,,18.75,KILO,https://www.ahorramas.com/serranitos-de-pan-alipende-200g-66999.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan de molde Bimbo 700g familiar,,"3,27 €",3.27,,4.6714,KILO,https://www.ahorramas.com/pan-de-molde-bimbo-700g-familiar-31622.html,2026-10-04T16:37:20
+pan,AhorraMás,,Pan cristal Méndez 120g,,"10,83 €",10.83,,90.25,KILO,https://www.ahorramas.com/pan-cristal-mendez-120g-57748.html,2026-10-04T16:37:20
+pan,AhorraMás,,Barra de pan 100% integral 250g,,"5,40 €",5.4,,21.6,KILO,https://www.ahorramas.com/barra-de-pan-100-integral-250g-37851.html,2026-10-04T16:37:20
+pan,AhorraMás,,Hogaza de pan The Rustik Bakery 400g,,"7,97 €",7.97,,19.925,KILO,https://www.ahorramas.com/hogaza-de-pan-the-rustik-bakery-400g-48388.html,2026-10-04T16:37:20
+pollo,AhorraMás,,LOTE 2 kg de pechugas de pollo,,"7,99 €",7.99,,3.995,KILO,https://www.ahorramas.com/lote-2-kg-de-pechugas-de-pollo-75152.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Lomo de orza Tello 125gr,,"21,20 €",21.2,,169.6,KILO,https://www.ahorramas.com/lomo-de-orza-tello-125gr-39807.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Hamburguesa de pollo de corral 125g,,"12,80 €",12.8,,102.4,KILO,https://www.ahorramas.com/hamburguesa-de-pollo-de-corral-125g-59409.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE 2kg de contramuslos de pollo,,"6,29 €",6.29,,3.145,KILO,https://www.ahorramas.com/lote-2kg-de-contramuslos-de-pollo-84066.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Lacón asado en lonchas Tello 200g,,"10,50 €",10.5,,52.5,KILO,https://www.ahorramas.com/lacon-asado-en-lonchas-tello-200g-61485.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE de Pollo: 1Kg de Contramuslos + 1Kg de Jamoncitos,,"5,79 €",5.79,,5.79,KILO,https://www.ahorramas.com/lote-de-pollo-1kg-de-contramuslos-1kg-de-jamoncitos-54513.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Pechuga de pollo amarillo Pazo de Pías,,"9,99 €",9.99,,,,https://www.ahorramas.com/pechuga-de-pollo-amarillo-pazo-de-pias-11895.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Pechuga pavo reducida en sal Frial ahumada,,"21,90 €",21.9,,,,https://www.ahorramas.com/pechuga-pavo-reducida-en-sal-frial-ahumada-59494.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Pechuga de pollo,,"7,99 €",7.99,,,,https://www.ahorramas.com/pechuga-de-pollo-10634.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE 2kg de alas de pollo,,"4,99 €",4.99,,2.495,KILO,https://www.ahorramas.com/lote-2kg-de-alas-de-pollo-70476.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Contramuslos de pollo,,"6,29 €",6.29,,,,https://www.ahorramas.com/contramuslos-de-pollo-10632.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE de Pollo: 1Kg de Pechugas + 1Kg de Alas,,"6,49 €",6.49,,6.49,KILO,https://www.ahorramas.com/lote-de-pollo-1kg-de-pechugas-1kg-de-alas-54514.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Pollo limpio entero,,"3,75 €",3.75,,,,https://www.ahorramas.com/pollo-limpio-entero-73586.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Jamoncitos de pollo (Muslos de pollo),,"5,29 €",5.29,,,,https://www.ahorramas.com/jamoncitos-de-pollo-muslos-de-pollo-10631.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Traseros de pollo,,"4,29 €",4.29,,,,https://www.ahorramas.com/traseros-de-pollo-25859.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE 2kg de jamoncitos de pollo,,"5,29 €",5.29,,2.645,KILO,https://www.ahorramas.com/lote-2kg-de-jamoncitos-de-pollo-77497.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Croquetas de pollo y jamón,,"8,99 €",8.99,,,,https://www.ahorramas.com/croquetas-de-pollo-y-jamon-12009.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE de pollo 1 kg pechugas + 1 kg de traseros + 1 kg de alas,,"5,76 €",5.76,,5.76,KILO,https://www.ahorramas.com/lote-de-pollo-1-kg-pechugas-1-kg-de-traseros-1-kg-de-alas-71772.html,2026-10-04T16:37:36
+pollo,AhorraMás,,LOTE 2 kg de traseros de pollo,,"4,29 €",4.29,,2.145,KILO,https://www.ahorramas.com/lote-2-kg-de-traseros-de-pollo-74321.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Alas de pollo frescas,,"4,99 €",4.99,,,,https://www.ahorramas.com/alas-de-pollo-frescas-25853.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Pechuga de pollo fileteada Bon Pollo 600g aproximadamente,,"9,61 €",9.61,,16.0167,KILO,https://www.ahorramas.com/pechuga-de-pollo-fileteada-bon-pollo-600g-aproximadamente-58068.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Solomillo de pollo Bon Pollo 500g aproximadamente,,"11,00 €",11.0,,22.0,KILO,https://www.ahorramas.com/solomillo-de-pollo-bon-pollo-500g-aproximadamente-58064.html,2026-10-04T16:37:36
+pollo,AhorraMás,,Traseros de pollo amarillo Pazo de Pías,,"5,49 €",5.49,,,,https://www.ahorramas.com/traseros-de-pollo-amarillo-pazo-de-pias-11896.html,2026-10-04T16:37:36
+carne picada,AhorraMás,,Mini burger meat angus bandeja de 10 unidades 300g aprox,,"23,33 €",23.33,,77.7667,KILO,https://www.ahorramas.com/mini-burger-meat-angus-bandeja-de-10-unidades-300g-aprox-24926.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat de añojo Angus 150g,,"18,33 €",18.33,,122.2,KILO,https://www.ahorramas.com/burger-meat-de-anojo-angus-150g-24865.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,LOTE de 4 unidades de Burguer meat de vacuno 150g/ud,,"19,93 €",19.93,,132.8667,KILO,https://www.ahorramas.com/lote-de-4-unidades-de-burguer-meat-de-vacuno-150g-ud-31998.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat de vacuno madurada Pujols 150g,,"19,93 €",19.93,,132.8667,KILO,https://www.ahorramas.com/burger-meat-de-vacuno-madurada-pujols-150g-87455.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat añojo Miguel Vergara 400g,,"14,97 €",14.97,,37.425,KILO,https://www.ahorramas.com/burger-meat-anojo-miguel-vergara-400g-70435.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Carne picada de cerdo para burger meat El Pozo 800g aprox,,"6,24 €",6.24,,7.8,KILO,https://www.ahorramas.com/carne-picada-de-cerdo-para-burger-meat-el-pozo-800g-aprox-73355.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Preparado de carne picada de pollo 500g,,"7,98 €",7.98,,15.96,KILO,https://www.ahorramas.com/preparado-de-carne-picada-de-pollo-500g-10810.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat de ternera 1/2 libra Miguel Vergara 440g,,"13,61 €",13.61,,30.9318,KILO,https://www.ahorramas.com/burger-meat-de-ternera-1-2-libra-miguel-vergara-440g-21384.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat mixta cerdo y vacuno ElPozo 800g,,"8,81 €",8.81,,11.0125,KILO,https://www.ahorramas.com/burger-meat-mixta-cerdo-y-vacuno-elpozo-800g-26499.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burguer meat de Angus Miguel Vergara pack 2 de 160g,,"18,72 €",18.72,,117.0,KILO,https://www.ahorramas.com/burguer-meat-de-angus-miguel-vergara-pack-2-de-160g-10815.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat vacuno ElPozo 800g,,"11,37 €",11.37,,14.2125,KILO,https://www.ahorramas.com/burger-meat-vacuno-elpozo-800g-26500.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat Angus Miguel Vergara 350g,,"18,54 €",18.54,,52.9714,KILO,https://www.ahorramas.com/burger-meat-angus-miguel-vergara-350g-68791.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat crispy chicken american style ElPozo pack 2 de 120g,,"12,46 €",12.46,,103.8333,KILO,https://www.ahorramas.com/burger-meat-crispy-chicken-american-style-elpozo-pack-2-de-120g-18613.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat mixta cerdo y vacuno ElPozo 540g pack 6 uds,,"8,33 €",8.33,,15.4259,KILO,https://www.ahorramas.com/burger-meat-mixta-cerdo-y-vacuno-elpozo-540g-pack-6-uds-26497.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Hamburguesa de pollo y pavo Aldelis pack 4 de 80g,,"12,47 €",12.47,,155.875,KILO,https://www.ahorramas.com/hamburguesa-de-pollo-y-pavo-aldelis-pack-4-de-80g-31459.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Hamburguesa de pollo y espinacas Aldelis pack 4 de 78g,,"12,87 €",12.87,,165.0,KILO,https://www.ahorramas.com/hamburguesa-de-pollo-y-espinacas-aldelis-pack-4-de-78g-31461.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat de cerdo ibérico Legado Ibérico 360g,,"11,08 €",11.08,,30.7778,KILO,https://www.ahorramas.com/burger-meat-de-cerdo-iberico-legado-iberico-360g-83834.html,2026-10-04T16:37:51
+carne picada,AhorraMás,,Burger meat de pollo Granja Gourmet 540g,,"7,39 €",7.39,,13.6852,KILO,https://www.ahorramas.com/burger-meat-de-pollo-granja-gourmet-540g-97858.html,2026-10-04T16:37:51
+salmón,AhorraMás,,Salmón por medios o enteros peso aproximado pieza 4kg,,"10,99 €",10.99,,2.7475,KILO,https://www.ahorramas.com/salmon-por-medios-o-enteros-peso-aproximado-pieza-4kg-29366.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón noruego Poseidón en lomos 250g,,"23,96 €",23.96,,95.84,KILO,https://www.ahorramas.com/salmon-noruego-poseidon-en-lomos-250g-27082.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón porción Mowi bandeja,,"24,00 €",24.0,,,,https://www.ahorramas.com/salmon-porcion-mowi-bandeja-22710.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón en porciones con piel 250g,,"26,00 €",26.0,,104.0,KILO,https://www.ahorramas.com/salmon-en-porciones-con-piel-250g-58994.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón Corte Maestro Mowi 460g,,"39,11 €",39.11,,85.0217,KILO,https://www.ahorramas.com/salmon-corte-maestro-mowi-460g-21240.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón corte maestro Mowi 230g,,"43,43 €",43.43,,188.8261,KILO,https://www.ahorramas.com/salmon-corte-maestro-mowi-230g-20976.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón Suprema Mowi bandeja 350gr aprox,,"26,00 €",26.0,,74.2857,KILO,https://www.ahorramas.com/salmon-suprema-mowi-bandeja-350gr-aprox-29327.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón salvaje Exkimo ideal horno 450g,,"16,00 €",16.0,,35.5556,KILO,https://www.ahorramas.com/salmon-salvaje-exkimo-ideal-horno-450g-48779.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmon marinado Eurosalmon 90g,,"46,67 €",46.67,,518.5556,KILO,https://www.ahorramas.com/salmon-marinado-eurosalmon-90g-38818.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón cocinado a baja temperatura con 3 pimientas Mowi 220,,"45,41 €",45.41,,,,https://www.ahorramas.com/salmon-cocinado-a-baja-temperatura-con-3-pimientas-mowi-220-95240.html,2026-10-04T16:38:05
+salmón,AhorraMás,,Salmón Dani pack-3 al natural,,"23,67 €",23.67,,,,https://www.ahorramas.com/salmon-dani-pack-3-al-natural-58479.html,2026-10-04T16:38:05
+yogur,AhorraMás,,Yogur La Fageda Pack 4 Sabor Natural,,"3,80 €",3.8,,,,https://www.ahorramas.com/yogur-la-fageda-pack-4-sabor-natural-72501.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Fageda pack 4,,"5,98 €",5.98,,,,https://www.ahorramas.com/yogur-estilo-griego-fageda-pack-4-72499.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur La Fageda Pack 4 Sabor Limón,,"3,90 €",3.9,,,,https://www.ahorramas.com/yogur-la-fageda-pack-4-sabor-limon-72500.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Alipende pack 6 natural 750g,,"1,93 €",1.93,,2.5733,KILO,https://www.ahorramas.com/yogur-estilo-griego-alipende-pack-6-natural-750g-84625.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur Danone pack 8 natural,,"2,07 €",2.07,,,,https://www.ahorramas.com/yogur-danone-pack-8-natural-2188.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Alipende pack 6 125g stracciatella,,"2,47 €",2.47,,19.76,KILO,https://www.ahorramas.com/yogur-estilo-griego-alipende-pack-6-125g-stracciatella-84995.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Salsa yogurt Florette 250ml,,"8,36 €",8.36,,33.44,LITRO,https://www.ahorramas.com/salsa-yogurt-florette-250ml-19950.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur griego natural cremoso Alipende 1kg,,"2,10 €",2.1,,2.1,KILO,https://www.ahorramas.com/yogur-griego-natural-cremoso-alipende-1kg-85408.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Alipende pack 6 azucarado 750g,,"2,00 €",2.0,,2.6667,KILO,https://www.ahorramas.com/yogur-estilo-griego-alipende-pack-6-azucarado-750g-84626.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur griego ligero natural estilo cremoso Alipende 1kg,,"2,10 €",2.1,,2.1,KILO,https://www.ahorramas.com/yogur-griego-ligero-natural-estilo-cremoso-alipende-1kg-85409.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur natural azucarado pack 6 Alipende,,"1,40 €",1.4,,,,https://www.ahorramas.com/yogur-natural-azucarado-pack-6-alipende-88167.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Alipende pack 6 fresa,,"2,07 €",2.07,,,,https://www.ahorramas.com/yogur-estilo-griego-alipende-pack-6-fresa-84752.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Oikos pack 4 natural,,"6,80 €",6.8,,,,https://www.ahorramas.com/yogur-estilo-griego-oikos-pack-4-natural-55055.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur Alipende pack 6 natural,,"1,33 €",1.33,,,,https://www.ahorramas.com/yogur-alipende-pack-6-natural-88166.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Barrita de proteína con sabor vainilla yogurt Enervit 40g,,"45,00 €",45.0,,1125.0,KILO,https://www.ahorramas.com/barrita-de-proteina-con-sabor-vainilla-yogurt-enervit-40g-99049.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur Alipende pack 16 sabores surtidos,,"1,30 €",1.3,,,,https://www.ahorramas.com/yogur-alipende-pack-16-sabores-surtidos-83735.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Pastoret artesanal 500g,,"6,50 €",6.5,,13.0,KILO,https://www.ahorramas.com/yogur-estilo-griego-pastoret-artesanal-500g-45389.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur estilo griego Danone pack 4 natural,,"3,39 €",3.39,,,,https://www.ahorramas.com/yogur-estilo-griego-danone-pack-4-natural-72467.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur griego fresa 110g Pack 4,,"4,07 €",4.07,,37.0,KILO,https://www.ahorramas.com/yogur-griego-fresa-110g-pack-4-70058.html,2026-10-04T16:38:21
+yogur,AhorraMás,,Yogur natural Danone pack 4,,"2,08 €",2.08,,,,https://www.ahorramas.com/yogur-natural-danone-pack-4-55020.html,2026-10-04T16:38:21
+queso,AhorraMás,,Queso mozzarella rallado Alipende 300 g,,"8,00 €",8.0,,26.6667,KILO,https://www.ahorramas.com/queso-mozzarella-rallado-alipende-300-g-86931.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso Mini Babybel 8 unidades,,"24,38 €",24.38,,3.0475,UNIDAD,https://www.ahorramas.com/queso-mini-babybel-8-unidades-87313.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso mozzarella fresca La Fuente pieza 125g,,"7,20 €",7.2,,57.6,KILO,https://www.ahorramas.com/queso-mozzarella-fresca-la-fuente-pieza-125g-72235.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso tierno en lonchas Alipende 200g,,"9,95 €",9.95,,49.75,KILO,https://www.ahorramas.com/queso-tierno-en-lonchas-alipende-200g-76865.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso en porciones La Vaca Que Ríe 24 uds,,"10,64 €",10.64,,0.4433,UNIDAD,https://www.ahorramas.com/queso-en-porciones-la-vaca-que-rie-24-uds-80119.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso cottage 0% materia grasa Margui 200g,,"6,75 €",6.75,,33.75,KILO,https://www.ahorramas.com/queso-cottage-0-materia-grasa-margui-200g-50403.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso gouda lonchas Alipende 300g,,"6,50 €",6.5,,21.6667,KILO,https://www.ahorramas.com/queso-gouda-lonchas-alipende-300g-86930.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso en palitos La Vaca Que Ríe pack 4 uds,,"18,50 €",18.5,,4.625,UNIDAD,https://www.ahorramas.com/queso-en-palitos-la-vaca-que-rie-pack-4-uds-68252.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso de cabra Payoya Semicurado Ubrique,,"32,00 €",32.0,,,,https://www.ahorramas.com/queso-de-cabra-payoya-semicurado-ubrique-46418.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso rallado cinco quesos Alipende 200g,,"15,45 €",15.45,,77.25,KILO,https://www.ahorramas.com/queso-rallado-cinco-quesos-alipende-200g-64587.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso havarti en lonchas Alipende 200g,,"12,45 €",12.45,,62.25,KILO,https://www.ahorramas.com/queso-havarti-en-lonchas-alipende-200g-72020.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso blanco Alipende pack 4 uds,,"4,60 €",4.6,,1.15,UNIDAD,https://www.ahorramas.com/queso-blanco-alipende-pack-4-uds-76856.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso Feta Denominación De Origen Protegida Hotos 150G Pieza,,"15,33 €",15.33,,102.2,KILO,https://www.ahorramas.com/queso-feta-denominacion-de-origen-protegida-hotos-150g-pieza-61003.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso rallado en polvo Alipende 150g,,"8,33 €",8.33,,55.5333,KILO,https://www.ahorramas.com/queso-rallado-en-polvo-alipende-150g-64589.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso burrata Antonella 125 gr,,"17,60 €",17.6,,140.8,KILO,https://www.ahorramas.com/queso-burrata-antonella-125-gr-67195.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso rallado Grana Padano Zanetti 100 gr,,"16,50 €",16.5,,165.0,KILO,https://www.ahorramas.com/queso-rallado-grana-padano-zanetti-100-gr-63405.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso emmental rallado Alipende 200g,,"8,25 €",8.25,,41.25,KILO,https://www.ahorramas.com/queso-emmental-rallado-alipende-200g-86932.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso semicurado cuña Alipende 300g,,"9,70 €",9.7,,32.3333,KILO,https://www.ahorramas.com/queso-semicurado-cuna-alipende-300g-52952.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso barra Larsa,,"11,49 €",11.49,,,,https://www.ahorramas.com/queso-barra-larsa-38886.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso viejo tostado Cerrato 300g,,"14,30 €",14.3,,47.6667,KILO,https://www.ahorramas.com/queso-viejo-tostado-cerrato-300g-47895.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso barra Alipende,,"10,99 €",10.99,,,,https://www.ahorramas.com/queso-barra-alipende-72647.html,2026-10-04T16:38:36
+queso,AhorraMás,,Queso tierno Alipende cuña 300g,,"8,93 €",8.93,,29.7667,KILO,https://www.ahorramas.com/queso-tierno-alipende-cuna-300g-52954.html,2026-10-04T16:38:36
+agua,AhorraMás,,Agua en botella de 5 litros Bezoya,,"0,45 €",0.45,,0.09,LITRO,https://www.ahorramas.com/agua-en-botella-de-5-litros-bezoya-98878.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua Fuente Primavera 1,5l",,"0,18 €",0.18,,0.12,LITRO,https://www.ahorramas.com/agua-fuente-primavera-15l-39853.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua mineral natural Nestlé Aquarel botella 1,5 l",,"0,43 €",0.43,,0.2867,LITRO,https://www.ahorramas.com/agua-mineral-natural-nestle-aquarel-botella-15-l-52028.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Aquarel botella sport de 33cl Nestlé,,"1,58 €",1.58,,,,https://www.ahorramas.com/agua-aquarel-botella-sport-de-33cl-nestle-52026.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua mineral natural Bezoya Botella Sport 33cl,,"1,67 €",1.67,,,,https://www.ahorramas.com/agua-mineral-natural-bezoya-botella-sport-33cl-67168.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua mineral natural Nestlé Aquarel botella Tapón Sport 750ml,,"1,00 €",1.0,,1.3333,LITRO,https://www.ahorramas.com/agua-mineral-natural-nestle-aquarel-botella-tapon-sport-750ml-42693.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua mineral con gas Cabreiroá. Botella rPET 1L,,"1,35 €",1.35,,1.35,LITRO,https://www.ahorramas.com/agua-mineral-con-gas-cabreiroa.-botella-rpet-1l-87453.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua Solán de Cabras 1,5l azul",,"0,63 €",0.63,,0.42,LITRO,https://www.ahorramas.com/agua-solan-de-cabras-15l-azul-83933.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Fuente Primavera 5l,,"0,14 €",0.14,,0.028,LITRO,https://www.ahorramas.com/agua-fuente-primavera-5l-77728.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua Bezoya 1,5l",,"0,50 €",0.5,,0.3333,LITRO,https://www.ahorramas.com/agua-bezoya-15l-66273.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua Font Vella 1,5l",,"0,51 €",0.51,,0.34,LITRO,https://www.ahorramas.com/agua-font-vella-15l-614.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua mineral natural Teleno 1,5l",,"0,26 €",0.26,,0.1733,LITRO,https://www.ahorramas.com/agua-mineral-natural-teleno-15l-64183.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua San Joaquin 8L,,"0,12 €",0.12,,0.015,LITRO,https://www.ahorramas.com/agua-san-joaquin-8l-91009.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Fuente Primavera 2l,,"0,20 €",0.2,,0.1,LITRO,https://www.ahorramas.com/agua-fuente-primavera-2l-37036.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Font Vella 50cl,,"1,34 €",1.34,,,,https://www.ahorramas.com/agua-font-vella-50cl-60203.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Teleno 5l,,"0,22 €",0.22,,0.044,LITRO,https://www.ahorramas.com/agua-teleno-5l-69090.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Fuente Primavera 50cl pack 6,,"0,52 €",0.52,,,,https://www.ahorramas.com/agua-fuente-primavera-50cl-pack-6-22024.html,2026-10-04T16:38:51
+agua,AhorraMás,,"Agua Font Vella 6,25l",,"0,40 €",0.4,,0.064,LITRO,https://www.ahorramas.com/agua-font-vella-625l-83104.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Font Vella 33cl sport,,"1,79 €",1.79,,,,https://www.ahorramas.com/agua-font-vella-33cl-sport-55380.html,2026-10-04T16:38:51
+agua,AhorraMás,,Agua Solán de Cabras 5l azul,,"0,55 €",0.55,,0.11,LITRO,https://www.ahorramas.com/agua-solan-de-cabras-5l-azul-33374.html,2026-10-04T16:38:51
+zumo,AhorraMás,,Zumo de naranja 100% exprimida sin pulpa Alipende 1L,,"1,85 €",1.85,,1.85,LITRO,https://www.ahorramas.com/zumo-de-naranja-100-exprimida-sin-pulpa-alipende-1l-85555.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Horchata Chufi 1l,,"1,89 €",1.89,,1.89,LITRO,https://www.ahorramas.com/horchata-chufi-1l-49009.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de naranja 100% exprimida con pulpa Alipende 1L,,"1,90 €",1.9,,1.9,LITRO,https://www.ahorramas.com/zumo-de-naranja-100-exprimida-con-pulpa-alipende-1l-85556.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de piña y uva Alipende pack 6,,"1,38 €",1.38,,,,https://www.ahorramas.com/zumo-de-pina-y-uva-alipende-pack-6-84637.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Insecticida laca Zum 400ml,,"9,75 €",9.75,,24.375,LITRO,https://www.ahorramas.com/insecticida-laca-zum-400ml-50803.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de piña y uva Alipende brik 1l,,"1,20 €",1.2,,1.2,LITRO,https://www.ahorramas.com/zumo-de-pina-y-uva-alipende-brik-1l-48008.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de melocotón y uva Alipende brik 1l,,"1,00 €",1.0,,1.0,LITRO,https://www.ahorramas.com/zumo-de-melocoton-y-uva-alipende-brik-1l-48009.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo tropical con leche Bifrutas Pascual pack 6,,"2,16 €",2.16,,,,https://www.ahorramas.com/zumo-tropical-con-leche-bifrutas-pascual-pack-6-19089.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de melocotón y uva Alipende pack 6,,"1,25 €",1.25,,,,https://www.ahorramas.com/zumo-de-melocoton-y-uva-alipende-pack-6-84638.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo refrigerado con pulpa exprimido Summum 750ml Naranja,,"2,79 €",2.79,,3.72,LITRO,https://www.ahorramas.com/zumo-refrigerado-con-pulpa-exprimido-summum-750ml-naranja-87851.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo Concentrado Alipende P6 Naranja-Mandarina,,"1,41 €",1.41,,,,https://www.ahorramas.com/zumo-concentrado-alipende-p6-naranja-mandarina-85651.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo Concentrado Alipende 1L Naranja-Mandarina,,"1,29 €",1.29,,1.29,LITRO,https://www.ahorramas.com/zumo-concentrado-alipende-1l-naranja-mandarina-85649.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de naranja sin pulpa exprimido Don Simón 1l,,"2,95 €",2.95,,2.95,LITRO,https://www.ahorramas.com/zumo-de-naranja-sin-pulpa-exprimido-don-simon-1l-75781.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo refrigerado Summum 750ml Piña,,"3,33 €",3.33,,4.44,LITRO,https://www.ahorramas.com/zumo-refrigerado-summum-750ml-pina-87835.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de naranja exprimido natural botella 1l,,"5,95 €",5.95,,5.95,LITRO,https://www.ahorramas.com/zumo-de-naranja-exprimido-natural-botella-1l-43245.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo 100% de tomate Granini 1l,,"3,15 €",3.15,,3.15,LITRO,https://www.ahorramas.com/zumo-100-de-tomate-granini-1l-38523.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo tropical con leche Bifrutas Pascual pack 3,,"2,55 €",2.55,,,,https://www.ahorramas.com/zumo-tropical-con-leche-bifrutas-pascual-pack-3-60273.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo 100% Exprimido Summum 750ml Mandarina,,"2,40 €",2.4,,3.2,LITRO,https://www.ahorramas.com/zumo-100-exprimido-summum-750ml-mandarina-87865.html,2026-10-04T16:39:05
+zumo,AhorraMás,,Zumo de tomate Alipende brik 1l,,"1,05 €",1.05,,1.05,LITRO,https://www.ahorramas.com/zumo-de-tomate-alipende-brik-1l-48021.html,2026-10-04T16:39:05
+atún,AhorraMás,,Atún claro Alipende pack 6 al natural,,"12,50 €",12.5,,,,https://www.ahorramas.com/atun-claro-alipende-pack-6-al-natural-51289.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Alipende pack 6 en aceite oliva,,"15,71 €",15.71,,,,https://www.ahorramas.com/atun-claro-alipende-pack-6-en-aceite-oliva-84950.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún en filete sin piel 240g,,"24,96 €",24.96,,104.0,KILO,https://www.ahorramas.com/atun-en-filete-sin-piel-240g-54826.html,2026-10-04T16:39:19
+atún,AhorraMás,,Bonito Alipende 190g en aceite oliva,,"18,68 €",18.68,,98.3158,KILO,https://www.ahorramas.com/bonito-alipende-190g-en-aceite-oliva-75843.html,2026-10-04T16:39:19
+atún,AhorraMás,,Bonito del norte en aceite de oliva Cuca 82g,,"42,56 €",42.56,,519.0244,KILO,https://www.ahorramas.com/bonito-del-norte-en-aceite-de-oliva-cuca-82g-96448.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Alipende pack 6 en aceite girasol,,"13,46 €",13.46,,,,https://www.ahorramas.com/atun-claro-alipende-pack-6-en-aceite-girasol-83612.html,2026-10-04T16:39:19
+atún,AhorraMás,,Bonito del norte en aceite de oliva Consorcio 80g,,"46,88 €",46.88,,586.0,KILO,https://www.ahorramas.com/bonito-del-norte-en-aceite-de-oliva-consorcio-80g-96039.html,2026-10-04T16:39:19
+atún,AhorraMás,,Bonito del norte en escabeche consorcio 80g,,"46,88 €",46.88,,586.0,KILO,https://www.ahorramas.com/bonito-del-norte-en-escabeche-consorcio-80g-96041.html,2026-10-04T16:39:19
+atún,AhorraMás,,Bonito del norte en rodajas,,"12,99 €",12.99,,,,https://www.ahorramas.com/bonito-del-norte-en-rodajas-62118.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Albo pack3 aceite oliva,,"34,78 €",34.78,,,,https://www.ahorramas.com/atun-claro-albo-pack3-aceite-oliva-13993.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún Alipende 650g en escabeche,,"11,00 €",11.0,,16.9231,KILO,https://www.ahorramas.com/atun-alipende-650g-en-escabeche-83651.html,2026-10-04T16:39:19
+atún,AhorraMás,,Bonito del norte en aceite de girasol Consorcio 80g,,"46,88 €",46.88,,586.0,KILO,https://www.ahorramas.com/bonito-del-norte-en-aceite-de-girasol-consorcio-80g-96040.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Alipende pack 3 en escabeche,,"17,31 €",17.31,,,,https://www.ahorramas.com/atun-claro-alipende-pack-3-en-escabeche-83653.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro en aceite oliva Alipende 140g,,"26,43 €",26.43,,188.7857,KILO,https://www.ahorramas.com/atun-claro-en-aceite-oliva-alipende-140g-84758.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún  Alipende 260g en girasol,,"12,65 €",12.65,,48.6538,KILO,https://www.ahorramas.com/atun--alipende-260g-en-girasol-51288.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún Alipende 650g  en aceite girasol,,"10,00 €",10.0,,15.3846,KILO,https://www.ahorramas.com/atun-alipende-650g--en-aceite-girasol-83611.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Alipende pack 6 en aceite oliva virgen extra,,"18,59 €",18.59,,,,https://www.ahorramas.com/atun-claro-alipende-pack-6-en-aceite-oliva-virgen-extra-34468.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Calvo pack-3 super natural,,"20,83 €",20.83,,,,https://www.ahorramas.com/atun-claro-calvo-pack-3-super-natural-60408.html,2026-10-04T16:39:19
+atún,AhorraMás,,Atún claro Calvo pack 3 en escabeche,,"20,83 €",20.83,,,,https://www.ahorramas.com/atun-claro-calvo-pack-3-en-escabeche-8072.html,2026-10-04T16:39:19
+garbanzos,AhorraMás,,Garbanzo cocido Alipende 400g,,"2,00 €",2.0,,5.0,KILO,https://www.ahorramas.com/garbanzo-cocido-alipende-400g-60125.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo cocido Luengo 400g,,"3,25 €",3.25,,8.125,KILO,https://www.ahorramas.com/garbanzo-cocido-luengo-400g-44569.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo pedrosillano cocido Miau 400g,,"2,25 €",2.25,,5.625,KILO,https://www.ahorramas.com/garbanzo-pedrosillano-cocido-miau-400g-55743.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo cocido Alipende 215g,,"3,49 €",3.49,,16.2326,KILO,https://www.ahorramas.com/garbanzo-cocido-alipende-215g-60130.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo Luengo 1kg,,"3,95 €",3.95,,3.95,KILO,https://www.ahorramas.com/garbanzo-luengo-1kg-77247.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo Alipende 1kg pedrosillano,,"1,90 €",1.9,,1.9,KILO,https://www.ahorramas.com/garbanzo-alipende-1kg-pedrosillano-77530.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo Alipende 1kg,,"2,15 €",2.15,,2.15,KILO,https://www.ahorramas.com/garbanzo-alipende-1kg-77269.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo cocido nacional Luengo 400g,,"3,98 €",3.98,,9.95,KILO,https://www.ahorramas.com/garbanzo-cocido-nacional-luengo-400g-47459.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzos con espinacas Litoral 425g,,"5,06 €",5.06,,11.9059,KILO,https://www.ahorramas.com/garbanzos-con-espinacas-litoral-425g-13.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo cocido eco Alta Cocina 500g,,"4,50 €",4.5,,9.0,KILO,https://www.ahorramas.com/garbanzo-cocido-eco-alta-cocina-500g-4486.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo Alipende 1kg lechoso,,"2,50 €",2.5,,2.5,KILO,https://www.ahorramas.com/garbanzo-alipende-1kg-lechoso-77270.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanza del sur cocida Miau 400g,,"3,80 €",3.8,,9.5,KILO,https://www.ahorramas.com/garbanza-del-sur-cocida-miau-400g-55699.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo sin sal cocido Luengo 570 g,,"3,25 €",3.25,,5.7018,KILO,https://www.ahorramas.com/garbanzo-sin-sal-cocido-luengo-570-g-73238.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzo cocido con verdura Alipende 400g,,"3,13 €",3.13,,7.825,KILO,https://www.ahorramas.com/garbanzo-cocido-con-verdura-alipende-400g-60123.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Callos con garbanzos Litoral 370g,,"12,84 €",12.84,,34.7027,KILO,https://www.ahorramas.com/callos-con-garbanzos-litoral-370g-74904.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzos lechosos calidad extra Miau 1k,,"3,30 €",3.3,,3.3,KILO,https://www.ahorramas.com/garbanzos-lechosos-calidad-extra-miau-1k-97241.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Garbanzos pedrosillano calidad extra producto de la marca Miau 1 kg,,"2,50 €",2.5,,2.5,KILO,https://www.ahorramas.com/garbanzos-pedrosillano-calidad-extra-producto-de-la-marca-miau-1-kg-97240.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Callos con garbanzos Alipende 380g,,"6,84 €",6.84,,18.0,KILO,https://www.ahorramas.com/callos-con-garbanzos-alipende-380g-43260.html,2026-10-04T16:39:37
+garbanzos,AhorraMás,,Harina de garbanzo sin gluten Alipende 500g,,"4,00 €",4.0,,8.0,KILO,https://www.ahorramas.com/harina-de-garbanzo-sin-gluten-alipende-500g-88193.html,2026-10-04T16:39:37
+aceite,AhorraMás,,Aceite de girasol Alipende 1l,,"1,85 €",1.85,,1.85,LITRO,https://www.ahorramas.com/aceite-de-girasol-alipende-1l--84581.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Mantequilla irlandesa Kerrygold 200g pastilla sin sal,,"22,45 €",22.45,,112.25,KILO,https://www.ahorramas.com/mantequilla-irlandesa-kerrygold-200g-pastilla-sin-sal-55706.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite oliva virgen extra Hojiblanca 5L,,"6,54 €",6.54,,1.308,LITRO,https://www.ahorramas.com/aceite-oliva-virgen-extra-hojiblanca-5l-82364.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite oliva virgen extra Alipende 1l,,"4,45 €",4.45,,4.45,LITRO,https://www.ahorramas.com/aceite-oliva-virgen-extra-alipende-1l-84577.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de girasol Koipe 1l,,"2,95 €",2.95,,2.95,LITRO,https://www.ahorramas.com/aceite-de-girasol-koipe-1l-38478.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite oliva virgen extra Carbonell 750ml,,"8,79 €",8.79,,11.72,LITRO,https://www.ahorramas.com/aceite-oliva-virgen-extra-carbonell-750ml-70684.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite oliva virgen extra Alipende 750ml,,"7,00 €",7.0,,9.3333,LITRO,https://www.ahorramas.com/aceite-oliva-virgen-extra-alipende-750ml-84576.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de girasol Alipende garrafa 5l,,"1,72 €",1.72,,0.344,LITRO,https://www.ahorramas.com/aceite-de-girasol-alipende-garrafa-5l-84582.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite oliva virgen extra hojiblanca Abril 500ml,,"7,18 €",7.18,,14.36,LITRO,https://www.ahorramas.com/aceite-oliva-virgen-extra-hojiblanca-abril-500ml-30663.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite oliva virgen extra Alipende garrafa 5l,,"4,26 €",4.26,,0.852,LITRO,https://www.ahorramas.com/aceite-oliva-virgen-extra-alipende-garrafa-5l-84578.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de sesamo Tiger Khan 200ml,,"16,40 €",16.4,,82.0,LITRO,https://www.ahorramas.com/aceite-de-sesamo-tiger-khan-200ml-31345.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de orujo lindoliva La Masía 1l,,"2,99 €",2.99,,2.99,LITRO,https://www.ahorramas.com/aceite-de-orujo-lindoliva-la-masia-1l-15395.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de Coco Virgen Ecológico La Masía 430ml,,"11,86 €",11.86,,27.5814,LITRO,https://www.ahorramas.com/aceite-de-coco-virgen-ecologico-la-masia-430ml-88007.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Pan cristal 7%  Aceite oliva 4ud,,"5,42 €",5.42,,,,https://www.ahorramas.com/pan-cristal-7--aceite-oliva-4ud-53228.html,2026-10-04T16:39:52
+aceite,AhorraMás,,"Aceite de oliva Carbonell 1l 0,4º",,"5,75 €",5.75,,5.75,LITRO,https://www.ahorramas.com/aceite-de-oliva-carbonell-1l-04-38496.html,2026-10-04T16:39:52
+aceite,AhorraMás,,"Aceite de oliva Alipende 1l 0,4º",,"3,70 €",3.7,,3.7,LITRO,https://www.ahorramas.com/aceite-de-oliva-alipende-1l-04-84584.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de Virgen Extra 5 blister de 10 ml + Vinagre de Modena 5 blister de 10 ml + Sal 5 sobres de 1 g,,"39,80 €",39.8,,3980.0,LITRO,https://www.ahorramas.com/aceite-de-virgen-extra-5-blister-de-10-ml-vinagre-de-modena-5-blister-de-10-ml-sal-5-sobres-de-1-g-46128.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de oliva virgen extra Maestros de Hojiblanca garrafa 3l,,"6,58 €",6.58,,2.1933,LITRO,https://www.ahorramas.com/aceite-de-oliva-virgen-extra-maestros-de-hojiblanca-garrafa-3l-56752.html,2026-10-04T16:39:52
+aceite,AhorraMás,,"Aceite de oliva La Masía 1l 0,4º",,"5,19 €",5.19,,5.19,LITRO,https://www.ahorramas.com/aceite-de-oliva-la-masia-1l-04-59476.html,2026-10-04T16:39:52
+aceite,AhorraMás,,Aceite de oliva virgen extra Carbonell 1l,,"7,69 €",7.69,,7.69,LITRO,https://www.ahorramas.com/aceite-de-oliva-virgen-extra-carbonell-1l-68940.html,2026-10-04T16:39:52
+aceite,AhorraMás,,"Aceite de oliva Carbonell garrafa 3l 0,4º",,"4,95 €",4.95,,1.65,LITRO,https://www.ahorramas.com/aceite-de-oliva-carbonell-garrafa-3l-04-77029.html,2026-10-04T16:39:52
+detergente,AhorraMás,,Detergente líquido Lanta 54 lavados Marsella,,"0,07 €",0.07,,,,https://www.ahorramas.com/detergente-liquido-lanta-54-lavados-marsella-85296.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Skip Limpieza Profunda 35+18 lavados 50% GRATIS,,"0,20 €",0.2,,,,https://www.ahorramas.com/detergente-liquido-skip-limpieza-profunda-3518-lavados-50-gratis-13178.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente liquido Ariel 60lav original,,"0,26 €",0.26,,,,https://www.ahorramas.com/detergente-liquido-ariel-60lav-original-98813.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Lanta 54 lavados Colonia,,"0,07 €",0.07,,,,https://www.ahorramas.com/detergente-liquido-lanta-54-lavados-colonia-85297.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente Skip Ciclo corto 37 lavados Eficacia Express,,"0,34 €",0.34,,,,https://www.ahorramas.com/detergente-skip-ciclo-corto-37-lavados-eficacia-express-82376.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente cápsulas pods Ariel 14l lavados poderoso,,"0,57 €",0.57,,0.0407,LITRO,https://www.ahorramas.com/detergente-capsulas-pods-ariel-14l-lavados-poderoso-98671.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente en cápsulas Ariel pods 35 lavados frescor floral,,"0,36 €",0.36,,,,https://www.ahorramas.com/detergente-en-capsulas-ariel-pods-35-lavados-frescor-floral-97720.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente en capsulas skip limpieza profunda 28 lavados,,"0,29 €",0.29,,,,https://www.ahorramas.com/detergente-en-capsulas-skip-limpieza-profunda-28-lavados-97447.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente en polvo Ariel 37 lavados original,,"0,31 €",0.31,,,,https://www.ahorramas.com/detergente-en-polvo-ariel-37-lavados-original-99618.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente liquido Ariel 25+5lav original,,"0,29 €",0.29,,,,https://www.ahorramas.com/detergente-liquido-ariel-255lav-original-98814.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Lanta 66 lavados Prendas delicadas,,"0,04 €",0.04,,,,https://www.ahorramas.com/detergente-liquido-lanta-66-lavados-prendas-delicadas-85303.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente Líquido Flota 42 + 10 Lavados Esencia,,"0,10 €",0.1,,,,https://www.ahorramas.com/detergente-liquido-flota-42-10-lavados-esencia-79200.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Colon 45 lavados Nenuco,,"0,18 €",0.18,,,,https://www.ahorramas.com/detergente-liquido-colon-45-lavados-nenuco-68290.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente cápsilas 3en1 Lanta 40 lavados Marsella,,"0,15 €",0.15,,,,https://www.ahorramas.com/detergente-capsilas-3en1-lanta-40-lavados-marsella-85355.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente en cápsulas Ariel pods 35 lavados original,,"0,36 €",0.36,,,,https://www.ahorramas.com/detergente-en-capsulas-ariel-pods-35-lavados-original-82206.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente Líquido Omino Bianco 45+21 Lavados,,"0,14 €",0.14,,,,https://www.ahorramas.com/detergente-liquido-omino-bianco-4521-lavados-18856.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Lanta 30 lavados Color,,"0,13 €",0.13,,,,https://www.ahorramas.com/detergente-liquido-lanta-30-lavados-color-85300.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Norit 37 lavados delicado,,"0,11 €",0.11,,,,https://www.ahorramas.com/detergente-liquido-norit-37-lavados-delicado-43353.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido Norit 35+18 Lavados Complet Ropa Siempre Como Nueva,,"0,17 €",0.17,,,,https://www.ahorramas.com/detergente-liquido-norit-3518-lavados-complet-ropa-siempre-como-nueva-73791.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente líquido limpieza profunda y antiólores Wipp Express 40+14 lavados,,"0,23 €",0.23,,,,https://www.ahorramas.com/detergente-liquido-limpieza-profunda-y-antiolores-wipp-express-4014-lavados-99476.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Limpiahogar Don Limpio Baño Líquido Detergente 1.5 I,,"2,47 €",2.47,,,,https://www.ahorramas.com/limpiahogar-don-limpio-bano-liquido-detergente-1.5-i-10555.html,2026-10-04T16:40:06
+detergente,AhorraMás,,Detergente en cápsulas Lanta 24 lavados ecológico,,"0,20 €",0.2,,,,https://www.ahorramas.com/detergente-en-capsulas-lanta-24-lavados-ecologico-85194.html,2026-10-04T16:40:06
+papel higiénico,AhorraMás,,Papel higiénico Lanta 12 rollos 3 capas perfumado,,"0,33 €",0.33,,,,https://www.ahorramas.com/papel-higienico-lanta-12-rollos-3-capas-perfumado-80845.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico húmedo Lanta 100 uds,,"0,02 €",0.02,,0.0002,UNIDAD,https://www.ahorramas.com/papel-higienico-humedo-lanta-100-uds-47869.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Lanta 12 rollos doble rollo,,"0,38 €",0.38,,,,https://www.ahorramas.com/papel-higienico-lanta-12-rollos-doble-rollo-73799.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Pañuelos con diseño Paw Patrol Colhogar 12 unidades,,"0,17 €",0.17,,0.0142,UNIDAD,https://www.ahorramas.com/panuelos-con-diseno-paw-patrol-colhogar-12-unidades-95496.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Lanta 18 rollos doble longitud,,"0,38 €",0.38,,,,https://www.ahorramas.com/papel-higienico-lanta-18-rollos-doble-longitud-19769.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Scottex 12 rollos original,,"0,33 €",0.33,,,,https://www.ahorramas.com/papel-higienico-scottex-12-rollos-original-47919.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Lanta 12 rollos,,"0,20 €",0.2,,,,https://www.ahorramas.com/papel-higienico-lanta-12-rollos-73039.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico ecológico Lanta 6 rollos doble rollo,,"0,40 €",0.4,,,,https://www.ahorramas.com/papel-higienico-ecologico-lanta-6-rollos-doble-rollo-80964.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Lanta 6 rollos 4 capas perfumado,,"0,46 €",0.46,,,,https://www.ahorramas.com/papel-higienico-lanta-6-rollos-4-capas-perfumado-85331.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Scottex 6 rollos sensitive,,"0,50 €",0.5,,,,https://www.ahorramas.com/papel-higienico-scottex-6-rollos-sensitive-3668.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Lanta 9 rollos triple capa acolchado,,"0,41 €",0.41,,,,https://www.ahorramas.com/papel-higienico-lanta-9-rollos-triple-capa-acolchado-62185.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico húmedo Lanta 15 uds,,"0,05 €",0.05,,0.0033,UNIDAD,https://www.ahorramas.com/papel-higienico-humedo-lanta-15-uds-47906.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico húmedo Scottex 74 uds,,"0,04 €",0.04,,0.0005,UNIDAD,https://www.ahorramas.com/papel-higienico-humedo-scottex-74-uds-80824.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico húmedo Lanta 70 uds sensitive,,"0,03 €",0.03,,0.0004,UNIDAD,https://www.ahorramas.com/papel-higienico-humedo-lanta-70-uds-sensitive-47908.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Scottex 6 rollos mega doble rollo,,"0,61 €",0.61,,,,https://www.ahorramas.com/papel-higienico-scottex-6-rollos-mega-doble-rollo-49867.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higienico Foxy 4 unidades bouquet + 2 rollos grandes,,"0,65 €",0.65,,0.1625,UNIDAD,https://www.ahorramas.com/papel-higienico-foxy-4-unidades-bouquet-2-rollos-grandes-83813.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico Foxy 4+2 rollos seda con pH neutro para la piel y aroma a talco,,"0,67 €",0.67,,,,https://www.ahorramas.com/papel-higienico-foxy-42-rollos-seda-con-ph-neutro-para-la-piel-y-aroma-a-talco-18997.html,2026-10-04T16:40:21
+papel higiénico,AhorraMás,,Papel higiénico húmedo Lanta 100 uds infantil,,"0,02 €",0.02,,0.0002,UNIDAD,https://www.ahorramas.com/papel-higienico-humedo-lanta-100-uds-infantil-47868.html,2026-10-04T16:40:21
