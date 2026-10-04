@@ -1,9 +1,12 @@
+# PARA LANZARLO PONER EN LA TERMINAL: streamlit run dashboard/app.py
 import streamlit as st
 import pandas as pd
 from pathlib import Path
 import numpy as np
 import requests
 import re
+import folium
+from streamlit_folium import st_folium
 
 
 # ============================================================
@@ -628,6 +631,51 @@ def get_nearest_stores(
 
     return result
 
+def get_nearest_stores_overall(user_lat, user_lon, stores, n=10):
+
+    stores = stores.copy()
+
+    stores["distance_km"] = haversine(
+        user_lat,
+        user_lon,
+        stores["lat"],
+        stores["lon"]
+    )
+
+    nearest = (
+        stores
+        .sort_values("distance_km")
+        .head(n)
+        .copy()
+    )
+
+    return nearest
+
+
+supermarket_colors = {
+    "Dia": "red",
+    "Mercadona": "green",
+    "Aldi": "blue",
+    "Alcampo": "orange",
+    "Ahorramás": "purple"
+}
+
+# ============================================================
+# NAVEGACIÓN
+# ============================================================
+
+st.sidebar.title("🛒 Supermarket Optimizer")
+
+page = st.sidebar.radio(
+    "Navegación",
+    [
+        "🏠 Overview",
+        "📊 Visualizations",
+        "📍 Stores"
+    ]
+)
+
+st.sidebar.markdown("---")
 
 # ============================================================
 # SIDEBAR
@@ -736,13 +784,16 @@ st.sidebar.success(
 nearest_stores = get_nearest_stores(
 
     user_lat,
-
     user_lon,
-
     stores_df
-
 )
 
+nearest_stores_map = get_nearest_stores_overall(
+    user_lat,
+    user_lon,
+    stores_df,
+    n=10
+)
 
 if nearest_stores.empty:
 
@@ -751,64 +802,6 @@ if nearest_stores.empty:
     )
 
     st.stop()
-
-
-# ============================================================
-# MOSTRAR TIENDAS MÁS CERCANAS
-# ============================================================
-
-st.subheader(
-    "📍 Supermercados más cercanos"
-)
-
-
-display_nearest = (
-
-    nearest_stores[
-
-        [
-            "supermarket",
-            "name",
-            "distance_km",
-            "address"
-
-        ]
-
-    ]
-
-    .rename(columns={
-
-        "supermarket":
-            "Cadena",
-
-        "name":
-            "Tienda",
-
-        "distance_km":
-            "Distancia (km)",
-
-        "address":
-            "Dirección"
-
-    })
-
-)
-
-
-display_nearest[
-    "Distancia (km)"
-] = display_nearest[
-    "Distancia (km)"
-].round(2)
-
-
-st.dataframe(
-
-    display_nearest,
-
-    use_container_width=True
-
-)
 
 
 # ============================================================
@@ -1087,100 +1080,69 @@ df_by_smart = (
 
 
 # ============================================================
-# RECOMENDACIÓN PRINCIPAL
+# PÁGINA: OVERVIEW
 # ============================================================
 
-st.markdown("---")
+if page == "🏠 Overview":
 
+    st.markdown("---")
 
-st.subheader(
-    "🏆 Recomendación Principal"
-)
-
-
-if df_by_smart.empty:
-
-    st.warning(
-
-        "No hay ninguna cadena con datos de precios "
-        "para todos los productos seleccionados."
-
+    st.subheader(
+        "🏆 Recomendación Principal"
     )
 
-    st.info(
+    if df_by_smart.empty:
 
-        "Puedes consultar igualmente las tablas "
-        "de precios y cobertura."
+        st.warning(
+            "No hay ninguna cadena con datos de precios "
+            "para todos los productos seleccionados."
+        )
 
+    else:
+
+        best_option = df_by_smart.iloc[0]
+
+        st.success(
+
+            f"🌟 **{best_option['supermarket']}** "
+            f"es la opción recomendada.\n\n"
+
+            f"🏪 **Tienda:** "
+            f"{best_option['store_name']}\n\n"
+
+            f"📍 **Dirección:** "
+            f"{best_option['address']}\n\n"
+
+            f"📏 **Distancia:** "
+            f"{best_option['distance_km']:.2f} km\n\n"
+
+            f"💶 **Precio de la cesta:** "
+            f"{best_option['basket_cost']:.2f} €\n\n"
+
+            f"📦 **Cobertura de productos:** "
+            f"{best_option['coverage']:.0f}%\n\n"
+
+            f"⭐ **Score:** "
+            f"{best_option['score']:.2f}"
+
+        )
+
+
+    # --------------------------------------------------------
+    # COMPARACIÓN POR PRECIO
+    # --------------------------------------------------------
+
+    st.markdown("---")
+
+    st.subheader(
+        "💶 Comparación por precio"
     )
-
-else:
-
-    best_option = (
-        df_by_smart.iloc[0]
-    )
-
-
-    st.success(
-
-        f"🌟 **{best_option['supermarket']}** "
-        f"es la opción recomendada.\n\n"
-
-        f"🏪 **Tienda:** "
-        f"{best_option['store_name']}\n\n"
-
-        f"📍 **Dirección:** "
-        f"{best_option['address']}\n\n"
-
-        f"📏 **Distancia:** "
-        f"{best_option['distance_km']:.2f} km\n\n"
-
-        f"💶 **Precio de la cesta:** "
-        f"{best_option['basket_cost']:.2f} €\n\n"
-
-        f"📦 **Cobertura de productos:** "
-        f"{best_option['coverage']:.0f}%\n\n"
-
-        f"⭐ **Score:** "
-        f"{best_option['score']:.2f}"
-
-    )
-
-
-# ============================================================
-# TABS
-# ============================================================
-
-tab1, tab2, tab3 = st.tabs(
-
-    [
-
-        "📊 Comparativa por Precio",
-
-        "📍 Comparativa por Cercanía",
-
-        "🔍 Desglose por Productos"
-
-    ]
-
-)
-
-
-# ============================================================
-# TAB 1 — PRECIO
-# ============================================================
-
-with tab1:
-
-    st.markdown(
-        "### 💶 Supermercados ordenados por precio"
-    )
-
 
     if df_by_price.empty:
 
         st.info(
-            "No hay datos suficientes."
+            "No hay datos suficientes para comparar "
+            "los precios."
         )
 
     else:
@@ -1190,17 +1152,11 @@ with tab1:
             df_by_price[
 
                 [
-
                     "supermarket",
-
                     "store_name",
-
                     "basket_cost",
-
                     "distance_km",
-
                     "coverage"
-
                 ]
 
             ]
@@ -1214,7 +1170,7 @@ with tab1:
                     "Tienda",
 
                 "basket_cost":
-                    "Coste Cesta (€)",
+                    "Precio cesta (€)",
 
                 "distance_km":
                     "Distancia (km)",
@@ -1228,9 +1184,9 @@ with tab1:
 
 
         display_price[
-            "Coste Cesta (€)"
+            "Precio cesta (€)"
         ] = display_price[
-            "Coste Cesta (€)"
+            "Precio cesta (€)"
         ].round(2)
 
 
@@ -1249,41 +1205,31 @@ with tab1:
 
 
         st.dataframe(
-
             display_price,
-
             use_container_width=True
-
         )
 
 
-# ============================================================
-# TAB 2 — DISTANCIA
-# ============================================================
+    # --------------------------------------------------------
+    # COMPARACIÓN POR DISTANCIA
+    # --------------------------------------------------------
 
-with tab2:
+    st.markdown("---")
 
-    st.markdown(
-        "### 📍 Supermercados ordenados por cercanía"
+    st.subheader(
+        "📍 Comparación por distancia"
     )
-
 
     display_distance = (
 
         df_by_distance[
 
             [
-
                 "supermarket",
-
                 "store_name",
-
                 "distance_km",
-
                 "basket_cost",
-
                 "address"
-
             ]
 
         ]
@@ -1300,7 +1246,7 @@ with tab2:
                 "Distancia (km)",
 
             "basket_cost":
-                "Coste Cesta (€)",
+                "Precio cesta (€)",
 
             "address":
                 "Dirección"
@@ -1318,48 +1264,296 @@ with tab2:
 
 
     display_distance[
-        "Coste Cesta (€)"
+        "Precio cesta (€)"
     ] = display_distance[
-        "Coste Cesta (€)"
+        "Precio cesta (€)"
     ].round(2)
 
 
     st.dataframe(
-
         display_distance,
-
         use_container_width=True
-
     )
 
 
 # ============================================================
-# TAB 3 — PRODUCTOS
+# PÁGINA: VISUALIZATIONS
 # ============================================================
 
-with tab3:
+elif page == "📊 Visualizations":
+
+    st.markdown("---")
+
+    # --------------------------------------------------------
+    # PRICE ANALYSIS
+    # --------------------------------------------------------
+
+    st.subheader(
+        "💶 Price Analysis"
+    )
 
     st.markdown(
-        "### 🔍 Precios unitarios por producto"
+        "Comparison of the selected shopping basket "
+        "across supermarkets."
     )
 
 
-    display_products = pivot_basket.copy()
+    if df_by_price.empty:
+
+        st.info(
+            "No hay datos suficientes para realizar "
+            "la comparación."
+        )
+
+    else:
+
+        chart_data = df_by_price[
+
+            [
+                "supermarket",
+                "basket_cost"
+            ]
+
+        ].copy()
+
+
+        chart_data = chart_data.set_index(
+            "supermarket"
+        )
+
+
+        st.bar_chart(
+            chart_data[
+                "basket_cost"
+            ]
+        )
+
+
+    # --------------------------------------------------------
+    # PRICE BY PRODUCT
+    # --------------------------------------------------------
+
+    st.markdown("---")
+
+    st.subheader(
+        "🔍 Price by Product"
+    )
+
+    st.markdown(
+        "Unit price comparison for the selected products."
+    )
 
 
     display_products = (
-        display_products.round(2)
+        pivot_basket
+        .copy()
+        .round(2)
     )
 
 
     st.dataframe(
-
         display_products,
-
         use_container_width=True
+    )
+
+
+    # --------------------------------------------------------
+    # STORE ANALYSIS
+    # --------------------------------------------------------
+
+    st.markdown("---")
+
+    st.subheader(
+        "🏪 Store Analysis"
+    )
+
+    st.markdown(
+        "Distribution of stores available for each "
+        "supermarket chain."
+    )
+
+
+    store_counts = (
+
+        stores_df[
+            "supermarket"
+        ]
+
+        .value_counts()
 
     )
 
+
+    st.bar_chart(
+        store_counts
+    )
+
+
+    # --------------------------------------------------------
+    # DISTANCE OF THE NEAREST STORE
+    # --------------------------------------------------------
+
+    st.markdown("---")
+
+    st.subheader(
+        "📍 Distance to the nearest store"
+    )
+
+    distance_chart = (
+
+        nearest_stores[
+
+            [
+                "supermarket",
+                "distance_km"
+            ]
+
+        ]
+
+        .copy()
+
+    )
+
+
+    distance_chart = distance_chart.set_index(
+        "supermarket"
+    )
+
+
+    st.bar_chart(
+        distance_chart[
+            "distance_km"
+        ]
+    )
+
+
+# ============================================================
+# PÁGINA: STORES
+# ============================================================
+
+elif page == "📍 Stores":
+
+    st.markdown("---")
+
+    st.subheader(
+        "📍 Supermarkets near your location"
+    )
+
+    st.markdown(
+        "Map showing your location and the 10 nearest supermarkets."
+    )
+
+    # ========================================================
+    # MAP
+    # ========================================================
+
+    supermarket_map = folium.Map(
+        location=[user_lat, user_lon],
+        zoom_start=14
+    )
+
+    # USER LOCATION
+    folium.Marker(
+        location=[user_lat, user_lon],
+        popup="📍 Your location",
+        tooltip="Your location",
+        icon=folium.Icon(
+            color="black",
+            icon="home"
+        )
+    ).add_to(supermarket_map)
+
+
+    # NEAREST 10 SUPERMARKETS
+    for _, store in nearest_stores_map.iterrows():
+
+        supermarket_name = store["supermarket"]
+
+        marker_color = supermarket_colors.get(
+            supermarket_name,
+            "gray"
+        )
+
+        popup_text = (
+            f"<b>{store['name']}</b><br>"
+            f"Supermarket: {store['supermarket']}<br>"
+            f"Distance: {store['distance_km']:.2f} km<br>"
+            f"Address: {store['address']}"
+        )
+
+        folium.Marker(
+            location=[
+                store["lat"],
+                store["lon"]
+            ],
+            popup=folium.Popup(
+                popup_text,
+                max_width=300
+            ),
+            tooltip=(
+                f"{store['supermarket']} - "
+                f"{store['distance_km']:.2f} km"
+            ),
+            icon=folium.Icon(
+                color=marker_color,
+                icon="shopping-cart",
+                prefix="fa"
+            )
+        ).add_to(supermarket_map)
+
+    st.markdown(
+        """
+        **Leyenda**
+
+        🔴 Dia &nbsp;&nbsp;
+        🟢 Mercadona &nbsp;&nbsp;
+        🔵 Aldi &nbsp;&nbsp;
+        🟠 Alcampo &nbsp;&nbsp;
+        🟣 Ahorramás
+        """
+    )
+
+    st_folium(
+        supermarket_map,
+        width=None,
+        height=550
+    )
+
+    # ========================================================
+    # TABLE
+    # ========================================================
+
+    st.markdown("---")
+
+    st.subheader(
+        "🏪 Nearest supermarkets"
+    )
+
+    display_nearest = (
+        nearest_stores_map[
+            [
+                "supermarket",
+                "name",
+                "distance_km",
+                "address"
+            ]
+        ]
+        .rename(columns={
+            "supermarket": "Supermarket",
+            "name": "Store",
+            "distance_km": "Distance (km)",
+            "address": "Address"
+        })
+    )
+
+    display_nearest["Distance (km)"] = (
+        display_nearest["Distance (km)"].round(2)
+    )
+
+    st.dataframe(
+        display_nearest,
+        use_container_width=True
+    )
 
 # ============================================================
 # INFORMACIÓN TÉCNICA
@@ -1428,7 +1622,6 @@ with st.expander(
 # ============================================================
 
 st.markdown("---")
-
 
 st.caption(
 

@@ -1,3 +1,5 @@
+# ESTO ES PARA COMPROBAR SI FUNCIONA, LUEGO HABRA QUE HACERLO MODO MAPA ETC
+# PARA CONSEGUIR LOS STORES, EJECUTAR EN LA TERMINAL: python src/get_stores.py
 import requests
 import pandas as pd
 from pathlib import Path
