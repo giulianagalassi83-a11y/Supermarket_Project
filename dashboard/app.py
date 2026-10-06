@@ -681,6 +681,20 @@ st.sidebar.markdown("---")
 # SIDEBAR
 # ============================================================
 
+st.sidebar.markdown("---")
+
+max_distance = st.sidebar.slider(
+    "📏 Distancia máxima",
+    min_value=0.1,
+    max_value=5.0,
+    value=1.0,
+    step=0.1
+)
+
+st.sidebar.caption(
+    f"Mostrando supermercados hasta {max_distance:.1f} km"
+)
+
 st.sidebar.header(
     "📍 Tu Dirección"
 )
@@ -794,6 +808,15 @@ nearest_stores_map = get_nearest_stores_overall(
     stores_df,
     n=10
 )
+
+# Filtrar por la distancia máxima seleccionada
+nearest_stores = nearest_stores[
+    nearest_stores["distance_km"] <= max_distance
+].copy()
+
+nearest_stores_map = nearest_stores_map[
+    nearest_stores_map["distance_km"] <= max_distance
+].copy()
 
 if nearest_stores.empty:
 
