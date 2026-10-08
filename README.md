@@ -28,8 +28,9 @@ supermarket_project/
 │   └── get_stores.py         # Extractor de ubicaciones vía Overpass API (OpenStreetMap)
 │
 └── README.md
+```
 
-⚙️ Flujo de Trabajo (Pipeline)
+## ⚙️ Flujo de Trabajo (Pipeline)
 El proyecto sigue una metodología rigurosa dividida en fases de ingeniería de datos:
 
 Web Scraping Automatizado:
@@ -56,7 +57,7 @@ Capa PROCESSED:
 
 Se almacenan los datasets limpios en data/processed/ listos para el análisis conjunto.
 
-🛠️ Componentes Principales
+## 🛠️ Componentes Principales
 1. Scrapers por Supermercado
 DIA: Automatización basada en Selenium con scroll interno para la carga completa de tarjetas de producto y extracción de precios por unidad/kilo.
 
@@ -70,7 +71,7 @@ Módulo encargado de mapear variantes de unidades de medida heterogéneas (como 
 3. Localizador Geográfico (src/get_stores.py)
 Utiliza la API de Overpass (OpenStreetMap) para extraer las coordenadas geográficas (lat, lon) y direcciones postales de los establecimientos físicos de las 5 cadenas en la Comunidad de Madrid, filtrando exclusivamente los nodos etiquetados como supermercados comerciales.
 
-📊 Análisis y Comparativa Conjunta
+## 📊 Análisis y Comparativa Conjunta
 Una vez unificados los datasets, el sistema permite realizar consultas analíticas avanzadas como:
 
 Comparativa de precios por producto y unidad entre competidores.

@@ -1,7 +1,11 @@
 # Virtual Environments
 venv/
+.venv/
 env/
+.env
 ENV/
+
+ROADMAP.md
 
 # Python and caché
 __pycache__/
