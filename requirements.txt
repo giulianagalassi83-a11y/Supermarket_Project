@@ -1,0 +1,16 @@
+# Data processing
+pandas>=2.2
+numpy>=1.26
+
+# Scraping
+requests>=2.32
+beautifulsoup4>=4.12
+selenium>=4.20
+
+# Dashboard
+streamlit>=1.38
+folium>=0.17
+streamlit-folium>=0.22
+
+# Jupyter kernel for running the notebooks in VS Code
+ipykernel>=6.29
