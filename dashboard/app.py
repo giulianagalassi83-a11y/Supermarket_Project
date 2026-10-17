@@ -89,7 +89,13 @@ def load_data():
             PROCESSED_DIR / "alcampo_products.csv",
 
         "ahorramas":
-            PROCESSED_DIR / "ahorramas_products.csv"
+            PROCESSED_DIR / "ahorramas_products.csv",
+
+        "bm":
+            PROCESSED_DIR / "bm_products.csv",
+
+        "consum":
+            PROCESSED_DIR / "consum_products.csv"
 
     }
 
@@ -129,7 +135,13 @@ def load_data():
                             "Alcampo",
 
                         "ahorramas":
-                            "Ahorramás"
+                            "Ahorramás",
+                        
+                        "bm":
+                            "Bm",
+
+                        "consum":
+                            "Consum"
 
                     }
 
@@ -657,7 +669,9 @@ supermarket_colors = {
     "Mercadona": "green",
     "Aldi": "blue",
     "Alcampo": "orange",
-    "Ahorramás": "purple"
+    "Ahorramás": "purple",
+    "Bm": "beige",        
+    "Consum": "brown"     
 }
 
 # ============================================================
@@ -1532,7 +1546,9 @@ elif page == "📍 Stores":
         🟢 Mercadona &nbsp;&nbsp;
         🔵 Aldi &nbsp;&nbsp;
         🟠 Alcampo &nbsp;&nbsp;
-        🟣 Ahorramás
+        🟣 Ahorramás &nbsp;&nbsp;
+        🟡 BM &nbsp;&nbsp;
+        🟤 Consum
         """
     )
 

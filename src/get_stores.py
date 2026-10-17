@@ -50,9 +50,9 @@ def get_madrid_supermarkets():
     [out:json][timeout:120];
 
     (
-        nwr["shop"="supermarket"]["brand"~"Mercadona|DIA|ALDI|Alcampo|Ahorramás|Ahorramas",i](40.20,-4.00,40.60,-3.40);
+        nwr["shop"="supermarket"]["brand"~"Mercadona|DIA|ALDI|Alcampo|Ahorramás|Ahorramas|BM|Consum",i](40.20,-4.00,40.60,-3.40);
 
-        nwr["shop"="supermarket"]["name"~"Mercadona|DIA|ALDI|Alcampo|Ahorramás|Ahorramas",i](40.20,-4.00,40.60,-3.40);
+        nwr["shop"="supermarket"]["name"~"Mercadona|DIA|ALDI|Alcampo|Ahorramás|Ahorramas|BM|Consum",i](40.20,-4.00,40.60,-3.40);
     );
 
     out center tags;
@@ -156,6 +156,19 @@ def identify_chain(name):
 
     if re.search(r"\bdia\b", name):
         return "Dia"
+
+
+    # --------------------------------------------------------
+    # BM Supermercados
+    # --------------------------------------------------------
+    if re.search(r"\bbm\b", name) or "supermercados bm" in name:
+        return "Bm"
+
+    # --------------------------------------------------------
+    # Consum
+    # --------------------------------------------------------
+    if "consum" in name:
+        return "Consum"
 
     return None
 
