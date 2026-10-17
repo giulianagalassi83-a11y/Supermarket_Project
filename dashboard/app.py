@@ -38,30 +38,14 @@ PROCESSED_DIR = (
     / "processed"
 )
 
-STORES_FILE = (
-    BASE_DIR
-    / "data"
-    / "stores_madrid.csv"
-)
 
-
-# Comprobamos que existen las carpetas/archivos necesarios
+# Comprobamos que existe la carpeta de datos necesarios
 
 if not PROCESSED_DIR.exists():
 
     st.error(
         f"No se encuentra la carpeta de datos en: "
         f"{PROCESSED_DIR}"
-    )
-
-    st.stop()
-
-
-if not STORES_FILE.exists():
-
-    st.error(
-        f"No se encuentra el archivo de supermercados: "
-        f"{STORES_FILE}"
     )
 
     st.stop()
@@ -136,7 +120,7 @@ def load_data():
 
                         "ahorramas":
                             "Ahorramás",
-                        
+
                         "bm":
                             "Bm",
 
@@ -291,160 +275,7 @@ if df.empty:
 
 
 # ============================================================
-# CARGAR SUPERMERCADOS DE OPENSTREETMAP
-# ============================================================
-
-@st.cache_data
-def load_stores():
-
-    stores = pd.read_csv(
-        STORES_FILE
-    )
-
-
-    # --------------------------------------------------------
-    # NORMALIZAR NOMBRES
-    # --------------------------------------------------------
-
-    if "supermarket" in stores.columns:
-
-        stores["supermarket"] = (
-            stores["supermarket"]
-            .astype(str)
-            .str.strip()
-        )
-
-
-    # --------------------------------------------------------
-    # CONVERTIR COORDENADAS A NUMÉRICAS
-    # --------------------------------------------------------
-
-    stores["lat"] = pd.to_numeric(
-        stores["lat"],
-        errors="coerce"
-    )
-
-    stores["lon"] = pd.to_numeric(
-        stores["lon"],
-        errors="coerce"
-    )
-
-
-    # Eliminamos establecimientos
-    # sin coordenadas válidas.
-
-    stores = stores.dropna(
-        subset=[
-            "lat",
-            "lon"
-        ]
-    ).copy()
-
-
-    return stores
-
-
-stores_df = load_stores()
-
-
-if stores_df.empty:
-
-    st.error(
-        "El archivo stores_madrid.csv está vacío "
-        "o no contiene coordenadas válidas."
-    )
-
-    st.stop()
-
-
-# ============================================================
-# NORMALIZAR NOMBRES DE CADENAS
-# ============================================================
-
-def normalize_chain_name(name):
-
-    name = (
-        str(name)
-        .lower()
-        .strip()
-    )
-
-
-    name = (
-        name
-        .replace("á", "a")
-        .replace("é", "e")
-        .replace("í", "i")
-        .replace("ó", "o")
-        .replace("ú", "u")
-    )
-
-
-    return name
-
-
-# ============================================================
-# HAVERSINE
-# ============================================================
-
-def haversine(
-    lat1,
-    lon1,
-    lat2,
-    lon2
-):
-
-    """
-    Calcula la distancia aproximada en kilómetros
-    entre dos puntos geográficos.
-    """
-
-    R = 6371.0
-
-
-    dlat = np.radians(
-        lat2 - lat1
-    )
-
-
-    dlon = np.radians(
-        lon2 - lon1
-    )
-
-
-    a = (
-
-        np.sin(dlat / 2) ** 2
-
-        +
-
-        np.cos(
-            np.radians(lat1)
-        )
-
-        *
-
-        np.cos(
-            np.radians(lat2)
-        )
-
-        *
-
-        np.sin(dlon / 2) ** 2
-
-    )
-
-
-    c = 2 * np.arcsin(
-        np.sqrt(a)
-    )
-
-
-    return R * c
-
-
-# ============================================================
-# GEOCODIFICAR DIRECCIÓN CON NOMINATIM
+# GEOCODIFICAR DIRECCIÓN CON NOMINATIM (DEFINIDA ANTES DE USARSE)
 # ============================================================
 
 @st.cache_data(ttl=3600)
@@ -453,7 +284,6 @@ def geocode_address(address):
     url = (
         "https://nominatim.openstreetmap.org/search"
     )
-
 
     params = {
 
@@ -467,14 +297,12 @@ def geocode_address(address):
 
     }
 
-
     headers = {
 
         "User-Agent":
             "UC3M-Supermarket-Project/1.0"
 
     }
-
 
     try:
 
@@ -490,20 +318,15 @@ def geocode_address(address):
 
         )
 
-
         response.raise_for_status()
 
-
         results = response.json()
-
 
         if not results:
 
             return None
 
-
         result = results[0]
-
 
         return {
 
@@ -518,7 +341,6 @@ def geocode_address(address):
 
         }
 
-
     except Exception as e:
 
         st.error(
@@ -529,7 +351,168 @@ def geocode_address(address):
 
 
 # ============================================================
-# BUSCAR LA TIENDA MÁS CERCANA DE CADA CADENA
+# CARGAR SUPERMERCADOS DINÁMICAMENTE SEGÚN LA UBICACIÓN
+# ============================================================
+
+@st.cache_data(ttl=3600, show_spinner=False)
+def load_stores_dynamic(user_lat, user_lon, radius_deg=0.15):
+    """
+    Consulta Overpass API dinámicamente en un radio alrededor 
+    de la ubicación del usuario (válido para toda España sin timeouts).
+    """
+    south = user_lat - radius_deg
+    north = user_lat + radius_deg
+    west = user_lon - radius_deg
+    east = user_lon + radius_deg
+
+    overpass_url = "https://overpass-api.de/api/interpreter"
+    
+    query = f"""
+    [out:json][timeout:60];
+    (
+        nwr["shop"="supermarket"]["brand"~"Mercadona|DIA|ALDI|Alcampo|Ahorramás|Ahorramas|BM|Consum",i]({south},{west},{north},{east});
+        nwr["shop"="supermarket"]["name"~"Mercadona|DIA|ALDI|Alcampo|Ahorramás|Ahorramas|BM|Consum",i]({south},{west},{north},{east});
+    );
+    out center tags;
+    """
+
+    try:
+        response = requests.post(
+            overpass_url,
+            data=query.encode("utf-8"),
+            headers={"User-Agent": "UC3M-Supermarket-Project/1.0"},
+            timeout=70
+        )
+        response.raise_for_status()
+        data = response.json()
+        elements = data.get("elements", [])
+        
+        stores = []
+        for element in elements:
+            tags = element.get("tags", {})
+            if tags.get("shop", "") != "supermarket":
+                continue
+                
+            name = tags.get("name") or tags.get("brand") or tags.get("operator")
+            if not name:
+                continue
+                
+            # Identificar cadena
+            name_lower = str(name).lower()
+            chain = None
+            if "mercadona" in name_lower: chain = "Mercadona"
+            elif "ahorramas" in name_lower: chain = "Ahorramás"
+            elif "alcampo" in name_lower: chain = "Alcampo"
+            elif re.search(r"\baldi\b", name_lower): chain = "Aldi"
+            elif re.search(r"\bdia\b", name_lower): chain = "Dia"
+            elif re.search(r"\bbm\b", name_lower) or "supermercados bm" in name_lower: chain = "Bm"
+            elif "consum" in name_lower: chain = "Consum"
+            
+            if chain is None:
+                continue
+                
+            # Coordenadas
+            if "lat" in element and "lon" in element:
+                lat, lon = element["lat"], element["lon"]
+            elif "center" in element:
+                lat, lon = element["center"]["lat"], element["center"]["lon"]
+            else:
+                continue
+                
+            # Dirección limpia (evita NaN)
+            street = tags.get("addr:street", "")
+            house_number = tags.get("addr:housenumber", "")
+            postcode = tags.get("addr:postcode", "")
+            city = tags.get("addr:city", "")
+            
+            address_parts = [p for p in [street, house_number, postcode, city] if p]
+            address = ", ".join(str(x).strip() for x in address_parts)
+            
+            if not address:
+                address = f"Establecimiento {name} (Dirección no especificada)"
+
+            stores.append({
+                "supermarket": chain,
+                "name": name,
+                "address": address,
+                "lat": float(lat),
+                "lon": float(lon)
+            })
+            
+        df_stores = pd.DataFrame(stores)
+        if df_stores.empty:
+            return pd.DataFrame()
+            
+        df_stores = df_stores.drop_duplicates(subset=["supermarket", "lat", "lon"]).reset_index(drop=True)
+        return df_stores
+
+    except Exception:
+        return pd.DataFrame()
+
+
+# ============================================================
+# NORMALIZAR NOMBRES DE CADENAS Y HAVERSINE
+# ============================================================
+
+def normalize_chain_name(name):
+
+    name = (
+        str(name)
+        .lower()
+        .strip()
+    )
+
+    name = (
+        name
+        .replace("á", "a")
+        .replace("é", "e")
+        .replace("í", "i")
+        .replace("ó", "o")
+        .replace("ú", "u")
+    )
+
+    return name
+
+
+def haversine(
+    lat1,
+    lon1,
+    lat2,
+    lon2
+):
+    R = 6371.0
+
+    dlat = np.radians(
+        lat2 - lat1
+    )
+
+    dlon = np.radians(
+        lon2 - lon1
+    )
+
+    a = (
+        np.sin(dlat / 2) ** 2
+        +
+        np.cos(
+            np.radians(lat1)
+        )
+        *
+        np.cos(
+            np.radians(lat2)
+        )
+        *
+        np.sin(dlon / 2) ** 2
+    )
+
+    c = 2 * np.arcsin(
+        np.sqrt(a)
+    )
+
+    return R * c
+
+
+# ============================================================
+# FUNCIONES DE CÁLCULO DE TIENDAS CERCANAS
 # ============================================================
 
 def get_nearest_stores(
@@ -537,13 +520,7 @@ def get_nearest_stores(
     user_lon,
     stores
 ):
-
     nearest_stores = []
-
-
-    # --------------------------------------------------------
-    # RECORREMOS CADA CADENA
-    # --------------------------------------------------------
 
     for supermarket in stores[
         "supermarket"
@@ -553,40 +530,19 @@ def get_nearest_stores(
             stores["supermarket"] == supermarket
         ].copy()
 
-
         if chain_stores.empty:
-
             continue
 
-
-        # ----------------------------------------------------
-        # CALCULAR DISTANCIA A TODAS LAS TIENDAS
-        # ----------------------------------------------------
-
         chain_stores["distance_km"] = chain_stores.apply(
-
             lambda row:
-
             haversine(
-
                 user_lat,
-
                 user_lon,
-
                 row["lat"],
-
                 row["lon"]
-
             ),
-
             axis=1
-
         )
-
-
-        # ----------------------------------------------------
-        # ELEGIR LA MÁS CERCANA
-        # ----------------------------------------------------
 
         nearest = chain_stores.loc[
             chain_stores[
@@ -594,45 +550,33 @@ def get_nearest_stores(
             ].idxmin()
         ]
 
-
         nearest_stores.append({
-
             "supermarket":
                 supermarket,
-
             "name":
                 nearest.get(
                     "name",
                     supermarket
                 ),
-
             "address":
                 nearest.get(
                     "address",
                     ""
                 ),
-
             "lat":
                 nearest["lat"],
-
             "lon":
                 nearest["lon"],
-
             "distance_km":
                 nearest["distance_km"]
-
         })
 
-
     if not nearest_stores:
-
         return pd.DataFrame()
-
 
     result = pd.DataFrame(
         nearest_stores
     )
-
 
     result = result.sort_values(
         "distance_km"
@@ -640,11 +584,10 @@ def get_nearest_stores(
         drop=True
     )
 
-
     return result
 
-def get_nearest_stores_overall(user_lat, user_lon, stores, n=10):
 
+def get_nearest_stores_overall(user_lat, user_lon, stores, n=10):
     stores = stores.copy()
 
     stores["distance_km"] = haversine(
@@ -671,11 +614,12 @@ supermarket_colors = {
     "Alcampo": "orange",
     "Ahorramás": "purple",
     "Bm": "beige",        
-    "Consum": "brown"     
+    "Consum": "lightgray"    
 }
 
+
 # ============================================================
-# NAVEGACIÓN
+# NAVEGACIÓN Y BARRA LATERAL
 # ============================================================
 
 st.sidebar.title("🛒 Supermarket Optimizer")
@@ -688,12 +632,6 @@ page = st.sidebar.radio(
         "📍 Stores"
     ]
 )
-
-st.sidebar.markdown("---")
-
-# ============================================================
-# SIDEBAR
-# ============================================================
 
 st.sidebar.markdown("---")
 
@@ -713,96 +651,75 @@ st.sidebar.header(
     "📍 Tu Dirección"
 )
 
-
 user_address_input = st.sidebar.text_input(
-
     "Escribe tu calle y localidad:",
-
     value=(
         "Avenida de la Universidad, "
         "30, Leganés"
     )
-
 )
 
-
 st.sidebar.markdown("---")
-
 
 st.sidebar.header(
     "📝 Tu Lista de la Compra"
 )
 
-
 all_items = sorted(
-
     df[
         "searched_item"
     ]
     .dropna()
     .unique()
-
 )
 
-
 selected_items = st.sidebar.multiselect(
-
     "Selecciona los productos:",
-
     options=all_items,
-
     default=(
-
         all_items[:3]
-
         if len(all_items) >= 3
-
         else all_items
-
     )
-
 )
 
 
 # ============================================================
-# GEOCODIFICAR DIRECCIÓN
+# GEOCODIFICACIÓN Y CARGA DINÁMICA DE TIENDAS
 # ============================================================
 
 location = geocode_address(
     user_address_input
 )
 
-
 if location is None:
-
     st.error(
         "❌ No hemos podido encontrar esa dirección."
     )
-
-
     st.info(
-
         "Prueba escribiendo la calle, número "
         "y localidad. Por ejemplo: "
         "'Avenida de la Universidad, 30, Leganés'."
-
     )
-
-
     st.stop()
 
-
 user_lat = location["lat"]
-
 user_lon = location["lon"]
 
-
 st.sidebar.success(
-
     f"📍 Ubicación encontrada:\n\n"
     f"{location['display_name']}"
-
 )
+
+# Carga dinámica usando las coordenadas del usuario
+with st.spinner("Searching for your nearest supermarkets... 🔎"):
+    stores_df = load_stores_dynamic(user_lat, user_lon)
+
+if stores_df.empty:
+    st.error(
+        "⚠️ No se han encontrado supermercados en las inmediaciones de esta dirección en OpenStreetMap. Prueba con otra ubicación."
+    )
+    st.stop()
 
 
 # ============================================================
@@ -810,7 +727,6 @@ st.sidebar.success(
 # ============================================================
 
 nearest_stores = get_nearest_stores(
-
     user_lat,
     user_lon,
     stores_df
@@ -833,11 +749,9 @@ nearest_stores_map = nearest_stores_map[
 ].copy()
 
 if nearest_stores.empty:
-
     st.error(
-        "❌ No se han encontrado supermercados."
+        "❌ No se han encontrado supermercados dentro de la distancia máxima seleccionada."
     )
-
     st.stop()
 
 
@@ -846,12 +760,10 @@ if nearest_stores.empty:
 # ============================================================
 
 if not selected_items:
-
     st.warning(
         "⚠️ Selecciona al menos un producto "
         "en la barra lateral."
     )
-
     st.stop()
 
 
@@ -860,55 +772,31 @@ if not selected_items:
 # ============================================================
 
 shopping_df = df[
-
     df[
         "searched_item"
     ].isin(
         selected_items
     )
-
 ].copy()
 
-
-# Para cada supermercado y producto
-# utilizamos la mediana del precio unitario.
-
 basket_costs = (
-
     shopping_df
-
     .groupby(
-
         [
             "supermarket",
             "searched_item"
         ]
-
     )[
-
         "price_per_unit"
-
     ]
-
     .median()
-
     .reset_index()
-
 )
 
-
-# ============================================================
-# TABLA PRODUCTO × SUPERMERCADO
-# ============================================================
-
 pivot_basket = basket_costs.pivot(
-
     index="searched_item",
-
     columns="supermarket",
-
     values="price_per_unit"
-
 )
 
 
@@ -918,49 +806,16 @@ pivot_basket = basket_costs.pivot(
 
 results_data = []
 
-
 for _, store in nearest_stores.iterrows():
-
-    supermarket = store[
-        "supermarket"
-    ]
-
-
-    distance = store[
-        "distance_km"
-    ]
-
-
-    address = store[
-        "address"
-    ]
-
-
-    store_name = store[
-        "name"
-    ]
-
-
-    # --------------------------------------------------------
-    # PRECIOS DE LA CADENA
-    # --------------------------------------------------------
+    supermarket = store["supermarket"]
+    distance = store["distance_km"]
+    address = store["address"]
+    store_name = store["name"]
 
     if supermarket in pivot_basket.columns:
-
-        prices = pivot_basket[
-            supermarket
-        ]
-
+        prices = pivot_basket[supermarket]
     else:
-
-        prices = pd.Series(
-            dtype=float
-        )
-
-
-    # --------------------------------------------------------
-    # PRODUCTOS DISPONIBLES
-    # --------------------------------------------------------
+        prices = pd.Series(dtype=float)
 
     available_products = (
         prices
@@ -968,99 +823,53 @@ for _, store in nearest_stores.iterrows():
         .shape[0]
     )
 
-
     total_products = len(
         selected_items
     )
 
-
-    # --------------------------------------------------------
-    # COBERTURA
-    # --------------------------------------------------------
-
     coverage = (
-
         available_products
-
         /
-
         total_products
-
         *
-
         100
-
     )
 
-
-    # --------------------------------------------------------
-    # COSTE DE LA CESTA
-    # --------------------------------------------------------
-
     if available_products > 0:
-
         basket_cost = prices.sum()
-
     else:
-
         basket_cost = np.nan
 
-
-    # --------------------------------------------------------
-    # SCORE
-    # --------------------------------------------------------
-
     if (
-
         not np.isnan(basket_cost)
-
         and
-
         available_products
         == total_products
-
     ):
-
         score = (
-
             basket_cost
-
             +
-
             distance * 0.50
-
         )
-
     else:
-
         score = np.nan
 
-
     results_data.append({
-
         "supermarket":
             supermarket,
-
         "store_name":
             store_name,
-
         "basket_cost":
             basket_cost,
-
         "distance_km":
             distance,
-
         "coverage":
             coverage,
-
         "address":
             address,
-
         "score":
             score
-
     })
-
 
 res_df = pd.DataFrame(
     results_data
@@ -1072,47 +881,34 @@ res_df = pd.DataFrame(
 # ============================================================
 
 df_by_distance = (
-
     res_df
-
     .sort_values(
         "distance_km"
     )
-
 )
 
-
 df_by_price = (
-
     res_df
-
     .dropna(
         subset=[
             "basket_cost"
         ]
     )
-
     .sort_values(
         "basket_cost"
     )
-
 )
 
-
 df_by_smart = (
-
     res_df
-
     .dropna(
         subset=[
             "score"
         ]
     )
-
     .sort_values(
         "score"
     )
-
 )
 
 
@@ -1140,34 +936,21 @@ if page == "🏠 Overview":
         best_option = df_by_smart.iloc[0]
 
         st.success(
-
             f"🌟 **{best_option['supermarket']}** "
             f"es la opción recomendada.\n\n"
-
             f"🏪 **Tienda:** "
             f"{best_option['store_name']}\n\n"
-
             f"📍 **Dirección:** "
             f"{best_option['address']}\n\n"
-
             f"📏 **Distancia:** "
             f"{best_option['distance_km']:.2f} km\n\n"
-
             f"💶 **Precio de la cesta:** "
             f"{best_option['basket_cost']:.2f} €\n\n"
-
             f"📦 **Cobertura de productos:** "
             f"{best_option['coverage']:.0f}%\n\n"
-
             f"⭐ **Score:** "
             f"{best_option['score']:.2f}"
-
         )
-
-
-    # --------------------------------------------------------
-    # COMPARACIÓN POR PRECIO
-    # --------------------------------------------------------
 
     st.markdown("---")
 
@@ -1185,9 +968,7 @@ if page == "🏠 Overview":
     else:
 
         display_price = (
-
             df_by_price[
-
                 [
                     "supermarket",
                     "store_name",
@@ -1195,44 +976,32 @@ if page == "🏠 Overview":
                     "distance_km",
                     "coverage"
                 ]
-
             ]
-
             .rename(columns={
-
                 "supermarket":
                     "Supermercado",
-
                 "store_name":
                     "Tienda",
-
                 "basket_cost":
                     "Precio cesta (€)",
-
                 "distance_km":
                     "Distancia (km)",
-
                 "coverage":
                     "Cobertura (%)"
-
             })
-
         )
 
-
         display_price[
             "Precio cesta (€)"
         ] = display_price[
             "Precio cesta (€)"
         ].round(2)
 
-
         display_price[
             "Distancia (km)"
         ] = display_price[
             "Distancia (km)"
         ].round(2)
-
 
         display_price[
             "Cobertura (%)"
@@ -1240,16 +1009,10 @@ if page == "🏠 Overview":
             "Cobertura (%)"
         ].round(0)
 
-
         st.dataframe(
             display_price,
             use_container_width=True
         )
-
-
-    # --------------------------------------------------------
-    # COMPARACIÓN POR DISTANCIA
-    # --------------------------------------------------------
 
     st.markdown("---")
 
@@ -1258,9 +1021,7 @@ if page == "🏠 Overview":
     )
 
     display_distance = (
-
         df_by_distance[
-
             [
                 "supermarket",
                 "store_name",
@@ -1268,44 +1029,32 @@ if page == "🏠 Overview":
                 "basket_cost",
                 "address"
             ]
-
         ]
-
         .rename(columns={
-
             "supermarket":
                 "Supermercado",
-
             "store_name":
                 "Tienda",
-
             "distance_km":
                 "Distancia (km)",
-
             "basket_cost":
                 "Precio cesta (€)",
-
             "address":
                 "Dirección"
-
         })
-
     )
 
-
     display_distance[
         "Distancia (km)"
     ] = display_distance[
         "Distancia (km)"
     ].round(2)
 
-
     display_distance[
         "Precio cesta (€)"
     ] = display_distance[
         "Precio cesta (€)"
     ].round(2)
-
 
     st.dataframe(
         display_distance,
@@ -1321,10 +1070,6 @@ elif page == "📊 Visualizations":
 
     st.markdown("---")
 
-    # --------------------------------------------------------
-    # PRICE ANALYSIS
-    # --------------------------------------------------------
-
     st.subheader(
         "💶 Price Analysis"
     )
@@ -1333,7 +1078,6 @@ elif page == "📊 Visualizations":
         "Comparison of the selected shopping basket "
         "across supermarkets."
     )
-
 
     if df_by_price.empty:
 
@@ -1345,30 +1089,21 @@ elif page == "📊 Visualizations":
     else:
 
         chart_data = df_by_price[
-
             [
                 "supermarket",
                 "basket_cost"
             ]
-
         ].copy()
-
 
         chart_data = chart_data.set_index(
             "supermarket"
         )
-
 
         st.bar_chart(
             chart_data[
                 "basket_cost"
             ]
         )
-
-
-    # --------------------------------------------------------
-    # PRICE BY PRODUCT
-    # --------------------------------------------------------
 
     st.markdown("---")
 
@@ -1380,23 +1115,16 @@ elif page == "📊 Visualizations":
         "Unit price comparison for the selected products."
     )
 
-
     display_products = (
         pivot_basket
         .copy()
         .round(2)
     )
 
-
     st.dataframe(
         display_products,
         use_container_width=True
     )
-
-
-    # --------------------------------------------------------
-    # STORE ANALYSIS
-    # --------------------------------------------------------
 
     st.markdown("---")
 
@@ -1409,26 +1137,16 @@ elif page == "📊 Visualizations":
         "supermarket chain."
     )
 
-
     store_counts = (
-
         stores_df[
             "supermarket"
         ]
-
         .value_counts()
-
     )
-
 
     st.bar_chart(
         store_counts
     )
-
-
-    # --------------------------------------------------------
-    # DISTANCE OF THE NEAREST STORE
-    # --------------------------------------------------------
 
     st.markdown("---")
 
@@ -1437,25 +1155,18 @@ elif page == "📊 Visualizations":
     )
 
     distance_chart = (
-
         nearest_stores[
-
             [
                 "supermarket",
                 "distance_km"
             ]
-
         ]
-
         .copy()
-
     )
-
 
     distance_chart = distance_chart.set_index(
         "supermarket"
     )
-
 
     st.bar_chart(
         distance_chart[
@@ -1480,16 +1191,11 @@ elif page == "📍 Stores":
         "Map showing your location and the 10 nearest supermarkets."
     )
 
-    # ========================================================
-    # MAP
-    # ========================================================
-
     supermarket_map = folium.Map(
         location=[user_lat, user_lon],
         zoom_start=14
     )
 
-    # USER LOCATION
     folium.Marker(
         location=[user_lat, user_lon],
         popup="📍 Your location",
@@ -1500,8 +1206,6 @@ elif page == "📍 Stores":
         )
     ).add_to(supermarket_map)
 
-
-    # NEAREST 10 SUPERMARKETS
     for _, store in nearest_stores_map.iterrows():
 
         supermarket_name = store["supermarket"]
@@ -1528,7 +1232,7 @@ elif page == "📍 Stores":
                 max_width=300
             ),
             tooltip=(
-                f"{store['supermarket']} - "
+                f"{store['supermarket']} "
                 f"{store['distance_km']:.2f} km"
             ),
             icon=folium.Icon(
@@ -1548,7 +1252,7 @@ elif page == "📍 Stores":
         🟠 Alcampo &nbsp;&nbsp;
         🟣 Ahorramás &nbsp;&nbsp;
         🟡 BM &nbsp;&nbsp;
-        🟤 Consum
+        ⚪ Consum
         """
     )
 
@@ -1557,10 +1261,6 @@ elif page == "📍 Stores":
         width=None,
         height=550
     )
-
-    # ========================================================
-    # TABLE
-    # ========================================================
 
     st.markdown("---")
 
@@ -1594,8 +1294,9 @@ elif page == "📍 Stores":
         use_container_width=True
     )
 
+
 # ============================================================
-# INFORMACIÓN TÉCNICA
+# INFORMACIÓN TÉCNICA Y PIE DE PÁGINA
 # ============================================================
 
 with st.expander(
@@ -1603,68 +1304,34 @@ with st.expander(
 ):
 
     st.markdown(
-
         """
         **1. Dirección**
-
-        La dirección introducida se convierte en
-        coordenadas mediante Nominatim.
+        La dirección introducida se convierte en coordenadas mediante Nominatim.
 
         **2. Localización de supermercados**
-
-        La aplicación utiliza un archivo previamente
-        obtenido mediante OpenStreetMap que contiene
-        establecimientos de las cadenas analizadas
-        en la Comunidad de Madrid.
+        La aplicación busca dinámicamente en tiempo real mediante OpenStreetMap (Overpass API) los establecimientos de las cadenas analizadas alrededor de la ubicación introducida, permitiendo cobertura en toda España.
 
         **3. Selección de establecimientos**
-
-        Para cada cadena se calcula la distancia
-        entre la dirección del usuario y todas sus
-        tiendas disponibles.
-
-        Se selecciona automáticamente la tienda
-        físicamente más cercana.
+        Para cada cadena se calcula la distancia entre la dirección del usuario y todas sus tiendas disponibles en el radio consultado, seleccionando automáticamente la más cercana.
 
         **4. Precios**
-
-        Los precios proceden de los datos obtenidos
-        mediante web scraping.
+        Los precios proceden de los datos obtenidos mediante web scraping y APIs.
 
         **5. Distancia**
-
-        La distancia geográfica se calcula mediante
-        la fórmula de Haversine.
+        La distancia geográfica se calcula mediante la fórmula de Haversine.
 
         **6. Recomendación**
-
-        Cuando una cadena dispone de todos los
-        productos seleccionados, se calcula:
-
+        Cuando una cadena dispone de todos los productos seleccionados, se calcula:
         `score = precio_cesta + 0.50 × distancia_km`
 
-        Cuanto menor sea el score, mejor es la
-        combinación entre precio y proximidad.
-
         **7. Cobertura**
-
-        También mostramos qué porcentaje de los
-        productos seleccionados tiene datos disponibles
-        para cada supermercado.
+        Porcentaje de los productos seleccionados con datos disponibles para cada supermercado.
         """
-
     )
-
-
-# ============================================================
-# PIE DE PÁGINA
-# ============================================================
 
 st.markdown("---")
 
 st.caption(
-
     "Datos de localización: OpenStreetMap contributors. "
-    "Precios: datos obtenidos mediante web scraping."
-
+    "Precios: datos obtenidos mediante web scraping y APIs."
 )
