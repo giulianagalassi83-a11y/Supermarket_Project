@@ -7,6 +7,7 @@ import requests
 import re
 import folium
 from streamlit_folium import st_folium
+from itertools import combinations, permutations
 
 
 # ============================================================
@@ -54,6 +55,13 @@ if not PROCESSED_DIR.exists():
 # ============================================================
 # CARGAR DATOS DE PRODUCTOS
 # ============================================================
+
+UNIT_MAPPING = {
+    "L": "LITRO", "LTR": "LITRO", "LITRO": "LITRO", "LITROS": "LITRO",
+    "KG": "KILO", "KGS": "KILO", "KILO": "KILO", "KILOS": "KILO",
+    "UD": "UNIDAD", "UDS": "UNIDAD", "UNIDAD": "UNIDAD", "UNIDADES": "UNIDAD",
+    "DOCENA": "DOCENA", "DOCENAS": "DOCENA",
+}
 
 @st.cache_data
 def load_data():
@@ -250,6 +258,14 @@ def load_data():
     # --------------------------------------------------------
     # ELIMINAR VALORES IMPOSIBLES
     # --------------------------------------------------------
+    # Normalizar unidades y pasar docena -> unidad
+    all_products["unit"] = (
+        all_products["unit"].astype("string").str.strip().str.upper().replace(UNIT_MAPPING)
+    )
+    is_dozen = all_products["unit"] == "DOCENA"
+    all_products.loc[is_dozen, "price_per_unit"] = all_products.loc[is_dozen, "price_per_unit"] / 12
+    all_products.loc[is_dozen, "unit"] = "UNIDAD"
+    all_products = all_products.dropna(subset=["unit"])
 
     clean_products = all_products[
         (all_products["price_per_unit"] > 0.05)
@@ -257,6 +273,12 @@ def load_data():
         (all_products["price_per_unit"] <= 50.0)
     ].copy()
 
+
+    # Una única unidad por producto: la más frecuente (así nunca se suma €/L con €/ud)
+    canon = clean_products.groupby("searched_item")["unit"].agg(lambda s: s.mode().iat[0])
+    clean_products = clean_products[
+        clean_products["unit"] == clean_products["searched_item"].map(canon)
+    ].copy()
 
     return clean_products
 
@@ -272,6 +294,8 @@ if df.empty:
     )
 
     st.stop()
+
+canon_units = df.groupby("searched_item")["unit"].first()
 
 
 # ============================================================
@@ -342,12 +366,7 @@ def geocode_address(address):
         }
 
     except Exception as e:
-
-        st.error(
-            f"Error al buscar la dirección: {e}"
-        )
-
-        return None
+        raise RuntimeError(f"Nominatim ha fallado: {e}")
 
 
 # ============================================================
@@ -446,8 +465,8 @@ def load_stores_dynamic(user_lat, user_lon, radius_deg=0.15):
         df_stores = df_stores.drop_duplicates(subset=["supermarket", "lat", "lon"]).reset_index(drop=True)
         return df_stores
 
-    except Exception:
-        return pd.DataFrame()
+    except Exception as e:
+        raise RuntimeError(f"Overpass ha fallado: {e}")
 
 
 # ============================================================
@@ -629,7 +648,8 @@ page = st.sidebar.radio(
     [
         "🏠 Overview",
         "📊 Visualizations",
-        "📍 Stores"
+        "📍 Stores",
+        "🧮 Optimizer"
     ]
 )
 
@@ -683,14 +703,33 @@ selected_items = st.sidebar.multiselect(
     )
 )
 
+st.sidebar.markdown("---")
+st.sidebar.header("⚖️ Cantidades")
+
+quantities = {}
+variants = {}
+
+for item in selected_items:
+    unit_label = canon_units.get(item, "")
+    quantities[item] = st.sidebar.number_input(
+        f"{item} ({unit_label})", min_value=0.1, value=1.0, step=0.5, key=f"qty_{item}"
+    )
+    variants[item] = st.sidebar.text_input(
+        f"Variante de {item} (opcional)", key=f"var_{item}", placeholder="p.ej. semidesnatada"
+    )
+
+cost_per_km = st.sidebar.slider("🚗 Coste de desplazarte (€/km)", 0.0, 0.60, 0.25, 0.05)
+
 
 # ============================================================
 # GEOCODIFICACIÓN Y CARGA DINÁMICA DE TIENDAS
 # ============================================================
 
-location = geocode_address(
-    user_address_input
-)
+try:
+    location = geocode_address(user_address_input)
+except Exception as e:
+    st.error(f"No se pudo contactar con el servicio de direcciones: {e}")
+    st.stop()
 
 if location is None:
     st.error(
@@ -712,8 +751,12 @@ st.sidebar.success(
 )
 
 # Carga dinámica usando las coordenadas del usuario
-with st.spinner("Searching for your nearest supermarkets... 🔎"):
-    stores_df = load_stores_dynamic(user_lat, user_lon)
+try:
+    with st.spinner("Searching for your nearest supermarkets... 🔎"):
+        stores_df = load_stores_dynamic(user_lat, user_lon)
+except Exception as e:
+    st.error(f"{e}. Inténtalo de nuevo en unos segundos.")
+    st.stop()
 
 if stores_df.empty:
     st.error(
@@ -771,13 +814,15 @@ if not selected_items:
 # CALCULAR PRECIO DE LA CESTA
 # ============================================================
 
-shopping_df = df[
-    df[
-        "searched_item"
-    ].isin(
-        selected_items
-    )
-].copy()
+parts = []
+for item in selected_items:
+    sub = df[df["searched_item"] == item]
+    variant = variants.get(item, "").strip()
+    if variant:
+        sub = sub[sub["name"].str.contains(variant, case=False, na=False, regex=False)]
+    parts.append(sub)
+
+shopping_df = pd.concat(parts, ignore_index=True)
 
 basket_costs = (
     shopping_df
@@ -836,7 +881,8 @@ for _, store in nearest_stores.iterrows():
     )
 
     if available_products > 0:
-        basket_cost = prices.sum()
+        valid = prices.dropna()
+        basket_cost = (valid * pd.Series(quantities).reindex(valid.index)).sum()
     else:
         basket_cost = np.nan
 
@@ -849,7 +895,7 @@ for _, store in nearest_stores.iterrows():
         score = (
             basket_cost
             +
-            distance * 0.50
+            distance * 2 * cost_per_km
         )
     else:
         score = np.nan
@@ -910,6 +956,40 @@ df_by_smart = (
         "score"
     )
 )
+
+
+
+def tour_km(user, stops):
+    """Ruta mínima casa -> tiendas -> casa (prueba todos los órdenes; máx. 3 tiendas)."""
+    best = None
+    for perm in permutations(stops):
+        pts = [user, *perm, user]
+        d = sum(haversine(*pts[i], *pts[i + 1]) for i in range(len(pts) - 1))
+        best = d if best is None or d < best else best
+    return best
+
+
+def optimize_stores(pivot, quantities, items, stores, user, cost_per_km, max_stores=3):
+    cost_table = pivot.reindex(items).mul(pd.Series(quantities), axis=0)
+    pos = stores.set_index("supermarket")[["lat", "lon"]]
+    chains = [c for c in pos.index if c in cost_table.columns]
+    rows = []
+    for k in range(1, max_stores + 1):
+        for combo in combinations(chains, k):
+            best_per_item = cost_table[list(combo)].min(axis=1)
+            if best_per_item.isna().any():   # algún producto sin precio en estas tiendas
+                continue
+            km = tour_km(user, [(pos.loc[c, "lat"], pos.loc[c, "lon"]) for c in combo])
+            rows.append({
+                "combo": combo, "n_tiendas": k,
+                "productos_eur": best_per_item.sum(),
+                "ruta_km": km, "viaje_eur": km * cost_per_km,
+            })
+    out = pd.DataFrame(rows)
+    if out.empty:
+        return out, cost_table
+    out["total_eur"] = out["productos_eur"] + out["viaje_eur"]
+    return out.sort_values("total_eur").reset_index(drop=True), cost_table
 
 
 # ============================================================
@@ -1294,6 +1374,55 @@ elif page == "📍 Stores":
         use_container_width=True
     )
 
+# ===========================================================
+# PÁGINA: OPTIMIZER
+# ===========================================================
+elif page == "🧮 Optimizer":
+
+    st.markdown("---")
+    st.subheader("🧮 Mejor combinación de supermercados")
+
+    max_stores = st.slider("Máximo de tiendas a visitar", 1, 3, 2)
+
+    opt, cost_table = optimize_stores(
+        pivot_basket, quantities, selected_items,
+        nearest_stores, (user_lat, user_lon), cost_per_km, max_stores
+    )
+
+    if opt.empty:
+        st.warning("Ninguna combinación de tiendas cubre todos los productos seleccionados.")
+    else:
+        best = opt.iloc[0]
+        combo = list(best["combo"])
+
+        st.success(
+            f"🌟 Mejor opción: **{' + '.join(combo)}** · "
+            f"total **{best['total_eur']:.2f} €** "
+            f"({best['productos_eur']:.2f} € de productos + {best['viaje_eur']:.2f} € de desplazamiento, "
+            f"{best['ruta_km']:.2f} km de ruta)"
+        )
+
+        singles = opt[opt["n_tiendas"] == 1]
+        if not singles.empty:
+            saving = singles["total_eur"].min() - best["total_eur"]
+            st.metric("Ahorro frente a la mejor tienda única", f"{saving:.2f} €")
+
+        detail = pd.DataFrame({
+            "Comprar en": cost_table[combo].idxmin(axis=1),
+            "Coste (€)": cost_table[combo].min(axis=1).round(2),
+        })
+        st.markdown("**Qué comprar en cada tienda**")
+        st.dataframe(detail, use_container_width=True)
+
+        st.markdown("**Otras combinaciones**")
+        show = opt.head(10).copy()
+        show["combo"] = show["combo"].apply(" + ".join)
+        st.dataframe(
+            show[["combo", "productos_eur", "ruta_km", "viaje_eur", "total_eur"]].round(2),
+            use_container_width=True,
+        )
+
+
 
 # ============================================================
 # INFORMACIÓN TÉCNICA Y PIE DE PÁGINA
@@ -1322,7 +1451,7 @@ with st.expander(
 
         **6. Recomendación**
         Cuando una cadena dispone de todos los productos seleccionados, se calcula:
-        `score = precio_cesta + 0.50 × distancia_km`
+        `score = precio_cesta 2 × distancia_km × coste_por_km` (ida y vuelta, con el coste por km que elige el usuario; 0 si va andando).
 
         **7. Cobertura**
         Porcentaje de los productos seleccionados con datos disponibles para cada supermercado.

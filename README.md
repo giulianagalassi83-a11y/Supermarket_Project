@@ -37,29 +37,29 @@ supermarket_project/
 ## ⚙️ Flujo de Trabajo (Pipeline)
 El proyecto sigue una metodología rigurosa dividida en fases de ingeniería de datos:
 
-Web Scraping Automatizado:
+**Web Scraping y Extracción API:**
 
 Se realizan búsquedas parametrizadas sobre un catálogo común de 20 productos esenciales (leche, huevos, aceite, arroz, pasta, detergente, etc.).
 
-Se maneja la carga dinámica de elementos mediante scroll infinito, control de tiempos de espera y gestión de reintentos automáticos.
+Se maneja la carga dinámica de elementos mediante scroll infinito, control de tiempos de espera y gestión de reintentos automáticos para sortear restricciones de seguridad (ej. Cloudflare en Carrefour mediante URLs de categoría).
 
-Capa RAW:
+**Capa RAW:**
 
-Las apariciones extraídas de cada cadena se consolidan en archivos CSV sin procesar ubicados en data/raw/.
+Las filas extraídas de cada cadena se consolidan en archivos CSV sin procesar ubicados en data/raw/.
 
-Procesamiento y Deduplicación:
+**Procesamiento y Deduplicación:**
 
-Se eliminan registros duplicados basándose en identificadores de producto o combinaciones de nombre y formato.
+Se eliminan registros duplicados basándose en identificadores de producto (product_id) o combinaciones de nombre y formato mediante idxmin().
 
 Se filtran filas incompletas que carezcan de precios o unidades válidas.
 
-Normalización de Unidades (normalize.py):
+**Normalización de Unidades (src/normalize.py):**
 
-Se estandarizan las magnitudes a un formato común (KILO, LITRO, UNIDAD, DOCENA, etc.) para permitir comparaciones homogéneas entre diferentes marcas y supermercados.
+Se estandarizan las magnitudes a un formato común (KILO, LITRO, UNIDAD, DOCENA, etc.) para permitir comparaciones homogéneas entre diferentes marcas y supermercados. Las docenas se convierten de forma unificada a unidades equivalentes.
 
-Capa PROCESSED:
+**Capa PROCESSED:**
 
-Se almacenan los datasets limpios en data/processed/ listos para el análisis conjunto.
+Se almacenan los datasets limpios en data/processed/ listos para el análisis conjunto en el dashboard.
 
 ## 🛠️ Componentes Principales
 1. Scrapers por Supermercado
@@ -79,7 +79,15 @@ Nota ética: el `robots.txt` de BM, Consum y Mercadona incluye `Disallow: /api/`
 Módulo encargado de mapear variantes de unidades de medida heterogéneas (como L, LTR, litros o KGS, kilos) hacia una nomenclatura unificada en mayúsculas (LITRO, KILO, UNIDAD, etc.).
 
 3. Localizador Geográfico (src/get_stores.py)
-Utiliza la API de Overpass (OpenStreetMap) para extraer las coordenadas geográficas (lat, lon) y direcciones postales de los establecimientos físicos de las 5 cadenas en la Comunidad de Madrid, filtrando exclusivamente los nodos etiquetados como supermercados comerciales.
+Utiliza la API de Overpass (OpenStreetMap) y Nominatim para extraer las coordenadas y direcciones postales de los establecimientos físicos en la Comunidad de Madrid.
+
+4. Dashboard Interactivo y Optimizador (dashboard/app.py)
+
+Interfaz web desarrollada en Streamlit estructurada en cuatro vistas principales: Overview, Visualizations, Stores y el nuevo Optimizer.
+
+Selector de Cantidades y Variantes: Permite al usuario definir la cantidad exacta de cada artículo y filtrar variantes específicas (ej. "semidesnatada").
+
+Algoritmo de Combinación de Tiendas (Optimizer): Utiliza combinaciones matemáticas (itertools.combinations) para evaluar las mejores rutas de compra (hasta 3 tiendas simultáneas), calculando el coste total de los productos más económicos por establecimiento sumado al coste de desplazamiento del trayecto (ida y vuelta mediante distancia Haversine y coste por kilómetro configurable).
 
 ## 📊 Análisis y Comparativa Conjunta
 Una vez unificados los datasets, el sistema permite realizar consultas analíticas avanzadas como:
