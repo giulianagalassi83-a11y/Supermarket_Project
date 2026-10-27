@@ -2,6 +2,7 @@
 import streamlit as st
 import pandas as pd
 from pathlib import Path
+import sys
 import numpy as np
 import requests
 import re
@@ -28,274 +29,43 @@ st.markdown(
 
 
 # ============================================================
-# RUTAS
-# ============================================================
-
-BASE_DIR = Path.cwd()
-
-PROCESSED_DIR = (
-    BASE_DIR
-    / "data"
-    / "processed"
-)
-
-
-# Comprobamos que existe la carpeta de datos necesarios
-
-if not PROCESSED_DIR.exists():
-
-    st.error(
-        f"No se encuentra la carpeta de datos en: "
-        f"{PROCESSED_DIR}"
-    )
-
-    st.stop()
-
-
-# ============================================================
 # CARGAR DATOS DE PRODUCTOS
 # ============================================================
+# Los datos vienen del pipeline de normalización (src/pipeline): unidades ya convertidas,
+# cada producto con su tipo (p. ej. "leche_semidesnatada") y el ruido marcado como no_relevante.
+# Los precios se calculan siempre con src/analysis/prices.py, igual que en compare_types.ipynb.
 
-UNIT_MAPPING = {
-    "L": "LITRO", "LTR": "LITRO", "LITRO": "LITRO", "LITROS": "LITRO",
-    "KG": "KILO", "KGS": "KILO", "KILO": "KILO", "KILOS": "KILO",
-    "UD": "UNIDAD", "UDS": "UNIDAD", "UNIDAD": "UNIDAD", "UNIDADES": "UNIDAD",
-    "DOCENA": "DOCENA", "DOCENAS": "DOCENA",
-}
+ROOT_DIR = Path(__file__).resolve().parents[1]
+sys.path.insert(0, str(ROOT_DIR))
+from src.analysis import prices as pricing  # noqa: E402
+
 
 @st.cache_data
 def load_data():
+    return pricing.load_normalized()
 
-    files = {
 
-        "dia":
-            PROCESSED_DIR / "dia_products.csv",
-
-        "mercadona":
-            PROCESSED_DIR / "mercadona_products.csv",
-
-        "aldi":
-            PROCESSED_DIR / "aldi_products.csv",
-
-        "alcampo":
-            PROCESSED_DIR / "alcampo_products.csv",
-
-        "ahorramas":
-            PROCESSED_DIR / "ahorramas_products.csv",
-
-        "bm":
-            PROCESSED_DIR / "bm_products.csv",
-
-        "consum":
-            PROCESSED_DIR / "consum_products.csv"
-
-    }
-
-    dfs = []
-
-
-    # --------------------------------------------------------
-    # LEER CSV DE CADA SUPERMERCADO
-    # --------------------------------------------------------
-
-    for name, path in files.items():
-
-        if path.exists():
-
-            try:
-
-                df = pd.read_csv(path)
-
-
-                # Si el CSV no tiene columna supermarket,
-                # usamos el nombre del fichero.
-
-                if "supermarket" not in df.columns:
-
-                    supermarket_names = {
-
-                        "dia":
-                            "Dia",
-
-                        "mercadona":
-                            "Mercadona",
-
-                        "aldi":
-                            "Aldi",
-
-                        "alcampo":
-                            "Alcampo",
-
-                        "ahorramas":
-                            "Ahorramás",
-
-                        "bm":
-                            "Bm",
-
-                        "consum":
-                            "Consum"
-
-                    }
-
-                    df["supermarket"] = (
-                        supermarket_names.get(
-                            name,
-                            name.title()
-                        )
-                    )
-
-
-                dfs.append(df)
-
-
-            except Exception as e:
-
-                st.warning(
-                    f"No se pudo leer {path.name}: {e}"
-                )
-
-
-    if not dfs:
-
-        return pd.DataFrame()
-
-
-    # --------------------------------------------------------
-    # LIMPIEZA
-    # --------------------------------------------------------
-
-    for df in dfs:
-
-        if "supermarket" in df.columns:
-
-            df["supermarket"] = (
-                df["supermarket"]
-                .astype(str)
-                .str.strip()
-                .str.title()
-            )
-
-
-        if "searched_item" in df.columns:
-
-            df["searched_item"] = (
-                df["searched_item"]
-                .astype(str)
-                .str.strip()
-                .str.lower()
-            )
-
-
-        if "price_per_unit" in df.columns:
-
-            df["price_per_unit"] = pd.to_numeric(
-                df["price_per_unit"],
-                errors="coerce"
-            )
-
-
-    # --------------------------------------------------------
-    # COLUMNAS COMUNES
-    # --------------------------------------------------------
-
-    COMMON_COLUMNS = [
-
-        "supermarket",
-        "searched_item",
-        "name",
-        "price",
-        "price_per_unit",
-        "unit"
-
-    ]
-
-
-    valid_dfs = []
-
-
-    for df in dfs:
-
-        available_columns = [
-
-            c
-            for c in COMMON_COLUMNS
-            if c in df.columns
-
-        ]
-
-
-        valid_dfs.append(
-            df[available_columns].copy()
-        )
-
-
-    all_products = pd.concat(
-        valid_dfs,
-        ignore_index=True
-    )
-
-
-    # --------------------------------------------------------
-    # COMPROBAR PRICE_PER_UNIT
-    # --------------------------------------------------------
-
-    if "price_per_unit" not in all_products.columns:
-
-        st.error(
-            "Los CSV no contienen la columna "
-            "'price_per_unit'."
-        )
-
-        return pd.DataFrame()
-
-
-    all_products["price_per_unit"] = pd.to_numeric(
-        all_products["price_per_unit"],
-        errors="coerce"
-    )
-
-
-    # --------------------------------------------------------
-    # ELIMINAR VALORES IMPOSIBLES
-    # --------------------------------------------------------
-    # Normalizar unidades y pasar docena -> unidad
-    all_products["unit"] = (
-        all_products["unit"].astype("string").str.strip().str.upper().replace(UNIT_MAPPING)
-    )
-    is_dozen = all_products["unit"] == "DOCENA"
-    all_products.loc[is_dozen, "price_per_unit"] = all_products.loc[is_dozen, "price_per_unit"] / 12
-    all_products.loc[is_dozen, "unit"] = "UNIDAD"
-    all_products = all_products.dropna(subset=["unit"])
-
-    clean_products = all_products[
-        (all_products["price_per_unit"] > 0.05)
-        &
-        (all_products["price_per_unit"] <= 50.0)
-    ].copy()
-
-
-    # Una única unidad por producto: la más frecuente (así nunca se suma €/L con €/ud)
-    canon = clean_products.groupby("searched_item")["unit"].agg(lambda s: s.mode().iat[0])
-    clean_products = clean_products[
-        clean_products["unit"] == clean_products["searched_item"].map(canon)
-    ].copy()
-
-    return clean_products
-
-
-df = load_data()
-
-
-if df.empty:
-
+try:
+    df = load_data()
+except FileNotFoundError:
     st.error(
-        "No hay datos cargados en la carpeta "
-        "data/processed."
+        "Faltan los datos normalizados (data/products_normalized.csv). "
+        "Ejecuta desde la carpeta del proyecto: python -m src.pipeline.build"
     )
-
     st.stop()
 
-canon_units = df.groupby("searched_item")["unit"].first()
+usable_df = pricing.usable(df)
+TYPE_LABELS = (
+    usable_df.drop_duplicates("product_type")
+    .set_index("product_type")["product_type_label"]
+    .to_dict()
+)
+
+
+def type_label(type_id):
+    if type_id.startswith(pricing.ANY_PREFIX):
+        return "Cualquier tipo"
+    return TYPE_LABELS.get(type_id, type_id)
 
 
 # ============================================================
@@ -686,7 +456,7 @@ st.sidebar.header(
 )
 
 all_items = sorted(
-    df[
+    usable_df[
         "searched_item"
     ]
     .dropna()
@@ -707,15 +477,18 @@ st.sidebar.markdown("---")
 st.sidebar.header("⚖️ Cantidades")
 
 quantities = {}
-variants = {}
+chosen_types = {}
 
 for item in selected_items:
-    unit_label = canon_units.get(item, "")
+    type_options = [f"{pricing.ANY_PREFIX}{item}"] + sorted(
+        usable_df.loc[usable_df["searched_item"] == item, "product_type"].unique()
+    )
+    chosen_types[item] = st.sidebar.selectbox(
+        f"Tipo de {item}", type_options, format_func=type_label, key=f"type_{item}"
+    )
+    unit_label = pricing.type_unit(df, chosen_types[item]) or ""
     quantities[item] = st.sidebar.number_input(
         f"{item} ({unit_label})", min_value=0.1, value=1.0, step=0.5, key=f"qty_{item}"
-    )
-    variants[item] = st.sidebar.text_input(
-        f"Variante de {item} (opcional)", key=f"var_{item}", placeholder="p.ej. semidesnatada"
     )
 
 cost_per_km = st.sidebar.slider("🚗 Coste de desplazarte (€/km)", 0.0, 0.60, 0.25, 0.05)
@@ -814,35 +587,24 @@ if not selected_items:
 # CALCULAR PRECIO DE LA CESTA
 # ============================================================
 
-parts = []
-for item in selected_items:
-    sub = df[df["searched_item"] == item]
-    variant = variants.get(item, "").strip()
-    if variant:
-        sub = sub[sub["name"].str.contains(variant, case=False, na=False, regex=False)]
-    parts.append(sub)
-
-shopping_df = pd.concat(parts, ignore_index=True)
-
-basket_costs = (
-    shopping_df
-    .groupby(
-        [
-            "supermarket",
-            "searched_item"
-        ]
-    )[
-        "price_per_unit"
-    ]
-    .median()
-    .reset_index()
+# € por unidad (mediana) del tipo elegido para cada producto, en cada cadena
+chains = sorted(df["supermarket"].unique())
+pivot_basket = pd.DataFrame(
+    {
+        chain: {item: pricing.type_price(df, chosen_types[item], chain) for item in selected_items}
+        for chain in chains
+    }
 )
+pivot_basket.index.name = "searched_item"
 
-pivot_basket = basket_costs.pivot(
-    index="searched_item",
-    columns="supermarket",
-    values="price_per_unit"
-)
+not_available = [
+    f"{type_label(chosen_types[item])} ({item}) no disponible en {chain}"
+    for item in selected_items
+    for chain in chains
+    if pd.isna(pivot_basket.loc[item, chain])
+]
+if not_available:
+    st.caption("ℹ️ " + " · ".join(not_available))
 
 
 # ============================================================
@@ -933,6 +695,7 @@ df_by_distance = (
     )
 )
 
+# Cestas completas primero: una tienda a la que le faltan productos no puede salir "más barata"
 df_by_price = (
     res_df
     .dropna(
@@ -941,7 +704,8 @@ df_by_price = (
         ]
     )
     .sort_values(
-        "basket_cost"
+        ["coverage", "basket_cost"],
+        ascending=[False, True]
     )
 )
 

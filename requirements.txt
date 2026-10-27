@@ -14,3 +14,10 @@ streamlit-folium>=0.22
 
 # Jupyter kernel for running the notebooks in VS Code
 ipykernel>=6.29
+
+# Normalization pipeline
+pyarrow>=15
+scikit-learn>=1.5
+scipy>=1.13
+matplotlib>=3.8
+pytest>=8
