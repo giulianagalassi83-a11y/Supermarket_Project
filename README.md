@@ -83,11 +83,17 @@ Utiliza la API de Overpass (OpenStreetMap) y Nominatim para extraer las coordena
 
 4. Dashboard Interactivo y Optimizador (dashboard/app.py)
 
-Interfaz web desarrollada en Streamlit estructurada en cuatro vistas principales: Overview, Visualizations, Stores y el nuevo Optimizer.
+Interfaz web desarrollada en Streamlit con navegación superior y cuatro vistas: Cesta, Comparar, Mapa y Tendencias (esta última, pendiente de tener histórico de precios).
 
-Selector de Cantidades y Variantes: Permite al usuario definir la cantidad exacta de cada artículo y filtrar variantes específicas (ej. "semidesnatada").
+Para lanzarla: streamlit run dashboard/app.py
 
-Algoritmo de Combinación de Tiendas (Optimizer): Utiliza combinaciones matemáticas (itertools.combinations) para evaluar las mejores rutas de compra (hasta 3 tiendas simultáneas), calculando el coste total de los productos más económicos por establecimiento sumado al coste de desplazamiento del trayecto (ida y vuelta mediante distancia Haversine y coste por kilómetro configurable).
+Cesta: Permite buscar entre los tipos de producto del pipeline de normalización y definir la cantidad de cada uno.
+
+Optimizador (src/analysis/optimizer.py): Resuelve un Travelling Purchaser Problem pequeño. Evalúa hasta 3 tiendas (como máximo una por cadena, entre las más cercanas de cada cadena) y todos los órdenes de visita, y suma el coste de los productos, el del trayecto (distancia Haversine con factor de rodeo 1,3 y coste por kilómetro configurable) y un coste por parada adicional.
+
+Tolerancia a fallos: Si Overpass o Nominatim no responden, la app usa data/stores_madrid.csv y una dirección guardada.
+
+La versión anterior del dashboard se conserva, obsoleta, en dashboard/app_legacy.py.
 
 ## 📊 Análisis y Comparativa Conjunta
 Una vez unificados los datasets, el sistema permite realizar consultas analíticas avanzadas como:

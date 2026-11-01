@@ -6,6 +6,7 @@ env/
 ENV/
 
 ROADMAP.md
+docs/
 
 # Python and caché
 __pycache__/
@@ -20,3 +21,8 @@ __pycache__/
 # Operative system files
 .DS_Store
 Thumbs.db
+# Normalization pipeline (local only)
+data/supermarkets.db
+tests/
+pytest.ini
+.superpowers/

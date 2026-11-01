@@ -1,0 +1,125 @@
+type_id,search_term,label,description,is_negative,unit
+leche_entera,leche,Leche entera,leche entera,0,LITRO
+leche_semidesnatada,leche,Leche semidesnatada,leche semidesnatada,0,LITRO
+leche_desnatada,leche,Leche desnatada,leche desnatada,0,LITRO
+leche_sin_lactosa,leche,Leche sin lactosa,leche sin lactosa,0,LITRO
+bebida_vegetal,leche,Bebida vegetal,"bebida de avena, bebida de soja, bebida de almendra",0,LITRO
+neg_leche_dulces,leche,(ruido) dulces con leche,"chocolate con leche, galletas, bombones y dulces",1,
+neg_leche_cafe_batidos,leche,(ruido) café y batidos,"cápsulas de café con leche, batido de chocolate, bebida láctea",1,
+neg_leche_derivados,leche,(ruido) derivados lácteos,"leche condensada, leche evaporada, leche en polvo, queso, postre lácteo",1,
+neg_leche_cosmetica,leche,(ruido) cosmética,"leche corporal hidratante, leche limpiadora, cosmética",1,
+huevos_gallina,huevos,Huevos de gallina,huevos frescos de gallina talla M o L docena,0,UNIDAD
+huevos_camperos_eco,huevos,Huevos camperos / ecológicos,huevos camperos o ecológicos de gallinas criadas en libertad,0,UNIDAD
+neg_huevos_chocolate,huevos,(ruido) huevos de chocolate,"huevo de chocolate con sorpresa, dulces",1,
+neg_huevos_lacteos,huevos,(ruido) lácteos y otros,"yogur, leche, natillas, nata, margarina, bebida láctea",1,
+neg_huevos_derivados,huevos,(ruido) productos con huevo,"pasta al huevo, claras de huevo pasteurizadas, mayonesa, tortilla",1,
+manzana_roja,manzana,Manzana roja,manzana roja fresca,0,KILO
+manzana_verde_amarilla,manzana,Manzana verde / golden,manzana golden o granny smith fresca,0,KILO
+neg_manzana_bebidas,manzana,(ruido) bebidas de manzana,"zumo de manzana, sidra, vinagre de manzana, licor, refresco",1,
+neg_manzana_postres,manzana,(ruido) postres y compotas,"compota de manzana, yogur sabor manzana, tarrito infantil, bollería",1,
+neg_manzana_otras_frutas,manzana,(ruido) otras frutas,"pera, uva, kiwi, otras frutas frescas",1,
+platano_canarias,plátano,Plátano de Canarias,plátano de Canarias IGP fruta fresca,0,KILO
+banana,plátano,Banana,banana fruta fresca importada,0,KILO
+neg_platano_lacteos,plátano,(ruido) lácteos sabor plátano,"yogur o batido sabor fresa y plátano, postre lácteo",1,
+neg_platano_infantil,plátano,(ruido) bolsitas de fruta,"bolsita de fruta triturada infantil, smoothie, zumo de frutas",1,
+neg_platano_otros,plátano,(ruido) otros,"champú, mermelada, barritas de cereales",1,
+tomate_fresco,tomate,Tomate fresco,"tomate fresco de ensalada, pera o en rama",0,KILO
+tomate_cherry,tomate,Tomate cherry,tomate cherry bandeja,0,KILO
+tomate_triturado,tomate,Tomate triturado / natural,tomate triturado o natural en conserva lata,0,KILO
+tomate_frito,tomate,Tomate frito,tomate frito en brik o frasco,0,KILO
+neg_tomate_salsas,tomate,(ruido) salsas,"ketchup, salsa para pasta, pesto, mostaza",1,
+neg_tomate_platos,tomate,(ruido) platos con tomate,"sardinas en tomate, albóndigas con tomate, pizza, alubias",1,
+arroz_redondo,arroz,Arroz redondo,arroz redondo para paella paquete 1 kg,0,KILO
+arroz_largo,arroz,Arroz largo / basmati,"arroz largo, basmati o jazmín paquete",0,KILO
+arroz_integral,arroz,Arroz integral,arroz integral paquete,0,KILO
+arroz_vasito,arroz,Arroz cocido en vasito,arroz cocido listo para microondas en vasito,0,KILO
+neg_arroz_platos,arroz,(ruido) platos preparados,"paella preparada, arroz con pollo, tarrito infantil, congelado",1,
+neg_arroz_derivados,arroz,(ruido) derivados,"tortitas de arroz, cereales de arroz inflado, bebida de arroz, fideos de arroz",1,
+neg_arroz_otros,arroz,(ruido) otras legumbres y pasta,"lentejas, garbanzos, pasta, sémola",1,
+pasta_larga,pasta,Pasta larga,"espaguetis, tallarines, fideos largos paquete",0,KILO
+pasta_corta,pasta,Pasta corta,"macarrones, hélices, plumas, pajaritas paquete",0,KILO
+pasta_integral,pasta,Pasta integral,pasta integral espaguetis o macarrones,0,KILO
+pasta_fresca_rellena,pasta,Pasta fresca / rellena,"pasta fresca rellena, raviolis, tortellini, girasoles",0,KILO
+neg_pasta_galletas,pasta,(ruido) galletas y dulces,"galletas, barquillos, bollería",1,
+neg_pasta_otros,pasta,(ruido) otros,"pasta dental, salsa para pasta, masa de empanadilla, lasaña preparada",1,
+neg_pasta_legumbres,pasta,(ruido) arroz y legumbres,"arroz, garbanzos, alubias, paella",1,
+pan_barra,pan,Pan de barra,"barra de pan, baguette, pan del día",0,KILO
+pan_molde,pan,Pan de molde,pan de molde blanco o integral rebanado,0,KILO
+pan_tostado,pan,Pan tostado,"pan tostado, biscotes, tostadas",0,KILO
+pan_hogaza,pan,Hogaza / pan artesano,"hogaza de pan rústico, pan payés, masa madre",0,KILO
+neg_pan_bolleria,pan,(ruido) bollería,"croissants, magdalenas, bollos, galletas",1,
+neg_pan_higiene,pan,(ruido) higiene y bebé,"pañales, champú, compresas",1,
+neg_pan_otros,pan,(ruido) otros,"harina, panga, caramelos, cacao en polvo, empanadilla",1,
+pollo_pechuga,pollo,Pechuga de pollo,pechuga de pollo entera o fileteada,0,KILO
+pollo_muslos,pollo,Muslos / contramuslos,muslos y contramuslos de pollo,0,KILO
+pollo_alas,pollo,Alas de pollo,alas de pollo,0,KILO
+pollo_entero,pollo,Pollo entero,pollo entero limpio,0,KILO
+neg_pollo_mascotas,pollo,(ruido) comida para mascotas,"pienso para perros o gatos con pollo, snack para mascotas",1,
+neg_pollo_platos,pollo,(ruido) platos y caldos,"caldo de pollo, platos preparados, yakisoba, paella",1,
+neg_pollo_elaborados,pollo,(ruido) elaborados,"salchichas de pollo, nuggets, albóndigas, embutido",1,
+picada_vacuno,carne picada,Carne picada de vacuno,carne picada de vacuno o ternera bandeja,0,KILO
+picada_mixta,carne picada,Carne picada mixta,preparado de carne picada mixta cerdo y vacuno,0,KILO
+picada_pollo_pavo,carne picada,Carne picada de pollo / pavo,carne picada de pollo o pavo,0,KILO
+hamburguesas,carne picada,Hamburguesas,"burger meat, hamburguesas de vacuno o pollo",0,KILO
+neg_picada_platos,carne picada,(ruido) platos preparados,"canelones, lasaña, platos preparados",1,
+neg_picada_otros,carne picada,(ruido) otros,"especias, sazonador, verduras, guacamole",1,
+salmon_fresco,salmón,Salmón fresco,"salmón fresco en lomos, rodajas o porciones",0,KILO
+salmon_ahumado,salmón,Salmón ahumado,salmón ahumado en lonchas,0,KILO
+neg_salmon_mascotas,salmón,(ruido) comida para mascotas,comida para gatos o perros con salmón,1,
+neg_salmon_otros,salmón,(ruido) otros,"pepino, mostaza, cebolla, salsas",1,
+yogur_natural,yogur,Yogur natural,yogur natural pack de 4,0,KILO
+yogur_sabores,yogur,Yogur de sabores / frutas,yogur de sabores o con trozos de fruta,0,KILO
+yogur_griego,yogur,Yogur griego,yogur griego natural o azucarado,0,KILO
+yogur_bifidus,yogur,Yogur bífidus,yogur bífidus activo,0,KILO
+yogur_proteico,yogur,Yogur proteico / skyr,"yogur proteico, skyr alto en proteínas",0,KILO
+yogur_vegetal,yogur,Yogur vegetal,yogur vegetal de soja o coco,0,KILO
+neg_yogur_postres,yogur,(ruido) postres,"flan, natillas, mousse, postre lácteo",1,
+neg_yogur_bebidas,yogur,(ruido) bebidas,"bebida láctea, batido proteico, kéfir líquido",1,
+queso_curado,queso,Queso curado / semicurado,queso curado o semicurado de oveja o mezcla cuña,0,KILO
+queso_tierno_fresco,queso,Queso tierno / fresco,"queso tierno, queso fresco de Burgos",0,KILO
+queso_lonchas,queso,Queso en lonchas,queso en lonchas para sándwich,0,KILO
+queso_rallado,queso,Queso rallado,queso rallado para gratinar o fundir,0,KILO
+queso_untar,queso,Queso de untar,queso crema para untar,0,KILO
+neg_queso_platos,queso,(ruido) platos con queso,"pizza cuatro quesos, palitos con queso, pasta rellena de queso, salchichas con queso",1,
+neg_queso_dulces,queso,(ruido) dulces,"crema dulce de queso, tarta, flan de queso, membrillo",1,
+agua_sin_gas,agua,Agua mineral sin gas,agua mineral natural botella o garrafa,0,LITRO
+agua_con_gas,agua,Agua con gas,agua mineral con gas,0,LITRO
+neg_agua_cosmetica,agua,(ruido) cosmética,"agua micelar, agua de colonia, toallitas desmaquillantes",1,
+neg_agua_otros,agua,(ruido) otros,"agua oxigenada, pipas aguasal, colgador wc, tiritas, fruta",1,
+zumo_naranja_exprimido,zumo,Zumo de naranja exprimido,zumo de naranja exprimido refrigerado,0,LITRO
+zumo_naranja,zumo,Zumo de naranja (brik),zumo de naranja brik a base de concentrado,0,LITRO
+zumo_otras_frutas,zumo,Zumo de otras frutas,"zumo de melocotón y uva, piña, manzana o multifrutas",0,LITRO
+nectar,zumo,Néctar,néctar de frutas sin azúcar añadido,0,LITRO
+neg_zumo_refrescos,zumo,(ruido) refrescos,"limonada, refresco, kombucha, horchata",1,
+neg_zumo_otros,zumo,(ruido) otros,"leche con zumo, fruta en almíbar, smoothie",1,
+atun_aceite_oliva,atún,Atún en aceite de oliva,atún claro en aceite de oliva lata pack,0,KILO
+atun_aceite_girasol,atún,Atún en aceite de girasol,atún claro en aceite de girasol lata pack,0,KILO
+atun_natural,atún,Atún al natural,atún claro al natural lata,0,KILO
+bonito_norte,atún,Bonito del norte,bonito del norte en aceite de oliva,0,KILO
+neg_atun_platos,atún,(ruido) platos con atún,"empanadillas de atún, ensaladas, ensaladilla, empanada",1,
+neg_atun_otros,atún,(ruido) otros,"comida para gatos, melva, sardinas, escabeche",1,
+garbanzo_seco,garbanzos,Garbanzo seco,garbanzo seco paquete pedrosillano,0,KILO
+garbanzo_cocido,garbanzos,Garbanzo cocido,garbanzo cocido en frasco,0,KILO
+neg_garbanzos_legumbres,garbanzos,(ruido) otras legumbres,"alubias, lentejas, judiones",1,
+neg_garbanzos_platos,garbanzos,(ruido) platos y snacks,"potaje, callos con garbanzos, ensalada, snack o pasta de garbanzo",1,
+aceite_oliva_virgen_extra,aceite,Aceite de oliva virgen extra,aceite de oliva virgen extra botella,0,LITRO
+aceite_oliva,aceite,Aceite de oliva suave / intenso,"aceite de oliva suave o intenso 0,4º 1º",0,LITRO
+aceite_girasol,aceite,Aceite de girasol,aceite de girasol botella,0,LITRO
+neg_aceite_conservas,aceite,(ruido) conservas en aceite,"atún, bonito, sardinas o tomate seco en aceite",1,
+neg_aceite_salsas,aceite,(ruido) salsas y especias,"mayonesa, alioli, salsas, especias, colorante",1,
+neg_aceite_cosmetica,aceite,(ruido) cosmética,"aceite corporal, aceite esencial, rosa mosqueta",1,
+neg_aceite_otros,aceite,(ruido) otros,"verduras en conserva, pan con aceite, sal de frutas",1,
+detergente_liquido,detergente,Detergente líquido,detergente líquido para lavadora,0,LAVADO
+detergente_capsulas,detergente,Detergente en cápsulas,detergente en cápsulas para lavadora,0,LAVADO
+detergente_polvo,detergente,Detergente en polvo,detergente en polvo para lavadora,0,LAVADO
+detergente_delicadas,detergente,Detergente prendas delicadas,"detergente para ropa delicada, lana o a mano",0,LAVADO
+neg_detergente_limpieza,detergente,(ruido) limpieza del hogar,"lejía, amoníaco, limpiador, lavavajillas",1,
+neg_detergente_otros,detergente,(ruido) otros,"suavizante, quitamanchas, jabón de manos",1,
+papel_higienico,papel higiénico,Papel higiénico,papel higiénico rollos doble capa,0,UNIDAD
+papel_higienico_humedo,papel higiénico,Papel higiénico húmedo,papel higiénico húmedo toallitas,0,UNIDAD
+neg_papel_otros_papeles,papel higiénico,(ruido) otros papeles,"pañuelos, servilletas, papel de cocina",1,
+neg_papel_otros,papel higiénico,(ruido) otros,"suavizante, compresas, toallitas bebé",1,
+neg_manzana_bolsitas,manzana,(ruido) bolsitas y smoothies,"bolsita pouch de fruta triturada infantil, smoothie de frutas",1,
+neg_pasta_fideos_orientales,pasta,(ruido) fideos orientales,"fideos orientales instantáneos, noodles, ramen sabor carne o verduras",1,
+neg_pollo_fiambre,pollo,(ruido) fiambre de pavo / pollo,"pechuga de pavo en lonchas, fiambre de pavo braseado o ahumado, pechuga para sándwich",1,
+neg_zumo_limon,zumo,(ruido) zumo de limón para cocinar,"zumo de limón o de lima concentrado para cocinar",1,
