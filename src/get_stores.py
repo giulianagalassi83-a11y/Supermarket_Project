@@ -1,5 +1,5 @@
-# ESTO ES PARA COMPROBAR SI FUNCIONA, LUEGO HABRA QUE HACERLO MODO MAPA ETC
-# PARA CONSEGUIR LOS STORES, EJECUTAR EN LA TERMINAL: python src/get_stores.py
+# Downloads the supermarkets of the Comunidad de Madrid from OpenStreetMap.
+# TO GET THE STORES, RUN IN THE TERMINAL: python src/get_stores.py
 import requests
 import pandas as pd
 from pathlib import Path
@@ -8,7 +8,7 @@ import time
 
 
 # ============================================================
-# CONFIGURACIÓN
+# SETTINGS
 # ============================================================
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -25,24 +25,23 @@ OVERPASS_SERVERS = [
 
 
 # ============================================================
-# OBTENER SUPERMERCADOS DE OPENSTREETMAP
+# GET SUPERMARKETS FROM OPENSTREETMAP
 # ============================================================
 
 def get_madrid_supermarkets():
 
-    print("🔎 Buscando supermercados en Madrid...")
+    print("🔎 Searching for supermarkets in Madrid...")
 
     # --------------------------------------------------------
-    # IMPORTANTE:
-    # Solo buscamos elementos etiquetados como
-    # shop=supermarket.
+    # IMPORTANT:
+    # We only search for elements tagged shop=supermarket.
     #
-    # Esto evita encontrar:
-    # - parkings
-    # - gasolineras
-    # - centros de distribución
-    # - centros de día
-    # - calles
+    # This avoids finding:
+    # - car parks
+    # - petrol stations
+    # - distribution centres
+    # - day centres
+    # - streets
     # etc.
     # --------------------------------------------------------
 
@@ -59,12 +58,12 @@ def get_madrid_supermarkets():
     """
 
     # --------------------------------------------------------
-    # Probar los servidores de Overpass
+    # Try the Overpass servers
     # --------------------------------------------------------
 
     for server in OVERPASS_SERVERS:
 
-        print("\n🌐 Probando servidor:")
+        print("\n🌐 Trying server:")
         print(server)
 
         try:
@@ -85,15 +84,15 @@ def get_madrid_supermarkets():
             elements = data.get("elements", [])
 
             print(
-                f"✅ Servidor correcto. "
-                f"Elementos encontrados: {len(elements)}"
+                f"✅ Server OK. "
+                f"Elements found: {len(elements)}"
             )
 
             return elements
 
         except Exception as e:
 
-            print("❌ Este servidor ha fallado:")
+            print("❌ This server failed:")
             print(e)
 
             time.sleep(2)
@@ -102,7 +101,7 @@ def get_madrid_supermarkets():
 
 
 # ============================================================
-# IDENTIFICAR CADENA
+# IDENTIFY THE CHAIN
 # ============================================================
 
 def identify_chain(name):
@@ -112,7 +111,7 @@ def identify_chain(name):
 
     name = str(name).lower()
 
-    # Normalizamos acentos
+    # Normalize accents
     name = (
         name
         .replace("á", "a")
@@ -174,7 +173,7 @@ def identify_chain(name):
 
 
 # ============================================================
-# PROCESAR ELEMENTOS
+# PROCESS ELEMENTS
 # ============================================================
 
 def process_elements(elements):
@@ -186,7 +185,7 @@ def process_elements(elements):
         tags = element.get("tags", {})
 
         # ----------------------------------------------------
-        # SOLO SUPERMERCADOS
+        # SUPERMARKETS ONLY
         # ----------------------------------------------------
 
         shop_type = tags.get("shop", "")
@@ -195,7 +194,7 @@ def process_elements(elements):
             continue
 
         # ----------------------------------------------------
-        # NOMBRE
+        # NAME
         # ----------------------------------------------------
 
         name = (
@@ -208,13 +207,13 @@ def process_elements(elements):
             continue
 
         # ----------------------------------------------------
-        # IDENTIFICAR CADENA
+        # IDENTIFY THE CHAIN
         # ----------------------------------------------------
 
         chain = identify_chain(name)
 
-        # Si el nombre no permite identificarla,
-        # probamos con brand.
+        # If the name doesn't identify it,
+        # try the brand.
 
         if chain is None:
 
@@ -226,7 +225,7 @@ def process_elements(elements):
             continue
 
         # ----------------------------------------------------
-        # COORDENADAS
+        # COORDINATES
         # ----------------------------------------------------
 
         if "lat" in element and "lon" in element:
@@ -244,7 +243,7 @@ def process_elements(elements):
             continue
 
         # ----------------------------------------------------
-        # DIRECCIÓN
+        # ADDRESS
         # ----------------------------------------------------
 
         street = tags.get("addr:street", "")
@@ -266,7 +265,7 @@ def process_elements(elements):
         )
 
         # ----------------------------------------------------
-        # GUARDAR SUPERMERCADO
+        # SAVE THE SUPERMARKET
         # ----------------------------------------------------
 
         stores.append({
@@ -281,7 +280,7 @@ def process_elements(elements):
 
 
 # ============================================================
-# LIMPIAR DATOS
+# CLEAN THE DATA
 # ============================================================
 
 def clean_stores(stores):
@@ -292,7 +291,7 @@ def clean_stores(stores):
         return df
 
     # --------------------------------------------------------
-    # Convertir coordenadas a numéricas
+    # Convert coordinates to numbers
     # --------------------------------------------------------
 
     df["lat"] = pd.to_numeric(
@@ -305,17 +304,16 @@ def clean_stores(stores):
         errors="coerce"
     )
 
-    # Eliminar filas sin coordenadas
+    # Drop rows without coordinates
     df = df.dropna(
         subset=["lat", "lon"]
     )
 
     # --------------------------------------------------------
-    # Eliminar duplicados
+    # Drop duplicates
     #
-    # Dos elementos de OSM pueden representar la misma tienda.
-    # Si tienen misma cadena + mismas coordenadas,
-    # nos quedamos con uno.
+    # Two OSM elements can represent the same store.
+    # With the same chain and coordinates, we keep one.
     # --------------------------------------------------------
 
     df = df.drop_duplicates(
@@ -327,7 +325,7 @@ def clean_stores(stores):
     )
 
     # --------------------------------------------------------
-    # Ordenar
+    # Sort
     # --------------------------------------------------------
 
     df = df.sort_values(
@@ -348,37 +346,37 @@ def main():
 
     print("=" * 60)
     print(
-        "🛒 OBTENCIÓN DE SUPERMERCADOS "
-        "DE LA COMUNIDAD DE MADRID"
+        "🛒 SUPERMARKETS OF THE "
+        "COMUNIDAD DE MADRID"
     )
     print("=" * 60)
 
     # --------------------------------------------------------
-    # Obtener datos de OpenStreetMap
+    # Get the data from OpenStreetMap
     # --------------------------------------------------------
 
     elements = get_madrid_supermarkets()
 
     if elements is None:
 
-        print("\n❌ No se pudo conectar con Overpass.")
-        print("No se ha creado el archivo.")
+        print("\n❌ Could not connect to Overpass.")
+        print("The file was not created.")
 
         return
 
     # --------------------------------------------------------
-    # Procesar
+    # Process
     # --------------------------------------------------------
 
     stores = process_elements(elements)
 
     print(
-        f"\n📦 Supermercados válidos encontrados: "
+        f"\n📦 Valid supermarkets found: "
         f"{len(stores)}"
     )
 
     # --------------------------------------------------------
-    # Limpiar
+    # Clean
     # --------------------------------------------------------
 
     df = clean_stores(stores)
@@ -386,14 +384,14 @@ def main():
     if df.empty:
 
         print(
-            "\n❌ No se encontraron "
-            "supermercados válidos."
+            "\n❌ No valid "
+            "supermarkets found."
         )
 
         return
 
     # --------------------------------------------------------
-    # Crear carpeta si no existe
+    # Create the folder if it doesn't exist
     # --------------------------------------------------------
 
     OUTPUT_FILE.parent.mkdir(
@@ -402,7 +400,7 @@ def main():
     )
 
     # --------------------------------------------------------
-    # Guardar CSV
+    # Save the CSV
     # --------------------------------------------------------
 
     df.to_csv(
@@ -412,16 +410,16 @@ def main():
     )
 
     # --------------------------------------------------------
-    # RESULTADOS
+    # RESULTS
     # --------------------------------------------------------
 
     print("\n" + "=" * 60)
-    print("✅ ARCHIVO CREADO")
+    print("✅ FILE CREATED")
     print("=" * 60)
 
     print(OUTPUT_FILE)
 
-    print("\n📊 RESUMEN POR CADENA:")
+    print("\n📊 SUMMARY BY CHAIN:")
 
     print(
         df["supermarket"]
@@ -430,12 +428,12 @@ def main():
     )
 
     print(
-        f"\n🏪 Total de establecimientos: "
+        f"\n🏪 Total stores: "
         f"{len(df)}"
     )
 
     # --------------------------------------------------------
-    # Direcciones disponibles
+    # Available addresses
     # --------------------------------------------------------
 
     addresses_available = (
@@ -451,20 +449,20 @@ def main():
     )
 
     print(
-        f"\n📍 Con dirección: "
+        f"\n📍 With address: "
         f"{addresses_available}"
     )
 
     print(
-        f"❓ Sin dirección: "
+        f"❓ Without address: "
         f"{addresses_missing}"
     )
 
     # --------------------------------------------------------
-    # Primeros resultados
+    # First results
     # --------------------------------------------------------
 
-    print("\n🔎 PRIMEROS RESULTADOS:")
+    print("\n🔎 FIRST RESULTS:")
 
     print(
         df.head(15).to_string(
@@ -473,12 +471,12 @@ def main():
     )
 
     print("\n" + "=" * 60)
-    print("🎉 PROCESO TERMINADO")
+    print("🎉 FINISHED")
     print("=" * 60)
 
 
 # ============================================================
-# EJECUTAR
+# RUN
 # ============================================================
 
 if __name__ == "__main__":

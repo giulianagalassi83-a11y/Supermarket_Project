@@ -1,21 +1,20 @@
-# Dashboard principal del proyecto (la versión anterior, obsoleta, está en dashboard/app_legacy.py).
-# PARA LANZARLO:  streamlit run dashboard/app.py --theme.primaryColor "#17242D" --theme.base light
-#   (sin los flags también funciona; el tema se aplica desde el código a partir de la primera carga)
+# Main project dashboard (the old, deprecated version is dashboard/app_legacy.py).
+# TO RUN IT:  streamlit run dashboard/app.py --theme.primaryColor "#17242D" --theme.base light
+#   (it also works without the flags; the code applies the theme from the first load)
 #
-# Qué cambia respecto a app_legacy.py:
-#   - Navegación arriba (Cesta, Comparar, Mapa, Tendencias); sin barra lateral.
-#   - La cesta es el centro: se busca entre los 70 tipos de producto, no entre los 20 términos.
-#   - Comparar junta Overview + Visualizations + Optimizer: etiquetas de precio por cadena,
-#     matriz producto × cadena, recomendación de ruta y dos gráficos de análisis.
-#   - El optimizador vive en src/analysis/optimizer.py (varias tiendas por cadena, coste por parada,
-#     factor de rodeo, ruta mostrada tramo a tramo).
-#   - Si Overpass o Nominatim fallan, se usan data/stores_madrid.csv y una dirección guardada.
-#   - Un solo color por cadena en todas partes, precios en formato español.
+# How it is organized:
+#   - Top navigation (Basket, Compare, Map, Trends, Analysis); no sidebar.
+#   - The basket is the centre: you search the 70 product types, not the 20 search terms.
+#   - Compare joins price tags per chain, the product x chain matrix, the route and two charts.
+#   - Trends and Analysis read src/analysis/history.py and src/analysis/insights.py;
+#     their charts are in dashboard/charts.py.
+#   - The optimizer is src/analysis/optimizer.py.
+#   - If Overpass or Nominatim fail, the app uses data/stores_madrid.csv and a saved address.
+#   - One color per chain everywhere. Product names stay in Spanish, as the chains sell them.
 
 import sys
 from pathlib import Path
 
-import altair as alt
 import folium
 import numpy as np
 import pandas as pd
@@ -26,21 +25,23 @@ from streamlit_folium import st_folium
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT_DIR))
+from dashboard import charts  # noqa: E402
+from src.analysis import history, insights  # noqa: E402
 from src.analysis import optimizer as opt  # noqa: E402
 from src.analysis import prices as pricing  # noqa: E402
 
-# Tema solo para esta app (un .streamlit/config.toml cambiaría también app_legacy.py)
+# Theme for this app only (a .streamlit/config.toml would also change app_legacy.py)
 from streamlit import config as st_config  # noqa: E402
 
 for option, value in {"theme.base": "light", "theme.primaryColor": "#17242D", "theme.backgroundColor": "#F1F4F1",
                       "theme.secondaryBackgroundColor": "#E6EBE7", "theme.textColor": "#17242D"}.items():
     st_config.set_option(option, value)
 
-st.set_page_config(page_title="Comparador de supermercados", page_icon="🛒", layout="wide")
+st.set_page_config(page_title="Supermarket comparison", page_icon="🛒", layout="wide")
 
 
 # ============================================================
-# ESTILO: un solo sitio para colores, tipografía y componentes
+# STYLE: one place for colors, type and components
 # ============================================================
 
 CHAIN_COLORS = {
@@ -52,7 +53,7 @@ CHAIN_COLORS = {
     "Bm": "#0E9AA7",
     "Consum": "#B8930B",
 }
-CHAIN_NAMES = {"Bm": "BM"}  # cómo se escribe cada cadena en pantalla
+CHAIN_NAMES = {"Bm": "BM"}  # how each chain is written on screen
 INK, MUTED, BEST, TAG = "#17242D", "#5F6E78", "#12805C", "#FFD60A"
 
 st.markdown(
@@ -69,7 +70,7 @@ h1,h2,h3{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:750;colo
 .hero{font-stretch:108%;font-weight:760;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.08;margin:0.2rem 0 0.4rem;max-width:26ch;}
 .lede{color:var(--muted);font-size:1.05rem;max-width:62ch;margin-bottom:1.2rem;}
 .price{font-stretch:70%;font-weight:850;font-variant-numeric:tabular-nums;line-height:0.9;white-space:nowrap;}
-.price .eu{font-size:3.3rem;} .price .ct{font-size:1.45rem;vertical-align:1.55rem;margin-left:1px;} .price .cur{font-size:1.3rem;margin-left:4px;}
+.price .eu{font-size:3.3rem;} .price .ct{font-size:1.45rem;vertical-align:1.55rem;margin-left:1px;} .price .cur{font-size:1.3rem;margin-right:3px;}
 .price.sm .eu{font-size:2.2rem;} .price.sm .ct{font-size:1rem;vertical-align:1rem;} .price.sm .cur{font-size:0.95rem;}
 .tags{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:14px;margin:0.6rem 0 1.6rem;}
 .tag{background:var(--surface);border:1px solid var(--line);border-left:7px solid var(--chain);border-radius:4px 10px 10px 4px;padding:14px 16px 12px;position:relative;}
@@ -109,7 +110,6 @@ table.matrix tr.total td{font-weight:800;font-stretch:90%;font-size:1.05rem;bord
 .store-row{display:flex;gap:12px;justify-content:space-between;align-items:center;padding:10px 12px;border-bottom:1px solid var(--line);}
 .store-row.sel{background:#FFF6C2;}
 .store-row .addr{color:var(--muted);font-size:.82rem;}
-.placeholder{border:2px dashed #B9C4C9;border-radius:14px;padding:26px 28px;background:repeating-linear-gradient(-45deg,#F7F9F7,#F7F9F7 12px,#F1F4F1 12px,#F1F4F1 24px);}
 .bar{height:8px;border-radius:4px;background:var(--chain);}
 .pl{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:4px;background:#E7ECEF;color:var(--ink);margin-left:6px;}
 .stButton>button[kind="primary"]{background:var(--ink);border-color:var(--ink);font-weight:700;font-stretch:110%;padding:.7rem 1.6rem;font-size:1.05rem;}
@@ -129,29 +129,28 @@ def chain_name(chain):
 
 
 def eur(x, decimals=2):
-    """6.68 -> '6,68 €' (formato español)."""
-    s = f"{x:,.{decimals}f}".replace(",", "X").replace(".", ",").replace("X", ".")
-    return f"{s} €"
+    """6.68 -> '€6.68'."""
+    return f"€{x:,.{decimals}f}"
 
 
 def km_text(x):
-    return f"{x:,.1f} km".replace(".", ",") if x >= 1 else f"{x * 1000:.0f} m"
+    return f"{x:,.1f} km" if x >= 1 else f"{x * 1000:.0f} m"
 
 
 def price_tag(x, small=False):
-    """Precio como en la etiqueta de la estantería: euros grandes, céntimos pequeños arriba."""
+    """A price like a shelf label: big euros, small cents above."""
     euros, cents = f"{x:.2f}".split(".")
     return (
-        f'<div class="price{" sm" if small else ""}"><span class="eu">{euros}</span>'
-        f'<span class="ct">,{cents}</span><span class="cur">€</span></div>'
+        f'<div class="price{" sm" if small else ""}"><span class="cur">€</span><span class="eu">{euros}</span>'
+        f'<span class="ct">.{cents}</span></div>'
     )
 
 
 # ============================================================
-# DATOS DE PRODUCTOS
+# PRODUCT DATA
 # ============================================================
 
-UNIT_TEXT = {"LITRO": "l", "KILO": "kg", "UNIDAD": "ud.", "LAVADO": "lavados"}
+UNIT_TEXT = {"LITRO": "l", "KILO": "kg", "UNIDAD": "unit", "LAVADO": "wash"}
 DEFAULT_BASKET = {
     "leche_semidesnatada": 2.0,
     "aceite_oliva_virgen_extra": 1.0,
@@ -169,7 +168,7 @@ def load_data():
 try:
     df = load_data()
 except FileNotFoundError:
-    st.error("Faltan los datos normalizados. Ejecuta desde la carpeta del proyecto: python -m src.pipeline.build")
+    st.error("The normalized data is missing. From the project folder, run: python -m src.pipeline.build")
     st.stop()
 
 usable_df = pricing.usable(df)
@@ -191,15 +190,15 @@ def unit(type_id):
 
 @st.cache_data
 def unit_prices(type_ids, stat):
-    """Tipos × cadenas, € por unidad (mediana o mínimo)."""
+    """Types × chains, € per unit (median or cheapest)."""
     return pricing.price_table(df, list(type_ids), stat).reindex(index=list(type_ids), columns=CHAINS)
 
 
 # ============================================================
-# ESTADO COMPARTIDO ENTRE PÁGINAS
+# STATE SHARED BETWEEN PAGES
 # ============================================================
-# Streamlit borra el estado de los widgets de una página que no se está mostrando; reasignarlo
-# al principio de cada ejecución lo conserva (la cesta, cantidades y ajustes viajan entre páginas).
+# Streamlit clears the widget state of a page that isn't showing; reassigning it at the start of
+# each run keeps it (the basket, quantities and settings travel between pages).
 
 DEFAULTS = {
     "basket": list(DEFAULT_BASKET),
@@ -208,8 +207,8 @@ DEFAULTS = {
     "cost_per_km": 0.25,
     "cost_per_stop": 1.0,
     "max_stores": 2,
-    "stat": "Precio típico",
-    "sort": "Precio",
+    "stat": "Typical price",
+    "sort": "Price",
 }
 for key, value in DEFAULTS.items():
     st.session_state.setdefault(key, value)
@@ -223,11 +222,11 @@ basket = [t for t in st.session_state.basket if t in TYPES.index]
 for type_id in basket:
     st.session_state.setdefault(f"qty_{type_id}", 1.0 if TYPES.at[type_id, "unit"] != "UNIDAD" else 6.0)
 quantities = pd.Series({t: st.session_state[f"qty_{t}"] for t in basket}, dtype=float)
-STAT = "min" if st.session_state.stat == "Lo más barato" else "median"
+STAT = "min" if st.session_state.stat == "Cheapest" else "median"
 
 
 # ============================================================
-# UBICACIÓN Y TIENDAS (con plan B si las APIs fallan)
+# LOCATION AND STORES (with a fallback if the APIs fail)
 # ============================================================
 
 SAVED_ADDRESSES = {"avenida de la universidad, 30, leganés": (40.3326, -3.7651, "Av. de la Universidad 30, Leganés")}
@@ -266,7 +265,7 @@ def chain_of(name):
 
 @st.cache_data(ttl=3600, show_spinner=False)
 def load_stores(lat, lon, box=0.15):
-    """Supermercados de OpenStreetMap alrededor del punto; si Overpass falla, la lista guardada."""
+    """OpenStreetMap supermarkets around the point; if Overpass fails, the saved list."""
     query = f"""[out:json][timeout:20];
     (nwr["shop"="supermarket"]["brand"~"Mercadona|DIA|ALDI|Alcampo|Ahorram|BM|Consum",i]({lat-box},{lon-box},{lat+box},{lon+box});
      nwr["shop"="supermarket"]["name"~"Mercadona|DIA|ALDI|Alcampo|Ahorram|BM|Consum",i]({lat-box},{lon-box},{lat+box},{lon+box}););
@@ -297,31 +296,31 @@ def load_stores(lat, lon, box=0.15):
 
 location = geocode(st.session_state.address)
 if location == "error":
-    st.error("El servicio de direcciones no responde. Prueba otra vez en unos segundos o usa la dirección de ejemplo.")
+    st.error("The address service is not responding. Try again in a few seconds, or use the example address.")
     st.stop()
 if location is None:
-    st.error("No encontramos esa dirección. Escribe calle, número y localidad, por ejemplo «Calle Mayor 1, Madrid».")
+    st.error("We could not find that address. Enter street, number and town, for example \"Calle Mayor 1, Madrid\".")
     st.stop()
 user_lat, user_lon, _, offline_geo = location
 HOME = (user_lat, user_lon)
 
-with st.spinner("Buscando supermercados cerca de ti…"):
+with st.spinner("Finding supermarkets near you…"):
     all_stores, offline_stores = load_stores(user_lat, user_lon)
 
 candidates = opt.candidate_stores(all_stores, HOME, per_chain=3, max_km=st.session_state.radius)
-nearest = candidates.drop_duplicates("supermarket")  # la tienda más cercana de cada cadena
+nearest = candidates.drop_duplicates("supermarket")  # the nearest store of each chain
 
 
 # ============================================================
-# CÁLCULOS DE LA CESTA (compartidos por todas las páginas)
+# BASKET CALCULATIONS (shared by every page)
 # ============================================================
 
 ppu = unit_prices(tuple(basket), STAT) if basket else pd.DataFrame(columns=CHAINS)
-cost = ppu.mul(quantities, axis=0)  # € de cada producto en la cantidad pedida
+cost = ppu.mul(quantities, axis=0)  # € of each product in the quantity asked for
 
 
 def chain_cards():
-    """Una fila por cadena con tienda en el radio: coste de la cesta, cobertura y coste con el viaje."""
+    """One row per chain with a store in range: basket cost, coverage and cost including the trip."""
     rows = []
     for _, store in nearest.iterrows():
         chain = store["supermarket"]
@@ -337,7 +336,7 @@ def chain_cards():
     cards = pd.DataFrame(rows)
     if cards.empty:
         return cards
-    key = {"Precio": "basket_eur", "Distancia": "distance_km", "Equilibrio": "balanced_eur"}[st.session_state.sort or "Precio"]
+    key = {"Price": "basket_eur", "Distance": "distance_km", "Balance": "balanced_eur"}[st.session_state.sort or "Price"]
     return cards.sort_values(["complete", key], ascending=[False, True]).reset_index(drop=True)
 
 
@@ -347,38 +346,38 @@ def plans_for(cost, stores, home, max_stores):
 
 
 # ============================================================
-# CABECERA COMÚN: dirección y cesta siempre a mano
+# SHARED HEADER: address and basket always at hand
 # ============================================================
 
 def header():
     left, mid, right = st.columns([3.3, 4.7, 2], vertical_alignment="center")
     left.markdown(
-        '<div style="font-stretch:118%;font-weight:800;font-size:1.12rem;white-space:nowrap;">🛒 Comparador de supermercados</div>',
+        '<div style="font-stretch:118%;font-weight:800;font-size:1.12rem;white-space:nowrap;">🛒 Supermarket comparison</div>',
         unsafe_allow_html=True,
     )
-    with mid.popover(f"📍 Comprando cerca de {st.session_state.address}, hasta {km_text(st.session_state.radius)}", width="stretch"):
-        st.text_input("Dirección", key="address")
-        st.slider("Distancia máxima a la tienda (km)", 0.3, 5.0, step=0.1, key="radius")
-    with right.popover(f"Cesta ({len(basket)})", icon=":material/shopping_basket:", width="stretch"):
+    with mid.popover(f"📍 Shopping near {st.session_state.address}, within {km_text(st.session_state.radius)}", width="stretch"):
+        st.text_input("Address", key="address")
+        st.slider("Maximum distance to the store (km)", 0.3, 5.0, step=0.1, key="radius")
+    with right.popover(f"Basket ({len(basket)})", icon=":material/shopping_basket:", width="stretch"):
         if not basket:
-            st.write("Tu cesta está vacía.")
+            st.write("Your basket is empty.")
         for t in basket:
             st.markdown(f"**{label(t)}** · {st.session_state[f'qty_{t}']:g} {unit(t)}")
     if offline_geo:
-        st.caption("El servicio de direcciones no responde: usamos la ubicación guardada de esta dirección.")
+        st.caption("The address service is not responding: using the saved location for this address.")
     if offline_stores:
-        st.caption("OpenStreetMap no responde: usamos la lista de tiendas de Madrid guardada en data/stores_madrid.csv.")
+        st.caption("OpenStreetMap is not responding: using the saved Madrid store list in data/stores_madrid.csv.")
 
 
 # ============================================================
-# FICHA DE PRODUCTO (ventana emergente)
+# PRODUCT SHEET (pop-up window)
 # ============================================================
 
-@st.dialog("Ficha de producto", width="large")
+@st.dialog("Product sheet", width="large")
 def product_sheet(type_id):
     rows = pricing.type_rows(df, type_id)
     st.markdown(f"## {label(type_id)}")
-    st.caption(f"{len(rows)} productos en {rows['supermarket'].nunique()} cadenas · precios por {unit(type_id)}")
+    st.caption(f"{len(rows)} products in {rows['supermarket'].nunique()} chains · prices per {unit(type_id)}")
 
     by_chain = (
         rows.groupby("supermarket")["price_per_unit"]
@@ -393,7 +392,7 @@ def product_sheet(type_id):
             f'<div><span class="dot"></span><b>{chain_name(chain)}</b></div>'
             f'<div><div class="bar" style="width:{width:.0f}%"></div></div>'
             f'<div style="text-align:right"><b>{eur(r["median"])}/{unit(type_id)}</b>'
-            f'<div class="small">desde {eur(r["min"])}, {int(r["size"])} productos</div></div></div>'
+            f'<div class="small">from {eur(r["min"])}, {int(r["size"])} products</div></div></div>'
         )
     html("".join(lines))
 
@@ -402,20 +401,20 @@ def product_sheet(type_id):
     if pd.notna(own) and pd.notna(brand) and brand > 0:
         gap = 100 * (brand - own) / brand
         st.info(
-            f"La marca blanca cuesta de mediana {eur(own)}/{unit(type_id)} frente a {eur(brand)} de las marcas: "
-            f"un {gap:.0f} % {'menos' if gap >= 0 else 'más'}."
+            f"Own brand has a median of {eur(own)}/{unit(type_id)} against {eur(brand)} for national brands: "
+            f"{abs(gap):.0f}% {'less' if gap >= 0 else 'more'}."
         )
 
-    st.markdown("#### Los cinco más baratos")
+    st.markdown("#### The five cheapest")
     cheapest = rows.nsmallest(5, "price_per_unit")
     items = []
     for _, p in cheapest.iterrows():
-        tag = '<span class="pl">Marca blanca</span>' if p["is_private_label"] == 1 else ""
+        tag = '<span class="pl">Own brand</span>' if p["is_private_label"] == 1 else ""
         items.append(
             f'<div class="store-row" style="--chain:{CHAIN_COLORS.get(p["supermarket"], INK)}">'
             f'<div><span class="dot"></span>{p["name"]}{tag}<div class="addr">{chain_name(p["supermarket"])}</div></div>'
             f'<div style="text-align:right"><b>{eur(p["price_per_unit"])}/{unit(type_id)}</b>'
-            f'<div class="addr">{eur(p["price"]) if pd.notna(p["price"]) else ""} el envase</div></div></div>'
+            f'<div class="addr">{eur(p["price"]) if pd.notna(p["price"]) else ""} per pack</div></div></div>'
         )
     html('<div class="panel" style="padding:4px 0">' + "".join(items) + "</div>")
 
@@ -435,21 +434,21 @@ def show_pending_sheet():
 
 
 # ============================================================
-# PÁGINA: CESTA
+# PAGE: BASKET
 # ============================================================
 
 def page_basket():
     header()
-    html('<div class="hero">¿Qué vas a comprar?</div>')
-    html(f'<div class="lede">Elige entre {len(TYPES)} tipos de producto de {len(CHAINS)} cadenas. '
-         "Comparamos cada tipo con su equivalente en las demás, no la marca.</div>")
+    html('<div class="hero">What are you buying?</div>')
+    html(f'<div class="lede">Choose from {len(TYPES)} product types across {len(CHAINS)} chains. '
+         "We compare each type with its equivalent elsewhere, not the brand. Product names stay in Spanish, as the chains sell them.</div>")
 
     st.multiselect(
-        "Buscar productos", TYPES.index, key="basket", format_func=label,
-        placeholder="Busca: leche, atún en aceite, pan de molde…", label_visibility="collapsed",
+        "Search products", TYPES.index, key="basket", format_func=label,
+        placeholder="Search: leche, atún en aceite, pan de molde…", label_visibility="collapsed",
     )
     if not basket:
-        html('<div class="panel">Tu cesta está vacía. Busca arriba un producto para empezar.</div>')
+        html('<div class="panel">Your basket is empty. Search for a product above to start.</div>')
         return
 
     st.write("")
@@ -458,8 +457,8 @@ def page_basket():
         c1, c2, c3 = st.columns([6, 2, 1.3], vertical_alignment="center")
         best = ppu.loc[type_id].min()
         hint = (
-            f'desde <b>{eur(best)}/{unit(type_id)}</b> en {chain_name(cheapest_chain[type_id])}'
-            if pd.notna(best) else "sin precio en ninguna cadena"
+            f'from <b>{eur(best)}/{unit(type_id)}</b> at {chain_name(cheapest_chain[type_id])}'
+            if pd.notna(best) else "no price at any chain"
         )
         c1.markdown(
             f'<div class="item-row"><span class="name">{label(type_id)}</span></div><div class="from">{hint}</div>',
@@ -467,19 +466,19 @@ def page_basket():
         )
         is_count = TYPES.at[type_id, "unit"] in ("UNIDAD", "LAVADO")
         c2.number_input(
-            f"Cantidad ({unit(type_id)})", min_value=0.25 if not is_count else 1.0,
+            f"Quantity ({unit(type_id)})", min_value=0.25 if not is_count else 1.0,
             step=0.5 if not is_count else 1.0, key=f"qty_{type_id}",
         )
-        c3.button("Ficha", key=f"sheet_{type_id}", on_click=open_sheet, args=(type_id,), width="stretch")
+        c3.button("Details", key=f"sheet_{type_id}", on_click=open_sheet, args=(type_id,), width="stretch")
         st.divider()
 
-    if st.button("Comparar mi cesta", type="primary"):
+    if st.button("Compare my basket", type="primary"):
         st.switch_page(PAGES["compare"])
     show_pending_sheet()
 
 
 # ============================================================
-# PÁGINA: COMPARAR
+# PAGE: COMPARE
 # ============================================================
 
 def matrix_html(cards):
@@ -504,21 +503,21 @@ def matrix_html(cards):
     totals = "".join(
         f'<td>{eur(r.basket_eur) if r.complete else f"{r.have}/{len(basket)}"}</td>' for r in cards.itertuples()
     )
-    body.append(f'<tr class="total"><td>Total cesta</td>{totals}</tr>')
-    return f'<div class="matrix-wrap"><table class="matrix"><tr><th>Producto</th>{head}</tr>{"".join(body)}</table></div>'
+    body.append(f'<tr class="total"><td>Basket total</td>{totals}</tr>')
+    return f'<div class="matrix-wrap"><table class="matrix"><tr><th>Product</th>{head}</tr>{"".join(body)}</table></div>'
 
 
 def route_html(plan, stores):
     steps = opt.describe_route(plan, stores)
-    items = [f'<li style="--chain:{INK}"><span class="stop"></span><b>Sales de casa</b></li>']
+    items = [f'<li style="--chain:{INK}"><span class="stop"></span><b>Leave home</b></li>']
     for _, to, km in steps:
         what = [label(t) for t, c in plan["buy_at"].items() if c == to]
         color = CHAIN_COLORS.get(to, INK)
-        title = "Vuelves a casa" if to == opt.HOME else f"{chain_name(to)}"
+        title = "Back home" if to == opt.HOME else f"{chain_name(to)}"
         detail = f'<div class="small">{", ".join(what)}</div>' if what else ""
         items.append(
             f'<li style="--chain:{color if to != opt.HOME else INK}"><span class="stop"></span>'
-            f'<b>{title}</b> <span class="km">a {km_text(km)}</span>{detail}</li>'
+            f'<b>{title}</b> <span class="km">{km_text(km)}</span>{detail}</li>'
         )
     return f'<ul class="route">{"".join(items)}</ul>'
 
@@ -526,180 +525,138 @@ def route_html(plan, stores):
 def page_compare():
     header()
     if not basket:
-        html('<div class="hero">Tu cesta está vacía</div>')
-        if st.button("Añadir productos", type="primary"):
+        html('<div class="hero">Your basket is empty</div>')
+        if st.button("Add products", type="primary"):
             st.switch_page(PAGES["basket"])
         return
     if nearest.empty:
-        html('<div class="hero">No hay supermercados en tu radio</div>')
-        st.write("Amplía la distancia máxima en la barra de arriba.")
+        html('<div class="hero">No supermarkets within your range</div>')
+        st.write("Increase the maximum distance in the bar above.")
         return
 
     cards = chain_cards()
     complete = cards[cards["complete"]]
     if complete.empty:
-        html('<div class="hero">Ninguna tienda cercana tiene toda tu cesta</div>')
+        html('<div class="hero">No nearby store has your whole basket</div>')
     else:
         cheapest = complete.sort_values("basket_eur").iloc[0]
-        html(f'<div class="hero">Tu cesta cuesta {eur(cheapest.basket_eur)} en {chain_name(cheapest.chain)}</div>')
+        html(f'<div class="hero">Your basket costs {eur(cheapest.basket_eur)} at {chain_name(cheapest.chain)}</div>')
     n_products = len(basket)
-    html(f'<div class="lede">{n_products} productos, {len(cards)} cadenas con tienda a menos de '
-         f'{km_text(st.session_state.radius)}. Precio de cada producto: '
-         f'{"el más barato de su tipo" if STAT == "min" else "la mediana de su tipo"} en cada cadena.</div>')
+    html(f'<div class="lede">{n_products} products, {len(cards)} chains with a store within '
+         f'{km_text(st.session_state.radius)}. Price of each product: '
+         f'{"the cheapest of its type" if STAT == "min" else "the median of its type"} at each chain.</div>')
 
-    st.segmented_control("Ordenar por", ["Precio", "Distancia", "Equilibrio"], key="sort",
-                         help="Equilibrio suma la cesta y el coste de ir y volver a la tienda.")
+    st.segmented_control("Sort by", ["Price", "Distance", "Balance"], key="sort",
+                         help="Balance adds the basket and the cost of the trip to the store and back.")
     best_price = cards.loc[cards["complete"], "basket_eur"].min()
     tags = []
-    for i, r in cards.iterrows():
+    for _, r in cards.iterrows():
         win = r.complete and r.basket_eur == best_price
         if not r.complete:
-            diff, cls = f"Sin {len(basket) - r.have} de tus {len(basket)} productos: no comparable", "partial"
+            diff, cls = f"Missing {len(basket) - r.have} of your {len(basket)} products: not comparable", "partial"
         elif win:
-            diff, cls = "La más barata", "win"
+            diff, cls = "Cheapest", "win"
         else:
-            diff, cls = f"+{eur(r.basket_eur - best_price)} ({100 * (r.basket_eur / best_price - 1):.0f} %)", ""
-        badge = '<span class="badge">Mejor precio</span>' if win else ""
+            diff, cls = f"+{eur(r.basket_eur - best_price)} ({100 * (r.basket_eur / best_price - 1):.0f}%)", ""
+        badge = '<span class="badge">Best price</span>' if win else ""
         total = price_tag(r.basket_eur, small=not r.complete) if pd.notna(r.basket_eur) else price_tag(0, small=True)
         tags.append(
             f'<div class="tag {cls}" style="--chain:{CHAIN_COLORS.get(r.chain, INK)}">{badge}'
             f'<div class="chain">{chain_name(r.chain)}</div>{total}<div class="diff">{diff}</div>'
-            f'<div class="meta"><span>{km_text(r.distance_km)}</span><span>{r.have}/{len(basket)} productos</span></div></div>'
+            f'<div class="meta"><span>{km_text(r.distance_km)}</span><span>{r.have}/{len(basket)} products</span></div></div>'
         )
     html(f'<div class="tags">{"".join(tags)}</div>')
 
-    st.markdown("### Dónde es más barato cada producto")
+    st.markdown("### Where each product is cheapest")
     html(matrix_html(cards))
-    st.pills("Ver ficha de", basket, format_func=label, key="sheet_pick", selection_mode="single",
+    st.pills("See details for", basket, format_func=label, key="sheet_pick", selection_mode="single",
              on_change=pick_sheet)
 
     st.write("")
-    right, charts = st.columns([2, 3], gap="large")
+    right, chart_area = st.columns([2, 3], gap="large")
     with right:
-        st.markdown("### Tu mejor ruta")
+        st.markdown("### Your best route")
         plans, plan_stores = plans_for(cost, candidates, HOME, st.session_state.max_stores)
         ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop)
         if ranked.empty:
-            st.warning("Ninguna combinación de tiendas cercanas tiene toda tu cesta. Amplía la distancia o quita productos.")
+            st.warning("No combination of nearby stores has your whole basket. Increase the distance or remove products.")
         else:
             best = ranked.iloc[0]
             single = ranked[ranked["n_stores"] == 1]
             if best["n_stores"] == 1:
-                verdict = f"Ve solo a {chain_name(best['chains'][0])}"
+                verdict = f"Go to {chain_name(best['chains'][0])} only"
                 multi = ranked[ranked["n_stores"] > 1]
                 saving = best["products_eur"] - multi["products_eur"].min() if not multi.empty else 0
                 note = (
-                    f"Repartir la compra ahorraría {eur(saving)} en productos, "
-                    "pero el viaje extra y la parada no lo compensan."
-                    if saving > 0.005 else "Ninguna otra tienda mejora el precio de tus productos."
+                    f"Splitting the shop would save {eur(saving)} on products, "
+                    "but the extra trip and stop cost more than that."
+                    if saving > 0.005 else "No other store beats the price of your products."
                 )
             else:
-                verdict = "Reparte la compra: " + " y ".join(chain_name(c) for c in best["chains"])
+                verdict = "Split the shop: " + " and ".join(chain_name(c) for c in best["chains"])
                 note = (
-                    f"Ahorras {eur(single.iloc[0]['total_eur'] - best['total_eur'])} frente a la mejor tienda única, "
-                    "contando el viaje y la parada extra."
-                    if not single.empty else "Ninguna tienda sola tiene toda tu cesta."
+                    f"You save {eur(single.iloc[0]['total_eur'] - best['total_eur'])} over the best single store, "
+                    "counting the trip and the extra stop."
+                    if not single.empty else "No single store has your whole basket."
                 )
             html(
                 f'<div class="panel"><div class="verdict">{verdict}</div>'
                 f'{price_tag(best["total_eur"], small=True)}'
-                f'<div class="small" style="margin:6px 0 10px">{eur(best["products_eur"])} de productos + '
-                f'{eur(best["travel_eur"])} de viaje ({km_text(best["route_km"])}) + {eur(best["stops_eur"])} por paradas extra</div>'
+                f'<div class="small" style="margin:6px 0 10px">{eur(best["products_eur"])} products + '
+                f'{eur(best["travel_eur"])} travel ({km_text(best["route_km"])}) + {eur(best["stops_eur"])} extra stops</div>'
                 f'{route_html(best, plan_stores)}<div class="small">{note}</div></div>'
             )
-        with st.expander("Ajustes del cálculo"):
-            st.slider("Coste de desplazarte (€/km)", 0.0, 1.0, step=0.05, key="cost_per_km",
-                      help="0 si vas andando. Unos 0,25 €/km en coche.")
-            st.slider("Coste de cada parada extra (€)", 0.0, 5.0, step=0.25, key="cost_per_stop",
-                      help="Tiempo, cola, aparcar… Repartir la compra solo compensa si ahorra más que esto.")
-            st.radio("Tiendas como máximo", [1, 2, 3], key="max_stores", horizontal=True)
-            st.radio("Precio de cada producto", ["Precio típico", "Lo más barato"], key="stat", horizontal=True,
-                     help="Precio típico = mediana de su tipo en la cadena. Lo más barato = el producto más barato de ese tipo.")
-            st.caption(f"Distancias en línea recta × {opt.DETOUR:.1f} (las calles no van en línea recta). "
-                       "Se prueban hasta 3 tiendas por cadena y todos los órdenes de visita.")
+        with st.expander("Calculation settings"):
+            st.slider("Travel cost (€/km)", 0.0, 1.0, step=0.05, key="cost_per_km",
+                      help="0 if you walk. About 0.25 €/km by car.")
+            st.slider("Cost of each extra stop (€)", 0.0, 5.0, step=0.25, key="cost_per_stop",
+                      help="Time, queues, parking… Splitting the shop only pays if it saves more than this.")
+            st.radio("Maximum stores", [1, 2, 3], key="max_stores", horizontal=True)
+            st.radio("Price of each product", ["Typical price", "Cheapest"], key="stat", horizontal=True,
+                     help="Typical price = median of its type at the chain. Cheapest = the cheapest product of that type.")
+            st.caption(f"Straight-line distances × {opt.DETOUR:.1f}, because streets are not straight. "
+                       "It tries up to 3 stores per chain and every visiting order.")
 
-    with charts:
-        st.markdown("### Dos preguntas sobre tu cesta")
-        a, b = st.tabs(["¿Merece la pena ir más lejos?", "¿Cuándo compensa ir a dos tiendas?"])
+    with chart_area:
+        st.markdown("### Two questions about your basket")
+        a, b = st.tabs(["Is it worth going further?", "When do two stores pay off?"])
         with a:
-            st.altair_chart(scatter_chart(cards), width="stretch", theme=None)
-            st.caption("Cada punto es la tienda más cercana de una cadena. Las difuminadas tienen otra tienda más barata y más cerca.")
+            st.altair_chart(charts.scatter(cards, CHAIN_COLORS, CHAIN_NAMES, eur, km_text), width="stretch", theme=None)
+            st.caption("Each point is the nearest store of a chain. Faded points have another store that is both cheaper and closer.")
         with b:
             if ranked.empty:
-                st.write("Hace falta al menos una combinación de tiendas con toda tu cesta.")
+                st.write("This needs at least one combination of stores with your whole basket.")
             else:
-                chart, threshold = sensitivity_chart(plans)
+                chart, threshold = sensitivity_view(plans)
                 st.altair_chart(chart, width="stretch", theme=None)
                 st.caption(threshold)
     show_pending_sheet()
 
 
-def styled(chart):
-    return chart.configure(font="Archivo", background="#FFFFFF").configure_view(strokeWidth=0).configure_axis(
-        labelColor=MUTED, titleColor=MUTED, gridColor="#E8EDEA", domainColor="#C9D2CD", labelFontSize=12, titleFontSize=12,
-    )
-
-
-def scatter_chart(cards):
-    c = cards[cards["complete"]].copy()
-    c["Cadena"] = c["chain"].map(chain_name)
-    c["dominada"] = [
-        bool(((c["basket_eur"] <= r.basket_eur) & (c["distance_km"] <= r.distance_km)
-              & ((c["basket_eur"] < r.basket_eur) | (c["distance_km"] < r.distance_km))).any())
-        for r in c.itertuples()
-    ]
-    c["Cesta"] = c["basket_eur"].map(eur)
-    c["Distancia"] = c["distance_km"].map(km_text)
-    scale = alt.Scale(domain=[chain_name(k) for k in CHAIN_COLORS], range=list(CHAIN_COLORS.values()))
-    base = alt.Chart(c).encode(
-        x=alt.X("distance_km:Q", title="Distancia a la tienda (km)", scale=alt.Scale(zero=True)),
-        y=alt.Y("basket_eur:Q", title="Precio de la cesta (€)", scale=alt.Scale(zero=False)),
-        color=alt.Color("Cadena:N", scale=scale, legend=None),
-        opacity=alt.condition("datum.dominada", alt.value(0.28), alt.value(1)),
-        tooltip=["Cadena", "Cesta", "Distancia"],
-    )
-    points = base.mark_circle(size=230)
-    labels = base.mark_text(align="left", dx=11, fontSize=12, fontWeight=700).encode(text="Cadena")
-    return styled((points + labels).properties(height=280))
-
-
-def sensitivity_chart(plans):
+def sensitivity_view(plans):
     km_costs = np.round(np.arange(0, 1.01, 0.05), 2)
     sens = opt.sensitivity(plans, km_costs, st.session_state.cost_per_stop)
-    long = pd.concat([
-        pd.DataFrame({"€/km": sens["cost_per_km"], "Total": sens["best_total"], "Plan": "Mejor plan", "z": 0}),
-        pd.DataFrame({"€/km": sens["cost_per_km"], "Total": sens["single_total"], "Plan": "Una sola tienda", "z": 1}),
-    ])
-    lines = alt.Chart(long).mark_line(strokeWidth=3).encode(
-        order="z:Q",
-        x=alt.X("€/km:Q", title="Coste de desplazarte (€/km)"),
-        y=alt.Y("Total:Q", title="Coste total (€)", scale=alt.Scale(zero=False)),
-        color=alt.Color("Plan:N", scale=alt.Scale(domain=["Una sola tienda", "Mejor plan"], range=["#9AA7AE", BEST]),
-                        legend=alt.Legend(orient="top", title=None)),
-        strokeDash=alt.StrokeDash("Plan:N", scale=alt.Scale(domain=["Una sola tienda", "Mejor plan"], range=[[7, 5], [1, 0]]), legend=None),
-    )
-    now = alt.Chart(pd.DataFrame({"x": [st.session_state.cost_per_km]})).mark_rule(color=INK, strokeDash=[2, 3]).encode(x="x:Q")
     split = sens[sens["best_n_stores"] > 1]
     if split.empty:
-        text = "Con tu coste por parada, ir a una sola tienda es siempre lo mejor."
+        text = "With your cost per stop, one store is always best."
     elif len(split) == len(sens):
-        text = "Repartir la compra compensa incluso a 1 €/km."
+        text = "Splitting the shop pays off even at 1 €/km."
     else:
-        text = f"Repartir la compra compensa hasta unos {split['cost_per_km'].max():.2f} €/km; a partir de ahí, mejor una sola tienda.".replace(".", ",", 1)
-    return styled((lines + now).properties(height=280)), text + " La línea punteada vertical es tu ajuste actual."
+        text = f"Splitting the shop pays off up to about {split['cost_per_km'].max():.2f} €/km; above that, one store is better."
+    return charts.sensitivity(sens, st.session_state.cost_per_km), text + " The dotted vertical line is your current setting."
 
 
 # ============================================================
-# PÁGINA: MAPA
+# PAGE: MAP
 # ============================================================
 
 def page_map():
     header()
-    html('<div class="hero">Tu cesta, tienda por tienda</div>')
-    html(f'<div class="lede">Cada chincheta muestra lo que te costaría la cesta en esa tienda. '
-         f'El círculo marca tu distancia máxima ({km_text(st.session_state.radius)}).</div>')
+    html('<div class="hero">Your basket, store by store</div>')
+    html(f'<div class="lede">Each pin shows what your basket would cost at that store. '
+         f'The circle marks your maximum distance ({km_text(st.session_state.radius)}).</div>')
     if nearest.empty:
-        st.write("No hay supermercados en tu radio. Amplía la distancia máxima en la barra de arriba.")
+        st.write("No supermarkets within your range. Increase the maximum distance in the bar above.")
         return
 
     cards = chain_cards().set_index("chain") if basket else pd.DataFrame()
@@ -714,9 +671,9 @@ def page_map():
     ).add_to(m)
     folium.Circle(HOME, radius=st.session_state.radius * 1000, color=INK, weight=1.5, dash_array="6 6", fill=True,
                   fill_opacity=0.04).add_to(m)
-    folium.Marker(HOME, tooltip="Tu dirección", icon=folium.DivIcon(
+    folium.Marker(HOME, tooltip="Your address", icon=folium.DivIcon(
         html=f'<div style="background:{INK};color:#fff;font:700 12px Archivo,sans-serif;padding:5px 9px;border-radius:14px;'
-             'white-space:nowrap;transform:translate(-50%,-50%);display:inline-block">Casa</div>'), z_index_offset=1000).add_to(m)
+             'white-space:nowrap;transform:translate(-50%,-50%);display:inline-block">Home</div>'), z_index_offset=1000).add_to(m)
 
     def pin_text(chain):
         if chain not in cards.index:
@@ -752,8 +709,8 @@ def page_map():
         picked = int(np.argmin(d)) if d.min() < 0.01 else None
     with left:
         if not ranked.empty:
-            html(f'<div class="small" style="margin-bottom:8px">La línea verde es tu mejor ruta: '
-                 f'{" y ".join(chain_name(c) for c in ranked.iloc[0]["chains"])}.</div>')
+            html(f'<div class="small" style="margin-bottom:8px">The green line is your best route: '
+                 f'{" and ".join(chain_name(c) for c in ranked.iloc[0]["chains"])}.</div>')
         rows = []
         for i, s in enumerate(shown.itertuples()):
             sel = " sel" if i == picked else ""
@@ -761,46 +718,199 @@ def page_map():
                 f'<div class="store-row{sel}" style="--chain:{CHAIN_COLORS.get(s.supermarket, INK)}">'
                 f'<div><span class="dot"></span><b>{chain_name(s.supermarket)}</b> '
                 f'<span class="small">{km_text(s.distance_km)}</span>'
-                f'<div class="addr">{s.address or "Ver en el mapa"}</div></div>'
+                f'<div class="addr">{s.address or "See on the map"}</div></div>'
                 f'<div><b>{pin_text(s.supermarket)}</b></div></div>'
             )
         html('<div class="panel" style="padding:0;max-height:560px;overflow-y:auto">' + "".join(rows) + "</div>")
-        st.caption("Toca una chincheta para resaltarla en la lista.")
+        st.caption("Click a pin to highlight it in the list.")
 
 
 # ============================================================
-# PÁGINA: TENDENCIAS (pendiente de decidir, ver §2.3 del plan)
+# PAGE: TRENDS
 # ============================================================
+
+@st.cache_data
+def load_changes():
+    return history.load_changes()
+
+
+def show(chart):
+    st.altair_chart(chart, width="stretch", theme=None)
+
+
+def day(date):
+    """'2026-09-23' -> '23 Sep'."""
+    return pd.Timestamp(date).strftime("%d %b").lstrip("0")
+
 
 def page_trends():
     header()
-    html('<div class="hero">Tendencias de precios</div>')
-    html('<div class="lede">Esta sección está pendiente. Ahora mismo tenemos una sola toma de precios, '
-         "y una tendencia necesita varias. Preferimos no enseñar números inventados.</div>")
-    html(
-        '<div class="placeholder">'
-        '<div class="verdict">Decisión pendiente del grupo</div>'
-        '<p><b>Opción A.</b> Guardar la fecha de cada recogida y repetir cada semana las APIs estables '
-        "(BM, Consum, Mercadona). Con 3 o 4 tomas ya se puede enseñar:</p>"
-        "<ul><li>la evolución del coste de tu cesta en cada cadena,</li>"
-        "<li>qué productos han subido o bajado desde la última toma,</li>"
-        "<li>el histórico de precio en la ficha de cada producto.</li></ul>"
-        "<p><b>Opción B.</b> Quitar esta sección y explicar en la memoria que los datos son una foto fija "
-        "y que seguir los precios en el tiempo es trabajo futuro.</p></div>"
-    )
+    try:
+        changes = load_changes()
+    except FileNotFoundError:
+        st.error("The price changes are missing. From the project folder, run: python -m src.analysis.history")
+        return
+    summary = history.chain_summary(changes)
+    top = summary.iloc[0]
+    html(f'<div class="hero">{top.changed_pct:.0f}% of {chain_name(top.chain)} prices changed between collections</div>')
+    html('<div class="lede">Three chains were collected on two dates, so this page shows price changes, '
+         "not a trend line yet. The line chart comes once weekly collections add more dates.</div>")
+
+    tags = []
+    for r in summary.itertuples():
+        tags.append(
+            f'<div class="tag" style="--chain:{CHAIN_COLORS.get(r.chain, INK)}"><div class="chain">{chain_name(r.chain)}</div>'
+            f'<div class="price sm"><span class="eu">{r.average_pct:+.1f}</span><span class="cur">%</span></div>'
+            f'<div class="diff" style="color:var(--muted)">average price change</div>'
+            f'<div class="meta"><span>{day(r.old_date)} to {day(r.new_date)}</span><span>{r.products} products</span></div></div>'
+        )
+    html(f'<div class="tags">{"".join(tags)}</div>')
+
+    st.markdown("### How many prices moved")
+    show(charts.moved_share(summary, CHAIN_NAMES))
+
+    st.markdown("### Biggest changes")
+    rises, falls = history.biggest_moves(changes)
+    left, right = st.columns(2, gap="large")
+    with left:
+        st.markdown("**Rises**")
+        show(charts.moves(rises, CHAIN_NAMES, charts.RISE))
+    with right:
+        st.markdown("**Falls**")
+        show(charts.moves(falls, CHAIN_NAMES, charts.FALL))
+    st.caption(f"{int(changes['held_back'].sum())} larger changes are held back for review, in case they are data errors.")
+
+    st.markdown("### Change by category")
+    show(charts.category_change(history.category_changes(changes), CHAIN_NAMES, insights.category_name))
+    st.caption(f"Only cells with at least {history.MIN_CATEGORY_PRODUCTS} comparable products. Empty cells have too few.")
+
+    st.markdown("### Offers today")
+    table, former = history.offers()
+    columns = st.columns(len(table) + 1)
+    for column, r in zip(columns, table.itertuples()):
+        column.metric(f"{chain_name(r.chain)} products on offer", f"{r.on_offer_pct:.1f}%", help=f"{r.on_offer} of {r.products}")
+        column.caption(f"Median discount {r.median_discount_pct:.0f}%")
+    columns[-1].metric("Mercadona with a higher former price", f"{former['products']}")
+    columns[-1].caption(f"Median {former['median_drop_pct']:.0f}% lower now")
+    st.caption("Average change is a geometric mean. Mercadona compares two collectors joined on product name, "
+               "so it covers fewer products; treat it as a rough measure.")
 
 
 # ============================================================
-# NAVEGACIÓN
+# PAGE: ANALYSIS
+# ============================================================
+
+@st.cache_data(show_spinner=False)
+def route_comparison(stores, home, cost_per_km, cost_per_stop):
+    return insights.greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop)
+
+
+def section_chains():
+    table, n_types = insights.basket_index(df)
+    bm = table.set_index("chain").loc["Bm"]
+    st.markdown(f"### The method moves BM from {bm['median']:.0f} to {bm['cheapest']:.0f}")
+    show(charts.index_dumbbell(table, CHAIN_COLORS, CHAIN_NAMES))
+    st.caption(f"Sum of {n_types} product types that all 7 chains sell. A wide gap means a chain's median is pulled up "
+               "by the products it stocks, not only by its prices.")
+
+
+def section_categories():
+    winners = insights.category_winners(df)
+    disagree = int((~winners["agree"]).sum())
+    st.markdown(f"### The cheapest chain depends on the category, and on the method in {disagree} of {len(winners)} categories")
+    choice = st.segmented_control("Price of each type", ["Median", "Cheapest product"], default="Median", key="category_stat")
+    stat = "min" if choice == "Cheapest product" else "median"
+    show(charts.category_heatmap(insights.category_prices(df, stat), CHAIN_NAMES, insights.category_name))
+    st.caption(f'Each type is compared on its own, then a median is taken. "few" means fewer than {insights.MIN_PRODUCTS} '
+               "products. Colors stop at 2.5× the cheapest; very large gaps can be data problems.")
+    table = winners.assign(
+        Category=winners["category"].map(insights.category_name),
+        Median=winners["median"].map(chain_name), Cheapest=winners["min"].map(chain_name),
+    ).sort_values("Category")
+    with st.expander("Winner of each category"):
+        st.dataframe(table[["Category", "Median", "Cheapest"]], hide_index=True, width="stretch")
+
+
+def section_own_brand():
+    table = insights.own_brand_gap(df)
+    best = table.iloc[0]
+    st.markdown(f"### Own brand saves most at {chain_name(best.chain)}: {best.gap_pct:.0f}% on a typical type")
+    left, right = st.columns(2, gap="large")
+    with left:
+        show(charts.own_brand(table, CHAIN_COLORS, CHAIN_NAMES))
+    with right:
+        show(charts.own_share(table, CHAIN_COLORS, CHAIN_NAMES))
+    st.caption("Saving: median across the types where the chain sells both own and national brands.")
+
+
+def section_spread():
+    table = insights.price_spread(df)
+    more = int((table["within"] > table["between"]).sum())
+    st.markdown(f"### In {more} of {len(table)} categories, choosing the product matters more than choosing the store")
+    show(charts.spread(table, insights.category_name))
+    st.caption("Between products: p90 against p10 of a type within one chain. Between chains: dearest against "
+               "cheapest chain median of a type. Both are medians across the category.")
+
+
+def section_barcode():
+    pairs = insights.same_barcode()
+    gap, by_type = pairs["gap_pct"].median(), insights.type_gap(df)
+    st.markdown(f"### On the same barcode, BM is {gap:.0f}% dearer than Consum; our type medians say {by_type:.0f}%")
+    show(charts.barcode_gap(pairs))
+    same = (pairs["gap_pct"].abs() <= 0.5).mean()
+    st.caption(f"{len(pairs)} products with the same barcode at both chains; {100 * same:.0f}% have the same price. "
+               "This is the only exact comparison possible today, and it is why product matching comes next.")
+
+
+def section_route():
+    st.markdown("### What the exact optimizer adds")
+    if candidates["supermarket"].nunique() < 2:
+        st.write("This needs stores from two chains within your range. Increase the maximum distance in the bar above.")
+        return
+    with st.spinner("Comparing random baskets…"):
+        table = route_comparison(candidates, HOME, st.session_state.cost_per_km, st.session_state.cost_per_stop)
+    if table.empty:
+        st.write("None of the random baskets could be bought within your range. Increase the maximum distance.")
+        return
+    st.markdown(f"It saves a mean **{eur(table['saving_eur'].mean())}** per basket over shopping from a price list, "
+                f"with {table['exact_stops'].mean():.1f} stops instead of {table['greedy_stops'].mean():.1f}.")
+    show(charts.route_savings(table))
+    st.caption(f"{len(table)} random baskets of 5 product types near your address. Price list means buying each item "
+               "at its cheapest chain, with the same limit of 3 stores. Totals include travel and extra stops.")
+
+
+def section_coverage():
+    table = insights.coverage(df)
+    st.markdown(f"### {int(table['products'].sum()):,} comparable products behind these charts")
+    show(charts.coverage(table, CHAIN_NAMES, insights.category_name))
+    st.caption("Number of products per category and chain. Small numbers mean a price here rests on few products.")
+
+
+def page_analysis():
+    header()
+    html('<div class="hero">What the prices tell us</div>')
+    html('<div class="lede">Across all products, not just your basket. These results are provisional until '
+         "the product classifier is fully evaluated.</div>")
+    tabs = st.tabs(["Chains", "Categories", "Own brand", "Product or store", "Same product", "Route savings", "Data coverage"])
+    sections = [section_chains, section_categories, section_own_brand, section_spread,
+                section_barcode, section_route, section_coverage]
+    for tab, section in zip(tabs, sections):
+        with tab:
+            section()
+
+
+# ============================================================
+# NAVIGATION
 # ============================================================
 
 PAGES = {
-    "basket": st.Page(page_basket, title="Cesta", icon=":material/shopping_basket:", url_path="cesta", default=True),
-    "compare": st.Page(page_compare, title="Comparar", icon=":material/compare_arrows:", url_path="comparar"),
-    "map": st.Page(page_map, title="Mapa", icon=":material/map:", url_path="mapa"),
-    "trends": st.Page(page_trends, title="Tendencias", icon=":material/trending_up:", url_path="tendencias"),
+    "basket": st.Page(page_basket, title="Basket", icon=":material/shopping_basket:", url_path="basket", default=True),
+    "compare": st.Page(page_compare, title="Compare", icon=":material/compare_arrows:", url_path="compare"),
+    "map": st.Page(page_map, title="Map", icon=":material/map:", url_path="map"),
+    "trends": st.Page(page_trends, title="Trends", icon=":material/trending_up:", url_path="trends"),
+    "analysis": st.Page(page_analysis, title="Analysis", icon=":material/insights:", url_path="analysis"),
 }
 st.navigation(list(PAGES.values()), position="top").run()
 
 st.markdown("---")
-st.caption("Tiendas: © OpenStreetMap contributors. Precios: recogidos por web scraping y APIs de cada cadena.")
+st.caption("Stores: © OpenStreetMap contributors. Prices: collected by web scraping and each chain's APIs.")

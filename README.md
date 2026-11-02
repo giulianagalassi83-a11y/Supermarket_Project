@@ -1,108 +1,91 @@
-# 🛒 Supermarket Price Analytics — Comunidad de Madrid
+# 🛒 Supermarket Price Analytics: Comunidad de Madrid
 
-Proyecto analítico de web scraping, normalización y comparación de precios de productos de gran consumo en los principales supermercados de la Comunidad de Madrid (**AhorraMás, Alcampo, Aldi, DIA y Mercadona**).
+Web scraping, normalization and price comparison of everyday products in the main supermarket chains of the Comunidad de Madrid: **Ahorramás, Alcampo, Aldi, BM, Consum, Dia and Mercadona**.
 
 ---
 
-## 📂 Estructura del Proyecto
+## 📂 Project structure
 
 ```text
 supermarket_project/
 │
 ├── data/
-│   ├── raw/                  # Datos crudos extraídos directamente de los web scrapers
-│   │   ├── dia_products_raw.csv
-│   │   ├── mercadona_products_raw.csv
-│   │   └── ...
-│   ├── processed/            # Datos limpios, deduplicados y normalizados
-│   │   ├── dia_products.csv[cite: 16]
-│   │   ├── mercadona_products.csv[cite: 17]
-│   │   ├── aldi_products.csv
-│   │   ├── alcampo_products.csv
-│   │   └── ahorramas_products.csv
-│   └── stores_madrid.csv     # Localizaciones de establecimientos físicas (OSM)
+│   ├── raw/                     # Data as returned by the scrapers and APIs
+│   ├── processed/               # Clean per-chain files
+│   ├── history/                 # Older snapshots, recovered from git
+│   ├── taxonomy/                # Product types
+│   ├── labels/                  # Hand labels for the classifier
+│   ├── products_normalized.csv  # Output of the pipeline
+│   ├── price_changes.csv        # Price changes between collection dates
+│   └── stores_madrid.csv        # Store locations (OpenStreetMap)
 │
 ├── src/
-│   ├── scrapers/             # Scripts automatizados de extracción (Selenium / BeautifulSoup)
-│   ├── normalize.py          # Módulo central de estandarización de unidades
-│   └── get_stores.py         # Extractor de ubicaciones vía Overpass API (OpenStreetMap)
+│   ├── pipeline/                # Normalization and product-type classification
+│   ├── analysis/                # Prices, optimizer, price history and insights
+│   ├── normalize.py             # Unit standardization used by the collectors
+│   └── get_stores.py            # Store locations from the Overpass API
 │
-├── api_clients/
-│   ├── bm_consum_api.ipynb   # Extracción vía API REST JSON (BM y Consum), sin navegador
-│   └── mercadona_api.ipynb   # Alternativa vía API al scraper Selenium de Mercadona (catálogo completo)
+├── scrapers/                    # Selenium notebooks, one per chain
+├── api_clients/                 # REST API notebooks (BM, Consum and Mercadona)
+│
+├── dashboard/
+│   ├── app.py                   # Main dashboard
+│   ├── charts.py                # Altair charts
+│   └── app_legacy.py            # Previous dashboard, deprecated
 │
 └── README.md
 ```
 
-## ⚙️ Flujo de Trabajo (Pipeline)
-El proyecto sigue una metodología rigurosa dividida en fases de ingeniería de datos:
+## ⚙️ Pipeline
 
-**Web Scraping y Extracción API:**
+**Scraping and API collection:** parameterized searches over 20 essential products (milk, eggs, oil, rice, pasta, detergent and others). The scrapers handle infinite scroll, waiting times and automatic retries. Carrefour is blocked by Cloudflare and is not included.
 
-Se realizan búsquedas parametrizadas sobre un catálogo común de 20 productos esenciales (leche, huevos, aceite, arroz, pasta, detergente, etc.).
+**Raw layer:** rows from each chain are stored as CSV files in `data/raw/`.
 
-Se maneja la carga dinámica de elementos mediante scroll infinito, control de tiempos de espera y gestión de reintentos automáticos para sortear restricciones de seguridad (ej. Cloudflare en Carrefour mediante URLs de categoría).
+**Normalization (`src/pipeline/`):** run with `python -m src.pipeline.build`. It removes duplicates, standardizes units and classifies each product into one of 70 product types by text similarity, so chains can be compared on equivalent products.
 
-**Capa RAW:**
+**Output:** `data/supermarkets.db` and `data/products_normalized.csv`, which the dashboard reads.
 
-Las filas extraídas de cada cadena se consolidan en archivos CSV sin procesar ubicados en data/raw/.
+**Price changes:** run with `python -m src.analysis.history`. It compares the two dates held for Aldi, Dia and Mercadona and writes `data/price_changes.csv`.
 
-**Procesamiento y Deduplicación:**
+## 🛠️ Main components
 
-Se eliminan registros duplicados basándose en identificadores de producto (product_id) o combinaciones de nombre y formato mediante idxmin().
+### 1. Collectors
 
-Se filtran filas incompletas que carezcan de precios o unidades válidas.
+- **Dia:** Selenium with internal scrolling to load every product card.
+- **Mercadona:** Selenium, entering a reference postcode (28911) so stock and prices match the local warehouse.
+- **Aldi, Alcampo and Ahorramás:** scrapers adapted to each website, with a shared output format.
+- **BM and Consum (`api_clients/bm_consum_api.ipynb`):** the REST JSON API behind both websites, which share the Aktios platform. It returns ID, barcode, brand, category, regular price, offer price and unit price, with up to 500 results per search.
+- **Mercadona API (`api_clients/mercadona_api.ipynb`):** downloads the whole catalogue by category (about 150 requests) and assigns each product to a search term by the words in its name.
 
-**Normalización de Unidades (src/normalize.py):**
+Ethics note: the `robots.txt` of BM, Consum and Mercadona includes `Disallow: /api/`. We declare this as a limitation: academic, non-commercial use, about 120 to 150 requests per run, a 1 s pause between requests and a `User-Agent` that identifies the project.
 
-Se estandarizan las magnitudes a un formato común (KILO, LITRO, UNIDAD, DOCENA, etc.) para permitir comparaciones homogéneas entre diferentes marcas y supermercados. Las docenas se convierten de forma unificada a unidades equivalentes.
+### 2. Store locator (`src/get_stores.py`)
 
-**Capa PROCESSED:**
+Uses the Overpass API (OpenStreetMap) to get the coordinates and addresses of stores in the Comunidad de Madrid.
 
-Se almacenan los datasets limpios en data/processed/ listos para el análisis conjunto en el dashboard.
+### 3. Dashboard (`dashboard/app.py`)
 
-## 🛠️ Componentes Principales
-1. Scrapers por Supermercado
-DIA: Automatización basada en Selenium con scroll interno para la carga completa de tarjetas de producto y extracción de precios por unidad/kilo.
+Streamlit interface with five pages. Product names stay in Spanish, as the chains sell them.
 
-Mercadona: Simulación de navegación introduciendo el código postal de referencia (28911 - Alcorcón / Madrid) para asegurar la disponibilidad local del stock y precios del almacén correspondiente.
+To run it: `streamlit run dashboard/app.py`
 
-Aldi, Alcampo y AhorraMás: Scrapers adaptados a sus respectivas estructuras web para unificar el formato tabular de salida.
+- **Basket:** search the product types and set quantities.
+- **Compare:** price per chain, a product × chain matrix, the best route and two charts.
+- **Map:** what the basket costs at each nearby store, with the best route.
+- **Trends:** price changes between the dates we hold, biggest moves, change by category and current offers. A trend line needs more dates.
+- **Analysis:** chain index, cheapest chain per category, own brand against national brands, product against store choice, same-barcode prices, route savings and data coverage.
 
-BM y Consum (api_clients/bm_consum_api.ipynb): En lugar de scraping, se consulta la API REST JSON que usan sus propias webs (ambas sobre la plataforma Aktios, por lo que un único cliente sirve para las dos). Devuelve ID, EAN, marca, categoría, precio normal, precio en oferta y precio por unidad ya estructurados, con paginación (`limit`/`offset`, máximo 500 resultados por búsqueda).
+**Optimizer (`src/analysis/optimizer.py`):** solves a small Travelling Purchaser Problem. It tries up to 3 stores (at most one per chain, from the nearest of each chain) and every visiting order, adding product cost, travel (Haversine distance with a 1.3 detour factor and a configurable cost per km) and a cost per extra stop.
 
-Mercadona vía API (api_clients/mercadona_api.ipynb): alternativa opcional al scraper Selenium. Su API no tiene buscador, así que descarga el catálogo completo por categorías (~150 peticiones) y asigna cada producto a uno de los 20 términos por coincidencia de palabras en el nombre. Genera `mercadona_api_products_raw.csv` y `mercadona_api_products.csv` (mismas columnas que `mercadona_products.csv` más `product_id`, `url`, `category` y `previous_price`).
+**Fault tolerance:** if Overpass or Nominatim do not respond, the app uses `data/stores_madrid.csv` and a saved address.
 
-Nota ética: el `robots.txt` de BM, Consum y Mercadona incluye `Disallow: /api/`. Lo declaramos como limitación: uso académico y no comercial, ~120-150 peticiones por ejecución, 1 s de pausa entre peticiones y un `User-Agent` que identifica el proyecto.
+The previous dashboard is kept, deprecated, in `dashboard/app_legacy.py`.
 
-2. Módulo de Normalización (src/normalize.py)
-Módulo encargado de mapear variantes de unidades de medida heterogéneas (como L, LTR, litros o KGS, kilos) hacia una nomenclatura unificada en mayúsculas (LITRO, KILO, UNIDAD, etc.).
+## 🚀 Requirements
 
-3. Localizador Geográfico (src/get_stores.py)
-Utiliza la API de Overpass (OpenStreetMap) y Nominatim para extraer las coordenadas y direcciones postales de los establecimientos físicos en la Comunidad de Madrid.
+Python 3.10 or later. Install the dependencies with:
 
-4. Dashboard Interactivo y Optimizador (dashboard/app.py)
-
-Interfaz web desarrollada en Streamlit con navegación superior y cuatro vistas: Cesta, Comparar, Mapa y Tendencias (esta última, pendiente de tener histórico de precios).
-
-Para lanzarla: streamlit run dashboard/app.py
-
-Cesta: Permite buscar entre los tipos de producto del pipeline de normalización y definir la cantidad de cada uno.
-
-Optimizador (src/analysis/optimizer.py): Resuelve un Travelling Purchaser Problem pequeño. Evalúa hasta 3 tiendas (como máximo una por cadena, entre las más cercanas de cada cadena) y todos los órdenes de visita, y suma el coste de los productos, el del trayecto (distancia Haversine con factor de rodeo 1,3 y coste por kilómetro configurable) y un coste por parada adicional.
-
-Tolerancia a fallos: Si Overpass o Nominatim no responden, la app usa data/stores_madrid.csv y una dirección guardada.
-
-La versión anterior del dashboard se conserva, obsoleta, en dashboard/app_legacy.py.
-
-## 📊 Análisis y Comparativa Conjunta
-Una vez unificados los datasets, el sistema permite realizar consultas analíticas avanzadas como:
-
-Comparativa de precios por producto y unidad entre competidores.
-
-Identificación de los productos más económicos por categoría o de forma global.
-
-Análisis de cestas de la compra y dispersión de precios en Madrid.
-
-🚀 Requisitos e Instalación
-Asegúrate de tener instalado Python 3.10 o superior y las librerías necesarias: (HAY QIE AÑADIRLAS)
+```bash
+pip install -r requirements.txt
+```

@@ -1,6 +1,6 @@
-# OBSOLETO: esta es la versión anterior del dashboard; ya no se mantiene.
-# La app principal es dashboard/app.py. Este archivo se conserva solo como referencia.
-# PARA LANZARLO PONER EN LA TERMINAL: streamlit run dashboard/app_legacy.py
+# DEPRECATED: this is the previous dashboard and is no longer maintained, so it stays in Spanish.
+# The main app is dashboard/app.py. This file is kept for reference only.
+# TO RUN IT: streamlit run dashboard/app_legacy.py
 import streamlit as st
 import pandas as pd
 from pathlib import Path
@@ -22,7 +22,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.warning("Versión obsoleta del dashboard. La app actual es dashboard/app.py.")
+st.warning("Deprecated dashboard. The current app is dashboard/app.py.")
 
 st.title("🛒 Optimizador Inteligente de Supermercados")
 

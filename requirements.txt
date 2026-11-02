@@ -11,6 +11,7 @@ selenium>=4.20
 streamlit>=1.38
 folium>=0.17
 streamlit-folium>=0.22
+altair>=5
 
 # Jupyter kernel for running the notebooks in VS Code
 ipykernel>=6.29

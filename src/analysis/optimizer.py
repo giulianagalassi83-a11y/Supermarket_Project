@@ -17,7 +17,7 @@ import pandas as pd
 
 EARTH_KM = 6371.0
 DETOUR = 1.3  # real streets are ~20-40 % longer than a straight line
-HOME = "Casa"
+HOME = "Home"
 
 
 def haversine(lat1, lon1, lat2, lon2):
@@ -113,15 +113,16 @@ def optimize(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3, d
 
 
 def describe_route(plan, stores):
-    """[(from, to, km), ...] for a plan, with home as "Casa"."""
+    """[(from, to, km), ...] for a plan, with home as HOME."""
     names = [HOME, *(stores.at[i, "supermarket"] for i in plan["store_ids"]), HOME]
     return [(names[i], names[i + 1], km) for i, km in enumerate(plan["legs_km"])]
 
 
-def greedy_plan(cost, stores, home, cost_per_km, cost_per_stop=0.0, detour=DETOUR):
+def greedy_plan(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3, detour=DETOUR):
     """Baseline heuristic: buy each item at its cheapest chain, then visit the nearest store of each.
 
     Ignores travel when choosing where to buy, so it is what a shopper with a price list would do.
+    With more than `max_stores` chains, it keeps those selling the most items and rebuys the rest there.
     Compare it with optimize() to show what the exact search adds. Returns one scored plan (a Series).
     """
     stores = stores[stores["supermarket"].isin(cost.columns)]
@@ -129,6 +130,11 @@ def greedy_plan(cost, stores, home, cost_per_km, cost_per_stop=0.0, detour=DETOU
     if cost.isna().all(axis=1).any():
         return None
     buy_at = cost.idxmin(axis=1)
+    if buy_at.nunique() > max_stores:
+        cost = cost[list(buy_at.value_counts().index[:max_stores])]
+        if cost.isna().all(axis=1).any():
+            return None
+        buy_at = cost.idxmin(axis=1)
     nearest = stores.sort_values("distance_km").drop_duplicates("supermarket").set_index("supermarket")
     chains = list(dict.fromkeys(buy_at))
     points = [(nearest.at[c, "lat"], nearest.at[c, "lon"]) for c in chains]
