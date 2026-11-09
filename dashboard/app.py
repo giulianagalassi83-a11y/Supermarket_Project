@@ -522,6 +522,129 @@ def route_html(plan, stores):
     return f'<ul class="route">{"".join(items)}</ul>'
 
 
+def plan_summary(ranked):
+    """The recommendation in words: best plan, headline, one-line reason and saving vs the best single store."""
+    best = ranked.iloc[0]
+    single = ranked[ranked["n_stores"] == 1]
+    multi = ranked[ranked["n_stores"] > 1]
+    if best["n_stores"] == 1:
+        headline = f"Go to {chain_name(best['chains'][0])} only"
+        extra = best["products_eur"] - multi["products_eur"].min() if not multi.empty else 0
+        note = (
+            f"Splitting the shop would save {eur(extra)} on products, "
+            "but the extra trip and stop cost more than that."
+            if extra > 0.005 else "No other store beats the price of your products."
+        )
+        saving = 0.0
+    else:
+        headline = "Split the shop: " + " and ".join(chain_name(c) for c in best["chains"])
+        saving = single.iloc[0]["total_eur"] - best["total_eur"] if not single.empty else None
+        note = (
+            f"You save {eur(saving)} over the best single store, counting the trip and the extra stop."
+            if saving is not None else "No single store has your whole basket."
+        )
+    return best, headline, note, saving
+
+
+
+
+def recommendation_card(ranked):
+    """Compact recommendation card with highlighted plan and total cost."""
+    best, headline, note, saving = plan_summary(ranked)
+
+    with st.container(border=True):
+
+        # Highlighted recommendation label
+        html("""
+        <div style="
+            display:inline-block;
+            background:rgba(80, 130, 150, 0.16);
+            border:1px solid rgba(100, 160, 180, 0.35);
+            color:#5B9DB5;
+            padding:5px 11px;
+            border-radius:7px;
+            font-size:0.72rem;
+            font-weight:750;
+            letter-spacing:0.09em;
+            margin-bottom:0.8rem;
+        ">
+            ✦ RECOMMENDED PLAN
+        </div>
+        """)
+
+        left, right = st.columns([3, 1.5], vertical_alignment="center")
+
+        with left:
+            html(
+                f'<div class="hero" style="max-width:none; margin:0; '
+                f'font-size:1.4rem; line-height:1.15">{headline}</div>'
+            )
+            html(
+                f'<div class="lede" style="margin:0.3rem 0 0; '
+                f'font-size:0.86rem; opacity:0.8">{note}</div>'
+            )
+
+        with right:
+            html(f"""
+            <div style="
+                background:rgba(80, 130, 150, 0.12);
+                border:1px solid rgba(100, 160, 180, 0.35);
+                border-radius:10px;
+                padding:10px 13px;
+                text-align:center;
+            ">
+                <div style="
+                    font-size:0.68rem;
+                    font-weight:750;
+                    letter-spacing:0.09em;
+                    color:#5B9DB5;
+                    margin-bottom:3px;
+                ">TOTAL COST</div>
+                <div style="
+                    font-size:1.65rem;
+                    font-weight:800;
+                    letter-spacing:-0.04em;
+                    line-height:1.2;
+                ">{eur(best["total_eur"])}</div>
+            </div>
+            """)
+
+        st.markdown(
+            '<div style="height:1px; background:rgba(128,128,128,0.2); '
+            'margin:0.75rem 0 0.55rem"></div>',
+            unsafe_allow_html=True
+        )
+
+        # Smaller cost breakdown
+        a, b, c, d = st.columns(4)
+
+        small_metric = """
+        <style>
+        div[data-testid="stMetricLabel"] {
+            font-size: 0.72rem !important;
+        }
+        div[data-testid="stMetricValue"] {
+            font-size: 1.05rem !important;
+        }
+        </style>
+        """
+        st.markdown(small_metric, unsafe_allow_html=True)
+
+        a.metric("Products", eur(best["products_eur"]))
+        b.metric(
+            "Travel",
+            eur(best["travel_eur"]),
+            help=f"{km_text(best['route_km'])} at "
+                 f"{eur(st.session_state.cost_per_km)}/km"
+        )
+        c.metric("Extra stops", eur(best["stops_eur"]))
+        d.metric(
+            "Saved vs. best single store",
+            eur(saving) if saving is not None else "—"
+        )
+
+
+
 def page_compare():
     header()
     if not basket:
@@ -535,12 +658,12 @@ def page_compare():
         return
 
     cards = chain_cards()
-    complete = cards[cards["complete"]]
-    if complete.empty:
-        html('<div class="hero">No nearby store has your whole basket</div>')
+    plans, plan_stores = plans_for(cost, candidates, HOME, st.session_state.max_stores)
+    ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop)
+    if ranked.empty:
+        html('<div class="hero">No combination of nearby stores has your whole basket</div>')
     else:
-        cheapest = complete.sort_values("basket_eur").iloc[0]
-        html(f'<div class="hero">Your basket costs {eur(cheapest.basket_eur)} at {chain_name(cheapest.chain)}</div>')
+        recommendation_card(ranked)
     n_products = len(basket)
     html(f'<div class="lede">{n_products} products, {len(cards)} chains with a store within '
          f'{km_text(st.session_state.radius)}. Price of each product: '
@@ -576,8 +699,6 @@ def page_compare():
     right, chart_area = st.columns([2, 3], gap="large")
     with right:
         st.markdown("### Your best route")
-        plans, plan_stores = plans_for(cost, candidates, HOME, st.session_state.max_stores)
-        ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop)
         if ranked.empty:
             st.warning("No combination of nearby stores has your whole basket. Increase the distance or remove products.")
         else:
@@ -593,19 +714,8 @@ def page_compare():
                     if saving > 0.005 else "No other store beats the price of your products."
                 )
             else:
-                verdict = "Split the shop: " + " and ".join(chain_name(c) for c in best["chains"])
-                note = (
-                    f"You save {eur(single.iloc[0]['total_eur'] - best['total_eur'])} over the best single store, "
-                    "counting the trip and the extra stop."
-                    if not single.empty else "No single store has your whole basket."
-                )
-            html(
-                f'<div class="panel"><div class="verdict">{verdict}</div>'
-                f'{price_tag(best["total_eur"], small=True)}'
-                f'<div class="small" style="margin:6px 0 10px">{eur(best["products_eur"])} products + '
-                f'{eur(best["travel_eur"])} travel ({km_text(best["route_km"])}) + {eur(best["stops_eur"])} extra stops</div>'
-                f'{route_html(best, plan_stores)}<div class="small">{note}</div></div>'
-            )
+                best = ranked.iloc[0]
+                html(f'<div class="panel">{route_html(best, plan_stores)}</div>')
         with st.expander("Calculation settings"):
             st.slider("Travel cost (€/km)", 0.0, 1.0, step=0.05, key="cost_per_km",
                       help="0 if you walk. About 0.25 €/km by car.")
