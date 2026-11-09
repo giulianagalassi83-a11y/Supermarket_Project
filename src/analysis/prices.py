@@ -62,6 +62,13 @@ def price_table(df, type_ids, stat="median"):
         parts.append(rows.groupby("supermarket")["price_per_unit"].agg(STATS[stat]).rename(type_id))
     return pd.DataFrame(parts)
 
+def price_count_table(df, type_ids):
+    """Number of usable products per type and supermarket."""
+    parts = []
+    for type_id in type_ids:
+        rows = type_rows(df, type_id)
+        parts.append(rows.groupby("supermarket").size().rename(type_id))
+    return pd.DataFrame(parts)
 
 def basket_cost(df, basket, chain, stat="median"):
     """(total € for the types the chain has, list of type ids it lacks) for basket = {type_id: quantity}."""

@@ -193,6 +193,15 @@ def unit_prices(type_ids, stat):
     """Types × chains, € per unit (median or cheapest)."""
     return pricing.price_table(df, list(type_ids), stat).reindex(index=list(type_ids), columns=CHAINS)
 
+@st.cache_data
+def unit_counts(type_ids):
+    """Types × chains table of comparable product counts."""
+    return (
+        pricing.price_count_table(df, list(type_ids))
+        .reindex(index=list(type_ids), columns=CHAINS)
+        .fillna(0)
+        .astype(int)
+    )
 
 # ============================================================
 # STATE SHARED BETWEEN PAGES
@@ -482,6 +491,7 @@ def page_basket():
 # ============================================================
 
 def matrix_html(cards):
+    counts = unit_counts(tuple(basket))
     chains = list(cards["chain"])
     head = "".join(
         f'<th style="--chain:{CHAIN_COLORS.get(c, INK)}"><span class="dot"></span>{chain_name(c)}</th>' for c in chains
@@ -497,8 +507,13 @@ def matrix_html(cards):
                 cells.append('<td class="none">—</td>')
             else:
                 cls = ' class="best"' if v == best else ""
-                cells.append(f'<td{cls}><span class="v">{eur(v)}</span><span class="u">{eur(ppu.at[type_id, c])}/{unit(type_id)}</span></td>')
-        qty = st.session_state[f"qty_{type_id}"]
+                n = counts.at[type_id, c]
+                cells.append(
+                    f'<td{cls}><span class="v">{eur(v)}</span>'
+                    f'<span class="u">{eur(ppu.at[type_id, c])}/{unit(type_id)}'
+                    f' · {n} products compared</span></td>'
+            )        
+                qty = st.session_state[f"qty_{type_id}"]
         body.append(f'<tr><td><b>{label(type_id)}</b><span class="u">{qty:g} {unit(type_id)}</span></td>{"".join(cells)}</tr>')
     totals = "".join(
         f'<td>{eur(r.basket_eur) if r.complete else f"{r.have}/{len(basket)}"}</td>' for r in cards.itertuples()
@@ -692,6 +707,27 @@ def page_compare():
 
     st.markdown("### Where each product is cheapest")
     html(matrix_html(cards))
+    st.markdown(
+        """
+        <div style="font-size: 0.78rem; color: #888; margin: 6px 0 12px 0;">
+            <span style="
+                display: inline-flex;
+                align-items: center;
+                justify-content: center;
+                width: 14px;
+                height: 14px;
+                border: 1px solid #999;
+                border-radius: 50%;
+                font-size: 10px;
+                font-style: normal;
+                margin-right: 5px;
+            ">?</span>
+            <i>Products compared: number of product records used to calculate
+            the price for each supermarket.</i>
+        </div>
+        """,
+        unsafe_allow_html=True,
+    )
     st.pills("See details for", basket, format_func=label, key="sheet_pick", selection_mode="single",
              on_change=pick_sheet)
 
