@@ -95,14 +95,20 @@ def enumerate_plans(cost, stores, home, max_stores=3, detour=DETOUR):
     return pd.DataFrame(rows), stores
 
 
-def score(plans, cost_per_km, cost_per_stop=0.0):
-    """Add travel, extra-stop and total cost; cheapest plan first. The first stop is free."""
+def score(plans, cost_per_km, cost_per_stop=0.0, value_of_time=0.0, speed_kmh=25.0, min_per_stop=5.0):
+    """Add travel, extra-stop, time and total cost; cheapest plan first. The first stop is free of fixed cost.
+
+    time_min = driving/walking time of the route + minutes spent in each store.
+    time_eur = time_min valued at `value_of_time` €/hour (0 = ignore time).
+    """
     if plans.empty:
         return plans
     plans = plans.copy()
     plans["travel_eur"] = plans["route_km"] * cost_per_km
     plans["stops_eur"] = (plans["n_stores"] - 1) * cost_per_stop
-    plans["total_eur"] = plans["products_eur"] + plans["travel_eur"] + plans["stops_eur"]
+    plans["time_min"] = plans["route_km"] / speed_kmh * 60 + plans["n_stores"] * min_per_stop
+    plans["time_eur"] = plans["time_min"] / 60 * value_of_time
+    plans["total_eur"] = plans["products_eur"] + plans["travel_eur"] + plans["stops_eur"] + plans["time_eur"]
     return plans.sort_values(["total_eur", "n_stores"]).reset_index(drop=True)
 
 
@@ -118,7 +124,7 @@ def describe_route(plan, stores):
     return [(names[i], names[i + 1], km) for i, km in enumerate(plan["legs_km"])]
 
 
-def greedy_plan(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3, detour=DETOUR):
+def greedy_plan(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3, detour=DETOUR, **time):    
     """Baseline heuristic: buy each item at its cheapest chain, then visit the nearest store of each.
 
     Ignores travel when choosing where to buy, so it is what a shopper with a price list would do.
@@ -147,10 +153,10 @@ def greedy_plan(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3
         "legs_km": legs,
         "buy_at": buy_at.to_dict(),
     }])
-    return score(plan, cost_per_km, cost_per_stop).iloc[0]
+    return score(plan, cost_per_km, cost_per_stop, **time).iloc[0]
 
 
-def sensitivity(plans, km_costs, cost_per_stop=0.0):
+def sensitivity(plans, km_costs, cost_per_stop=0.0, **time):
     """For each €/km: the best single-store total, the best overall total and how many stores it uses.
 
     Shows from which travel cost splitting the basket stops paying off.
@@ -158,11 +164,11 @@ def sensitivity(plans, km_costs, cost_per_stop=0.0):
     rows = []
     singles = plans[plans["n_stores"] == 1]
     for c in km_costs:
-        best = score(plans, c, cost_per_stop).iloc[0]
+        best = score(plans, c, cost_per_stop, **time).iloc[0]
         rows.append({
             "cost_per_km": c,
             "best_total": best["total_eur"],
             "best_n_stores": best["n_stores"],
-            "single_total": score(singles, c).iloc[0]["total_eur"] if len(singles) else np.nan,
+            "single_total": score(singles, c, cost_per_stop, **time).iloc[0]["total_eur"] if len(singles) else np.nan,
         })
     return pd.DataFrame(rows)

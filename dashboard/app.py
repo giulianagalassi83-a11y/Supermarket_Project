@@ -214,7 +214,10 @@ DEFAULTS = {
     "address": "Avenida de la Universidad, 30, Leganés",
     "radius": 1.5,
     "cost_per_km": 0.25,
-    "cost_per_stop": 1.0,
+    "cost_per_stop": 0.0,
+    "value_of_time": 10.0,
+    "speed_kmh": 25.0,
+    "min_per_stop": 5.0,
     "max_stores": 3,
     "stat": "Typical price",
     "sort": "Price",
@@ -232,6 +235,14 @@ for type_id in basket:
     st.session_state.setdefault(f"qty_{type_id}", 1.0 if TYPES.at[type_id, "unit"] != "UNIDAD" else 6.0)
 quantities = pd.Series({t: st.session_state[f"qty_{t}"] for t in basket}, dtype=float)
 STAT = "min" if st.session_state.stat == "Cheapest" else "median"
+
+def time_params():
+    """Time settings, passed to the optimizer in every call to score / greedy_plan / sensitivity."""
+    return dict(
+        value_of_time=st.session_state.value_of_time,
+        speed_kmh=st.session_state.speed_kmh,
+        min_per_stop=st.session_state.min_per_stop,
+    )
 
 
 # ============================================================
@@ -563,22 +574,26 @@ def plan_summary(ranked):
 
 def alternatives_table(ranked):
     """Best plan for 1, 2 and 3 stores, plus the 'cheapest chain per item' baseline."""
-    best = ranked.groupby("n_stores").head(1).sort_values("n_stores").reset_index(drop=True)    top = ranked.iloc[0]["total_eur"]
+    best = ranked.groupby("n_stores").head(1).sort_values("n_stores").reset_index(drop=True)    
+    top = ranked.iloc[0]["total_eur"]
     table = pd.DataFrame({
         "Option": best["n_stores"].map(lambda n: f"Best with {n} store{'s' if n > 1 else ''}"),
         "Where": best["chains"].map(lambda cs: " + ".join(chain_name(c) for c in cs)),
         "Products": best["products_eur"].map(eur),
         "Travel + stops": (best["travel_eur"] + best["stops_eur"]).map(eur),
+        "Time": best.apply(lambda r: f"{r['time_min']:.0f} min ({eur(r['time_eur'])})", axis=1),
         "Total": best["total_eur"].map(eur),
         "vs. recommended": (best["total_eur"] - top).map(
             lambda x: "Recommended" if x < 0.005 else f"+{eur(x)}"),
     })
     greedy = opt.greedy_plan(cost, candidates, HOME, st.session_state.cost_per_km,
-                             st.session_state.cost_per_stop, st.session_state.max_stores)
+                             st.session_state.cost_per_stop, st.session_state.max_stores,
+                              **time_params())
     if greedy is not None:
         table.loc[len(table)] = [
             "Cheapest chain per item", " + ".join(chain_name(c) for c in greedy["chains"]),
             eur(greedy["products_eur"]), eur(greedy["travel_eur"] + greedy["stops_eur"]),
+            f"{greedy['time_min']:.0f} min ({eur(greedy['time_eur'])})",
             eur(greedy["total_eur"]), f"+{eur(greedy['total_eur'] - top)}",
         ]
     return table
@@ -635,7 +650,7 @@ def recommendation_card(ranked, plan_stores):
                     letter-spacing:0.09em;
                     color:#5B9DB5;
                     margin-bottom:3px;
-                ">TOTAL COST</div>
+                ">TOTAL TRIP COST</div>
                 <div style="
                     font-size:1.65rem;
                     font-weight:800;
@@ -647,6 +662,7 @@ def recommendation_card(ranked, plan_stores):
                 
         st.caption(
             f"**Goal:** minimise total cost = products + travel ({eur(st.session_state.cost_per_km)}/km) "
+            f"+ your time ({eur(st.session_state.value_of_time)}/hour) "
             f"+ {eur(st.session_state.cost_per_stop)} per extra stop, "
             f"using at most {st.session_state.max_stores} supermarkets."
         )
@@ -658,7 +674,7 @@ def recommendation_card(ranked, plan_stores):
         )
 
         # Smaller cost breakdown
-        a, b, c, d = st.columns(4)
+        a, b, c, t, d = st.columns(5)
 
         small_metric = """
         <style>
@@ -680,6 +696,12 @@ def recommendation_card(ranked, plan_stores):
                  f"{eur(st.session_state.cost_per_km)}/km"
         )
         c.metric("Extra stops", eur(best["stops_eur"]))
+        t.metric(
+            f"Time ({best['time_min']:.0f} min)",
+            eur(best["time_eur"]),
+            help=f"Route + {st.session_state.min_per_stop:.0f} min per store, "
+                 f"valued at {eur(st.session_state.value_of_time)}/hour. Included in the total."
+        )
         d.metric(
             "Saved vs. best single store",
             eur(saving) if saving else "—"        )
@@ -703,7 +725,7 @@ def page_compare():
 
     cards = chain_cards()
     plans, plan_stores = plans_for(cost, candidates, HOME, st.session_state.max_stores)
-    ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop)
+    ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop, **time_params())
     if ranked.empty:
         html('<div class="hero">No combination of nearby stores has your whole basket</div>')
     else:
@@ -771,8 +793,14 @@ def page_compare():
         with st.expander("Calculation settings"):
             st.slider("Travel cost (€/km)", 0.0, 1.0, step=0.05, key="cost_per_km",
                       help="0 if you walk. About 0.25 €/km by car.")
-            st.slider("Cost of each extra stop (€)", 0.0, 5.0, step=0.25, key="cost_per_stop",
-                      help="Time, queues, parking… Splitting the shop only pays if it saves more than this.")
+            st.slider("Value of your time (€/hour)", 0.0, 30.0, step=1.0, key="value_of_time",
+                      help="How much an hour of your time is worth. 0 ignores time.")
+            st.slider("Travel speed (km/h)", 3.0, 40.0, step=1.0, key="speed_kmh",
+                      help="About 5 km/h walking, 25 km/h by car in the city.")
+            st.slider("Minutes spent in each store", 0.0, 20.0, step=1.0, key="min_per_stop",
+                      help="Entering, finding the products, queueing and paying.")
+            st.slider("Other cost of each extra stop (€)", 0.0, 5.0, step=0.25, key="cost_per_stop",
+                      help="Fixed costs besides time: parking, bags…")
             st.radio("Maximum stores", [1, 2, 3], key="max_stores", horizontal=True)
             st.radio("Price of each product", ["Typical price", "Cheapest"], key="stat", horizontal=True,
                      help="Typical price = median of its type at the chain. Cheapest = the cheapest product of that type.")
@@ -797,7 +825,7 @@ def page_compare():
 
 def sensitivity_view(plans):
     km_costs = np.round(np.arange(0, 1.01, 0.05), 2)
-    sens = opt.sensitivity(plans, km_costs, st.session_state.cost_per_stop)
+    sens = opt.sensitivity(plans, km_costs, st.session_state.cost_per_stop, **time_params())
     split = sens[sens["best_n_stores"] > 1]
     if split.empty:
         text = "With your cost per stop, one store is always best."
@@ -824,7 +852,7 @@ def page_map():
     cards = chain_cards().set_index("chain") if basket else pd.DataFrame()
     shown = opt.candidate_stores(all_stores, HOME, per_chain=6, max_km=st.session_state.radius).head(30)
     plans, plan_stores = plans_for(cost, candidates, HOME, st.session_state.max_stores) if basket else (pd.DataFrame(), None)
-    ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop)
+    ranked = opt.score(plans, st.session_state.cost_per_km, st.session_state.cost_per_stop, **time_params())
 
     m = folium.Map(location=HOME, zoom_start=14, tiles=None, control_scale=True)
     folium.TileLayer(
