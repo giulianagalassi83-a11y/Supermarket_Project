@@ -215,7 +215,7 @@ DEFAULTS = {
     "radius": 1.5,
     "cost_per_km": 0.25,
     "cost_per_stop": 1.0,
-    "max_stores": 2,
+    "max_stores": 3,
     "stat": "Typical price",
     "sort": "Price",
 }
@@ -500,6 +500,7 @@ def matrix_html(cards):
     for type_id in basket:
         row = cost.loc[type_id, chains]
         best = row.min()
+        qty = st.session_state[f"qty_{type_id}"]
         cells = []
         for c in chains:
             v = row[c]
@@ -513,7 +514,6 @@ def matrix_html(cards):
                     f'<span class="u">{eur(ppu.at[type_id, c])}/{unit(type_id)}'
                     f' · {n} products compared</span></td>'
             )        
-                qty = st.session_state[f"qty_{type_id}"]
         body.append(f'<tr><td><b>{label(type_id)}</b><span class="u">{qty:g} {unit(type_id)}</span></td>{"".join(cells)}</tr>')
     totals = "".join(
         f'<td>{eur(r.basket_eur) if r.complete else f"{r.have}/{len(basket)}"}</td>' for r in cards.itertuples()
@@ -561,9 +561,30 @@ def plan_summary(ranked):
     return best, headline, note, saving
 
 
+def alternatives_table(ranked):
+    """Best plan for 1, 2 and 3 stores, plus the 'cheapest chain per item' baseline."""
+    best = ranked.groupby("n_stores").head(1).sort_values("n_stores").reset_index(drop=True)    top = ranked.iloc[0]["total_eur"]
+    table = pd.DataFrame({
+        "Option": best["n_stores"].map(lambda n: f"Best with {n} store{'s' if n > 1 else ''}"),
+        "Where": best["chains"].map(lambda cs: " + ".join(chain_name(c) for c in cs)),
+        "Products": best["products_eur"].map(eur),
+        "Travel + stops": (best["travel_eur"] + best["stops_eur"]).map(eur),
+        "Total": best["total_eur"].map(eur),
+        "vs. recommended": (best["total_eur"] - top).map(
+            lambda x: "Recommended" if x < 0.005 else f"+{eur(x)}"),
+    })
+    greedy = opt.greedy_plan(cost, candidates, HOME, st.session_state.cost_per_km,
+                             st.session_state.cost_per_stop, st.session_state.max_stores)
+    if greedy is not None:
+        table.loc[len(table)] = [
+            "Cheapest chain per item", " + ".join(chain_name(c) for c in greedy["chains"]),
+            eur(greedy["products_eur"]), eur(greedy["travel_eur"] + greedy["stops_eur"]),
+            eur(greedy["total_eur"]), f"+{eur(greedy['total_eur'] - top)}",
+        ]
+    return table
 
 
-def recommendation_card(ranked):
+def recommendation_card(ranked, plan_stores):
     """Compact recommendation card with highlighted plan and total cost."""
     best, headline, note, saving = plan_summary(ranked)
 
@@ -623,6 +644,12 @@ def recommendation_card(ranked):
                 ">{eur(best["total_eur"])}</div>
             </div>
             """)
+                
+        st.caption(
+            f"**Goal:** minimise total cost = products + travel ({eur(st.session_state.cost_per_km)}/km) "
+            f"+ {eur(st.session_state.cost_per_stop)} per extra stop, "
+            f"using at most {st.session_state.max_stores} supermarkets."
+        )
 
         st.markdown(
             '<div style="height:1px; background:rgba(128,128,128,0.2); '
@@ -655,8 +682,10 @@ def recommendation_card(ranked):
         c.metric("Extra stops", eur(best["stops_eur"]))
         d.metric(
             "Saved vs. best single store",
-            eur(saving) if saving is not None else "—"
-        )
+            eur(saving) if saving else "—"        )
+        html(route_html(best, plan_stores))
+        with st.expander("Compare with other options"):
+            st.dataframe(alternatives_table(ranked), hide_index=True, width="stretch")
 
 
 
@@ -678,7 +707,7 @@ def page_compare():
     if ranked.empty:
         html('<div class="hero">No combination of nearby stores has your whole basket</div>')
     else:
-        recommendation_card(ranked)
+        recommendation_card(ranked, plan_stores)
     n_products = len(basket)
     html(f'<div class="lede">{n_products} products, {len(cards)} chains with a store within '
          f'{km_text(st.session_state.radius)}. Price of each product: '
@@ -738,20 +767,7 @@ def page_compare():
         if ranked.empty:
             st.warning("No combination of nearby stores has your whole basket. Increase the distance or remove products.")
         else:
-            best = ranked.iloc[0]
-            single = ranked[ranked["n_stores"] == 1]
-            if best["n_stores"] == 1:
-                verdict = f"Go to {chain_name(best['chains'][0])} only"
-                multi = ranked[ranked["n_stores"] > 1]
-                saving = best["products_eur"] - multi["products_eur"].min() if not multi.empty else 0
-                note = (
-                    f"Splitting the shop would save {eur(saving)} on products, "
-                    "but the extra trip and stop cost more than that."
-                    if saving > 0.005 else "No other store beats the price of your products."
-                )
-            else:
-                best = ranked.iloc[0]
-                html(f'<div class="panel">{route_html(best, plan_stores)}</div>')
+            html(f'<div class="panel">{route_html(ranked.iloc[0], plan_stores)}</div>')
         with st.expander("Calculation settings"):
             st.slider("Travel cost (€/km)", 0.0, 1.0, step=0.05, key="cost_per_km",
                       help="0 if you walk. About 0.25 €/km by car.")
