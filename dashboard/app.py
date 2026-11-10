@@ -991,8 +991,8 @@ def page_trends():
 # ============================================================
 
 @st.cache_data(show_spinner=False)
-def route_comparison(stores, home, cost_per_km, cost_per_stop):
-    return insights.greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop)
+def route_comparison(stores, home, cost_per_km, cost_per_stop, **time):
+    return insights.greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop, **time)
 
 
 def section_chains():
@@ -1058,7 +1058,8 @@ def section_route():
         st.write("This needs stores from two chains within your range. Increase the maximum distance in the bar above.")
         return
     with st.spinner("Comparing random baskets…"):
-        table = route_comparison(candidates, HOME, st.session_state.cost_per_km, st.session_state.cost_per_stop)
+        table = route_comparison(candidates, HOME, st.session_state.cost_per_km, 
+                         st.session_state.cost_per_stop, **time_params())
     if table.empty:
         st.write("None of the random baskets could be bought within your range. Increase the maximum distance.")
         return

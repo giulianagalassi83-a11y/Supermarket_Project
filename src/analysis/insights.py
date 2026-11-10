@@ -128,7 +128,7 @@ def type_gap(df, a="Bm", b="Consum"):
     return 100 * (table[a].sum() / table[b].sum() - 1)
 
 
-def greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop, baskets=30, items=5, seed=config.SEED):
+def greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop, baskets=30, items=5, seed=config.SEED, **time):
     """Random baskets near `home`: how much the exact optimizer saves over shopping from a price list.
 
     Baskets take `items` types sold by at least five chains, one unit of each, at median prices.
@@ -142,8 +142,11 @@ def greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop, baskets=30, it
     for _ in range(baskets):
         cost = table.loc[list(rng.choice(pool, size=items, replace=False))]
         cost = cost[[c for c in cost.columns if c in set(stores["supermarket"])]]
-        exact, _ = opt.optimize(cost, stores, home, cost_per_km, cost_per_stop)
-        greedy = opt.greedy_plan(cost, stores, home, cost_per_km, cost_per_stop)
+        
+        # Pasamos **time para que el optimizador calcule el coste total incluyendo el tiempo
+        exact, _ = opt.optimize(cost, stores, home, cost_per_km, cost_per_stop, max_stores=3, **time)
+        greedy = opt.greedy_plan(cost, stores, home, cost_per_km, cost_per_stop, max_stores=3, **time)
+        
         if exact.empty or greedy is None:
             continue
         best = exact.iloc[0]

@@ -112,10 +112,10 @@ def score(plans, cost_per_km, cost_per_stop=0.0, value_of_time=0.0, speed_kmh=25
     return plans.sort_values(["total_eur", "n_stores"]).reset_index(drop=True)
 
 
-def optimize(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3, detour=DETOUR):
+def optimize(cost, stores, home, cost_per_km, cost_per_stop=0.0, max_stores=3, detour=DETOUR, **time):
     """enumerate_plans + score in one call. Returns (ranked plans, stores the plan ids refer to)."""
     plans, stores = enumerate_plans(cost, stores, home, max_stores, detour)
-    return score(plans, cost_per_km, cost_per_stop), stores
+    return score(plans, cost_per_km, cost_per_stop, **time), stores
 
 
 def describe_route(plan, stores):
