@@ -112,12 +112,12 @@ def configure_notebook(notebook: nbformat.NotebookNode, kind: str) -> None:
 
     check = f'''
 # GitHub Actions: fail before saving if collection is incomplete.
+print(df_summary.to_string(index=False), flush=True)
 if df_summary.empty or len(df_summary) != {expected_len}:
     raise RuntimeError("{kind}: not all expected searches/categories were recorded")
 if not df_summary["status"].isin({expected_statuses[kind]}).all():
     raise RuntimeError("{kind}: one or more searches did not finish successfully")
 '''
-    print(df_summary.to_string(index=False), flush=True)
     if kind not in {"mercadona", "bm_consum"}:
         check += '''
 if "rows_extracted" in df_summary.columns and not df_summary["rows_extracted"].gt(0).all():
