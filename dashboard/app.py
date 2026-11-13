@@ -929,8 +929,13 @@ def show(chart):
 
 
 def day(date):
-    """'2026-09-23' -> '23 Sep'."""
+    """Format a collection date, for example '2026-11-10' as '10 Nov'."""
     return pd.Timestamp(date).strftime("%d %b").lstrip("0")
+
+
+def _trend_flag(values):
+    """Interpret boolean flags read from the historical comparison CSV."""
+    return values.astype("string").str.strip().str.lower().isin(["true", "1", "yes"])
 
 
 def page_trends():
@@ -938,13 +943,32 @@ def page_trends():
     try:
         changes = load_changes()
     except FileNotFoundError:
-        st.error("The price changes are missing. From the project folder, run: python -m src.analysis.history")
+        st.error("Price changes are missing. From the project folder, run: python -m src.analysis.history")
         return
-    summary = history.chain_summary(changes)
+
+    if changes.empty:
+        st.info("There are no price comparisons yet. Each chain needs at least two collection dates.")
+        return
+
+    # Only include products that pass the optimizer's comparability checks.
+    comparable = changes[_trend_flag(changes["comparable"])].copy()
+    held_back = _trend_flag(comparable["held_back"])
+    valid_changes = comparable[~held_back].copy()
+
+    if valid_changes.empty:
+        st.info("There are historical matches, but no price changes pass the comparability and review filters yet.")
+        st.caption(f"{len(changes):,} matched products; {len(comparable):,} comparable products.")
+        return
+
+    summary = history.chain_summary(valid_changes)
     top = summary.iloc[0]
-    html(f'<div class="hero">{top.changed_pct:.0f}% of {chain_name(top.chain)} prices changed between collections</div>')
-    html('<div class="lede">Three chains were collected on two dates, so this page shows price changes, '
-         "not a trend line yet. The line chart comes once weekly collections add more dates.</div>")
+    html(f'<div class="hero">{top.changed_pct:.0f}% of comparable {chain_name(top.chain)} prices changed between collections</div>')
+    n_chains = len(summary)
+    html(f'<div class="lede">Price comparisons are available for {n_chains} supermarket'
+         f'{"s" if n_chains != 1 else ""}. Each chain uses its two latest collection dates. '
+         'Further collections will allow longer-term price trends.</div>')
+    st.caption(f"{len(changes):,} matched products · {len(comparable):,} comparable · "
+               f"{len(valid_changes):,} included after review filters.")
 
     tags = []
     for r in summary.itertuples():
@@ -952,7 +976,7 @@ def page_trends():
             f'<div class="tag" style="--chain:{CHAIN_COLORS.get(r.chain, INK)}"><div class="chain">{chain_name(r.chain)}</div>'
             f'<div class="price sm"><span class="eu">{r.average_pct:+.1f}</span><span class="cur">%</span></div>'
             f'<div class="diff" style="color:var(--muted)">average price change</div>'
-            f'<div class="meta"><span>{day(r.old_date)} to {day(r.new_date)}</span><span>{r.products} products</span></div></div>'
+            f'<div class="meta"><span>{day(r.old_date)} to {day(r.new_date)}</span><span>{r.products} comparable products</span></div></div>'
         )
     html(f'<div class="tags">{"".join(tags)}</div>')
 
@@ -960,30 +984,53 @@ def page_trends():
     show(charts.moved_share(summary, CHAIN_NAMES))
 
     st.markdown("### Biggest changes")
-    rises, falls = history.biggest_moves(changes)
+    rises, falls = history.biggest_moves(valid_changes)
     left, right = st.columns(2, gap="large")
     with left:
         st.markdown("**Rises**")
-        show(charts.moves(rises, CHAIN_NAMES, charts.RISE))
+        if not rises.empty:
+            show(charts.moves(rises, CHAIN_NAMES, charts.RISE))
+        else:
+            st.caption("No price increases available.")
     with right:
         st.markdown("**Falls**")
-        show(charts.moves(falls, CHAIN_NAMES, charts.FALL))
-    st.caption(f"{int(changes['held_back'].sum())} larger changes are held back for review, in case they are data errors.")
+        if not falls.empty:
+            show(charts.moves(falls, CHAIN_NAMES, charts.FALL))
+        else:
+            st.caption("No price decreases available.")
+    st.caption(f"{int(held_back.sum())} comparable changes exceeded the review threshold and were excluded from the main indicators.")
 
     st.markdown("### Change by category")
-    show(charts.category_change(history.category_changes(changes), CHAIN_NAMES, insights.category_name))
-    st.caption(f"Only cells with at least {history.MIN_CATEGORY_PRODUCTS} comparable products. Empty cells have too few.")
+    category_data = history.category_changes(valid_changes)
+    if not category_data.empty:
+        show(charts.category_change(category_data, CHAIN_NAMES, insights.category_name))
+        st.caption(f"Only cells with at least {history.MIN_CATEGORY_PRODUCTS} comparable products. Empty cells have too few.")
+    else:
+        st.caption("Not enough comparable products per category to display this chart yet.")
 
     st.markdown("### Offers today")
-    table, former = history.offers()
-    columns = st.columns(len(table) + 1)
-    for column, r in zip(columns, table.itertuples()):
-        column.metric(f"{chain_name(r.chain)} products on offer", f"{r.on_offer_pct:.1f}%", help=f"{r.on_offer} of {r.products}")
-        column.caption(f"Median discount {r.median_discount_pct:.0f}%")
-    columns[-1].metric("Mercadona with a higher former price", f"{former['products']}")
-    columns[-1].caption(f"Median {former['median_drop_pct']:.0f}% lower now")
-    st.caption("Average change is a geometric mean. Mercadona compares two collectors joined on product name, "
-               "so it covers fewer products; treat it as a rough measure.")
+    try:
+        table, former = history.offers()
+    except FileNotFoundError:
+        st.info("Normalized history for current offers is missing. Run the pipeline first.")
+    else:
+        columns = st.columns(len(table) + 1)
+        for column, r in zip(columns, table.itertuples()):
+            column.metric(f"{chain_name(r.chain)} products on offer", f"{r.on_offer_pct:.1f}%", help=f"{r.on_offer} of {r.products}")
+            if pd.notna(r.median_discount_pct):
+                column.caption(f"Median discount {r.median_discount_pct:.0f}%")
+            else:
+                column.caption("No valid discount recorded")
+        columns[-1].metric("Mercadona with a higher former price", f"{former['products']}")
+        if pd.notna(former["median_drop_pct"]):
+            columns[-1].caption(f"Median {former['median_drop_pct']:.0f}% lower now")
+        else:
+            columns[-1].caption("No previous-price reductions recorded")
+        st.caption("BM and Consum use reported offer prices; Mercadona uses its previous selling price. These are not identical promotion definitions.")
+
+    st.caption("Historical comparisons use normalized selling prices matched by product ID, with unchanged pack formats. "
+               "The geometric mean is not a consumption-weighted inflation measure. "
+               "Only products passing comparability checks and the large-change review threshold enter the main charts.")
 
 
 # ============================================================

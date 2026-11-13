@@ -35,7 +35,7 @@ RAW_FILES = {
     "mercadona_api": "mercadona_api_products_raw.csv",
     "mercadona_selenium": "mercadona_products_raw.csv",
     "aldi": "aldi_products_raw.csv",
-    "alcampo": "alcampo_multiple_searches.csv",
+    "alcampo": "alcampo_products_raw.csv",
     "ahorramas": "ahorramas_products_raw.csv",
     "bm": "bm_products_raw.csv",
     "consum": "consum_products_raw.csv",

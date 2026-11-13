@@ -1,4 +1,4 @@
-﻿brand,name,price,price_per_unit_raw,quantity_raw,url,product_id,supermarket,searched_item,scraped_at,price_per_unit,unit
+brand,name,price,price_per_unit_raw,quantity_raw,url,product_id,supermarket,searched_item,scraped_at,price_per_unit,unit
 MILSANI®,Leche entera sin lactosa,1.03,,1 l unidad,https://www.aldi.es/producto/leche-entera-sin-lactosa-872200.html,872200,ALDI,leche,2026-09-30T19:26:03,1.03,LITRO
 MILSANI®,Leche evaporada,0.92,kg = 2.71,340 g unidad,https://www.aldi.es/producto/leche-evaporada-828100.html,828100,ALDI,leche,2026-09-30T19:26:03,2.71,KILO
 MILSANI®,Leche con calcio semidesnatada,1.05,,1 l unidad,https://www.aldi.es/producto/leche-con-calcio-semidesnatada-82000.html,82000,ALDI,leche,2026-09-30T19:26:03,1.05,LITRO

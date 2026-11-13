@@ -8,7 +8,6 @@ LOADERS = {
     "aldi": scraped.load_aldi,
     "alcampo": scraped.load_alcampo,
     "ahorramas": scraped.load_ahorramas,
-    "mercadona_selenium": scraped.load_mercadona_selenium,
     "mercadona_api": apis.load_mercadona_api,
     "bm": apis.load_bm,
     "consum": apis.load_consum,

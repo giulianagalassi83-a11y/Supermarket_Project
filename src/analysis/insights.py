@@ -1,8 +1,11 @@
+
 """The numbers behind the dashboard's Analysis page, all computed over products_normalized.csv.
 
 Every function filters with prices.usable() first. Prices compare the same product type across chains;
 each result carries product counts so a page can show how much data sits behind it.
 """
+
+import sqlite3
 
 import numpy as np
 import pandas as pd
@@ -112,13 +115,83 @@ def price_spread(df):
 
 
 def same_barcode(data_dir=config.DATA_DIR):
-    """BM and Consum prices for products with the same barcode: the one exact comparison we can make today."""
-    columns = ["ean", "name", "price"]
-    read = lambda f: pd.read_csv(data_dir / "processed" / f, dtype={"ean": str}, encoding="utf-8")[columns]
-    bm, consum = (read(f).dropna(subset=["ean"]).drop_duplicates("ean") for f in ("bm_products.csv", "consum_products.csv"))
-    pairs = bm.merge(consum, on="ean", suffixes=("_bm", "_consum"))
-    pairs = pairs[(pairs["price_bm"] > 0) & (pairs["price_consum"] > 0)].copy()
-    pairs["gap_pct"] = 100 * (pairs["price_bm"] / pairs["price_consum"] - 1)
+    """Compare current BM and Consum selling prices for products with the same EAN.
+
+    Product identifiers, barcodes, names, and prices come from the central
+    SQLite database. Individual notebook-processed CSV files are not used.
+    """
+    db_path = data_dir / "supermarkets.db"
+
+    if not db_path.exists():
+        raise FileNotFoundError(
+            f"Database not found: {db_path}. "
+            "Run: python -m src.pipeline.build"
+        )
+
+    query = """
+        SELECT
+            p.chain_id,
+            p.ean,
+            p.name,
+            o.price
+        FROM products p
+        JOIN price_observations o
+            ON o.observation_id = (
+                SELECT o2.observation_id
+                FROM price_observations o2
+                WHERE o2.product_key = p.product_key
+                  AND o2.is_current = 1
+                ORDER BY
+                    o2.collection_date DESC,
+                    o2.scraped_at DESC,
+                    o2.observation_id DESC
+                LIMIT 1
+            )
+        WHERE p.chain_id IN ('bm', 'consum')
+          AND p.ean IS NOT NULL
+          AND TRIM(p.ean) != ''
+    """
+
+    with sqlite3.connect(db_path) as con:
+        products = pd.read_sql_query(
+            query,
+            con,
+            dtype={"ean": str}
+        )
+
+    # Preserve barcode identifiers as text.
+    products["ean"] = products["ean"].astype("string").str.strip()
+    products = products[
+        products["ean"].notna()
+        & products["ean"].ne("")
+        & products["price"].notna()
+        & (products["price"] > 0)
+    ].copy()
+
+    # Keep the existing one-product-per-EAN comparison logic.
+    bm = (
+        products[products["chain_id"] == "bm"]
+        [["ean", "name", "price"]]
+        .drop_duplicates("ean")
+    )
+
+    consum = (
+        products[products["chain_id"] == "consum"]
+        [["ean", "name", "price"]]
+        .drop_duplicates("ean")
+    )
+
+    pairs = bm.merge(
+        consum,
+        on="ean",
+        suffixes=("_bm", "_consum"),
+        validate="one_to_one"
+    )
+
+    pairs["gap_pct"] = 100 * (
+        pairs["price_bm"] / pairs["price_consum"] - 1
+    )
+
     return pairs
 
 
@@ -142,11 +215,11 @@ def greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop, baskets=30, it
     for _ in range(baskets):
         cost = table.loc[list(rng.choice(pool, size=items, replace=False))]
         cost = cost[[c for c in cost.columns if c in set(stores["supermarket"])]]
-        
-        # Pasamos **time para que el optimizador calcule el coste total incluyendo el tiempo
+
+        # Pass time parameters so optimization includes the value of travel time.
         exact, _ = opt.optimize(cost, stores, home, cost_per_km, cost_per_stop, max_stores=3, **time)
         greedy = opt.greedy_plan(cost, stores, home, cost_per_km, cost_per_stop, max_stores=3, **time)
-        
+
         if exact.empty or greedy is None:
             continue
         best = exact.iloc[0]
