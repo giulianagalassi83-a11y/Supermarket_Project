@@ -138,13 +138,22 @@ def run_one(kind: str, relative_path: str) -> None:
     print(f"\n===== {kind.upper()}: {relative_path} =====", flush=True)
     notebook = nbformat.read(path, as_version=4)
     configure_notebook(notebook, kind)
+
+    # Allow extra time for Selenium scrapers.
+    # API notebooks have a shorter timeout.
+    notebook_timeout = (
+        7200 if kind in {"alcampo", "ahorramas", "dia", "aldi"}
+        else 1800
+    )
+
     client = NotebookClient(
         notebook,
         kernel_name="python3",
-        timeout=1800,
+        timeout=notebook_timeout,
         allow_errors=False,
         resources={"metadata": {"path": str(path.parent)}},
     )
+
 
     try:
         executed = client.execute()
