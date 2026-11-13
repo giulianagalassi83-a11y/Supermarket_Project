@@ -117,6 +117,7 @@ if df_summary.empty or len(df_summary) != {expected_len}:
 if not df_summary["status"].isin({expected_statuses[kind]}).all():
     raise RuntimeError("{kind}: one or more searches did not finish successfully")
 '''
+    print(df_summary.to_string(index=False), flush=True)
     if kind not in {"mercadona", "bm_consum"}:
         check += '''
 if "rows_extracted" in df_summary.columns and not df_summary["rows_extracted"].gt(0).all():
@@ -144,13 +145,30 @@ def run_one(kind: str, relative_path: str) -> None:
         allow_errors=False,
         resources={"metadata": {"path": str(path.parent)}},
     )
-    executed = client.execute()
-    for cell in executed.cells:
-        for output in cell.get("outputs", []):
-            if output.output_type == "stream":
-                content = output.get("text", "")
-                if content:
-                    print(content[-3000:], end="", flush=True)
+
+    try:
+        executed = client.execute()
+    except Exception:
+        print(
+            f"\nFAILED: {kind}. Printing notebook diagnostics:",
+            flush=True,
+        )
+        for cell in client.nb.cells:
+            for output in cell.get("outputs", []):
+                if output.output_type == "stream":
+                    print(output.get("text", ""), end="", flush=True)
+                elif output.output_type == "error":
+                    print(
+                        "\n".join(output.get("traceback", [])),
+                        flush=True,
+                    )
+        raise
+    else:
+        for cell in executed.cells:
+            for output in cell.get("outputs", []):
+                if output.output_type == "stream":
+                    print(output.get("text", ""), end="", flush=True)
+
     print(f"\nPASS: {kind}", flush=True)
 
 
