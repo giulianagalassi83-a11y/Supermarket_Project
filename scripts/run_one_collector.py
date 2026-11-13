@@ -56,11 +56,63 @@ def collect(name: str) -> None:
             if not path.is_file() or path.stat().st_size == 0:
                 raise RuntimeError(f"Missing or empty RAW: {path}")
             df = pd.read_csv(path, encoding="utf-8-sig")
-            if df.empty or "price" not in df.columns:
+            
+            # Validate using each supermarket's original RAW schema.
+            if df.empty or "name" not in df.columns:
                 raise RuntimeError(f"Unexpected RAW content: {path}")
-            numeric = pd.to_numeric(df["price"], errors="coerce")
-            if numeric.isna().any() or numeric.le(0).any():
-                raise RuntimeError(f"Invalid prices in RAW: {path}")
+
+            if chain == "mercadona":
+                required = ["unit_price"]
+
+            elif chain in {"bm", "consum"}:
+                required = ["regular_price", "offer_price"]
+
+            else:
+                required = ["price"]
+
+            missing = [col for col in required if col not in df.columns]
+
+            if missing:
+                raise RuntimeError(
+                    f"Missing price columns in {path}: {missing}"
+                )
+
+            if chain in {"bm", "consum"}:
+                regular = pd.to_numeric(
+                    df["regular_price"], errors="coerce"
+                )
+                offer = pd.to_numeric(
+                    df["offer_price"], errors="coerce"
+                )
+                prices = offer.where(offer.gt(0), regular)
+
+            else:
+                price_column = (
+                    "unit_price" if chain == "mercadona" else "price"
+                )
+                prices = pd.to_numeric(
+                    df[price_column], errors="coerce"
+                )
+
+            valid_names = (
+                df["name"].notna()
+                & df["name"].astype(str).str.strip().ne("")
+            )
+            valid_rows = valid_names & prices.gt(0).fillna(False)
+
+            if not valid_rows.any():
+                raise RuntimeError(
+                    f"No valid products found in {path}"
+                )
+
+            invalid_count = int((~valid_rows).sum())
+
+            print(
+                f"{chain}: {len(df)} RAW rows, "
+                f"{invalid_count} rows requiring validation.",
+                flush=True,
+            )
+
             destination = STAGING / path.relative_to(ROOT)
             destination.parent.mkdir(parents=True, exist_ok=True)
             shutil.copy2(path, destination)

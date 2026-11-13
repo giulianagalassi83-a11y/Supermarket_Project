@@ -98,7 +98,7 @@ def configure_notebook(notebook: nbformat.NotebookNode, kind: str) -> None:
     expected_statuses = {
         "mercadona": '{"OK"}',
         "bm_consum": '{"OK", "OK (500 cap)"}',
-        "alcampo": '{"stable"}',
+        "alcampo": '{"stable", "max_scrolls_reached"}',
         "ahorramas": '{"complete"}',
         "dia": '{"OK"}',
         "aldi": '{"OK"}',
