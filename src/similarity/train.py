@@ -68,7 +68,7 @@ def mine_hard_negatives(pairs, products, index, encoder, per_pair=3, exclude=fro
     `exclude` holds keys that must never be used (e.g. the held-out fold's products).
     """
     by_key = products.set_index("product_key")
-    attrs = {k: attributes.extract(r["name"], r["brand"], r["chain_id"]) for k, r in by_key.iterrows()}
+    attrs = attributes.extract_all(products)
     ranked, _ = index.topk(encoder.encode(list(by_key.loc[pairs["key_bm"], "mtext"]), "query"), depth)
     rows = []
     for (key_bm, gold), cands in zip(pairs[["key_bm", "key_consum"]].itertuples(index=False), ranked):
@@ -253,8 +253,7 @@ def run_cv_reranker(epochs=2, neg_per_query=7, throttle_s=THROTTLE_S):
     by_key = products.set_index("product_key")
     texts = by_key["mtext"].to_dict()
     keys = pd.unique(pd.concat([cands["key_a"], cands["key_b"], pairs["key_consum"]]))
-    attrs = {k: attributes.extract(by_key.at[k, "name"], by_key.at[k, "brand"], by_key.at[k, "chain_id"])
-             for k in keys}
+    attrs = attributes.extract_all(products, keys)
     gold = pairs.set_index("key_bm")["key_consum"]
     tag = f"e{epochs}-n{neg_per_query}"
     done = (pd.read_parquet(CE_CV_SCORES_PATH) if CE_CV_SCORES_PATH.exists()

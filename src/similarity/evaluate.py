@@ -55,6 +55,28 @@ def prf(accepted, gold):
 
 # ---------------------------------------------------------------- matching cross-validation (spec §8, Task 8)
 
+
+def tradeoff(heldout, thresholds=np.round(np.arange(0.30, 1.0, 0.01), 2)):
+    """Precision / recall / F1 / F0.5 per fold and threshold from held-out best candidates, plus a 'mean' fold.
+
+    Gold is barcode-only, so precision is a lower bound (same product under another EAN counts as wrong)."""
+    rows = []
+    for fold, g in heldout.groupby("fold"):
+        for t in thresholds:
+            made = g["prob"] >= t
+            correct = (made & g["correct"]).sum()
+            p = correct / made.sum() if made.any() else np.nan
+            r = correct / len(g)
+            f = lambda b: (1 + b * b) * p * r / (b * b * p + r) if made.any() and p + r else 0.0
+            rows.append({"fold": fold, "threshold": t, "precision": p, "recall": r, "f1": f(1), "f05": f(0.5),
+                         "accepted_share": made.mean()})
+    table = pd.DataFrame(rows)
+    mean = table.groupby("threshold", as_index=False).agg(
+        precision=("precision", "mean"), recall=("recall", "mean"), f1=("f1", "mean"), f05=("f05", "mean"),
+        accepted_share=("accepted_share", "mean"), precision_min=("precision", "min"),
+        precision_max=("precision", "max"))
+    return pd.concat([table, mean.assign(fold="mean")], ignore_index=True)
+
 VARIANTS = ["tfidf", "base", "finetuned", "finetuned+attrs", "finetuned+attrs+rerank", "finetuned+attrs+rerank_ft"]
 _ATTR_FEATURES = ["brand_match", "size_ratio", "size_known", "variant_agree", "pack_match"]
 _VARIANT_FEATURES = {
@@ -111,8 +133,11 @@ def _top5(scored, queries):
     return np.array([(lists.get(q, []) + [""] * 5)[:5] for q in queries], dtype=object)
 
 
-def run_matching_cv(products, pairs, variant, k=config.SIM["top_k"], reranker=None):
-    """Held-out metrics per outer fold: decider fit on the other folds, threshold chosen by an inner CV on them."""
+def run_matching_cv(products, pairs, variant, k=config.SIM["top_k"], reranker=None, heldout=None, generic_cutoff=2):
+    """Held-out metrics per outer fold: decider fit on the other folds, threshold chosen by an inner CV on them.
+
+    `heldout`: optional list; gets one frame per fold (fold, key_a, prob, correct) of each query's best candidate.
+    `generic_cutoff`: attributes.generic_brands' max_other_brands (sensitivity check only)."""
     from src.similarity import attributes
     from src.similarity.match import add_features, apply_veto, best_per_query, choose_threshold, fit_decider, predict
 
@@ -120,8 +145,7 @@ def run_matching_cv(products, pairs, variant, k=config.SIM["top_k"], reranker=No
     cands = _oof_candidates("finetuned" if variant.startswith("finetuned") else variant, products, pairs, folds, k)
     by_key = products.set_index("product_key")
     keys = pd.unique(pd.concat([cands["key_a"], cands["key_b"]]))
-    attrs = {key: attributes.extract(by_key.at[key, "name"], by_key.at[key, "brand"], by_key.at[key, "chain_id"])
-             for key in keys}
+    attrs = attributes.extract_all(products, keys, generic_cutoff)
     if "attrs" in variant:
         cands = apply_veto(cands, attrs, "same")
     cands = add_features(cands, by_key["mtext"].to_dict(), attrs, reranker if variant.endswith("rerank") else None)
@@ -149,6 +173,10 @@ def run_matching_cv(products, pairs, variant, k=config.SIM["top_k"], reranker=No
         queries = pairs.loc[test_idx, "key_bm"].to_numpy()
         test = cands[cands["fold"] == i].assign(prob=lambda d: predict(model, d))
         accepted = best_per_query(test, threshold).set_index("key_a")["key_b"].reindex(queries)
+        if heldout is not None:
+            top = best_per_query(test, -np.inf).set_index("key_a").reindex(queries)
+            heldout.append(pd.DataFrame({"fold": i, "key_a": queries, "prob": top["prob"].fillna(0).to_numpy(),
+                                         "correct": (top["key_b"] == gold[queries]).to_numpy()}))
         rows.append({"variant": variant, "fold": i, "threshold": round(threshold, 4),
                      **retrieval_metrics(_top5(test, queries), gold[queries].to_numpy(dtype=object)),
                      **prf(accepted, gold[queries])})
@@ -162,7 +190,50 @@ if __name__ == "__main__":
 
     from src.similarity.data import barcode_pairs, load_products
 
-    if sys.argv[1:2] == ["matching"]:
+    if sys.argv[1:2] == ["tradeoff"]:  # precision–recall trade-off of the final decider (finetuned+attrs)
+        products = load_products()
+        heldout = []
+        run_matching_cv(products, barcode_pairs(products), "finetuned+attrs", heldout=heldout)
+        heldout = pd.concat(heldout, ignore_index=True)
+        out = tradeoff(heldout)
+        out.to_csv(config.SIM_RESULTS_DIR / "tradeoff.csv", index=False)
+        mean = out[out["fold"] == "mean"]
+        print(f"recall ceiling (best candidate correct): {heldout['correct'].mean():.3f}")
+        print(mean.iloc[::5].round(3).to_string(index=False))
+        for col in ("f1", "f05"):
+            print(f"best {col}:", mean.drop(columns="fold").loc[mean[col].idxmax()].round(3).to_dict())
+
+    elif sys.argv[1:2] == ["generic-sensitivity"]:  # does the generic-brand cutoff matter? (finetuned+attrs)
+        from src.similarity import attributes
+
+        products = load_products()
+        pairs = barcode_pairs(products)
+        by_key = products.drop_duplicates("product_key").set_index("product_key")
+        names = [attributes.extract(r["name"], r["brand"], r["chain_id"]) for _, r in by_key.iterrows()]
+        sets = {c: attributes.generic_brands([a.name for a in names], [a.brand for a in names], c)
+                for c in (1, 2, 3, 4, 5, 7, 10, 15, 20)}
+        rows = []
+        for c, generic in sets.items():
+            attrs = attributes.extract_all(products, pd.unique(pd.concat([pairs["key_bm"], pairs["key_consum"]])), c)
+            vetoed = sum(attributes.conflict(attrs[a], attrs[b], "same") == "brand"
+                         for a, b in zip(pairs["key_bm"], pairs["key_consum"]))
+            heldout = []
+            m = run_matching_cv(products, pairs, "finetuned+attrs", heldout=heldout, generic_cutoff=c)
+            m = m[m["fold"] == "mean"].iloc[0]
+            t50 = tradeoff(pd.concat(heldout, ignore_index=True), np.array([0.5]))
+            t50 = t50[t50["fold"] == "mean"].iloc[0]
+            rows.append({"cutoff": c, "n_generic": len(generic),
+                         "jaccard_vs_2": round(len(generic & sets[2]) / max(len(generic | sets[2]), 1), 3),
+                         "true_pairs_vetoed_brand": vetoed, "n_true_pairs": len(pairs),
+                         "P_rule": m["precision"], "R_rule": m["recall"], "MRR": m["mrr"],
+                         "P_t50": round(t50["precision"], 4), "R_t50": round(t50["recall"], 4)})
+            print(rows[-1], flush=True)
+        out = pd.DataFrame(rows)
+        out.to_csv(config.SIM_RESULTS_DIR / "generic_sensitivity.csv", index=False)
+        print(out.to_string(index=False))
+        print("only at cutoff 2 vs 5:", sorted(sets[2] - sets[5])[:40])
+
+    elif sys.argv[1:2] == ["matching"]:
         from src.similarity.rerank import load_reranker
 
         products = load_products()

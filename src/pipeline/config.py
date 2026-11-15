@@ -76,7 +76,10 @@ SIM = {
     "top_k": 50,
     "precision_target": 0.90,   # same-product matches, barcode pairs (spec §9b)
     "same_size_tol": 0.02,      # same product: size within ±2 %
-    "equiv_size_tol": 0.25,     # fair equivalent: size within ±25 %
+    "strict_equiv_size_tol": 0.25,  # strict equivalent: smaller item ≥ 75 % of the bigger (up to 1.33×) — basket swaps
+    "equiv_size_tol": 0.50,         # equivalent: smaller item ≥ 50 % of the bigger (up to 2×, 1 L ~ 1,5 L) — €/unit
+    "db_pack_veto": False,  # DB pack counts never veto 'same': A/B 16 Nov, off = +1–2 pt recall at equal precision
+    "high_confidence_t": 0.90,  # operating point 1: held-out P .95 / R .53; point 2 ("balanced") = precision_target rule
     "n_folds": 5,
     "judge_model": "gemini-3.8-flash",
 }
