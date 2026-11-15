@@ -15,14 +15,15 @@ from src.pipeline import config
 
 PAIR_LABELS = ["same", "equivalent", "different"]
 
-# Level definitions copied from the spec (§6.2); the 25 % tolerance follows config.SIM["equiv_size_tol"].
+# Level definitions copied from the spec (§6.2); the "up to 2×" follows config.SIM["equiv_size_tol"] = 0.50.
+# Strict vs loose equivalence is derived from sizes afterwards (attributes.equivalence_tier), not judged.
 PAIR_PROMPT = """You compare two supermarket products from different Spanish chains.
 
 Levels:
 - same: same brand (or both own-brand of the same chain), same variant, size within ±2 %, same pack count.
 - equivalent: a fair equivalent: same type of product, no variant conflict (e.g. whole vs skimmed milk, \
-extra virgin vs refined oil), size within ±25 % per item (prices are compared per unit, so a multipack of the \
-same item counts), brand may differ (national vs own brand allowed).
+extra virgin vs refined oil), per-item size at most 2× apart (e.g. 1 L vs 1,5 L or 500 g vs 1 kg is fine; prices \
+are compared per unit, so a multipack of the same item counts), brand may differ (national vs own brand allowed).
 - different: anything else.
 
 Product A: {a}
@@ -125,19 +126,23 @@ def judge_types(products, hits, taxonomy, client=None, cache_path=config.SIM_DIR
     return out.rename(columns={"label": "type_id"})
 
 
-def sample_audit(llm_labels, n=40, seed=config.SEED):
-    """Blind audit sample: a third each of LLM confident match, confident reject and the borderline band
-    (decider prob 0.4–0.6), round-robin over the chain of key_a. The LLM label column is dropped."""
-    d = llm_labels.copy()
-    border = d["prob"].between(0.4, 0.6)
-    d["group"] = np.where(border, "borderline", np.where(d["label"] == "different", "reject", "match"))
-    d["chain"] = d["key_a"].str.split(":").str[0]
+AUDIT_QUOTAS = {"high": 0.25, "balanced": 0.30, "rejected": 0.25, "barcode_error": 0.20}
+
+
+def sample_audit(silver, n=100, seed=config.SEED, quotas=AUDIT_QUOTAS):
+    """Blind audit sample from silver_candidates + LLM labels: `quotas` shares of engine-high, engine-balanced,
+    engine-rejected (other chains) and barcode_error pairs; inside each group round-robin over (chain_a, tier) so
+    every chain and both size tiers show up. Returns the sample with its `group`; the caller hides it from raters."""
+    d = silver.copy()
+    d["group"] = np.where(d["source"] == "barcode_error", "barcode_error",
+                          d["accepted"].map({"high": "high", "balanced": "balanced", "no": "rejected"}))
     d = d.sample(frac=1, random_state=seed)
-    d["turn"] = d.groupby(["group", "chain"]).cumcount()
+    d["turn"] = d.groupby(["group", "chain_a", "tier"]).cumcount()
     d = d.sort_values("turn", kind="stable")
-    sizes = {g: n // 3 + (1 if i < n % 3 else 0) for i, g in enumerate(["match", "reject", "borderline"])}
+    sizes = {g: int(round(q * n)) for g, q in quotas.items()}
+    sizes[max(sizes, key=sizes.get)] += n - sum(sizes.values())
     picked = pd.concat([d[d["group"] == g].head(k) for g, k in sizes.items()])
-    return picked.drop(columns=["label", "turn", "rationale", "model"], errors="ignore").reset_index(drop=True)
+    return picked.drop(columns="turn").reset_index(drop=True)
 
 
 def kappa(a, b):

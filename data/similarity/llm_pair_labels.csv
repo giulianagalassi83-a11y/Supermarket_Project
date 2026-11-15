@@ -1,0 +1,780 @@
+key_a,key_b,label,rationale,model
+mercadona:15290,ahorramas:49640,different,"Product A is a women's fragrance/cosmetic set (Lote mujer Como tú Amor), while Product B is fresh produce (pink tomato).",gemini-3.8-flash
+alcampo:67737,mercadona:11994,different,"Product A is a barbecue-style meat lasagna, whereas Product B is a standard chicken lasagna, representing distinct flavor profiles and recipes.",gemini-3.8-flash
+mercadona:8930,bm:82427,different,"Product A is a 1 kg bulk salt bag/package from Hacendado, whereas Ducros Himalaya pink salt is typically a small spice grinder format (around 60-100 g), making their package sizes more than 2x apart.",gemini-3.8-flash
+mercadona:67586,alcampo:69518,different,"Product A is individual ketchup packets, while Product B is sourdough country bread, which are completely different food products.",gemini-3.8-flash
+alcampo:24373,ahorramas:39956,equivalent,Both products are 5-liter bottles of extra virgin olive oil from different brands.,gemini-3.8-flash
+aldi:600889102,bm:80849,different,"Product A consists of chicken gyozas (dumplings), whereas Product B consists of chicken skewers (brochetas), which are entirely different food products.",gemini-3.8-flash
+dia:288727,ahorramas:47869,equivalent,Both products are own-brand moist toilet paper packs of comparable sizes (80 and 100 wipes).,gemini-3.8-flash
+alcampo:716036,consum:7418093,different,"The products have conflicting fruit flavor profiles (mango, apple, and passion fruit versus mango and coconut).",gemini-3.8-flash
+ahorramas:16375,aldi:684900,different,"Product A is a 0% fat sweetened bifidus probiotic yogurt, while Product B is a whole/standard organic plain yogurt.",gemini-3.8-flash
+aldi:601579800,dia:31437,equivalent,"Both products are panga fillets, and the weight difference (0.9 kg vs 0.48 kg) is within the allowed 2× range for an equivalent match across different brands.",gemini-3.8-flash
+aldi:601795500,consum:7485472,equivalent,"Both products are salted mixed snack/aperitif nut cocktails, differing mainly in private label brand and weight within an acceptable range (200 g vs 300 g).",gemini-3.8-flash
+dia:311359,mercadona:13635,different,"Product A is a ready-to-drink meal replacement shake, whereas Product B is coffee in capsules.",gemini-3.8-flash
+ahorramas:87798,dia:307884,different,"Product A consists exclusively of liquid egg whites, whereas Product B consists of whole shell eggs.",gemini-3.8-flash
+ahorramas:85502,mercadona:5250,different,"The products have a size difference greater than 2x (1 L vs 0.25 L), exceeding the threshold for equivalence.",gemini-3.8-flash
+ahorramas:9465,alcampo:14949,different,"Product A consists of piquitos (small breadsticks) while Product B consists of panecillos (toasted mini bread rolls/rusks), which are distinct types of bread products.",gemini-3.8-flash
+aldi:601476300,alcampo:543303,different,"Product A is processed melted cheese slices designed for burgers, whereas Product B is mozzarella cheese slices, representing different cheese varieties.",gemini-3.8-flash
+mercadona:5673,aldi:601316200,different,"Product A is a tiger nut milk drink (horchata), whereas Product B is a savory pastry (empanadilla).",gemini-3.8-flash
+aldi:133000,mercadona:86238,equivalent,Both products are sliced cooked extra ham (jamón cocido extra) with comparable packaging sizes and no variant conflicts.,gemini-3.8-flash
+mercadona:13609,dia:273811,equivalent,Both products are 250 ml private-label Sherry reserve vinegar (Vinagre de Jerez reserva).,gemini-3.8-flash
+alcampo:56091,dia:91,different,"The products are different apple varieties, Fuji versus Reineta, which represent distinct flavor profiles and uses.",gemini-3.8-flash
+mercadona:80773,consum:7131373,different,"Product A is a ready-to-eat potato omelette with chorizo, while Product B is fresh black pear cherry tomatoes.",gemini-3.8-flash
+dia:312688,consum:7376291,different,"Product A has a chocolate and banana flavor while Product B is plain milk chocolate, which is a variant conflict.",gemini-3.8-flash
+ahorramas:8785,bm:40145,equivalent,Both are powder laundry detergents of comparable load counts (15 vs 12 washes) from different national brands.,gemini-3.8-flash
+alcampo:85235,aldi:601563800,different,"Product A is lasagna pasta sheets, whereas Product B is waffles.",gemini-3.8-flash
+dia:189086,aldi:826600,same,Both products are 350 g of original Philadelphia cream cheese.,gemini-3.8-flash
+alcampo:83508,bm:8211,equivalent,Both products are prepared ready-to-eat fresh bolognese lasagnas of comparable sizes (400 g vs 250 g).,gemini-3.8-flash
+dia:12668,alcampo:220472,equivalent,Both products are 1-liter private label bottles of olive pomace oil (aceite de orujo de oliva) from different supermarket chains.,gemini-3.8-flash
+aldi:601417104,ahorramas:95613,different,"Both are sheep's milk cheeses, but they have distinctly different flavor varieties (Pedro Ximénez vs. pimentón).",gemini-3.8-flash
+ahorramas:80752,consum:500652,different,"Product A is a 'bianca' (white base, no tomato) 4-cheese pizza while Product B is the standard 4-cheese pizza with a tomato sauce base, representing distinct recipe variants.",gemini-3.8-flash
+dia:207399P6,bm:2412,different,"Product A is an oat beverage (avena), whereas Product B is a rice beverage (arroz), which represent different product variants/types.",gemini-3.8-flash
+mercadona:15206,alcampo:888897,different,"Product A is canned peaches in syrup, while Product B is a peach-flavored vitamin water beverage.",gemini-3.8-flash
+mercadona:16352,bm:66239,different,"Product A is cooked ham (jamón cocido) while Product B is mozzarella cheese (queso mozzarella), which are completely different types of food.",gemini-3.8-flash
+alcampo:848941,ahorramas:99477,equivalent,"Both are Wipp Express liquid laundry detergents of similar core formula, differing in wash count (40 doses vs. 54 doses) which falls within the 2× threshold.",gemini-3.8-flash
+dia:312595,ahorramas:70168,different,"Product A consists of cookies/biscuits with milk cream by Cuétara, while Product B is dulce de leche spread/topping by La Lechera.",gemini-3.8-flash
+ahorramas:85298,dia:140809,equivalent,"Both are multi-action liquid laundry detergents of comparable formulation, and the difference in load count (54 vs 30 washes) is within the allowed 2x size ratio.",gemini-3.8-flash
+aldi:692004,consum:7415313,different,"Product A is a standard 500 g apricot yogurt tub, while Product B is a 100 g organic baby food pouch made with yogurt and oats, differing significantly in product type, ingredients, and size.",gemini-3.8-flash
+ahorramas:70817,aldi:602187600,different,"Product A is plain smoked Norwegian salmon slices, whereas Product B is a prepared appetizer consisting of skewers (gildas) of smoked salmon and cheese.",gemini-3.8-flash
+aldi:601620801,dia:300816,different,"Product A is red lentil pasta (sedanini), while Product B is whole dried peeled red lentils.",gemini-3.8-flash
+ahorramas:50154,mercadona:21326,equivalent,Both products are 500 g packages of rigatoni pasta of comparable premium Italian brands.,gemini-3.8-flash
+aldi:686205,alcampo:54312,different,"Product A is a gourmet dairy dessert, whereas Product B is mozzarella cheese.",gemini-3.8-flash
+alcampo:96994,mercadona:17461,equivalent,"Both products are 200 g tubs of cottage cheese (one from Exquisa and one from Hacendado), making them equivalent items across different brands.",gemini-3.8-flash
+mercadona:54209,ahorramas:99695,different,"Product A is chorizo (cured sausage) and Product B is extra virgin olive oil, which are completely different product categories.",gemini-3.8-flash
+mercadona:29100,dia:101722,different,"Product A is wheat flour while Product B is fried tomato sauce, representing entirely different food categories.",gemini-3.8-flash
+alcampo:249484,dia:244789,different,"Product A consists of beef chorizo mini-burgers, whereas Product B consists of standard-sized mixed pork and beef burgers.",gemini-3.8-flash
+aldi:601413703,bm:7565,different,"Product A is instant noodles with beef flavor, whereas Product B is fresh mixed minced meat.",gemini-3.8-flash
+aldi:600421500,mercadona:9588,equivalent,"Both products are 400 g packages of fine cornstarch (harina fina de maíz), one from the national brand Maizena and the other from Mercadona's private label Hacendado.",gemini-3.8-flash
+alcampo:510863,consum:7216943,equivalent,Both products are canned yellowfin tuna in natural brine (atún claro al natural) with comparable sizes and package types from different brands.,gemini-3.8-flash
+ahorramas:38178,alcampo:29213,different,"Product A is fried bread croutons (picatostes) and Product B is breaded chicken wings (alitas de pollo empanadas), which are completely different products.",gemini-3.8-flash
+dia:298105,mercadona:60640,different,The two products are different seasoning blends intended for different uses (french fries seasoning vs. pasta seasoning).,gemini-3.8-flash
+ahorramas:64466,bm:37585,equivalent,"Both products are 1-liter bottles of fresh whole milk, but they come from different brands/store private labels.",gemini-3.8-flash
+mercadona:13814,consum:7473754,different,"Product A is an energy drink, whereas Product B is a yogurt.",gemini-3.8-flash
+mercadona:35781,aldi:601879600,different,"Product A is plain frozen chopped spinach, whereas Product B is chicken and spinach burgers, which is an entirely different product category.",gemini-3.8-flash
+aldi:601579800,ahorramas:1660,different,"Product A is panga fish fillets while Product B is golden apples, which are entirely different food products.",gemini-3.8-flash
+ahorramas:9952,consum:7294382,different,"Product A is a dairy mousse dessert while Product B is a standard yogurt, making them different types of products.",gemini-3.8-flash
+dia:141191,alcampo:439450,different,"Product A is an energy drink (Monster Absolutely Zero), while Product B is a vitamin-enhanced flavored water (Vitamin Well Agua Zero Lemon).",gemini-3.8-flash
+dia:284017,aldi:601261900,different,"Product A is conventional cooked chickpeas while Product B is an organic (ecológico) variety, which represents a variant difference.",gemini-3.8-flash
+alcampo:216095,bm:83080,different,"Product A is a thickened water gel (agua gelificada) and Product B is cheese sausages (salchichas con queso), which are entirely different food products.",gemini-3.8-flash
+alcampo:515116,aldi:601584803,equivalent,Both products are 500 g packages of whole wheat spaghetti from different brands.,gemini-3.8-flash
+dia:187166,consum:7483795,different,"Product A is a multi-fruit juice pack (pineapple, apple, grape), whereas Product B is an apple pie/cake.",gemini-3.8-flash
+dia:302298,bm:32080,different,"Product A is an organic (ecológico) and low-fat beef burger, whereas Product B is a standard non-organic beef burger meat product.",gemini-3.8-flash
+mercadona:21594,alcampo:195006,different,"Product A is a frozen kebab-style pizza, whereas Product B is sliced kebab chicken meat.",gemini-3.8-flash
+alcampo:788431,ahorramas:70138,different,"Product A is organic goat milk, whereas Product B is mineral water.",gemini-3.8-flash
+dia:166948,ahorramas:60130,equivalent,"Both products are cooked chickpeas of almost identical small sizes (210 g vs 215 g), but they are from different brands.",gemini-3.8-flash
+ahorramas:69877,aldi:601131600,equivalent,"Both products are 1-liter containers of semi-skimmed milk, making them equivalent despite differing brands.",gemini-3.8-flash
+aldi:170221,alcampo:513681,different,"Product A is a standard adult fruit smoothie combining apple, pineapple, pear, and kiwi, while Product B is an organic baby food fruit pouch tailored for infants from 6 months featuring blueberry, apple, and pear.",gemini-3.8-flash
+mercadona:59280,bm:26345,different,"Product A is sliced serrano ham, while Product B is a prepared ham and cheese sandwich.",gemini-3.8-flash
+aldi:51100,consum:7482516,different,"Product A consists of fresh organic apples, whereas Product B consists of prepared apple tartlets (a bakery product).",gemini-3.8-flash
+ahorramas:98650,mercadona:20287,equivalent,"Both products are natural goat milk yogurts, sharing the same variant and product type despite the difference in brand.",gemini-3.8-flash
+alcampo:421426,dia:21415,different,"Product A is a specialty risotto rice (500 g) while Product B is standard round rice (redondo, 1 kg), which are distinct culinary varieties.",gemini-3.8-flash
+aldi:731400,dia:307162,different,"Product A is standard sliced mild cheese (likely cow/mixed milk), whereas Product B is a specific smoked sheep's milk cheese wedge.",gemini-3.8-flash
+mercadona:4334,dia:613,different,"Product A is frozen lamb chops, while Product B is condensed milk, which are completely different product categories.",gemini-3.8-flash
+ahorramas:47157,alcampo:543303,different,Product A is a vegan cheese alternative while Product B is traditional dairy mozzarella cheese.,gemini-3.8-flash
+mercadona:21708,ahorramas:59320,different,"Product A is an energy drink while Product B is a liquid yogurt designed to lower cholesterol, making them completely different product categories.",gemini-3.8-flash
+aldi:264706,mercadona:69448,different,"Product A is prepared purple potato gnocchi (pasta), whereas Product B is a bag of raw fresh potatoes intended for frying.",gemini-3.8-flash
+mercadona:43320,aldi:302002,different,"Both are 1.5 L private-label floor cleaners, but they have distinct fragrance variants (Spa vs. Manzana verde).",gemini-3.8-flash
+mercadona:11847,bm:3295,different,"Product A is coffee blend (mezcla) whereas Product B is 100% natural roast coffee (natural), which are distinct coffee varieties.",gemini-3.8-flash
+dia:73676,alcampo:50733,same,Both products are 1-liter cartons of Pascual whole milk from the same brand and identical variant.,gemini-3.8-flash
+ahorramas:54778,alcampo:864477,same,Both products are the same Aldelís 2-pack canned chicken breast in natural broth (2 x 80 g).,gemini-3.8-flash
+ahorramas:73175,bm:23498,same,Both products are 6-packs of Danacol tropical-flavored drinkable yogurt.,gemini-3.8-flash
+dia:309269,aldi:601586004,same,Both products are 325 ml Pantene Hydra shampoo.,gemini-3.8-flash
+ahorramas:77655,consum:7103658,same,Both products are the same Philadelphia original/natural spread cheese in a 200g tub.,gemini-3.8-flash
+ahorramas:57425,dia:287566,equivalent,"Both products are rustic ciabatta bread from the Recondo brand, but they have different package weights (100g vs 180g) that are within a 2x size ratio.",gemini-3.8-flash
+aldi:980700,alcampo:55654,equivalent,"Both products are generic salad tomatoes sold by different chains, making them equivalent.",gemini-3.8-flash
+alcampo:52419,ahorramas:7722,same,Both products are Danone sweetened natural yogurt in an 8-pack format of standard size.,gemini-3.8-flash
+alcampo:236868,consum:7376036,different,"The fruit pouch flavors and target age groups differ, with Product A consisting of banana, pear, apple, and peach (from 4 months) and Product B consisting of apple, strawberry, and banana (Cool Fruits line for older children).",gemini-3.8-flash
+alcampo:19923,bm:3076,same,Both products are 350 g of Orlando brand tomate frito.,gemini-3.8-flash
+ahorramas:95941,mercadona:8667,equivalent,"Both are sliced chicken breast cold cuts of comparable sizes (120 g vs 200 g), meeting the criteria for an equivalent product across different brands.",gemini-3.8-flash
+dia:13627,ahorramas:50010,different,"Product B is specifically designated as juicing oranges (naranja de zumo), whereas Product A is a general or table orange variety.",gemini-3.8-flash
+aldi:983500,mercadona:3028,equivalent,"Both items are fresh apples sold as fresh produce, and the generic entry for Aldi is compatible as a direct equivalent to Mercadona's Golden apple.",gemini-3.8-flash
+alcampo:895362,dia:270999,equivalent,Both are Scottex toilet paper multipacks of standard rolls with pack sizes that are well within a 2x factor.,gemini-3.8-flash
+mercadona:10453,aldi:601492000,equivalent,"Both products are beef and pork burger meat items from supermarket private labels, representing equivalent product types despite the mini format specification.",gemini-3.8-flash
+mercadona:9408,dia:107434,same,Both products are the exact same infant follow-on formula (Nestlé Nidina 2) in an 800 g pack size.,gemini-3.8-flash
+dia:55658,consum:7076271,different,"Product A has muesli flavor while Product B has peach flavor (melocotón), representing different product variants.",gemini-3.8-flash
+dia:255253,bm:1253,equivalent,"Both products are Lea & Perrins Worcestershire sauce of nearly identical sizes (150 ml vs 142 ml, which exceeds the 2% threshold for 'same' but easily qualifies as equivalent).",gemini-3.8-flash
+dia:142599,mercadona:22279,different,"Product A is raw dry rice in a 1 kg pack, whereas Product B consists of microwaveable pre-cooked rice cups (2 x 125 g), which are different product formats and preparation types.",gemini-3.8-flash
+aldi:987600,bm:23150,equivalent,"Both products are cherry tomatoes sold in supermarket produce sections without an explicit brand, representing a standard equivalent offering.",gemini-3.8-flash
+aldi:662500,ahorramas:50451,different,The products have a size difference greater than 2x (3 liters versus 0.5 liters).,gemini-3.8-flash
+mercadona:4740,alcampo:25787,equivalent,"Both products are extra virgin olive oil of different brands, with sizes within the allowed 2x ratio (1 L vs 0.5 L).",gemini-3.8-flash
+aldi:980600,dia:109,equivalent,"Both products are loose vine tomatoes (tomate en rama) from different supermarket chains, making them equivalent fresh produce items.",gemini-3.8-flash
+alcampo:60131,aldi:601546100,different,"Product A is a large pie (empanada, 500 g) while Product B is an individual turnover/pasty (empanadilla, 120 g), resulting in both a format difference and a size difference greater than 2x.",gemini-3.8-flash
+mercadona:82753,consum:7475627,equivalent,Both products are gluten-free baguettes from store brands with comparable single-item sizes within a 2x factor.,gemini-3.8-flash
+ahorramas:25853,aldi:749200,equivalent,"Both products are fresh chicken wings from supermarket own brands, with no significant conflicting characteristics.",gemini-3.8-flash
+alcampo:53426,mercadona:66747,different,"Product A is a milk and fruit juice beverage (Funciona max), whereas Product B is an alcoholic wine-based drink (tinto de verano con limón).",gemini-3.8-flash
+mercadona:4706,ahorramas:50451,equivalent,Both products are extra virgin olive oil of comparable premium variants with sizes (0.75 L and 0.5 L) well within the 2× threshold.,gemini-3.8-flash
+ahorramas:31461,alcampo:244344,different,"The products have conflicting recipes/variants: Product A contains chicken and spinach, while Product B contains chicken with zucchini, spinach, and cheese.",gemini-3.8-flash
+ahorramas:82415,bm:34144,different,"Product A is a pack of standard Activia bifidus yogurts, whereas Product B is a drinkable kefir.",gemini-3.8-flash
+dia:40570,alcampo:36754,different,Product A is a single 5 L jug while Product B is a pack of 6 bottles of 1.5 L (individual unit sizes differ by more than 2x and total formats are distinct).,gemini-3.8-flash
+mercadona:21576,bm:17775,different,"Product A is a single whole wheat bread roll weighing 70 g, whereas Product B weighs 225 g, making the size difference exceed the 2x threshold.",gemini-3.8-flash
+alcampo:51557,bm:32202,same,Both products are identical 4x120g strawberry-flavored yogurts from the Danone brand.,gemini-3.8-flash
+ahorramas:14080,consum:7375004,same,Both products are Danone's Activia strawberry bifidus yogurt sold in a 4-pack of standard single-serve units.,gemini-3.8-flash
+ahorramas:63569,mercadona:12846,equivalent,"Both are 200g packs of lactose-free sliced cheese, making them equivalent products despite differing brands.",gemini-3.8-flash
+alcampo:903986,dia:263473P6,same,Both products are identical packs of 6 x 1.5 L natural alkaline mineral water pH 9 from the brand Ursu9.,gemini-3.8-flash
+dia:45440,ahorramas:64950,equivalent,"Both products are Lindt Lindor milk chocolate truffles, but they come in different package sizes (200 g vs 337 g) that are within a 2x size ratio.",gemini-3.8-flash
+mercadona:10676,dia:46626,different,"Product A is a high-protein enriched skimmed milk (+Proteínas & calcio), whereas Product B is a standard calcium-enriched skimmed milk without the high-protein formulation.",gemini-3.8-flash
+alcampo:244344,ahorramas:31461,different,"Product A includes zucchini (calabacín) and cheese (queso) in addition to chicken and spinach, making it a different recipe/variant from Product B which is only chicken and spinach.",gemini-3.8-flash
+aldi:644000,alcampo:24821,equivalent,"Both products are canned yellowfin tuna (atún claro) in olive oil with low/reduced salt, differing only in brand (private label vs. national brand) and packaging format/size within an acceptable range.",gemini-3.8-flash
+aldi:988500,mercadona:3028,equivalent,"Both are fresh individual apples from own-brand supermarket selections, making them equivalent despite the specific Golden variety specification in Product B.",gemini-3.8-flash
+alcampo:189664,consum:7331465,same,Both are 0.5 L bottles of Maison Perrier lemon-flavored sparkling water.,gemini-3.8-flash
+aldi:525601,ahorramas:31940,different,"Product A contains orange, banana, and biscuit, whereas Product B additionally includes pear, making them different fruit pouch varieties.",gemini-3.8-flash
+dia:144666,mercadona:35613,equivalent,"Both products are Pantene 'Repara y Protege' hair masks, differing only in size (300 ml vs 200 ml) which is within the allowed 2x threshold.",gemini-3.8-flash
+ahorramas:56661,dia:613,equivalent,"Both products are La Lechera condensed milk of the same variant, but differ in package format and size (450g bottle vs 370g can/container).",gemini-3.8-flash
+dia:155479,consum:551606,different,"Product A is yogurt-flavored (sabor yogur), whereas Product B appears to be plain brown rice cakes, representing a flavor/variant conflict.",gemini-3.8-flash
+alcampo:20464,aldi:110100,different,"The package sizes (5 L vs 1 L) differ by a factor of 5, which exceeds the maximum 2× size ratio for equivalent products.",gemini-3.8-flash
+dia:187545,bm:6374,equivalent,"Both are traditional/classic butters from Central Lechera Asturiana, and the package sizes (125 g vs 250 g) differ by an acceptable 2x factor.",gemini-3.8-flash
+ahorramas:91403,aldi:648500,equivalent,"Both products are 450g crustless whole wheat sliced bread (pan de molde integral sin corteza), but from different brands (Panrico vs. Aldi's private label El Horno).",gemini-3.8-flash
+alcampo:547640,mercadona:17110,equivalent,"Both products are Hida brand homemade-style fried tomato sauce, differing only in package size (560 g vs. 400 g) which is within the allowed 2× limit.",gemini-3.8-flash
+mercadona:4850,alcampo:97940,equivalent,"Both products are extra virgin olive oil of the Picual variety, differing in brand, and the sizes (0.5 L and 1 L) are within a 2x factor.",gemini-3.8-flash
+dia:144667,aldi:601586104,same,Both products are the 300 ml Pantene 'Suave y Liso' hair mask.,gemini-3.8-flash
+mercadona:86917.1,ahorramas:99167,equivalent,Both products are own-brand seed loaf breads (hogaza con semillas) of very similar sizes (360g and 400g).,gemini-3.8-flash
+mercadona:3028,aldi:988500,different,"Product A specifies the Golden apple variety with a defined weight (0.2 kg), whereas Product B is a generic apple with an unknown variety and size.",gemini-3.8-flash
+ahorramas:91183,alcampo:495236,different,Product A has a curry flavor/seasoning variant while Product B is the plain roasted chicken breast version.,gemini-3.8-flash
+mercadona:14140,bm:44842,equivalent,"Both are Lotus Biscoff caramelized biscuits, but they differ in package size (186 g vs 250 g, which is within the 2x size threshold).",gemini-3.8-flash
+ahorramas:32025,consum:7362544,same,Both products are the 340g Dulcesol brioche burger buns.,gemini-3.8-flash
+alcampo:475189,bm:64036,different,"Product A is made with 52% rye, whereas Product B is rye with seeds (pipas), which represents a different bread variant.",gemini-3.8-flash
+mercadona:6041,dia:275700,equivalent,Both products are fresh chicken sausages (longaniza de pollo) sold under supermarket store brands with comparable package sizes (0.55 kg vs 0.4 kg).,gemini-3.8-flash
+ahorramas:61488,bm:72541,same,Both items correspond to the same stuffed chicken (pollo relleno) product from the brand La Carloteña sold in bulk/deli counter format.,gemini-3.8-flash
+alcampo:21949,dia:70791,equivalent,"Both products are extra virgin olive oil, and the size difference (0.5 L vs 1 L) is within the allowable 2x limit for equivalent products.",gemini-3.8-flash
+alcampo:54433,ahorramas:99156,equivalent,"Both are milk and mixed fruit juice drinks from Don Simon with similar formulations (sugar/fat-free and tropical/multifruit blends), making them fair equivalents despite slight flavor naming differences and missing package size on Product B.",gemini-3.8-flash
+aldi:588000,alcampo:56763,different,"Product A is certified organic (ecológicas) while Product B is conventional, which is a significant product variant difference.",gemini-3.8-flash
+alcampo:70781,consum:7260276,same,Both products are the same 300 g Fripozo chicken crunchy bites with barbecue sauce (Fripozo is part of the El Pozo/Grupo Fuertes company).,gemini-3.8-flash
+dia:187744,alcampo:439092,different,"Although both are Foxy Seda toilet paper, the pack sizes differ significantly (6 rolls vs 30 rolls), which exceeds the 2x size ratio limit for equivalent products.",gemini-3.8-flash
+ahorramas:346,mercadona:4717,different,"The products have vastly different sizes (0.2 L vs 3 L, which exceeds the 2x size threshold) and formats (spray vs standard bottle).",gemini-3.8-flash
+ahorramas:76666,dia:33057,different,"The products have conflicting flavor variants, one being strawberry (fresa) and the other natural.",gemini-3.8-flash
+aldi:601725600,mercadona:2778,equivalent,"Both products are fresh chicken drumsticks (jamoncitos de pollo) from supermarket private labels, making them equivalent.",gemini-3.8-flash
+aldi:648500,ahorramas:91403,equivalent,"Both products are 450 g packages of crustless whole wheat sliced bread (pan de molde integral sin corteza), but one is from Aldi's private label El Horno and the other is from Panrico.",gemini-3.8-flash
+dia:278955,consum:7043214,same,"Both products are Ligeresa light mayonnaise sauce in the squeeze bottle format with essentially the same volume (425 ml vs 430 ml, within the 2% tolerance).",gemini-3.8-flash
+dia:40297,mercadona:9057,equivalent,Both products are growing-up milk preparations with cereals for toddlers aged 12+ months (stage 3) with identical 1 L unit sizes.,gemini-3.8-flash
+dia:248783,ahorramas:73302,same,Both products are the same 400 g Alpro coconut soy dessert (Alpro is a Danone brand).,gemini-3.8-flash
+dia:11468,aldi:989800,equivalent,Both are fresh Plátano de Canarias sold by weight or piece under the same protected geographical indication.,gemini-3.8-flash
+mercadona:10884,alcampo:53054,different,"One product is an Omega 3 enriched dairy drink, whereas the other is standard organic (Eco) skimmed milk, representing two distinct product types with conflicting specialized variants.",gemini-3.8-flash
+ahorramas:53660,aldi:602031000,equivalent,"Both are 1L bottles of Coosur extra virgin olive oil, but Product A specifies the Hojiblanca variety while Product B does not specify a single-variety cultivar.",gemini-3.8-flash
+aldi:155700,consum:7477466,different,"Product A refers to whole, fresh avocados, whereas Product B consists of pre-cut diced avocado cubes (often frozen or ready-to-eat), representing different product formats.",gemini-3.8-flash
+alcampo:549524,consum:7340953,same,"Both are the same Danone Activia 0% fat yogurt with chia and almonds, packaged in identical 4 x 115 g sizes.",gemini-3.8-flash
+dia:307948,ahorramas:98355,equivalent,"Both products are Ariel liquid detergents with stain-removing properties, but they have different wash counts (30 vs 40 washes).",gemini-3.8-flash
+alcampo:90610,bm:6362,same,Both products are 1-liter cartons of Central Lechera Asturiana skimmed cow's milk.,gemini-3.8-flash
+alcampo:35437,dia:683,equivalent,"Both products are sparkling mineral water from the brand Vichy Catalán, differing only in bottle size (0.75 L vs 1 L), which falls within the 2x size ratio for equivalent products.",gemini-3.8-flash
+ahorramas:44078,bm:23502,equivalent,"Both products are bagged Canarian bananas sold by the bag/kilo, representing equivalent fresh produce items across different chains.",gemini-3.8-flash
+dia:154982,mercadona:13869,same,Both products are the same Sensodyne Repair & Protect toothpaste in a 75 ml size.,gemini-3.8-flash
+ahorramas:9952,alcampo:51532,different,"Product A is a dairy mousse dessert, whereas Product B is a standard natural sweetened yogurt.",gemini-3.8-flash
+ahorramas:615,consum:7179083,same,Both products are 1-liter bottles of Fonter sparkling mineral water.,gemini-3.8-flash
+mercadona:13869,bm:70264,same,Both products are the 75 ml Sensodyne Repair & Protect toothpaste.,gemini-3.8-flash
+dia:241893,bm:85675,equivalent,"Both products are free-range eggs (huevos camperos) from the brand Pazo de Vilane, but the package size for product B is unknown.",gemini-3.8-flash
+ahorramas:37851,mercadona:17912.2,equivalent,"Both products are store-brand 100% whole wheat baguettes of similar sizes (250g and 230g), making them equivalent despite one being sliced.",gemini-3.8-flash
+aldi:601894800,mercadona:17912.2,equivalent,Both are 100% whole wheat bread baguettes of very similar sizes (0.21 kg vs 0.23 kg) from supermarket private labels.,gemini-3.8-flash
+dia:283975,consum:7395788,same,Both products are the exact same 1.43 L lemon-scented bleach with detergent from the brand Estrella.,gemini-3.8-flash
+alcampo:52560,ahorramas:70635,different,"Product A is a dairy-based yogurt containing only mango, while Product B is a plant-based soy alternative with mango and papaya.",gemini-3.8-flash
+aldi:601879600,ahorramas:31461,equivalent,Both products are chicken and spinach burger patties with comparable sizes within the 2x ratio threshold.,gemini-3.8-flash
+ahorramas:95296,dia:312595,same,Both products are the identical Cuétara Flakes milk cream filled cookies in a 480 g pack.,gemini-3.8-flash
+dia:77561,alcampo:19506,same,Both products are 1 kg packages of Luengo brand Pedrosillano chickpeas.,gemini-3.8-flash
+mercadona:10820,ahorramas:74206,different,"Product A is the cereal variant ('con cereales') while Product B is the standard/original version, representing a variant conflict.",gemini-3.8-flash
+dia:220579,aldi:600719504,same,"Both products are decaffeinated café con leche capsules by Dolce Gusto, representing the same product.",gemini-3.8-flash
+mercadona:2785,aldi:749200,equivalent,"Both products are store-brand split chicken wings (alas partidas de pollo), representing the same core product.",gemini-3.8-flash
+alcampo:731849,mercadona:27099,equivalent,"Both are Nestlé Aquarel still mineral water, and the individual bottle sizes (0.75 L vs 1.5 L) are within the 2× threshold.",gemini-3.8-flash
+mercadona:66746,alcampo:888773,different,"Product A is an alcohol-free tinto de verano with lemon, whereas Product B is an apple nectar juice.",gemini-3.8-flash
+aldi:601052100,dia:219916,equivalent,"Both are Hellmann's mayonnaise of the same variant, and the 0.45 L size is exactly 2x the 0.225 L size, making them equivalent.",gemini-3.8-flash
+mercadona:20941,dia:123683,equivalent,"Both products are the identical Danacol strawberry dairy drink with identical unit sizes (100 g), but they differ in pack count (10-pack vs 12-pack).",gemini-3.8-flash
+aldi:601491900,bm:32080,equivalent,Both products are beef burger meat patties from supermarket own-brands/fresh counters without conflicting variants.,gemini-3.8-flash
+alcampo:317556,aldi:525603,equivalent,"Both are Hero brand strawberry and banana yogurt pouches of the identical 100 g unit size, differing only in pack format (4-pack vs single pouch).",gemini-3.8-flash
+aldi:525603,alcampo:317556,equivalent,"Both are Hero yogurt pouches with banana and strawberry, but Product A is an individual pouch (100 g) while Product B is a 4-pack (4 x 100 g).",gemini-3.8-flash
+mercadona:27230,consum:7172364,different,"The products have vastly different sizes (1.5 L vs 0.33 L, which exceeds the 2x size ratio) and different target formats (standard bottle vs sports cap format).",gemini-3.8-flash
+ahorramas:54629,bm:35074,same,Both products are Casa Tarradellas 2-pack ham and cheese pizzas with the same package configuration and variant.,gemini-3.8-flash
+dia:289229,ahorramas:87398,same,Both products are the identical 1 L Alpro barista oat drink.,gemini-3.8-flash
+alcampo:52725,dia:203876,same,Both products are identical Danonino strawberry and banana petit suisse in a 6 x 50 g pack.,gemini-3.8-flash
+ahorramas:52028,consum:2569879,same,Both are 1.5 L bottles of Nestlé Aquarel natural mineral water.,gemini-3.8-flash
+dia:49397,consum:7476013,equivalent,"Both products are Ariel liquid laundry detergents differing only in format/load count (approx. 30 washes vs. 50 washes), which is well within the 2× size ratio.",gemini-3.8-flash
+alcampo:53039,consum:7241011,same,Both products are 1-liter cartons of organic whole milk from the brand Puleva.,gemini-3.8-flash
+ahorramas:53632,alcampo:42376,equivalent,"Both products are 1-liter bottles of virgin olive oil from Coosur, but they belong to different specific product ranges (Serie Oro vs Cocina Mediterránea).",gemini-3.8-flash
+dia:101007,bm:2840,same,Both products are 450 ml Hellmann's mayonnaise from the same brand and variant with identical volume.,gemini-3.8-flash
+dia:41117P6,alcampo:36754,different,"While both are 6-packs of Aquarel mineral water, the per-item bottle size differs significantly (0.33 L vs 1.5 L), exceeding the 2× threshold.",gemini-3.8-flash
+ahorramas:580,dia:216297,same,"Both products are 300g gluten-free sliced cereal bread from the same brand, Schär.",gemini-3.8-flash
+dia:161018,mercadona:17724,equivalent,"Both products are Pantene 'rizos definidos' hair mousses of the same product line, but they differ in size (200 ml vs 300 ml, within the 2× threshold).",gemini-3.8-flash
+ahorramas:24150,aldi:698800,same,"Both products are 16-portion boxes of processed cheese wedges from La Vaca Que Ríe, which corresponds to the standard 250 g net weight.",gemini-3.8-flash
+alcampo:89552,ahorramas:55038,same,Both products are Danone Vitalinea natural skimmed yogurts in a 4-pack of standard 120g format.,gemini-3.8-flash
+aldi:601990302,mercadona:12107,equivalent,"Both products are milk chocolate with almonds by brand Valor, but they differ in pack size (150 g vs 250 g), which is within the 2× threshold.",gemini-3.8-flash
+dia:174311,aldi:525603,same,Both products are the same 100 g yogurt pouch with banana and strawberry from the brand Hero.,gemini-3.8-flash
+aldi:525603,consum:7326825,same,Both products are identical 100g yogurt pouches with banana and strawberry from the brand Hero.,gemini-3.8-flash
+alcampo:28639,bm:75393,equivalent,"Both are Cuca light tuna in olive oil of comparable individual can size, but they differ in pack count (3-pack vs 6-pack).",gemini-3.8-flash
+ahorramas:46578,mercadona:66944,different,"Product A is a mango and passion fruit smoothie, whereas Product B is sangria (an alcoholic beverage).",gemini-3.8-flash
+mercadona:10275,bm:38880,equivalent,"Both products are whipping cream (nata para montar) in 200 ml unit sizes, making the single unit and multipack fair equivalents despite different brands.",gemini-3.8-flash
+aldi:600617700,ahorramas:51993,equivalent,Both products are 100% whole wheat bread loaves (hogaza integral 100%) of comparable sizes (0.37 kg vs 0.45 kg) from different supermarket chains.,gemini-3.8-flash
+aldi:989400,dia:45863,equivalent,Both products are standard fresh plum/pear tomatoes (tomate pera) from different supermarket chains.,gemini-3.8-flash
+mercadona:66944,dia:188896,different,"One product is sangria (an alcoholic wine-based beverage) and the other is apple juice (non-alcoholic fruit juice), making them completely different types of drinks.",gemini-3.8-flash
+mercadona:50968,ahorramas:52953,different,"The products are the same cheese type, but the unit sizes (1.63 kg vs 0.3 kg) differ by more than a factor of two.",gemini-3.8-flash
+alcampo:535253,mercadona:27213,equivalent,"Both products are the same brand and variant of sparkling mineral water (Vichy Catalán), and the sizes (0.5 L vs 1 L) are within the allowable 2× difference for equivalent products.",gemini-3.8-flash
+aldi:439202,bm:33059,different,"Product A is an instant noodle dish (fideos orientales), whereas Product B is a liquid chicken broth (caldo gourmet).",gemini-3.8-flash
+ahorramas:31706,bm:80975,same,Both products are the same 3-pack of Burgo de Arias fresh goat cheese (3x70g).,gemini-3.8-flash
+alcampo:53551,consum:303370,same,Both products are 1-liter cartons of Puleva whole milk enriched with calcium.,gemini-3.8-flash
+alcampo:470458,dia:60574,different,"Product A is canned salmon (salmón), whereas Product B is yellowfin tuna (atún claro), which are completely different fish species.",gemini-3.8-flash
+ahorramas:57,consum:361832,same,Both products are the same Gallo brand egg spaghettini (Spaghettini al huevo) in a 450 g package.,gemini-3.8-flash
+dia:186623,bm:9674,equivalent,"Both products are Campos light tuna in sunflower oil, but they differ in weight (104 g vs 160 g), which is well within the 2× threshold.",gemini-3.8-flash
+ahorramas:2864,alcampo:89803,same,Both products are the same 1-liter bottle of Central Lechera Asturiana lactose-free skimmed milk.,gemini-3.8-flash
+dia:190046,mercadona:66107,different,"Product A is a pineapple and coconut nectar, while Product B is red wine.",gemini-3.8-flash
+dia:47770P6,alcampo:30948,equivalent,"Both are 6-packs of Font Vella still mineral water, and the bottle sizes (330 ml vs. 500 ml) are within the allowed 2× ratio.",gemini-3.8-flash
+dia:169355P6,ahorramas:2864,equivalent,"Both products are Asturiana skimmed lactose-free milk with matching individual item sizes (1 L), but Product A is a pack of 6 while Product B is sold as a single unit.",gemini-3.8-flash
+dia:307166,consum:7460355,same,Both products are 400 g containers of Alpro brand lime-lemon soy yogurt.,gemini-3.8-flash
+ahorramas:9952,dia:13964,different,"Product A is a dairy mousse, whereas Product B is a standard yogurt, which are different dessert types with distinct textures.",gemini-3.8-flash
+alcampo:28862,ahorramas:7921,equivalent,"Both products are Ybarra extra virgin olive oil, and the size difference (1 L vs 0.5 L) is within the allowed 2x threshold for equivalent products.",gemini-3.8-flash
+ahorramas:74203,aldi:600831001,different,The weight difference between 180 g and 550 g exceeds the 2× threshold for equivalent products.,gemini-3.8-flash
+aldi:600729000,consum:7457059,different,"Product B is from the Sensitive sub-line while Product A is the standard line, and the unit/size comparison is unclear due to conflicting quantity metrics.",gemini-3.8-flash
+aldi:702800,mercadona:2791,different,"Product B is specifically certified corn-fed chicken (alimentado con 50% de maíz), representing a distinct premium chicken variant compared to standard certified chicken breasts in Product A.",gemini-3.8-flash
+alcampo:517154,bm:37365,equivalent,Both products are single-serving tuna and mayonnaise onigiri from different brands.,gemini-3.8-flash
+dia:278898,aldi:600558800,same,Both products are 400 g of Flora brand Omega 3 margarine.,gemini-3.8-flash
+aldi:601586103,dia:144666,same,Both products are the Pantene 'Repara y Protege' hair mask in the exact same 300 ml (0.3 L) size.,gemini-3.8-flash
+ahorramas:66273,mercadona:27314,equivalent,"Both products are Bezoya 1.5 L mineral water, but one is sold as a single bottle and the other as a 6-pack.",gemini-3.8-flash
+mercadona:10516,bm:6362,equivalent,"Both products are skimmed milk from the same brand (Central Lechera Asturiana), but they differ in pack size and container volume (pack of 6x1.5 L vs 1 L unit).",gemini-3.8-flash
+dia:273807,consum:7352649,same,Both products are the exact same 500 g box of Barilla Bavette Nº 13 pasta.,gemini-3.8-flash
+dia:297538,ahorramas:62494,same,Both products are identical 250 g packs of Gallo brand chickpea spirals (hélices de garbanzo).,gemini-3.8-flash
+aldi:987900,mercadona:69099,different,"Product A has an unknown size, making it impossible to verify whether the package size falls within the allowable 2× difference compared to the 5 kg bag.",gemini-3.8-flash
+dia:130840,mercadona:35987,same,Both are Kellogg's Choco Krispies puffed rice cereals in identical 420 g packages.,gemini-3.8-flash
+ahorramas:95974,dia:307385,same,Both products are the same 280g blueberry kefir drink from the brand Activia.,gemini-3.8-flash
+alcampo:52012,ahorramas:16375,same,Both are Activia by Danone 0% fat skimmed naturally sweetened bifidus yogurt in an 8-pack format of standard 120 g pots.,gemini-3.8-flash
+alcampo:24380,bm:35790,different,"Product A consists of individual small cans (approx. 52 g each, total ~156 g in a 3-pack), whereas Product B is a single large 750 g can, exceeding the 2× per-item size threshold.",gemini-3.8-flash
+ahorramas:33156,bm:17147,equivalent,Both products are 1.5 kg bags of Golden apples sold as generic produce by their respective supermarket chains.,gemini-3.8-flash
+alcampo:25633,consum:7184518,different,"Product A is specifically low in salt ('bajo en sal') while Product B is the standard version, representing a variant conflict.",gemini-3.8-flash
+aldi:254801,bm:2995,same,Both products are the same 430 ml Hellmann's mayonnaise from the same brand and size.,gemini-3.8-flash
+mercadona:17110,consum:951371,same,Both items are the 400 g canned fried tomato (tomate frito) from the brand Hida.,gemini-3.8-flash
+dia:178095,bm:6212,equivalent,"Both products are 4-packs of Activia creamy lime-lemon bifidus yogurt, but their unit sizes differ slightly (115 g vs 120 g, a 4.3% difference exceeding the 2% threshold for same).",gemini-3.8-flash
+ahorramas:13178,consum:7448314,equivalent,"Both are the same brand and variant of liquid laundry detergent (Skip Limpieza Profunda), but they differ in wash count (53 vs 35 washes, which is within the 2× size ratio limit).",gemini-3.8-flash
+mercadona:12151,dia:45685,equivalent,"Both products are Milka milk chocolate bars of the same variant, and their sizes (150 g and 250 g) differ by less than a factor of two.",gemini-3.8-flash
+alcampo:36256,dia:h841579e0e15f,same,Both products are the identical 6-pack of 1.5 L mineral water bottles from Solán de Cabras.,gemini-3.8-flash
+ahorramas:59453,alcampo:98071,same,Both products are identical 200g sliced semi-cured cheese from the brand García Baquero.,gemini-3.8-flash
+dia:119676P6,alcampo:91111,same,"Both products are the exact same brand (Pascual), variant (skimmed lactose-free milk), and package size (6 x 1 L).",gemini-3.8-flash
+aldi:602031000,consum:7442841,different,"Although both are Coosur extra virgin olive oil, the package sizes (1 L vs 0.25 L) differ by a factor of 4, exceeding the 2× threshold for equivalent products.",gemini-3.8-flash
+mercadona:2787,aldi:747500,equivalent,"Both are private label chicken breast fillets of the same product type, making them fair equivalents despite differing supermarket chains and missing exact size for one.",gemini-3.8-flash
+aldi:602030900,alcampo:184686,different,"Both products are Carbonell mild olive oil, but the sizes (1 L vs 0.46 L) differ by more than a factor of two, making them non-equivalent.",gemini-3.8-flash
+ahorramas:1227,mercadona:3021,equivalent,Both items are loose/unbranded Granny Smith apples from competing supermarket chains.,gemini-3.8-flash
+aldi:602031000,ahorramas:99695,equivalent,"Both products are Coosur extra virgin olive oil of the same type and variant, but differ in bottle size (1 L vs. 0.75 L), falling within the 2x size ratio for equivalent products.",gemini-3.8-flash
+dia:46581,consum:7247950,same,Both products are the same Nestlé Extrafino milk chocolate multipack of 3 x 125 g.,gemini-3.8-flash
+dia:117866,ahorramas:16375,same,Both products are the same 8-pack of Activia 0% fat sweetened natural bifidus yogurt (standard 120 g per unit).,gemini-3.8-flash
+alcampo:97940,consum:7480150,different,The sizes (1 L bottle versus single-dose 5 x 20 ml portions) differ by more than a factor of two.,gemini-3.8-flash
+dia:45685,mercadona:12151,equivalent,"Both products are standard Milka milk chocolate bars of the same type and variant, with sizes (250 g vs. 150 g) within a 2x factor.",gemini-3.8-flash
+alcampo:51152,bm:22791,same,Both products are the identical Kaiku brand lactose-free sweetened natural yogurt in a 4 x 125 g pack format.,gemini-3.8-flash
+ahorramas:332,bm:3021,same,"Both products are 3-packs of Calvo light tuna in sunflower oil, which standardly comes in 3x80 g cans.",gemini-3.8-flash
+ahorramas:60203,dia:47771,same,Both products are the identical Font Vella mineral water in a 500 ml (0.5 L) single bottle.,gemini-3.8-flash
+ahorramas:74641,consum:7194629,same,Both products are the same 1-liter Don Simón squeezed orange juice with pulp.,gemini-3.8-flash
+aldi:525602,bm:5236,different,"Product A is a pure fruit pouch (banana and strawberry), whereas Product B contains yogurt, making them different products.",gemini-3.8-flash
+dia:119675P6,bm:42384,equivalent,"Both products are the same Pascual lactose-free semi-skimmed milk with identical individual units (1 L), but Product A is sold as a 6-pack while Product B is sold as a single unit.",gemini-3.8-flash
+alcampo:91111,dia:119676P6,same,Both products are identical 6 x 1 L packs of Pascual lactose-free skimmed milk.,gemini-3.8-flash
+dia:61500,alcampo:64832,equivalent,"Both products are 3-packs of Calvo light tuna in olive oil, but they differ in stated can weight (52 g vs. 73 g), making them equivalent rather than the same.",gemini-3.8-flash
+alcampo:984240,ahorramas:44539,equivalent,"Both products are Albo brand yellowfin tuna in extra virgin olive oil, but Product A is a pack of 6 while Product B is a pack of 3.",gemini-3.8-flash
+ahorramas:74641,alcampo:32822,same,Both products are the same 1-liter Don Simón squeezed orange juice with pulp.,gemini-3.8-flash
+aldi:600421500,consum:7233385,same,Both products are the identical 400 g box of Maizena fine cornstarch from the same brand.,gemini-3.8-flash
+aldi:155700,mercadona:3858,equivalent,"Both products are fresh avocados sold by supermarket own/unbranded produce lines, representing the same commodity item despite the unspecified pack size for one.",gemini-3.8-flash
+mercadona:10281,consum:7116986,equivalent,"Both are the same skimmed milk beverage with walnuts and Omega 3 from Puleva, differing only in pack format (6 x 1 L pack vs. single 1 L unit).",gemini-3.8-flash
+dia:50692,consum:236141,same,Both products are the exact same Activia (Danone) berries bifidus yogurt 4x120g pack.,gemini-3.8-flash
+alcampo:59802,bm:28277,equivalent,"Both are Activia mixed berries yogurt 4-packs, but their unit sizes differ by more than 2% (120 g vs 125 g).",gemini-3.8-flash
+ahorramas:74641,bm:11158,same,Both products are 1-liter cartons of Don Simón freshly squeezed orange juice with pulp.,gemini-3.8-flash
+ahorramas:69878,consum:12559,same,Both products are 1-liter cartons of Pascual whole milk (leche entera).,gemini-3.8-flash
+dia:189922,mercadona:66105,different,"Product A is grape juice (mosto) and Product B is alcoholic wine (vino blanco), which are different types of beverages.",gemini-3.8-flash
+dia:85943,ahorramas:78741,same,Both products are the identical 325 g Gallina Blanca tomato and onion sofrito sold across different supermarket chains.,gemini-3.8-flash
+ahorramas:42483,dia:241893,same,Both products are identical 12-packs of free-range eggs from the brand Pazo de Vilane.,gemini-3.8-flash
+aldi:601557701,bm:14862,same,"Both products are the identical 250 g milk chocolate with almonds tablet from the same brand, Valor.",gemini-3.8-flash
+dia:282560,bm:10332,equivalent,"Both products are the identical tuna in olive oil from Calvo with 52 g per can, but differ in multipack count (6 cans vs 3 cans).",gemini-3.8-flash
+ahorramas:26265,alcampo:90356,same,Both products are the same 4-pack of Activia bifidus yogurt with oats and walnuts.,gemini-3.8-flash
+alcampo:41856,ahorramas:75781,equivalent,"Both are Don Simón 100% squeezed pulp-free orange juice of the same variant, but differ in bottle size (2 L vs 1 L, which is within the 2x threshold).",gemini-3.8-flash
+aldi:601586104,consum:7393408,same,"Both products are identical in brand (Pantene), variant (Suave y liso hair mask), and volume (0.3 L).",gemini-3.8-flash
+dia:221417,alcampo:90356,same,Both products are identical 4 x 115 g packs of Activia oat and walnut bifidus yogurt.,gemini-3.8-flash
+dia:307334,consum:7459472,same,"Both products are the exact same brand (Puleva), product variant (Peques 3 preparado lácteo de crecimiento), and pack size (3 x 200 ml).",gemini-3.8-flash
+ahorramas:62763,consum:7436913,same,"Both products are 1-liter red grape juice (mosto tinto) of the same brand, Don Simon.",gemini-3.8-flash
+ahorramas:13,dia:189861,same,Both products are the identical 425g can of Garbanzos con espinacas from brand Litoral.,gemini-3.8-flash
+ahorramas:45951,bm:16809,same,Both products are the same brand (Calvo) and product type (yellowfin tuna in olive oil) in a 4-pack format.,gemini-3.8-flash
+dia:114231,ahorramas:40180,same,Both products are 1 L bottles of Font Vella mineral water.,gemini-3.8-flash
+dia:73677P6,bm:5432,equivalent,"Both products are Pascual semi-skimmed milk with identical unit sizes (1 L), but Product A is a 6-pack while Product B is sold as a single unit.",gemini-3.8-flash
+aldi:602031000,bm:38216,equivalent,"Both products are extra virgin olive oil from the brand Coosur, but they differ in package size (1 liter versus 0.5 liter), which is within the 2x size threshold for equivalence.",gemini-3.8-flash
+alcampo:438308,ahorramas:75781,same,Both are identical products: Don Simón squeezed refrigerated orange juice without pulp in a 1-liter bottle.,gemini-3.8-flash
+alcampo:795157,bm:9050,same,"Both products are 1-liter bottles of pineapple juice from the same brand, Granini.",gemini-3.8-flash
+dia:198607,alcampo:886796,same,Both products are 1-liter bottles of Koipe special frying sunflower oil from the same brand and variant.,gemini-3.8-flash
+dia:h2aac5207a424,consum:7147895,same,Both products are identical 500 ml bottles of natural mineral water from the brand Solán de Cabras.,gemini-3.8-flash
+ahorramas:53803,dia:22489,same,Both products are identical 1 L cartons of Puleva skimmed milk with calcium from the same brand.,gemini-3.8-flash
+ahorramas:26806,consum:7169688,same,Both products are 1-liter cartons of Pascual lactose-free whole milk.,gemini-3.8-flash
+ahorramas:57428,bm:4424,same,Both products are 30-unit packs of whole wheat toasted bread (pan tostado integral) from the brand Recondo.,gemini-3.8-flash
+dia:285658,ahorramas:56293,same,Both products are the identical 1 L Alpro unsweetened almond drink.,gemini-3.8-flash
+dia:262457,bm:7268,same,"Both products are 30-wash powder laundry detergents from Ariel, representing the same brand and standard variant.",gemini-3.8-flash
+dia:137118,consum:7468247,same,Both products are 85 g cans of sardines in olive oil by the brand Albo.,gemini-3.8-flash
+ahorramas:40180,consum:1192004,different,"Both are Font Vella natural mineral water, but the size difference (1 L vs 0.33 L) exceeds the 2× threshold for equivalence.",gemini-3.8-flash
+ahorramas:77212,bm:73834,same,Both products are the Brillante brand round rice (arroz redondo) in a 2-pack format (vasitos de arroz redondo pack 2x200 g).,gemini-3.8-flash
+ahorramas:54767,dia:48733,same,Both products are 1 kg bags of brown rice (arroz integral) from the brand SOS.,gemini-3.8-flash
+dia:105590,ahorramas:79025,same,"Both products are Puleva Peques 3 growing-up milk with cereals for toddlers from 12 months, in 1-liter format.",gemini-3.8-flash
+dia:178025,bm:7175,different,"Product A is milk chocolate for desserts (chocolate con leche), whereas Product B is dark dessert chocolate (chocolate para postres).",gemini-3.8-flash
+ahorramas:91654,consum:7107972,same,Both products are the identical 163g jar of Calvo yellowfin tuna fillets in olive oil.,gemini-3.8-flash
+bm:8879,consum:7466431,different,"Although both are cooked beans from the Luengo brand, the sizes (560 g vs 200 g) differ by more than a factor of two.",gemini-3.8-flash
+bm:47205,consum:7463982,equivalent,"Both products are 3-packs of Orlando tomate frito, but they differ in unit size (212 g vs 350 g, which is within the 2x factor limit).",gemini-3.8-flash
+bm:4591,consum:7329121,equivalent,Both are Font Vella natural mineral water bottles with sizes within a 2x factor (0.5 L vs 0.75 L).,gemini-3.8-flash
+bm:66336,consum:7427615,different,"Product A is the original/standard chocolate shake, whereas Product B is the 0% (sugar/fat-free) variant, representing a conflicting formulation.",gemini-3.8-flash
+bm:31182,consum:7247950,equivalent,"Both products are Nestlé Extrafino milk chocolate with identical 125 g bars, but Product A is a single bar while Product B is a 3-pack.",gemini-3.8-flash
+bm:33504,consum:7484152,equivalent,"Both products are Hida homemade-style fried tomato of the same recipe, but their package sizes differ (400 g vs. 560 g) while remaining within the 2x size ratio.",gemini-3.8-flash
+bm:38685,consum:7376556,different,"Product A is a solid stick treat (salmón y trucha) while Product B is a liquid/creamy snack (snack líquido salmón), representing different formats/textures of cat treats.",gemini-3.8-flash
+bm:80975,consum:937243,different,Product A is specifically goat's milk fresh cheese (cabra) whereas Product B is the original fresh cheese made from cow/mixed milk.,gemini-3.8-flash
+bm:6360,consum:203562,equivalent,"Both are whole milk from the same brand (Central Lechera Asturiana), differing only in packaging format/size (1 L vs. 1.5 L), which is within the 2× threshold.",gemini-3.8-flash
+bm:15979,consum:7041762,different,"Product A is standard liquid cooking cream (nata líquida) while Product B is thick cooking cream (nata espesa), which are different culinary varieties.",gemini-3.8-flash
+bm:80669,consum:7227676,equivalent,"Both products are Perrier sparkling mineral water, but they differ in bottle size (1 L vs 0.5 L), which is within the 2x ratio allowed for equivalent items.",gemini-3.8-flash
+bm:82870,consum:7476708,different,"The package sizes (1 L vs. 0.24 L) differ by more than a factor of two, making them different products.",gemini-3.8-flash
+bm:9082,consum:7472657,different,"Product A is a standard creamy cream cheese, while Product B is cottage cheese, which is a different variety of cheese with distinct texture and usage.",gemini-3.8-flash
+bm:45996,consum:7247810,equivalent,"Both are Nestlé Extrafino milk chocolate bars with identical 125 g individual units, but Product A is a 3-pack while Product B is a single bar.",gemini-3.8-flash
+bm:13203,consum:7280381,different,"Product A is a multipack of individual small cartons (6x200 ml totaling 1.2 L), whereas Product B is a single 1 L family-sized bottle, making their unit packaging and item sizes different beyond the allowable per-item threshold.",gemini-3.8-flash
+bm:84707,consum:7215143,same,Both products are the same 400 ml Garnier micellar water.,gemini-3.8-flash
+bm:6363,consum:7353290,equivalent,"Both products are semi-skimmed milk from the same brand (Central Lechera Asturiana), but their sizes differ (1.5 L vs 2.2 L), which is within the 2x ratio for an equivalent comparison.",gemini-3.8-flash
+bm:19378,consum:7472657,different,"Product A is regular cream cheese (queso natural) in mini portions, whereas Product B is cottage cheese (queso cottage), which is a different cheese variety.",gemini-3.8-flash
+bm:42817,consum:7255099,different,"Product B is the zero/no added sugar ('s/azúcar') version, whereas Product A is the standard/original version, representing a variant conflict.",gemini-3.8-flash
+bm:5019,consum:7454015,same,Both products are 400 g of Gallo 3-minute spaghetti from the same brand and variant.,gemini-3.8-flash
+bm:8749,consum:7473218,different,"The unit sizes differ by more than a factor of two (450 g vs 170 g), exceeding the limit for equivalent products.",gemini-3.8-flash
+bm:61394,consum:2037653,different,"Product A is cat food while Product B is dog food, which are entirely different animal feed products.",gemini-3.8-flash
+bm:6362,consum:203927,equivalent,"Both are skimmed milk from the same brand (Central Lechera Asturiana), but they differ in package size (1 L vs 1.5 L).",gemini-3.8-flash
+bm:46750,consum:7090814,different,"Both are Bezoya natural mineral water, but the sizes (1.5 L vs 0.5 L) differ by a factor of 3, exceeding the 2x threshold for equivalence.",gemini-3.8-flash
+bm:13325,consum:7364990,different,Standard soup noodles (fideo) and fideuá pasta are distinct pasta cuts used for different culinary preparations.,gemini-3.8-flash
+bm:11206,consum:7208247,different,"Product A is cooked sliced bacon (approx. 100 g) while Product B is a bacon block/dice (300 g), differing in cut and exceeding the 2x size threshold.",gemini-3.8-flash
+bm:32610,consum:7457695,different,"The sizes (1.5 L vs. 0.33 L) differ by more than a factor of two, exceeding the threshold for equivalence.",gemini-3.8-flash
+bm:3215,consum:7388432,different,"Product A is standard Flora margarine, while Product B is the olive oil variant (Oliva).",gemini-3.8-flash
+bm:63381,consum:7305717,equivalent,"Both products are Purina Gourmet chicken wet food for cats, but one is a 4x57 g multipack of mousse and the other is a single 85 g can, making them equivalent.",gemini-3.8-flash
+bm:7428,consum:7428998,different,"Product A is plain milk chocolate (270 g) while Product B is filled with dulce de leche (83 g), which represents both a distinct flavor variant and a size difference greater than 2x.",gemini-3.8-flash
+bm:47005,consum:7265622,equivalent,"Both products are standard mayonnaise from Heinz, but they differ in size (400 ml versus 480 ml), which exceeds the 2% threshold for the 'same' category.",gemini-3.8-flash
+bm:36094,consum:7375004,different,"Product A is kefir with strawberry, whereas Product B is a standard Activia strawberry yogurt.",gemini-3.8-flash
+bm:9676,consum:7310613,different,"Product A is whole wheat macaroni pasta, while Product B is whole wheat flour.",gemini-3.8-flash
+bm:12482,consum:7404429,different,"Product A is plain chicken broth, whereas Product B includes cured ham (jamón), making them different recipe variants.",gemini-3.8-flash
+bm:62593,consum:7374445,different,"Product A is yakisoba noodles with chicken, while Product B is chicken gyozas (dumplings), which are distinct types of prepared dishes.",gemini-3.8-flash
+bm:32335,consum:7484152,equivalent,"Both products are the same brand and variant of homemade-style fried tomato sauce (Hida Tomate Frito Casero), differing only in size (350 g vs. 560 g), which is well within the 2× threshold.",gemini-3.8-flash
+bm:1004,consum:7454262,different,"Product A is standard mild olive oil (suave 0,4º) while Product B is extra mild olive oil (extra suave), which are distinct commercial product variants of Carbonell.",gemini-3.8-flash
+bm:27446,consum:4237582,different,"Product A is the original/regular fresh cheese, whereas Product B is the 0% fat-free variant, which constitutes a variant conflict.",gemini-3.8-flash
+bm:18767,consum:7430986,different,"Product A is a 4-pack of spoonable protein yogurt, while Product B is a single liquid protein drink.",gemini-3.8-flash
+bm:11084,consum:7448314,different,"Product A is a capsule detergent while Product B is a liquid detergent, which are different product formats.",gemini-3.8-flash
+aldi:690501,bm:16825,different,"Product A is a single organic spoonable yogurt, whereas Product B is a pack of drinking yogurts/fermented milk shots.",gemini-3.8-flash
+mercadona:34116,bm:47640,equivalent,Both products are ground saffron (azafrán molido) with comparable sizes (0.4 g and 0.5 g) from different brands.,gemini-3.8-flash
+ahorramas:74713,mercadona:60346,different,"Product A is a high-protein fermented milk drink with strawberry flavor, while Product B is skimmed condensed milk, which are completely different dairy products.",gemini-3.8-flash
+dia:190883,mercadona:69414,different,"Product A is a black chocmatoes (cocktail/brown tomato) variety while Product B is cherry tomatoes on the vine, representing different tomato varieties and presentations.",gemini-3.8-flash
+alcampo:71726,mercadona:84284,different,"Product A is cured tuna loin (mojama de atún en tacos) while Product B is a tuna pie (empanada de atún), which are entirely different food categories.",gemini-3.8-flash
+dia:299589,consum:7459886,different,"Product A is a specialty layered combination of mascarpone and gorgonzola blue cheese, whereas Product B is standard plain mascarpone cheese.",gemini-3.8-flash
+aldi:600341302,dia:309625,different,"Product A is a potato salad, while Product B consists of roasted chicken wings, making them completely different food products.",gemini-3.8-flash
+alcampo:673622,aldi:601453200,different,"Product A is made solely of beef (vacuno), whereas Product B is a blend of beef and pork (vacuno y cerdo).",gemini-3.8-flash
+ahorramas:71772,dia:18036,different,"Product A is a mixed variety pack containing breasts, hindquarters, and wings (totaling 3 kg), whereas Product B consists solely of chicken hindquarters.",gemini-3.8-flash
+dia:309605,alcampo:792778,different,Product A is bread rolls (panecillos) while Product B is cheese portions (Babybel mini quesitos).,gemini-3.8-flash
+aldi:988300,alcampo:93250,different,"Product A is fresh apple, whereas Product B is a slice of apple pie (prepared pastry).",gemini-3.8-flash
+alcampo:223723,bm:37693,equivalent,"Both products are liquid laundry detergents suitable for general laundry with comparable washing loads (50 vs 70 doses), making them equivalent despite differing brands.",gemini-3.8-flash
+mercadona:20893,alcampo:882615,different,"Product A is a prepared fish rice dish (arroz de pescado), whereas Product B is raw sushi rice grain.",gemini-3.8-flash
+dia:267683,ahorramas:68442,different,"Product A is a plant-based rice milk beverage, whereas Product B is whole dairy milk.",gemini-3.8-flash
+ahorramas:99358,alcampo:643102,different,"Product A is a carrot-cheese sponge cake (bizcocho), whereas Product B is a tray of chicken burgers with carrot.",gemini-3.8-flash
+alcampo:677089,dia:307238,different,"Product A is an organic tomato sauce with spelt seitan, whereas Product B is black garlic salt seasoning.",gemini-3.8-flash
+mercadona:12771,ahorramas:87894,different,"Product A is eucalyptus and menthol candies, while Product B is a drinkable probiotic dairy yogurt (Actimel).",gemini-3.8-flash
+ahorramas:38517,aldi:600861300,different,"Product A is a pink grapefruit juice beverage, whereas Product B is a fresh pink tomato.",gemini-3.8-flash
+mercadona:15647,aldi:671000,different,"Product B is certified organic (ecológica) whereas Product A is a conventional almond milk with added calcium, which is a significant variant difference.",gemini-3.8-flash
+dia:310498,bm:1406,different,"Product A is a savory ready-to-eat rice with lentils dish, whereas Product B is a sweet rice pudding dessert.",gemini-3.8-flash
+mercadona:28731,dia:48631,different,Product A is rum (an alcoholic spirit) while Product B is orange nectar (a non-alcoholic juice drink).,gemini-3.8-flash
+ahorramas:85338,consum:7068674,different,"The products have conflicting flavors, with one being strawberry-banana and the other chocolate fondant.",gemini-3.8-flash
+alcampo:537387,consum:7294189,equivalent,"Both are Hero baby fruit purees with a matching fruit profile (pear, banana, orange), despite one being an organic pouch and the other conventional glass jars in a multipack.",gemini-3.8-flash
+aldi:601462700,mercadona:35774,different,"Product A is a mix of chicken and turkey (pollo y pavo), whereas Product B is solely chicken (pollo).",gemini-3.8-flash
+dia:294640,aldi:441805,different,"Product A is chocolate chip cookies (galletas con chips de chocolate), whereas Product B is butter biscuits coated/paired with milk chocolate (galletas de mantequilla con chocolate con leche).",gemini-3.8-flash
+mercadona:52975,consum:7358281,different,"Product A is a cosmetic face powder, whereas Product B is neutral gelatin powder for cooking.",gemini-3.8-flash
+aldi:110100,consum:7422041,equivalent,"Both products are 1-liter bottles of extra virgin olive oil from different brands, making them equivalent.",gemini-3.8-flash
+ahorramas:86785,bm:85428,different,"Product A is a chocolate-covered raspberry confection, whereas Product B is a raspberry yogurt.",gemini-3.8-flash
+aldi:601926101,ahorramas:38818,different,"Product A is cat food, whereas Product B is marinated salmon intended for human consumption.",gemini-3.8-flash
+alcampo:19456,ahorramas:48900,different,"Product A is a specialty whole wheat bread with cereals and raisins, whereas Product B is a plain 100% whole wheat bread without raisins or added seeds/cereals.",gemini-3.8-flash
+aldi:601357402,alcampo:208095,different,"Product A is wet dog food and Product B is wheat pasta, making them completely different product categories.",gemini-3.8-flash
+ahorramas:73092,mercadona:21362,different,"Product A is a drinkable probiotic yogurt with strawberry flavor, whereas Product B is a standard spoonable yogurt with lemon flavor.",gemini-3.8-flash
+mercadona:17818,bm:78967,different,"Product A is a prepared vegetable mix, while Product B is cured cheese.",gemini-3.8-flash
+alcampo:82785,mercadona:6143,different,"The products have different fillings (meat vs. ricotta and spinach), making them different variants.",gemini-3.8-flash
+mercadona:52733,alcampo:422157,different,"Product A is pitted black olives, whereas Product B is spun egg (huevo hilado), which are completely different products.",gemini-3.8-flash
+ahorramas:64274,dia:310260,different,"Product A is rustic burger buns, whereas Product B is mini wheat flour tortillas, which are distinct bakery products.",gemini-3.8-flash
+aldi:600861300,dia:1748,different,"Product A is fresh pink tomatoes (produce), whereas Product B is canned fried tomato sauce (tomate frito).",gemini-3.8-flash
+dia:274453,ahorramas:98355,different,"Product A is an anti-aging facial sunscreen, whereas Product B is a liquid laundry detergent.",gemini-3.8-flash
+aldi:474703,bm:3962,different,"Product A consists of chocolate bars with milk and caramel, while Product B is a box of breakfast cereal.",gemini-3.8-flash
+dia:308137,alcampo:527433,different,"Product A is a ready-to-drink coffee-milk beverage (latte cappuccino), while Product B is a fruit juice-based refreshing drink.",gemini-3.8-flash
+alcampo:238681,aldi:816501,different,"Product A is a fat-free (0% materia grasa) Greek yogurt, whereas Product B is a standard Greek-style yogurt with regular fat content.",gemini-3.8-flash
+alcampo:452008,dia:187463,different,"Product A is a specialty Disney Frozen-shaped kids' pasta, while Product B is traditional star-shaped soup pasta (estrellas).",gemini-3.8-flash
+mercadona:19924,ahorramas:59446,different,"Product A is coffee beans while Product B is Emmental cheese, which are completely different products.",gemini-3.8-flash
+mercadona:86913,aldi:601151600,different,"Product A consists of children's breakfast toasted biscuits (galletas tostadas animadas), whereas Product B consists of tea pastries/cookies (pastas de té), which are different types of baked goods.",gemini-3.8-flash
+ahorramas:99156,aldi:673600,different,"Product A is a mixed juice and milk beverage (multifruit with milk, no added sugar), whereas Product B is a pure peach and grape juice.",gemini-3.8-flash
+dia:10677,bm:18138,equivalent,Both products are standard own-brand fried tomato sauce of nearly identical package sizes (550 g vs 560 g).,gemini-3.8-flash
+ahorramas:38178,alcampo:24511,different,Product A is fried croutons (picatostes) while Product B is chicken pâté.,gemini-3.8-flash
+ahorramas:69607,consum:7360592,different,Product A is a spreadable cream cheese (queso crema) while Product B is a solid semicurado goat cheese block/wedge.,gemini-3.8-flash
+dia:310361,consum:7467277,different,"Product A is a raspberry soft drink, whereas Product B is a raspberry-flavored meal replacement shake.",gemini-3.8-flash
+aldi:731900,consum:7388825,different,"Product A is goat cheese, while Product B is a chicken burger patty containing zucchini and cheese.",gemini-3.8-flash
+aldi:601588402,ahorramas:96689,different,"Product A consists of paper facial tissues, while Product B is a bread product (payesitas de cereales).",gemini-3.8-flash
+dia:313371,mercadona:28119,equivalent,Both products are 500 ml zero-sugar energy drinks from different brands (Dia store brand vs Monster Energy).,gemini-3.8-flash
+mercadona:11530,dia:310677,different,"Product A is a birthday candle, while Product B is dry pasta.",gemini-3.8-flash
+dia:48631,aldi:990500,different,"Product A is a packaged orange nectar beverage, whereas Product B is fresh juicing oranges.",gemini-3.8-flash
+alcampo:227127,bm:67335,equivalent,"Both products are liquid laundry detergents with a Marseille soap scent, with comparable wash counts (52 doses vs. 46 doses).",gemini-3.8-flash
+ahorramas:29366,bm:85024,equivalent,"Both products are fresh whole or half salmon sold by approximate weight, with comparable sizes within the 2x threshold.",gemini-3.8-flash
+aldi:602200702,mercadona:22396,equivalent,"Both products are savory baked bread snacks flavored with tomato and oregano from store brands, with comparable package sizes (80 g vs 125 g).",gemini-3.8-flash
+alcampo:201976,ahorramas:97878,equivalent,"Both products are 5-liter bottles of intense olive oil, making them equivalent despite the difference in brand (La Española vs. Coosur).",gemini-3.8-flash
+alcampo:98029,consum:7360352,different,"Product A consists of tuna flakes (migas), whereas Product B is standard canned tuna in sunflower oil, which are different quality cuts/variants.",gemini-3.8-flash
+mercadona:46877,consum:7301414,equivalent,Both products are facial cleansing milks with similar formats and volumes (250 ml vs 200 ml) from different brands/chains.,gemini-3.8-flash
+aldi:601366800,alcampo:94242,different,"Product A consists of whole table olives, whereas Product B is an olive-flavored ciabatta bread.",gemini-3.8-flash
+mercadona:3680,alcampo:24582,equivalent,Both products are 1.6 kg family-size chicken hindquarters (cuartos traseros de pollo) sold under each supermarket's own-brand label.,gemini-3.8-flash
+mercadona:15565,bm:44603,different,"Product A is a Gillette Venus refillable razor, whereas Product B is a bottle of olive oil.",gemini-3.8-flash
+alcampo:75914,mercadona:8280,different,The products are different varieties/types of apples (Manzana verde doncella vs. Manzanas rojas dulces).,gemini-3.8-flash
+ahorramas:47811,dia:165208,different,Product A is a prepared stew meal (cocido madrileño) while Product B is plain cooked chickpeas (garbanzos cocidos sin sal).,gemini-3.8-flash
+aldi:876600,dia:260757,equivalent,Both products are store-brand mini chocolate panettones with very similar unit sizes (100 g vs 90 g).,gemini-3.8-flash
+mercadona:49302,aldi:600445503,different,Product A is a candle (velote rojo) while Product B is a red velvet dessert/lava cake.,gemini-3.8-flash
+mercadona:23171,ahorramas:73586,different,"Product A is dry dog food, whereas Product B is a fresh whole chicken for human consumption.",gemini-3.8-flash
+dia:277709,alcampo:256959,different,"Product A is sunflower seed bread snacks, whereas Product B is an organic fruit baby food jar.",gemini-3.8-flash
+aldi:601094604,bm:61871,different,"Product A is filled pasta (girasoli with pumpkin and cheese cream), while Product B is a spreadable cream cheese.",gemini-3.8-flash
+ahorramas:61505,aldi:754800,equivalent,"Both are fresh four-cheese pizzas of equivalent total size (420 g vs 410 g), despite different brands and pack formats.",gemini-3.8-flash
+alcampo:902031,dia:300005,different,"Product A is standard pre-sliced semicured cheese (mezcla), whereas Product B is a specific PDO-style Mahón semicured cheese block/wedge.",gemini-3.8-flash
+ahorramas:85651,alcampo:181128,different,"Product A is a 6-pack (P6, likely 6x200ml) of juice from own-brand Alipende, while Product B is a single 1-litre bottle from manufacturer Juver.",gemini-3.8-flash
+ahorramas:71023,consum:7440365,equivalent,"Both products are 1 kg fresh cheese (queso fresco) of the Burgos style, making them equivalent despite the different brands.",gemini-3.8-flash
+dia:297551,ahorramas:25853,different,"Product A is a prepared liquid chicken and vegetable broth, whereas Product B is fresh raw chicken wings.",gemini-3.8-flash
+ahorramas:52135,aldi:328402,different,"Product A contains only apple and banana, whereas Product B includes carrot and is certified organic, making them different variants.",gemini-3.8-flash
+dia:109413,ahorramas:85501,equivalent,"Both products are 1 L private label 100% squeezed orange juices without pulp from Dia and Ahorramas, making them equivalent.",gemini-3.8-flash
+aldi:439202,mercadona:8645,equivalent,"Both products are chicken-flavored oriental instant noodles from the Gallina Blanca brand/line, with individual unit sizes (93g vs 60g) within the 2x threshold despite differing pack formats.",gemini-3.8-flash
+dia:305883,alcampo:219643,different,"The products are different recipe variants of pasta sauce, one being Bolognese (meat-based) and the other Basilico (tomato and basil).",gemini-3.8-flash
+dia:314767,mercadona:12562,different,"Product A is a specialty chocolate bar with hazelnut and biscuit layers (Chocotrio con avellana), while Product B is plain milk chocolate (Chocolate con leche extrafino).",gemini-3.8-flash
+ahorramas:8541,mercadona:69990,equivalent,Both are cherry tomatoes sold as fresh produce in comparable supermarket categories.,gemini-3.8-flash
+alcampo:23909,mercadona:4740,equivalent,"Both products are 1-liter bottles of extra virgin olive oil, one from the brand Coosur and the other Mercadona's own-brand Hacendado.",gemini-3.8-flash
+alcampo:951264,ahorramas:46322,different,"Product A is an assortment board containing three different award-winning cheeses, while Product B consists solely of pre-sliced Reserva cheese.",gemini-3.8-flash
+dia:304601,consum:7450935,equivalent,"Both products are Pantene Suave y Liso shampoo variants, but they come in different sizes (625 ml vs 325 ml) that are within a 2x factor.",gemini-3.8-flash
+aldi:600494802,dia:280366,equivalent,"Both products are 250 ml extra virgin olive oil condiments flavored with truffle, making them equivalent despite differing brands.",gemini-3.8-flash
+alcampo:908395,bm:79329,different,Product A is sparkling mineral water (con gas) while Product B is still mineral water (sin gas).,gemini-3.8-flash
+ahorramas:90018,dia:280178,different,"Both are Rana ravioli of the same size, but they have different filling variants (prosciutto and burrata vs roast chicken).",gemini-3.8-flash
+aldi:601261900,ahorramas:4486,equivalent,Both products are cooked organic chickpeas of comparable package sizes (400 g vs 500 g) from different supermarket brands.,gemini-3.8-flash
+mercadona:82412,consum:7424000,equivalent,"Both are whole wheat cracker snacks of comparable style, and their package sizes (500 g vs 250 g) fall within the allowable 2x range.",gemini-3.8-flash
+mercadona:16008,bm:8026,different,"Product A contains garlic ('con ajo') as an added ingredient variant, whereas Product B is plain piquillo pepper strips.",gemini-3.8-flash
+ahorramas:17485,consum:7178051,different,"Although both are 250g fresh stuffed pasta by Rana, they feature different cheese fillings (goat cheese vs. four cheeses).",gemini-3.8-flash
+dia:312612,bm:63569,different,"Product A is Pesto Calabrese while Product B is Pesto Rustico, which are different pesto variants/recipes within the Barilla range.",gemini-3.8-flash
+mercadona:50020,alcampo:180561,equivalent,"Both products are tender blended cheese (queso mezcla tierno) of similar weights (200 g and 260 g), making them equivalent despite differences in brand and presentation format.",gemini-3.8-flash
+alcampo:839295,consum:7430643,different,"Product A is hot dog bread buns, whereas Product B is burger buns, which are different types of bread products.",gemini-3.8-flash
+alcampo:453207,aldi:525601,different,"The products have conflicting main ingredients and flavor variants (mango, yogurt, and oat vs. orange and biscuit).",gemini-3.8-flash
+dia:119675,aldi:81900,equivalent,"Both products are 1-liter bottles of semi-skimmed lactose-free milk, representing equivalent offerings despite the difference in brand (Pascual vs. Aldi's private label Milsani).",gemini-3.8-flash
+alcampo:195521,dia:292973,different,"Product A is a flavored sparkling water (lemon and mint) while Product B is plain, unflavored sparkling mineral water.",gemini-3.8-flash
+mercadona:11630,dia:19896,different,"Product A is a standard cocoa and hazelnut spread, whereas Product B is a duo (cocoa and milk) spread, which represents a different variant.",gemini-3.8-flash
+aldi:439202,bm:2083,different,"Product A consists of instant Asian-style noodles (Yatekomo style), whereas Product B is a traditional dehydrated soup envelope with fine noodles.",gemini-3.8-flash
+aldi:495800,consum:7291300,equivalent,"Both products are 1-liter bottles/cartons of semi-skimmed lactose-free milk, making them equivalent despite differing brands and one having an organic certification.",gemini-3.8-flash
+ahorramas:8541,aldi:546500,equivalent,"Both items are cherry tomatoes, representing equivalent generic produce from different supermarket chains.",gemini-3.8-flash
+aldi:601224700,mercadona:12846,equivalent,Both products are sliced lactose-free cow's cheese from supermarket private labels with similar package sizes (150 g vs 200 g).,gemini-3.8-flash
+ahorramas:95316,bm:84954,different,"Although both are 500g pasta from the brand Garofalo, they are different pasta shapes (fusilli vs. spaghetti), which constitutes a variant conflict.",gemini-3.8-flash
+dia:16065,alcampo:50666,equivalent,"Both products are Central Lechera Asturiana whole milk, differing only in size (1 L vs 1.5 L), which is within the 2x threshold for equivalence.",gemini-3.8-flash
+ahorramas:65691,alcampo:883607,same,"Both products are identical 100g baby food pouches of organic carrot, banana, and pear by Smileat for ages 6 months and older.",gemini-3.8-flash
+alcampo:25199,mercadona:4740,different,"Product A is a premium Protected Designation of Origin (D.O.P. Priego de Córdoba) gourmet extra virgin olive oil, whereas Product B is a standard private-label extra virgin olive oil.",gemini-3.8-flash
+dia:64276,ahorramas:11083,same,Both products are 570 g jars of Helios brand fried tomato sauce (tomate frito).,gemini-3.8-flash
+dia:227221,consum:7395304,equivalent,Both products are extra virgin olive oil from Jaén with differing brands and sizes (250 ml vs 500 ml) that are within the 2x size threshold.,gemini-3.8-flash
+alcampo:43769,bm:80847,same,Both products are 66-count moist toilet wipes with aloe vera from the brand Scottex.,gemini-3.8-flash
+dia:190815,mercadona:69930,different,"Product A is standard cherry tomatoes while Product B specifies cherry pera kumato tomatoes, which is a different variety and flavor profile.",gemini-3.8-flash
+alcampo:27965,ahorramas:87330,equivalent,"Both products are 5-liter containers of extra virgin olive oil, but they are from different brands (Carbonell vs Coosur).",gemini-3.8-flash
+ahorramas:61003,consum:7486850,same,Both products are 150g pieces of Hotos brand PDO Feta cheese.,gemini-3.8-flash
+ahorramas:84578,dia:280364,equivalent,"Both products are 5 L jugs of extra virgin olive oil, but they are from different brands (own-brand Alipende vs manufacturer brand Coosur).",gemini-3.8-flash
+aldi:662500,ahorramas:87330,equivalent,"Both products are extra virgin olive oil of comparable large formats (3 L vs 5 L, within the 2x size ratio).",gemini-3.8-flash
+ahorramas:53804,mercadona:10685,equivalent,"Both products are 1-liter cartons of semi-skimmed milk enriched with calcium, differing only in brand (Puleva vs. Hacendado private label).",gemini-3.8-flash
+dia:228641,bm:76673,same,"Both products are 93 g chicken-flavored yakisoba noodles from the same brand, Yatekomo (Gallina Blanca).",gemini-3.8-flash
+aldi:18100,alcampo:714291,equivalent,Both products are 1-liter cartons of squeezed orange juice with pulp from different brands (Rio D'Oro and Juver).,gemini-3.8-flash
+alcampo:83508,consum:7393929,equivalent,Both products are ready-to-eat bolognese lasagnas of similar serving sizes (400 g and 500 g) from different brands.,gemini-3.8-flash
+alcampo:417837,dia:148777P6,equivalent,Both products are 6x1 L packs of semi-skimmed lactose-free cow's milk from different brands (President vs. Central Lechera Asturiana).,gemini-3.8-flash
+dia:225061,aldi:250000,equivalent,"Both products are 1 L of white wine vinegar, but they are from different brands (Borges vs La Villa).",gemini-3.8-flash
+mercadona:11136,dia:1546,different,"Product A is plain classic instant coffee, whereas Product B is a cappuccino specialty mix.",gemini-3.8-flash
+mercadona:21772,alcampo:194006,equivalent,"Both products are strawberry and banana smoothies of the same 250 ml size, but one is Mercadona's private label (Hacendado) and the other is a national brand (Innocent).",gemini-3.8-flash
+mercadona:76542,aldi:601646702,equivalent,"Both are 250 ml Nivea body moisturizers, but product B specifies the Q10 firming variant while product A is a generic body cream listing without variant details.",gemini-3.8-flash
+alcampo:714582,aldi:600720903,equivalent,"Both are 190 g baby fruit jars from Hero featuring peach and banana, with one being an organic recipe containing apple as well.",gemini-3.8-flash
+aldi:601096802,bm:85410,different,"Product A is specifically the 'Dulces Sueños' (bedtime/lavender) variant, whereas Product B is the regular/original body oil, making them different variants.",gemini-3.8-flash
+mercadona:3682,bm:80784,equivalent,Both products are family-sized packs of whole chicken breasts of very similar weight (~1.1 kg) from supermarket private labels.,gemini-3.8-flash
+ahorramas:77189,bm:76704,same,Both products are 550g sliced bread with seeds and sunflower/pumpkin seeds from the brand Oroweat.,gemini-3.8-flash
+ahorramas:98550,aldi:600833300,equivalent,Both products are PDO feta cheese of comparable package sizes (150g vs 200g) from different brands/retailers.,gemini-3.8-flash
+alcampo:246269,mercadona:3453,equivalent,Both products are mixed minced beef and pork preparations of similar sizes (900 g vs 1 kg) from different supermarket chains.,gemini-3.8-flash
+ahorramas:10820,alcampo:65282,equivalent,"Both are Villaroy-style chicken breasts from the same manufacturer (Calatayud), but they have slightly different pack sizes (450g vs 400g).",gemini-3.8-flash
+dia:227099,consum:7395304,equivalent,"Both products are extra virgin olive oil from Jaén, and the sizes (1 L vs 0.5 L) are within the 2× threshold.",gemini-3.8-flash
+alcampo:196886,bm:10733,equivalent,"Both products are lactose-free whole cow's milk with individual 1 L unit sizes, making them fair equivalents despite different brands and pack counts.",gemini-3.8-flash
+dia:311507,alcampo:50154,equivalent,Both products are 1.5 L bottles of very low mineralization mineral water from different supermarket brands.,gemini-3.8-flash
+ahorramas:72510,consum:7454176,equivalent,"Both products are extra virgin olive oils of similar package sizes (~500ml), making them equivalent despite the brand differences.",gemini-3.8-flash
+aldi:611700,mercadona:21896,equivalent,Both products are store-brand pitted green olives of the same type and their sizes (0.4 kg vs 0.7 kg) are within the 2× threshold.,gemini-3.8-flash
+dia:12360,mercadona:4850,equivalent,Both products are extra virgin olive oils with sizes within a 2x factor.,gemini-3.8-flash
+dia:280363,bm:45941,equivalent,"Both products are standard sunflower oil of comparable package sizes (5 L and 3 L, within a 2x ratio) despite the brand difference.",gemini-3.8-flash
+aldi:739200,ahorramas:87082,different,"Product A consists of marinated chicken skewers with vegetables, whereas Product B is a prepared dish of potato gnocchi with vegetables and chicken.",gemini-3.8-flash
+ahorramas:70476,mercadona:25184,different,"Product A contains fresh chicken wings while Product B contains frozen chicken wings, which is a key preparation and storage difference.",gemini-3.8-flash
+dia:306354,ahorramas:58058,equivalent,Both products are split fresh chicken wings in comparable package sizes (750 g vs 600 g) from different brands/chains.,gemini-3.8-flash
+alcampo:986027,consum:7365781,equivalent,"Both products are gluten-free soup noodles (fideos sin gluten) with similar package sizes (500 g vs 450 g), though from different brands.",gemini-3.8-flash
+alcampo:513741,dia:280364,equivalent,"Both products are 5 L bottles of extra virgin olive oil from different brands, making them equivalent.",gemini-3.8-flash
+alcampo:63686,ahorramas:50451,equivalent,Both products are 500 ml bottles of extra virgin olive oil from different brands.,gemini-3.8-flash
+alcampo:36223,consum:2569879,same,Both products are 1.5 L bottles of natural mineral water from the brand Aquarel.,gemini-3.8-flash
+ahorramas:14080,bm:26057,same,Both products are the identical 4-pack strawberry Activia bifidus yogurt (standard 4x125 g format).,gemini-3.8-flash
+ahorramas:66273,mercadona:27230,same,Both products are a 1.5-liter bottle of still mineral water from the brand Bezoya.,gemini-3.8-flash
+ahorramas:42988,dia:162393,different,The products are different pasta shapes and flavor variants (fettuccine with spinach vs. margaritas with tomato and spinach).,gemini-3.8-flash
+dia:189076,consum:7420565,same,Both products are 250 g Tiger Khan rice vermicelli noodles from different supermarket chains.,gemini-3.8-flash
+dia:134025,mercadona:73431,equivalent,"Both products are 75 ml whitening toothpastes from Colgate's Max White range, although one specifies the One variant while the other does not specify, making them closely equivalent.",gemini-3.8-flash
+alcampo:63686,bm:10848,equivalent,"Both products are extra virgin olive oils with comparable sizes (500 ml vs 750 ml), despite differing brands and specific olive cultivar detail.",gemini-3.8-flash
+dia:104006P6,bm:1239,equivalent,"Both products are Pascual skimmed milk with calcium in 1 L base units, but Product A is a 6-pack while Product B is sold as a single unit.",gemini-3.8-flash
+ahorramas:48388,consum:7257934,same,Both products are the same 400g sourdough bread loaf from The Rustik Bakery.,gemini-3.8-flash
+alcampo:637717,dia:216865,different,"Product A is mozzarella cheese, whereas Product B is light butter.",gemini-3.8-flash
+alcampo:731849,mercadona:27232,equivalent,"Both products are Nestlé Aquarel still mineral water, and the size difference (0.75 L vs 1.5 L) is exactly within the allowed 2× threshold.",gemini-3.8-flash
+dia:146199,alcampo:438984,same,Both products are 1 L bottles of San Pellegrino sparkling mineral water.,gemini-3.8-flash
+alcampo:24059,aldi:600720903,equivalent,"Both are 190 g baby fruit jars from Hero, but Product A includes a multi-fruit mix (peach, banana, apple, orange, apricot) while Product B is just peach and banana, making them equivalent rather than the exact same variant.",gemini-3.8-flash
+aldi:631003,consum:7216679,equivalent,"Both are the same brand and curry-flavored instant noodles, but Product A is a 2-pack while Product B is a single pack of roughly the same unit size (60 g vs 61 g).",gemini-3.8-flash
+aldi:601926102,bm:19800,different,"Product A is wet cat food pouches, whereas Product B is cat treats/snacks with different ingredients.",gemini-3.8-flash
+ahorramas:17897,bm:78967,equivalent,"Both are Flor de Esgueva aged sheep cheese of similar weight, but Product A comes in a wedge format (cuña 250g) while Product B is pre-cut/sliced (cortado 210g).",gemini-3.8-flash
+alcampo:201500,consum:7473833,same,Both products are the 190 g chickpea salad from the brand Calvo.,gemini-3.8-flash
+dia:310410,consum:7486553,different,"The products have different fruit flavor variants (apple, banana, and oat vs. mango, banana, and oat).",gemini-3.8-flash
+mercadona:10678,bm:10255,different,"Product A is a high-protein enriched skimmed milk variant (+Proteínas & calcio), whereas Product B is a standard calcium-enriched skimmed milk without added protein.",gemini-3.8-flash
+ahorramas:97877,alcampo:62427,different,"Product A is an organic (ecológico) extra virgin olive oil while Product B is conventional extra virgin olive oil, which represents a significant variant conflict.",gemini-3.8-flash
+dia:222177,bm:45250,same,Both products are Brillante ready-to-heat quinoa cups in a 2 x 125 g pack format.,gemini-3.8-flash
+alcampo:42056,bm:14901,equivalent,"Both products are sliced semicurado cheese from the Gran Capitán brand, but they have different pack sizes (160 g vs 230 g).",gemini-3.8-flash
+ahorramas:38565,dia:244936,same,Both products are identical 142g Bicentury rice cakes with milk chocolate and hazelnuts.,gemini-3.8-flash
+ahorramas:45951,consum:7107972,different,"Product A is a 4-pack of canned tuna in olive oil, whereas Product B is tuna fillets sold in a single glass jar, representing different product formats and cuts.",gemini-3.8-flash
+dia:247772,alcampo:36696,same,Both products are 500 ml (50 cl) bottles of Perrier sparkling mineral water.,gemini-3.8-flash
+ahorramas:51993,aldi:600617700,equivalent,Both products are 100% whole wheat bread loaves (hogaza integral 100%) of comparable sizes (450 g vs 370 g) sold by different supermarket chains.,gemini-3.8-flash
+aldi:12002,dia:150913,same,Both products are 1-liter Gallina Blanca chicken broth.,gemini-3.8-flash
+alcampo:20464,aldi:662500,equivalent,"Both products are extra virgin olive oil of comparable packaging formats, and their sizes (5 L vs 3 L) are within the 2× threshold.",gemini-3.8-flash
+mercadona:60346,ahorramas:62849,equivalent,"Both products are 450 g skimmed condensed milk, but they differ in brand (Hacendado private label vs. La Lechera national brand).",gemini-3.8-flash
+ahorramas:55020,mercadona:20260,equivalent,"Both products are Danone plain yogurt of the same variety, but differ in pack size (pack of 4 vs pack of 8).",gemini-3.8-flash
+aldi:45700,alcampo:196882,equivalent,"Both products are 1-liter cartons of skimmed lactose-free cow's milk from store brands, making them equivalent products.",gemini-3.8-flash
+aldi:499000,ahorramas:90286,equivalent,Both products are fresh standard tomatoes with comparable unspecified varieties from different supermarket chains.,gemini-3.8-flash
+ahorramas:84577,alcampo:26701,equivalent,"Both products are 1-liter bottles of extra virgin olive oil of equivalent quality and function, differing only by brand.",gemini-3.8-flash
+dia:278517,consum:7396765,same,Both are identical 400 g tubs of Alpro sugar-free red fruit soy dessert.,gemini-3.8-flash
+alcampo:883031,bm:6887,equivalent,"Both products are Vichy Catalán sparkling water of comparable bottle sizes (1.2 L vs 1 L), though one is a 6-pack and the other is a single bottle.",gemini-3.8-flash
+dia:161003,bm:37186,equivalent,"Both are Colon brand liquid active gel laundry detergents, but they differ in wash count (51 vs 45 washes, which is greater than the ±2% threshold for 'same').",gemini-3.8-flash
+ahorramas:52201,consum:7374833,equivalent,Both are Be Plus strawberry and banana puree pouches of the same type and compatible sizes (100g vs 120g).,gemini-3.8-flash
+alcampo:799286,dia:47768P6,different,"The individual bottle sizes (0.33 L vs 1.5 L) differ by more than a factor of two, making them different products.",gemini-3.8-flash
+ahorramas:63397,bm:88897,same,Both products are the same 175 g pack of Arla grated Cheddar & Mozzarella cheese.,gemini-3.8-flash
+alcampo:53054,ahorramas:53803,different,"Product A is organic skimmed milk, whereas Product B is calcium-enriched skimmed milk, which are different product variants.",gemini-3.8-flash
+alcampo:201877,mercadona:4740,equivalent,Both products are 1-liter bottles of extra virgin olive oil from different brands.,gemini-3.8-flash
+mercadona:76542,dia:132151,equivalent,Both products are Nivea body moisturizing lotions/creams of compatible sizes (250 ml and 400 ml) without any direct conflicting variant specification.,gemini-3.8-flash
+ahorramas:72768,dia:274008,same,Both products are the identical 400g blueberry soy dessert from Alpro (Danone).,gemini-3.8-flash
+dia:hecbf013d4a43,alcampo:824181,same,Both are 1-liter bottles/cartons of Central Lechera Asturiana semi-skimmed milk.,gemini-3.8-flash
+dia:305610,ahorramas:87982,equivalent,"Both products are 4-packs of Greek yogurt with apple and cinnamon flavor, making them equivalent despite the brand difference (Dia private label vs. Danone).",gemini-3.8-flash
+alcampo:942811,ahorramas:87330,same,Both products are 5-liter bottles of Coosur extra virgin olive oil.,gemini-3.8-flash
+dia:309135,consum:7444222,equivalent,"Both products are Orlando spicy chili fried tomato sauce, but their sizes differ (300 g vs 350 g), exceeding the 2% threshold for 'same'.",gemini-3.8-flash
+dia:91974,mercadona:12526,same,Both are identical products: Huesitos milk-chocolate-covered wafer bars weighing 200 g.,gemini-3.8-flash
+dia:121677P6,ahorramas:82656,equivalent,"Both products are the same Puleva Omega 3 with walnuts milk drink, but product A is a 6-pack of 1 L while product B is a single 1 L unit.",gemini-3.8-flash
+mercadona:10502,bm:6363,same,Both products are 1.5 L semi-skimmed milk from the same brand (Central Lechera Asturiana).,gemini-3.8-flash
+dia:68383,bm:10970,same,Both products are 250 ml of Borges brand balsamic vinegar of Modena.,gemini-3.8-flash
+aldi:602031000,bm:77806,same,Both products are 1-liter bottles of Coosur extra virgin olive oil.,gemini-3.8-flash
+aldi:601052100,dia:101007,same,Both products are the same Hellmann's mayonnaise with an identical size of 450 ml (0.45 L).,gemini-3.8-flash
+ahorramas:52786,bm:39708,same,Both products are the classic dulce de leche from the brand Márdel in a 350g pack.,gemini-3.8-flash
+dia:h841579e0e15f,ahorramas:83933,equivalent,"Both products are the same Solán de Cabras 1.5 L mineral water, but one is sold as a 6-pack and the other as an individual bottle.",gemini-3.8-flash
+aldi:525602,bm:16817,different,"Product A contains banana and strawberry, while Product B also includes apple, making them different fruit pouch variants.",gemini-3.8-flash
+ahorramas:49622,alcampo:942811,equivalent,"Both products are extra virgin olive oil from the brand Coosur, but they differ in package size (3 L vs 5 L), which is within the 2&times; threshold for equivalent products.",gemini-3.8-flash
+aldi:602031000,consum:7404523,equivalent,"Both are 1-liter extra virgin olive oils by Coosur, but Product B specifies the single-variety Hojiblanca whereas Product A is a general blend.",gemini-3.8-flash
+alcampo:748625,dia:280363,same,Both products are 5 L bottles of Coosol brand sunflower oil.,gemini-3.8-flash
+ahorramas:39882,consum:7120848,same,Both are the identical Giovanni Rana 4-cheese fresh sauce in 180g packs.,gemini-3.8-flash
+dia:45440,consum:7076412,same,Both products are the identical Lindt Lindor milk chocolate truffles in a 200 g pack size.,gemini-3.8-flash
+dia:h706813518a7f,bm:6360,same,Both products are 1 L of whole milk from Central Lechera Asturiana.,gemini-3.8-flash
+dia:61500,alcampo:44090,different,"Product A is standard canned light tuna in olive oil (3x52g net/drained), whereas Product B is the 'ligero' (low fat / less oil) variant, representing a specific recipe difference.",gemini-3.8-flash
+ahorramas:61284,alcampo:625497,same,Both products are tomato jam from La Vieja Fábrica with weights (280g vs 285g) differing by less than 2%.,gemini-3.8-flash
+ahorramas:99323,consum:203927,equivalent,"Both products are Asturiana skimmed milk bottles, but they have different package sizes (1 L vs 1.5 L).",gemini-3.8-flash
+ahorramas:38363,dia:h841e85735ded,same,"Both are 1-liter cartons of Central Lechera Asturiana skimmed milk (desnatada / 0,0% MG).",gemini-3.8-flash
+dia:81206,consum:7059769,same,Both products are the same 6 x 200 ml chocolate milkshake pack from the Puleva brand.,gemini-3.8-flash
+ahorramas:48737,bm:9397,same,Both products are the 250 g Dr. Oetker ham and cheese (jamón y queso) panini.,gemini-3.8-flash
+ahorramas:60408,bm:10280,equivalent,"Both products are 3-packs of Calvo yellowfin tuna in natural juice, though product A lacks explicit weight specifications to confirm an exact size match.",gemini-3.8-flash
+dia:285658,bm:61407,same,Both products are the same 1 L unsweetened almond drink from the Alpro brand.,gemini-3.8-flash
+dia:204987,consum:204420,same,Both products are 4-packs of 120 g strawberry yogurt from the Danone brand.,gemini-3.8-flash
+ahorramas:60682,consum:7329055,equivalent,"Both products are Arla sliced Havarti cheese, but they have different pack sizes (175 g vs 300 g) which are within a 2x factor.",gemini-3.8-flash
+ahorramas:25107,bm:85687,equivalent,"Both products are Abril intense olive oil, sharing the same variety and brand, but differing in bottle size (2 L versus 1 L), which is within the 2x size factor.",gemini-3.8-flash
+bm:13540,consum:7212483,different,"Product A is standard Gallo spaghetti while Product B is the 'Pasta Fina' (thin pasta) variety, representing distinct product variants.",gemini-3.8-flash
+bm:36976,consum:7478220,equivalent,"Both are 450 g loaves of crustless wholemeal/grain sliced bread from Bimbo, but they represent different product recipes (8 cereals vs. 100% whole wheat).",gemini-3.8-flash
+bm:1155,consum:7309941,same,Both products are semi-cured blended cheese from the same producer (García Baquero) sold by weight at the deli counter.,gemini-3.8-flash
+bm:85663,consum:2536688,equivalent,"Both products are Purina Gourmet Gold wet cat food with chicken, but Product A does not specify a size, preventing a definite confirmation of identical packaging.",gemini-3.8-flash
+bm:63492,consum:7430643,different,"Product A is explicitly a brioche-style burger bun, while Product B appears to be standard burger buns, making them distinct variants.",gemini-3.8-flash
+bm:70554,consum:7472157,different,"Product A is pasta specifically cut for fideuà (thick curved/hollow pasta), whereas Product B is thin soup noodles (Fideo Nº1), which are distinct pasta types with different culinary uses.",gemini-3.8-flash
+bm:85665,consum:7313034,different,"Product A is specifically formulated for junior cats with salmon, whereas Product B is a salmon and turkey variety typically formulated for adult cats.",gemini-3.8-flash
+bm:1233,consum:12542,different,"Product A is calcium-enriched semi-skimmed milk, whereas Product B is standard semi-skimmed milk, which represents a different product formulation.",gemini-3.8-flash
+bm:1795,consum:7209286,equivalent,"Both are Yatekomo chicken-flavored instant noodles of nearly identical single-serving size (80 g vs 79 g), but one is in a cup and the other is in a pouch format (Pollo con Soja Bolsa).",gemini-3.8-flash
+bm:66993,consum:7403918,different,"Product B is specifically the 'Floral' scented variant, while Product A represents the original/regular variant, representing a noticeable difference in fragrance/formula.",gemini-3.8-flash
+bm:2733,consum:7285062,different,"Product A consists of plain rice cakes, whereas Product B includes milk chocolate coating, making them different variants.",gemini-3.8-flash
+bm:1369,consum:7119118,different,"The two products are different flavors: one is pure orange nectar and the other is an orange, carrot, and mango blend.",gemini-3.8-flash
+bm:8749,consum:5743596,different,"Product A is regular whole condensed milk, while Product B is the skimmed (desnatada) variant.",gemini-3.8-flash
+bm:44676,consum:7397250,equivalent,"Both products are Dolce Gusto café con leche capsules of the same variant, but they have different pack counts (16 vs 30 capsules, within a 2x size ratio).",gemini-3.8-flash
+bm:15940,consum:7426026,same,"Both products are the same brand (Yatekomo), variant (yakisoba de pollo), and identical size (93 g).",gemini-3.8-flash
+bm:1332,consum:7225964,different,"Although both are 1 kg of round rice from the Brillante brand, Brillante standard round rice and Brillante Sabroz are distinct specific rice varieties/lines within the brand.",gemini-3.8-flash
+bm:64866,consum:7403918,equivalent,"Both are Wipp Express 33-wash detergent capsules, but Product B specifies a floral scent variant while Product A does not specify the scent.",gemini-3.8-flash
+bm:84958,consum:7294291,different,"Product A is tagliatelle (flat ribbon pasta) while Product B is spaghetti (round long pasta), representing different pasta shapes/variants.",gemini-3.8-flash
+bm:18087,consum:7307411,different,"Product A is plain dark chocolate rice cakes, whereas Product B includes hazelnut pieces, making them different flavor variants.",gemini-3.8-flash
+bm:16817,consum:7326838,different,"Product A contains banana, strawberry, and apple, whereas Product B includes an additional ingredient (blueberry/arándano) under the Hero Solo range, making them different variants.",gemini-3.8-flash
+bm:65506,consum:937243,different,"Product A is a specific high-protein variant ('proteínas'), whereas Product B is the standard fresh cheese variant.",gemini-3.8-flash
+bm:89162,consum:7109937,different,"Product A is a specific high-protein pizza grated cheese, whereas Product B is standard mozzarella grated cheese.",gemini-3.8-flash
+bm:65839,consum:7109937,different,"Product A is sliced mozzarella cheese (lonchas) while Product B is grated mozzarella cheese (rallado), which are different product formats/variants.",gemini-3.8-flash
+bm:38052,consum:7228849,different,"Product A is a Greek style yogurt (yogur griego), whereas Product B is a traditional artisanal natural yogurt (yogur natural artesano), which are distinct yogurt varieties.",gemini-3.8-flash
+bm:82856,consum:7361934,different,"Product A is sold cut to order (al corte) pure goat milk semi-cured cheese, whereas Product B is pre-sliced cheese under the Santtum line (which typically includes blended milk or a distinct specific recipe) in an 80g pack.",gemini-3.8-flash
+bm:65546,consum:7281012,different,Product A is whipped cream (nata montada) and Product B is spreadable butter (mantequilla fácil untar).,gemini-3.8-flash
+bm:13325,consum:7472157,equivalent,"Both products are 400 g packages of Gallo noodles, but Product B specifies thickness Nº1 while Product A does not specify the noodle gauge.",gemini-3.8-flash
+bm:1239,consum:17525,different,"Product A is skimmed milk enriched with calcium, whereas Product B is standard skimmed milk without added calcium, making them different variants.",gemini-3.8-flash
+aldi:518404,bm:11376,different,"Product A consists of stuffed olives with anchovies, while Product B consists of dried apricots.",gemini-3.8-flash
+mercadona:4911,bm:18520,different,"Product A is an empanadilla (pastry turnover) while Product B is a sandwich, making them different types of products.",gemini-3.8-flash
+ahorramas:69606,mercadona:51181,different,"The products feature different cheese varieties, with one being blue cheese cream and the other Camembert cheese cream.",gemini-3.8-flash
+dia:300006,mercadona:11672,different,"Product A is an Iberian semi-cured cheese (typically a blend of cow, goat, and sheep milk), whereas Product B is made exclusively from sheep's milk (queso de oveja).",gemini-3.8-flash
+alcampo:21488,mercadona:4911,different,A panini (pizza baguette style) and an empanadilla (savory turnover/pastry) are different types of bakery items.,gemini-3.8-flash
+dia:275006,consum:56911,different,"Product A is penne pasta, while Product B is potatoes.",gemini-3.8-flash
+aldi:601366800,dia:305492,different,Product A consists of olives (aceitunas gordal) while Product B is dough for dumplings/empanadillas (masa para empanadillas).,gemini-3.8-flash
+alcampo:837190,aldi:601946200,different,"Product A is a soy-based yogurt alternative with raspberry and apple, whereas Product B is a turkey meat preparation stuffed with goat cheese, apple, and raisins.",gemini-3.8-flash
+ahorramas:68490,dia:309625,different,"Product A features a specific barbecue (BBQ) flavor/sauce marinade, while Product B is plain roasted chicken wings without BBQ sauce.",gemini-3.8-flash
+dia:306354,alcampo:78820,different,"Product A consists of plain chicken wings, whereas Product B consists of marinated chicken wings, which represents a different variant.",gemini-3.8-flash
+aldi:601563602,alcampo:27247,different,"Product A is dog treats (dog bones), whereas Product B is pasta for human consumption.",gemini-3.8-flash
+alcampo:898473,bm:37145,different,"Product A is standard olive oil (aceite de oliva) while Product B is extra virgin olive oil (aceite de oliva virgen extra), which are different grades/variants.",gemini-3.8-flash
+mercadona:71202,alcampo:75914,different,"Product A is a pair of latex cleaning gloves, whereas Product B is fresh apples.",gemini-3.8-flash
+dia:244877,ahorramas:85300,different,"Product A is specifically formulated for baby clothing, whereas Product B is a standard color laundry detergent, representing different variants.",gemini-3.8-flash
+ahorramas:31234,alcampo:241140,different,"One product is a cured cheese preserved in oil, whereas the other is standard pre-sliced cured cheese, representing different preparation and presentation styles.",gemini-3.8-flash
+alcampo:425422,dia:274540,different,"Product A is milk bread rolls (pan de leche), while Product B is free-range eggs (huevos camperos).",gemini-3.8-flash
+mercadona:69584,ahorramas:10634,different,Product A is a vegetable (cucumber) while Product B is poultry meat (chicken breast).,gemini-3.8-flash
+ahorramas:48457,aldi:601299701,different,"Product A is paper-based pet bedding/litter, whereas Product B is moist toilet wipes.",gemini-3.8-flash
+ahorramas:99483,bm:85496,equivalent,Both products are sliced whole spelt bread (pan de molde 100% integral de espelta) of similar package sizes (460 g vs 400 g) from different brands.,gemini-3.8-flash
+mercadona:10380,dia:307404,equivalent,"Both products are 1-liter cartons of whole milk, making them equivalent despite differing brands.",gemini-3.8-flash
+mercadona:68170,aldi:530300,equivalent,Both products are own-brand chilled tiramisú desserts of comparable total quantities suitable for equivalent purchase.,gemini-3.8-flash
+dia:139419,bm:75879,different,"Product A is a Mexican fajita seasoning mix, whereas Product B is an oriental-style seasoning mix, representing different culinary flavor profiles.",gemini-3.8-flash
+ahorramas:84066,consum:5948997,different,"Product B specifies boneless chicken thighs (deshuesados), whereas Product A is standard bone-in chicken thighs, representing a different preparation and product variant.",gemini-3.8-flash
+alcampo:517377,consum:7076284,different,"Product A is an Actimel + variant with strawberry and pomegranate flavor, whereas Product B is Actikids specifically targeted for kids with strawberry flavor, which are distinct product variants.",gemini-3.8-flash
+aldi:264706,mercadona:69484,different,"Product A is processed purple potato gnocchi pasta, whereas Product B consists of whole fresh potatoes prepared for microwaving.",gemini-3.8-flash
+dia:309818,aldi:601703303,different,"Product A is a plain cream cheese mixed with goat cheese, whereas Product B includes figs as a prominent flavor component.",gemini-3.8-flash
+mercadona:12771,consum:7436558,different,"Product A is eucalyptus and menthol candies, while Product B is a chicken and mushroom pastry (empanadilla).",gemini-3.8-flash
+aldi:600720903,consum:396663,different,"The products are different varieties of baby food puree, one being a fruit blend (peach and banana) and the other a savory meal (rice with chicken).",gemini-3.8-flash
+aldi:601414202,ahorramas:91582,different,"Product A is pickled chili peppers (guindillas en vinagre), whereas Product B is Cabrales blue cheese.",gemini-3.8-flash
+alcampo:883057,ahorramas:52201,different,The products have different fruit flavor profiles (apple and banana vs. strawberry and banana).,gemini-3.8-flash
+aldi:601186400,alcampo:29671,equivalent,Both products are a 3-liter bottle of mild olive oil (aceite de oliva suave) from different brands.,gemini-3.8-flash
+ahorramas:76868,mercadona:11672,different,"Product A is mixed-milk semicurado cheese in slices, whereas Product B is a pure sheep's milk semicurado cheese cut into wedges, making their specific milk type and cuts different.",gemini-3.8-flash
+mercadona:51167,bm:64758,equivalent,"Both are 150 g garlic/fine herbs spreadable/mousse cream cheeses of equivalent type and equal size, differing only in brand (Hacendado private label vs Hochland).",gemini-3.8-flash
+alcampo:53007,mercadona:63476,different,"Product A is fresh mozzarella cheese while Product B is fresh empanada dough, representing completely different food categories.",gemini-3.8-flash
+mercadona:22444,alcampo:10051,different,"Product A is a baby dairy dessert pouch with cereals and honey, whereas Product B is sliced bread with cereals and seeds.",gemini-3.8-flash
+ahorramas:52600,dia:190815,different,"Tomate Cherokee is a large heirloom tomato variety, whereas the other product is cherry tomatoes.",gemini-3.8-flash
+dia:65364,ahorramas:87313,different,"Product A is an ice cream multipack (Magnum mini), whereas Product B is cheese portions (Mini Babybel).",gemini-3.8-flash
+aldi:600558405,dia:305610,different,The products have conflicting fruit/flavor variants (pineapple vs apple and cinnamon).,gemini-3.8-flash
+aldi:601797701,bm:34079,different,"Product A is made with white chocolate ('chocolate blanco') and shaped as chocolate rocks, while Product B is a milk chocolate bar ('chocolate con leche').",gemini-3.8-flash
+dia:305247,alcampo:723005,different,"The products are different specific smoothie flavor variants, with Product A being a Dia 'energy' blend and Product B being an orange smoothie from True Fruits.",gemini-3.8-flash
+mercadona:13628,dia:167309,different,"Product A is canned mackerel fillets in olive oil, whereas Product B is a dressing set containing olive oil, vinegar, and salt.",gemini-3.8-flash
+alcampo:199263,aldi:601562900,different,"Product A is lentil pasta spirals, while Product B is salmon escalopes, which are completely different products.",gemini-3.8-flash
+alcampo:14082,dia:231182,different,"Product A consists of parbaked bread rolls (panecillos precocidos) while Product B consists of breadsticks (picos artesanos), which are different types of bread products.",gemini-3.8-flash
+mercadona:14719,ahorramas:87228,different,Product A is a scented candle while Product B is cheese.,gemini-3.8-flash
+mercadona:61289,aldi:600421500,different,"Product A is frozen sweet corn kernels, whereas Product B is fine corn flour (cornstarch), which are entirely different product types.",gemini-3.8-flash
+ahorramas:83948,aldi:236405,different,"Product A is a refrigerated yogurt dessert with chocolate balls, whereas Product B is a yogurt-flavored sponge cake (bakery product).",gemini-3.8-flash
+dia:300803,bm:38380,different,"Product A is specifically gluten-free burger buns (ambient/fresh), whereas Product B is a generic frozen gluten-free bread without a specified type or size.",gemini-3.8-flash
+ahorramas:96689,alcampo:51343,different,Product A is cereal bread rolls (payesitas) while Product B is grated cheese.,gemini-3.8-flash
+ahorramas:87913,bm:71842,different,"Product A is a soy-based yogurt/dessert with apple, while Product B is a pureed fruit dessert (compote).",gemini-3.8-flash
+ahorramas:97507,consum:7198807,different,"Product A is toasted bread with corn, turmeric, and sunflower seeds, while Product B is a plain rustic loaf (hogaza de pan rústico), which are different bread variants/formats.",gemini-3.8-flash
+dia:285829,consum:7305600,different,Product A is an energy drink (Red Bull) while Product B is an alcoholic cider (sidra con frutos rojos).,gemini-3.8-flash
+aldi:600001401,consum:7218167,different,"Product A is dried pasta (caserecce) while Product B is fresh cherry tomatoes, making them completely different product categories.",gemini-3.8-flash
+aldi:601805300,ahorramas:61638,different,"Product A is a tiramisu panettone (sweet bread/bakery item), while Product B is crushed canned tomatoes.",gemini-3.8-flash
+dia:185169,mercadona:83160.1,equivalent,Both products are traditional Spanish white bread loaves of the same weight (500 g) from store-brand bakery sections.,gemini-3.8-flash
+aldi:611700,mercadona:33121,different,"Product B is seasoned (aliñadas) while Product A consists of plain pitted green olives, representing different flavor variants.",gemini-3.8-flash
+dia:299577,aldi:736800,equivalent,Both are blue cheeses of comparable quantities (150 g vs 200 g) from different supermarket chains.,gemini-3.8-flash
+alcampo:91050,bm:18756,different,"Product A is a liquid yogurt with 0% fat and high protein from the Densia Forte line, whereas Product B is a Danone Skyr, which is a distinctly different dairy product type and texture.",gemini-3.8-flash
+alcampo:69494,ahorramas:73739,equivalent,"Both products are 1-liter bottles of still mineral water, but they are from different brands (Font Vella vs. Font Natura).",gemini-3.8-flash
+alcampo:89334,consum:7396476,equivalent,"Both products are whole milk from Central Lechera Asturiana, but they differ in format and pack size (a 6-pack of 1.5 L bottles versus a single 2.2 L bottle).",gemini-3.8-flash
+mercadona:88407,consum:7419146,different,"Product A is a ready-to-eat prepared lentil dish, whereas Product B consists of dry packaged lentils requiring full cooking.",gemini-3.8-flash
+aldi:420500,alcampo:453239,different,"Product A is pennyroyal mint (menta poleo) infusion, whereas Product B is apple pie (tarta de manzana) infusion, which are different flavors/variants.",gemini-3.8-flash
+mercadona:59256,alcampo:96451,different,"Product A is sliced cooked ham, whereas Product B is cooked chickpeas in a jar.",gemini-3.8-flash
+mercadona:35961,bm:19568,different,"Product A is an infant puree/baby food with yogurt and three fruits specifically formulated for babies 8+ months, whereas Product B is a standard fruit yogurt.",gemini-3.8-flash
+dia:304179,ahorramas:87987,different,"Product A is a chocolate protein shake drink, while Product B is a multipack of natural skyr yogurt.",gemini-3.8-flash
+alcampo:22152,mercadona:18002,different,"Product A is yellowfin tuna in pickled sauce (en escabeche), whereas Product B is in olive oil (en aceite de oliva).",gemini-3.8-flash
+ahorramas:60591,dia:306354,equivalent,Both products are store-brand fresh chicken wings in similar pack sizes (1 kg vs 750 g).,gemini-3.8-flash
+aldi:601584803,dia:150897,equivalent,"Both products are whole wheat spaghetti in comparable package sizes (450 g and 500 g), making them equivalent despite differing brands.",gemini-3.8-flash
+mercadona:24562,aldi:133400,different,"Product A is a frozen vegetable dish with sauce, whereas Product B is a fresh bagged gourmet salad.",gemini-3.8-flash
+mercadona:7879,ahorramas:2650,different,"Product A consists of frozen french fries, whereas Product B is a strawberry and banana dairy snack (petit suisse).",gemini-3.8-flash
+dia:311109,alcampo:312394,different,"Product A is a lime-flavored cola soft drink, whereas Product B is a lemon-flavored mineral water beverage.",gemini-3.8-flash
+aldi:601190500,bm:3737,equivalent,Both products are store-brand delicate laundry detergents with similar wash counts within a 2x size ratio.,gemini-3.8-flash
+ahorramas:13993,aldi:48800,equivalent,"Both products are canned yellowfin tuna in olive oil (atún claro en aceite de oliva) in standard single-serving can multipacks, making them equivalent despite the brand difference.",gemini-3.8-flash
+alcampo:82325,dia:244790,different,"Product A is a mixed beef and pork (vacuno - cerdo) burger meat, whereas Product B is purely beef (vacuno).",gemini-3.8-flash
+ahorramas:42807,alcampo:74762,different,"Product A consists of crunchy breadsticks (picos camperos) with rye and quinoa, whereas Product B is a soft rye bread pack of 5 units.",gemini-3.8-flash
+ahorramas:60725,consum:7483795,different,"Product A is a yogurt with oats, apple, and walnuts, whereas Product B is an apple pie or tart.",gemini-3.8-flash
+ahorramas:10632,aldi:661400,different,"Product A refers to regular chicken thighs (typically with bone and skin), whereas Product B is specifically boneless and skinless, representing a significant variant difference in meat preparation and price.",gemini-3.8-flash
+dia:287462,mercadona:28119,different,"Product A is the watermelon flavor of Monster Ultra, whereas Product B is the standard (white) Monster Ultra zero.",gemini-3.8-flash
+alcampo:474129,bm:60255,equivalent,Both products are 4-packs of strawberry Greek-style yogurt of similar package size from competing brands (Nestlé Yaos vs. Danone Oikos).,gemini-3.8-flash
+aldi:954900,mercadona:3400,equivalent,"Both products are store-brand thin-cut chicken breast fillets, making them equivalent despite the missing pack size for Aldi.",gemini-3.8-flash
+dia:230940,alcampo:672123,different,"Product A is a sparkling lemonade (limonada con gas), whereas Product B is plain sparkling mineral water (agua con gas).",gemini-3.8-flash
+dia:282402,consum:7405517,equivalent,"Both are vegetable pisto products from Gallina Blanca, but they have slightly different net weights (325 g vs 350 g), exceeding the 2% threshold for the 'same' label.",gemini-3.8-flash
+ahorramas:75683,alcampo:69897,equivalent,"Both are 1.5 L bottles of San Benedetto Essenzia flavored water, but Product B does not specify the flavor (lemon vs generic aromatizada).",gemini-3.8-flash
+ahorramas:87799,bm:12959,equivalent,"Both products are 450g frozen vegetable and chicken stir-fries from different private labels, making them fair equivalents.",gemini-3.8-flash
+alcampo:951264,ahorramas:4482,different,"Product A is an assortment board containing three different award-winning cheeses, while Product B consists solely of Garcia Baquero's reserva cheese.",gemini-3.8-flash
+aldi:988000,consum:56911,equivalent,Both items are standard fresh potatoes from supermarket private labels without conflicting variants or specified sizes.,gemini-3.8-flash
+dia:296094,ahorramas:98526,different,"Both products are sauces by Ybarra in 250 ml bottles, but they feature completely different flavor variants (kebab sauce vs. Gottan The Champions Burger sauce).",gemini-3.8-flash
+ahorramas:38565,consum:7307411,same,Both are 142g Bicentury milk chocolate and hazelnut rice cakes.,gemini-3.8-flash
+aldi:662500,ahorramas:49622,equivalent,"Both products are 3-liter containers of extra virgin olive oil from different brands, making them equivalent.",gemini-3.8-flash
+dia:310675,bm:10557,different,"Product A is standard wheat penne (plumas rayadas) while Product B is vegetable-infused penne (plumas vegetales), representing different product variants.",gemini-3.8-flash
+alcampo:95242,dia:132567,different,"Both are Activia 0% fat bifidus yogurts of the same size, but they have different fruit flavors (pineapple vs. peach).",gemini-3.8-flash
+aldi:601557701,dia:140040,same,Both products are 250 g bars of Valor milk chocolate with whole almonds.,gemini-3.8-flash
+ahorramas:61638,aldi:505200,equivalent,"Both products are 800 g cans of extra category crushed natural tomato (tomate triturado), differing only in brand.",gemini-3.8-flash
+dia:188533,alcampo:888773,different,"The products have conflicting fruit flavors, with one being passion fruit (maracuyá) and the other being apple (manzana sin azúcar añadido).",gemini-3.8-flash
+alcampo:241165,bm:8833,equivalent,"Both products are sliced semicurado cheese of the same weight (250 g), sold as own-brand equivalents across different supermarket chains.",gemini-3.8-flash
+ahorramas:15821,alcampo:670747,same,Both products are 500g packages of Garofalo Radiatori pasta (nº 87).,gemini-3.8-flash
+ahorramas:85246,bm:10254,equivalent,"Both products are 1-liter cartons of semi-skimmed milk enriched with calcium, differing only in brand (Alipende own-brand vs. Puleva national brand).",gemini-3.8-flash
+alcampo:25199,mercadona:4850,equivalent,"Both items are 500 ml bottles of premium extra virgin olive oil of the same size, representing an equivalent product across different brands.",gemini-3.8-flash
+alcampo:53039,ahorramas:53805,different,"Product A is organic whole milk (Eco) while Product B is calcium-enriched whole milk (Calcio), which are distinctly different specialized milk formulations.",gemini-3.8-flash
+dia:300608,mercadona:5546,different,"Product A is a zero-calorie lemon-flavored carbonated soft drink, whereas Product B is a zero-calorie lemon-flavored iced tea.",gemini-3.8-flash
+ahorramas:85247,dia:22489,equivalent,"Both products are 1-liter cartons of skimmed milk enriched with calcium, differing only in brand (Alipende private label vs. Puleva national brand).",gemini-3.8-flash
+ahorramas:22747,mercadona:2781,different,"Product A is a free-range chicken ('pollo de corral'), whereas Product B is a standard whole chicken, making them different product variants.",gemini-3.8-flash
+dia:245089,aldi:896600,different,"Product A is specifically organic (bio) avocados sold in a 400 g pack, whereas Product B is conventional loose avocado with no bio designation or specified pack size.",gemini-3.8-flash
+alcampo:52207,dia:608P6,equivalent,"Both products are a 6-pack of 1-liter whole milk cartons, making them equivalent despite the difference in brands (La Colmenareña vs. Dia own-brand).",gemini-3.8-flash
+alcampo:428644,consum:7404523,equivalent,"Both products are extra virgin olive oil from Coosur with comparable bottle sizes within a 2x factor, though they represent different specific varieties (Olivares de la Sierra vs. Hojiblanca).",gemini-3.8-flash
+aldi:57701,ahorramas:10634,different,"Product A is a specific smoked chicken breast charcuterie product (pechuga de pollo ahumada), whereas Product B is unspecified chicken breast, likely fresh meat, representing a different preparation or cut.",gemini-3.8-flash
+mercadona:50945,ahorramas:8025,equivalent,"Both items are semi-cured blended cheeses (queso mezcla semicurado), making them equivalent despite differing brands and unknown specific size.",gemini-3.8-flash
+aldi:747500,alcampo:560998,different,"Product A consists of plain chicken breast fillets, whereas Product B consists of breaded chicken breast fillets (empanados).",gemini-3.8-flash
+dia:227099,consum:7264617,equivalent,"Both are 1-liter bottles of extra virgin olive oil of equivalent product type, differing only in brand.",gemini-3.8-flash
+alcampo:892174,bm:1795,different,"Product A is a rice-based dish (Yarroz) with teriyaki sauce, whereas Product B consists of the classic chicken instant noodles (Yatekomo).",gemini-3.8-flash
+dia:313222,alcampo:51550,different,"Product A is a kefir with strawberry and raspberry, while Product B is a bifidus yogurt with strawberry pieces.",gemini-3.8-flash
+ahorramas:91402,consum:7488356,same,Both products are 500g rye sliced bread from the Panrico brand.,gemini-3.8-flash
+dia:5691,mercadona:13598,equivalent,Both products are 250 g cans of sweetened whipped cream (nata montada) from comparable brands (Central Lechera Asturiana vs. Hacendado private label).,gemini-3.8-flash
+dia:282773,ahorramas:69947,equivalent,"Both products are sheep's milk cheese with rosemary from the brand Vega Sotuélamos, but they come in different package sizes (170 g vs 220 g).",gemini-3.8-flash
+ahorramas:96041,dia:187268,different,"Product A is in pickled sauce (en escabeche) while Product B is in olive oil (en aceite de oliva), which is a variant conflict.",gemini-3.8-flash
+dia:31118,aldi:601662300,equivalent,"Both products are Heinz ketchup of the same variant, but differ in package size (460 g vs 700 g), which is within the 2x ratio threshold.",gemini-3.8-flash
+ahorramas:59894,aldi:600943001,equivalent,"Both products are 1-liter zero-sugar oat milk drinks with identical volume and product characteristics, differing only by brand.",gemini-3.8-flash
+dia:228021,bm:76658,equivalent,"Both products are 16-count Marcilla caf	 con leche coffee capsules, though the specific capsule system compatibility for product A is unspecified.",gemini-3.8-flash
+alcampo:42309,consum:7376036,different,"The products feature different fruit flavor profiles (banana and apple vs. apple, strawberry, and banana) and target different age segments.",gemini-3.8-flash
+alcampo:19600,mercadona:82227,equivalent,Both are 500 g private-label breadcrumbs with garlic and parsley from competing supermarket chains.,gemini-3.8-flash
+ahorramas:40180,alcampo:311854,different,"Product A is still mineral water while Product B is sparkling water (con gas), which is a key variant difference.",gemini-3.8-flash
+alcampo:43633,bm:10558,different,"Although both are Gallo brand vegetable pasta of similar sizes, they are distinct pasta shapes (spaghetti versus margaritas) with different culinary uses.",gemini-3.8-flash
+ahorramas:95029,consum:7469633,different,"Product A has crust while Product B is crustless (sin corteza), making them different variants.",gemini-3.8-flash
+dia:222479P6,mercadona:28115,different,"Product A is a caffeine-free zero cola, whereas Product B is a regular zero cola containing caffeine.",gemini-3.8-flash
+ahorramas:40564,dia:300743,different,"The products have conflicting flavor variants, one being vanilla and the other natural.",gemini-3.8-flash
+dia:304909,consum:7450930,same,Both products are the 325 ml Pantene Repara & Protege shampoo.,gemini-3.8-flash
+dia:65292,mercadona:15909,same,Both products are Flora ProActiv margarine tub in the identical 225 g size.,gemini-3.8-flash
+alcampo:900032,ahorramas:87982,same,Both products are 4-packs of Danone Greek yogurt in the apple and cinnamon flavor.,gemini-3.8-flash
+dia:193,bm:1011,same,Both products are 1-liter bottles of sunflower oil from the same brand (Koipesol/Koipe).,gemini-3.8-flash
+alcampo:984240,dia:189186,different,"Product A uses extra virgin olive oil (aceite de oliva virgen extra) while Product B uses standard olive oil (aceite de oliva), which constitutes a variant conflict.",gemini-3.8-flash
+aldi:133400,mercadona:69741,equivalent,Both are large-format gourmet salad mixes from private labels with very similar package sizes (320 g vs 300 g).,gemini-3.8-flash
+aldi:525603,alcampo:42877,same,Both are the same Hero brand 100 g yogurt pouch with banana and strawberry for babies.,gemini-3.8-flash
+aldi:600729100,consum:7359581,different,"Product A consists of standard open diapers while Product B is the pants (pull-up) diaper format, which is a different diaper variant.",gemini-3.8-flash
+alcampo:13177,bm:8649,same,Both products are the same 440 g can of Cocido Madrileño from the brand Litoral.,gemini-3.8-flash
+dia:313226,ahorramas:95974,different,"Product A is plain kefir whereas Product B is blueberry-flavored, which is a variant conflict.",gemini-3.8-flash
+mercadona:10676,dia:46626P6,different,"Product A is specifically enriched with extra protein in addition to calcium (+Proteínas & calcio), whereas Product B is a standard calcium-enriched skimmed milk.",gemini-3.8-flash
+mercadona:4706,ahorramas:99695,equivalent,"Both are 750 ml bottles of extra virgin olive oil, but they are from different brands (Hacendado vs. Coosur).",gemini-3.8-flash
+mercadona:82753,consum:7305535,equivalent,"Both products are gluten-free baguettes of the same size (175 g), one being Mercadona's private label and the other from the Schär brand.",gemini-3.8-flash
+ahorramas:26057,bm:76338,different,"Product A is plain (natural) lactose-free yogurt, whereas Product B is a raspberry-flavored skimmed lactose-free yogurt, which constitutes a distinct flavor and nutritional variant.",gemini-3.8-flash
+alcampo:432664,consum:7417665,same,Both products are the same brand and variant of fresh cheese (Burgo de Arias Protein Plus) with identical pack formats of 3 x 70 g.,gemini-3.8-flash
+dia:271303,bm:61411,same,Both products are the same 750 g pack of Ultima adult cat food with salmon.,gemini-3.8-flash
+ahorramas:97600,consum:7447969,same,"Both products are the same St. Pierre brioche burger buns, which come in a standard 4-pack weighing 250 g.",gemini-3.8-flash
+dia:683,alcampo:30552,same,Both products are 1 L bottles of Vichy Catalán sparkling natural mineral water.,gemini-3.8-flash
+aldi:747600,mercadona:3724,equivalent,Both are whole chicken breasts from supermarket own brands with comparable pack sizes (0.5 kg vs 0.58 kg).,gemini-3.8-flash
+alcampo:196882,aldi:45700,equivalent,"Both products are 1-liter cartons of lactose-free skimmed cow's milk from store brands, making them equivalent.",gemini-3.8-flash
+ahorramas:72510,mercadona:4850,equivalent,Both products are 500 ml bottles of Picual extra virgin olive oil from different brands.,gemini-3.8-flash
+mercadona:5024,bm:1330,same,Both products are the same 1 kg round rice from brand SOS.,gemini-3.8-flash
+mercadona:4850,alcampo:63718,equivalent,Both products are 500 ml bottles of Picual extra virgin olive oil from different brands.,gemini-3.8-flash
+ahorramas:95296,consum:7467389,same,Both products are the same Cuétara Flakes filled with milk cream (Galleta Flakes La Leche) in identical 480g packs.,gemini-3.8-flash
+alcampo:498818,dia:294221,same,Both are Danone Greek yogurts with stracciatella in a 4 x 110 g multipack.,gemini-3.8-flash
+alcampo:98921,ahorramas:5330,equivalent,"Both products are García Baquero semicured blended cheese, but Product B lacks specific size information to confirm if they are the exact same format.",gemini-3.8-flash
+dia:684,mercadona:27610,same,Both products are 2-liter bottles of lemon-flavored Fanta.,gemini-3.8-flash
+dia:66364,alcampo:35361,equivalent,"Both products are Font Vella 2 L natural mineral water, but Product A is a single bottle while Product B is a 6-pack.",gemini-3.8-flash
+dia:302603,bm:19617,equivalent,"Both products are Bonito del Norte in high-oleic sunflower oil from the brand Consorcio, but they have different pack sizes (80 g vs 110 g).",gemini-3.8-flash
+alcampo:715005,bm:66355,same,"Both products are Yatekomo instant noodles with curry chicken flavor, and the weights (82 g vs 80 g) are within the 2% tolerance.",gemini-3.8-flash
+dia:74720,consum:203562,same,Both products are identical 1.5 L bottles of Asturiana whole milk (leche entera).,gemini-3.8-flash
+ahorramas:10634,aldi:954900,equivalent,"Both products are chicken breast fillets, and standard thin cut is considered an acceptable minor presentation difference within the equivalent tier.",gemini-3.8-flash
+aldi:15300,ahorramas:10634,equivalent,"Both products are chicken breast from supermarket brands with no conflicting variants, making them fair equivalents despite the generic 'prémium' descriptor.",gemini-3.8-flash
+ahorramas:49443,dia:57865,same,Both products are 1-liter bottles of extra virgin olive oil from the brand Maestros de Hojiblanca (Hojiblanca).,gemini-3.8-flash
+ahorramas:60824,bm:16115,same,Both products are identical 125 g tubs of Président Camembert spreadable cheese.,gemini-3.8-flash
+alcampo:319675,consum:7488877,same,Both products are the same 1 L Puleva milk preparation with prebiotics (Digest) sold in brik packaging.,gemini-3.8-flash
+aldi:525603,ahorramas:9386,same,Both are 100g baby food pouches of banana and strawberry yogurt by Hero.,gemini-3.8-flash
+ahorramas:2188,consum:227652,same,Both products are the same 8-pack of plain natural yogurt from the Danone brand.,gemini-3.8-flash
+ahorramas:72473,bm:66041,same,Both products are the same 4-pack of Danone high-protein stracciatella yogurt.,gemini-3.8-flash
+alcampo:529339,consum:7463073,same,Both products are 500 g packages of Barilla Spaghettoni Al Bronzo pasta.,gemini-3.8-flash
+alcampo:34349,dia:188896,same,Both products are the same 1-liter Don Simón apple juice brick.,gemini-3.8-flash
+aldi:601557701,mercadona:12107,same,Both products are the same 250 g Valor milk chocolate tablet with whole almonds.,gemini-3.8-flash
+dia:223226,consum:7267750,same,Both products are 400 ml Garnier biphase micellar water in oil (Agua micelar en aceite).,gemini-3.8-flash
+ahorramas:46423,bm:6364,same,Both products are 1-liter semi-skimmed milk from the Central Lechera Asturiana brand.,gemini-3.8-flash
+dia:50238,ahorramas:23012,same,Both products are the identical Nestlé Yogolino banana dairy dessert in a 4-pack format.,gemini-3.8-flash
+dia:102510,bm:1290,same,Both products are 1 kg packs of dry white beans from the brand Luengo.,gemini-3.8-flash
+alcampo:97940,consum:7264617,equivalent,"Both products are 1-liter bottles of Carbonell extra virgin olive oil, but Product A specifies the 100% Picual variety whereas Product B is the generic/standard extra virgin olive oil variant.",gemini-3.8-flash
+dia:16066,consum:735340,same,Both products are 1 L cartons of Central Lechera Asturiana skimmed milk (leche desnatada).,gemini-3.8-flash
+ahorramas:71218,bm:63061,same,Both products are 1.5 L semi-skimmed milk from the brand Pascual.,gemini-3.8-flash
+alcampo:95341,consum:7291297,same,"Both products are 1-liter bottles of Puleva skimmed, lactose-free cow milk.",gemini-3.8-flash
+ahorramas:26806,alcampo:53073,same,Both products are the identical 1-liter whole lactose-free milk from the Pascual brand.,gemini-3.8-flash
+ahorramas:87987,dia:307396,same,Both products are the same 4-pack of Danone high-protein natural Skyr yogurt.,gemini-3.8-flash
+dia:253536,consum:7318736,same,Both products are 190 g jars of Gallo red pesto (pesto rosso).,gemini-3.8-flash
+bm:3421,consum:7291177,equivalent,"Both are virgin olive oil from the brand Carbonell, differing only in bottle size (0.75 L vs 1 L) which is well within the 2x ratio.",gemini-3.8-flash
+bm:3000,consum:7472657,different,"Product A is cream cheese (queso cremoso light) while Product B is cottage cheese (queso cottage), which are distinct types of cheese.",gemini-3.8-flash
+bm:66201,consum:7400856,equivalent,"Both products are Scottex Original toilet paper, but they differ in pack size (24 rolls vs 12 rolls, which is within the 2x size threshold).",gemini-3.8-flash
+bm:62593,consum:7437619,different,"Product A is Yakisoba (fried noodles) with chicken, whereas Product B is Teriyaki chicken with Japanese rice, making them different prepared meal dishes.",gemini-3.8-flash
+bm:5206,consum:7415714,equivalent,"Both products are standard dry toilet paper rolls from the same brand, differing in specific sub-variety and pack size (12 vs. 8 rolls) within acceptable limits.",gemini-3.8-flash
+bm:8605,consum:7388432,equivalent,"Both products are Flora tub margarines of very similar pack sizes (250 g vs 225 g), making them equivalent despite the specific olive oil variant specified in Product B.",gemini-3.8-flash
+bm:6232,consum:236141,different,"Product A is a 0% fat (skimmed) variety, whereas Product B is the regular full-fat version, representing a variant conflict.",gemini-3.8-flash
+bm:9676,consum:7365773,different,"Although both are whole wheat pasta from the same brand, macaroni (short pasta) and spaghetti (long pasta) are different pasta cuts and culinary uses.",gemini-3.8-flash
+bm:3418,consum:7472657,different,"Product A is original cream cheese (queso cremoso), whereas Product B is cottage cheese (queso cottage), which are distinct types of cheese.",gemini-3.8-flash
+bm:61433,consum:7370398,different,"Product A consists of baby spelt and apple biscuits, whereas Product B is a strawberry and banana fruit puree pouch.",gemini-3.8-flash
+bm:8877,consum:7012412,different,Product A is cooked/canned chickpeas in natural broth (garbanzo al natural) while Product B is dry white chickpeas (garbanza blanca).,gemini-3.8-flash
+bm:36976,consum:2842854,different,"Product A is an 8-cereal multigrain crustless bread while Product B is standard white crustless bread, representing different product variants.",gemini-3.8-flash
+bm:1017,consum:7358596,equivalent,"Both are moist toilet wipes from Scottex with comparable unit sizes, though they represent slightly different variants (Hygienic Comfort vs Aloe Vera).",gemini-3.8-flash
+bm:6370,consum:7351117,same,"Both products are 500 ml whipping cream from the same manufacturer, Central Lechera Asturiana.",gemini-3.8-flash
+bm:4485,consum:7199300,different,"Product A is a seasoning blend specifically formulated for spaghetti/pasta, whereas Product B is a seasoning blend for meat.",gemini-3.8-flash
+bm:8878,consum:7419146,different,"Product A consists of cooked/canned lentils in liquid ('al natural'), whereas Product B consists of dry lentils in a pack ('Lenteja Rápida Paquete').",gemini-3.8-flash
+bm:8879,consum:7021116,different,"Product A consists of cooked/canned beans in liquid (560 g net), whereas Product B consists of dry packaged beans (500 g).",gemini-3.8-flash
+bm:1154,consum:7149565,equivalent,Both products are cured mixed cheeses cut into pieces/slices from the same brand (G. Baquero) and represent equivalent items despite differing size/format specifications.,gemini-3.8-flash
