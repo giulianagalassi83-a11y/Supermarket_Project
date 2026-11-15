@@ -60,3 +60,23 @@ EXCLUDED_CATEGORIES = [
 
 NO_RELEVANTE = "no_relevante"
 SEED = 42
+
+# ---------------------------------------------------------------- similarity engine (src/similarity)
+SIM_DIR = DATA_DIR / "similarity"
+SIM_RESULTS_DIR = SIM_DIR / "results"
+SIM_CACHE_PATH = DATA_DIR / "cache" / "embeddings_f16.parquet"
+MODELS_DIR = ROOT / "models"  # gitignored: fine-tuned models live on Felipe's laptop only
+
+SIM = {
+    "encoder_id": "BAAI/bge-m3",                     # bake-off winner, 14 Nov (MRR 0.806; results/bakeoff.csv)
+    "encoder_revision": "5617a9f61b028005a4858fdac845db406aefb181",
+    "reranker_id": "BAAI/bge-reranker-v2-m3",
+    "reranker_revision": "953dc6f6f85a1b2dbfca4c34a2796e7dde08d41e",
+    "finetuned_path": MODELS_DIR / "encoder_final",
+    "top_k": 50,
+    "precision_target": 0.90,   # same-product matches, barcode pairs (spec §9b)
+    "same_size_tol": 0.02,      # same product: size within ±2 %
+    "equiv_size_tol": 0.25,     # fair equivalent: size within ±25 %
+    "n_folds": 5,
+    "judge_model": "gemini-3.8-flash",
+}

@@ -26,3 +26,11 @@ data/supermarkets.db
 tests/
 pytest.ini
 .superpowers/
+
+# Similarity engine (local only)
+models/
+data/similarity/results/*.png
+data/similarity/cv_embeddings.parquet
+data/similarity/finetune_cv_partial.csv
+data/similarity/cv_ce_scores.parquet
+data/cache/
