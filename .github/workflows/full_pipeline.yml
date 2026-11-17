@@ -3,10 +3,10 @@ name: Full supermarket collection and pipeline
 
 on:
   workflow_dispatch:
-  # Enable only after a successful manual run:
-  # schedule:
-  #   - cron: '30 6 * * 1'
-  #     timezone: 'Europe/Madrid'
+
+  schedule:
+    - cron: '30 6 * * 4'
+      timezone: 'Europe/Madrid'
 
 permissions:
   contents: read
