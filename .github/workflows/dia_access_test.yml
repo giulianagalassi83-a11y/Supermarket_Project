@@ -1,0 +1,36 @@
+name: DIA access comparison (manual)
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  compare:
+    name: Check DIA access
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+      - name: Install dependencies
+        run: |
+          python -m pip install requests selenium
+          sudo apt-get update -qq
+          sudo apt-get install -y xvfb xauth
+      - name: Test 1 - HTTP requests
+        run: python scripts/check_dia_access.py http
+      - name: Test 2 - Standard Chrome with Xvfb
+        if: ${{ !cancelled() }}
+        run: xvfb-run -a python scripts/check_dia_access.py browser
+      - name: Upload diagnostic reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: dia-access-report
+          path: dia_access_report/
+          retention-days: 7
+          if-no-files-found: warn
