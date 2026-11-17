@@ -120,7 +120,7 @@ jobs:
       - name: Commit RAW, history and normalized outputs
         if: github.ref == 'refs/heads/main'
         run: |
-          git diff --exit-code HEAD -- data/raw/dia_products_raw.csv data/history/dia
+          git diff --exit-code HEAD -- data/raw/dia_products_raw.csv ':(glob)data/history/dia/*_raw.csv'
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"

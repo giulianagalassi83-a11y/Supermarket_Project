@@ -9,6 +9,7 @@ Outputs:
     data/supermarkets.db
     data/products_normalized.csv
     data/price_history_normalized.csv
+    data/history/<chain>/YYYY-MM-DD_processed.csv
 
 Usage:
     python -m src.pipeline.build
@@ -16,6 +17,7 @@ Usage:
 
 import re
 import sys
+from pathlib import Path
 
 import numpy as np
 import pandas as pd
@@ -42,6 +44,7 @@ OUTLIER_MIN_GROUP = 5
 OUTLIER_IQR = 3
 
 HISTORY_DIR = config.DATA_DIR / "history"
+
 HISTORY_CSV_PATH = (
     config.DATA_DIR / "price_history_normalized.csv"
 )
@@ -87,6 +90,7 @@ def _with_type(obs, classification, taxonomy):
 
 def add_outlier_flags(obs, classification, taxonomy):
     """Flag extreme log-reference prices within product types."""
+
     df = _with_type(
         obs,
         classification,
@@ -177,6 +181,7 @@ def add_outlier_flags(obs, classification, taxonomy):
 
 def add_unit_mismatch(obs, classification, taxonomy):
     """Flag observations whose reference unit differs from the type."""
+
     df = _with_type(
         obs,
         classification,
@@ -200,10 +205,12 @@ def add_unit_mismatch(obs, classification, taxonomy):
 
 def load_historical_raw(history_dir=HISTORY_DIR):
     """Load historical RAW snapshots with their original adapters."""
+
     frames = []
     counts = {}
 
     for chain_id in config.CHAINS:
+
         folder = history_dir / chain_id
         loader = HISTORY_LOADERS.get(chain_id)
 
@@ -227,6 +234,7 @@ def load_historical_raw(history_dir=HISTORY_DIR):
         )
 
         for path in snapshots:
+
             # The same adapter processes current and historical files.
             frame = loader(path)
 
@@ -267,6 +275,7 @@ def prepare(
     strict=False,
 ):
     """Load sources, standardize products, and initialize classification."""
+
     report = {
         "chains": {},
         "warnings": [],
@@ -276,6 +285,7 @@ def prepare(
 
     # Load the latest complete RAW file for each supermarket.
     for chain_id in config.CHAINS:
+
         try:
             frame = adapters.load_chain(
                 chain_id,
@@ -293,6 +303,7 @@ def prepare(
             frames.append(frame)
 
         except Exception as exc:
+
             report["chains"][chain_id] = {
                 "rows": 0,
                 "products": 0,
@@ -319,10 +330,12 @@ def prepare(
 
     # Append historical RAW data for the full build.
     if history_raw is not None and not history_raw.empty:
+
         raw = pd.concat(
             [current_raw, history_raw],
             ignore_index=True,
         )
+
     else:
         raw = current_raw.copy()
 
@@ -352,6 +365,7 @@ def prepare(
 
     if force_tfidf:
         vectorizer = TfidfFallback(texts)
+
     else:
         vectorizer = get_vectorizer(
             texts,
@@ -366,6 +380,7 @@ def prepare(
         vectorizer.method == "tfidf"
         and not force_tfidf
     ):
+
         report["warnings"].insert(
             0,
             (
@@ -398,6 +413,7 @@ def _chain_stats(
     observations,
     classification,
 ):
+
     current_keys = observations.loc[
         observations["is_current"].fillna(False).astype(bool),
         "product_key",
@@ -446,6 +462,159 @@ def _chain_stats(
             classified["low_confidence"]
         ),
         "error": None,
+    }
+
+
+# --------------------------------------------------
+# PROCESSED HISTORICAL SNAPSHOTS
+# --------------------------------------------------
+
+def export_processed_snapshots(
+    history,
+    history_dir=HISTORY_DIR,
+):
+    """Export processed snapshots for each supermarket and date."""
+
+    history_dir = Path(history_dir)
+
+    required_columns = {
+        "chain_id",
+        "collection_date",
+        "product_key",
+        "price",
+    }
+
+    missing = required_columns - set(history.columns)
+
+    if missing:
+        raise ValueError(
+            f"Missing normalized columns: {sorted(missing)}"
+        )
+
+    if history.empty:
+        raise ValueError(
+            "Normalized price history is empty."
+        )
+
+    history = history.copy()
+
+    history["collection_date"] = (
+        history["collection_date"].astype("string")
+    )
+
+    created = 0
+    skipped = 0
+    pending = []
+
+    # Identify all available historical RAW snapshots.
+    for chain_id in config.CHAINS:
+
+        folder = history_dir / chain_id
+
+        if not folder.exists():
+            continue
+
+        raw_snapshots = sorted(
+            path
+            for path in folder.glob("*_raw.csv")
+            if re.fullmatch(
+                r"\d{4}-\d{2}-\d{2}_raw\.csv",
+                path.name,
+            )
+        )
+
+        for raw_path in raw_snapshots:
+
+            day = raw_path.name[:10]
+
+            processed_path = (
+                folder / f"{day}_processed.csv"
+            )
+
+            # Preserve existing processed snapshots.
+            if processed_path.exists():
+
+                if processed_path.stat().st_size == 0:
+                    raise RuntimeError(
+                        f"Existing processed snapshot is empty: "
+                        f"{processed_path}"
+                    )
+
+                skipped += 1
+                continue
+
+            # Select normalized observations for this
+            # supermarket and collection date.
+            snapshot = history.loc[
+                (history["chain_id"] == chain_id)
+                & (history["collection_date"] == day)
+            ].copy()
+
+            if snapshot.empty:
+                raise RuntimeError(
+                    f"No normalized observations found "
+                    f"for {chain_id} / {day}"
+                )
+
+            # Current status changes over time and is not
+            # an intrinsic property of a historical snapshot.
+            snapshot = snapshot.drop(
+                columns=["is_current"],
+                errors="ignore",
+            )
+
+            snapshot = (
+                snapshot.sort_values(
+                    ["product_key"],
+                    kind="stable",
+                )
+                .reset_index(drop=True)
+            )
+
+            pending.append(
+                (processed_path, snapshot)
+            )
+
+    # Save snapshots only after validating all missing dates.
+    for processed_path, snapshot in pending:
+
+        created_file = False
+
+        try:
+
+            # Exclusive creation prevents overwriting history.
+            with processed_path.open(
+                "x",
+                encoding="utf-8-sig",
+                newline="",
+            ) as file:
+
+                created_file = True
+
+                snapshot.to_csv(
+                    file,
+                    index=False,
+                )
+
+        except Exception:
+
+            # Remove incomplete files if the export fails.
+            if created_file:
+                processed_path.unlink(missing_ok=True)
+
+            raise
+
+        created += 1
+
+        print(
+            f"SAVED: {processed_path.parent.name}/"
+            f"{processed_path.name} | "
+            f"{len(snapshot)} observations"
+        )
+
+    return {
+        "created": created,
+        "skipped": skipped,
     }
 
 
@@ -531,14 +700,22 @@ def build(
         csv_path,
     )
 
-    export_history_csv(
+    normalized_history = export_history_csv(
         db_path,
         history_csv_path,
     )
 
-    # 7. Report current collection coverage.
+    # 7. Export missing processed historical snapshots.
+    processed_report = export_processed_snapshots(
+        normalized_history,
+        history_dir=history_dir,
+    )
+
+    # 8. Report current collection coverage.
     for chain_id in config.CHAINS:
+
         if chain_id not in report["chains"]:
+
             report["chains"][chain_id] = _chain_stats(
                 chain_id,
                 current_raw,
@@ -548,16 +725,25 @@ def build(
             )
 
     report["history_snapshots"] = history_counts
+
+    report["processed_snapshots"] = processed_report
+
     report["historical_observations"] = int(
         (~observations["is_current"].astype(bool)).sum()
     )
+
     report["total_observations"] = len(observations)
 
     return report
 
 
+# --------------------------------------------------
+# FORMAT EXECUTION REPORT
+# --------------------------------------------------
+
 def format_report(report):
     """Format the pipeline execution report."""
+
     lines = list(report["warnings"])
 
     lines.append(
@@ -575,7 +761,9 @@ def format_report(report):
     )
 
     for chain_id, stats in report["chains"].items():
+
         if stats["error"]:
+
             lines.append(
                 f"{chain_id:<10} "
                 f"{'-':>6} "
@@ -585,7 +773,9 @@ def format_report(report):
                 f"{'-':>9}  "
                 f"{stats['error']}"
             )
+
         else:
+
             lines.append(
                 f"{chain_id:<10} "
                 f"{stats['rows']:>6} "
@@ -596,11 +786,13 @@ def format_report(report):
             )
 
     if "history_snapshots" in report:
+
         lines.append("\nHistorical RAW snapshots:")
 
-        for chain, count in report["history_snapshots"].items():
+        for chain_id, count in report["history_snapshots"].items():
+
             lines.append(
-                f"  {chain}: {count}"
+                f"  {chain_id}: {count}"
             )
 
         lines.append(
@@ -613,10 +805,36 @@ def format_report(report):
             f"{report['historical_observations']}"
         )
 
+    if "processed_snapshots" in report:
+
+        processed = report["processed_snapshots"]
+
+        lines.append(
+            "\nProcessed historical snapshots:"
+        )
+
+        lines.append(
+            f"  New snapshots created: {processed['created']}"
+        )
+
+        lines.append(
+            f"  Existing snapshots preserved: {processed['skipped']}"
+        )
+
+        lines.append(
+            "  Total processed snapshots: "
+            f"{processed['created'] + processed['skipped']}"
+        )
+
     return "\n".join(lines)
 
 
+# --------------------------------------------------
+# MAIN EXECUTION
+# --------------------------------------------------
+
 if __name__ == "__main__":
+
     sys.stdout.reconfigure(encoding="utf-8")
 
     result = build()
@@ -635,4 +853,9 @@ if __name__ == "__main__":
 
     print(
         f"Wrote {HISTORY_CSV_PATH.relative_to(config.ROOT)}"
+    )
+
+    print(
+        "Processed historical snapshots saved in "
+        f"{HISTORY_DIR.relative_to(config.ROOT)}"
     )
