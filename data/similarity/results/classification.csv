@@ -1,0 +1,4 @@
+vectorizer,model,tau,delta,tune_n,tune_accuracy,tune_macro_f1,test_n,test_accuracy,test_accuracy_ci95,test_macro_f1,relevant_precision,relevant_recall
+tfidf,tfidf-char-3-5,0.12,0.01,300,0.727,0.534,97,0.711,0.61–0.79,0.542,0.912,0.852
+base,BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181,0.56,0.005,300,0.777,0.575,97,0.67,0.57–0.76,0.404,0.94,0.77
+finetuned,encoder_final@344f8753b9c2,0.19,0.01,300,0.69,0.55,97,0.701,0.60–0.78,0.511,0.875,0.918

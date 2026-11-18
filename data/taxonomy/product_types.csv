@@ -109,6 +109,8 @@ neg_aceite_conservas,aceite,(ruido) conservas en aceite,"atún, bonito, sardinas
 neg_aceite_salsas,aceite,(ruido) salsas y especias,"mayonesa, alioli, salsas, especias, colorante",1,
 neg_aceite_cosmetica,aceite,(ruido) cosmética,"aceite corporal, aceite esencial, rosa mosqueta",1,
 neg_aceite_otros,aceite,(ruido) otros,"verduras en conserva, pan con aceite, sal de frutas",1,
+neg_aceite_orujo,aceite,(ruido) aceite de orujo,"aceite de orujo de oliva",1,
+neg_aceite_alto_oleico,aceite,(ruido) girasol alto oleico,"aceite de girasol alto oleico para freír",1,
 detergente_liquido,detergente,Detergente líquido,detergente líquido para lavadora,0,LAVADO
 detergente_capsulas,detergente,Detergente en cápsulas,detergente en cápsulas para lavadora,0,LAVADO
 detergente_polvo,detergente,Detergente en polvo,detergente en polvo para lavadora,0,LAVADO

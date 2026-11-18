@@ -65,6 +65,9 @@ SEED = 42
 SIM_DIR = DATA_DIR / "similarity"
 SIM_RESULTS_DIR = SIM_DIR / "results"
 SIM_CACHE_PATH = DATA_DIR / "cache" / "embeddings_f16.parquet"
+SIM_ASSIGNMENTS_PATH = SIM_DIR / "assignments.csv"  # written by src.similarity.build, read by src.pipeline.build
+SIM_MATCHES_PATH = SIM_DIR / "matches.csv"
+SIM_CANONICAL_PATH = SIM_DIR / "canonical_products.csv"
 MODELS_DIR = ROOT / "models"  # gitignored: fine-tuned models live on Felipe's laptop only
 
 SIM = {
@@ -75,6 +78,7 @@ SIM = {
     "finetuned_path": MODELS_DIR / "encoder_final",
     "top_k": 50,
     "precision_target": 0.90,   # same-product matches, barcode pairs (spec §9b)
+    "equiv_precision_target": 0.85,  # equivalent level (Gemini silver, OOF): recall .79 vs .45 for the same-product decider at P .85 (18 Nov)
     "same_size_tol": 0.02,      # same product: size within ±2 %
     "strict_equiv_size_tol": 0.25,  # strict equivalent: smaller item ≥ 75 % of the bigger (up to 1.33×) — basket swaps
     "equiv_size_tol": 0.50,         # equivalent: smaller item ≥ 50 % of the bigger (up to 2×, 1 L ~ 1,5 L) — €/unit
@@ -82,4 +86,15 @@ SIM = {
     "high_confidence_t": 0.90,  # operating point 1: held-out P .95 / R .53; point 2 ("balanced") = precision_target rule
     "n_folds": 5,
     "judge_model": "gemini-3.8-flash",
+    # Type classifier for src.similarity.build. Engine τ/δ tuned on 300 Gemini labels (python -m src.similarity.classify →
+    # data/similarity/results/classification.csv). PROVISIONAL tfidf (18 Nov): the engine does not beat TF-IDF on the
+    # 97 hand labels, and the candidate type filter used for silver/audit came from TF-IDF types — awaiting Felipe.
+    # tfidf keeps the previous production τ .15 / δ .02: the Gemini-tuned τ .12 moved 524 products and Gemini judged
+    # the old type right in 118 / new in 46 of 200 of them (ledger, 18 Nov).
+    "classifier": "tfidf",
+    "classifier_thresholds": {
+        "tfidf": {"tau": 0.15, "delta": 0.02},
+        "base": {"tau": 0.56, "delta": 0.005},
+        "finetuned": {"tau": 0.19, "delta": 0.01},
+    },
 }
