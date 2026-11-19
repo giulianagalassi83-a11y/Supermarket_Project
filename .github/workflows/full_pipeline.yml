@@ -5,8 +5,7 @@ on:
   workflow_dispatch:
 
   schedule:
-    - cron: '30 6 * * 4'
-      timezone: 'Europe/Madrid'
+    - cron: '0 14 * * 4'
 
 permissions:
   contents: read
