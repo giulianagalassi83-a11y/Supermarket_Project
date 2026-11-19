@@ -1,0 +1,360 @@
+sample_key,name,rationale,model
+5d9640e5f0c3ce47,leche y bebidas refrescantes,El grupo combina variedades de leche envasada con refrescos amargos y tónicas consumidos habitualmente como bebidas no alcohólicas de despensa.,gemini-3.8-flash
+543cde1ee3c97753,agua mineral y gaseosa,"El grupo se compone principalmente de botellas de agua mineral (con gas y sin gas) de distintos tamaños, además de gaseosa.",gemini-3.8-flash
+6d060547be3dde6d,refrescos de cola zero,"Todos los productos listados son refrescos de cola sin azúcar (zero o light), tanto de marca líder como de distribuidor.",gemini-3.8-flash
+b51e0625d1ed632b,tintes de pelo permanentes,Todos los productos del grupo son tintes y coloraciones permanentes para el cabello en una variedad de tonos.,gemini-3.8-flash
+877e049292f7c97e,maquillaje para el rostro,"Todos los productos del grupo son cosméticos de Deliplus para la preparación, unificación y fijación del maquillaje facial, como bases, correctores, prebases y brumas fijadoras.",gemini-3.8-flash
+26cc65a16400b1f7,colorete y polvos faciales,"Todos los productos son cosméticos de maquillaje para el rostro de la marca Deliplus, específicamente coloretes, polvos fijadores y bronceadores.",gemini-3.8-flash
+dc75c1a397b1a44b,Pañales y pants absorbentes,La gran mayoría de los artículos son pañales y braguitas absorbentes tanto para bebés como para la incontinencia en adultos.,gemini-3.8-flash
+7ca40477db6628a2,pañuelos de papel,"Todos los artículos listados son pañuelos desechables de papel, tanto en formato de bolsillo como faciales en caja.",gemini-3.8-flash
+e16c0751adb072ab,tampones y protegeslips,"Todos los productos del grupo corresponden a artículos de higiene femenina diaria y menstrual, específicamente protegeslips y tampones.",gemini-3.8-flash
+6ff58db558b62299,detergentes para ropa y vajilla,"Todos los productos son artículos de limpieza para el hogar, principalmente detergentes para el lavado de ropa y lavavajillas a mano, junto con complementos de planchado o lavado como el agua destilada.",gemini-3.8-flash
+30d2e448d9170eb6,aceite de oliva,"Todos los productos del grupo son diferentes variedades, formatos o aromatizados de aceite de oliva.",gemini-3.8-flash
+cb6453c91528e9d6,compresas higiénicas,Todos los productos listados son compresas destinadas a la higiene íntima femenina y la absorción de flujo.,gemini-3.8-flash
+31c195d86bc712b7,desodorantes y antitranspirantes,"Todos los artículos son productos de higiene personal para el control del olor y la sudoración axilar en diversos formatos como roll-on, stick o piedra mineral.",gemini-3.8-flash
+6cbc95e1553d99d1,ambientadores e insecticidas para hogar,Reúne productos destinados a aromatizar los espacios del hogar y protegerlos mediante insecticidas y antipolillas.,gemini-3.8-flash
+6ce70f12c1f82018,comida húmeda para mascotas,"Todos los productos listados son raciones de alimento húmedo (patés, mousses, bocaditos y latas) destinadas tanto a perros como a gatos.",gemini-3.8-flash
+84b7f67319881259,fijadores y peinado del cabello,"Todos los productos del grupo son artículos dedicados al peinado, moldeado y fijación capilar como geles, espumas, lacas y protectores térmicos.",gemini-3.8-flash
+cfb288fc3a1414c2,maquillaje y cuidado de labios,"Todos los artículos son cosméticos destinados a maquillar, hidratar o dar brillo a los labios, como barras, brillos y bálsamos.",gemini-3.8-flash
+28da20ca8783be5a,aceites vegetales y de semillas,"El grupo reúne principalmente distintos aceites de origen vegetal y de semillas, tanto para uso culinario como cosmético.",gemini-3.8-flash
+bc4d2823411a1902,Aceite de oliva virgen extra,Todos los productos listados corresponden a aceite de oliva de categoría virgen o virgen extra en diferentes formatos y marcas.,gemini-3.8-flash
+42974ef8c372ad1a,comida para gatos de pescado,"Todos los productos son alimentos o snacks para gatos elaborados con variedades de pescado como salmón, atún, trucha o bacalao.",gemini-3.8-flash
+e39bfcf7a4e4187a,papel higiénico y celulosa,"Todos los productos pertenecen a la categoría de celulosa del hogar para higiene y limpieza, destacando principalmente el papel higiénico junto con servilletas y papel de cocina.",gemini-3.8-flash
+20c2a107b4b1cc81,papel de celulosa del hogar,"Todos los productos del grupo corresponden a artículos desechables de celulosa para el hogar, incluyendo papel higiénico, papel de cocina y servilletas.",gemini-3.8-flash
+3a1374706f2f660e,maquillaje de ojos,"La gran mayoría de los artículos son productos cosméticos para los ojos como perfiladores, sombras y máscara de pestañas, complementados con accesorios y sets de maquillaje.",gemini-3.8-flash
+ad611372c9f1330e,pintalabios mate Deliplus,Todos los productos listados son barras y fluidos de labios con acabado mate de la marca Deliplus en diversos tonos.,gemini-3.8-flash
+efc588bfd9d69c71,bebidas isotónicas,Todos los productos del grupo son bebidas isotónicas y para deportistas en diferentes sabores y formatos.,gemini-3.8-flash
+dce8a891fdafab19,Bebidas energéticas,"Todos los productos del grupo son latas de bebidas estimulantes y energéticas de diversas marcas y sabores, disponibles habitualmente en los supermercados.",gemini-3.8-flash
+71d1931361f61a65,Agua mineral natural sin gas,Todos los productos listados corresponden a botellas de agua mineral natural estándar sin gas.,gemini-3.8-flash
+839d325fde001be3,agua mineral sin gas,"Todos los productos del grupo corresponden a botellas de agua envasada, principalmente agua mineral natural de consumo diario.",gemini-3.8-flash
+41c697f7ce76395a,queso crema para untar,Todos los productos del grupo son quesos de textura untable o cremosa que habitualmente se compran en tarrina.,gemini-3.8-flash
+c3cb385ac7b0a45d,encurtidos y pepinillos,"Todos los productos del grupo son conservas vegetales en vinagre típicas del aperitivo español, como pepinillos, cebollitas, piparras y banderillas.",gemini-3.8-flash
+7bf5f63e3c12439b,aceitunas y encurtidos,"Todos los productos listados son diferentes variedades de aceitunas (verdes, negras, con o sin hueso, rellenas o aliñadas), pertenecientes a la categoría común de aceitunas y encurtidos de aperitivo.",gemini-3.8-flash
+3a8170dd7eed3067,lácteos La Colmenareña,"Todos los productos del grupo pertenecen a la misma marca tradicional y consisten principalmente en leches (frescas, enteras, desnatadas y semidesnatadas) y un derivado lácteo como la cuajada.",gemini-3.8-flash
+6800d5f933ea9538,comida húmeda para mascotas,"Todos los productos son alimentos húmedos en formatos como paté, trozos en salsa o gelatina destinados tanto a perros como a gatos adultos.",gemini-3.8-flash
+484875fa23a493b7,vinagres especiales y cremas,"El grupo incluye vinagres de manzana, balsámicos de Módena y cremas aromatizadas que van más allá del vinagre blanco o de vino común.",gemini-3.8-flash
+c06c0cd2515d141d,caramelos y gominolas,"Todos los productos del grupo corresponden a golosinas de confitería como caramelos duros, blandos, balsámicos y gominolas.",gemini-3.8-flash
+d30288c33327fe6b,conservas de atún y bonito,"Todos los productos listados son conservas en lata de atún claro o bonito del norte en diferentes coberturas como aceite de oliva, tomate o al natural.",gemini-3.8-flash
+6f2ab5ded024c9df,bonito del norte en conserva,"Todos los productos listados son conservas de bonito en lata o tarro con diferentes coberturas como aceite de oliva, girasol o escabeche.",gemini-3.8-flash
+4f57945ca84fb2fb,refrescos de cola zero,"Todos los artículos son bebidas refrescantes de sabor cola, en su gran mayoría en versión zero azúcar o sin cafeína, de marcas como Coca-Cola y marca blanca.",gemini-3.8-flash
+0b2f41837b43a2fd,lácteos digestivos con bífidus,Todos los productos son leches o yogures diseñados para favorecer la digestión mediante bífidus o prebióticos añadidos.,gemini-3.8-flash
+513ea2070eda2cff,maquinillas y recambios de afeitar,"Todos los productos del grupo son maquinillas de afeitar o depilar, ya sean desechables o recargables, así como sus correspondientes recambios de cuchillas.",gemini-3.8-flash
+ffcdd839ac20c730,postres y bebidas vegetales,"Todos los productos son alternativas lácteas de origen 100% vegetal, abarcando principalmente bebidas y postres a base de soja, almendra o arroz.",gemini-3.8-flash
+7c9850a82015a1ae,leche entera,Casi todos los productos de la lista son envases o formatos de leche entera líquida de distintas marcas.,gemini-3.8-flash
+7d2a9bbe5ce37710,infusiones y tés,"Todos los productos del grupo corresponden a diferentes tipos de tés, plantas medicinales e infusiones preparados para el consumo en agua caliente.",gemini-3.8-flash
+e57eb063edb9663c,higiene bucal y dental,"Todos los productos del grupo están destinados al cuidado, limpieza y mantenimiento bucodental, abarcando cepillos, enjuagues y accesorios para prótesis.",gemini-3.8-flash
+c76fe73de1832b1e,leche condensada y postres dulces,"La gran mayoría de los productos son leches condensadas, dulce de leche y postres lácteos dulces de marcas tradicionales como La Lechera.",gemini-3.8-flash
+80aca721fb4d3b50,leche y productos lácteos,"Todos los artículos del grupo son productos lácteos básicos habituales de la cesta de la compra, como leche, nata, mantequilla y queso mozzarella.",gemini-3.8-flash
+1ead20f13002e962,café en cápsulas,Todos los productos del grupo son cápsulas individuales de café y complementos monodosis para cafeteras.,gemini-3.8-flash
+71e6827a16239665,café en cápsulas,Todos los productos son variedades de café en formato monodosis para cafeteras de cápsulas.,gemini-3.8-flash
+a38b6e5b6f4bfa58,Comida y snacks para mascotas,"La gran mayoría de los productos son snacks y alimentos preparados para animales domésticos como perros, gatos y periquitos.",gemini-3.8-flash
+de1703252fa1592b,pasta de dientes,Todos los productos del grupo son dentífricos diseñados para la higiene bucodental diaria en diferentes formatos y variedades.,gemini-3.8-flash
+caf1baf6b7d68cfe,geles y productos de baño,Todos los artículos corresponden a productos para la higiene corporal y accesorios utilizados durante el baño o la ducha.,gemini-3.8-flash
+b459b0c972292809,toallitas húmedas e higiene,"La mayoría de los productos son toallitas húmedas de distintos tipos (para bebé, baño o cristales), complementados con artículos de higiene íntima.",gemini-3.8-flash
+2ab92766380232c6,protectores solares y cuidado corporal,"La gran mayoría de los productos son protectores y leches solares, complementados por artículos de hidratación e higiene corporal.",gemini-3.8-flash
+6f17c607ce80aeba,suavizantes y perfumadores para ropa,Todos los productos son aditivos de lavado diseñados para aportar suavidad y aroma a los tejidos durante el ciclo de aclarado.,gemini-3.8-flash
+f02ecbb1fe98e147,pasta de dientes,Todos los artículos listados son dentífricos y pastas dentales diseñados para la higiene bucal diaria.,gemini-3.8-flash
+6cfba30e38505dea,pasta de dientes,Todos los artículos listados son dentífricos o pastas dentales en distintos formatos y variedades para la higiene bucal diaria.,gemini-3.8-flash
+32acfbf7700055ae,pasta de dientes,Todos los artículos listados son dentífricos o pastas dentales destinadas a la higiene bucal diaria.,gemini-3.8-flash
+058bb4821064ee01,lácteos y yogures Pastoret,"Todos los productos pertenecen a la marca Pastoret y abarcan su gama de yogures, kéfir y requesón artesanal.",gemini-3.8-flash
+45f5233a020d776b,leche de vaca,"Todos los productos del grupo son envases individuales o packs de leche clásica de vaca en sus distintas variedades (entera, semidesnatada y desnatada).",gemini-3.8-flash
+b861c8cd1a79dd57,leche de vaca,"Todos los productos del grupo son diferentes variedades (entera, semidesnatada, desnatada o sin lactosa) de leche de vaca envasada de consumo diario.",gemini-3.8-flash
+ec60397625789feb,quesos franceses,"Todos los productos del grupo son variedades tradicionales de queso de origen francés como el camembert, brie, roquefort y comté.",gemini-3.8-flash
+0079e623cdf535ad,yogures con bífidus,"Todos los productos del grupo corresponden a yogures enriquecidos con bífidus o fermentos probióticos similares, tanto en sus variantes naturales como desnatadas o con frutas y cereales.",gemini-3.8-flash
+82a4e05aa798bedb,yogures bífidus,"Todos los artículos son leches fermentadas de tipo bífidus con probióticos, presentados en diversos sabores y variedades naturales.",gemini-3.8-flash
+504ec75a84e630ed,sardinas y sardinillas en conserva,Todos los productos del grupo son conservas de pescado que contienen sardinas o sardinillas en distintos tipos de aceite o salsas como el tomate.,gemini-3.8-flash
+6f2da673fcfae15d,zumos y bebidas de frutas,"Todos los productos listados corresponden a la categoría habitual de zumos, néctares y bebidas a base de fruta que un comprador busca juntos en el supermercado.",gemini-3.8-flash
+7fcafa9515f5ddd4,kéfir y leches fermentadas,"Todos los productos del grupo son diferentes variedades de kéfir, un lácteo fermentado muy popular que abarca versiones naturales, de sabores o elaboradas con leche de cabra u oveja.",gemini-3.8-flash
+a326f098477221c4,natas y cremas para cocinar,"El grupo incluye natas líquidas, natas montadas y alternativas vegetales destinadas principalmente a cocinar y repostería.",gemini-3.8-flash
+6bb56d5dda086c4e,esmaltes y tratamientos de uñas,"Todos los productos del grupo son lacas de uñas de color o tratamientos de base, acabado y cuidado para la manicura.",gemini-3.8-flash
+172c3b016253effa,productos de afeitado y depilación,Todos los artículos son productos y accesorios destinados a la eliminación o el afeitado del vello facial y corporal.,gemini-3.8-flash
+52f4de24774b58b2,Mantequillas y margarinas,"Todos los productos del grupo corresponden a grasas para untar o cocinar, abarcando tanto mantequillas tradicionales como diferentes variedades de margarinas.",gemini-3.8-flash
+88aa88b6ebe7d708,bebidas vegetales,"Todos los productos del grupo son alternativas vegetales a la leche elaboradas a base de avena, almendra, soja o arroz.",gemini-3.8-flash
+ef51d9072fbee723,conservas de pescado y marisco,Todos los productos listados son conservas en lata de pescados como atun o salmon y cefalopodos como pota o chipirones.,gemini-3.8-flash
+e23671979d4be694,sardinas y sardinillas en conserva,Todos los productos del grupo son conservas en lata de sardinas o sardinillas preparadas en diferentes salsas y aceites.,gemini-3.8-flash
+26c4e492e4790142,refrescos y bebidas energéticas zero,"El grupo está compuesto principalmente por bebidas energéticas Monster y refrescos 7 Up, destacando en su mayoría las versiones sin azúcar o zero.",gemini-3.8-flash
+936ecb0bb80671a7,bebidas energéticas Red Bull,"Todos los productos del grupo corresponden a diferentes variedades, tamaños y sabores de la bebida energética de la marca Red Bull.",gemini-3.8-flash
+ba3b06be4659bc37,helados y hielo,"Todos los artículos pertenecen a la sección de congelados dulces y refrescantes, abarcando una amplia variedad de helados, granizados y hielo picado.",gemini-3.8-flash
+c5bfc18032276295,pañales para bebé,Todos los productos del grupo corresponden a pañales infantiles de diferentes marcas y tallas clasificados por peso.,gemini-3.8-flash
+a38aa5f16df1c8c6,pañales para bebé,Todos los productos del grupo son pañales y braguitas de aprendizaje de diversas tallas destinados al uso en bebés y niños pequeños.,gemini-3.8-flash
+cdf9b5b2910a923a,tortitas de arroz y maíz,"La gran mayoría de los productos son tortitas infladas de arroz o maíz con diferentes sabores o coberturas, siendo la morcilla un error puntual de coincidencia por la palabra arroz.",gemini-3.8-flash
+8c47828510d6e5be,sazonadores y mezclas de especias,Todos los productos son preparados o mezclas específicas de especias destinados a sazonar diferentes tipos de platos.,gemini-3.8-flash
+aed342431a81a728,pienso para perros y gatos,Todos los productos del grupo son alimentos secos (pienso) destinados a la alimentación de gatos y perros de diferentes edades y necesidades.,gemini-3.8-flash
+fda142741a356d55,colonias y perfumes,"Todos los artículos de la lista corresponden a fragancias, aguas de colonia, perfumes y estuches de perfumería para uso diario o infantil.",gemini-3.8-flash
+97c587173613b46c,perfumes y colonias,"Todos los artículos listados son fragancias corporales, eau de parfum o mists tanto para mujer como para hombre.",gemini-3.8-flash
+7f5da32d9a2c8288,caldos y sopas preparados,"Todos los productos son caldos y sopas para cocinar o consumir directamente, presentados en formatos como brik, sobres o pastillas.",gemini-3.8-flash
+4f6948f62bb9fb14,garbanzos cocidos y platos preparados,"Todos los productos son garbanzos en conserva listos para consumir, ya sea al natural o como platos preparados tradicionales.",gemini-3.8-flash
+49d2c541397ce867,garbanzos secos envasados,Todos los productos del grupo corresponden a diferentes variedades y selecciones de garbanzos secos empaquetados para la venta.,gemini-3.8-flash
+ca11450c4903d063,papillas y cereales infantiles,"Todos los productos son preparados alimenticios infantiles para bebés a partir de 6 meses, que incluyen papillas y combinaciones de leche con cereales.",gemini-3.8-flash
+8d1790a1de3d4e60,cacao soluble y a la taza,Todos los productos son preparados de cacao o chocolate para disolver en leche o preparar a la taza.,gemini-3.8-flash
+3fb2acbcfb76d928,cacao soluble en polvo,Todos los productos del grupo corresponden a preparados de cacao en polvo solubles destinados a disolverse en leche o agua.,gemini-3.8-flash
+6ee4748b3c750935,conservas de marisco y cefalópodos,"Todos los artículos son conservas en lata listas para consumir elaboradas a base de moluscos y cefalópodos como calamares, mejillones o zamburiñas.",gemini-3.8-flash
+4d3784069cd81b7e,conservas de mejillones,"Todos los productos listados son mejillones enlatados en conserva, preparados principalmente en escabeche o vinagreta.",gemini-3.8-flash
+e608565cf82c90d1,vinos y derivados,"La gran mayoría de los productos son vinos tintos, dulces o frizzantes, junto con bebidas derivadas de la uva como el tinto de verano y el vinagre de vino.",gemini-3.8-flash
+d06ff628f0ffcd64,desechables y conservación de alimentos,"Todos los artículos corresponden a productos desechables o reutilizables del hogar destinados a la preparación, envasado, conservación de alimentos o eventos.",gemini-3.8-flash
+8d0fc31df5da290e,útiles y guantes de limpieza,"Todos los productos son accesorios y utensilios manuales para la limpieza del hogar, tales como bayetas, estropajos y guantes protectores.",gemini-3.8-flash
+bc2e5fe1b948a954,lentejas cocidas en conserva,Todos los productos del grupo corresponden a lentejas ya cocidas y listas para consumir envasadas en bote o frasco.,gemini-3.8-flash
+e5e4beb2e2642de3,lentejas secas envasadas,Todos los productos del grupo corresponden a diferentes variedades y formatos de lentejas secas listas para cocinar envasadas en bolsa o paquete.,gemini-3.8-flash
+73e6a33de16a1e11,alubias cocidas y fabada,"Todos los productos del grupo son conservas de alubias listas para consumir, ya sean al natural en bote o en plato preparado de fabada.",gemini-3.8-flash
+08d2657df6101168,alubias secas,Todos los productos del grupo corresponden a diferentes variedades y formatos de alubias envasadas en seco para cocinar.,gemini-3.8-flash
+4ee17279889eeab0,quesos con denominación de origen,Todos los productos del grupo son diversas variedades de quesos tradicionales reconocidos con sellos de denominación de origen protegida (DOP).,gemini-3.8-flash
+44e3eef278943ff4,Botiquín y primeros auxilios,"Todos los productos son artículos de cuidado básico de la salud, curas y primeros auxilios que comúnmente se guardan en el botiquín del hogar.",gemini-3.8-flash
+2534dd218bdbb474,parafarmacia y complementos alimenticios,Todos los productos corresponden a artículos de parafarmacia que abarcan suplementos nutricionales para la salud y productos de salud sexual.,gemini-3.8-flash
+4c816a16a63369b5,snacks y fruta infantil,"Todos los productos son alimentos infantiles basados en frutas, lácteos y snacks saludables (tarritos, pouches, barritas y galletitas) pensados para bebés a partir de 4 a 6 meses.",gemini-3.8-flash
+68cf2744549365bd,purés de frutas infantiles,"La mayoría de los artículos son tarritos, bolsitas pouch y purés de frutas orientados a la alimentación infantil o snacks de fruta triturada.",gemini-3.8-flash
+857851a87545a340,pan tostado y colines,"Todos los productos pertenecen a la categoría de panes secos, crujientes o snacks horneados para picar o acompañar aperitivos.",gemini-3.8-flash
+8cb76dc8edce44d3,patatas y aperitivos salados,"La gran mayoría de los productos son snacks, patatas fritas y aperitivos salados variados para picar entre horas.",gemini-3.8-flash
+11c1bc9981b2fe88,chicles de sabores,"Todos los productos del grupo son chicles o gomas de mascar en diversos formatos y sabores como menta, fresa, frutas o hierbabuena.",gemini-3.8-flash
+3f540b60d6e592f7,"mermeladas, confituras y mieles","El grupo incluye una selección de productos dulces para untar típicos del desayuno, principalmente mermeladas y confituras de frutas y variedades de miel.",gemini-3.8-flash
+68145d170aca47e7,café frío para llevar,Son bebidas refrigeradas listas para consumir a base de café o té con leche en formatos individuales para llevar.,gemini-3.8-flash
+e43d5235287edd2f,cefalópodos congelados y descongelados,"Todos los productos del grupo son diversas variedades y cortes de cefalópodos, como calamar, sepia, pota o pulpo, comercializados principalmente en formato congelado o descongelado.",gemini-3.8-flash
+7be7a81df9242981,quesos frescos y para untar,"Todos los productos del grupo corresponden a quesos de consistencia blanda, cremosa o fresca como el queso de Burgos, ricota, untables y cremas de queso.",gemini-3.8-flash
+d17fa4bf7c78bd14,quesos curados y semicurados,"Todos los productos pertenecen a la categoría de quesos curados, semicurados o tiernos de mesa listos para consumir en cuñas, dados o piezas.",gemini-3.8-flash
+c1a00d5c2a7160a6,frutas tropicales y exóticas,"Todos los productos listados son frutas frescas clasificadas comercialmente como tropicales o exóticas, habituales en esa sección de la frutería.",gemini-3.8-flash
+4413e90c675ab8ea,tomate frito,"Todos los productos listados corresponden a distintas variedades, formatos y recetas de tomate frito listo para consumir.",gemini-3.8-flash
+d22128abbedac5e7,dulces tradicionales de Navidad,"Todos los productos son especialidades de repostería típica navideña española, tales como mazapanes, mantecados, polvorones y hojaldradas.",gemini-3.8-flash
+8410b2d45536bfb9,frutos secos y aperitivos,"Todos los productos del grupo son snacks para picar, compuestos principalmente por frutos secos, semillas y palomitas de maíz.",gemini-3.8-flash
+c1672d0e56e2297e,turrones y bombones navideños,Todos los productos del grupo son dulces típicos navideños compuestos principalmente por diversas variedades de turrones y cajas de bombones.,gemini-3.8-flash
+8923783672d9967b,café soluble y sucedáneos,Todos los productos listados son cafés solubles e instantáneos o sustitutos a base de cereales solubles.,gemini-3.8-flash
+d3b5cce2f6ce00f5,leche y bebidas lácteas desnatadas,Todos los productos del grupo corresponden a leche desnatada o preparados lácteos líquidos funcionales y desnatados (como los enriquecidos con omega 3).,gemini-3.8-flash
+2871b57018e4d50b,mayonesa y salsas mayonesa,"Todos los productos del grupo son diferentes variedades, formatos y presentaciones de salsa mayonesa.",gemini-3.8-flash
+1c6023a9b51fca23,sal y sazonadores,"Todos los artículos corresponden a diferentes variedades y formatos de sal para cocinar y condimentar, como sal marina, fina, gruesa y en escamas.",gemini-3.8-flash
+17bcf669dda8581b,azúcar y edulcorantes,"Todos los productos del grupo son diferentes tipos de endulzantes, incluyendo azúcar blanco, moreno, glas, panela y edulcorantes artificiales o naturales.",gemini-3.8-flash
+d99f39d4066b2703,gominolas y golosinas variadas,"Todos los productos del grupo corresponden a diferentes tipos de chuches, gominolas y caramelos de goma comunes en los supermercados españoles.",gemini-3.8-flash
+f4b8b95b8f6a1e0f,pienso para perros y gatos,Todos los productos del grupo corresponden a comida seca o pienso para la alimentación diaria de perros y gatos.,gemini-3.8-flash
+17c78183f74e1e16,comida para mascotas con pollo,La lista reúne alimentos principalmente secos para perros y gatos que comparten el pollo como ingrediente principal.,gemini-3.8-flash
+7d547d245fe09be5,tartas y postres congelados,Todos los productos listados son tartas y postres dulces de la seccion de congelados del supermercado.,gemini-3.8-flash
+c50b36e108bf7977,yogures naturales,"Todos los productos listados son variantes de yogur en formato natural, incluyendo opciones azucaradas, proteicas o elaboradas con leche de cabra y oveja.",gemini-3.8-flash
+b0171c3d438cc45b,vinagres y aderezos ácidos,"La mayoría de los productos son vinagres, reducciones y zumos de limón utilizados como condimentos ácidos, junto a algunas bebidas ácidas o fermentadas afines.",gemini-3.8-flash
+30c57238ef6f15d7,harinas y pan rallado,"El grupo está compuesto principalmente por distintos tipos de harina para cocinar y hornear, complementado con pan rallado y tapioca que pertenecen a la misma categoría de despensa básica para rebozados y repostería.",gemini-3.8-flash
+bbfce3bf13641577,harinas y preparados para repostería,Todos los productos listados son harinas de diferentes cereales o legumbres y preparados en polvo destinados a cocinar o elaborar repostería.,gemini-3.8-flash
+b157efa7ee5d9548,quesos blandos y rulos,"Todos los productos del grupo son quesos especiales de pasta blanda, rulos de cabra o vaca y variedades gourmet para aperitivo.",gemini-3.8-flash
+3cfda21005e14182,tomates frescos y en conserva,El grupo incluye tanto variedades de tomates frescos de frutería como distintas presentaciones de tomate procesado en lata o tarrina.,gemini-3.8-flash
+eb8be93844675cdc,tomate frito y conservas de tomate,"Todos los productos son preparados o conservas a base de tomate en diferentes variedades como frito, triturado, concentrado o en aceite.",gemini-3.8-flash
+eddd23b717bd114a,flanes y gelatinas refrigerados,Todos los productos del grupo son postres lácteos y refrigerados individuales que se dividen claramente entre variedades de flanes y gelatinas de sabores.,gemini-3.8-flash
+cd1d8a64aebdb0e2,café molido y en grano,"Todos los productos listados corresponden a variedades de café natural, mezcla o descafeinado, presentados tanto molidos como en grano para cafetera.",gemini-3.8-flash
+083c1ff1e015f498,café molido y soluble,"Todos los productos son variedades de café envasado para consumo doméstico, principalmente molido y soluble de tueste natural o mezcla.",gemini-3.8-flash
+7f9dd5c63689adaa,agua con gas y saborizada,El grupo engloba principalmente diferentes formatos de agua con gas junto con aguas vitaminadas y con sabores agregados.,gemini-3.8-flash
+4c8693fac28ab118,detergente en polvo y pastillas,"Todos los productos del grupo son formatos sólidos y unidosis de detergente para lavadora, principalmente en polvo y cápsulas o pastillas.",gemini-3.8-flash
+61c9960243dc0603,queso fundido en porciones,"Todos los productos son formatos de queso fundido de porciones individuales, quesitos y snacks untables de la misma categoría de lácteos procesados.",gemini-3.8-flash
+78ca0484bf89f0e8,setas y champiñones,"Todos los productos de la lista corresponden a diferentes variedades y formatos, tanto frescos como en conserva, de champiñones y setas comestibles.",gemini-3.8-flash
+fbecb4cc0daf5c4e,ingredientes para repostería,"Todos los productos son ingredientes comúnmente utilizados para elaborar y decorar postres o productos de panadería casera, como levaduras, gelatinas y chocolates para fundir.",gemini-3.8-flash
+430cc432aba493be,repostería y decoración de tartas,"Todos los productos son ingredientes, preparados o accesorios utilizados habitualmente para la elaboración y decoración casera de tartas y postres.",gemini-3.8-flash
+5884b662f8ade7a6,cremas dulces para untar,"Todos los productos pertenecen a la categoría de cremas dulces untables a base de cacao, frutos secos o leche utilizadas habitualmente en desayunos y meriendas.",gemini-3.8-flash
+e4b07896b154ec77,refrescos de frutas y té,"Todos los productos son bebidas refrescantes sin alcohol elaboradas a base de zumo de frutas o extractos de té, predominantemente sin gas.",gemini-3.8-flash
+d335b16a3207b02e,refrescos con gas cítricos,"Todos los productos listados son refrescos con gas de sabores cítricos como limón, lima-limón y naranja.",gemini-3.8-flash
+e6c915baa9138129,cereales de desayuno,Todos los productos del grupo son diferentes variedades y formatos de cereales para tomar en el desayuno.,gemini-3.8-flash
+455440f78c374c7d,cereales muesli y copos,"Todos los productos son variedades de cereales de desayuno que combinan muesli, copos integrales, semillas o chocolate.",gemini-3.8-flash
+efc7d5fd77777b3c,picos y palitos de pan,"Todos los productos son variedades de pan tostado o crujiente como picos, regañás, grissini y picatostes típicamente consumidos como aperitivo o acompañamiento.",gemini-3.8-flash
+0701b2330d2d46fd,"colines, picos y rosquilletas","Todos los productos son variedades de pan tostado crujiente y aperitivos secos de panadería como rosquilletas, saladitos y grissini.",gemini-3.8-flash
+f664b17a8f17087e,tratamientos y mascarillas capilares,"Todos los productos del grupo son tratamientos específicos para el cuidado y reparación del cabello, como mascarillas, sérums y aceites capilares.",gemini-3.8-flash
+060ca65bbb66f12a,cuidado y lavado capilar,"Todos los productos del grupo son champús, acondicionadores y mascarillas diseñados para la higiene y el tratamiento del cabello.",gemini-3.8-flash
+ec3b4e074d2f9968,patés y cremas untables,"Todos los productos del grupo son pastas untables para aperitivo, tales como patés de carne, pescado o vegetales, foie gras y sobrasadas.",gemini-3.8-flash
+41029a4685441701,aceite de girasol,"La gran mayoría de los productos son botellas o garrafas de aceite de girasol, compartiendo el uso del girasol como ingrediente o base común.",gemini-3.8-flash
+fd90da402ec4facb,detergente en cápsulas y monodosis,"Todos los productos del grupo son formatos monodosis prelavado para la ropa, principalmente cápsulas, pods, pastillas o tiras de detergente.",gemini-3.8-flash
+3a6465f84dbda8e4,agua mineral y micelar,El grupo combina principalmente botellas de agua mineral para consumo y productos de agua o aceite micelar para el cuidado facial.,gemini-3.8-flash
+75f636a10c1ee415,kéfir natural y de sabores,"Todos los productos listados corresponden a distintas variedades de kéfir lácteo, tanto de cabra como de vaca, naturales o con sabores.",gemini-3.8-flash
+7d07a9af66b8fc32,barritas de chocolate y barquillo,"Todos los productos listados son barritas dulces individuales bañadas en chocolate o rellenas de barquillo y crema, típicas de la sección de chocolatinas y snacks dulces.",gemini-3.8-flash
+a2734aee57944268,barritas de cereales,"Todos los productos del grupo son barritas elaboradas a base de cereales (muesli, avena) con distintos sabores y agregados como chocolate o frutos rojos.",gemini-3.8-flash
+9cc5d9187c3efda8,batidos y bebidas lácteas,La gran mayoría de los productos son batidos de sabores y preparados lácteos líquidos listos para tomar.,gemini-3.8-flash
+0f14626046fa5c5c,queso fresco,"Todos los productos del grupo pertenecen a la categoría de quesos frescos no madurados, presentados en diversos formatos como tarrinas, batidos o porciones individuales.",gemini-3.8-flash
+48e74cac0dd0457a,leche sin lactosa,La gran mayoría de los productos de la lista son envases de leche de vaca sin lactosa en diferentes variedades de desnatado.,gemini-3.8-flash
+b2f732535f9bd04b,huevos de gallina,Todos los productos del grupo son huevos de gallina frescos o cocidos en diferentes formatos y tipos de cría.,gemini-3.8-flash
+cb5c89948ed0d5b2,galletas de barquillo rellenas,"Todos los productos del grupo son barquillos u obleas dulces, la mayoría rellenos de nata, chocolate u otras cremas.",gemini-3.8-flash
+9a583980570ee583,detergente líquido para lavadora,Todos los productos del grupo son detergentes en formato líquido o gel destinados al lavado de ropa en lavadora.,gemini-3.8-flash
+b91dce8413012abe,queso rallado,Todos los productos listados son diferentes variedades y formatos de queso rallado o en polvo listos para usar en cocina.,gemini-3.8-flash
+deff649319c317ac,queso en lonchas y rallado,"Todos los productos son quesos procesados o preparados para consumo directo y cocina, predominando las opciones en lonchas, rallados y porciones fundidas.",gemini-3.8-flash
+8e5968e195e09d68,salchichas cocidas tipo Frankfurt,"Todos los productos listados son salchichas cocidas envasadas de estilo Frankfurt, Viena o perrito caliente comúnmente consumidas en bocadillos o platos rápidos.",gemini-3.8-flash
+51808d471260c764,Bacon y panceta curada,"Todos los productos son cortes curados o ahumados de panceta de cerdo, presentados en lonchas, tiras, tacos o piezas listas para cocinar.",gemini-3.8-flash
+22a123edd1edc396,leche entera,Todos los productos del grupo son formatos de leche entera líquida en botella o brik.,gemini-3.8-flash
+1329ec08adcafe82,productos Alcampo Cultivamos lo Bueno,La mayoría de los artículos pertenecen a la gama de productos frescos y ecológicos de la marca Alcampo Cultivamos lo Bueno.,gemini-3.8-flash
+07708bab407ddbf9,fruta en conserva,Todos los productos listados son frutas enlatadas o envasadas conservadas en almíbar o en su jugo.,gemini-3.8-flash
+61203a9e8f9fda04,fruta fresca de pepita,"Todos los productos del grupo corresponden a frutas frescas comunes de mesa como manzanas, peras y uvas.",gemini-3.8-flash
+c52fa75c77419cff,queso rulo de cabra,"Todos los productos son variantes y formatos de queso de cabra en forma de rulo o medallón, tanto naturales como aromatizados o al corte.",gemini-3.8-flash
+dea379c166f2a232,refrescos y bebidas saborizadas,"Casi todos los productos del grupo son bebidas refrescantes y saborizadas a base de frutas (como limón, naranja o manzana), tanto con gas como sin gas o isotónicas.",gemini-3.8-flash
+5b343cf5bf007e33,patatas y aperitivos de patata,"Todos los productos del grupo son patatas en distintos formatos, desde patatas frescas y guarniciones hasta patatas fritas y aperitivos salados.",gemini-3.8-flash
+865a46c9acdd14f5,galletas con chocolate,"Todos los productos del grupo son galletas que incorporan chocolate, ya sea como relleno, cobertura o tableta.",gemini-3.8-flash
+0885d103fea97673,salmón y productos con salmón,"La mayoría de los productos son cortes frescos, congelados, ahumados o platos preparados a base de salmón (incluyendo sushi), con la inclusión puntual de salmonete por similitud léxica.",gemini-3.8-flash
+f7a44187b1973d56,queso en lonchas,Todos los productos del grupo son diferentes variedades de quesos presentados en formato de lonchas.,gemini-3.8-flash
+f74aac4718479c64,Queso en porciones,La gran mayoría de los productos son quesos fundidos o tiernos presentados en formato individual o porciones para untar o picar.,gemini-3.8-flash
+052f8ba57b61a2fb,dulces navideños y panettones,"Todos los productos son especialidades de repostería y dulces tradicionales típicamente consumidos durante las fiestas de Navidad, destacando una amplia variedad de panettones y dulces navideños.",gemini-3.8-flash
+d44a980149ae4479,pastas de té y repostería,Todos los productos son especialidades de repostería seca y pastas tradicionales para acompañar bebidas calientes o de sobremesa.,gemini-3.8-flash
+3ab3a9337a2793d3,arroz envasado y vasitos,"Todos los productos pertenecen a la categoría básica de arroz, abarcando tanto variedades secas en paquete como opciones listas para calentar en vasitos.",gemini-3.8-flash
+c6cdd7bd6535de8e,"bizcochos, magdalenas y sobaos","Todos los productos son piezas tradicionales de repostería y bollería horneada como magdalenas, bizcochos y sobaos, comúnmente consumidas en desayunos o meriendas.",gemini-3.8-flash
+99c4636e9c15e53c,bollería y empanadillas,"Todos los productos pertenecen a la sección de panadería tradicional y bollería horneada del supermercado, combinando piezas de masa dulce y empanadas saladas listas para consumir.",gemini-3.8-flash
+4e57c6fbfe956a06,conservas de bonito del norte,"Todos los productos del grupo son conservas de pescado en lata o tarro, compuestas casi en su totalidad por bonito del norte presentado en diversos aceites, salsas y formatos.",gemini-3.8-flash
+d7365c73415176af,conservas y semiconservas de pescado,"Todos los productos son preparados o filetes de pescados como anchoas, boquerones, caballa o melva en aceite, vinagre o salsa, presentados habitualmente en lata o frasco.",gemini-3.8-flash
+f793e905ab408e6e,Aceites de oliva y condimentos,"Todos los productos del grupo son aceites de oliva en diversos formatos y calidades, o condimentos y preparados elaborados con esta misma base.",gemini-3.8-flash
+195ae6264889508d,Huevos y derivados,"Todos los artículos comparten la palabra clave o la forma del huevo, abarcando desde huevos frescos, hilados y huevas de pescado, hasta huevos de chocolate o accesorios para cocinarlos.",gemini-3.8-flash
+d45c8743f67c88e8,quesos de leche pasteurizada,Todos los productos son diferentes variedades de quesos que comparten la característica explícita de estar elaborados con leche pasteurizada.,gemini-3.8-flash
+400212de17884ed5,leche semidesnatada,Todos los productos listados corresponden a diferentes marcas y formatos de leche semidesnatada.,gemini-3.8-flash
+3410f8b35e687f9d,leche enriquecida con calcio,"La gran mayoría de los productos de la lista corresponden a leche de vaca enriquecida específicamente con calcio, tanto en variedades desnatadas como semidesnatadas.",gemini-3.8-flash
+5a44c83d0013436e,huevos frescos de gallina,Todos los productos listados son envases de huevos frescos de gallina de diversas clases y metodos de cria comunes en los supermercados espanoles.,gemini-3.8-flash
+33e364de0811e70f,huevos de gallina,"La gran mayoría de los productos son envases de huevos de gallina frescos o cocidos de diferentes calibres y tipos de cría, con un postre elaborado a base de estos.",gemini-3.8-flash
+4e228eb6660d6554,panceta y productos curados,"La gran mayoría de los productos son cortes curados y adobados de panceta y papada de cerdo, complementados por carnes para cocinar.",gemini-3.8-flash
+7c2684fb6110cffe,masas frescas y bases,"Todos los productos son masas refrigeradas listas para cocinar, como hojaldre, empanadillas o bases de pizza.",gemini-3.8-flash
+2968d2ce3ae0b70d,pan de hamburguesa y perritos,"La mayoria de los articulos son variedades de panes especiales tiernos destinados a la elaboracion de hamburguesas, perritos calientes y comidas rapidas similares.",gemini-3.8-flash
+964f4bc54ae5ca79,bebidas lácteas para colesterol,Todos los productos listados son lácteos bebibles o leches fermentadas diseñados específicamente con esteroles vegetales para ayudar a reducir el colesterol.,gemini-3.8-flash
+227cdf1701910d64,ensaladas y verduras de hoja,"La mayoría de los artículos son lechugas, brotes y bolsas de ensalada listas para consumir de la sección de frescos.",gemini-3.8-flash
+b2e6b4e538730ef1,espárragos blancos en conserva,Todos los productos son conservas de espárragos blancos (enteros o yemas) presentados en frascos o latas listos para consumir.,gemini-3.8-flash
+e16900b1a5a8ae1b,postres lácteos y refrigerados,"Todos los productos son postres dulces individuales que se conservan en frío, como mousses, copas, panna cottas y tartas.",gemini-3.8-flash
+3117a5dc6471f39e,natillas y postres de cuchara,"Todos los productos son postres lácteos refrigerados tradicionales de textura cremosa que se comen con cuchara, destacando las natillas y cremas.",gemini-3.8-flash
+05b86ee8855b6aba,leche semidesnatada,Todos los productos listados son leches y preparados lácteos semidesnatados de marca blanca.,gemini-3.8-flash
+1ba828cd589cecc4,yogures de sabores,"Todos los artículos son diferentes variedades y formatos de yogures aromatizados o con sabores a frutas, chocolate o vainilla.",gemini-3.8-flash
+b172290bb8fd89e0,frutas frescas y aromatizadas,"El grupo está dominado por frutas frescas como manzanas, aguacates y plátanos, además de varios productos procesados y de limpieza con sabor o aroma a manzana.",gemini-3.8-flash
+6bdfc7bab94e3b8e,productos con plátano,"El grupo incluye una variedad de artículos, tanto de alimentación como de higiene personal, cuyo elemento o ingrediente común principal es el plátano.",gemini-3.8-flash
+7fd7e046341d622e,pastillas de caldo y efervescentes,"El grupo reúne productos en formato de pastilla para disolver en agua, destacando principalmente las pastillas de caldo concentrado junto con pastillas efervescentes.",gemini-3.8-flash
+02215e3c1b254eb2,pasta fresca rellena,"Todos los productos listados son variedades de pasta fresca refrigerada, mayoritariamente rellena (como raviolis, tortellinis o girasoles) o gnocchis.",gemini-3.8-flash
+ffb72efb06fed8b6,cervezas rubias y especiales,Todos los productos listados son diferentes variedades y marcas de cerveza habituales en los supermercados espanoles.,gemini-3.8-flash
+e60f06f5ea810833,bebidas alcohólicas y licores,"Todos los productos listados son bebidas destinadas al consumo adulto que contienen alcohol, abarcando cervezas, destilados, licores y combinados preparados.",gemini-3.8-flash
+7d0734e023dda54d,productos para lavar la ropa,"Todos los artículos del grupo son detergentes, aditivos y tratamientos específicos destinados al lavado y cuidado de la ropa.",gemini-3.8-flash
+6c8057ed11bf2bbf,yogures desnatados 0%,"Todos los productos del grupo son yogures desnatados o 0% materia grasa, presentados tanto en variedades naturales como con sabores o frutas.",gemini-3.8-flash
+4d8c560876b74012,pescado y marisco congelado,Todos los productos listados son piezas o preparados a base de pescado o marisco conservados mediante congelación o ultracongelación.,gemini-3.8-flash
+e49e3fae04587d57,Pescado fresco y limpio,"La gran mayoría de los productos son pescados limpios, abiertos o en filetes listos para cocinar, con un intruso de comida para peces que comparte la temática piscícola.",gemini-3.8-flash
+5ecdeff7843abbc7,lácteos y quesos de oveja,"Todos los productos del grupo son derivados lácteos elaborados con leche de oveja, principalmente distintas variedades de queso y cuajada.",gemini-3.8-flash
+62db35268d47a564,queso curado y semicurado,"Todos los productos son piezas o cuñas de queso curado, semicurado o viejo de diferentes leches (oveja, vaca o mezcla).",gemini-3.8-flash
+36f411f56ab37e56,lejías y desatascadores del hogar,Son productos químicos intensivos para la desinfección y el mantenimiento de desagües y superficies del hogar.,gemini-3.8-flash
+25e179c6b3565645,atún en conserva,"Todos los productos de la lista son latas y packs de atún preparado en diversas coberturas como aceite, escabeche o al natural.",gemini-3.8-flash
+1e4332761354f51b,atún en aceite de girasol,Todos los productos listados son conservas de atún conservadas específicamente en aceite de girasol en distintos formatos y tamaños.,gemini-3.8-flash
+d8d4d65b64face89,kéfir y yogures saludables,"La categoría está compuesta principalmente por variedades de kéfir y yogures naturales con perfiles digestivos o ligeros (0% grasa, sin lactosa y proteicos).",gemini-3.8-flash
+7aadc6cf79eb8804,bombones de chocolate,Todos los productos listados son diferentes variedades y surtidos de bombones de chocolate.,gemini-3.8-flash
+02676d8cacd1ada1,tarritos infantiles salados,"Todos los productos son tarritos o potitos de comida salada preparados a base de carne, verduras o cereales para la alimentación infantil.",gemini-3.8-flash
+1a6557f597bfeeeb,hidratantes y exfoliantes corporales,"Todos los productos son cosméticos destinados al cuidado, hidratación y exfoliación de la piel del cuerpo, manos y pies.",gemini-3.8-flash
+086a1469e5db8888,lácteos de fresa y plátano,"Todos los artículos son postres, bebidas o productos lácteos e infantiles caracterizados por los sabores a fresa, plátano o una combinación de ambos.",gemini-3.8-flash
+0a5d756bccc69c6d,platos preparados de pasta,"Todos los productos del listado son comidas preparadas a base de pasta italiana u oriental, destacando lasañas, canelones y platos listos o ultracongelados para calentar.",gemini-3.8-flash
+56f7d23b87cbf9d1,agua con gas y saborizada,"Todos los productos del grupo corresponden a aguas minerales con gas, con sabores frutales añadidos o una combinación de ambas características.",gemini-3.8-flash
+86a94ca1904505f2,leche fermentada L. casei,Todos los productos del grupo son leches fermentadas bebibles con fermento L. casei tipo Actimel en diversos sabores y formatos.,gemini-3.8-flash
+5a5321ad2e73c7b0,Bebidas lácteas con L. casei,"Casi todos los productos son leches fermentadas líquidas funcionales de tipo Actimel o L. casei en diversos formatos y sabores, salvo un producto atípico (Caserecce).",gemini-3.8-flash
+3274d7edbc22b730,mostazas y salsas,"La gran mayoría de los productos son variedades de mostaza, aunque el grupo contiene algunos elementos ajenos por coincidencias en el nombre.",gemini-3.8-flash
+3e2d81bccbb4afcd,salsas y condimentos de mesa,"Todos los productos del grupo son salsas clásicas frías de mesa, como mayonesa, kétchup, mostaza y alioli, presentadas tanto en tarro como en sobres individuales.",gemini-3.8-flash
+df8680c5c88d7aaa,agua mineral sin gas,Todos los productos del grupo corresponden a aguas embotelladas sin gas en diversos formatos para consumo diario.,gemini-3.8-flash
+bcb43a26f9e03a56,caldo de pollo,"Todos los productos del grupo son caldos líquidos listos para tomar o cocinar elaborados a base de pollo, en diferentes formatos y variedades como bajo en sal o con verduras.",gemini-3.8-flash
+99a51fcaee89d12f,caldos y sopas de pollo,"Todos los productos del grupo son caldos líquidos, sopas deshidratadas, cremas o concentrados de pollo para cocinar o consumir como primer plato.",gemini-3.8-flash
+dfb166ef9e213c61,ajos cebollas y hierbas aromáticas,Todos los productos son bulbos culinarios básicos o hierbas frescas utilizados habitualmente como condimento y base de cocina.,gemini-3.8-flash
+7c9b68f3316f992c,leche semidesnatada y desnatada,"Todos los productos listados son envases de leche con bajo contenido graso, predominantemente semidesnatada y desnatada de diversos orígenes.",gemini-3.8-flash
+65e3f5c11d6ee16d,hamburguesas y carne picada,"Todos los productos son elaborados cárnicos frescos a base de carne picada, principalmente hamburguesas, albóndigas y preparados de carne picada.",gemini-3.8-flash
+1fc220b505319185,chocolate negro y puro,"Todos los productos listados son tabletas o porciones de chocolate con alto porcentaje de cacao, puro o negro, con o sin añadidos como frutos secos o naranja.",gemini-3.8-flash
+ec696a3e93b4c93e,chocolate con leche extrafino,"Todos los productos son tabletas de chocolate con leche de textura extrafina, solas o combinadas con frutos secos como almendras o avellanas.",gemini-3.8-flash
+7e0a1ffaf0799cce,friegasuelos y limpiahogares,Todos los productos del grupo son limpiadores líquidos o en gel de la marca Bosque Verde diseñados para fregar suelos y limpiar diversas superficies del hogar.,gemini-3.8-flash
+6464b529af397d5f,limpieza y desmaquillante facial,"Todos los productos del grupo están destinados a la higiene, limpieza de poros y retirada de maquillaje del rostro.",gemini-3.8-flash
+8f9b508e0fff6e20,cuidado facial,"Todos los productos incluidos son tratamientos cosméticos específicos para la piel del rostro, tales como cremas, sérums, contornos de ojos y protección solar facial.",gemini-3.8-flash
+37ee7dd19a2efbfc,galletas y pastas dulces,Todos los productos del grupo son diversas variedades de galletas y pequeñas pastas horneadas dulces comunes en los supermercados.,gemini-3.8-flash
+6301534e49a9ae8c,packs de agua mineral,Todos los productos del grupo corresponden a paquetes multipack de botellas de agua mineral natural de diversas marcas y tamaños.,gemini-3.8-flash
+e88abe96b07191c4,limpiadores de baño y WC,Todos los artículos son productos de limpieza específicos para el inodoro y las diferentes superficies del cuarto de baño.,gemini-3.8-flash
+f366abb82242d310,agua mineral natural,"Casi todos los productos del grupo son botellas o packs de agua mineral natural en distintos formatos, a excepción de un artículo atípico.",gemini-3.8-flash
+ad161b9a4a2a7138,platos preparados orientales,La mayoria de los articulos son comidas preparadas o fideos instantaneos de estilo asiatico y oriental.,gemini-3.8-flash
+609f2b3f356f165d,fideos y pasta para sopa,"Todos los productos son variedades de pasta de calibre pequeño o fino, como fideos para sopa, fideuá, yakisoba o cuscús.",gemini-3.8-flash
+30292390e588cbe4,pasta larga y fideos,"Todos los productos pertenecen a la categoría de pastas alargadas como espaguetis, tallarines, pappardelle o fideos de arroz.",gemini-3.8-flash
+a8673be70c5652cf,platos preparados de arroz,Todos los productos listados son raciones de recetas tradicionales o elaboradas de arroz listas para calentar o consumir.,gemini-3.8-flash
+cdc6d4e299c1facb,arroz y vasitos preparados,"La categoría reúne principalmente diversas variedades de arroz (redondo, basmati, integral) junto con opciones rápidas en vasito como la quinoa y el arroz al curry.",gemini-3.8-flash
+7f7b4334fbd0fe8f,Panes y barras especiales,"Todos los productos corresponden a diferentes variedades de barras, hogazas y piezas de panadería listas para consumir o terminar de hornear.",gemini-3.8-flash
+b046837bff0c4625,chocolate con leche,"Todos los productos del grupo son tabletas y preparados de chocolate dulce, predominando ampliamente las variedades de chocolate con leche y combinaciones con galleta o caramelo.",gemini-3.8-flash
+af92cc35576cdee4,chocolates y chocolatinas,"Todos los productos del grupo son dulces y snacks cuyo ingrediente y sabor principal es el chocolate, abarcando desde tabletas hasta chocolatinas y frutos secos bañados.",gemini-3.8-flash
+958f57e4d5042e30,salmón y derivados,"Todos los productos son piezas de salmón fresco o congelado, ahumados o elaborados y sucedáneos a base de este pescado.",gemini-3.8-flash
+885e464377b7557d,salmón ahumado,Todos los productos de la lista corresponden a diversas presentaciones y formatos de salmón ahumado de la marca Martiko.,gemini-3.8-flash
+90e0988030a883d5,agua mineral con y sin gas,"Todos los productos del grupo corresponden a variedades de agua mineral embotellada, tanto con gas como sin gas.",gemini-3.8-flash
+a4024f8768099e67,Agua mineral y botellas,"La gran mayoría de los artículos son botellas de agua mineral natural de diversas marcas y formatos, acompañados por recipientes y productos de agua afines.",gemini-3.8-flash
+521b7feafa01539d,Aceite de oliva,"Todos los productos incluidos en la lista son diferentes variedades y formatos de aceite de oliva, predominando el virgen y el virgen extra.",gemini-3.8-flash
+b2f2e5e1f5516862,aceite de oliva Coosur,"Todos los productos del grupo son diferentes variedades, formatos y presentaciones de aceite de oliva de la marca Coosur.",gemini-3.8-flash
+bccf184ab85bd2c4,fideos orientales instantáneos,Todos los productos son preparados deshidratados o instantáneos de fideos y arroces de estilo asiático listos para consumir con agua caliente.,gemini-3.8-flash
+d0a7c8b243174ca7,galletas tipo María,La gran mayoría de los productos son diferentes variedades y formatos de la tradicional galleta María.,gemini-3.8-flash
+dc504c861d8193fd,galletas y bollería sin azúcar,Todos los productos del grupo son galletas y piezas de bollería orientadas a una dieta reducida en azúcar o sin azúcares añadidos.,gemini-3.8-flash
+d875f30f557320d0,pizzas y empanadillas preparadas,La mayoria de los articulos son pizzas de diversos sabores acompanadas de otros productos de masa horneada rellena listos para consumir o calentar.,gemini-3.8-flash
+5a93284ce3b0420c,platos preparados y ensaladas,"Todos los productos son comidas listas para consumir de forma inmediata o tras calentar, abarcando ensaladas preparadas, guisos y raciones individuales.",gemini-3.8-flash
+93fe0b686b9c5621,pasta corta seca,"Todos los productos del grupo son variedades de pasta corta seca como macarrones, fusilli, hélices y rigatoni.",gemini-3.8-flash
+0a89328436f5d1eb,pan tostado y tostas,"Todos los productos son variedades de panes secos, tostados, tostas y bases para canapés habituales en la sección de panadería envasada.",gemini-3.8-flash
+209d19dc8d881822,pan tostado y pan rallado,"Todos los productos del grupo pertenecen a la categoría de panes secos, tostados, crackers o pan rallado para empanar.",gemini-3.8-flash
+3c4187f3b957a787,leche sin lactosa,Todos los productos listados corresponden a variedades de leche y preparados lácteos dirigidos específicamente a consumidores que buscan opciones sin lactosa.,gemini-3.8-flash
+484eb2ca4883fc05,platos preparados de atún,"La gran mayoría de los productos son comidas listas para tomar o cocinar elaboradas principalmente a base de atún o pescado similar, como empanadillas, ensaladas y albóndigas.",gemini-3.8-flash
+6519e7b72629cf58,ensaladas preparadas completas,Todos los productos son ensaladas listas para consumir que combinan bases vegetales o de pasta con proteínas y aderezos.,gemini-3.8-flash
+2c78ebcf7e163d09,aperitivos y fritos congelados,"Todos los productos son aperitivos procesados listos para freír u hornear, como croquetas, nuggets, tequeños y bocaditos.",gemini-3.8-flash
+bbb4f332d9d56726,pan de molde y hogazas,"Todos los productos del grupo son variedades de pan envasado para el consumo diario, principalmente panes de molde y hogazas rebanadas integrales o rústicas.",gemini-3.8-flash
+c3a68cc3a23bd68c,pan y tostadas sin gluten,"Todos los productos del grupo son panes o derivados de panadería (hogazas, bollos, tostadas y preparados) formulados específicamente sin gluten.",gemini-3.8-flash
+dd9545fbef9ecf84,pimienta negra y blanca,"Todos los productos del grupo son diferentes variedades de pimienta (negra, blanca y cayena) presentadas en grano con molinillo o ya molidas.",gemini-3.8-flash
+96d291ec42bc64ff,yogures griegos y naturales,"La gran mayoria de los articulos de la seleccion son yogures de tipo griego, tanto en versiones naturales como con sabores o azucarados.",gemini-3.8-flash
+a2d80c5f9b3f7eb0,Pimientos en conserva,"Todos los productos listados son diversas variedades y presentaciones de pimientos procesados y envasados en conserva, como los del piquillo, morrones o alegrías riojanas.",gemini-3.8-flash
+1f6aa54fbf0afdfb,especias e hierbas aromáticas,"Todos los productos listados son condimentos secos, mezclas de especias o hierbas culinarias utilizadas para sazonar y dar sabor a las comidas.",gemini-3.8-flash
+0591209d84dd517e,pimentón y colorante alimentario,"Todos los productos del grupo son condimentos tradicionales en polvo utilizados para aportar color y sabor, concretamente distintas variedades de pimentón y colorantes alimentarios.",gemini-3.8-flash
+2db36e9683c713ed,salsas y condimentos,"Todos los productos del grupo son salsas preparadas, aderezos o condimentos líquidos utilizados para acompañar y dar sabor a las comidas.",gemini-3.8-flash
+711816638cac591c,salsas y condimentos,"La gran mayoría de los productos son salsas para acompañar platos y ensaladas, complementados con un sazonador o condimento para cocinar.",gemini-3.8-flash
+76b570936ed461f6,zumos ecológicos,Todos los artículos de la lista corresponden a zumos de frutas u hortalizas procedentes de agricultura ecológica o bio.,gemini-3.8-flash
+3a699a5267732c2c,aceitunas y aperitivos con olivas,"El ingrediente común y predominante en todos los productos son las aceitunas, ya sea como producto principal aliñado o como ingrediente clave en embutidos y panes.",gemini-3.8-flash
+1218c772670395fd,productos de limpieza del hogar,"Todos los artículos son productos y utensilios destinados al mantenimiento, limpieza y desinfección de distintas superficies del hogar.",gemini-3.8-flash
+79f048d5cd38f53f,productos para el lavavajillas,"Todos los artículos son detergentes y complementos destinados a la limpieza de platos, cazuelas y vajilla tanto a mano como en máquina.",gemini-3.8-flash
+dc928602fb90aff3,embutidos y charcutería curada,"Todos los productos listados son piezas o lonchas de embutidos curados tradicionales como chorizo, salchichón, lomo y salami.",gemini-3.8-flash
+f30a91cd26ca54d5,jamón curado y cecina loncheados,"Todos los productos son piezas de charcutería curada tradicionales (principalmente jamón serrano e ibérico, paleta y cecina) presentadas listas para consumir en tapas o lonchas.",gemini-3.8-flash
+f5a02082dbe2c940,yogures y bebidas lácteas,"Todos los productos incluidos son derivados lácteos individuales en formato de yogur, postre funcional o bebida láctea refrigerada.",gemini-3.8-flash
+ac55c7433a7fe93b,leche condensada,Todos los productos incluidos en el grupo son diferentes variedades y formatos de leche condensada.,gemini-3.8-flash
+273a55ce55f1ce0a,yogures líquidos y bebidas lácteas,"Todos los productos son lácteos bebibles de consumo individual o familiar, principalmente yogures líquidos de varios sabores y bebidas lácteas proteicas o aromatizadas.",gemini-3.8-flash
+f63d6716fe7d49f2,petit y postres infantiles,"Todos los productos son yogures tipo petit suisse, bolsitas o tarritos lácteos diseñados específicamente para el consumo infantil.",gemini-3.8-flash
+ffa600682cd84e77,yogures griegos y proteicos,"La lista reúne diferentes variedades de yogures espesos y de alto valor proteico como el yogur griego, skyr y yogur de proteínas, tanto naturales como con sabores.",gemini-3.8-flash
+9a9928e4b09c58ec,pasta seca clásica,Todos los productos listados son diferentes formatos y cortes comunes de pasta seca alimenticia tradicional.,gemini-3.8-flash
+ad045bf9cb59b695,pasta seca clásica e integral,"El grupo está compuesto por diferentes formatos de pasta seca tradicional e integral comúnmente consumidos, como spaghetti, penne y rigatoni.",gemini-3.8-flash
+342db2a12f6b2839,pasta seca,"Todos los productos del grupo son variedades de pasta alimenticia seca, combinando cortes clásicos tanto largos como cortos.",gemini-3.8-flash
+4bf5138e7b1498b6,yogures de sabores con frutas,"Todos los productos del grupo son yogures que incorporan sabores o trozos de frutas como fresa, plátano, limón, coco o macedonia.",gemini-3.8-flash
+cdf3dafe61bc6cc9,yogures y postres vegetales,"Todos los productos son alternativas vegetales al yogur o postres lácteos, elaborados a base de soja o coco en distintos sabores y formatos.",gemini-3.8-flash
+6a8bc856f7b8a5e1,leche infantil y de crecimiento,"Todos los productos son fórmulas lácteas y preparados para lactantes y niños pequeños, cubriendo etapas de inicio, continuación y crecimiento.",gemini-3.8-flash
+a90d235c3e7719ed,leche de crecimiento infantil,Todos los productos son leches o preparados lácteos infantiles diseñados para la etapa de continuación y crecimiento de bebés y niños pequeños.,gemini-3.8-flash
+ea659d571ef30a8d,carne picada y hamburguesas,"Todos los productos del grupo son elaborados cárnicos frescos a base de carne picada, principalmente hamburguesas, carne picada y albóndigas.",gemini-3.8-flash
+f9ebbe2341d406b8,hamburguesas y carne picada,"Todos los productos son formatos de carne picada preparados, ya sea moldeados en hamburguesas o en bandejas de picada/burger meat de distintas carnes.",gemini-3.8-flash
+7d1f139ec158187e,verduras en conserva en tarro,"Todos los productos son diferentes tipos de hortalizas, verduras o legumbres comercializadas principalmente en frasco o tarro de cristal.",gemini-3.8-flash
+ddce5a3daf6cf79c,conservas de verduras y hortalizas,"Todos los productos del grupo son hortalizas y verduras en conserva, principalmente alcachofas, habas y patatas en frasco o lata.",gemini-3.8-flash
+74d376193f1e43be,jamón cocido y pavo loncheado,Todos los productos son embutidos cocidos de cerdo o pavo presentados en lonchas para sándwiches o consumo directo.,gemini-3.8-flash
+b4788c7d92380fd6,sazonadores y mezclas de especias,"Todos los productos son preparados o mezclas específicas de especias y condimentos diseñados para sazonar diferentes platos como pollo, fajitas o patatas.",gemini-3.8-flash
+afb1b84de306829e,néctar de frutas,Todos los productos incluidos en la lista corresponden a néctares envasados de distintas frutas y sabores.,gemini-3.8-flash
+885bc98d1257464e,verduras y frutas congeladas,"Todos los productos son vegetales, salteados y frutas ultracongelados listos para cocinar o consumir.",gemini-3.8-flash
+61d82c712c1556e7,conservas de verduras y hortalizas,Todos los productos del grupo corresponden a verduras y hortalizas envasadas o en conserva listas para consumir o cocinar.,gemini-3.8-flash
+400ef74a8887028b,carne de pollo y pavo,Todos los productos del grupo son distintos cortes y preparados cárnicos frescos derivados exclusivamente de pollo y pavo.,gemini-3.8-flash
+b9dbd5cf6312dff0,bebidas de fruta y leche,"Casi todos los productos del grupo corresponden a bebidas mixtas que combinan zumo de frutas y leche, comúnmente conocidas de esa forma o por marcas tipo Bifrutas.",gemini-3.8-flash
+f263b0e24545feb6,Hamburguesas y preparados de ave,"El grupo se compone principalmente de hamburguesas elaboradas con pollo o pavo, además de otros preparados cárnicos frescos de ave como albóndigas y redondo.",gemini-3.8-flash
+4df1af600b9c536a,carne fresca de pollo,"Todos los productos corresponden a diferentes cortes, piezas y preparados frescos derivados exclusivamente del pollo.",gemini-3.8-flash
+c88b6eff2f918023,carne de cerdo y preparados,"La mayoría de los productos son cortes frescos, adobados o congelados de cerdo, complementados con otros preparados cárnicos similares comunes en carnicería.",gemini-3.8-flash
+795106d136cf47a5,mayonesa,Todos los productos incluidos en el grupo son diferentes marcas y variedades de salsa mayonesa.,gemini-3.8-flash
+2453d943570c18bb,verduras y hortalizas frescas,"Todos los productos del grupo son hortalizas y verduras frescas, tanto enteras como listas para cocinar o consumir.",gemini-3.8-flash
+c1191d4e32a1f39d,fruta fresca variada,Todos los productos listados son piezas enteras de diferentes tipos de fruta fresca disponibles habitualmente en la sección de frutería.,gemini-3.8-flash
+2645aa6999a202aa,salsas y condimentos preparados,"La gran mayoría de los productos son salsas preparadas de mesa o para cocinar, complementadas por condimentos para aderezar platos.",gemini-3.8-flash
+b57fabd2d9557df7,zumos y fruta para zumo,La mayoria de los articulos son zumos envasados de diferentes sabores junto con naranjas destinadas especificamente a preparar zumo.,gemini-3.8-flash
+d828098b73f515db,bebidas y zumos de frutas,Todos los productos pertenecen a la categoría de zumos y bebidas a base de zumo de frutas en distintos sabores y formatos.,gemini-3.8-flash
+5e0060000b7fbfde,garbanzos secos y cocidos,"Todos los productos del grupo son garbanzos, presentados tanto en seco en paquete como ya cocidos en conserva o preparados.",gemini-3.8-flash
+27eb36d9a734c030,ingredientes para guisos,"Todos los productos son alimentos básicos de despensa como legumbres, tomate en conserva y especias esenciales habitualmente combinados para preparar potajes y guisos.",gemini-3.8-flash
+feec2c449542bad4,carne de pollo fresca y congelada,"Todos los productos corresponden a diferentes cortes o piezas de pollo (enteros, pechugas, alas y cuartos traseros), tanto en formato fresco como congelado.",gemini-3.8-flash
+0905394d1cbaed6b,conservas de tomate,"La gran mayoría de los productos son diferentes variedades de tomate procesado o en conserva (frito, triturado, pelado y rallado), siendo el plato preparado una asociación periférica al ingrediente principal.",gemini-3.8-flash
+2b5c5d34898415a4,tomates frescos variados,"Casi la totalidad de los artículos de la lista corresponden a diferentes variedades de tomates frescos, a excepción de un único elemento atípico de queso.",gemini-3.8-flash
+149e77de6a11f821,nuggets y tiras de pollo empanadas,"Casi todos los productos son aperitivos de pollo empanados, rebozados y prefritos, como tiras, fingers y nuggets listos para cocinar.",gemini-3.8-flash
+db339cfb6a8afac9,pechuga de pollo y fiambres,"La mayoría de los productos son distintos formatos de pechuga de pollo, complementados con otros cortes de fiambre y carne preparada.",gemini-3.8-flash
+fb0188a8270beaad,pasta seca,Todos los productos del grupo corresponden a diferentes variedades y formatos de pasta seca envasada para cocinar.,gemini-3.8-flash
+bef898abea93c654,café con leche preparado,La gran mayoría de los productos son cafés con leche listos para consumir o en cápsulas preparadas de café con leche.,gemini-3.8-flash
+f0bb0e7ddd00398b,aceites y bebidas de coco,El grupo combina principalmente aceites vegetales especiales (destacando el de coco) y bebidas a base de coco como aguas y cafés.,gemini-3.8-flash
+1855bccdcecaed38,palitos y barritas de pan,"Todos los productos del grupo son snacks crujientes horneados elaborados a base de masa de pan, conocidos comúnmente como palitos, barritas o grissini.",gemini-3.8-flash
+cae4e9f4ed57af87,pizzas y masas preparadas,"La gran mayoría de los productos son pizzas frescas y congeladas, así como formatos similares de masa lista para hornear o calentar.",gemini-3.8-flash
+39e051fef928d7ed,pasta fresca rellena,"La gran mayoría de los productos son variedades de ravioli y tortellini frescos con diferentes rellenos de carne, queso, pescado o verduras.",gemini-3.8-flash
+f9344e9e56de77b4,platos preparados de pasta,"Todos los artículos son comidas preparadas a base de pasta (como lasañas, canelones, raviolis o tallarines) listas para calentar y consumir.",gemini-3.8-flash
+2d752717067fa347,cereales de desayuno,"Todos los productos incluidos son distintas variedades de cereales comúnmente consumidos durante el desayuno, como copos, arroz inflado y cereales rellenos.",gemini-3.8-flash
+8918986bdf19636a,mozzarella y quesos frescos italianos,"Todos los productos son variedades tradicionales de quesos frescos italianos como mozzarella, burrata y ricotta.",gemini-3.8-flash
+6029a8a46f34033b,tortitas de arroz y maíz,"Todos los productos del grupo son tortitas infladas elaboradas a base de cereales como arroz o maíz, ya sean solas, saladas o cubiertas de chocolate.",gemini-3.8-flash
+aa49387c12728d55,tortillas y snacks mexicanos,"La gran mayoría de los productos son tortillas de trigo o maíz para fajitas y wraps, complementados con snacks de tiras de maíz estilo tex-mex.",gemini-3.8-flash
+87b835997e4d4388,barritas de cereales y chocolate,"Todos los productos son barritas individuales de snack, destacando principalmente las opciones de cereales o rellenas de chocolate y galleta.",gemini-3.8-flash
+7f4f0c2a59b68c41,batidos y bebidas proteicas,Todos los productos del grupo son batidos lácteos aromatizados o bebidas lácteas enriquecidas con proteínas comúnmente consumidas listas para beber.,gemini-3.8-flash
+db55c59c3815e3e2,natillas y copas lácteas,Todos los productos del grupo son postres lácteos refrigerados tradicionales compuestos por natillas de diversos sabores y copas de crema con nata.,gemini-3.8-flash
+87619c7a10eb3bb8,postres lácteos y flanes,La mayoría de los artículos son variedades de flanes y postres tradicionales refrigerados típicos de la sección de lácteos.,gemini-3.8-flash
+ada92eccab9b7492,productos con pistacho,Todos los artículos del grupo comparten el pistacho como fruto seco base o ingrediente de sabor principal.,gemini-3.8-flash
+6f6954bc96da594a,queso de untar,"Todos los productos del grupo son tarrinas de queso crema o untable de diferentes marcas, sabores y formatos.",gemini-3.8-flash
+6082e21178628292,queso brie y especiales,"La gran mayoría de los productos son variedades de queso brie, acompañados por alguna otra especialidad de queso europeo como el Blue Stilton.",gemini-3.8-flash
+9b4b3c0675eac639,queso rallado,"Casi todos los productos de la lista son variedades de queso rallado o en polvo para cocinar, fundir o acompañar platos como pasta y pizza.",gemini-3.8-flash
+f8615cd7fa965367,chocolate con leche y frutos secos,La gran mayoría de los productos son tabletas y dulces de chocolate con leche combinados con almendras o avellanas.,gemini-3.8-flash
+d2ec6673e9bbc646,chocolates y dulces con chocolate,"Todos los productos son tabletas, chocolatinas o piezas de bollería y snacks dulces que tienen el chocolate con leche como ingrediente principal.",gemini-3.8-flash
+ffa885db03372c10,galletas con chocolate y surtidas,"Todos los productos pertenecen a la sección de desayunos y meriendas, destacando principalmente galletas dulces combinadas con chocolate o en formatos surtidos.",gemini-3.8-flash
+724bbb86280dbb8f,queso fresco y tierno,La gran mayoría de los productos son variedades de queso fresco (en tarrinas individuales o familiares) y quesos blandos de mesa tipo Burgo de Arias o Caprice des Dieux.,gemini-3.8-flash
+f3e5b0c391ff4cd6,queso fresco,"Todos los productos del grupo pertenecen a la categoría láctea de quesos frescos, incluyendo variedades batidas, cottage y tipo Burgos.",gemini-3.8-flash
+f75a609c115a6bf7,Panes y preparados para hamburguesas,"El grupo está compuesto principalmente por panes de hamburguesa y perrito, complementados con carnes y hamburguesas listas para su preparación.",gemini-3.8-flash
+a3710a23b9edf82e,mini tostas para canapés,La gran mayoría de los productos son pequeñas tostas y panes crujientes especiales para aperitivos y canapés.,gemini-3.8-flash
+9bb4cb72b28a1033,queso en lonchas y porciones,Todos los productos son quesos procesados o curados presentados en formatos prácticos como lonchas para sándwiches o porciones individuales.,gemini-3.8-flash
+c97814d77a122dc1,barras de pan,Todos los productos del grupo corresponden a diferentes variedades y tamaños de barras de pan fresco o de panadería.,gemini-3.8-flash
+dce4ed3e103da603,quesos azules y cremosos,"La mayoría de los artículos son variedades de queso cremoso y queso azul, acompañados por un producto para su maridaje.",gemini-3.8-flash
+56c5770129a8785c,pan de hogaza,"Todos los productos listados son panes con formato y denominación tradicional de hogaza, elaborados con diversas harinas y semillas.",gemini-3.8-flash
+7562af780569a230,quesos curados y semicurados,"La gran mayoria de los articulos de la lista son diferentes variedades de quesos curados, tiernos e ibericos.",gemini-3.8-flash
+3ad00e53a097f666,queso semicurado,Todos los productos del grupo son diferentes variedades y formatos de queso de maduración semicurada.,gemini-3.8-flash
+025c51af83b7753b,pan y picos,"Todos los productos son variedades de panadería tradicional, incluyendo barras de pan fresco y panes secos o crujientes como picos y regañás de la marca de Dia.",gemini-3.8-flash
+661bca0ef01e1ed8,Pan y pan de molde,"Todos los productos corresponden a variedades de pan envasado, pan de molde, tostado o derivados de panadería como pan rallado y especialidades.",gemini-3.8-flash
+3295f649117915b8,pan de molde con semillas,"Todos los productos del grupo son panes de molde o de rebanadas elaborados con cereales integrales, multicereales o mezcla de semillas.",gemini-3.8-flash
+16506d09a9be2fa2,pan de molde,"Todos los productos del grupo corresponden a diferentes variedades y marcas de pan de molde, tanto blanco como integral y con o sin corteza.",gemini-3.8-flash

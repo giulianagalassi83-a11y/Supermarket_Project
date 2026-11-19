@@ -1,0 +1,360 @@
+cluster_id,name,size,n_typed,top_type_id,share,chains,no_hand_type,encoder
+201,yogures de sabores,352,352,yogur_griego,0.395,4,False,base
+323,pasta seca,306,306,no_relevante,0.507,4,True,base
+64,zumos y bebidas de frutas,280,260,zumo_naranja_exprimido,0.442,4,False,base
+9,detergentes para ropa y vajilla,243,243,detergente_liquido,0.432,4,False,base
+319,conservas de tomate,190,190,tomate_frito,0.684,4,False,base
+101,snacks y fruta infantil,178,178,no_relevante,0.831,4,True,base
+215,atún en conserva,169,169,atun_aceite_oliva,0.592,4,False,base
+20,papel higiénico y celulosa,135,135,papel_higienico,0.556,4,False,base
+172,refrescos y bebidas saborizadas,128,128,no_relevante,0.789,4,True,base
+174,galletas con chocolate,126,106,no_relevante,0.991,3,True,base
+260,pizzas y empanadillas preparadas,121,103,no_relevante,0.913,3,True,base
+248,Panes y barras especiales,120,107,no_relevante,0.402,3,True,base
+316,garbanzos secos y cocidos,120,120,garbanzo_cocido,0.467,4,False,base
+180,arroz envasado y vasitos,120,120,no_relevante,0.392,4,True,base
+255,Aceite de oliva,113,113,aceite_oliva_virgen_extra,0.903,3,False,base
+274,especias e hierbas aromáticas,113,87,no_relevante,1.0,3,True,base
+314,zumos y fruta para zumo,110,110,zumo_naranja_exprimido,0.436,4,False,base
+182,bollería y empanadillas,107,40,no_relevante,0.6,3,True,base
+251,salmón y derivados,106,106,no_relevante,0.481,4,True,base
+313,salsas y condimentos preparados,106,106,no_relevante,0.915,4,True,base
+305,carne de pollo y pavo,100,99,pollo_pechuga,0.354,3,False,base
+70,bebidas vegetales,99,78,no_relevante,0.654,3,True,base
+202,frutas frescas y aromatizadas,97,97,manzana_roja,0.495,4,False,base
+269,pan de molde y hogazas,96,94,pan_molde,0.926,3,False,base
+82,perfumes y colonias,93,93,no_relevante,1.0,1,True,base
+297,hamburguesas y carne picada,92,92,hamburguesas,0.543,3,False,base
+322,pechuga de pollo y fiambres,92,92,pollo_pechuga,0.674,4,False,base
+114,frutos secos y aperitivos,90,22,no_relevante,1.0,5,True,base
+3,tintes de pelo permanentes,90,90,no_relevante,1.0,1,True,base
+247,arroz y vasitos preparados,88,85,no_relevante,0.318,3,True,base
+40,postres y bebidas vegetales,88,88,bebida_vegetal,0.534,4,False,base
+35,conservas de atún y bonito,87,86,atun_aceite_oliva,0.395,3,False,base
+263,pan tostado y tostas,87,87,pan_tostado,0.989,3,False,base
+317,ingredientes para guisos,87,87,no_relevante,0.816,1,True,base
+83,caldos y sopas preparados,86,71,no_relevante,0.775,3,True,base
+148,tratamientos y mascarillas capilares,85,85,no_relevante,0.953,4,True,base
+91,vinos y derivados,85,2,no_relevante,1.0,2,True,base
+318,carne de pollo fresca y congelada,84,84,pollo_alas,0.571,4,False,base
+38,lácteos digestivos con bífidus,83,83,yogur_bifidus,0.434,4,False,base
+81,colonias y perfumes,81,81,no_relevante,1.0,6,True,base
+162,detergente líquido para lavadora,81,81,detergente_liquido,0.975,2,False,base
+13,ambientadores e insecticidas para hogar,79,2,no_relevante,1.0,2,True,base
+130,tomates frescos y en conserva,79,79,tomate_triturado,0.354,3,False,base
+353,quesos curados y semicurados,79,79,queso_curado,0.62,4,False,base
+168,productos Alcampo Cultivamos lo Bueno,77,77,no_relevante,0.403,1,True,base
+45,leche y productos lácteos,72,72,no_relevante,0.25,4,True,base
+157,batidos y bebidas lácteas,72,63,no_relevante,0.968,3,True,base
+104,patatas y aperitivos salados,71,35,no_relevante,0.857,3,True,base
+75,helados y hielo,71,7,no_relevante,0.714,3,True,base
+14,comida húmeda para mascotas,71,71,no_relevante,1.0,3,True,base
+158,queso fresco,71,71,queso_tierno_fresco,0.775,2,False,base
+292,yogures de sabores con frutas,71,71,yogur_sabores,0.887,3,False,base
+21,papel de celulosa del hogar,71,61,papel_higienico,0.623,4,False,base
+276,salsas y condimentos,70,46,no_relevante,0.957,4,True,base
+356,Pan y pan de molde,69,69,no_relevante,0.681,5,True,base
+327,pizzas y masas preparadas,68,68,no_relevante,0.956,4,True,base
+233,hamburguesas y carne picada,68,53,hamburguesas,0.264,3,False,base
+170,fruta fresca de pepita,68,63,no_relevante,0.46,3,True,base
+308,carne fresca de pollo,67,65,pollo_alas,0.569,3,False,base
+69,Mantequillas y margarinas,66,52,no_relevante,0.962,3,True,base
+320,tomates frescos variados,66,66,tomate_cherry,0.47,4,False,base
+112,tomate frito,64,64,tomate_frito,0.969,2,False,base
+61,yogures con bífidus,64,64,yogur_bifidus,0.969,2,False,base
+261,platos preparados y ensaladas,64,18,no_relevante,0.944,5,True,base
+176,queso en lonchas,63,63,queso_lonchas,0.921,2,False,base
+347,Panes y preparados para hamburguesas,63,63,no_relevante,0.857,4,True,base
+126,vinagres y aderezos ácidos,63,57,no_relevante,0.895,4,True,base
+228,agua mineral sin gas,61,61,agua_con_gas,0.557,4,False,base
+328,pasta fresca rellena,61,61,pasta_fresca_rellena,0.705,4,False,base
+213,queso curado y semicurado,60,60,queso_curado,1.0,2,False,base
+249,chocolate con leche,60,60,no_relevante,0.983,3,True,base
+210,pescado y marisco congelado,59,12,no_relevante,1.0,4,True,base
+349,queso en lonchas y porciones,58,58,queso_lonchas,0.759,3,False,base
+102,purés de frutas infantiles,58,55,no_relevante,0.873,3,True,base
+34,caramelos y gominolas,57,45,no_relevante,1.0,2,True,base
+59,leche de vaca,57,57,leche_semidesnatada,0.333,1,False,base
+286,yogures líquidos y bebidas lácteas,57,57,yogur_natural,0.684,3,False,base
+354,queso semicurado,57,57,queso_curado,0.965,4,False,base
+194,pan de hamburguesa y perritos,56,48,no_relevante,0.729,3,True,base
+48,Comida y snacks para mascotas,55,55,no_relevante,0.982,3,True,base
+357,pan de molde con semillas,55,55,pan_molde,0.945,4,False,base
+206,cervezas rubias y especiales,55,2,no_relevante,1.0,2,True,base
+277,salsas y condimentos,54,54,no_relevante,1.0,2,True,base
+50,geles y productos de baño,53,53,no_relevante,0.981,3,True,base
+222,platos preparados de pasta,53,44,no_relevante,0.932,6,True,base
+189,leche enriquecida con calcio,53,53,leche_semidesnatada,0.491,4,False,base
+106,"mermeladas, confituras y mieles",53,37,no_relevante,0.946,3,True,base
+175,salmón y productos con salmón,52,51,no_relevante,0.549,3,True,base
+159,leche sin lactosa,52,52,leche_sin_lactosa,0.423,4,False,base
+140,repostería y decoración de tartas,52,35,no_relevante,0.914,3,True,base
+184,conservas y semiconservas de pescado,52,52,no_relevante,0.731,6,True,base
+22,maquillaje de ojos,52,52,no_relevante,1.0,2,True,base
+266,platos preparados de atún,51,51,no_relevante,0.961,4,True,base
+18,Aceite de oliva virgen extra,51,51,aceite_oliva_virgen_extra,1.0,2,False,base
+294,leche infantil y de crecimiento,50,38,no_relevante,0.737,4,True,base
+173,patatas y aperitivos de patata,50,50,no_relevante,0.94,4,True,base
+66,natas y cremas para cocinar,50,40,no_relevante,0.925,3,True,base
+205,pasta fresca rellena,50,49,pasta_fresca_rellena,0.857,3,False,base
+199,natillas y postres de cuchara,49,46,no_relevante,0.957,3,True,base
+92,desechables y conservación de alimentos,49,0,,0.0,1,True,base
+341,queso rallado,49,49,queso_rallado,0.653,4,False,base
+309,carne de cerdo y preparados,49,4,no_relevante,1.0,3,True,base
+268,aperitivos y fritos congelados,49,43,no_relevante,0.767,4,True,base
+37,refrescos de cola zero,48,48,no_relevante,0.979,1,True,base
+239,galletas y pastas dulces,48,48,no_relevante,1.0,2,True,base
+132,flanes y gelatinas refrigerados,47,36,no_relevante,0.972,4,True,base
+306,bebidas de fruta y leche,47,47,zumo_otras_frutas,0.362,3,False,base
+346,queso fresco,47,47,queso_tierno_fresco,0.83,4,False,base
+160,huevos de gallina,47,45,huevos_gallina,0.778,5,False,base
+142,refrescos de frutas y té,47,8,no_relevante,0.625,3,True,base
+220,hidratantes y exfoliantes corporales,46,46,no_relevante,1.0,3,True,base
+96,alubias cocidas y fabada,46,37,no_relevante,1.0,3,True,base
+118,mayonesa y salsas mayonesa,46,46,no_relevante,1.0,2,True,base
+315,bebidas y zumos de frutas,46,46,no_relevante,0.391,3,True,base
+56,pasta de dientes,45,45,no_relevante,1.0,2,True,base
+110,quesos curados y semicurados,45,45,queso_curado,0.711,2,False,base
+303,verduras y frutas congeladas,45,2,no_relevante,1.0,1,True,base
+284,yogures y bebidas lácteas,45,12,yogur_sabores,0.25,2,False,base
+350,barras de pan,44,44,pan_barra,0.523,3,False,base
+79,sazonadores y mezclas de especias,44,39,no_relevante,1.0,3,True,base
+65,kéfir y leches fermentadas,44,44,no_relevante,0.909,2,True,base
+232,leche semidesnatada y desnatada,44,44,leche_semidesnatada,0.75,2,False,base
+244,fideos y pasta para sopa,44,38,pasta_larga,0.632,3,False,base
+282,embutidos y charcutería curada,43,0,,0.0,1,True,base
+344,galletas con chocolate y surtidas,43,43,no_relevante,0.907,4,True,base
+185,Aceites de oliva y condimentos,43,43,aceite_oliva_virgen_extra,0.767,4,False,base
+84,garbanzos cocidos y platos preparados,42,36,garbanzo_cocido,0.583,3,False,base
+1,agua mineral y gaseosa,42,37,agua_con_gas,1.0,1,False,base
+109,quesos frescos y para untar,42,36,queso_tierno_fresco,0.722,1,False,base
+12,desodorantes y antitranspirantes,42,42,no_relevante,1.0,1,True,base
+28,queso crema para untar,42,42,queso_untar,1.0,2,False,base
+42,infusiones y tés,41,15,no_relevante,1.0,2,True,base
+235,chocolate con leche extrafino,41,41,no_relevante,0.878,3,True,base
+253,agua mineral con y sin gas,41,41,agua_con_gas,0.878,4,False,base
+115,turrones y bombones navideños,41,19,no_relevante,0.947,3,True,base
+342,chocolate con leche y frutos secos,41,41,no_relevante,0.829,4,True,base
+151,aceite de girasol,41,41,aceite_girasol,0.732,4,False,base
+196,ensaladas y verduras de hoja,40,14,no_relevante,1.0,3,True,base
+41,leche entera,40,40,leche_entera,0.95,4,False,base
+163,queso rallado,39,39,queso_rallado,0.974,2,False,base
+119,sal y sazonadores,39,27,no_relevante,1.0,3,True,base
+4,maquillaje para el rostro,39,39,no_relevante,1.0,1,True,base
+312,fruta fresca variada,39,5,no_relevante,1.0,2,True,base
+343,chocolates y dulces con chocolate,38,38,no_relevante,0.947,4,True,base
+218,bombones de chocolate,38,28,no_relevante,1.0,3,True,base
+125,yogures naturales,38,38,yogur_griego,0.974,2,False,base
+197,espárragos blancos en conserva,38,38,no_relevante,1.0,2,True,base
+193,masas frescas y bases,38,27,no_relevante,0.926,3,True,base
+152,detergente en cápsulas y monodosis,38,38,detergente_capsulas,0.947,2,False,base
+289,pasta seca clásica,38,38,pasta_integral,0.921,2,False,base
+98,quesos con denominación de origen,38,38,no_relevante,0.684,1,True,base
+230,caldos y sopas de pollo,37,37,pollo_alas,0.757,3,False,base
+147,"colines, picos y rosquilletas",37,37,no_relevante,1.0,1,True,base
+237,limpieza y desmaquillante facial,37,37,no_relevante,1.0,3,True,base
+208,productos para lavar la ropa,36,24,detergente_polvo,0.458,2,False,base
+153,agua mineral y micelar,36,36,agua_con_gas,0.75,3,False,base
+187,quesos de leche pasteurizada,36,36,queso_curado,0.417,1,False,base
+78,tortitas de arroz y maíz,36,32,no_relevante,0.938,3,True,base
+243,platos preparados orientales,36,33,no_relevante,0.727,4,True,base
+128,harinas y preparados para repostería,35,25,no_relevante,0.84,2,True,base
+23,pintalabios mate Deliplus,35,35,no_relevante,1.0,1,True,base
+179,pastas de té y repostería,35,35,no_relevante,1.0,3,True,base
+225,Bebidas lácteas con L. casei,34,34,yogur_natural,0.529,4,False,base
+358,pan de molde,34,34,pan_molde,0.941,3,False,base
+10,aceite de oliva,34,34,aceite_oliva,0.5,2,False,base
+53,suavizantes y perfumadores para ropa,34,34,no_relevante,1.0,1,True,base
+72,sardinas y sardinillas en conserva,34,33,no_relevante,0.97,3,True,base
+234,chocolate negro y puro,34,20,no_relevante,1.0,3,True,base
+265,leche sin lactosa,34,34,leche_sin_lactosa,0.5,2,False,base
+149,cuidado y lavado capilar,34,34,no_relevante,0.941,3,True,base
+135,agua con gas y saborizada,34,34,agua_con_gas,0.882,3,False,base
+32,comida húmeda para mascotas,33,33,no_relevante,1.0,1,True,base
+198,postres lácteos y refrigerados,33,18,no_relevante,1.0,3,True,base
+89,conservas de marisco y cefalópodos,33,22,no_relevante,0.909,3,True,base
+254,Agua mineral y botellas,33,33,agua_sin_gas,0.97,3,False,base
+238,cuidado facial,33,33,no_relevante,1.0,1,True,base
+207,bebidas alcohólicas y licores,33,0,,0.0,1,True,base
+51,toallitas húmedas e higiene,32,29,papel_higienico_humedo,0.621,3,False,base
+16,maquillaje y cuidado de labios,32,32,no_relevante,1.0,2,True,base
+299,conservas de verduras y hortalizas,32,29,no_relevante,0.966,3,True,base
+280,productos de limpieza del hogar,32,6,no_relevante,1.0,3,True,base
+46,café en cápsulas,32,32,no_relevante,1.0,2,True,base
+329,platos preparados de pasta,32,32,no_relevante,0.906,4,True,base
+169,fruta en conserva,31,25,no_relevante,1.0,3,True,base
+33,vinagres especiales y cremas,31,31,no_relevante,1.0,4,True,base
+57,lácteos y yogures Pastoret,31,31,yogur_griego,0.484,2,False,base
+117,leche y bebidas lácteas desnatadas,31,31,leche_desnatada,0.581,4,False,base
+150,patés y cremas untables,30,14,no_relevante,0.714,3,True,base
+164,queso en lonchas y rallado,30,30,queso_lonchas,0.667,1,False,base
+15,fijadores y peinado del cabello,30,30,no_relevante,1.0,3,True,base
+331,mozzarella y quesos frescos italianos,30,30,no_relevante,0.967,4,True,base
+257,fideos orientales instantáneos,30,30,no_relevante,1.0,3,True,base
+279,aceitunas y aperitivos con olivas,30,30,no_relevante,0.9,3,True,base
+191,huevos de gallina,30,30,huevos_gallina,0.767,3,False,base
+93,útiles y guantes de limpieza,29,1,no_relevante,1.0,2,True,base
+212,lácteos y quesos de oveja,29,29,queso_curado,0.931,2,False,base
+203,productos con plátano,29,29,no_relevante,0.793,4,True,base
+293,yogures y postres vegetales,29,29,yogur_vegetal,0.966,2,False,base
+332,tortitas de arroz y maíz,29,29,no_relevante,0.552,4,True,base
+17,aceites vegetales y de semillas,29,29,aceite_girasol,0.724,3,False,base
+283,jamón curado y cecina loncheados,29,0,,0.0,1,True,base
+39,maquinillas y recambios de afeitar,28,28,no_relevante,1.0,1,True,base
+145,cereales muesli y copos,28,8,no_relevante,0.75,3,True,base
+295,leche de crecimiento infantil,28,28,no_relevante,0.893,4,True,base
+19,comida para gatos de pescado,28,28,no_relevante,1.0,3,True,base
+177,Queso en porciones,28,28,queso_rallado,0.536,2,False,base
+209,yogures desnatados 0%,28,28,yogur_natural,0.893,3,False,base
+127,harinas y pan rallado,27,27,no_relevante,1.0,1,True,base
+250,chocolates y chocolatinas,27,25,no_relevante,1.0,3,True,base
+86,papillas y cereales infantiles,27,27,no_relevante,0.963,5,True,base
+47,café en cápsulas,27,4,no_relevante,1.0,1,True,base
+351,quesos azules y cremosos,27,27,queso_untar,0.444,3,False,base
+52,protectores solares y cuidado corporal,27,27,no_relevante,0.778,3,True,base
+311,verduras y hortalizas frescas,27,1,no_relevante,1.0,2,True,base
+271,pimienta negra y blanca,26,21,no_relevante,1.0,3,True,base
+186,Huevos y derivados,26,26,no_relevante,0.846,4,True,base
+166,Bacon y panceta curada,26,16,no_relevante,0.875,3,True,base
+335,batidos y bebidas proteicas,26,26,no_relevante,0.577,3,True,base
+334,barritas de cereales y chocolate,26,26,no_relevante,0.962,4,True,base
+188,leche semidesnatada,26,26,leche_semidesnatada,1.0,4,False,base
+190,huevos frescos de gallina,26,26,huevos_camperos_eco,0.615,3,False,base
+165,salchichas cocidas tipo Frankfurt,26,18,no_relevante,0.944,3,True,base
+43,higiene bucal y dental,26,26,no_relevante,1.0,1,True,base
+288,yogures griegos y proteicos,26,26,yogur_griego,0.654,2,False,base
+54,pasta de dientes,26,26,no_relevante,1.0,2,True,base
+272,yogures griegos y naturales,26,25,yogur_griego,0.84,3,False,base
+5,colorete y polvos faciales,26,26,no_relevante,1.0,1,True,base
+336,natillas y copas lácteas,25,25,no_relevante,0.8,2,True,base
+36,bonito del norte en conserva,25,25,no_relevante,0.84,1,True,base
+121,gominolas y golosinas variadas,25,2,no_relevante,1.0,1,True,base
+242,agua mineral natural,25,25,agua_con_gas,0.84,4,False,base
+307,Hamburguesas y preparados de ave,25,25,hamburguesas,0.52,3,False,base
+100,parafarmacia y complementos alimenticios,25,25,no_relevante,1.0,1,True,base
+95,lentejas secas envasadas,25,25,no_relevante,1.0,2,True,base
+122,pienso para perros y gatos,25,25,no_relevante,0.96,3,True,base
+211,Pescado fresco y limpio,25,1,no_relevante,1.0,2,True,base
+287,petit y postres infantiles,25,17,yogur_natural,0.647,3,False,base
+270,pan y tostadas sin gluten,25,25,no_relevante,0.76,2,True,base
+116,café soluble y sucedáneos,24,10,no_relevante,1.0,4,True,base
+30,aceitunas y encurtidos,24,2,no_relevante,1.0,2,True,base
+7,pañuelos de papel,24,24,no_relevante,1.0,2,True,base
+139,ingredientes para repostería,24,6,no_relevante,1.0,3,True,base
+216,atún en aceite de girasol,24,24,atun_aceite_girasol,0.542,4,False,base
+304,conservas de verduras y hortalizas,24,0,,0.0,1,True,base
+49,pasta de dientes,24,24,no_relevante,1.0,2,True,base
+204,pastillas de caldo y efervescentes,24,24,pollo_alas,0.583,3,False,base
+278,zumos ecológicos,24,24,no_relevante,0.583,1,True,base
+273,Pimientos en conserva,24,23,no_relevante,1.0,3,True,base
+161,galletas de barquillo rellenas,24,17,no_relevante,1.0,2,True,base
+90,conservas de mejillones,24,24,no_relevante,0.958,2,True,base
+302,néctar de frutas,24,24,no_relevante,0.458,3,True,base
+214,lejías y desatascadores del hogar,24,18,detergente_polvo,0.5,3,False,base
+195,bebidas lácteas para colesterol,23,23,no_relevante,0.783,3,True,base
+8,tampones y protegeslips,23,23,no_relevante,1.0,1,True,base
+340,queso brie y especiales,23,23,no_relevante,0.522,4,True,base
+144,cereales de desayuno,23,20,no_relevante,0.95,3,True,base
+133,café molido y en grano,23,6,no_relevante,1.0,2,True,base
+103,pan tostado y colines,23,23,no_relevante,1.0,2,True,base
+296,carne picada y hamburguesas,23,23,hamburguesas,0.652,2,False,base
+264,pan tostado y pan rallado,23,13,pan_tostado,0.923,2,False,base
+324,café con leche preparado,22,22,no_relevante,0.682,2,True,base
+11,compresas higiénicas,22,22,no_relevante,1.0,2,True,base
+167,leche entera,22,22,leche_entera,1.0,2,False,base
+124,tartas y postres congelados,22,3,no_relevante,1.0,1,True,base
+120,azúcar y edulcorantes,22,7,no_relevante,0.571,3,True,base
+326,palitos y barritas de pan,22,22,no_relevante,0.909,4,True,base
+256,aceite de oliva Coosur,22,22,aceite_oliva_virgen_extra,0.909,3,False,base
+76,pañales para bebé,22,22,no_relevante,1.0,2,True,base
+67,esmaltes y tratamientos de uñas,22,22,no_relevante,1.0,1,True,base
+355,pan y picos,22,22,no_relevante,0.682,1,True,base
+58,leche de vaca,22,22,leche_entera,0.636,1,False,base
+63,sardinas y sardinillas en conserva,21,21,no_relevante,0.762,3,True,base
+60,quesos franceses,21,21,no_relevante,0.952,2,True,base
+310,mayonesa,21,21,no_relevante,0.952,3,True,base
+111,frutas tropicales y exóticas,21,21,no_relevante,1.0,1,True,base
+267,ensaladas preparadas completas,21,21,no_relevante,0.952,4,True,base
+99,Botiquín y primeros auxilios,21,21,no_relevante,1.0,1,True,base
+2,refrescos de cola zero,21,0,,0.0,1,True,base
+29,encurtidos y pepinillos,21,2,no_relevante,1.0,2,True,base
+348,mini tostas para canapés,21,21,pan_tostado,0.524,3,False,base
+178,dulces navideños y panettones,21,21,no_relevante,0.952,1,True,base
+154,kéfir natural y de sabores,20,20,no_relevante,0.65,4,True,base
+231,ajos cebollas y hierbas aromáticas,20,6,no_relevante,0.833,2,True,base
+229,caldo de pollo,20,20,pollo_alas,1.0,3,False,base
+80,pienso para perros y gatos,20,20,no_relevante,1.0,1,True,base
+25,Bebidas energéticas,20,0,,0.0,1,True,base
+113,dulces tradicionales de Navidad,20,3,no_relevante,1.0,2,True,base
+0,leche y bebidas refrescantes,19,8,leche_semidesnatada,0.5,1,False,base
+300,jamón cocido y pavo loncheado,19,0,,0.0,1,True,base
+281,productos para el lavavajillas,19,0,,0.0,1,True,base
+285,leche condensada,19,19,no_relevante,0.842,2,True,base
+44,leche condensada y postres dulces,19,19,no_relevante,0.789,3,True,base
+321,nuggets y tiras de pollo empanadas,19,19,no_relevante,0.632,2,True,base
+337,postres lácteos y flanes,19,19,no_relevante,1.0,3,True,base
+183,conservas de bonito del norte,19,19,bonito_norte,0.789,4,False,base
+227,salsas y condimentos de mesa,19,1,no_relevante,1.0,1,True,base
+136,detergente en polvo y pastillas,19,19,detergente_polvo,0.947,2,False,base
+131,tomate frito y conservas de tomate,19,18,tomate_triturado,0.611,2,False,base
+137,queso fundido en porciones,19,19,queso_tierno_fresco,0.421,4,False,base
+129,quesos blandos y rulos,19,19,no_relevante,0.842,2,True,base
+138,setas y champiñones,19,12,no_relevante,1.0,3,True,base
+226,mostazas y salsas,19,19,no_relevante,1.0,2,True,base
+6,Pañales y pants absorbentes,19,19,no_relevante,1.0,2,True,base
+258,galletas tipo María,19,17,no_relevante,0.824,2,True,base
+217,kéfir y yogures saludables,19,19,yogur_natural,0.842,1,False,base
+219,tarritos infantiles salados,19,19,no_relevante,0.684,3,True,base
+339,queso de untar,18,18,queso_untar,0.722,4,False,base
+325,aceites y bebidas de coco,18,18,aceite_girasol,0.222,4,False,base
+333,tortillas y snacks mexicanos,18,18,no_relevante,0.833,3,True,base
+146,picos y palitos de pan,18,6,no_relevante,1.0,2,True,base
+141,cremas dulces para untar,18,12,no_relevante,0.917,3,True,base
+291,pasta seca,18,18,pasta_larga,0.778,1,False,base
+221,lácteos de fresa y plátano,18,18,no_relevante,1.0,4,True,base
+262,pasta corta seca,18,9,pasta_corta,1.0,1,False,base
+107,café frío para llevar,18,18,no_relevante,0.833,1,True,base
+26,Agua mineral natural sin gas,18,18,agua_sin_gas,0.778,1,False,base
+345,queso fresco y tierno,18,18,queso_tierno_fresco,0.944,3,False,base
+171,queso rulo de cabra,18,18,no_relevante,0.667,2,True,base
+223,agua con gas y saborizada,18,18,agua_con_gas,0.833,3,False,base
+24,bebidas isotónicas,17,0,,0.0,1,True,base
+352,pan de hogaza,17,17,pan_hogaza,0.941,4,False,base
+301,sazonadores y mezclas de especias,17,17,no_relevante,0.824,3,True,base
+298,verduras en conserva en tarro,17,17,no_relevante,1.0,1,True,base
+156,barritas de cereales,17,10,no_relevante,1.0,3,True,base
+330,cereales de desayuno,17,17,no_relevante,0.412,4,True,base
+236,friegasuelos y limpiahogares,17,0,,0.0,1,True,base
+94,lentejas cocidas en conserva,17,13,no_relevante,1.0,3,True,base
+123,comida para mascotas con pollo,17,17,no_relevante,1.0,2,True,base
+108,cefalópodos congelados y descongelados,17,0,,0.0,1,True,base
+240,packs de agua mineral,17,17,agua_con_gas,1.0,2,False,base
+155,barritas de chocolate y barquillo,17,15,no_relevante,1.0,3,True,base
+87,cacao soluble y a la taza,17,1,no_relevante,1.0,2,True,base
+85,garbanzos secos envasados,17,17,garbanzo_cocido,0.529,2,False,base
+62,yogures bífidus,17,0,,0.0,1,True,base
+77,pañales para bebé,17,17,no_relevante,1.0,1,True,base
+55,pasta de dientes,16,16,no_relevante,1.0,1,True,base
+143,refrescos con gas cítricos,16,0,,0.0,1,True,base
+338,productos con pistacho,16,16,no_relevante,1.0,2,True,base
+181,"bizcochos, magdalenas y sobaos",16,16,no_relevante,1.0,2,True,base
+224,leche fermentada L. casei,16,16,no_relevante,0.688,1,True,base
+192,panceta y productos curados,16,15,no_relevante,1.0,3,True,base
+200,leche semidesnatada,16,14,leche_semidesnatada,1.0,1,False,base
+97,alubias secas,16,16,no_relevante,1.0,2,True,base
+241,limpiadores de baño y WC,16,1,no_relevante,1.0,2,True,base
+71,conservas de pescado y marisco,16,14,atun_aceite_oliva,0.357,1,False,base
+246,platos preparados de arroz,16,16,no_relevante,1.0,3,True,base
+27,agua mineral sin gas,16,16,agua_con_gas,1.0,1,False,base
+245,pasta larga y fideos,16,6,no_relevante,0.667,3,True,base
+31,lácteos La Colmenareña,15,15,leche_semidesnatada,0.4,2,False,base
+252,salmón ahumado,15,15,salmon_ahumado,1.0,1,False,base
+134,café molido y soluble,15,15,no_relevante,1.0,1,True,base
+105,chicles de sabores,15,15,no_relevante,1.0,1,True,base
+259,galletas y bollería sin azúcar,15,15,no_relevante,1.0,2,True,base
+275,pimentón y colorante alimentario,15,10,no_relevante,1.0,3,True,base
+88,cacao soluble en polvo,15,15,no_relevante,1.0,1,True,base
+290,pasta seca clásica e integral,15,15,arroz_integral,0.6,1,False,base
+74,bebidas energéticas Red Bull,15,15,no_relevante,1.0,1,True,base
+68,productos de afeitado y depilación,15,15,no_relevante,1.0,1,True,base
+73,refrescos y bebidas energéticas zero,15,15,no_relevante,1.0,1,True,base

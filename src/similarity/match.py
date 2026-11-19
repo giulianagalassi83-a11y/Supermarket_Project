@@ -85,7 +85,7 @@ def best_per_query(cands_with_prob, threshold):
 def mutual_best(a_to_b, b_to_a):
     """Pairs that are each other's best match (stops A→B→C chaining)."""
     back = set(zip(b_to_a["key_b"], b_to_a["key_a"]))
-    keep = [(a, b) in back for a, b in zip(a_to_b["key_a"], a_to_b["key_b"])]
+    keep = np.array([(a, b) in back for a, b in zip(a_to_b["key_a"], a_to_b["key_b"])], dtype=bool)  # [] would select columns
     return a_to_b[keep].reset_index(drop=True)
 
 

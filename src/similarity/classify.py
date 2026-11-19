@@ -137,7 +137,7 @@ def main():
     pick = engine.loc[engine["tune_macro_f1"].idxmax()]  # chosen on the tuning labels, never on the test set
     _save_confusion(confusions[pick["vectorizer"]], f"{pick['vectorizer']} — hand labels (n={pick['test_n']})")
     print(f"\npick (best tune macro-F1): {pick['vectorizer']} τ={pick['tau']} δ={pick['delta']}"
-          f" → set config.SIM['classify_encoder'] and config.THRESHOLDS['engine']")
+          f" → to use it: config.SIM['classifier'] and config.SIM['classifier_thresholds'], then python -m src.similarity.build")
 
 
 if __name__ == "__main__":
