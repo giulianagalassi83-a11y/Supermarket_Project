@@ -83,6 +83,7 @@ jobs:
         uses: actions/checkout@v4
         with:
           persist-credentials: true
+          fetch-depth: 0
 
       - name: Set up Python
         uses: actions/setup-python@v5
@@ -134,4 +135,17 @@ jobs:
           fi
 
           git commit -m "Update six supermarkets, normalized catalog and Trends"
+
+          # Retrieve the latest repository changes.
+          git fetch origin main
+
+          # Prevent publishing stale results if pipeline inputs changed.
+          if ! git diff --quiet HEAD^ origin/main -- data/ src/ scripts/ api_clients/ scrapers/ requirements.txt requirements-embeddings.txt; then
+            echo "Pipeline inputs changed during execution. Start a new workflow run."
+            exit 1
+          fi
+
+          # Integrate concurrent changes before publishing.
+          git rebase origin/main
+
           git push origin HEAD:main
