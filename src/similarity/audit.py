@@ -17,7 +17,7 @@ from src.similarity import judge
 
 AUDIT_DIR = config.SIM_DIR / "audit"
 KEY_PATH = AUDIT_DIR / "audit_key.csv"
-RATERS = {"felipe": None, "teammate": 40}  # rater → rows to label (None = all); the teammate's rows overlap Felipe's
+RATERS = {"felipe": None, "teammate": 40, "teammate2": 40, "teammate3": 40}  # rater → rows (None = all); the 3 teammate sheets hold the SAME 40 pairs (copies), overlapping Felipe
 LABELS = ["same", "equivalent", "different", "unsure"]
 
 
@@ -119,6 +119,50 @@ def score():
     out = pd.concat([out, total.reset_index().assign(chain_a="all")], ignore_index=True)
     out.to_csv(config.SIM_RESULTS_DIR / "audit_matches.csv", index=False)
     print(out.to_string(index=False))
+    if len(raters) >= 3:
+        consensus(key, raters)
+
+
+def fleiss_kappa(table):
+    """Fleiss' κ from an items × categories count table (every item rated by the same number of raters)."""
+    t = np.asarray(table, dtype=float)
+    n = t.sum(axis=1)[0]
+    p_j = t.sum(axis=0) / t.sum()
+    p_i = ((t ** 2).sum(axis=1) - n) / (n * (n - 1))
+    p_e = (p_j ** 2).sum()
+    return float((p_i.mean() - p_e) / (1 - p_e))
+
+
+def consensus(key, raters):
+    """Human majority label on the pairs every human rated; Fleiss' κ; engine checked against the majority."""
+    humans = pd.concat(raters.values(), axis=1, join="inner").dropna()
+    counts = humans.apply(lambda r: r.value_counts(), axis=1).reindex(columns=LABELS[:3]).fillna(0)
+    top = counts.max(axis=1)
+    majority = counts.idxmax(axis=1).where(top > len(raters) / 2, "tie")
+    out = key.join(humans, how="inner").assign(majority=majority, n_agree=top.astype(int))
+    out["human_match"] = out["majority"].isin(["same", "equivalent"])
+    out["engine_match"] = out["accepted"] != "no"
+    fk = {"humans": fleiss_kappa(counts)}
+    with_llm = counts.copy()
+    for lab in LABELS[:3]:
+        with_llm[lab] += (out["llm_label"] == lab).astype(int)
+    fk["humans+gemini"] = fleiss_kappa(with_llm)
+    cols = ["group", "chain_a", "accepted", "tier", "name_a", "name_b", *raters, "majority", "n_agree", "llm_label",
+            "human_match", "engine_match"]
+    out[cols].to_csv(config.SIM_RESULTS_DIR / "audit_consensus.csv")
+    decided = out[out["majority"] != "tie"]
+    rows = [{"metric": f"fleiss_kappa_{k}", "n": len(counts), "value": round(v, 3)} for k, v in fk.items()]
+    rows.append({"metric": "unanimous_share", "n": len(out), "value": round((top == len(raters)).mean(), 3)})
+    rows.append({"metric": "gemini_equals_majority", "n": len(decided),
+                 "value": round((decided["llm_label"] == decided["majority"]).mean(), 3)})
+    for acc in ["high", "balanced"]:
+        s = decided[decided["accepted"] == acc]
+        rows.append({"metric": f"precision_{acc}_vs_majority", "n": len(s), "value": round(s["human_match"].mean(), 3)})
+    s = decided[decided["accepted"] == "no"]
+    rows.append({"metric": "rejected_but_majority_match", "n": len(s), "value": round(s["human_match"].mean(), 3)})
+    summary = pd.DataFrame(rows)
+    summary.to_csv(config.SIM_RESULTS_DIR / "audit_consensus_summary.csv", index=False)
+    print(summary.to_string(index=False))
 
 
 if __name__ == "__main__":

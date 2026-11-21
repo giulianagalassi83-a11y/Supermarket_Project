@@ -1,0 +1,11 @@
+a,b,n,agreement,kappa
+felipe,teammate,40,0.8,0.688
+felipe,teammate2,40,0.85,0.767
+felipe,teammate3,39,0.769,0.651
+felipe,gemini,100,0.59,0.397
+teammate,teammate2,40,0.85,0.769
+teammate,teammate3,39,0.769,0.643
+teammate,gemini,40,0.7,0.562
+teammate2,teammate3,39,0.744,0.618
+teammate2,gemini,40,0.8,0.698
+teammate3,gemini,39,0.718,0.591

@@ -1,0 +1,40 @@
+audit_id,group,chain_a,accepted,tier,name_a,name_b,felipe,teammate,teammate2,teammate3,majority,n_agree,llm_label,human_match,engine_match
+6,barcode_error,bm,balanced,size_unknown,Stick para gatos de salmón y trucha,Snack Liquido Gatos Salmón Omega 3,different,different,different,different,different,4,different,False,True
+7,rejected,alcampo,no,strict,COOSUR Aceite de oliva virgen extra olivares de la sierra 750ml,Aceite de Oliva Virgen Extra Hojiblanca,equivalent,equivalent,equivalent,equivalent,equivalent,4,equivalent,True,False
+9,high,dia,high,strict,Vinagre balsámico de Módena Borges 250 ml,Vinagre balsámico de módena 250 ml,same,same,same,same,same,4,same,True,True
+10,rejected,mercadona,no,size_unknown,Patatas fritas horno y air fryer Hacendado ultracongeladas,Petit maxi Danonino pack 4 fresa y plátano,different,different,different,different,different,4,different,False,False
+14,high,ahorramas,high,strict,"Leche Pascual Semi 1,5l","Leche semidesnatada 1,5 l",same,same,same,same,same,4,same,True,True
+16,high,ahorramas,high,size_unknown,Yogur proteínas Danone pack 4 stracciatella,Yogur de proteínas stracciatela 4x105 g,same,same,same,same,same,4,same,True,True
+21,balanced,alcampo,balanced,size_unknown,DANONE Yogour griego con sabor a manzana asada con canela 4 x 110 g.,Yogur Griego Danone Pack 4 Manzana Y Canela,same,same,same,same,same,4,same,True,True
+28,rejected,ahorramas,no,strict,Leche calcio Alipende 1l desnatada,Leche desnatada calcio Puleva 1 L,different,equivalent,equivalent,equivalent,equivalent,3,equivalent,True,False
+29,rejected,dia,no,size_unknown,Pasta penne Dia Selección Mundial 500 g,Patata  Selección,different,different,different,different,different,4,different,False,False
+31,high,mercadona,high,strict,Leche semidesnatada Asturiana,"Leche semidesnatada 1,5 l",same,same,same,same,same,4,same,True,True
+36,barcode_error,bm,balanced,size_unknown,Queso proteínas 3x70 g,Queso Burgo de Arias Pack de 3 Unidades,equivalent,same,same,equivalent,tie,2,different,False,True
+37,rejected,alcampo,no,size_unknown,"GARCIA BAQUERO Tabla de 3 quesos premiados (Reserva 12, La Cava Barus y Pok) 150 g.",Queso reserva García Baquero,different,equivalent,different,different,different,3,different,False,False
+38,balanced,ahorramas,balanced,strict,"Leche sin lactosa 0,0% MG Asturiana 1l desnatada","CENTRAL LECHERA ASTURIANA Leche desnatada 0% materia grasa, sin lactosa  1 l.",same,same,same,same,same,4,same,True,True
+40,high,dia,high,size_unknown,Bífidus natural desnatado edulcorado Activia 8 x 120 g,Bífidus probiótico Activia desnatado 0% materia grasa pack 8 natural edulcorado,same,same,same,same,same,4,same,True,True
+41,rejected,aldi,no,size_unknown,Pechuga de pollo corte fino,Filetes pechuga de pollo corte fino,same,same,same,equivalent,same,3,equivalent,True,False
+42,high,aldi,high,strict,Mayonesa,Mayonesa Hellmann's 450 ml,same,same,same,same,same,4,same,True,True
+49,balanced,dia,balanced,strict,Champú repara y protege Pantene 325 ml,Champú Nutri Plex Repara y Protege,same,same,same,same,same,4,same,True,True
+53,barcode_error,bm,high,strict,Yogur griego natural 500 g,Yogur Natural Artesano,same,same,same,equivalent,same,3,different,True,True
+54,barcode_error,bm,high,strict,Caldo de pollo natural 1 l,Caldo Natural de Pollo Con Jamón,different,different,different,equivalent,different,3,different,False,True
+56,balanced,alcampo,balanced,size_unknown,ALBO Atún claro en aceite de oliva virgen extra 6 uds. X 48 g.,Atún claro en aceite de oliva Albo 67 g,equivalent,equivalent,equivalent,equivalent,equivalent,4,different,True,True
+57,rejected,dia,no,loose,Smoothie energy Dia Naturmundo 150 ml,TRUE FRUITS Smoothie de naranja 250 ml.,equivalent,equivalent,different,equivalent,equivalent,3,different,True,False
+60,balanced,aldi,balanced,strict,Ensalada maxi gourmet,Ensalada mezcla gourmet maxi lavada,same,equivalent,same,equivalent,tie,2,equivalent,False,True
+64,barcode_error,bm,balanced,size_unknown,Toallitas húmedas hygienic comfort 80 unidades,Higiénico Húmedo Aloe Vera,equivalent,equivalent,equivalent,equivalent,equivalent,4,equivalent,True,True
+65,balanced,dia,balanced,size_unknown,Agua mineral Font Vella 2 L,FONT VELLA Agua mineral pack 6 uds.x 2 l.,equivalent,same,equivalent,different,tie,2,equivalent,False,True
+67,rejected,dia,no,loose,Queso azul Quesería del Mundo 150 g,Queso azul,equivalent,equivalent,equivalent,equivalent,equivalent,4,equivalent,True,False
+68,high,alcampo,high,size_unknown,"SOLAN DE CABRAS Agua mineral pack de 6 uds. x 1,5 l.","Agua mineral Solán de Cabras pack 6 x 1,5 L",same,same,same,same,same,4,same,True,True
+71,balanced,aldi,balanced,strict,Bolsita yogur con plátano y fresa,"HERO Solo Bolsita de yogur con plátano y fresa, sin azúcares añadidos, a partir de 6 meses 100 g.",same,same,same,same,same,4,same,True,True
+73,barcode_error,bm,balanced,size_unknown,Yogur bífidus cremoso 0% frutas silvestres 4x120 g,Activia Frutas Bosque Yogur Bífidus P-4 ud.,same,same,same,same,same,4,different,True,True
+74,rejected,alcampo,no,strict,PULEVA Eco  Leche entera  1 l.,Leche Puleva calcio 1l entera,same,equivalent,equivalent,equivalent,equivalent,3,different,True,False
+75,rejected,dia,no,size_unknown,Pan de hamburguesa sin gluten El Molino de Dia 170 g,Pan congelado para celiacos sin gluten,different,equivalent,different,different,different,3,different,False,False
+78,rejected,mercadona,no,strict,Smoothie fresa y plátano Hacendado,INNOCENT Smoothie fresa y plátano 250 ml.,equivalent,equivalent,equivalent,equivalent,equivalent,4,equivalent,True,False
+79,balanced,dia,balanced,strict,Kéfir Activia 280 g,Kefir líquido con arándanos Activia 280g,same,different,different,equivalent,tie,2,different,False,True
+82,barcode_error,bm,high,strict,Agua micelar 400 ml,Agua Micelar,same,same,same,same,same,4,same,True,True
+84,rejected,mercadona,no,size_unknown,Pepino,Pechuga de pollo,different,different,different,different,different,4,different,False,False
+85,rejected,aldi,no,size_unknown,Infusión menta poleo,"POMPADOUR Infusión de tarta de manzana 18 uds. 40,5 g.",different,different,different,equivalent,different,3,different,False,False
+90,balanced,mercadona,balanced,strict,Bebida láctea Omega 3 Puleva con leche desnatada,PULEVA Eco Leche desnatada  1 l.,equivalent,equivalent,different,equivalent,equivalent,3,different,True,True
+91,rejected,aldi,no,strict,Spaghetti integral,Espaguetis integrales Gallo 450 g,equivalent,equivalent,equivalent,equivalent,equivalent,4,equivalent,True,False
+95,high,alcampo,high,size_unknown,ACTIVIA Bífidus desnatado (0% materia grasa) y con sabor natural edulcorado 0% de Danone 8 x 120 g.,Bífidus probiótico Activia desnatado 0% materia grasa pack 8 natural edulcorado,same,same,same,same,same,4,same,True,True
+96,rejected,ahorramas,no,size_unknown,Bífidus Activia pack 8 natural,Kéfir natural 280 ml,different,different,different,different,different,4,different,False,False
