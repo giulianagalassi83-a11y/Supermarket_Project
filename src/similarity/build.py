@@ -137,7 +137,7 @@ def main():
 
     typed = products[products["type_id"].notna() & (products["type_id"] != config.NO_RELEVANTE)].reset_index(drop=True)
     enc = load_encoder("finetuned")
-    encode_gently(enc, list(typed["mtext"]))
+    encode_gently(enc, list(products["mtext"]))  # every current product: dashboard search reads these from the cache
     print(f"matching {len(typed)} typed current products of {len(products)}", flush=True)
     matches = match_all(typed, enc, attrs, decider, balanced_t, equiv_decider, equiv_t)
     del enc

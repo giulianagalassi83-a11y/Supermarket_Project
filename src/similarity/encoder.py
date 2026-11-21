@@ -75,6 +75,14 @@ class Encoder:
         rows = np.vstack([self._vectors[h] for h in hashes])
         return rows / np.linalg.norm(rows, axis=1, keepdims=True)
 
+    def cached(self, texts, kind: Literal["query", "passage"] = "query"):
+        """(mask of texts already in the cache, their vectors) — never calls the model."""
+        hashes = [_hash(_prefix(self.prefix_id, kind) + t) for t in texts]
+        mask = [h in self._vectors for h in hashes]
+        rows = [self._vectors[h] for h, m in zip(hashes, mask) if m]
+        vectors = np.vstack(rows) if rows else np.zeros((0, 0), dtype=np.float32)
+        return mask, vectors
+
     def save_cache(self):
         """Append the vectors computed since the last save; returns the number of rows written."""
         if not self._new:
