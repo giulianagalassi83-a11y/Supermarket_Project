@@ -52,6 +52,38 @@ def digest(path: Path) -> str:
 
 
 # --------------------------------------------------
+# PRICE SANITY: compare with the previous snapshot
+# --------------------------------------------------
+
+PRICE_COLUMN = {"mercadona": "unit_price", "bm": "regular_price", "consum": "regular_price"}
+MAX_MOVED_SHARE = 0.20  # normal weeks: at most 3 % of products move more than 1.5x
+
+
+def moved_share(chain: str, day: str, frame: pd.DataFrame, history: Path):
+    """Share of products whose price moved more than 1.5x since the previous good snapshot."""
+    from src.pipeline.config import EXCLUDED_SNAPSHOTS
+
+    previous = sorted(
+        p for p in (history / chain).glob("*_raw.csv")
+        if p.name[:10] < day and (chain, p.name[:10]) not in EXCLUDED_SNAPSHOTS
+    )
+    if not previous:
+        return None
+    col = PRICE_COLUMN.get(chain, "price")
+    key = "product_id" if frame["product_id"].notna().mean() > 0.5 else "url"
+
+    def prices(df):
+        return pd.to_numeric(df.set_index(df[key].astype(str))[col], errors="coerce").dropna().groupby(level=0).first()
+
+    new, old = prices(frame), prices(pd.read_csv(previous[-1], encoding="utf-8-sig"))
+    shared = new.index.intersection(old.index)
+    if len(shared) < 30:
+        return None
+    ratio = new[shared] / old[shared]
+    return float(((ratio > 1.5) | (ratio < 1 / 1.5)).mean())
+
+
+# --------------------------------------------------
 # VALIDATE AND INTEGRATE COLLECTOR OUTPUTS
 # --------------------------------------------------
 
@@ -165,6 +197,19 @@ def main() -> None:
                 raise FileExistsError(
                     f"Historical RAW already exists: {target}"
                 )
+
+            # A site markup change usually breaks every price at once.
+            if relative.parts[1] == "history":
+                share = moved_share(
+                    relative.parts[2], day, frame,
+                    ROOT / "data" / "history"
+                )
+                if share is not None and share > MAX_MOVED_SHARE:
+                    raise RuntimeError(
+                        f"{share:.0%} of {relative.parts[2]} prices moved "
+                        "more than 1.5x since the last snapshot; "
+                        "check the scraper"
+                    )
 
             verified.append((source, target))
 
