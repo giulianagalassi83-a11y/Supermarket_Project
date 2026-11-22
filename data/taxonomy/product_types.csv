@@ -29,16 +29,16 @@ tomate_triturado,tomate,Tomate triturado / natural,tomate triturado o natural en
 tomate_frito,tomate,Tomate frito,tomate frito en brik o frasco,0,KILO
 neg_tomate_salsas,tomate,(ruido) salsas,"ketchup, salsa para pasta, pesto, mostaza",1,
 neg_tomate_platos,tomate,(ruido) platos con tomate,"sardinas en tomate, albóndigas con tomate, pizza, alubias",1,
-arroz_redondo,arroz,Arroz redondo,arroz redondo para paella paquete 1 kg,0,KILO
-arroz_largo,arroz,Arroz largo / basmati,"arroz largo, basmati o jazmín paquete",0,KILO
+arroz_redondo,arroz,Arroz redondo,"arroz redondo, arroz bomba, arroz para paella paquete 1 kg",0,KILO
+arroz_largo,arroz,Arroz largo / basmati,"arroz largo, arroz vaporizado, basmati o jazmin paquete",0,KILO
 arroz_integral,arroz,Arroz integral,arroz integral paquete,0,KILO
 arroz_vasito,arroz,Arroz cocido en vasito,arroz cocido listo para microondas en vasito,0,KILO
 neg_arroz_platos,arroz,(ruido) platos preparados,"paella preparada, arroz con pollo, tarrito infantil, congelado",1,
 neg_arroz_derivados,arroz,(ruido) derivados,"tortitas de arroz, cereales de arroz inflado, bebida de arroz, fideos de arroz",1,
 neg_arroz_otros,arroz,(ruido) otras legumbres y pasta,"lentejas, garbanzos, pasta, sémola",1,
-pasta_larga,pasta,Pasta larga,"espaguetis, tallarines, fideos largos paquete",0,KILO
-pasta_corta,pasta,Pasta corta,"macarrones, hélices, plumas, pajaritas paquete",0,KILO
-pasta_integral,pasta,Pasta integral,pasta integral espaguetis o macarrones,0,KILO
+pasta_larga,pasta,Pasta larga,"espaguetis, spaghetti, tallarines, linguine, bavette, tagliatelle, fideos, fideua, cabello de angel, nidos, pasta larga paquete",0,KILO
+pasta_corta,pasta,Pasta corta,"macarrones, penne rigate, plumas, helices, fusilli, espirales, rigatoni, tiburones, conchas, pajaritas, estrellas, pasta corta paquete",0,KILO
+pasta_integral,pasta,Pasta integral,pasta integral de trigo integral,0,KILO
 pasta_fresca_rellena,pasta,Pasta fresca / rellena,"pasta fresca rellena, raviolis, tortellini, girasoles",0,KILO
 neg_pasta_galletas,pasta,(ruido) galletas y dulces,"galletas, barquillos, bollería",1,
 neg_pasta_otros,pasta,(ruido) otros,"pasta dental, salsa para pasta, masa de empanadilla, lasaña preparada",1,

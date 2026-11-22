@@ -19,7 +19,7 @@ import pandas as pd
 
 from src.pipeline import config
 from src.similarity import attributes, judge
-from src.similarity.evaluate import _VARIANT_FEATURES, _oof_candidates, grouped_folds
+from src.similarity.evaluate import _VARIANT_FEATURES, _oof_candidates
 from src.similarity.match import add_features, apply_veto, best_per_query, candidates, choose_threshold, fit_decider, predict
 
 HIGH_T = config.SIM["high_confidence_t"]  # balanced point = the precision_target rule, fit on held-out probs
@@ -36,9 +36,42 @@ def judge_text(r):
     return f"{r['name']} | brand: {r['brand'] or '-'} | size: {size or 'unknown'} | chain: {r['chain_id']}"
 
 
+def cv_cached(products):
+    """Mask: the product's match text has a vector from every CV fold model (products new since the CV run don't)."""
+    from src.similarity.encoder import Encoder
+    from src.similarity.evaluate import FOLD_SETTINGS
+    from src.similarity.train import CV_CACHE_PATH, fold_model_key
+
+    mask = np.ones(len(products), dtype=bool)
+    for i in range(config.SIM["n_folds"]):
+        enc = Encoder(*fold_model_key(i, *FOLD_SETTINGS), CV_CACHE_PATH, prefix_id=config.SIM["encoder_id"])
+        mask &= np.array(enc.cached(list(products["mtext"]), "query")[0], dtype=bool)
+    return mask
+
+
+def fixed_folds(pairs, term_folds=None):
+    """(train, test) index pairs from the CV run's term → fold map, so every query keeps the fold that held it out."""
+    term_folds = config.SIM["cv_term_folds"] if term_folds is None else term_folds
+    fold = pairs["search_term"].map(term_folds).to_numpy()
+    idx = np.arange(len(pairs))
+    return [(idx[(fold != i) & ~pd.isna(fold)], idx[fold == i]) for i in range(config.SIM["n_folds"])]
+
+
 def heldout_decider(products, pairs, attrs):
-    """Decider + high-confidence threshold from held-out BM↔Consum candidates; also the barcode-error pairs."""
-    folds = grouped_folds(pairs)
+    """Decider + high-confidence threshold from held-out BM↔Consum candidates; also the barcode-error pairs.
+
+    Uses the cached vectors of the CV fold models (not kept), so only products they encoded take part, and each
+    search term keeps the fold that held it out (fixed_folds); products new since then are matched as usual later.
+    """
+    bmc = products[products["chain_id"].isin(["bm", "consum"])]
+    keep = set(bmc.loc[cv_cached(bmc), "product_key"])
+    n_pairs = len(pairs)
+    pairs = pairs[pairs["key_bm"].isin(keep) & pairs["key_consum"].isin(keep)
+                  & pairs["search_term"].isin(config.SIM["cv_term_folds"])].reset_index(drop=True)
+    products = products[~products["chain_id"].isin(["bm", "consum"]) | products["product_key"].isin(keep)]
+    print(f"held-out decider: {len(pairs)} of {n_pairs} barcode pairs, {len(keep)} of {len(bmc)} BM/Consum products "
+          "have CV vectors", flush=True)
+    folds = fixed_folds(pairs)
     cands = _oof_candidates("finetuned", products, pairs, folds, config.SIM["top_k"])
     cands = add_features(apply_veto(cands, attrs, "same"), {}, attrs)
     errors, oof = [], np.zeros(len(cands))

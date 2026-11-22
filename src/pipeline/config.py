@@ -85,6 +85,13 @@ SIM = {
     "db_pack_veto": False,  # DB pack counts never veto 'same': A/B 16 Nov, off = +1–2 pt recall at equal precision
     "high_confidence_t": 0.90,  # operating point 1: held-out P .95 / R .53; point 2 ("balanced") = precision_target rule
     "n_folds": 5,
+    # Held-out fold of each search term in the `train --cv` run (15 Nov) whose fold models made the cached CV vectors.
+    # GroupKFold reshuffles terms when the catalogue changes, so the held-out decider uses this fixed map instead
+    # (recovered 22 Nov: each fold model scores its held-out terms' barcode pairs lowest; small terms checked
+    # against the run's fold sizes 137/134/138/137/133).
+    "cv_term_folds": {"agua": 0, "leche": 0, "salmón": 0, "aceite": 1, "tomate": 1, "zumo": 1, "plátano": 1,
+                      "pasta": 2, "detergente": 2, "atún": 2, "huevos": 2,
+                      "manzana": 3, "papel higiénico": 3, "pollo": 3, "arroz": 3, "queso": 4, "pan": 4, "yogur": 4},
     "judge_model": "gemini-3.8-flash",
     # Type classifier for src.similarity.build. Engine τ/δ tuned on 300 Gemini labels (python -m src.similarity.classify →
     # data/similarity/results/classification.csv). PROVISIONAL tfidf (18 Nov): the engine does not beat TF-IDF on the
