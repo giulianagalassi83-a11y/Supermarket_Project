@@ -363,7 +363,7 @@ def report(results_dir=None, sim_dir=None, df=None):
         cover = matches.groupby(["level", "confidence"]).size().rename("pairs").reset_index()
         return ("BM vs Consum, % BM is dearer (median over shared rows):\n\n" + md_table(gaps)
                 + "\n\nChain ranking: median € per unit relative to the cheapest chain on each row (1.00 = cheapest). "
-                f"{', '.join(EXCLUDED)} left out (its scraper sometimes stores the €/kg price as the item price).\n\n"
+                + (f"{', '.join(EXCLUDED)} left out.\n\n" if EXCLUDED else "\n\n")
                 + md_table(rank) + f"\n\nMatches in matches.csv:\n\n{md_table(cover)}\n\n"
                 f"Canonical groups: {canonical['canonical_id'].nunique():,}; comparable on € per unit (≥ 2 chains): {len(table):,}.")
 

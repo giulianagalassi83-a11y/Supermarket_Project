@@ -12,7 +12,9 @@ import pandas as pd
 
 from src.pipeline import config
 
-EXCLUDED = ("Ahorramás",)
+# Chains left out of the same-product table. Ahorramás was here until its scraper's
+# price extraction was fixed on 22 Nov 2026 (it stored cents only or the €/kg price).
+EXCLUDED = ()
 
 
 def _confidence(matches):

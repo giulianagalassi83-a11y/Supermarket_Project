@@ -41,6 +41,13 @@ RAW_FILES = {
     "consum": "consum_products_raw.csv",
 }
 
+# Historical RAW snapshots left out of the price history (chain_id, date) -> reason.
+# The files stay on disk for the record; the pipeline never loads them.
+EXCLUDED_SNAPSHOTS = {
+    ("ahorramas", "2026-11-17"): "scraper read only the cents of each price (site markup change)",
+    ("ahorramas", "2026-11-20"): "scraper read only the cents of each price (site markup change)",
+}
+
 # Which Mercadona collector to use: "api" or "selenium"
 MERCADONA_SOURCE = "api"
 

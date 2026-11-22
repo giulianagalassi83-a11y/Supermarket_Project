@@ -234,6 +234,9 @@ def load_historical_raw(history_dir=HISTORY_DIR):
 
         for path in snapshots:
 
+            if (chain_id, path.name[:10]) in config.EXCLUDED_SNAPSHOTS:
+                continue
+
             # The same adapter processes current and historical files.
             frame = loader(path)
 
@@ -558,6 +561,9 @@ def export_processed_snapshots(
         for raw_path in raw_snapshots:
 
             day = raw_path.name[:10]
+
+            if (chain_id, day) in config.EXCLUDED_SNAPSHOTS:
+                continue
 
             processed_path = (
                 folder / f"{day}_processed.csv"
