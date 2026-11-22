@@ -161,26 +161,26 @@ BM vs Consum, % BM is dearer (median over shared rows):
 
 | comparison | n | median_gap_pct | a_cheaper_share |
 |---|---|---|---|
-| before: type medians | 61 | 17.603 | 0.164 |
-| after: same product | 271 | 5.351 | 0.129 |
+| before: type medians | 62 | 24.130 | 0.145 |
+| after: same product | 284 | 5.481 | 0.120 |
 
 Chain ranking: median € per unit relative to the cheapest chain on each row (1.00 = cheapest). Ahorramás left out (its scraper sometimes stores the €/kg price as the item price).
 
 | chain | median_vs_cheapest (types) | rows (types) | cheapest_share (types) | median_vs_cheapest (same product) | rows (same product) | cheapest_share (same product) |
 |---|---|---|---|---|---|---|
-| Aldi | 1.020 | 52 | 0.481 | 1.000 | 28 | 0.786 |
-| Mercadona | 1.022 | 53 | 0.453 | 1.003 | 69 | 0.348 |
-| Dia | 1.310 | 66 | 0.136 | 1.033 | 275 | 0.215 |
-| Consum | 1.391 | 66 | 0.121 | 1.000 | 424 | 0.446 |
-| Bm | 1.728 | 64 | 0.016 | 1.076 | 432 | 0.266 |
-| Alcampo | 1.747 | 67 | 0.030 | 1.000 | 476 | 0.578 |
+| Aldi | 1.000 | 53 | 0.509 | 1.000 | 36 | 0.722 |
+| Mercadona | 1.022 | 53 | 0.434 | 1.003 | 74 | 0.365 |
+| Dia | 1.310 | 66 | 0.136 | 1.033 | 284 | 0.222 |
+| Consum | 1.391 | 66 | 0.121 | 1.000 | 443 | 0.442 |
+| Alcampo | 1.755 | 67 | 0.015 | 1.000 | 519 | 0.566 |
+| Bm | 1.774 | 65 | 0.015 | 1.076 | 461 | 0.256 |
 
 Matches in matches.csv:
 
 | level | confidence | pairs |
 |---|---|---|
-| equivalent | balanced | 1492 |
-| same | balanced | 1261 |
-| same | high | 949 |
+| equivalent | balanced | 1144 |
+| same | balanced | 1415 |
+| same | high | 970 |
 
-Canonical groups: 903; comparable on € per unit (≥ 2 chains): 684.
+Canonical groups: 970; comparable on € per unit (≥ 2 chains): 724.
