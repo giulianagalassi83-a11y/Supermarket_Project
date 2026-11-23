@@ -1,0 +1,98 @@
+product_key,label,rationale,model
+alcampo:566092,papel_higienico_humedo,"El producto se describe explícitamente como 'Papel higiénico húmedo' de la marca Colhogar con 80 unidades, lo cual coincide con la categoría 'papel_higienico_humedo'.",gemini-3.8-flash
+alcampo:60345,detergente_liquido,"The product is specifically named 'Detergente líquido para ropa de color', which fits the 'detergente_liquido' category for liquid laundry detergent.",gemini-3.8-flash
+alcampo:10111,aceite_oliva,"El producto es aceite de oliva suave en formato lata de 5 litros, encajando en la categoría de aceite de oliva suave o intenso.",gemini-3.8-flash
+alcampo:869249,garbanzo_seco,"El producto es garbanzo Pedrosillano seco envasado en paquete de 500 g de la marca Alcampo Ecológico, correspondiente a la categoría garbanzo_seco.",gemini-3.8-flash
+alcampo:64816,atun_aceite_oliva,"The product is CAMPOS tuna in olive oil (Atún claro en aceite de oliva 104 g), which matches the 'atun_aceite_oliva' category.",gemini-3.8-flash
+alcampo:52153,no_relevante,"The product is a milk and fruit juice beverage (Bifrutas), which is a mixed milk drink rather than pure fruit juice or standard nectar.",gemini-3.8-flash
+alcampo:438615,agua_sin_gas,"The product is Font Vella still natural mineral water in large bottles (pack of 4 x 2.5 l), fitting the description for still mineral water bottles/jugs.",gemini-3.8-flash
+alcampo:52235,queso_rallado,"El producto es queso Grana Padano en formato rallado, correspondiente a la categoría queso_rallado.",gemini-3.8-flash
+alcampo:51607,yogur_sabores,"El producto es un yogur lácteo (elaborado con leche de vaca) con sabor a coco en pack de 4 unidades, por lo que corresponde a la categoría de yogur de sabores.",gemini-3.8-flash
+alcampo:916429,hamburguesas,"El producto es un paquete de hamburguesas (burger meat) de pavo de la marca El Pozo King, correspondiente a la categoría hamburguesas.",gemini-3.8-flash
+alcampo:19405,pan_hogaza,"El producto es pan integral tipo payés, el cual se clasifica específicamente bajo pan_hogaza según la descripción proporcionada.",gemini-3.8-flash
+alcampo:537387,no_relevante,"El producto es un alimento infantil procesado (tarrito de puré de frutas variadas) y no fruta fresca entera correspondiente a las categorías de manzanas, plátano de Canarias o banana.",gemini-3.8-flash
+alcampo:501256,no_relevante,"El producto es un tarrito de fruta infantil procesada (pera y manzana) y no una manzana fresca (roja, golden o granny smith).",gemini-3.8-flash
+dia:13105,tomate_triturado,"El producto es 'Tomate triturado Dia Vegecampo 800 g', el cual coincide explícitamente con la categoría de tomate triturado o natural en conserva.",gemini-3.8-flash
+dia:262440,no_relevante,"The product is tuna in pickled sauce (en escabeche), which is not among the specific categories of olive oil, sunflower oil, or natural.",gemini-3.8-flash
+dia:288687,nectar,"El producto es una bebida de zumo de piña sin azúcares añadidos de la línea Saborfera de Dia, que corresponde a la categoría de néctar de frutas sin azúcar añadido.",gemini-3.8-flash
+dia:309233,zumo_otras_frutas,"El producto es un zumo de frutas variadas (plátano y maracuyá), por lo que corresponde a la categoría de zumo de otras frutas / multifrutas.",gemini-3.8-flash
+dia:302664P6,agua_sin_gas,"The product is still natural mineral water (Monte Pinos) sold in a 6-pack of 1.5L bottles, without any indication of added or natural carbonation.",gemini-3.8-flash
+dia:294947,no_relevante,"El producto son natillas de chocolate, un postre lácteo que no corresponde a ninguna de las categorías específicas de leche, arroz o yogur.",gemini-3.8-flash
+dia:269628,salmon_fresco,"Escalopines de salmón (salmon escalopes/portions) from the Dia brand is a fresh salmon cut/portion product, fitting the salmon_fresco category.",gemini-3.8-flash
+dia:303508,hamburguesas,"El producto es una burger (hamburguesa) crunchy de pollo con bacón y queso, lo cual encaja directamente en la categoría de 'hamburguesas'.",gemini-3.8-flash
+dia:276606,no_relevante,"El producto es un pollo asado troceado (plato preparado/cocinado y cortado), por lo que no corresponde a pollo entero limpio crudo ni a cortes específicos crudos como pechuga, muslos o alas.",gemini-3.8-flash
+dia:258837,pasta_larga,"Los noodles de arroz son fideos largos secos presentados en paquete, por lo que encajan en la categoría de pasta_larga (espaguetis, tallarines, fideos largos paquete).",gemini-3.8-flash
+aldi:601299701,papel_higienico_humedo,"El producto se describe específicamente como papel higiénico húmedo con aloe vera, coincidiendo directamente con la categoría papel_higienico_humedo.",gemini-3.8-flash
+aldi:601570500,no_relevante,El producto es AOVE en formato spray (aerosol) y no en botella convencional según la descripción de la categoría.,gemini-3.8-flash
+aldi:601261900,garbanzo_cocido,"El producto es garbanzo cocido, correspondiente a la categoría garbanzo_cocido.",gemini-3.8-flash
+aldi:491100,zumo_otras_frutas,"El producto es un zumo de múltiples frutas (piña, manzana y uva), el cual corresponde a la categoría zumo_otras_frutas que incluye piña, manzana, uva o multifrutas.",gemini-3.8-flash
+aldi:601772100,no_relevante,"El producto se presenta en formato de dados (cubos), el cual no coincide con las categorías específicas como lonchas, rallado, untar, fresco/tierno tipo Burgos, ni cuña de curado/semicurado.",gemini-3.8-flash
+aldi:601491900,hamburguesas,"El producto es 'Burger meat de vacuno', el cual corresponde a la categoría de hamburguesas (burger meat / hamburguesas de vacuno o pollo).",gemini-3.8-flash
+aldi:600621901,no_relevante,"El producto es lomo asado (habitualmente de cerdo), por lo que no corresponde a ninguna de las partes o presentaciones de pollo especificadas.",gemini-3.8-flash
+aldi:600063901,no_relevante,"El producto corresponde a repostería/bollería (muffins), no a ninguna de las categorías de pan especificadas (barra, molde, tostado u hogaza).",gemini-3.8-flash
+aldi:600339401,pasta_fresca_rellena,"El producto es 'Pasta fresca rellena de jamón', lo cual corresponde directamente a la categoría 'pasta_fresca_rellena'.",gemini-3.8-flash
+aldi:600438600,tomate_cherry,"Tomate Aromito is a known commercial variety of fresh, highly aromatic cocktail or cherry tomatoes usually sold in trays or packs.",gemini-3.8-flash
+aldi:315900,no_relevante,"El producto es una ensalada de brotes tiernos, lo cual no corresponde a ningún tipo de leche ni bebida vegetal.",gemini-3.8-flash
+ahorramas:80845,papel_higienico,"El producto es papel higiénico convencional en formato rollo (en este caso de 3 capas y perfumado), por lo que corresponde a la categoría de papel higiénico.",gemini-3.8-flash
+ahorramas:79200,detergente_liquido,"The product is named 'Detergente Líquido Flota', which explicitly identifies it as a liquid laundry detergent.",gemini-3.8-flash
+ahorramas:97240,garbanzo_seco,"El producto es garbanzo pedrosillano de 1 kg envasado en seco de la marca Miau, coincidiendo con la categoría de garbanzo seco paquete pedrosillano.",gemini-3.8-flash
+ahorramas:85649,zumo_otras_frutas,"El producto es un zumo a base de concentrado compuesto por una mezcla de frutas (naranja y mandarina), clasificándose como zumo multifrutas dentro de la categoría zumo_otras_frutas.",gemini-3.8-flash
+ahorramas:60203,agua_sin_gas,Agua Font Vella es una conocida marca de agua mineral natural sin gas en formato de botella de 50cl.,gemini-3.8-flash
+ahorramas:45389,yogur_griego,"The product is specifically an artisanal Greek-style yogurt ('Yogur estilo griego Pastoret artesanal 500g'), which fits directly into the 'yogur_griego' category.",gemini-3.8-flash
+ahorramas:60301,no_relevante,"Actimel is a fermented milk drink (L. casei) rather than a traditional yogur (spoonable yogurt) or fresh fruit, so it does not fit the specific yogurt or banana/platano categories.",gemini-3.8-flash
+ahorramas:46205,arroz_redondo,"Arroz de Valencia Dacsa 1kg is a traditional round grain rice (arroz redondo) commonly used for paella, packaged in a 1 kg pack.",gemini-3.8-flash
+ahorramas:37066,huevos_gallina,"The product consists of 12 chicken eggs from cage-free hens in the henhouse (gallinas sueltas en el gallinero, code 2), sized L-XL, which directly corresponds to standard chicken eggs (huevos_gallina docena) rather than free-range/camperos (code 1) or organic/eco (code 0).",gemini-3.8-flash
+consum:7328953,papel_higienico_humedo,"El producto se identifica claramente como higiénico húmedo, correspondiente a la categoría de papel higiénico húmedo / toallitas.",gemini-3.8-flash
+consum:7417124,detergente_liquido,The product name explicitly identifies it as a liquid laundry detergent ('Detergente Líquido').,gemini-3.8-flash
+consum:7150584,tomate_frito,"The product 'Tomate Frito Brik' directly matches the category 'tomate_frito', which specifically includes tomate frito en brik o frasco.",gemini-3.8-flash
+consum:7382617,no_relevante,"The product is a spice grinder containing 5 berries/peppercorns, not an oil.",gemini-3.8-flash
+consum:7452212,no_relevante,El producto es un plato preparado (guiso con espinacas) y no garbanzos secos ni garbanzo cocido simple en frasco.,gemini-3.8-flash
+consum:7007490,no_relevante,"The product is tuna pâté (paté de atún), which is a spread and not standard canned tuna (atún claro/bonito del norte).",gemini-3.8-flash
+consum:7163905,no_relevante,"The product is a refreshing beverage (bebida refrescante/tinto) with grape and apple, rather than a pure juice, fruit nectar, or fresh apple.",gemini-3.8-flash
+consum:7476752,no_relevante,"El producto Shot Salud Digestiva es un shot funcional/bebida para la salud digestiva y no corresponde a zumo de naranja, zumos estándar de otras frutas o néctar sin azúcar añadido.",gemini-3.8-flash
+consum:7405863,no_relevante,"The product 'Alcohol De Cannabis Spray' is a topical alcohol spray, not mineral water (still or sparkling).",gemini-3.8-flash
+consum:7069581,no_relevante,"El producto es una pizza congelada ('Pizza Ristorante 4 Quesos'), no corresponde a ninguna de las categorías de queso indicadas.",gemini-3.8-flash
+consum:7431422,yogur_vegetal,"The product is a soy-based yogurt alternative ('Postre de Soja'), making it a plant-based yogurt ('yogur vegetal de soja o coco').",gemini-3.8-flash
+consum:7370500,no_relevante,"The product is a custard dessert with biscuit (natillas con galleta), which is a milk dessert/custard rather than a yogurt.",gemini-3.8-flash
+consum:926204,no_relevante,"The product is minced pork (cerdo), which does not match picada de vacuno, picada mixta (cerdo y vacuno), picada de pollo/pavo, or hamburguesas.",gemini-3.8-flash
+consum:7290323,pollo_alas,"El producto se describe como 'Alas Partidas Pollo Certificado', lo cual corresponde directamente a la categoría de alas de pollo (pollo_alas).",gemini-3.8-flash
+consum:7362304,pan_barra,"El producto se describe como 'Barra Integral 100%', lo que corresponde a una barra de pan (pan_barra).",gemini-3.8-flash
+consum:7086374,no_relevante,"The product is pizza dough (masa de pizza), which does not belong to any of the specified rice or pasta categories.",gemini-3.8-flash
+consum:7459808,no_relevante,El producto es un pastel de crema (pastelería/repostería) y no corresponde a ninguna de las categorías de pasta alimenticia.,gemini-3.8-flash
+consum:7277713,no_relevante,"El producto es un tarrito de comida infantil/puré ecológico de frutas y verduras, no es fruta fresca.",gemini-3.8-flash
+consum:7417991,no_relevante,El producto 'Leche Hidratante' es un artículo cosmético de cuidado corporal (crema/loción hidratante) y no una leche o bebida vegetal para consumo alimentario.,gemini-3.8-flash
+bm:19982,no_relevante,El producto se refiere a toallitas húmedas genéricas o de bebé (formato típico de 4x52 unidades) y no especifica ser papel higiénico húmedo para WC ni rollos de papel higiénico.,gemini-3.8-flash
+bm:34248,detergente_liquido,El producto corresponde al detergente concentrado para lavadora Fusión Floral (comúnmente comercializado por marcas como Bosque Verde en formato líquido de 36+12 lavados).,gemini-3.8-flash
+bm:79465,atun_aceite_oliva,El producto corresponde a atún claro en conserva con aceite de oliva.,gemini-3.8-flash
+bm:7297,no_relevante,El producto es una conserva de pescado (sardinas en aceite de oliva) y no una botella de aceite de cocina.,gemini-3.8-flash
+bm:9053,no_relevante,"El producto es una bebida de pera, la cual no corresponde a zumo puro de naranja, zumo de las frutas especificadas (melocotón, uva, piña, manzana o multifrutas), ni a néctar sin azúcar añadido.",gemini-3.8-flash
+bm:80977,queso_curado,"El queso pecorino toscano es un queso curado o semicurado elaborado con leche de oveja (pecora), vendido al corte/en cuña, encajando en la categoría de queso_curado.",gemini-3.8-flash
+bm:19650,no_relevante,"El producto es comida para perros que contiene salmón y pavo, por lo que no corresponde a salmón fresco ni a salmón ahumado para consumo humano.",gemini-3.8-flash
+bm:80782,pollo_pechuga,"The product is thinly sliced chicken breast ('Pechuga certificada extrafina bandeja'), which corresponds to 'pollo_pechuga'.",gemini-3.8-flash
+bm:63550,no_relevante,"El bagel es un panecillo redondo con agujero y no corresponde a una barra, pan de molde rebanado, pan tostado/biscote ni hogaza.",gemini-3.8-flash
+bm:1288,no_relevante,El producto es una legumbre (alubia morada) y no corresponde a ninguna de las categorías de arroz o pasta especificadas.,gemini-3.8-flash
+bm:65946,no_relevante,"The product is a chocolate biscuit/cookie (galleta fina chocolate), which is not a type of pasta.",gemini-3.8-flash
+bm:67518,tomate_triturado,"El producto es tomate triturado en conserva de 660 g, lo cual coincide directamente con la categoría tomate_triturado.",gemini-3.8-flash
+bm:62182,no_relevante,"The product is unsalted butter (Mantequilla sin sal), which is a dairy product and not chicken eggs.",gemini-3.8-flash
+bm:64374,no_relevante,"The product is chocolate with milk (chocolate bar/candy), not a milk or plant-based beverage.",gemini-3.8-flash
+mercadona:17773,zumo_otras_frutas,"El producto es zumo de manzana, que corresponde a la categoría zumo_otras_frutas (zumo de melocotón y uva, piña, manzana o multifrutas).",gemini-3.8-flash
+mercadona:22442,no_relevante,"The product is a processed baby food/dairy pouch (postre lácteo fresa y plátano), not fresh fruit (neither fresh Plátano de Canarias nor fresh imported banana).",gemini-3.8-flash
+mercadona:20531,yogur_sabores,"El producto es un yogur griego con fresa (fruta/sabor). Dado que la categoría 'yogur_griego' especifica exclusivamente 'natural o azucarado', este producto corresponde a 'yogur_sabores', que contempla yogures de sabores o con trozos de fruta.",gemini-3.8-flash
+mercadona:26110,no_relevante,"Garbanzos a la jardinera is a prepared ready-meal dish with vegetables, not plain dry chickpeas (garbanzo_seco) or plain cooked chickpeas in a jar (garbanzo_cocido).",gemini-3.8-flash
+mercadona:83160.1,pan_hogaza,"El 'pan de moño' (o pan de moña/gallego) es una variedad tradicional de pan rústico y redondo con un remate o nudo característico, perteneciente a la categoría de panes tipo hogaza/artesanales.",gemini-3.8-flash
+mercadona:15980,no_relevante,"The product is pet food (dog food) containing salmon, not fresh or smoked salmon for human consumption.",gemini-3.8-flash
+mercadona:24357,no_relevante,"The product is frozen yellowfin tuna steaks (congelado), not canned tuna in olive oil, sunflower oil, natural brine, or canned bonito del norte.",gemini-3.8-flash
+mercadona:87786,no_relevante,"The product is seafood mix for rice dishes (arreglo de marisco), not rice itself.",gemini-3.8-flash
+mercadona:43802,no_relevante,"El producto es amoníaco con detergente destinado a la limpieza general del hogar o superficies, no es un detergente específico para la colada o ropa.",gemini-3.8-flash
+mercadona:10794,leche_semidesnatada,"The product name explicitly states 'Leche semidesnatada', which corresponds directly to the semi-skimmed milk category.",gemini-3.8-flash
+mercadona:31504,huevos_gallina,"The product 'Huevos grandes L' specifies fresh large chicken eggs (size L), which directly matches the 'huevos_gallina' category.",gemini-3.8-flash
+mercadona:69912,tomate_fresco,"The product 'Tomate pera' corresponds to fresh plum tomato, which fits directly into the 'tomate_fresco' category description.",gemini-3.8-flash
+mercadona:50148,queso_lonchas,"The product is sliced cheese ('Queso lonchas'), which matches the 'queso_lonchas' category for sliced sandwich cheese, even though it is semicurado.",gemini-3.8-flash
+mercadona:17575,no_relevante,"El producto corresponde a tiras de pollo empanadas (chicken fries), un producto procesado/elaborado que no corresponde a pechuga fresca entera o fileteada, muslos, alas ni pollo entero.",gemini-3.8-flash
+mercadona:52776,picada_vacuno,"The product is minced beef meat ('carne picada vacuno'), matching the picada_vacuno category definition directly.",gemini-3.8-flash
+mercadona:35516,no_relevante,"Agua de colonia bebé Nenuco is a baby cologne/perfume, not drinking water (neither sparkling nor still mineral water).",gemini-3.8-flash
+mercadona:6244,pasta_corta,"Pasta tiburón is a traditional dry short pasta shape (elbow/pipe-like), falling directly under the pasta_corta category.",gemini-3.8-flash
+bm:34981,yogur_proteico,"El producto es explícitamente un yogur de proteínas, por lo que corresponde a la categoría yogur_proteico.",gemini-3.8-flash
+bm:26390,no_relevante,El producto corresponde a uvas y no a manzanas rojas o verde/amarillas.,gemini-3.8-flash
+alcampo:438300,salmon_ahumado,The product is sliced smoked salmon (salmón ahumado macerado) sold in packaged portions by the brand Martiko.,gemini-3.8-flash
+aldi:681205,no_relevante,"El producto es un postre gelificado (gelatina) sabor fresa, por lo que no corresponde a ninguna categoría de yogur ni a huevos.",gemini-3.8-flash

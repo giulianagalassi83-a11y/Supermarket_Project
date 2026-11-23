@@ -1,0 +1,101 @@
+key_a,key_b,label,rationale,model
+aldi:735903,mercadona:51619,equivalent,Both are 100g cheese logs (rulo) with pineapple and almonds from different supermarket store brands.,gemini-3.8-flash
+bm:61049,dia:150913,different,"Product A is a chicken cream soup (crema de pollo) while Product B is a chicken broth (caldo de pollo), which are different types of prepared foods.",gemini-3.8-flash
+ahorramas:85409,mercadona:21358,equivalent,Both products are 1 kg tubs of light natural Greek-style yogurt from private label brands.,gemini-3.8-flash
+bm:79465,consum:7463755,equivalent,"Both are yellowfin tuna (atún claro) in olive oil from national brands, and the sizes (195 g vs 104 g) are within the 2× threshold.",gemini-3.8-flash
+alcampo:438253,aldi:20400,equivalent,Both products are peach and grape juices in the same pack format (6 x 200 ml) from different brands.,gemini-3.8-flash
+ahorramas:62535,bm:48123,equivalent,"Both products are 1-liter cartons of skimmed milk (leche desnatada) from different brands, making them equivalent products.",gemini-3.8-flash
+alcampo:788437,mercadona:10812,different,"Product A is organic (ecológica) goat milk while Product B is non-organic, making them different tiers.",gemini-3.8-flash
+ahorramas:31204,alcampo:804418,equivalent,Both products are 12-packs of size M barn eggs (gallinas sueltas en el gallinero) from respective supermarket private labels.,gemini-3.8-flash
+aldi:730702,mercadona:50942,equivalent,Both products are private label semi-cured goat cheese of comparable package sizes (250 g and 300 g).,gemini-3.8-flash
+ahorramas:83610,dia:224663,equivalent,"Both products are a 3-pack of yellowfin tuna (atún claro) in olive oil, making them equivalent despite the brand difference and specific oil variant.",gemini-3.8-flash
+aldi:81000,mercadona:10384,equivalent,Both products are 1-liter cartons of own-brand skimmed milk from different supermarket chains.,gemini-3.8-flash
+ahorramas:48233,aldi:156500,equivalent,"Both products are 3-liter bottles of virgin olive oil of the same type and size, differing only in brand.",gemini-3.8-flash
+alcampo:432567,bm:12747,equivalent,"Both are Luengo low-salt cooked chickpeas of the same type and variant, differing only in package size (400 g vs 570 g), which is well within the 2× threshold.",gemini-3.8-flash
+dia:309574,mercadona:10732,equivalent,"Both are private-label lactose-free semi-skimmed milk in identical 200 ml unit sizes, differing only in pack count.",gemini-3.8-flash
+dia:261371,mercadona:3682,equivalent,Both products are family-sized packs of whole chicken breasts of comparable weights (1.3 kg vs 1.09 kg) from Dia and Mercadona store brands.,gemini-3.8-flash
+bm:15349,mercadona:10687,equivalent,Both products are 1-liter private label skimmed milk enriched with calcium from different supermarket chains.,gemini-3.8-flash
+alcampo:498926,dia:266075,equivalent,"Both products are whole wheat sliced bread with compatible sizes within a 2x factor, making them fair equivalents despite differing brands.",gemini-3.8-flash
+bm:66237,consum:7399249,equivalent,Both products are 200 g packs of sliced Cheddar cheese from different brands.,gemini-3.8-flash
+consum:7188261,mercadona:10812,equivalent,"Both products are 1-liter bottles of semi-skimmed goat milk, making them equivalent despite having different brands (Puleva vs. Hacendado).",gemini-3.8-flash
+alcampo:25021,bm:87842,different,"Product A is organic (ecológico) while Product B is conventional, making them different variants.",gemini-3.8-flash
+ahorramas:95856,aldi:502700,equivalent,Both products are retailer own-brand canned chopped tomatoes of practically identical size (390 g vs 400 g).,gemini-3.8-flash
+alcampo:899149,mercadona:83547,equivalent,Both products are own-brand sliced breads with 12 cereals and seeds with comparable weights (580 g vs 680 g).,gemini-3.8-flash
+bm:89186,mercadona:51079,equivalent,"Both are light Philadelphia cream cheese spreads, but they have different pack sizes (350 g vs. 270 g).",gemini-3.8-flash
+ahorramas:26211,bm:80728,equivalent,"Both products are whole chicken breast trays of comparable approximate weights (around 0.9–1.2 kg), sold by different chains.",gemini-3.8-flash
+ahorramas:87914,bm:13712,same,Both products are 400g cherry-flavored plant-based soy desserts/yogurts from the brand Alpro.,gemini-3.8-flash
+ahorramas:73739,alcampo:888943,same,Both products are 1-liter bottles of Font Natura mineral water.,gemini-3.8-flash
+alcampo:438781,consum:7380223,equivalent,"Both products are Evian natural mineral water, differing in bottle size (0.75 L vs 1.5 L) which is within the allowed 2x ratio for an equivalent product.",gemini-3.8-flash
+ahorramas:48076,mercadona:17128,equivalent,"Both products are store-brand fried tomato sauce made with olive oil, serving as fair equivalents despite differing pack configurations.",gemini-3.8-flash
+ahorramas:84637,mercadona:39129,equivalent,Both are private-label pineapple and grape juices of standard equivalent beverage formats.,gemini-3.8-flash
+ahorramas:26499,aldi:601491700,equivalent,"Both are mixed beef and pork burger meat preparations within a 2x size ratio, making them equivalent products from different brands/chains.",gemini-3.8-flash
+ahorramas:62534,bm:48122,equivalent,"Both products are 1-liter cartons of semi-skimmed milk, making them equivalent despite being from different brands.",gemini-3.8-flash
+alcampo:95314,dia:184889,same,Both products are 2.2 L bottles of whole cow's milk from Central Lechera Asturiana.,gemini-3.8-flash
+alcampo:12352,aldi:560304,equivalent,"Both are 500 g organic whole rye sliced breads, making them fair equivalents despite the addition of green spelt in one and different brands.",gemini-3.8-flash
+alcampo:438419,dia:310315,equivalent,"Both products are pulp-free 100% squeezed orange juices in individual portions, with individual unit sizes (200 ml vs 330 ml) within the 2× threshold.",gemini-3.8-flash
+bm:10733,dia:225278,equivalent,Both are 1-liter cartons of own-brand lactose-free whole milk from different supermarket chains.,gemini-3.8-flash
+ahorramas:11616,alcampo:17760,equivalent,Both are private label 'barra de espiga' bread loaves of very similar sizes (300g and 250g) from different chains.,gemini-3.8-flash
+alcampo:474430,bm:65521,equivalent,Both products are 4-packs of stracciatella Greek-style yogurt of very similar sizes from comparable national brands.,gemini-3.8-flash
+alcampo:54192,dia:46625P6,equivalent,Both are 6 x 1 L packs of calcium-enriched whole cow's milk from the respective supermarket's private label brands.,gemini-3.8-flash
+alcampo:35105,consum:7303712,equivalent,"Both products are natural mineral water from the brand Cabreiroá, and the sizes (0.5 L vs 1 L) are within the 2x ratio for equivalence.",gemini-3.8-flash
+bm:85496,dia:309631,equivalent,"Both products are 400 g loaves of whole spelt sliced bread (pan de molde de espelta integral) of the same size, differing only in brand.",gemini-3.8-flash
+alcampo:896572,aldi:601584702,equivalent,Both products are 500 g organic whole wheat penne pasta from store private labels.,gemini-3.8-flash
+bm:64866,dia:263201,equivalent,"Both products are Wipp Express laundry detergent capsules of the same variant, but differ in pack size (33 vs 18 washes, which is within the 2x ratio threshold).",gemini-3.8-flash
+bm:21159,dia:13627,equivalent,"Both products are mesh bags of fresh oranges for eating or juicing, differing only in package weight (3 kg vs 4 kg) and chain.",gemini-3.8-flash
+ahorramas:84577,consum:7422041,equivalent,"Both products are 1-liter bottles of extra virgin olive oil from different brands, making them equivalent.",gemini-3.8-flash
+bm:85253,dia:261367,equivalent,Both are split chicken wings packaged in trays of similar weight from supermarket own/store brands.,gemini-3.8-flash
+ahorramas:69952,mercadona:50918,equivalent,Both products are pre-cut wedges of private-label tender blended cheese (queso tierno mezcla) within a comparable size range.,gemini-3.8-flash
+ahorramas:95614,aldi:601637400,equivalent,Both products are sheep's milk cheese with truffle of similar size (250g vs 200g) from different brands/retailers.,gemini-3.8-flash
+alcampo:942423,mercadona:10732,equivalent,"Both products are 6 x 200 ml packs of semi-skimmed lactose-free cow's milk, but they come from different brands (Pascual vs. Hacendado).",gemini-3.8-flash
+bm:62124,dia:287571,equivalent,Both products are sliced chicken breasts from certified/free-range varieties in comparable package sizes (500 g vs 600 g).,gemini-3.8-flash
+aldi:21600,dia:109413,equivalent,Both products are 1 L private-label 100% squeezed orange juice without pulp from different supermarket chains.,gemini-3.8-flash
+aldi:662500,mercadona:4717,equivalent,Both products are 3-liter private label extra virgin olive oils from different supermarket chains.,gemini-3.8-flash
+bm:65910,dia:262835,different,"Product A is a regular coconut bifidus yogurt, while Product B is a 0% fat/sugar bifidus yogurt with pineapple and coconut, representing different flavor and nutritional variants.",gemini-3.8-flash
+alcampo:55530,dia:45863,equivalent,Both products are loose plum tomatoes (tomate pera) sold by weight with very similar quantities (1 kg vs 0.9 kg).,gemini-3.8-flash
+dia:261242,mercadona:3453,equivalent,Both are private label mixed beef and pork minced meat preparations of very similar package size (900 g vs 1 kg).,gemini-3.8-flash
+bm:76411,consum:157388,equivalent,"Both products are 1-liter cartons of whole milk from different brands (Bm private label and Puleva national brand), making them equivalent alternatives.",gemini-3.8-flash
+ahorramas:5952,alcampo:51119,same,Both products are the same 2.2-liter semi-skimmed milk from the brand Central Lechera Asturiana.,gemini-3.8-flash
+aldi:110700,dia:65631,equivalent,"Both products are 3-liter containers of intense olive oil from supermarket private labels (Aldi and Dia), making them equivalent products.",gemini-3.8-flash
+alcampo:24455,aldi:501000,equivalent,Both are private-label 400 g jars of cooked extra-quality chickpeas from different supermarket chains.,gemini-3.8-flash
+ahorramas:85247,dia:46626,equivalent,Both products are 1-liter private label skimmed milk enriched with calcium from different supermarket chains.,gemini-3.8-flash
+alcampo:50666,dia:74720,same,Both products are 1.5 L bottles of Central Lechera Asturiana whole cow's milk.,gemini-3.8-flash
+alcampo:537550,consum:7369093,equivalent,Both products are 4-packs of 120 g banana-flavored yogurts from comparable brands (Pascual and Danone).,gemini-3.8-flash
+alcampo:53596,mercadona:10722,equivalent,Both products are 1-liter packages of lactose-free semi-skimmed cow's milk from different brands (Pascual vs. Hacendado).,gemini-3.8-flash
+ahorramas:68431,alcampo:99238,same,Both products are 1-liter cartons of Leche Río skimmed cow milk.,gemini-3.8-flash
+alcampo:495192,mercadona:18011,equivalent,Both products are canned yellowfin tuna belly (ventresca de atún claro) in olive oil with comparable package sizes within a 2x factor.,gemini-3.8-flash
+dia:266075,mercadona:83886,equivalent,Both products are whole wheat sandwich bread loaves of the exact same size (820 g) from store private labels.,gemini-3.8-flash
+alcampo:29110,mercadona:23643,equivalent,Both are 450 g private-label crustless whole wheat sliced bread from different supermarket chains.,gemini-3.8-flash
+aldi:230200,mercadona:83547,equivalent,Both products are store-brand 12-seed and cereal sliced breads with sizes within a 2x factor.,gemini-3.8-flash
+aldi:644000,bm:8511,equivalent,"Both products are multipacks of low-salt yellowfin tuna in olive oil of comparable unit sizes (60 g vs 80 g cans), differing only in brand.",gemini-3.8-flash
+alcampo:428505,consum:7425957,equivalent,"Both products are 1-liter cartons of enriched skimmed, lactose-free milk from major national brands.",gemini-3.8-flash
+alcampo:78854,mercadona:83202.1,equivalent,Both products are 250 g standard white bread baguettes (barra de pan común) from different supermarket private labels.,gemini-3.8-flash
+alcampo:37890,dia:h2aac5207a424,equivalent,"Both are still mineral water of the same brand and variant, but their sizes differ (0.33 L vs 0.5 L) within the allowed 2× range for an equivalent.",gemini-3.8-flash
+alcampo:317000,consum:7487366,same,Both products are the same 300 g chicken noodle soup envelope from Gallina Blanca.,gemini-3.8-flash
+aldi:80500,dia:504,equivalent,Both products are 1-liter own-brand semi-skimmed milks from different supermarket chains.,gemini-3.8-flash
+aldi:730701,mercadona:50927,equivalent,Both products are own-brand tender goat cheeses of comparable sizes (250 g and 350 g).,gemini-3.8-flash
+bm:44341,consum:7347842,different,"Product A is still natural mineral water in a 1.5 L plastic bottle, whereas Product B is sparkling mineral water (con gas) in a 0.75 L glass bottle.",gemini-3.8-flash
+ahorramas:97640,mercadona:35711,equivalent,"Both products are gluten-free white sliced bread, differing only in brand (Bimbo vs. Hacendado) and with package sizes within the allowable 2× range (375g vs. 500g).",gemini-3.8-flash
+consum:7214757,mercadona:51073,equivalent,"Both are original/natural Philadelphia cream cheese spreads, but they differ in pack size (350 g vs 270 g), making them equivalent rather than same.",gemini-3.8-flash
+aldi:671000,dia:267684,different,"Product A is an organic (ecológica) almond milk, whereas Product B is a conventional sugar-free (0% azúcares) almond milk, representing different specific product variants.",gemini-3.8-flash
+dia:171233,mercadona:3269,equivalent,"Both products are Golden apples from different supermarket chains, with comparable packaging sizes under 2x apart (1 kg vs 1.55 kg).",gemini-3.8-flash
+ahorramas:70553,bm:63062,equivalent,"Both products are 1.5-liter bottles of skimmed milk, but they come from different brands (Alipende private label vs. Pascual manufacturer brand).",gemini-3.8-flash
+alcampo:204468,aldi:861200,equivalent,Both products are 150 g smoked salmon loins from supermarket private labels (Alcampo and Aldi Special).,gemini-3.8-flash
+ahorramas:77530,alcampo:886257,equivalent,Both products are store-brand Pedrosillano chickpeas with compatible sizes (1 kg versus 500 g).,gemini-3.8-flash
+alcampo:868179,bm:35372,equivalent,Both products are 1-liter mixed fruit juices featuring pineapple and grape as the primary flavors.,gemini-3.8-flash
+alcampo:437587,bm:9674,equivalent,"Both products are canned yellowfin tuna in sunflower oil from the brand Campos, but their weights differ (104 g vs. 160 g) while remaining well within the 2x size ratio.",gemini-3.8-flash
+alcampo:886785,bm:87726,equivalent,Both products are 1 kg own-brand brown rice (arroz integral) from different supermarket chains.,gemini-3.8-flash
+alcampo:44090,consum:7168677,different,"Product A is specifically tuna in 'aceite de oliva ligero' (low fat/oil content) while Product B is standard tuna in olive oil, representing different variants.",gemini-3.8-flash
+aldi:111000,bm:85687,equivalent,"Both products are 1-liter bottles of intense olive oil (aceite de oliva intenso), differing only by brand.",gemini-3.8-flash
+aldi:746800,dia:261371,equivalent,"Both are family-pack chicken breasts with close package sizes (1 kg vs 1.3 kg), making them fair store-brand equivalents.",gemini-3.8-flash
+ahorramas:68431,consum:7411635,equivalent,"Both products are skimmed milk from the brand Río, differing only in package size (1 L vs. 1.5 L), which is within the 2x size ratio allowed for equivalents.",gemini-3.8-flash
+alcampo:63924,dia:1221,equivalent,Both products are 3-packs of own-brand fried tomato sauce (tomate frito) in brick format with very similar per-unit sizes (200 g vs 215 g).,gemini-3.8-flash
+consum:7466436,dia:275725,different,"Product B is an organic (ecológico) variant, while Product A is conventional, representing a variant conflict.",gemini-3.8-flash
+aldi:112000,mercadona:4041,equivalent,"Both products are 5-liter bottles of refined sunflower oil from supermarket private/standard brands, making them equivalent.",gemini-3.8-flash
+alcampo:51012,dia:185450P6,equivalent,"Both products are 6x1L packs of lactose-free skimmed milk, but one is a national brand (Kaiku) and the other is a private label (Dia).",gemini-3.8-flash
+ahorramas:95856,bm:5648,equivalent,Both are 390g containers of chopped peeled tomatoes from the respective store private labels (Alipende and BM).,gemini-3.8-flash
+alcampo:638625,dia:135902,equivalent,Both are 160 g private label toasted bread snacks with tomato and oregano flavor from different supermarket chains.,gemini-3.8-flash
+alcampo:56825,bm:17147,equivalent,"Both are packaged Golden apples, differing only in chain/brand and package size (1 kg vs 1.5 kg), which is within the 2× size ratio limit.",gemini-3.8-flash
+ahorramas:53804,mercadona:10685,equivalent,"Both products are 1-liter cartons of semi-skimmed milk enriched with calcium, differing only by brand (national brand Puleva vs. store brand Hacendado).",gemini-3.8-flash
+alcampo:41983,aldi:600505200,equivalent,"Both products are 1-liter cartons of squeezed mandarin juice, differing only in brand (Don Simon vs. Rio D'Oro).",gemini-3.8-flash
+alcampo:12657,aldi:558000,equivalent,Both products are ribbed macaroni pasta (macarrón rayado) of comparable package sizes (450 g vs. 500 g) from different brands.,gemini-3.8-flash
+bm:2954,consum:7302904,equivalent,"Both products are 2-liter multi-fruit juice drinks from supermarket private or value brands, making them equivalent.",gemini-3.8-flash

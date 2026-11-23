@@ -1,0 +1,341 @@
+key_a,key_b,prob,cosine,chain_b,chain_a,band,source,tier,accepted,name_a,name_b
+aldi:518404,bm:11376,0.0036380797946166535,0.2401675,bm,aldi,0.0,other_chains,size_unknown,no,Aceitunas gordal rellenas de boquerones del Cantábrico,Orejón albaricoque
+mercadona:4911,bm:18520,0.13670229463632236,0.5551167,bm,mercadona,0.0,other_chains,strict,no,Empanadilla de atún,Sandwich de atún 120 g
+ahorramas:69606,mercadona:51181,0.0002576150285937823,0.19841623,mercadona,ahorramas,0.0,other_chains,strict,no,Queso crema de queso azul Président 125g,Crema de queso camembert Hacendado
+dia:300006,mercadona:11672,0.003700701509678608,0.46276522,mercadona,dia,0.0,other_chains,loose,no,Queso semicurado ibérico Quesería del Mundo 175 g,Queso semicurado de oveja Hacendado cortado en cuñitas
+alcampo:21488,mercadona:4911,0.015383002635955167,0.46499884,mercadona,alcampo,0.0,other_chains,strict,no,Panini atún 100 gr.,Empanadilla de atún
+dia:275006,consum:56911,0.02801272049931401,0.42165175,consum,dia,0.0,other_chains,size_unknown,no,Pasta penne Dia Selección Mundial 500 g,Patata  Selección
+aldi:601366800,dia:305492,0.003789590301225098,0.21947142,dia,aldi,0.0,other_chains,strict,no,Aceitunas gordal,Masa gruesa para empanadillas estilo argentino Buitoni 350 g
+alcampo:837190,aldi:601946200,0.004474342406912263,0.2584166,aldi,alcampo,0.0,other_chains,size_unknown,no,ALPRO Especialidad 100% vegetal de soja con frambuesa y manzana 400 g,"Redondo de pavo con queso de cabra, manzana y pasas"
+ahorramas:68490,dia:309625,0.0286455762859343,0.6152506,dia,ahorramas,0.0,other_chains,loose,no,Alitas de pollo asadas BBQ Granja Gourmet 400g,Alitas asadas de pollo Bonchef 600 g aprox.
+dia:306354,alcampo:78820,0.01577638254593742,0.36985636,alcampo,dia,0.0,other_chains,strict,no,Alas de pollo certificado partidas Selección de Dia 750 g aprox.,EMCESA Bandeja con alitas de pollo marinadas 800 g
+aldi:601563602,alcampo:27247,0.05152131158596307,0.43279767,alcampo,aldi,0.0,other_chains,strict,no,Huesos para perro,ROMERO Pasta fideos cabellín ROMERO paquete de 500 gramos.
+alcampo:898473,bm:37145,2.8415827600622078e-05,0.17001864,bm,alcampo,0.0,other_chains,loose,no,CARBONELL Aceite oliva 5l,Aceite de oliva virgen extra garrafa 3 l
+mercadona:71202,alcampo:75914,0.008683368738465994,0.31703413,alcampo,mercadona,0.0,other_chains,size_unknown,no,Guantes de látex Bosque Verde talla mediana-grande,Manzana verde doncella al peso.
+dia:244877,ahorramas:85300,0.0070493721289822675,0.29831547,ahorramas,dia,0.0,other_chains,strict,no,Detergente líquido bebé Norit 32 lavados,Detergente líquido Lanta 30 lavados Color
+ahorramas:31234,alcampo:241140,0.023671111378121355,0.40646693,alcampo,ahorramas,0.0,other_chains,size_unknown,no,Queso curado en aceite Miguel Romero,RIBETO Queso curado ya cortado 250 g.
+alcampo:425422,dia:274540,0.01195888232407152,0.3454408,dia,alcampo,0.0,other_chains,size_unknown,no,LA BOULANGÈRE Pan de leche 10 uds 350 g.,Huevos camperos medianos/grandes M/L Dia 10 unidades
+mercadona:69584,ahorramas:10634,0.012067569473976284,0.34624523,ahorramas,mercadona,0.0,other_chains,size_unknown,no,Pepino,Pechuga de pollo
+ahorramas:48457,aldi:601299701,0.007390758478599082,0.31319517,aldi,ahorramas,0.0,other_chains,size_unknown,no,Lecho vegetal Clean papel 10l,Papel higiénico húmedo aloe vera
+ahorramas:99483,bm:85496,0.26871454487387925,0.69312215,bm,ahorramas,0.0,other_chains,strict,no,"Pan de molde 100% integral de espelta Milagros, 460 g",Pan de molde de espelta integral 400 g
+mercadona:10380,dia:307404,0.2821829388126627,0.60666,dia,mercadona,0.0,other_chains,strict,no,Leche entera Hacendado,Leche entera Madriz 1 L
+mercadona:68170,aldi:530300,0.01564057644634679,0.49739248,aldi,mercadona,0.0,other_chains,size_unknown,no,Tiramisú Hacendado,Tiramisú
+dia:139419,bm:75879,0.006831315067950149,0.29553598,bm,dia,0.0,other_chains,strict,no,Sazonador para fajitas Old El Paso 30 g,Sazonador oriental 32 g
+ahorramas:84066,consum:5948997,0.008476516337325355,0.31489787,consum,ahorramas,0.0,other_chains,size_unknown,no,LOTE 2kg de contramuslos de pollo,Contramuslos de Pollo Deshuesados
+alcampo:517377,consum:7076284,0.1437525511609658,0.4692747,consum,alcampo,0.0,other_chains,size_unknown,no,ACTIMEL + de Danone Leche fermentada con Lcasei y sabor a fresa y granada  6 x 94 ml.,Actimel Actikids Sabor Fresa Pack 12 ud.
+aldi:264706,mercadona:69484,0.016522981340853393,0.329714,mercadona,aldi,0.0,other_chains,strict,no,Gnocchi con patata morada,Patatas para microondas
+dia:309818,aldi:601703303,0.008570565929659081,0.3893992,aldi,dia,0.0,other_chains,strict,no,Philadelphia con queso de cabra 150 g,Crema de queso de cabra con higos
+mercadona:12771,consum:7436558,0.002906409745225496,0.22037862,consum,mercadona,0.0,other_chains,size_unknown,no,Caramelos sabor eucalipto y mentol Hacendado 0% azúcares,"Empanadilla Pollo 12% y Champiñones 3,7% 1U"
+aldi:600720903,consum:396663,0.09583746966750842,0.5095481,consum,aldi,0.0,other_chains,strict,no,Tarrito de melocotón y plátano,Tarrito Arroz con Pollo
+aldi:601414202,ahorramas:91582,0.003270443674067342,0.23077698,ahorramas,aldi,0.0,other_chains,size_unknown,no,Guindillas en vinagre,Queso DOP cabrales Maestro Afinador 1/2 pieza
+alcampo:883057,ahorramas:52201,0.06722794198127889,0.4576394,ahorramas,alcampo,0.0,other_chains,strict,no,NATURA NUOVA Bolsita de manzana y plátano de origen ecológicos y sin azucares añadidos NATURA NUOVA Bio 100 g.,Pouch bio Be Plus fresa plátano sin gluten 100g
+aldi:601186400,alcampo:29671,0.04068293381056232,0.52866435,alcampo,aldi,0.0,other_chains,strict,no,Aceite de oliva suave,LA MASÍA Aceite de oliva suave garrafa 3 l.
+ahorramas:76868,mercadona:11672,0.001263281915527271,0.42250296,mercadona,ahorramas,0.0,other_chains,loose,no,Queso semicurado en lonchas Alipende 200g,Queso semicurado de oveja Hacendado cortado en cuñitas
+mercadona:51167,bm:64758,0.01008433319217089,0.40337837,bm,mercadona,0.0,other_chains,strict,no,Mousse de queso de vaca con ajo y finas hierbas Hacendado,Queso cremoso finas hierbas 150 g
+alcampo:53007,mercadona:63476,0.003093934426191141,0.35393438,mercadona,alcampo,0.0,other_chains,size_unknown,no,AUCHAN Mozzarella fresca 125 g. Producto Alcampo,Masa fresca empanada Hacendado
+mercadona:22444,alcampo:10051,0.009195631494502648,0.33254892,alcampo,mercadona,0.0,other_chains,size_unknown,no,Bolsita postre lácteo cereales y miel Hacendado +12 meses,DULCESOL Pan Sottile Pan de molde con cereales y semillas 8 uds. 310 g.
+ahorramas:52600,dia:190815,0.07347526415154738,0.5105673,dia,ahorramas,0.0,other_chains,size_unknown,no,Tomate Cherokee,Tomates cherry Tomati&co 200 g
+dia:65364,ahorramas:87313,0.18870174494200465,0.60509014,ahorramas,dia,0.0,other_chains,size_unknown,no,Magnum mini mix 8 x 44 g,Queso Mini Babybel 8 unidades
+aldi:600558405,dia:305610,0.0029067071883887826,0.20418921,dia,aldi,0.0,other_chains,strict,no,Yogur griego con piña,Yogur griego sabor manzana y canela 4 x 120 g
+aldi:601797701,bm:34079,0.005983896278623259,0.42800146,bm,aldi,0.0,other_chains,strict,no,Rocas de chocolate blanco y pistacho,Chocolate con leche con pistachos 90 g
+dia:305247,alcampo:723005,0.0003052335414208532,0.2609849,alcampo,dia,0.0,other_chains,loose,no,Smoothie energy Dia Naturmundo 150 ml,TRUE FRUITS Smoothie de naranja 250 ml.
+mercadona:13628,dia:167309,0.005496640689863567,0.28701752,dia,mercadona,0.0,other_chains,size_unknown,no,Filetes de caballa del sur en aceite de oliva Hacendado,"Set aliño aceite de oliva, vinagre y sal Capricho Andaluz 1 unidad"
+alcampo:199263,aldi:601562900,0.003469204255498477,0.23597729,aldi,alcampo,0.0,other_chains,size_unknown,no,PRODUCTO ALCAMPO Espirales de lentejas PRODUCTO ALCAMPO 250 g.,Escalopines de salmón
+alcampo:14082,dia:231182,0.03458499462224361,0.4511962,dia,alcampo,0.0,other_chains,size_unknown,no,LA GAÑANÍA Panecillos precocidos 4 uds. 200 g.,Picos artesanos de Jerez Horno la gañania 400 g
+mercadona:14719,ahorramas:87228,0.005460645700581663,0.27600297,ahorramas,mercadona,0.0,other_chains,size_unknown,no,Vela perfumada Matcha Bosque Verde,Queso mezcla viejo Quesle 200 gr
+mercadona:61289,aldi:600421500,0.0024920824969063976,0.27991244,aldi,mercadona,0.0,other_chains,strict,no,Maíz dulce Hacendado ultracongelado,Harina fina de maíz
+ahorramas:83948,aldi:236405,2.8060614478985316e-05,0.06539865,aldi,ahorramas,0.0,other_chains,loose,no,Yogur Kit Kat Nestlé 230g pack 2 con bolitas de cholocate,Bizcocho yogur
+dia:300803,bm:38380,0.010254177344806418,0.33177984,bm,dia,0.0,other_chains,size_unknown,no,Pan de hamburguesa sin gluten El Molino de Dia 170 g,Pan congelado para celiacos sin gluten
+ahorramas:96689,alcampo:51343,0.007027704058336853,0.31280005,alcampo,ahorramas,0.0,other_chains,strict,no,Payesitas 110g 3ud cereales,EL CASERÍO Queso rallado 3 quesos 100 % natural EL CASERIO 120 g.
+ahorramas:87913,bm:71842,0.008689519638988839,0.3275311,bm,ahorramas,0.0,other_chains,size_unknown,no,Postre Soja Alpro 400G Manzana,Postre de manzana 2 unidades
+ahorramas:97507,consum:7198807,0.01252047919778541,0.30499032,consum,ahorramas,0.0,other_chains,strict,no,Pan tostado con maíz cúrcuma y pipas de girasol Recondo 240gr,Hogaza de Pan Rústico
+dia:285829,consum:7305600,0.008041068855037638,0.26569486,consum,dia,0.0,other_chains,strict,no,Red Bull de albaricoque 250 ml,Cider Red Berries
+aldi:600001401,consum:7218167,0.004588561901511677,0.21610926,consum,aldi,0.0,other_chains,strict,no,Caserecce,Tomate Cherry Cubeta
+aldi:601805300,ahorramas:61638,0.0037779362171617035,0.24323255,ahorramas,aldi,0.0,other_chains,strict,no,Panettone de tiramisú,Tomate triturado natural categoria extra Apis 800g
+dia:185169,mercadona:83160.1,0.011096486692900432,0.29425764,mercadona,dia,0.0,other_chains,strict,no,Pan candeal grande El Molino de Dia 500 g,Pan moño
+aldi:611700,mercadona:33121,0.1254312207125414,0.66942775,mercadona,aldi,0.0,other_chains,strict,no,Aceitunas verdes sin hueso,Aceitunas verdes sin hueso aliñadas Hacendado
+dia:299577,aldi:736800,0.011137748658173581,0.4716705,aldi,dia,0.0,other_chains,loose,no,Queso azul Quesería del Mundo 150 g,Queso azul
+alcampo:91050,bm:18756,0.040861839856363553,0.41145366,bm,alcampo,0.0,other_chains,strict,no,DENSIA Forte Yogur líquido sabor fresa con 0% materia grasa y alto contenido en proteínas 4 x 100 g.,Skyr sabor fresa 4x100 g
+alcampo:69494,ahorramas:73739,0.2056699596668245,0.569979,ahorramas,alcampo,0.0,other_chains,strict,no,FONT VELLA Agua mineral botella de 1 l.,Agua Font Natura 1l
+alcampo:89334,consum:7396476,0.0005248661233927913,0.45329505,consum,alcampo,0.0,other_chains,loose,no,CENTRAL LECHERA ASTURIANA Leche de vaca entera de origen español 6 x 1.5 l.,Leche Entera Botella
+mercadona:88407,consum:7419146,0.09671394777663324,0.5136574,consum,mercadona,0.0,other_chains,strict,no,Lentejas Listo para Comer,Lenteja Rápida Paquete
+aldi:420500,alcampo:453239,0.002801150218416283,0.22756313,alcampo,aldi,0.0,other_chains,size_unknown,no,Infusión menta poleo,"POMPADOUR Infusión de tarta de manzana 18 uds. 40,5 g."
+mercadona:59256,alcampo:96451,0.019434776259115272,0.34423268,alcampo,mercadona,0.0,other_chains,strict,no,Jamón cocido Hacendado lonchas,LUENGO Garbanzo cocidos en frasco 200 g.
+mercadona:35961,bm:19568,0.0035656260756927213,0.33871835,bm,mercadona,0.0,other_chains,strict,no,Papilla tres frutas con yogur Hacendado +8 meses,Yogur con frutas 4x125 g
+dia:304179,ahorramas:87987,0.0010906820936326747,0.25173354,ahorramas,dia,0.0,other_chains,size_unknown,no,Batido alto en proteínas sabor chocolate Dia Láctea 330 ml,Skyr alto en Proteina Danone Pack 4 Natural
+alcampo:22152,mercadona:18002,0.0016291450110711258,0.29746294,mercadona,alcampo,0.0,other_chains,size_unknown,no,ISABEL Atún claro en escabeche pack 3 uds. x 52 g.,Atún claro en aceite de oliva Hacendado
+ahorramas:60591,dia:306354,0.002404275776665823,0.4538369,dia,ahorramas,0.0,other_chains,strict,no,Alas de pollo bandeja Alipende 1kg aprox,Alas de pollo certificado partidas Selección de Dia 750 g aprox.
+aldi:601584803,dia:150897,0.04364068374690001,0.6059339,dia,aldi,0.0,other_chains,strict,no,Spaghetti integral,Espaguetis integrales Gallo 450 g
+mercadona:24562,aldi:133400,0.005894632393896023,0.29894173,aldi,mercadona,0.0,other_chains,strict,no,Verduras & salsa Hacendado ultracongelada,Ensalada maxi gourmet
+mercadona:7879,ahorramas:2650,0.004420853061611045,0.2573554,ahorramas,mercadona,0.0,other_chains,size_unknown,no,Patatas fritas horno y air fryer Hacendado ultracongeladas,Petit maxi Danonino pack 4 fresa y plátano
+dia:311109,alcampo:312394,0.0014362858095369362,0.35665643,alcampo,dia,0.0,other_chains,loose,no,"Pepsi zero azúcar sabor lima 1,75 L","FONT VELLA Agua mineral levite limón zero 1,15 l."
+aldi:601190500,bm:3737,0.0009931980234813853,0.3706855,bm,aldi,0.0,other_chains,strict,no,Detergente para prendas delicadas,Detergente líquido ropa delicada 50 lavados
+ahorramas:13993,aldi:48800,0.03223698375104885,0.55198514,aldi,ahorramas,0.0,other_chains,size_unknown,no,Atún claro Albo pack3 aceite oliva,Atún claro en aceite de oliva
+alcampo:82325,dia:244790,0.035316574597174154,0.44266737,dia,alcampo,0.0,other_chains,size_unknown,no,ROLER Bandeja con burger meat mixta (vacuno - cero) 6 x 80 g.,Burger de vacuno 6 unidades Selección de Dia 540 g
+ahorramas:42807,alcampo:74762,0.013207468910145802,0.3647098,alcampo,ahorramas,0.0,other_chains,size_unknown,no,Picos camperos Gourmet 120g de centeno y quinoa,Pan de centeno (51%) 5 uds. 400 g.
+ahorramas:60725,consum:7483795,0.005870571197480611,0.2823978,consum,ahorramas,0.0,other_chains,size_unknown,no,"Bífidus Activia avena, manzana y nueces 115g",Tarta de Manzana 29% 1 Unidad
+ahorramas:10632,aldi:661400,0.37020231211040755,0.6865325,aldi,ahorramas,1.0,other_chains,size_unknown,no,Contramuslos de pollo,Contramuslo de pollo deshuesado sin piel
+dia:287462,mercadona:28119,0.4551725849320699,0.6728831,mercadona,dia,1.0,other_chains,strict,balanced,Monster ultra sandía zero 500 ml,Bebida energética Monster Energy Ultra zero azúcar
+alcampo:474129,bm:60255,0.34441550607674315,0.6629303,bm,alcampo,1.0,other_chains,strict,no,YAOS Yogur estilo griego con fresas de Nestlé4 x 115 g.,Yogur griego con fresas 4x110g
+aldi:954900,mercadona:3400,0.33336772254188307,0.672333,mercadona,aldi,1.0,other_chains,size_unknown,no,Pechuga de pollo corte fino,Filetes pechuga de pollo corte fino
+dia:230940,alcampo:672123,0.42239052172303626,0.6611844,alcampo,dia,1.0,other_chains,strict,no,Limonada con gas San Pellegrino 330 ml,SAN PELLEGRINO Agua con gas lata 33 cl.
+dia:282402,consum:7405517,0.3566566788445987,0.68745214,consum,dia,1.0,other_chains,strict,no,Pisto de verduras Gallina Blanca 325 g,Pisto Casero de Verduras Frasco
+ahorramas:75683,alcampo:69897,0.34371081179886154,0.63185894,alcampo,ahorramas,1.0,other_chains,strict,no,"Agua essenzia San Benedetto 1,5l limón","ESSENZIA SAN BENEDETTO Agua aromatizada botella 1,5 l."
+mercadona:3682,bm:80784,0.4526361282723302,0.6784236,bm,mercadona,1.0,other_chains,strict,balanced,Pechugas enteras familiar de pollo,"Pechuga de pollo certificado familiar (1,1kg aprx)"
+ahorramas:87799,bm:12959,0.3232578628292115,0.6237738,bm,ahorramas,1.0,other_chains,strict,no,Salteado verduras con pollo asado congelados Navarra 450g,Salteado de verduras con pollo 450 g
+alcampo:951264,ahorramas:4482,0.3461023228904531,0.55970794,ahorramas,alcampo,1.0,other_chains,size_unknown,no,"GARCIA BAQUERO Tabla de 3 quesos premiados (Reserva 12, La Cava Barus y Pok) 150 g.",Queso reserva García Baquero
+aldi:988000,consum:56911,0.3199025378146668,0.6669545,consum,aldi,1.0,other_chains,size_unknown,no,Patatas,Patata  Selección
+alcampo:23909,mercadona:4740,0.38723877568730203,0.64836204,mercadona,alcampo,1.0,other_chains,strict,no,COOSUR Aceite de oliva virgen extra botella de 1 l,Aceite de oliva virgen extra Hacendado
+dia:296094,ahorramas:98526,0.44554263841060504,0.66946554,ahorramas,dia,1.0,other_chains,strict,balanced,Salsa kebab Ybarra 250 ml,Salsa Gottan The Champions Burger Ybarra 250ml
+ahorramas:38565,consum:7307411,0.44718991730236773,0.6700511,consum,ahorramas,1.0,other_chains,strict,balanced,Tortitas arroz choco leche y avellanas Bicentury 142g,Tortitas Arroz Chocolate Con Trozos de Avellana
+aldi:662500,ahorramas:49622,0.467866408005841,0.67737025,ahorramas,aldi,1.0,other_chains,strict,balanced,Aceite de oliva virgen extra,Aceite de oliva virgen extra Coosur 3l
+ahorramas:8541,mercadona:69990,0.49595299257956915,0.73178655,mercadona,ahorramas,1.0,other_chains,size_unknown,balanced,Tomate cherry sao paulo,Tomates cherry
+dia:119675,aldi:81900,0.34341199141948675,0.7493551,aldi,dia,1.0,other_chains,strict,no,Leche semidesnatada sin lactosa Pascual 1 L,Leche semidesnatada sin lactosa
+ahorramas:90018,dia:280178,0.39996490237025933,0.65304613,dia,ahorramas,1.0,other_chains,strict,no,Ravioli con prosciutto y burrata Rana 250g,Ravioli de pollo asado Rana 250 g
+aldi:18100,alcampo:714291,0.33142123047556526,0.62703073,alcampo,aldi,1.0,other_chains,strict,no,Zumo exprimido de naranja con pulpa,JUVER Zumo de naranja exprimida con pulpa 1 l.
+dia:310675,bm:10557,0.30363208179818935,0.5768516,bm,dia,1.0,other_chains,strict,no,Plumas rayadas Gallo 400 g,Plumas vegetales 450 g
+alcampo:95242,dia:132567,0.37093923051986727,0.5246658,dia,alcampo,1.0,other_chains,strict,no,ACTIVIA Bífidus desnatado (0% materia grasa) con trocitos de piña de Danone 4 x 120 g.,Bífidus desnatado con melocotón Activia 4 x 120 g
+mercadona:86917.1,ahorramas:99167,0.49354323466867683,0.75724125,ahorramas,mercadona,1.0,other_chains,strict,balanced,Hogaza con semillas 12%,"Hogaza Aldea Semillas (3,9%) 360g"
+aldi:601557701,dia:140040,0.47346485213373984,0.67934424,dia,aldi,1.0,other_chains,strict,balanced,Chocolate con leche con almendras,Chocolate con leche con almendras enteras Valor 250 g
+alcampo:839295,consum:7430643,0.39344848830821655,0.695186,consum,alcampo,1.0,other_chains,size_unknown,no,DULCESOL Hot dog 4 uds. 250 g.,Pan Burger 4 Unidades
+mercadona:3028,aldi:988500,0.43365488626558535,0.7097581,aldi,mercadona,1.0,other_chains,size_unknown,balanced,Manzana Golden,Manzana
+alcampo:453207,aldi:525601,0.4245236662692594,0.6619519,aldi,alcampo,1.0,other_chains,strict,no,"HERO Solo bio nutriflora Bolsita de frutas (mango y plátano), yogur y avena, a partir de 6 meses 100 g.","Bolsita de naranja, plátano y galleta"
+mercadona:21772,alcampo:194006,0.32427310084266614,0.62418115,alcampo,mercadona,1.0,other_chains,strict,no,Smoothie fresa y plátano Hacendado,INNOCENT Smoothie fresa y plátano 250 ml.
+ahorramas:61638,aldi:505200,0.3654730049427925,0.64021415,aldi,ahorramas,1.0,other_chains,strict,no,Tomate triturado natural categoria extra Apis 800g,Tomate triturado extra
+dia:188533,alcampo:888773,0.3614492494993239,0.5210738,alcampo,dia,1.0,other_chains,strict,no,"Néctar de maracuyá Don Simón 1,5 L","DON SIMON Néctar sin azúcar añadido de manzana botella de 1,5 l."
+alcampo:241165,bm:8833,0.3195993223826398,0.6223003,bm,alcampo,1.0,other_chains,strict,no,RIBETO Queso semicurado ya cortado 250 g.,Queso semicurado cortado 250 g
+ahorramas:15821,alcampo:670747,0.3593110932172416,0.6378715,alcampo,ahorramas,1.0,other_chains,strict,no,Radiatori Garofalo 500g,GAROFALO Pasta de sémola de trigo duro Radiatori nº 87 GAROFALO 500
+dia:310410,consum:7486553,0.4403965367762194,0.6788087,consum,dia,1.0,other_chains,strict,balanced,"Pouch infantil de manzana, plátano y avena Nestlé 90 g","Mango, Plátano, Avena +6 Meses"
+ahorramas:85246,bm:10254,0.3201740406640304,0.7401449,bm,ahorramas,1.0,other_chains,strict,no,Leche Alipende calcio 1l semidesnatada,Leche semidesnatada con calcio 1 l
+alcampo:25199,mercadona:4850,0.370426587979327,0.64208525,mercadona,alcampo,1.0,other_chains,strict,no,VENTA DEL BARÓN Aceite de oliva virgen extra D.O.P Priego botella de 500 ml.,Aceite de oliva virgen extra Picual Casa Juncal
+alcampo:53039,ahorramas:53805,0.36665374950097956,0.5230486,ahorramas,alcampo,1.0,other_chains,strict,no,PULEVA Eco  Leche entera  1 l.,Leche Puleva calcio 1l entera
+ahorramas:14080,consum:7375004,0.4235097065824038,0.5885064,consum,ahorramas,1.0,other_chains,size_unknown,no,Bífidus Activia pack 4 fresa,Activia con Fresas Pack de 4 Unidades
+dia:300608,mercadona:5546,0.33404296618192836,0.7456806,mercadona,dia,1.0,other_chains,strict,no,"Refresco de limón zero Dia Upss 1,5 L",Refresco té zero sabor limón Hacendado
+aldi:983500,mercadona:3028,0.4336547196212074,0.70975804,mercadona,aldi,1.0,other_chains,size_unknown,balanced,Manzana,Manzana Golden
+ahorramas:85247,dia:22489,0.37657549445850724,0.76200616,dia,ahorramas,1.0,other_chains,strict,no,Leche calcio Alipende 1l desnatada,Leche desnatada calcio Puleva 1 L
+ahorramas:22747,mercadona:2781,0.40701498523397034,0.700151,mercadona,ahorramas,1.0,other_chains,size_unknown,no,Pollo de corral entero,Pollo entero
+dia:245089,aldi:896600,0.37918945619152766,0.6899021,aldi,dia,1.0,other_chains,size_unknown,no,Aguacate bio bandeja 400 g,Aguacate
+dia:64276,ahorramas:11083,0.411933364175149,0.6574061,ahorramas,dia,1.0,other_chains,strict,no,Tomate frito Helios 570 g,Tomate frito sin gluten Helios tarro de cristal 570g
+alcampo:52207,dia:608P6,0.34175709530827025,0.6310971,dia,alcampo,1.0,other_chains,strict,no,LA COLMENAREÑA Leche entera 6 x 1l.,Leche entera Dia Láctea pack 6 x 1 L
+alcampo:428644,consum:7404523,0.33191434156638727,0.8043093,consum,alcampo,1.0,other_chains,strict,no,COOSUR Aceite de oliva virgen extra olivares de la sierra 750ml,Aceite de Oliva Virgen Extra Hojiblanca
+dia:228641,bm:76673,0.4026175543441845,0.654016,bm,dia,1.0,other_chains,strict,no,Noodles yakisoba sabor pollo Gallina Blanca Yatekomo 93 g,Yakisoba de pollo 93 g
+aldi:57701,ahorramas:10634,0.39526580892764707,0.6958544,ahorramas,aldi,1.0,other_chains,size_unknown,no,Pechuga de pollo ahumada,Pechuga de pollo
+mercadona:76542,aldi:601646702,0.3833156141767683,0.6469069,aldi,mercadona,1.0,other_chains,strict,no,Crema corporal Nivea,Leche corporal Q10 reafirmante
+mercadona:50945,ahorramas:8025,0.3789321686429794,0.6898061,ahorramas,mercadona,1.0,other_chains,size_unknown,no,Queso semicurado mezcla Hacendado,Queso mezcla semicurado Campo Real
+aldi:747500,alcampo:560998,0.3666628492008501,0.6851963,alcampo,aldi,1.0,other_chains,size_unknown,no,Filetes de pechuga de pollo,Bandeja de filetes empanados de pechuga de pollo CALATAYUD
+mercadona:16008,bm:8026,0.31685387713057844,0.73880124,bm,mercadona,1.0,other_chains,strict,no,Pimientos del piquillo en tiras con ajo Hacendado,Pimiento del piquillo en tiras 290 g
+dia:227099,consum:7264617,0.31085850754995203,0.61874306,consum,dia,1.0,other_chains,strict,no,Aceite de oliva virgen extra Jaencoop 1 L,Aceite de Oliva Virgen Extra
+ahorramas:82415,bm:34144,0.38709005916242023,0.5752262,bm,ahorramas,1.0,other_chains,size_unknown,no,Bífidus Activia pack 8 natural,Kéfir natural 280 ml
+alcampo:892174,bm:1795,0.48761940926353675,0.71805584,bm,alcampo,1.0,other_chains,strict,balanced,YATEKOMO Yarroz de pollo con salsa teriyaki yatekomo 84 g.,Yatekomo de pollo 80 g
+ahorramas:65691,alcampo:883607,0.45165623803572924,0.6716367,alcampo,ahorramas,1.0,other_chains,strict,balanced,Pouch Smileat zanahoria plátano y pera 6meses 100g,"SMILEAT Ecológico Bolsita de zanahoria, pera y plátano ecológicos a partir de 6 meses 100 g."
+dia:313222,alcampo:51550,0.3200314647285994,0.5331956,alcampo,dia,1.0,other_chains,strict,no,Kéfir de fresa y frambuesa Activia 4 x 125 g,ACTIVIA Bífidus con trocitos de fresas de Danone 4 x 120 g.
+ahorramas:91402,consum:7488356,0.3229450400601481,0.62364817,consum,ahorramas,1.0,other_chains,strict,no,Pan molde Panrico Cerealia 500g Centeno,Pan Molde Centeno 100% Natural
+dia:5691,mercadona:13598,0.3984015136703299,0.6524735,mercadona,dia,1.0,other_chains,strict,no,Nata montada Asturiana 250 g,Nata montada azucarada Hacendado
+alcampo:24373,ahorramas:39956,0.30545272587194194,0.61651564,ahorramas,alcampo,1.0,other_chains,strict,no,LA MASÍA Aceite de oliva Virgen Extra garrafa 5 l.,Aceite de oliva virgen extra Hacienda Inmaculada 5l
+alcampo:513741,dia:280364,0.37770344911413395,0.64481544,dia,alcampo,1.0,other_chains,strict,no,FINCA CASA NUEVA Aceite de oliva virgen extra 5 l.,Aceite de oliva virgen extra Coosur 5 L
+dia:282773,ahorramas:69947,0.42962633151895907,0.82476854,ahorramas,dia,1.0,other_chains,strict,balanced,Queso de oveja al romero Vega Sotuélamos 170 g,Queso oveja curado Vega Sotuelamos 220gr al romero
+ahorramas:96041,dia:187268,0.3357513584798543,0.6460182,dia,ahorramas,1.0,other_chains,strict,no,Bonito del norte en escabeche consorcio 80g,Bonito del norte en aceite de oliva Consorcio 82 g
+dia:31118,aldi:601662300,0.31238611592052745,0.86222553,aldi,dia,1.0,other_chains,loose,no,Ketchup Heinz 460 g,Kétchup
+ahorramas:59894,aldi:600943001,0.4993138888864627,0.6884358,aldi,ahorramas,1.0,other_chains,strict,balanced,Bebida de avena 0% Yosoy 1l,Bebida de avena 0%
+dia:228021,bm:76658,0.3815910246932156,0.6907972,bm,dia,1.0,other_chains,size_unknown,no,Cápsulas de café con leche Marcilla 16 unidades,Marcilla café con leche 16 cápsulas
+ahorramas:53804,mercadona:10685,0.418161086743349,0.777272,mercadona,ahorramas,1.0,other_chains,strict,no,Leche Puleva calcio 1l semidesnatada,Leche semidesnatada calcio Hacendado
+aldi:988500,mercadona:3028,0.43365488626558535,0.7097581,mercadona,aldi,1.0,other_chains,size_unknown,balanced,Manzana,Manzana Golden
+alcampo:42309,consum:7376036,0.38805969727859657,0.65984106,consum,alcampo,1.0,other_chains,strict,no,NESTLÉ Bolsita de fruta (plátano y manzana) a partir de 4 meses 90 g.,"Pouch Cool Fruits Manzana, Fresa, Banana"
+aldi:980700,alcampo:55654,0.4436958211565384,0.7133403,alcampo,aldi,1.0,other_chains,size_unknown,balanced,Tomate para ensalada,Tomate ensalada al peso.
+alcampo:19600,mercadona:82227,0.41262293956292395,0.7752686,mercadona,alcampo,1.0,other_chains,strict,no,PRODUCTO ALCAMPO Pan rallado con ajo y perejil 500 g.,Pan rallado con ajo y perejil Hacendado
+ahorramas:40180,alcampo:311854,0.47038659168761865,0.56064665,alcampo,ahorramas,1.0,other_chains,strict,balanced,Agua Font Vella 1l,FONT VELLA Gas Agua mineral natural con gas botella 1 l.
+alcampo:43633,bm:10558,0.4246770068866846,0.62309813,bm,alcampo,1.0,other_chains,strict,no,GALLO Pasta spaguetti vegetales 400 g.,Margaritas vegetales 450 g
+ahorramas:95029,consum:7469633,0.37381551158028115,0.7436954,consum,ahorramas,1.0,other_chains,loose,no,Pan molde integral con 8 cereales Bimbo 650 g,Pan Molde 8 Cereales 100% Integral sin Corteza
+dia:222479P6,mercadona:28115,0.3301304468621127,0.64403605,mercadona,dia,1.0,other_chains,loose,no,Refresco de cola zero sin cafeína Dia Hola Cola 6 x 330 ml,Refresco Coca-Cola zero azúcar
+ahorramas:95316,bm:84954,0.4497380575838134,0.6709561,bm,ahorramas,1.0,other_chains,strict,balanced,Fusilli Garofalo 500g,Spaghetti 500 g
+dia:187744,alcampo:439092,0.3824833965542769,0.7015635,alcampo,dia,1.0,other_chains,size_unknown,no,Papel higiénico seda Foxy 6 unidades,FOXY Papel higiènico seda 30 rollos
+alcampo:53551,consum:303370,0.6977200090592296,0.6445432,consum,alcampo,2.0,other_chains,strict,balanced,PULEVA Vita calcio Leche entera de vaca con un 50% más de calcio natural 1 l.,Leche Calcio Entera Brik
+ahorramas:44078,bm:23502,0.641328149044966,0.784258,bm,ahorramas,2.0,other_chains,size_unknown,balanced,Plátano canario bolsa,Plátano de Canaria bolsa IGP (700 g a prox)
+ahorramas:37851,mercadona:17912.2,0.8443101863129201,0.89385825,mercadona,ahorramas,2.0,other_chains,strict,balanced,Barra de pan 100% integral 250g,Barra pan integral 100% rebanado
+ahorramas:25853,aldi:749200,0.6089334277368156,0.7721089,aldi,ahorramas,2.0,other_chains,size_unknown,balanced,Alas de pollo frescas,Alas de pollo partidas
+ahorramas:40564,dia:300743,0.5608173908850624,0.6370723,dia,ahorramas,2.0,other_chains,size_unknown,balanced,Bífidus Activia desnatado 0% materia grasa pack 4 vainilla,Bífidus natural desnatado Activia 8 x 120 g
+dia:304909,consum:7450930,0.6336807447515121,0.7368192,consum,dia,2.0,other_chains,strict,balanced,Champú repara y protege Pantene 325 ml,Champú Nutri Plex Repara y Protege
+dia:65292,mercadona:15909,0.5012578573731377,0.68911886,mercadona,dia,2.0,other_chains,strict,balanced,Margarina Proactiv 225 g,Margarina Flora Proactiv
+alcampo:900032,ahorramas:87982,0.7762800695543419,0.7248851,ahorramas,alcampo,2.0,other_chains,size_unknown,balanced,DANONE Yogour griego con sabor a manzana asada con canela 4 x 110 g.,Yogur Griego Danone Pack 4 Manzana Y Canela
+ahorramas:2864,alcampo:89803,0.8133341799433278,0.8179684,alcampo,ahorramas,2.0,other_chains,strict,balanced,"Leche sin lactosa 0,0% MG Asturiana 1l desnatada","CENTRAL LECHERA ASTURIANA Leche desnatada 0% materia grasa, sin lactosa  1 l."
+dia:193,bm:1011,0.718043751651949,0.8884046,bm,dia,2.0,other_chains,strict,balanced,Aceite de girasol Koipe 1 L,Aceite de girasol 1 l
+mercadona:11847,bm:3295,0.5855240838424027,0.7190265,bm,mercadona,2.0,other_chains,strict,balanced,Café molido mezcla Marcilla gran aroma,Café molido natural 250 g
+ahorramas:77655,consum:7103658,0.5590971143076435,0.70953983,consum,ahorramas,2.0,other_chains,strict,balanced,Queso de untar original Philadelphia 200g,Philadelphia Natural Tarrina
+alcampo:984240,dia:189186,0.5604473067466098,0.6473746,dia,alcampo,2.0,other_chains,size_unknown,balanced,ALBO Atún claro en aceite de oliva virgen extra 6 uds. X 48 g.,Atún claro en aceite de oliva Albo 67 g
+aldi:133400,mercadona:69741,0.7335065106075684,0.8218891,mercadona,aldi,2.0,other_chains,strict,balanced,Ensalada maxi gourmet,Ensalada mezcla gourmet maxi lavada
+alcampo:201877,mercadona:4740,0.5390145893118209,0.7024137,mercadona,alcampo,2.0,other_chains,strict,balanced,SAETA Aceite de oliva virgen extra 1L,Aceite de oliva virgen extra Hacendado
+dia:41117P6,alcampo:36754,0.8175689399468128,0.8649722,alcampo,dia,2.0,other_chains,size_unknown,balanced,Agua mineral Aquarel pack 6 x 330 ml,"AQUAREL Agua mineral pack de 6 uds. x 1,5 l."
+alcampo:714582,aldi:600720903,0.5021083775002626,0.6894177,aldi,alcampo,2.0,other_chains,strict,balanced,"HERO Solo bio Tarrito de fruta (manzana, melocotón y plátano), ecológicas a partir de 4 meses 190 g",Tarrito de melocotón y plátano
+aldi:525603,alcampo:42877,0.7012513772236125,0.76363146,alcampo,aldi,2.0,other_chains,strict,balanced,Bolsita yogur con plátano y fresa,"HERO Solo Bolsita de yogur con plátano y fresa, sin azúcares añadidos, a partir de 6 meses 100 g."
+aldi:600729100,consum:7359581,0.8461186623155651,0.7757594,consum,aldi,2.0,other_chains,size_unknown,balanced,Pañales talla 4,Pañal Pants T 4 9-15 Kilos
+aldi:525601,ahorramas:31940,0.5738242291753338,0.7148081,ahorramas,aldi,2.0,other_chains,strict,balanced,"Bolsita de naranja, plátano y galleta",Pouch Hero Solo naranja plátano pera y galleta 100g
+aldi:980600,dia:109,0.5452865860713155,0.74916506,dia,aldi,2.0,other_chains,size_unknown,balanced,Tomate en rama,Tomate en rama granel 1 Kg aprox.
+alcampo:13177,bm:8649,0.6795790895161851,0.75472176,bm,alcampo,2.0,other_chains,strict,balanced,LITORAL Cocido Madrileño lata de 440 g.,Cocido madrileño 440 g
+dia:313226,ahorramas:95974,0.8190952603874605,0.7037298,ahorramas,dia,2.0,other_chains,strict,balanced,Kéfir Activia 280 g,Kefir líquido con arándanos Activia 280g
+dia:144667,aldi:601586104,0.690551517320444,0.7591896,aldi,dia,2.0,other_chains,strict,balanced,Mascarilla protector de keratina keratina suave y liso Pantene 300 ml,Mascarilla suave y liso
+mercadona:10676,dia:46626P6,0.5027030900432148,0.6896267,dia,mercadona,2.0,other_chains,strict,balanced,Leche desnatada +Proteínas & calcio,Leche desnatada calcio Dia Láctea pack 6 x 1 L
+mercadona:4706,ahorramas:99695,0.5019692823717289,0.68936884,ahorramas,mercadona,2.0,other_chains,strict,balanced,Aceite de oliva virgen extra Hacendado Gran Selección,Aceite de oliva virgen extra Coosur 750ml
+mercadona:10884,alcampo:53054,0.5732922869120858,0.59700453,alcampo,mercadona,2.0,other_chains,strict,balanced,Bebida láctea Omega 3 Puleva con leche desnatada,PULEVA Eco Leche desnatada  1 l.
+mercadona:10453,aldi:601492000,0.5239919460497802,0.74164534,aldi,mercadona,2.0,other_chains,size_unknown,balanced,Mini burgers de vacuno y cerdo,Burger meat de vacuno y cerdo
+mercadona:82753,consum:7305535,0.5206562963127681,0.6959392,consum,mercadona,2.0,other_chains,strict,balanced,Baguette sin gluten,Baguette Sin Gluten
+aldi:987600,bm:23150,0.5057451112797793,0.7352274,bm,aldi,2.0,other_chains,size_unknown,balanced,Tomates cherry,Tomate cherry bandeja (250 g aprox)
+ahorramas:26057,bm:76338,0.6887908976384136,0.6853862,bm,ahorramas,2.0,other_chains,size_unknown,balanced,Yogur sin lactosa Kaiku pack 4 natural,Yogur desnatado con frambuesa sin lactosa 4x125 g
+alcampo:432664,consum:7417665,0.8195021256390421,0.82158375,consum,alcampo,2.0,other_chains,strict,balanced,BURGO DE ARIAS Queso Protein Plus BURGO DE ARIAS 3 x 70 g.,Burgo de Arias Protein Plus
+alcampo:984240,ahorramas:44539,0.8992921240609952,0.8079215,ahorramas,alcampo,2.0,other_chains,size_unknown,balanced,ALBO Atún claro en aceite de oliva virgen extra 6 uds. X 48 g.,Atún Albo pack 3 en aceite oliva virgen extra
+ahorramas:9952,alcampo:51532,0.6325231378730055,0.66330063,alcampo,ahorramas,2.0,other_chains,size_unknown,balanced,Mousse Danone pack 4 natural azucarado,DANONE Yogur natural azucarado elaborado con leche fresca 4 x 120 g.
+alcampo:52725,dia:203876,0.8485253432632943,0.8400402,dia,alcampo,2.0,other_chains,strict,balanced,"DANONINO Petit suisse, sabor fresa y plátano DANONINO de Danone 6 x 50 g.",Petit de fresa y plátano Danonino 6 x 50 g
+dia:271303,bm:61411,0.8023149450869453,0.8117318,bm,dia,2.0,other_chains,strict,balanced,Alimento para gatos adultos con salmón Ultima 750 g,Pienso para gatos con salmón y arroz 750 g
+dia:309135,consum:7444222,0.8399215117573305,0.93548226,consum,dia,2.0,other_chains,strict,balanced,Tomate frito con chili picante Orlando 300 g,Tomate Frito con Chili Picante
+ahorramas:38565,dia:244936,0.8541746235673848,0.84396195,dia,ahorramas,2.0,other_chains,strict,balanced,Tortitas arroz choco leche y avellanas Bicentury 142g,Tortitas de arroz con chocolate con leche y avellanas Bicentury 142 g
+ahorramas:97600,consum:7447969,0.6991463552014344,0.81771654,consum,ahorramas,2.0,other_chains,size_unknown,balanced,Pan burger brioche St Pierre 250 g,Pan Burguer Brioche
+alcampo:19923,bm:3076,0.7527707475242928,0.7864869,bm,alcampo,2.0,other_chains,strict,balanced,ORLANDO Tomate frito 350 g.,Tomate frito 350 g
+dia:154982,mercadona:13869,0.8130737219841879,0.8178178,mercadona,dia,2.0,other_chains,strict,balanced,Pasta de dientes repair & protect Sensodyne 75 ml,Dentífrico Repair & Protect Sensodyne
+dia:174311,aldi:525603,0.8905894340287335,0.8728672,aldi,dia,2.0,other_chains,strict,balanced,"Pouch infantil de yogur, plátano y fresa Hero 100 g",Bolsita yogur con plátano y fresa
+dia:683,alcampo:30552,0.8898400904997154,0.8721937,alcampo,dia,2.0,other_chains,strict,balanced,Agua mineral con gas Vichy Catalán 1 L,VICHY CATALAN Agua mineral con gas botella de 1 l.
+aldi:648500,ahorramas:91403,0.5620710367165196,0.7106004,ahorramas,aldi,2.0,other_chains,strict,balanced,Pan de molde integral sin corteza,Pan molde integral sin corteza Panrico 450g
+ahorramas:24150,aldi:698800,0.8890597036499721,0.9264625,aldi,ahorramas,2.0,other_chains,size_unknown,balanced,Queso fundido en porciones La Vaca Que Ríe 16 uds,Queso fundido en porciones
+aldi:989400,dia:45863,0.7244340096443944,0.81811595,dia,aldi,2.0,other_chains,size_unknown,balanced,Tomate pera,Tomate pera granel 900 g aprox.
+aldi:747600,mercadona:3724,0.7147794274023922,0.8670817,mercadona,aldi,2.0,other_chains,strict,balanced,Pechuga entera de pollo,Pechugas enteras de pollo
+dia:307948,ahorramas:98355,0.8447614314523901,0.76441276,ahorramas,dia,2.0,other_chains,size_unknown,balanced,Detergente líquido quitamanchas Ariel 30 lavados,Detergente líquido Ariel platinum 40lav + poder quitamanchas
+alcampo:196882,aldi:45700,0.5399737675116347,0.7027528,aldi,alcampo,2.0,other_chains,strict,balanced,"L.R. Leche desnatada de vaca, sin lactosa 1l.",Leche desnatada sin lactosa
+aldi:588000,alcampo:56763,0.5103398728483902,0.73684233,alcampo,aldi,2.0,other_chains,size_unknown,balanced,Manzanas rojas ecológicas,Manzanas rojas 1 kg.
+ahorramas:72510,mercadona:4850,0.5679167376944321,0.71268976,mercadona,ahorramas,2.0,other_chains,strict,balanced,Aceite de oliva virgen extra picual Oro Bailén 500ml,Aceite de oliva virgen extra Picual Casa Juncal
+mercadona:9408,dia:107434,0.687204737197398,0.75781786,dia,mercadona,2.0,other_chains,strict,balanced,Leche de continuación en polvo 2 Nidina Nestlé,Leche infantil polvo de continuación +6 meses 2 Nidina 800 g
+aldi:155700,consum:7477466,0.7758221979500624,0.8422662,consum,aldi,2.0,other_chains,size_unknown,balanced,Aguacates,Aguacate Cubos
+mercadona:5024,bm:1330,0.8379321386816867,0.7153861,bm,mercadona,2.0,other_chains,strict,balanced,Arroz redondo SOS,Arroz redondo 1 kg
+mercadona:60346,ahorramas:62849,0.5242430080882995,0.697202,ahorramas,mercadona,2.0,other_chains,strict,balanced,Leche condensada desnatada Hacendado,Leche condensada La Lechera 450g desnatada sirve fácil
+mercadona:4850,alcampo:63718,0.5614344338665792,0.7103732,alcampo,mercadona,2.0,other_chains,strict,balanced,Aceite de oliva virgen extra Picual Casa Juncal,VALDEZARZA Aceite de oliva virgen extra picual botella de 500 ml.
+aldi:601491900,bm:32080,0.819004327175901,0.86582017,bm,aldi,2.0,other_chains,size_unknown,balanced,Burger meat de vacuno,Burger meat 100% vacuno (150 g aprox)
+ahorramas:84577,alcampo:26701,0.6937489992816609,0.7605078,alcampo,ahorramas,2.0,other_chains,strict,balanced,Aceite oliva virgen extra Alipende 1l,OLEOESTEPA Aceite de oliva virgen extra botella de 1 l.
+alcampo:189664,consum:7331465,0.5647067877505503,0.71154165,consum,alcampo,2.0,other_chains,strict,balanced,MAISON PERRIER Forever lemon Agua con gas sabor limón 50 cl.,Refresco Agua con Gas Limón Botella
+ahorramas:95296,consum:7467389,0.5889987063663517,0.7202858,consum,ahorramas,2.0,other_chains,strict,balanced,Galletas rellenas de crema de leche Flakes Cuétara 480g,Galleta Flakes La Leche
+alcampo:498818,dia:294221,0.7630892374901452,0.67381537,dia,alcampo,2.0,other_chains,strict,balanced,"DANONE Yogur griego de stracciatella, con un 30% menos de grasa 4 x 110 g.",Yogur griego stracciatella Danone 4 x 110 g
+ahorramas:14080,bm:26057,0.8494514751073886,0.767594,bm,ahorramas,2.0,other_chains,size_unknown,balanced,Bífidus Activia pack 4 fresa,Yogur bífidus con fresas 4x125 g
+alcampo:98921,ahorramas:5330,0.756948660112501,0.7153895,ahorramas,alcampo,2.0,other_chains,size_unknown,balanced,"GARCÍA BAQUERO Queso semicurado mezcla mini de vaca, cabra y oveja GARCÍA BAQUERO, 465 g.",Queso semicurado García Baquero
+dia:684,mercadona:27610,0.7034290693140823,0.7645465,mercadona,dia,2.0,other_chains,strict,balanced,Fanta de limón 2 L,Refresco Fanta limón
+ahorramas:72768,dia:274008,0.8660515872207617,0.8526378,dia,ahorramas,2.0,other_chains,strict,balanced,Postre Alpro Danone 400G Arándanos,Postre de soja con arándanos Alpro 400 g
+dia:66364,alcampo:35361,0.5951931243377828,0.65989226,alcampo,dia,2.0,other_chains,size_unknown,balanced,Agua mineral Font Vella 2 L,FONT VELLA Agua mineral pack 6 uds.x 2 l.
+aldi:12002,dia:150913,0.8120259845983488,0.81721354,dia,aldi,2.0,other_chains,strict,balanced,Caldo casero de pollo,Caldo de pollo Gallina Blanca 1 L
+dia:302603,bm:19617,0.7270283841756076,0.9679108,bm,dia,2.0,other_chains,loose,balanced,Bonito en aceite de girasol alto oleico Consorcio 80 g,Bonito en aceite de girasol alto oléico 110 g
+aldi:601725600,mercadona:2778,0.514187822491339,0.73819524,mercadona,aldi,2.0,other_chains,size_unknown,balanced,Jamoncitos de pollo blanco familiar,Jamoncitos de pollo
+alcampo:715005,bm:66355,0.6744869651192146,0.7699524,bm,alcampo,2.0,other_chains,strict,balanced,"YATEKOMO Fideos Orientales instantáneos, pollo al curry 82 g.",Yatekomo pollo con curry 80 g
+dia:74720,consum:203562,0.8114611893472344,0.81688887,consum,dia,2.0,other_chains,strict,balanced,Leche entera Asturiana botella 1.5 L,Leche Entera Botella
+ahorramas:10634,aldi:954900,0.7487959771562386,0.8291525,aldi,ahorramas,2.0,other_chains,size_unknown,balanced,Pechuga de pollo,Pechuga de pollo corte fino
+aldi:45700,alcampo:196882,0.5399737675116347,0.7027528,alcampo,aldi,2.0,other_chains,strict,balanced,Leche desnatada sin lactosa,"L.R. Leche desnatada de vaca, sin lactosa 1l."
+ahorramas:63569,mercadona:12846,0.6321463953586696,0.7362391,mercadona,ahorramas,2.0,other_chains,strict,balanced,Queso sin lactosa en lonchas Lafuente 200g,Queso lonchas sin lactosa de vaca Hacendado
+aldi:15300,ahorramas:10634,0.6735163296972457,0.7968197,ahorramas,aldi,2.0,other_chains,size_unknown,balanced,Pechuga de pollo prémium,Pechuga de pollo
+ahorramas:1227,mercadona:3021,0.9542217938764626,1.0000002,mercadona,ahorramas,3.0,other_chains,size_unknown,high,Manzana Granny Smith,Manzana Granny Smith
+alcampo:52012,ahorramas:16375,0.9593244284846278,0.8932377,ahorramas,alcampo,3.0,other_chains,size_unknown,high,ACTIVIA Bífidus desnatado (0% materia grasa) y con sabor natural edulcorado 0% de Danone 8 x 120 g.,Bífidus probiótico Activia desnatado 0% materia grasa pack 8 natural edulcorado
+dia:81206,consum:7059769,0.9537802603750991,0.8369721,consum,dia,3.0,other_chains,strict,high,Batido de chocolate Puleva 6 x 200 ml,Batido de Chocolate Minibrik Pack de 6
+ahorramas:49443,dia:57865,0.903780884114891,0.88544506,dia,ahorramas,3.0,other_chains,strict,high,Aceite de oliva virgen extra Maestros de Hojiblanca 1l,Aceite de oliva virgen extra Hojiblanca 1 L
+ahorramas:74641,consum:7194629,0.9851441139290195,0.9395188,consum,ahorramas,3.0,other_chains,strict,high,Zumo de naranja con pulpa exprimido Don Simón 1l,Zumo Exprimido Naranja Con Pulpa - Brik
+dia:198607,alcampo:886796,0.9684313714302619,0.8718014,alcampo,dia,3.0,other_chains,strict,high,Aceite de girasol especial para freír Koipe 1 L,KOIPE FRITOS Aceite de girasol especial para frituras botella de 1 l.
+ahorramas:60824,bm:16115,0.9733371376810693,0.8870815,bm,ahorramas,3.0,other_chains,strict,high,Queso crema de camembert para untar Président 125g,Crema de queso camembert 125 g
+alcampo:36256,dia:h841579e0e15f,0.9338010352248849,0.84808534,dia,alcampo,3.0,other_chains,size_unknown,high,"SOLAN DE CABRAS Agua mineral pack de 6 uds. x 1,5 l.","Agua mineral Solán de Cabras pack 6 x 1,5 L"
+alcampo:319675,consum:7488877,0.9087188925910169,0.7729392,consum,alcampo,3.0,other_chains,strict,high,PULEVA Preparado lácteo con prebióticos 1 L,Preparado Lácteo Digest con Prebióticos Brik
+dia:289229,ahorramas:87398,0.9657609866238048,0.9820382,ahorramas,dia,3.0,other_chains,strict,high,Bebida de avena barista Alpro 1 L,Bebida de avena Barista Alpro 1 litro
+alcampo:24380,bm:35790,0.9546633550701813,0.893714,bm,alcampo,3.0,other_chains,size_unknown,high,CALVO Atún en aceite de oliva lata pack de 3 uds. 52 g.,Atún en aceite de oliva lata 750g
+aldi:601586104,consum:7393408,0.9821683831892319,0.9232147,consum,aldi,3.0,other_chains,strict,high,Mascarilla suave y liso,Mascarilla Suave y Liso
+mercadona:10502,bm:6363,0.9282054153477707,0.9135101,bm,mercadona,3.0,other_chains,strict,high,Leche semidesnatada Asturiana,"Leche semidesnatada 1,5 l"
+mercadona:2787,aldi:747500,0.9424986611265975,0.97888577,aldi,mercadona,3.0,other_chains,size_unknown,high,Filetes pechuga de pollo,Filetes de pechuga de pollo
+dia:222177,bm:45250,0.941917275822258,0.8158036,bm,dia,3.0,other_chains,strict,high,Vasos de quinoa blanca y roja Brillante 2 x 125 g,Quinoa 2x125 g
+aldi:987900,mercadona:69099,0.9542216456778769,0.99999994,mercadona,aldi,3.0,other_chains,size_unknown,high,Patatas,Patatas
+dia:278898,aldi:600558800,0.9516945121327126,0.95051503,aldi,dia,3.0,other_chains,strict,high,Margarina rica en omega 3 Flora 400 g,Margarina omega 3
+ahorramas:59453,alcampo:98071,0.9848383605915875,0.93770194,alcampo,ahorramas,3.0,other_chains,strict,high,Queso semicurado en lonchas García Baquero 200g,GARCÍA BAQUERO Queso semicurado en lonchas GARCÍA BAQUERO 200 g.
+mercadona:17110,consum:951371,0.9556928870348161,0.9584731,consum,mercadona,3.0,other_chains,strict,high,Tomate frito Hida,Tomate Frito Lata
+aldi:602031000,bm:77806,0.9913105828191145,0.98717713,bm,aldi,3.0,other_chains,strict,high,Aceite de oliva virgen extra,Aceite de oliva virgen extra 1 l
+dia:91974,mercadona:12526,0.9495259883876728,0.9464571,mercadona,dia,3.0,other_chains,strict,high,Barritas de barquillo recubierta de chocolate con leche Huesitos 200 g,Barritas de barquillo Huesitos bañadas de chocolate con leche
+aldi:601052100,dia:101007,0.9498492530355904,0.9470514,dia,aldi,3.0,other_chains,strict,high,Mayonesa,Mayonesa Hellmann's 450 ml
+aldi:525603,ahorramas:9386,0.9145164365974972,0.8968747,ahorramas,aldi,3.0,other_chains,strict,high,Bolsita yogur con plátano y fresa,Alimento infantil Hero Yogurín con plátano y fresa 100g
+ahorramas:95974,dia:307385,0.9847603634680627,0.93724424,dia,ahorramas,3.0,other_chains,strict,high,Kefir líquido con arándanos Activia 280g,Kéfir sabor arándanos Activia 280 g
+ahorramas:2188,consum:227652,0.9702215035706532,0.92162347,consum,ahorramas,3.0,other_chains,size_unknown,high,Yogur Danone pack 8 natural,Yogur Natural Pack de 8 Unidades
+ahorramas:72473,bm:66041,0.9496963843674809,0.8736891,bm,ahorramas,3.0,other_chains,size_unknown,high,Yogur proteínas Danone pack 4 stracciatella,Yogur de proteínas stracciatela 4x105 g
+dia:137118,consum:7468247,0.9876164060752387,0.95572877,consum,dia,3.0,other_chains,strict,high,Sardinas en aceite de oliva Albo 85 g,Sardinas en Aceite de Oliva
+dia:262457,bm:7268,0.9614923064722724,0.8537155,bm,dia,3.0,other_chains,strict,high,Detergente en polvo Ariel 30 lavados,Detergente en polvo actilift 30 lavados
+dia:119676P6,alcampo:91111,0.956259001532983,0.8420422,alcampo,dia,3.0,other_chains,strict,high,Leche desnatada sin lactosa Pascual pack 6 x 1 L,PASCUAL Leche de vaca desnatada sin lactosa 6 x 1 l.
+dia:117866,ahorramas:16375,0.9457329825851426,0.86665964,ahorramas,dia,3.0,other_chains,size_unknown,high,Bífidus natural desnatado edulcorado Activia 8 x 120 g,Bífidus probiótico Activia desnatado 0% materia grasa pack 8 natural edulcorado
+alcampo:529339,consum:7463073,0.920192790608391,0.7858416,consum,alcampo,3.0,other_chains,strict,high,BARILLA Spaghettoni albronzo 500 g.,Spaguettoni Al Bronzo
+aldi:525602,bm:16817,0.9767360958511914,0.899367,bm,aldi,3.0,other_chains,strict,high,Bolsita de plátano y fresa,"Bolsita de plátano, fresa y manzana 100 g"
+dia:130840,mercadona:35987,0.9608390752733553,0.96979064,mercadona,dia,3.0,other_chains,strict,high,Cereales de arroz inflado Kellogg's Choco Krispies 420 g,Cereales de arroz inflado Choco Krispies Kellogg's con chocolate
+alcampo:34349,dia:188896,0.9406139728805635,0.8137326,dia,alcampo,3.0,other_chains,strict,high,DON SIMON Zumo de manzana brick de 1 l.,Zumo de manzana Don Simón 1 L
+alcampo:942811,ahorramas:87330,0.9552940018310827,0.9576491,ahorramas,alcampo,3.0,other_chains,strict,high,COOSUR  Aceite de oliva virgen extra 5 l.,Aceite de oliva virgen extra Coosur 5l
+alcampo:51152,bm:22791,0.9779148376686854,0.9040406,bm,alcampo,3.0,other_chains,strict,high,"KAIKU Yogur natural azucarado, sin lactosa 4 x 125 g.",Yogur natural sin lactosa azucarado 4x125 g
+ahorramas:26265,alcampo:90356,0.935630692026535,0.8507194,alcampo,ahorramas,3.0,other_chains,size_unknown,high,Bífidus fibra avena y nueces pack 4  Activia,ACTIVIA Bífidus con avena y nueces de Danone 4 x 115 g.
+aldi:601557701,mercadona:12107,0.9120724254181037,0.89416337,mercadona,aldi,3.0,other_chains,strict,high,Chocolate con leche con almendras,Chocolate con leche Valor almendras enteras
+aldi:600421500,consum:7233385,0.9384764747585964,0.81042653,consum,aldi,3.0,other_chains,strict,high,Harina fina de maíz,Harina de Maíz Caja
+mercadona:2785,aldi:749200,0.9022857180431628,0.9284768,aldi,mercadona,3.0,other_chains,size_unknown,high,Alas partidas de pollo,Alas de pollo partidas
+ahorramas:39882,consum:7120848,0.945010881689207,0.93851215,consum,ahorramas,3.0,other_chains,strict,high,Salsa fresca 4 quesos Rana 180g,Salsa Fresca 4 Quesos
+ahorramas:60203,dia:47771,0.9856641799544966,0.9426955,dia,ahorramas,3.0,other_chains,strict,high,Agua Font Vella 50cl,Agua mineral Font Vella 500 ml
+dia:223226,consum:7267750,0.9418542579626018,0.933315,consum,dia,3.0,other_chains,strict,high,Agua micelar en aceite Garnier 400 ml,Agua Micelar en Aceite
+ahorramas:46423,bm:6364,0.9294282192561867,0.9151348,bm,ahorramas,3.0,other_chains,strict,high,Leche Asturiana 1l semidesnatada,Leche semidesnatada 1 l
+dia:50238,ahorramas:23012,0.936848185149536,0.85251105,ahorramas,dia,3.0,other_chains,size_unknown,high,Postre lácteo de plátano Nestlé Yogolino 4 x 100 g,Postre Nestlé Yogolino plátano desde 6meses pack 4 (desde 6 meses)
+dia:61500,alcampo:64832,0.9751905797639928,0.9381094,alcampo,dia,3.0,other_chains,size_unknown,high,Atún claro en aceite de oliva Calvo 3 x 52 g,CALVO Atún claro en aceite de oliva pack 3 uds. x 73 g.
+dia:102510,bm:1290,0.9241853233000681,0.9083428,bm,dia,3.0,other_chains,strict,high,Alubias blancas Luengo 1 Kg,Alubia blanca larga 1 kg
+alcampo:97940,consum:7264617,0.9446306691133427,0.820259,consum,alcampo,3.0,other_chains,strict,high,CARBONELL Aceite de oliva virgen extra 100% Picual botella de 1 l.,Aceite de Oliva Virgen Extra
+dia:189922,mercadona:66105,0.9677104992957478,0.8697526,mercadona,dia,3.0,other_chains,strict,high,Mosto blanco Don Simón 1 L,Vino blanco Don Simón
+aldi:601557701,bm:14862,0.9905654342545093,0.97988373,bm,aldi,3.0,other_chains,strict,high,Chocolate con leche con almendras,Chocolate con leche y almendras 250 g
+alcampo:59802,bm:28277,0.9500121874772405,0.8580731,bm,alcampo,3.0,other_chains,strict,high,ACTIVIA Bífidus con frutos del bosque de Danone 4 x 120 g.,Yogur bífidus con frutas del bosque 4x125 g
+alcampo:438308,ahorramas:75781,0.9626768263064172,0.8565682,ahorramas,alcampo,3.0,other_chains,strict,high,DON SIMON Zumo refrigerado exprimido de naranja sin pulpa botella de 1 l.,Zumo de naranja sin pulpa exprimido Don Simón 1l
+ahorramas:61284,alcampo:625497,0.928778920472786,0.92669576,alcampo,ahorramas,3.0,other_chains,strict,high,Mermelada de tomate La Vieja Fábrica 280g,LA VIEJA FÁBRICA Mermelada de tomate 285 gr.
+aldi:525603,consum:7326825,0.9206127868878843,0.7863452,consum,aldi,3.0,other_chains,strict,high,Bolsita yogur con plátano y fresa,Pouche Yogurt Plátano Fresa
+alcampo:748625,dia:280363,0.9371619337275597,0.92605877,dia,alcampo,3.0,other_chains,strict,high,COOSOL Aceite de girasol 5L.,Aceite de girasol Coosol 5 L
+aldi:155700,mercadona:3858,0.9542218531557687,1.0000004,mercadona,aldi,3.0,other_chains,size_unknown,high,Aguacates,Aguacates
+ahorramas:69878,consum:12559,0.9700740936066939,0.8766446,consum,ahorramas,3.0,other_chains,strict,high,Leche Pascual 1l entera,Leche Entera Brik
+ahorramas:580,dia:216297,0.9623342370171704,0.9733468,dia,ahorramas,3.0,other_chains,strict,high,Pan molde Schär sin gluten con cereales 300g,Pan de molde con cereales sin gluten Schär 300 g
+dia:16066,consum:735340,0.9451097718740971,0.93867946,consum,dia,3.0,other_chains,strict,high,Leche desnatada Asturiana 1 L,Leche Desnatada Brik
+ahorramas:71218,bm:63061,0.9499939460791734,0.8297061,bm,ahorramas,3.0,other_chains,strict,high,"Leche Pascual Semi 1,5l","Leche semidesnatada 1,5 l"
+dia:178095,bm:6212,0.9751331256959423,0.92288315,bm,dia,3.0,other_chains,strict,high,Bífidus cremoso de lima-limón Activia 4 x 115 g,Yogur bífidus cremoso sabor lima limón 4x120 g
+alcampo:95341,consum:7291297,0.9052732788778541,0.76935065,consum,alcampo,3.0,other_chains,strict,high,"PULEVA Leche desnatada (0% materia grasa) de vaca, sin lactosa  Mañanas ligeras 1 l.",Leche sin Lactosa Desnatada Botella
+dia:297538,ahorramas:62494,0.9562826652756525,0.8420919,ahorramas,dia,3.0,other_chains,strict,high,Hélices 100% de garbanzo Gallo 250 g,Hélices de garbanzo Gallo Nature 250g
+aldi:254801,bm:2995,0.990093435266873,0.9755535,bm,aldi,3.0,other_chains,strict,high,Mayonesa,Mayonesa 430 ml
+dia:221417,alcampo:90356,0.9819173258279635,0.92196405,alcampo,dia,3.0,other_chains,strict,high,Bífidus con avena y nueces Activia 4 x 115 g,ACTIVIA Bífidus con avena y nueces de Danone 4 x 115 g.
+ahorramas:26806,alcampo:53073,0.9122262304913827,0.77671945,alcampo,ahorramas,3.0,other_chains,strict,high,Leche sin lactosa Pascual 1l entera,PASCUAL Leche de vaca entera sin lactosa  1 l.
+aldi:602031000,consum:7404523,0.9697715803578609,0.8757337,consum,aldi,3.0,other_chains,strict,high,Aceite de oliva virgen extra,Aceite de Oliva Virgen Extra Hojiblanca
+alcampo:91111,dia:119676P6,0.956259001532983,0.8420422,dia,alcampo,3.0,other_chains,strict,high,PASCUAL Leche de vaca desnatada sin lactosa 6 x 1 l.,Leche desnatada sin lactosa Pascual pack 6 x 1 L
+alcampo:795157,bm:9050,0.9785859174934184,0.9068115,bm,alcampo,3.0,other_chains,strict,high,GRANINI Zumo de piña 100% premium 1 l.,Zumo de piña 1 l
+ahorramas:26806,consum:7169688,0.9802801191591747,0.9142037,consum,ahorramas,3.0,other_chains,strict,high,Leche sin lactosa Pascual 1l entera,Leche sin Lactosa Entera Brik
+ahorramas:87987,dia:307396,0.9732734688740161,0.931398,dia,ahorramas,3.0,other_chains,size_unknown,high,Skyr alto en Proteina Danone Pack 4 Natural,Skyr natural alto en proteínas Danone 4 x 100 g
+dia:253536,consum:7318736,0.9393012632101447,0.8116893,consum,dia,3.0,other_chains,strict,high,Pesto rojo Gallo 190 g,Pesto Rosso Frasco
+ahorramas:33156,bm:17147,0.9356116975678478,0.9683042,bm,ahorramas,3.0,other_chains,size_unknown,high,"Manzana golden bolsa 1,5k","Manzana golden bolsa 1,5 kg"
+dia:68383,bm:10970,0.951616219534856,0.95036554,bm,dia,3.0,other_chains,strict,high,Vinagre balsámico de Módena Borges 250 ml,Vinagre balsámico de módena 250 ml
+dia:285658,ahorramas:56293,0.9715199932978777,0.9987382,ahorramas,dia,3.0,other_chains,strict,high,Bebida de almendras sin azúcar Alpro 1 L,Bebida de almendras sin azúcar Alpro 1l
+bm:84707,consum:7215143,0.9898655087989607,0.97518677,consum,bm,,barcode_error,strict,high,Agua micelar 400 ml,Agua Micelar
+bm:2733,consum:7285062,0.9491712061777811,0.8333718,consum,bm,,barcode_error,strict,high,Tortitas de arroz 130 g,Tortitas de Arroz Chocolate con Leche
+bm:38685,consum:7376556,0.6067438394174319,0.64358944,consum,bm,,barcode_error,size_unknown,balanced,Stick para gatos de salmón y trucha,Snack Liquido Gatos Salmón Omega 3
+bm:63492,consum:7430643,0.7969390485704506,0.7395386,consum,bm,,barcode_error,size_unknown,balanced,Pan de hamburguesa brioche 4 unidades,Pan Burger 4 Unidades
+bm:3421,consum:7291177,0.9134916203706807,0.9614051,consum,bm,,barcode_error,strict,high,"Aceite de oliva virgen 0,75 l",Aceite de Oliva Virgen
+bm:3000,consum:7472657,0.4696603979084689,0.6424656,consum,bm,,barcode_error,strict,balanced,Queso cremoso light 200 g,Queso Cottage
+bm:66201,consum:7400856,0.7299831178330678,0.7139307,consum,bm,,barcode_error,size_unknown,balanced,Papel higiénico original 24 rollos,Higiénico Doble Capa Original
+bm:62593,consum:7437619,0.5780455977777263,0.59585714,consum,bm,,barcode_error,strict,balanced,Yakisoba con pollo 250 g,Pollo Teriyaki con Arroz Japonés
+bm:1795,consum:7209286,0.9204913348811714,0.79983634,consum,bm,,barcode_error,strict,high,Yatekomo de pollo 80 g,Yatekomo Pollo con Soja Bolsa
+bm:66993,consum:7403918,0.6662329907088844,0.6384353,consum,bm,,barcode_error,strict,balanced,Detergente en capsulas 33 lavados,Detergente Cápsulas Floral
+bm:5019,consum:7454015,0.7631275570968974,0.6736065,consum,bm,,barcode_error,strict,balanced,Espagueti 3 minutos 400 g,Spaguetti 3
+bm:5206,consum:7415714,0.42866180800556214,0.59738594,consum,bm,,barcode_error,size_unknown,balanced,Papel higiénico paquete 12 rollos,Higiénico Acolchado
+bm:8605,consum:7388432,0.9046190229316607,0.84573233,consum,bm,,barcode_error,strict,high,Margarina 250 g,Margarina Oliva Tarrina
+bm:44676,consum:7397250,0.9538363218628246,0.8781136,consum,bm,,barcode_error,size_unknown,high,Café con leche 16 cápsulas,Café con Leche 30 Cápsulas
+bm:6232,consum:236141,0.5351463163417707,0.61176324,consum,bm,,barcode_error,size_unknown,balanced,Yogur bífidus cremoso 0% frutas silvestres 4x120 g,Activia Frutas Bosque Yogur Bífidus P-4 ud.
+bm:85663,consum:2536688,0.9030905244091841,0.83270454,consum,bm,,barcode_error,size_unknown,high,Comida para gatos Gourmet Gold con pollo,Comida Húmeda Gatos Gourmet Gold Pollo
+bm:13325,consum:7472157,0.9399442277398068,0.81731737,consum,bm,,barcode_error,strict,high,Fideo 400 g,Fideo Nº1
+bm:38052,consum:7228849,0.947208918276092,0.82972133,consum,bm,,barcode_error,strict,high,Yogur griego natural 500 g,Yogur Natural Artesano
+bm:9676,consum:7365773,0.6530415664670155,0.7130212,consum,bm,,barcode_error,strict,balanced,Macarrones integrales 400 g,Spaghetti Integral Paquete
+bm:12482,consum:7404429,0.9531825480281995,0.84122944,consum,bm,,barcode_error,strict,high,Caldo de pollo natural 1 l,Caldo Natural de Pollo Con Jamón
+bm:3418,consum:7472657,0.6177400735849796,0.69563043,consum,bm,,barcode_error,strict,balanced,Queso cremoso original 200 g,Queso Cottage
+bm:13540,consum:7212483,0.8884367077596445,0.7558855,consum,bm,,barcode_error,strict,balanced,Spaghetti 400 g,Spaghetti Pasta Fina Paquete
+bm:61433,consum:7370398,0.6062586050105272,0.6064817,consum,bm,,barcode_error,strict,balanced,Galletitas ecológicas de espelta y manzana 100 g,Pouch Fresa y Plátano Ecológico
+bm:8877,consum:7012412,0.55711661601752,0.6732308,consum,bm,,barcode_error,strict,balanced,Garbanzo al natural 560 g,Garbanza Blanca
+bm:36976,consum:2842854,0.8377597159975841,0.78299123,consum,bm,,barcode_error,strict,balanced,Pan de molde sin corteza 8 cereales 450 g,Pan Molde Sin Corteza
+bm:1017,consum:7358596,0.4410721611073386,0.60197747,consum,bm,,barcode_error,size_unknown,balanced,Toallitas húmedas hygienic comfort 80 unidades,Higiénico Húmedo Aloe Vera
+bm:80975,consum:937243,0.907890251093893,0.82093513,consum,bm,,barcode_error,size_unknown,high,Queso de cabra 3x70 g,Queso Burgo de Arias Pack de 3 Unidades
+bm:6370,consum:7351117,0.43268966611351944,0.53658056,consum,bm,,barcode_error,strict,balanced,Nata líquida para montar 500 ml,Nata para Montar Refrigerada
+bm:27446,consum:4237582,0.8362520237533845,0.7628145,consum,bm,,barcode_error,size_unknown,balanced,Queso fresco mini 3x72 g,Queso Fresco 0% Pack de 3 Unidades
+bm:66336,consum:7427615,0.9357880447237896,0.80323136,consum,bm,,barcode_error,strict,high,Batido chocolate 4x188 ml,Batido de Cacao 0% pack 4X188ML
+bm:84958,consum:7294291,0.7989917079160178,0.69270873,consum,bm,,barcode_error,strict,balanced,Espaguetis tagliatelle 500 g,Spaghetti Paquete
+bm:4485,consum:7199300,0.6853091962892592,0.68297386,consum,bm,,barcode_error,strict,balanced,Sazonador de spaguetis 18 g,Sazonador Carnes Tarro
+bm:89162,consum:7109937,0.8374969024611248,0.72153413,consum,bm,,barcode_error,strict,balanced,Queso pizza proteína rallado 175 g,Queso Rallado Mozzarella Bolsa
+bm:65506,consum:937243,0.8512328159471715,0.7728647,consum,bm,,barcode_error,size_unknown,balanced,Queso proteínas 3x70 g,Queso Burgo de Arias Pack de 3 Unidades
+bm:8878,consum:7419146,0.6268184260658571,0.6995177,consum,bm,,barcode_error,strict,balanced,Lenteja al natural 560 g,Lenteja Rápida Paquete
+bm:16817,consum:7326838,0.9248930201653962,0.79551655,consum,bm,,barcode_error,strict,high,"Bolsita de plátano, fresa y manzana 100 g","Pouche Manzana, Fresa Plátano, Arándano Solo"
+bm:8749,consum:5743596,0.786314892717347,0.6788269,consum,bm,,barcode_error,strict,balanced,Leche condensada 450 g,Leche Condensada Desnatada Sirvefácil
+bm:8879,consum:7021116,0.5306920819268817,0.6635438,consum,bm,,barcode_error,strict,balanced,Alubia al natural 560 g,Alubia Blanca Larga
+bm:1154,consum:7149565,0.4643379383330136,0.60605407,consum,bm,,barcode_error,size_unknown,balanced,Queso curado Maestría al corte,Queso Mezcla Curado Ya Cortado L Pasteurizad
+bm:64866,consum:7403918,0.6757522795723291,0.6421916,consum,bm,,barcode_error,strict,balanced,Detergente cápsulas 33 lavados,Detergente Cápsulas Floral

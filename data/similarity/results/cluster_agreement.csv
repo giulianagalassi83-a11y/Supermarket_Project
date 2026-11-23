@@ -1,0 +1,3 @@
+encoder,clusters,noise_share,n,ari,nmi,n_real_types,ari_real_types,nmi_real_types,picked
+base,359,0.171,13661,0.0113,0.4919,6726,0.3328,0.7386,True
+finetuned,357,0.211,13062,0.013,0.4863,6293,0.3214,0.7347,False

@@ -26,8 +26,7 @@ from src.pipeline import adapters, config
 from src.pipeline.adapters import apis, scraped
 from src.pipeline.classify import (
     TfidfFallback,
-    decide,
-    get_vectorizer,
+    _hash,
     load_taxonomy,
     product_text,
     types_for_db,
@@ -235,6 +234,9 @@ def load_historical_raw(history_dir=HISTORY_DIR):
 
         for path in snapshots:
 
+            if (chain_id, path.name[:10]) in config.EXCLUDED_SNAPSHOTS:
+                continue
+
             # The same adapter processes current and historical files.
             frame = loader(path)
 
@@ -263,6 +265,66 @@ def load_historical_raw(history_dir=HISTORY_DIR):
 
 
 # --------------------------------------------------
+# SAVED CLASSIFICATION (written by src.similarity.build)
+# --------------------------------------------------
+
+CLASSIFICATION_COLUMNS = [
+    "product_key", "type_id", "score", "runner_up_type_id",
+    "margin", "low_confidence", "method", "model_name",
+]
+PENDING = "pending_similarity"
+
+
+def load_assignments(path=config.SIM_ASSIGNMENTS_PATH):
+    """The saved engine classification, or None when the similarity build has never run."""
+    if not path.exists():
+        return None
+    return pd.read_csv(
+        path,
+        dtype={"product_key": str, "text_hash": str, "type_id": str, "runner_up_type_id": str},
+    )
+
+
+def apply_saved_assignments(products, assignments):
+    """Classification from the saved engine run; never computes embeddings (no torch here, CI-safe).
+
+    A product keeps its saved row only when its key AND its text hash match, so a renamed product is
+    treated as new: type_id None, method 'pending_similarity', low_confidence True, until
+    `python -m src.similarity.build` runs again. CI can therefore never downgrade a classification.
+    """
+    texts = [
+        product_text(name, category)
+        for name, category in zip(products["name_clean"], products["chain_category"])
+    ]
+    out = pd.DataFrame({
+        "product_key": products["product_key"].to_numpy(),
+        "text_hash": [_hash(t) for t in texts],
+    })
+    if assignments is not None and len(assignments):
+        saved = assignments.drop_duplicates("product_key", keep="last")
+        out = out.merge(
+            saved[["text_hash"] + CLASSIFICATION_COLUMNS],
+            on=["product_key", "text_hash"],
+            how="left",
+        )
+    else:
+        for col in CLASSIFICATION_COLUMNS[1:]:
+            out[col] = None
+    out = out[CLASSIFICATION_COLUMNS].astype(
+        {c: object for c in ["type_id", "runner_up_type_id", "low_confidence", "method", "model_name"]}
+    )
+    out[["score", "margin"]] = out[["score", "margin"]].astype(float)
+    pending = out["method"].isna()
+    out.loc[pending, ["type_id", "runner_up_type_id", "method", "model_name"]] = [None, None, PENDING, None]
+    out.loc[pending, ["score", "margin"]] = np.nan
+    saved_low = out["low_confidence"].map(lambda v: str(v).strip().lower() in ("true", "1", "1.0"))
+    out["low_confidence"] = (pending | saved_low).astype(bool)
+    for col in ["type_id", "runner_up_type_id", "model_name"]:
+        out[col] = out[col].where(out[col].notna(), None)
+    return out
+
+
+# --------------------------------------------------
 # CURRENT DATA AND CLASSIFICATION PREPARATION
 # --------------------------------------------------
 
@@ -274,8 +336,11 @@ def prepare(
     history_raw=None,
     strict=False,
 ):
-    """Load sources, standardize products, and initialize classification."""
+    """Load sources and standardize products.
 
+    The production classification comes from saved assignments (see `apply_saved_assignments`);
+    `force_tfidf` only builds a TF-IDF vectorizer for evaluation callers.
+    """
     report = {
         "chains": {},
         "warnings": [],
@@ -351,46 +416,16 @@ def prepare(
 
     products = tables["products"]
 
-    texts = [
-        product_text(name, category)
-        for name, category in zip(
-            products["name_clean"],
-            products["chain_category"],
-        )
-    ]
-
-    texts += list(
-        taxonomy["description"]
-    )
-
+    vectorizer = None
     if force_tfidf:
-        vectorizer = TfidfFallback(texts)
-
-    else:
-        vectorizer = get_vectorizer(
-            texts,
-            cache_path,
-            config.MODEL_NAME,
-        )
-
-    report["method"] = vectorizer.method
-    report["model_name"] = vectorizer.model_name
-
-    if (
-        vectorizer.method == "tfidf"
-        and not force_tfidf
-    ):
-
-        report["warnings"].insert(
-            0,
-            (
-                "WARNING: embeddings unavailable for "
-                f"{vectorizer.missing} texts -> "
-                "whole run used TF-IDF "
-                "(install requirements-embeddings.txt "
-                "and rebuild)"
-            ),
-        )
+        texts = [
+            product_text(name, category)
+            for name, category in zip(
+                products["name_clean"],
+                products["chain_category"],
+            )
+        ]
+        vectorizer = TfidfFallback(texts + list(taxonomy["description"]))
 
     return {
         **tables,
@@ -438,7 +473,7 @@ def _chain_stats(
     ]
 
     classified = cls[
-        cls["method"] != "unclassified"
+        ~cls["method"].isin(["unclassified", PENDING])
     ]
 
     def pct(series):
@@ -526,6 +561,9 @@ def export_processed_snapshots(
         for raw_path in raw_snapshots:
 
             day = raw_path.name[:10]
+
+            if (chain_id, day) in config.EXCLUDED_SNAPSHOTS:
+                continue
 
             processed_path = (
                 folder / f"{day}_processed.csv"
@@ -630,6 +668,7 @@ def build(
     cache_path=config.CACHE_PATH,
     history_dir=HISTORY_DIR,
     history_csv_path=HISTORY_CSV_PATH,
+    assignments_path=config.SIM_ASSIGNMENTS_PATH,
 ):
     """Build the current catalog and normalized historical observations."""
 
@@ -656,17 +695,20 @@ def build(
     hits = p["hits"]
 
     taxonomy = p["taxonomy"]
-    vectorizer = p["vectorizer"]
     report = p["report"]
 
-    # 3. Classify product identities, not individual dates.
-    classification = decide(
+    # 3. Classify product identities from the saved similarity build (no ML here).
+    classification = apply_saved_assignments(
         products,
-        hits,
-        taxonomy,
-        vectorizer,
-        config.THRESHOLDS[vectorizer.method],
+        load_assignments(assignments_path),
     )
+    saved = classification[classification["method"] != PENDING]
+    report["method"] = "engine (saved assignments)"
+    report["model_name"] = (
+        saved["model_name"].dropna().mode().iloc[0]
+        if saved["model_name"].notna().any() else None
+    )
+    report["pending"] = int((classification["method"] == PENDING).sum())
 
     # 4. Apply quality flags to normalized observations.
     observations = add_outlier_flags(
@@ -750,6 +792,12 @@ def format_report(report):
         f"Classifier: {report['method']} "
         f"({report['model_name']})"
     )
+
+    if "pending" in report:
+        lines.append(
+            f"{report['pending']} products pending similarity build"
+            + (" (run: python -m src.similarity.build)" if report["pending"] else "")
+        )
 
     lines.append(
         f"{'chain':<10} "

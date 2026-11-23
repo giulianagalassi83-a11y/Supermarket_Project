@@ -1,0 +1,1684 @@
+product_key,cluster_id,suggested_type_id,share,name
+mercadona:19847,287,yogur_natural,0.647,Petit sabor fresa Hacendado
+mercadona:18388,287,yogur_natural,0.647,Petit de bolsillo sabor galleta Hacendado
+mercadona:68089,287,yogur_natural,0.647,Petit de bolsillo sabor fresa Hacendado
+mercadona:68124,287,yogur_natural,0.647,Danonino sabor fresa Danone
+mercadona:68029,287,yogur_natural,0.647,Petit Nesquik Nestlé
+mercadona:60400,287,yogur_natural,0.647,Bolsita postre lácteo galleta Hacendado +8 meses
+mercadona:22444,287,yogur_natural,0.647,Bolsita postre lácteo cereales y miel Hacendado +12 meses
+mercadona:20029,272,yogur_griego,0.84,Kéfir natural Hacendado sabor suave
+mercadona:68172,132,no_relevante,0.972,Gelatina sabor fresa Hacendado
+mercadona:52488,132,no_relevante,0.972,Gelatina sabor a frutos silvestres +Proteínas 10 g 0% azúcar
+mercadona:35683,132,no_relevante,0.972,"Gelatina 0% azúcar sabores fresa, mandarina y limón Hacendado"
+mercadona:86333,132,no_relevante,0.972,"Gelatina 0% azúcar sabor cereza, cola y sandía Hacendado"
+mercadona:21979,132,no_relevante,0.972,"Gelatina sabores mango maracuyá, guayaba y piña coco Hacendado"
+mercadona:20593,198,no_relevante,1.0,Copa crema de chocolate y nata Hacendado
+mercadona:18336,198,no_relevante,1.0,Mousse de chocolate Hacendado
+mercadona:68170,198,no_relevante,1.0,Tiramisú Hacendado
+mercadona:68188,198,no_relevante,1.0,Panna Cotta con caramelo Hacendado
+mercadona:68322,198,no_relevante,1.0,Cuajada Hacendado
+mercadona:13053,198,no_relevante,1.0,Cheesecake con arándanos Hacendado
+mercadona:82938,198,no_relevante,1.0,Coulant de chocolate Hacendado
+mercadona:67634,198,no_relevante,1.0,Crema catalana Hacendado
+mercadona:68348,198,no_relevante,1.0,Tocino de cielo Hacendado
+mercadona:52564,198,no_relevante,1.0,Postre 3 chocolates Hacendado
+mercadona:15912,198,no_relevante,1.0,Postre crema de turrón Hacendado
+mercadona:68279,198,no_relevante,1.0,Postre chocolate caramelo Hacendado
+mercadona:9905,198,no_relevante,1.0,Mousse sabor chocolate +Proteínas 10 g
+mercadona:21061,199,no_relevante,0.957,"Natillas con chocolate +Proteínas 10 g 1,3 g MG"
+mercadona:22311,199,no_relevante,0.957,Natillas sabor vainilla +Proteínas 12 g
+mercadona:60956,198,no_relevante,1.0,Pudding sabor caramelo +Proteínas 12 g
+mercadona:68106,132,no_relevante,0.972,Flan de vainilla con caramelo Hacendado
+mercadona:68204,132,no_relevante,0.972,Flan de huevo Hacendado
+mercadona:68149,132,no_relevante,0.972,Flan de huevo Hacendado
+mercadona:67633,132,no_relevante,0.972,Flan de café Hacendado
+mercadona:68265,132,no_relevante,0.972,Flan de huevo sin azúcares añadidos Hacendado
+mercadona:67635,132,no_relevante,0.972,Flan de huevo +Proteínas 10 g 0% MG 0% azúcares añadidos
+mercadona:68266,199,no_relevante,0.957,Natillas sabor vainilla con galleta Hacendado
+mercadona:80782,261,no_relevante,0.944,Ensaladilla Delicias del mar Hacendado
+mercadona:80795,261,no_relevante,0.944,Ensaladilla rusa Hacendado
+mercadona:80784,261,no_relevante,0.944,Ensaladilla rusa Hacendado
+mercadona:80781,261,no_relevante,0.944,Ensaladilla americana Hacendado
+mercadona:67798,261,no_relevante,0.944,Patatas con allioli Hacendado
+mercadona:5561,261,no_relevante,0.944,Ensaladilla rusa grande Listo para Comer
+mercadona:60226,261,no_relevante,0.944,Ensaladilla rusa mediana Listo para Comer
+mercadona:60212,261,no_relevante,0.944,Ensaladilla rusa pequeña Listo para Comer
+mercadona:13250,261,no_relevante,0.944,Ensaladilla de marisco Listo para Comer
+mercadona:24534,261,no_relevante,0.944,Ensaladilla al estilo Portuguesa Hacendado
+mercadona:51097,261,no_relevante,0.944,Tofu firme Hacendado
+mercadona:80794,261,no_relevante,0.944,Tabulé oriental Hacendado
+mercadona:80980,261,no_relevante,0.944,Tsatsiki Hacendado
+mercadona:24545,260,no_relevante,0.913,Mini sándwich de pavo y huevo revuelto Mini & Go Hacendado
+mercadona:4488,222,no_relevante,0.932,Lasaña boloñesa familiar Hacendado
+mercadona:4487,222,no_relevante,0.932,Lasaña boloñesa Hacendado
+mercadona:4491,222,no_relevante,0.932,Lasaña de espinacas y requesón Hacendado
+mercadona:52507,222,no_relevante,0.932,Macarrones Mac & Cheese Bacon Hacendado gratinados
+mercadona:4797,261,no_relevante,0.944,Albóndigas guisadas Hacendado
+mercadona:23289,261,no_relevante,0.944,Migas Hacendado
+mercadona:80895,261,no_relevante,0.944,Tortilla de patata y cebolla Hacendado
+mercadona:80771,261,no_relevante,0.944,Tortilla de patata Hacendado
+mercadona:80773,261,no_relevante,0.944,Tortilla de patata con chorizo Hacendado
+mercadona:60089,261,no_relevante,0.944,Tortilla de patata con cebolla Listo para Comer
+mercadona:60127,261,no_relevante,0.944,Media tortilla de patata con cebolla Listo para Comer
+mercadona:60093,261,no_relevante,0.944,Pincho tortilla de patata con cebolla Listo para Comer
+mercadona:60091,261,no_relevante,0.944,Tortilla de patata con calabacín Listo para Comer
+mercadona:60128,261,no_relevante,0.944,Media tortilla de patata con calabacín Listo para Comer
+mercadona:60095,261,no_relevante,0.944,Pincho tortilla de patata con calabacín Listo para Comer
+mercadona:8727,243,no_relevante,0.727,Fideos orientales Yakisoba sabor soja Hacendado
+mercadona:8730,243,no_relevante,0.727,Fideos orientales Yakisoba sabor soja Hacendado
+mercadona:67786,261,no_relevante,0.944,Callos a la madrileña Hacendado
+mercadona:35590,261,no_relevante,0.944,Fabada Hacendado
+mercadona:26108,261,no_relevante,0.944,Fabada Hacendado
+mercadona:26101,261,no_relevante,0.944,Lentejas a la riojana Hacendado
+mercadona:26116,261,no_relevante,0.944,Lentejas a la jardinera Hacendado
+mercadona:22726,261,no_relevante,0.944,Fabada asturiana Litoral
+mercadona:23138,261,no_relevante,0.944,Albóndigas en salsa Hacendado
+mercadona:26114,261,no_relevante,0.944,Alubias a la jardinera Hacendado
+mercadona:52990,261,no_relevante,0.944,Cocido Hacendado
+mercadona:60924,261,no_relevante,0.944,Oreja guisada Hacendado
+mercadona:88407,261,no_relevante,0.944,Lentejas Listo para Comer
+mercadona:11670,261,no_relevante,0.944,Patatas bravas con allioli y salsa picante Hacendado
+mercadona:86511,261,no_relevante,0.944,Mini burgers vegetales Hacendado con espinacas y zanahoria
+mercadona:23249,261,no_relevante,0.944,Empanados vegetales con proteína de soja Tivall
+mercadona:60652,261,no_relevante,0.944,Patatas fritas con carne kebab y salsa Hacendado
+mercadona:15269,261,no_relevante,0.944,Burgers vegetales Hacendado con calabaza
+mercadona:19974,261,no_relevante,0.944,Seitán Soria Natural lonchas
+mercadona:63613,260,no_relevante,0.913,Pizza barbacoa Hacendado
+mercadona:63629,260,no_relevante,0.913,Pizza barbacoa familiar Hacendado
+mercadona:60685,260,no_relevante,0.913,Pizza barbacoa Hacendado
+mercadona:63551,260,no_relevante,0.913,Pizza serrana Hacendado
+mercadona:63653,260,no_relevante,0.913,Pizza carbonara Hacendado
+mercadona:63632,260,no_relevante,0.913,Pizza carbonara familiar Hacendado
+mercadona:63556,260,no_relevante,0.913,Pizza pepperoni Hacendado
+mercadona:63503,260,no_relevante,0.913,Pizza romana Hacendado con champiñones salteados
+mercadona:12083,260,no_relevante,0.913,Pizza carnívora Hacendado
+mercadona:14246,260,no_relevante,0.913,Pizza Frankfurt Hacendado
+mercadona:22648,260,no_relevante,0.913,Pizza Pepperoni barbacoa Hacendado ultracongelada
+mercadona:63339,260,no_relevante,0.913,Pizza masa fina jamón Hacendado ultracongelada
+mercadona:63643,260,no_relevante,0.913,Pizza Americana Hacendado ultracongelada
+mercadona:22649,260,no_relevante,0.913,Pizza masa fina Barbacoa Hacendado ultracongelada
+mercadona:52454,193,no_relevante,0.926,Masa pizza fresca familiar Hacendado
+mercadona:63648,260,no_relevante,0.913,Bases de pizza artesanas extrafinas y crujientes Hacendado ultracongeladas
+mercadona:63606,260,no_relevante,0.913,Bases de pizza sin gluten sin lactosa Hacendado ultracongeladas
+mercadona:13985,193,no_relevante,0.926,Masa fresca pizza Hacendado
+mercadona:63477,193,no_relevante,0.926,Masa fresca pizza de cereales y semillas Hacendado
+mercadona:13235,243,no_relevante,0.727,Noodles Yakisoba con carne y verduras
+mercadona:13232,261,no_relevante,0.944,Surtido sushi Bento grande
+mercadona:13233,261,no_relevante,0.944,Surtido sushi Bento pequeño
+mercadona:13234,261,no_relevante,0.944,Surtido sushi Bento mix
+mercadona:13242,261,no_relevante,0.944,Ensalada de marisco Listo para Comer
+mercadona:13251,261,no_relevante,0.944,Brioche Listo para Comer
+mercadona:11529,140,no_relevante,0.914,Vela de cumpleaños 0 Hacendado
+mercadona:11530,140,no_relevante,0.914,Vela de cumpleaños 1 Hacendado
+mercadona:11531,140,no_relevante,0.914,Vela de cumpleaños 2 Hacendado
+mercadona:11532,140,no_relevante,0.914,Vela de cumpleaños 3 Hacendado
+mercadona:11533,140,no_relevante,0.914,Vela de cumpleaños 4 Hacendado
+mercadona:11534,140,no_relevante,0.914,Vela de cumpleaños 5 Hacendado
+mercadona:11535,140,no_relevante,0.914,Vela de cumpleaños 6 Hacendado
+mercadona:11536,140,no_relevante,0.914,Vela de cumpleaños 7 Hacendado
+mercadona:11537,140,no_relevante,0.914,Vela de cumpleaños 8 Hacendado
+mercadona:11538,140,no_relevante,0.914,Vela de cumpleaños 9 Hacendado
+mercadona:11523,140,no_relevante,0.914,Velas de cumpleaños Hacendado
+mercadona:20924,140,no_relevante,0.914,Almendra molida Hacendado
+mercadona:32316,140,no_relevante,0.914,Caramelo líquido Hacendado
+mercadona:32525,140,no_relevante,0.914,Azúcar vainillado Hacendado
+mercadona:13738,114,no_relevante,1.0,Cacahuete en polvo desgrasado +Proteínas 14 g 70% reducido en grasa
+mercadona:11600,140,no_relevante,0.914,Topping de chocolate avellana Hacendado
+mercadona:20920,140,no_relevante,0.914,Almendra laminada Hacendado
+mercadona:87607,124,no_relevante,1.0,Tarta red velvet Hacendado congelada
+mercadona:87609,124,no_relevante,1.0,Tarta Ferrer bombón crujiente Hacendado congelada
+mercadona:87599,124,no_relevante,1.0,Tarta tres chocolates Hacendado congelada
+mercadona:87598,124,no_relevante,1.0,Tarta San Marcos Hacendado congelada
+mercadona:8687,124,no_relevante,1.0,Tarta San Marcos Hacendado congelada
+mercadona:87602,124,no_relevante,1.0,Tarta selva negra Hacendado congelada
+mercadona:87616,124,no_relevante,1.0,Trenza hojaldre de mantequilla Hacendado congelada
+mercadona:6063,124,no_relevante,1.0,Tarta Cookies & Cream Hacendado congelada
+mercadona:20356,124,no_relevante,1.0,Tarta delicia de fresa Hacendado congelada
+mercadona:18399,124,no_relevante,1.0,Tarta infantil Paw Patrol congelada
+mercadona:18417,124,no_relevante,1.0,Tarta infantil K-Pop Kandy Stars Hacendado congelada
+mercadona:18416,124,no_relevante,1.0,Tarta infantil deportes Hacendado congelada
+mercadona:18692,182,no_relevante,0.6,Roscón de Reyes Bombón bañado en cacao relleno de crema y preparado a base de nata Hacendado congelado
+mercadona:87027,182,no_relevante,0.6,Roscón de Reyes relleno de preparado a base de nata Hacendado congelado
+mercadona:13631,146,no_relevante,1.0,Picos saladitos Hacendado
+mercadona:82279,146,no_relevante,1.0,Picos Hacendado
+mercadona:82365,146,no_relevante,1.0,Regañá Hacendado
+mercadona:13450,146,no_relevante,1.0,Picos sin gluten Hacendado
+mercadona:82270,146,no_relevante,1.0,Picos reventaos Hacendado
+mercadona:67953,146,no_relevante,1.0,Picos camperos Hacendado
+mercadona:82222,146,no_relevante,1.0,Piquitos con salvado San Roque
+mercadona:67892,146,no_relevante,1.0,"Surtido de picos, colines y regañás con sésamo Hacendado"
+mercadona:86832,146,no_relevante,1.0,Regañá artesana Hacendado
+mercadona:13372,146,no_relevante,1.0,Palitos con frutos secos Hacendado
+mercadona:82786,146,no_relevante,1.0,Picatostes fritos Hacendado
+mercadona:82787,146,no_relevante,1.0,Picatostes fritos con ajo Hacendado
+mercadona:82277,264,pan_tostado,0.923,Panecillo tostado classic Hacendado
+mercadona:82070,264,pan_tostado,0.923,Mini tostadas de trigo Hacendado extra finas
+mercadona:82417,264,pan_tostado,0.923,Panecillos tostados cereales y semillas Hacendado
+mercadona:22932,264,pan_tostado,0.923,Preparado crujiente Hacendado
+mercadona:13034,264,pan_tostado,0.923,Tostadas con semillas de chía Marinheiras Hacendado
+mercadona:82626,264,pan_tostado,0.923,Crackers integrales de espelta Bachman
+mercadona:82412,264,pan_tostado,0.923,Crackers 30% integral
+mercadona:82439,264,pan_tostado,0.923,Crackers con sal Hacendado
+mercadona:82651,264,pan_tostado,0.923,Crackers sin gluten Hacendado con romero
+mercadona:21584,264,pan_tostado,0.923,Galletas saladas con semillas y orégano Hacendado
+mercadona:82735,269,pan_molde,0.926,Hogaza sin gluten
+mercadona:9369,269,pan_molde,0.926,"Media Hogaza integral de avena, semillas de girasol y sésamo Hacendado rebanado"
+mercadona:80859,194,no_relevante,0.729,Tortillas de trigo Hacendado
+mercadona:80942,194,no_relevante,0.729,Tortillas de trigo integrales Hacendado
+mercadona:80870,194,no_relevante,0.729,Maxi tortillas de trigo Hacendado
+mercadona:80939,194,no_relevante,0.729,Mini tortillas de trigo Hacendado
+mercadona:80531,194,no_relevante,0.729,Tortillas de avena 51% Hacendado
+mercadona:86328,194,no_relevante,0.729,Tortillas de maíz Hacendado
+mercadona:21448,194,no_relevante,0.729,Piadina Hacendado
+mercadona:17567,194,no_relevante,0.729,Tortillas de trigo Delibreads 30 cm
+mercadona:29100,128,no_relevante,0.84,Harina de trigo Hacendado
+mercadona:29106,128,no_relevante,0.84,Harina de trigo grande Hacendado
+mercadona:29019,128,no_relevante,0.84,Harina de fuerza Hacendado
+mercadona:29165,128,no_relevante,0.84,Harina de maíz blanco precocida Hacendado
+mercadona:9588,128,no_relevante,0.84,Harina fina de maíz Hacendado
+mercadona:29134,128,no_relevante,0.84,Harina integral de trigo Hacendado
+mercadona:29174,128,no_relevante,0.84,Harina de espelta Hacendado 100% integral
+mercadona:29180,128,no_relevante,0.84,Harina semolosa de trigo Hacendado especial para fritos
+mercadona:13045,128,no_relevante,0.84,Sémola de trigo Hacendado
+mercadona:29373,128,no_relevante,0.84,Harina de garbanzo Hacendado
+mercadona:87811,139,no_relevante,1.0,Levadura fresca Levital
+mercadona:12531,139,no_relevante,1.0,Chocolate negro fundir Hacendado
+mercadona:29225,139,no_relevante,1.0,Impulsor gasificante en polvo Royal uso alimentario
+mercadona:80293,139,no_relevante,1.0,Impulsor gasificante repostería Hacendado para uso alimentario
+mercadona:16275,139,no_relevante,1.0,Gelatina neutra en láminas Foodsy
+mercadona:32358,139,no_relevante,1.0,Preparado en polvo cuajada azucarada Royal sabor lácteo
+mercadona:12544,139,no_relevante,1.0,Gotas de chocolate negro para fundir Hacendado
+mercadona:32045,139,no_relevante,1.0,Preparado en polvo flan Hacendado
+mercadona:12543,139,no_relevante,1.0,Chocolate blanco fundir Hacendado
+mercadona:32524,139,no_relevante,1.0,Aroma de vainilla Hacendado
+mercadona:32329,139,no_relevante,1.0,Preparado en polvo natillas Hacendado
+mercadona:12530,139,no_relevante,1.0,Chocolate negro 70% cacao fundir Hacendado 0% azúcares añadidos
+mercadona:86998,139,no_relevante,1.0,Levadura de panadería Hacendado
+mercadona:17548,139,no_relevante,1.0,Preparado en polvo instantáneo para crepes Hacendado
+mercadona:12893,139,no_relevante,1.0,Preparado en polvo gelatina frutos rojos Hacendado 0% azúcares
+mercadona:12890,139,no_relevante,1.0,Preparado en polvo gelatina cereza Hacendado
+mercadona:12888,139,no_relevante,1.0,Preparado en polvo gelatina fresa Hacendado
+mercadona:15275,139,no_relevante,1.0,Preparado en polvo gelatina maracuyá Hacendado
+mercadona:63451,193,no_relevante,0.926,Masa fresca hojaldre Hacendado
+mercadona:63440,193,no_relevante,0.926,Masa para empanadillas y postres Buitoni
+mercadona:63474,193,no_relevante,0.926,Masa fresca Hacendado hojaldre con mantequilla
+mercadona:63464,193,no_relevante,0.926,Masa fresca quebrada brisa Hacendado
+mercadona:63476,193,no_relevante,0.926,Masa fresca empanada Hacendado
+mercadona:63657,193,no_relevante,0.926,Masa de hojaldre sin gluten Hacendado
+mercadona:10459,193,no_relevante,0.926,Masa filo
+mercadona:9860,193,no_relevante,0.926,Masa gruesa para empanadas Buitoni estilo Argentino
+mercadona:60846,182,no_relevante,0.6,Magdalenas Hacendado
+mercadona:82032,182,no_relevante,0.6,Valencianas Hacendado
+mercadona:82931,182,no_relevante,0.6,Croissant Hacendado
+mercadona:82932,182,no_relevante,0.6,Croissant relleno de crema al cacao Hacendado
+mercadona:82609,182,no_relevante,0.6,Bollo con pepitas de chocolate Hacendado Choco Buns
+mercadona:82090,182,no_relevante,0.6,Ensaimadas Hacendado
+mercadona:82098,182,no_relevante,0.6,Bocaditos bañados al cacao Hacendado
+mercadona:82699,182,no_relevante,0.6,Sobaos Hacendado
+mercadona:82551,182,no_relevante,0.6,Crepes rellenos de chocolate Hacendado
+mercadona:82905,182,no_relevante,0.6,Palmeritas Hacendado
+mercadona:52891,182,no_relevante,0.6,Gofres clásicos Hacendado
+mercadona:52892,182,no_relevante,0.6,Gofres con chocolate Hacendado
+mercadona:23373,182,no_relevante,0.6,Napolitanas con relleno de cacao Hacendado
+mercadona:82099,182,no_relevante,0.6,Bizcochos Hacendado
+mercadona:23372,182,no_relevante,0.6,Bizcochos de huevo Hacendado
+mercadona:23374,182,no_relevante,0.6,Napolitanas con relleno sabor crema Hacendado
+mercadona:82757,182,no_relevante,0.6,Magdalenas sin gluten Hacendado
+mercadona:67820,182,no_relevante,0.6,Panettone con pasas y naranja Hacendado
+mercadona:67821,182,no_relevante,0.6,Panettone con pepitas de chocolate Hacendado
+mercadona:22961,182,no_relevante,0.6,Pandoro Balocco
+mercadona:82731,182,no_relevante,0.6,Magdalenas al cacao Hacendado
+mercadona:16317,182,no_relevante,0.6,Mantecadas Hacendado
+mercadona:15165,182,no_relevante,0.6,Bizcocho Hacendado
+mercadona:85787,182,no_relevante,0.6,Espiral al cacao Hacendado
+mercadona:85786,182,no_relevante,0.6,Bizcocho con baño de cacao Hacendado
+mercadona:85788,182,no_relevante,0.6,Rosquilla al cacao Hacendado
+mercadona:85795,182,no_relevante,0.6,Hojaldre cabello de Ángel Hacendado
+mercadona:22139,182,no_relevante,0.6,Rollo con sabor nata Hacendado
+mercadona:15842,182,no_relevante,0.6,Rosquito frito con azúcar Hacendado
+mercadona:22140,182,no_relevante,0.6,Rollo con sabor avellana Hacendado
+mercadona:7927,182,no_relevante,0.6,Hojaldre relleno de crema Hacendado sin azúcar añadido
+mercadona:15157,182,no_relevante,0.6,Hojaldre relleno de crema de cacao Hacendado
+mercadona:21472,182,no_relevante,0.6,Rosquilla de cacao Caocream Hacendado
+mercadona:17951,182,no_relevante,0.6,Volcano con crema y coco
+mercadona:18752,113,no_relevante,1.0,Hojaldrada de crema La Muralla
+mercadona:85708,113,no_relevante,1.0,Polvorón de almendra La Muralla
+mercadona:85717,113,no_relevante,1.0,Rosco de vino y almendra La Muralla
+mercadona:85701,113,no_relevante,1.0,Mantecado casero La Muralla
+mercadona:85725,113,no_relevante,1.0,Mantecado de limón La Muralla
+mercadona:85709,113,no_relevante,1.0,Mantecado de cacao La Muralla
+mercadona:85705,113,no_relevante,1.0,Mantecado de coco La Muralla
+mercadona:85780,113,no_relevante,1.0,Mantecado de limón sin azúcar añadido La Muralla
+mercadona:85845,113,no_relevante,1.0,Mantecado de cacao sin gluten La Muralla
+mercadona:85715,113,no_relevante,1.0,Hojaldrada al chocolate La Muralla
+mercadona:85716,113,no_relevante,1.0,Alfajor de almendra La Muralla
+mercadona:85745,113,no_relevante,1.0,Cortadillo de cabello de Ángel La Muralla
+mercadona:85713,113,no_relevante,1.0,Hojaldrada La Muralla
+mercadona:36403,113,no_relevante,1.0,Huesos de santo Hacendado
+mercadona:36421,113,no_relevante,1.0,Almendras rellenas de turrón Hacendado
+mercadona:15861,113,no_relevante,1.0,Mazapán de Soto Hacendado
+mercadona:15860,113,no_relevante,1.0,Figuritas de mazapán Hacendado
+mercadona:24583,182,no_relevante,0.6,Croissant relleno de cacao
+mercadona:84692,182,no_relevante,0.6,Croissant de mantequilla
+mercadona:83664,182,no_relevante,0.6,Pastel de crema 65%
+mercadona:84629,182,no_relevante,0.6,12 Mini croissants de mantequilla
+mercadona:84688,182,no_relevante,0.6,6 Croissant rellenos de cacao
+mercadona:84710,182,no_relevante,0.6,Berlina glacé
+mercadona:84785,182,no_relevante,0.6,Berlina bañada de cacao
+mercadona:84654,182,no_relevante,0.6,Rosquillas bañadas de cacao
+mercadona:84358,182,no_relevante,0.6,Ensaimada
+mercadona:84458,182,no_relevante,0.6,Trenza con nueces pecán
+mercadona:84663,182,no_relevante,0.6,Caracola con pasas
+mercadona:21588,182,no_relevante,0.6,Napolitana de chocolate
+mercadona:12809,182,no_relevante,0.6,Bizcocho de cacao
+mercadona:9965,182,no_relevante,0.6,Bizcocho con azúcar moreno y nueces
+mercadona:84736,182,no_relevante,0.6,Bizcocho de chocolate sin gluten y sin lactosa
+mercadona:14443,182,no_relevante,0.6,Bizcocho azúcar sin gluten
+mercadona:21540,182,no_relevante,0.6,Napolitana de crema
+mercadona:21879,182,no_relevante,0.6,Pepito de crema
+mercadona:17713,182,no_relevante,0.6,Berlina rellena de crema de galleta con cobertura blanca y trozos de galleta
+mercadona:17698,182,no_relevante,0.6,Magdalenas con azúcar
+mercadona:17700,182,no_relevante,0.6,Magdalenas con pepitas de chocolate
+mercadona:84638,182,no_relevante,0.6,12 Mini saladas surtidas
+mercadona:84597,182,no_relevante,0.6,24 Mini saladas surtidas
+mercadona:18297,182,no_relevante,0.6,Napolitana mixta
+mercadona:21649,182,no_relevante,0.6,Empanada de carne
+mercadona:17466,182,no_relevante,0.6,12 Artesanitos surtidos
+mercadona:17925,182,no_relevante,0.6,Empanadilla Cheese Burger
+mercadona:87300,211,no_relevante,1.0,Dorada limpia
+mercadona:87301,211,no_relevante,1.0,Dorada abierta a la espalda
+mercadona:87302,211,no_relevante,1.0,Filetes de dorada
+mercadona:87310,211,no_relevante,1.0,Lubina limpia
+mercadona:87311,211,no_relevante,1.0,Lubina abierta a la espalda
+mercadona:87313,211,no_relevante,1.0,Filete de lubina
+mercadona:87225,210,no_relevante,1.0,Rodajas de merluza del Cabo descongelada
+mercadona:87240,210,no_relevante,1.0,Porciones de merluza
+mercadona:87211,211,no_relevante,1.0,Bacalao al punto de sal descongelado
+mercadona:87341,211,no_relevante,1.0,Trucha Arco iris abierta a la espalda
+mercadona:87342,211,no_relevante,1.0,Filetes de trucha Arco iris
+mercadona:87163,211,no_relevante,1.0,Filete de rodaballo
+mercadona:87186,211,no_relevante,1.0,Medio rodaballo
+mercadona:87326,211,no_relevante,1.0,Filete de corvina
+mercadona:87350,211,no_relevante,1.0,Filetes de Gallineta descongelada
+mercadona:87196,211,no_relevante,1.0,Lenguado rubio
+mercadona:87996,211,no_relevante,1.0,Bacaladilla limpia
+mercadona:87997,211,no_relevante,1.0,Bacaladilla abierta
+mercadona:27548,211,no_relevante,1.0,Elaborado de merluza y langostino
+mercadona:62191,210,no_relevante,1.0,Filetes de panga Hacendado ultracongelados
+mercadona:62228,210,no_relevante,1.0,Filetes de merluza del Cabo sin piel Hacendado ultracongelados
+mercadona:24345,210,no_relevante,1.0,Rodaja de emperador Hacendado ultracongelado
+mercadona:24016,210,no_relevante,1.0,Filetes de bacalao MareDeus ultracongelado
+mercadona:62145,210,no_relevante,1.0,Rodajas de emperador pequeñas Hacendado ultracongeladas
+mercadona:62113,210,no_relevante,1.0,Lomos y centros de merluza del Cabo Hacendado ultracongelados
+mercadona:62012,210,no_relevante,1.0,Fritura de pescado Hacendado ultracongelada
+mercadona:62049,210,no_relevante,1.0,Porciones de bacalao sin piel MareDeus ultracongeladas
+mercadona:24383,210,no_relevante,1.0,Rodaja de tintorera sin piel Hacendado ultracongelada
+mercadona:62103,210,no_relevante,1.0,Porciones de merluza del Cabo sin piel Hacendado ultracongeladas
+mercadona:62176,210,no_relevante,1.0,Pescadilla de merluza sin cabeza Hacendado ultracongelada
+mercadona:24340,210,no_relevante,1.0,Cola de rape del Cabo sin piel Hacendado ultracongelada
+mercadona:24023,210,no_relevante,1.0,Migas de bacalao sin piel MareDeus ultracongeladas
+mercadona:63023,210,no_relevante,1.0,Migas de bacalao dorado con cebolla y patatas paja Hacendado congelado
+mercadona:62000,210,no_relevante,1.0,Gallos sin cabeza Hacendado ultracongelado
+mercadona:62050,210,no_relevante,1.0,Lomo de bacalao MareDeus ultracongelado
+mercadona:26763,210,no_relevante,1.0,Rodajas de merluza del Cabo Hacendado ultracongeladas
+mercadona:16562,210,no_relevante,1.0,Fingers de merluza Hacendado ultracongelados
+mercadona:16433,210,no_relevante,1.0,Rollitos crujientes Crispy Rolls de langostino Hacendado ultracongelados
+mercadona:63238,210,no_relevante,1.0,Aritos de surimi a la romana Hacendado ultracongelados
+mercadona:63101,210,no_relevante,1.0,Filetes de merluza al huevo Hacendado ultracongelados
+mercadona:63151,210,no_relevante,1.0,Palitos de merluza a la romana Hacendado ultracongelados
+mercadona:63159,210,no_relevante,1.0,Figuritas de merluza empanadas Hacendado ultracongeladas
+mercadona:26775,210,no_relevante,1.0,Chipirones enharinados Hacendado ultracongelado
+mercadona:63144,210,no_relevante,1.0,Langostino caballitos rebozados Hacendado ultracongelados
+mercadona:63114,210,no_relevante,1.0,Filetes de boquerón en tempura Hacendado ultracongelado
+mercadona:63168,210,no_relevante,1.0,Tortillitas de camarones Hacendado ultracongeladas
+mercadona:63161,210,no_relevante,1.0,Rabas empanadas Hacendado ultracongeladas
+mercadona:63163,210,no_relevante,1.0,Anillas de pota a la romana Hacendado ultracongeladas
+mercadona:60954,210,no_relevante,1.0,Croquetas de merluza Hacendado ultracongelados
+mercadona:63373,210,no_relevante,1.0,Torpedos de langostino Hacendado ultracongelados
+mercadona:62048,210,no_relevante,1.0,Preparado de paella y sopa Hacendado ultracongelado
+mercadona:24608,210,no_relevante,1.0,Gambón grande congelado
+mercadona:24712,210,no_relevante,1.0,Langostino crudo Hacendado ultracongelado
+mercadona:62750,210,no_relevante,1.0,Gamba arrocera pequeña Hacendado congelada
+mercadona:24181,210,no_relevante,1.0,Gamba pelada cruda tamaño mediano Hacendado ultracongelada
+mercadona:24230,210,no_relevante,1.0,Gamba pelada cruda tamaño grande Hacendado ultracongelada
+mercadona:24267,210,no_relevante,1.0,Camarón boreal cocido y pelado Royal Greenland ultracongelado
+mercadona:62322,210,no_relevante,1.0,Cigala cruda mediana Hacendado ultracongelada
+mercadona:62380,210,no_relevante,1.0,Bogavante americano crudo Hacendado ultracongelado
+mercadona:24102,210,no_relevante,1.0,Colas de gambón crudo Hacendado congelado
+mercadona:87292,210,no_relevante,1.0,Langostino cocido
+mercadona:62401,210,no_relevante,1.0,Mejillón de Chile entero cocido Hacendado ultracongelado
+mercadona:62501,210,no_relevante,1.0,Muslitos de surimi Hacendado ultracongelados
+mercadona:13648,280,no_relevante,1.0,Limpiacristales con mango Bosque Verde
+mercadona:49544,21,papel_higienico,0.623,Servilleta papel Bosque Verde
+mercadona:49710,21,papel_higienico,0.623,Servilleta papel decorada Resistente Bosque Verde
+mercadona:49701,21,papel_higienico,0.623,Servilleta papel Cocktail Bosque Verde
+mercadona:49589,21,papel_higienico,0.623,Servilleta papel suave Bosque Verde
+mercadona:49619,21,papel_higienico,0.623,Papel hogar Compacto Absorbente Bosque Verde
+mercadona:49173,21,papel_higienico,0.623,Papel Multiusos Resistente Bosque Verde
+mercadona:49176,21,papel_higienico,0.623,Papel cocina Gigante Absorbente Bosque Verde
+mercadona:47609,21,papel_higienico,0.623,Pañuelos de papel Extra Suaves Bosque Verde
+mercadona:47620,21,papel_higienico,0.623,Pañuelos de papel Extra Suaves Bosque Verde
+mercadona:47618,21,papel_higienico,0.623,Pañuelos de papel Mentol Bosque Verde
+mercadona:47828,51,papel_higienico_humedo,0.621,Toallitas Dermo higiene corporal Deliplus tamaño gigantes
+mercadona:60560,51,papel_higienico_humedo,0.621,Toallitas refrescantes Deliplus
+mercadona:60561,51,papel_higienico_humedo,0.621,Toallitas refrescantes Deliplus monodosis
+mercadona:44110,280,no_relevante,1.0,Limpiador Muebles jabonoso para Madera Bosque Verde
+mercadona:35882,280,no_relevante,1.0,Limpiador de Muebles con ceras Bosque Verde
+mercadona:44116,280,no_relevante,1.0,Limpiador de Muebles y Parquet Bosque Verde
+mercadona:44303,280,no_relevante,1.0,Limpia Tapicerías y Alfombras con espuma activa Bosque Verde
+mercadona:49402,280,no_relevante,1.0,Vinagre de Limpieza Bosque Verde concentrado
+mercadona:44138,280,no_relevante,1.0,Multiusos Perfumado Bosque Verde
+mercadona:43861,280,no_relevante,1.0,70% Alcohol de Limpieza Perfumado Bosque Verde
+mercadona:44019,280,no_relevante,1.0,Multiusos Desinfectante antibacterias Bosque Verde
+mercadona:44001,280,no_relevante,1.0,Multiusos pH Neutro Las 3 Brujas
+mercadona:44310,280,no_relevante,1.0,Limpia Mopas Bosque Verde
+mercadona:43931,280,no_relevante,1.0,Desincrustante de Cementos y Limpiajuntas Bosque Verde
+mercadona:43705,280,no_relevante,1.0,Algodón mágico Aladdin
+mercadona:43112,280,no_relevante,1.0,70% Alcohol limpieza hogar Bosque Verde
+mercadona:8886,280,no_relevante,1.0,Limpiador abrillantador Bosque Verde
+mercadona:43914,280,no_relevante,1.0,Quitagrasas Bosque Verde perfume Marsella
+mercadona:43906,280,no_relevante,1.0,Quitagrasas Bosque Verde perfumado
+mercadona:23801,280,no_relevante,1.0,Quitagrasas KH-7
+mercadona:44000,280,no_relevante,1.0,Limpiador Vitrocerámicas Bosque Verde 3 en 1
+mercadona:13633,280,no_relevante,1.0,Crema limpiadora Vitrocerámicas Vitroclen 5 en 1
+mercadona:9795,280,no_relevante,1.0,Rasqueta Vitrocerámicas Bosque Verde
+mercadona:19914,280,no_relevante,1.0,Multiusos cocina Bosque Verde
+mercadona:44232,280,no_relevante,1.0,Limpiador desincrustante y chimeneas Bosque Verde
+mercadona:43113,241,no_relevante,1.0,Limpiador WC con lejía Bosque Verde en gel
+mercadona:43496,241,no_relevante,1.0,Limpiador Baños Bosque Verde en gel
+mercadona:19908,241,no_relevante,1.0,Limpiador WC Aqua Bosque Verde en gel antical
+mercadona:43025,241,no_relevante,1.0,Limpiador Antical Bosque Verde
+mercadona:42203,241,no_relevante,1.0,Limpiador WC Flor de Cerezo Bosque Verde en gel
+mercadona:43089,241,no_relevante,1.0,Limpiador Baños desinfectante Bosque Verde
+mercadona:43028,241,no_relevante,1.0,Limpiador WC Desincrustante Bosque Verde en gel
+mercadona:43820,241,no_relevante,1.0,Limpiador Potente Bosque Verde cal y suciedad
+mercadona:43421,241,no_relevante,1.0,Limpiador Ducha Bosque Verde
+mercadona:52650,241,no_relevante,1.0,Limpiador WC Polvo Activo Bosque Verde
+mercadona:35926,241,no_relevante,1.0,Colgador WC Power Activ Pino Bref
+mercadona:8264,241,no_relevante,1.0,Colgador WC Spa Bosque Verde oxi active
+mercadona:20299,241,no_relevante,1.0,Discos WC de gel Aqua Bosque Verde
+mercadona:23982,241,no_relevante,1.0,Colgador WC Glow Bosque Verde oxi active
+mercadona:17652,241,no_relevante,1.0,Colgador WC azul perfume Violets Bosque Verde
+mercadona:43218,280,no_relevante,1.0,Limpiacristales y multiusos Bosque Verde
+mercadona:73207,280,no_relevante,1.0,Limpiacristales Bosque Verde
+mercadona:67951,280,no_relevante,1.0,Limpiagafas Spray con gamuza Bosque Verde
+mercadona:86480,13,no_relevante,1.0,Insecticida moscas y mosquitos Bosque Verde perfumado
+mercadona:35530,13,no_relevante,1.0,Insecticida moscas y mosquitos Bosque Verde sin perfume
+mercadona:72090,13,no_relevante,1.0,Insecticida cucarachas y hormigas Bosque Verde
+mercadona:72318,13,no_relevante,1.0,Insecticida líquido Bosque Verde
+mercadona:72111,13,no_relevante,1.0,Insecticida ácaros Bosque Verde especial tejidos
+mercadona:52996,13,no_relevante,1.0,Spray repelente fuerte Deliplus antimosquitos
+mercadona:72205,13,no_relevante,1.0,Difusor insecticida antimosquitos Bosque Verde eléctrico
+mercadona:72641,13,no_relevante,1.0,Insecticida antimosquitos eléctrico recambio líquido
+mercadona:52423,13,no_relevante,1.0,Colgador antipolillas Ropa Limpia Bosque Verde
+mercadona:52466,13,no_relevante,1.0,Bolsitas antipolillas Lavanda Bosque Verde
+mercadona:52422,13,no_relevante,1.0,Colgador antipolillas Lavanda Bosque Verde
+mercadona:72320,13,no_relevante,1.0,Trampa matacucarachas Bosque Verde
+mercadona:12836,13,no_relevante,1.0,Trampa con cebo contra hormigas Bosque Verde
+mercadona:72113,13,no_relevante,1.0,Trampa polillas de los alimentos Bosque Verde
+mercadona:72088,13,no_relevante,1.0,Raticida cebo fresco Bosque Verde
+mercadona:52468,13,no_relevante,1.0,Saquitos antipolillas Ropa Limpia Bosque Verde
+mercadona:16483,13,no_relevante,1.0,Ambientador spray hogar Peonía Bosque Verde
+mercadona:17812,13,no_relevante,1.0,Ambientador spray Blossom Bosque Verde
+mercadona:72537,13,no_relevante,1.0,Ambientador spray Ropa Limpia Bosque Verde
+mercadona:35858,13,no_relevante,1.0,Difusor ambientador spray manual Bosque Verde con recambio
+mercadona:35859,13,no_relevante,1.0,Recambio ambientador spray Brisa Azul Bosque Verde
+mercadona:13040,13,no_relevante,1.0,Ambientador spray Red Elixir Bosque Verde
+mercadona:14256,13,no_relevante,1.0,Ambientador spray Essence Bosque Verde
+mercadona:21551,13,no_relevante,1.0,Ambientador spray de tejidos Bosque Verde
+mercadona:21757,13,no_relevante,1.0,Ambientador spray Oud Bosque Verde
+mercadona:52833,13,no_relevante,1.0,Difusor ambientador eléctrico Bosque Verde
+mercadona:52759,13,no_relevante,1.0,Difusor multifragancia eléctrico Bosque Verde
+mercadona:72547,13,no_relevante,1.0,Recambio ambientador eléctrico Ropa Limpia Bosque Verde
+mercadona:72542,13,no_relevante,1.0,Recambio ambientador eléctrico Brisa Azul Bosque Verde
+mercadona:72544,13,no_relevante,1.0,Recambio ambientador eléctrico Orquídea Bosque Verde
+mercadona:72616,13,no_relevante,1.0,Recambio ambientador eléctrico Spa 6 fragancias Bosque Verde
+mercadona:72614,13,no_relevante,1.0,Recambio ambientador eléctrico Jardín 6 fragancias Bosque Verde
+mercadona:72647,13,no_relevante,1.0,Recambio ambientador eléctrico Mundo 6 fragancias Bosque Verde
+mercadona:52588,13,no_relevante,1.0,Recambio ambientador eléctrico Sugar 6 fragancias Bosque Verde
+mercadona:11489,13,no_relevante,1.0,Recambio ambientador eléctrico Matcha Bosque Verde
+mercadona:12894,13,no_relevante,1.0,Recambio ambientador eléctrico Coconut Cream Bosque Verde
+mercadona:13041,13,no_relevante,1.0,Difusor ambientador automático Bosque Verde
+mercadona:72411,13,no_relevante,1.0,Recambio ambientador automático Love Bosque Verde
+mercadona:60790,13,no_relevante,1.0,Recambio ambientador automático Flower Bosque Verde
+mercadona:72410,13,no_relevante,1.0,Recambio ambientador automático Infantil Bosque Verde
+mercadona:23842,13,no_relevante,1.0,Recambio ambientador automático Delice Bosque Verde
+mercadona:15345,13,no_relevante,1.0,Recambio ambientador automático Cotton Bosque Verde
+mercadona:79425,13,no_relevante,1.0,Ambientador coche Bali Bosque Verde
+mercadona:79446,13,no_relevante,1.0,Ambientador coche Frutos Silvestres Bosque Verde
+mercadona:79447,13,no_relevante,1.0,Ambientador coche Exótico Bosque Verde
+mercadona:79448,13,no_relevante,1.0,Ambientador coche Marine Bosque Verde
+mercadona:17824,13,no_relevante,1.0,Ambientador varitas Chai Addiction Bosque Verde
+mercadona:18422,13,no_relevante,1.0,Ambientador Azul armarios y cajones Bosque Verde
+mercadona:18455,13,no_relevante,1.0,Vela perfumada Red Elixir Bosque Verde
+mercadona:17819,13,no_relevante,1.0,Ambientador varitas Bambú Bosque Verde
+mercadona:72733,13,no_relevante,1.0,Ambientador perlas Tiernos Recuerdos Bosque Verde
+mercadona:72734,13,no_relevante,1.0,Ambientador perlas Lima Bosque Verde
+mercadona:52615,13,no_relevante,1.0,Vela perfumada Amber Bosque Verde
+mercadona:13295,13,no_relevante,1.0,Ambientador Talco armarios y cajones Bosque Verde
+mercadona:72873,13,no_relevante,1.0,Ambientador líquido concentrado Foresan deluxe
+mercadona:72077,13,no_relevante,1.0,Vela perfumada Chai Bosque Verde
+mercadona:12984,13,no_relevante,1.0,Vela perfumada Peonía Bosque Verde
+mercadona:14714,13,no_relevante,1.0,Vela perfumada Santal Vanilla Bosque Verde
+mercadona:14716,13,no_relevante,1.0,Vela perfumada Berries Bosque Verde
+mercadona:14717,13,no_relevante,1.0,Vela perfumada Chai Bosque Verde
+mercadona:14719,13,no_relevante,1.0,Vela perfumada Matcha Bosque Verde
+mercadona:17810,13,no_relevante,1.0,Vela perfumada Neroli Bosque Verde
+mercadona:16831,13,no_relevante,1.0,Absorbeolores Ropa Limpia Bosque Verde
+mercadona:72878,13,no_relevante,1.0,Absorbeolores en gel para frigorífico Bosque Verde
+mercadona:72514,13,no_relevante,1.0,Set antihumedad con aromas cítricos Bosque Verde
+mercadona:72515,13,no_relevante,1.0,Recambio antihumedad con aromas cítricos Bosque Verde
+mercadona:71342,93,no_relevante,1.0,Estropajo suciedad resistente Bosque Verde
+mercadona:71343,93,no_relevante,1.0,Estropajo limpieza delicada Bosque Verde
+mercadona:71380,93,no_relevante,1.0,Estropajo salvauñas suciedad resistente Bosque Verde
+mercadona:71344,93,no_relevante,1.0,Estropajo acero inoxidable Bosque Verde limpieza muy fuerte
+mercadona:71377,93,no_relevante,1.0,Estropajo inox Bosque Verde limpieza muy fuerte
+mercadona:71309,93,no_relevante,1.0,Estropajo baño Bosque Verde
+mercadona:71314,93,no_relevante,1.0,Borrador mágico Bosque Verde
+mercadona:13525,93,no_relevante,1.0,Estropajo jabonoso Bosque Verde
+mercadona:9778,93,no_relevante,1.0,Estropajo almohadilla Bosque Verde limpieza delicada
+mercadona:71044,93,no_relevante,1.0,Bayeta suave multiusos Bosque Verde
+mercadona:71033,93,no_relevante,1.0,Bayeta grande Bosque Verde microfibra
+mercadona:22774,93,no_relevante,1.0,Bayeta pequeña Bosque Verde microfibra
+mercadona:71055,93,no_relevante,1.0,Posavajillas Bosque Verde
+mercadona:60620,93,no_relevante,1.0,Bayeta polvo Bosque Verde microfibra
+mercadona:35950,93,no_relevante,1.0,Paño seca vajillas Bosque Verde
+mercadona:21852,93,no_relevante,1.0,Bayeta multiusos Bosque Verde microfibra
+mercadona:23628,93,no_relevante,1.0,Guantes de látex Bosque Verde talla pequeña
+mercadona:23629,93,no_relevante,1.0,Guantes de látex Bosque Verde talla mediana
+mercadona:23630,93,no_relevante,1.0,Guantes de látex Bosque Verde talla grande
+mercadona:71203,93,no_relevante,1.0,Guantes de látex Bosque Verde talla pequeña-mediana
+mercadona:71202,93,no_relevante,1.0,Guantes de látex Bosque Verde talla mediana-grande
+mercadona:71397,93,no_relevante,1.0,Guantes 100% nitrilo Bosque Verde talla pequeña
+mercadona:71398,93,no_relevante,1.0,Guantes 100% nitrilo Bosque Verde talla mediana
+mercadona:71399,93,no_relevante,1.0,Guantes 100% nitrilo Bosque Verde talla grande
+mercadona:71225,93,no_relevante,1.0,Guantes de nitrilo Bosque Verde talla pequeña
+mercadona:71226,93,no_relevante,1.0,Guantes de nitrilo Bosque Verde talla mediana
+mercadona:71227,93,no_relevante,1.0,Guantes de nitrilo Bosque Verde talla grande
+mercadona:60622,69,no_relevante,0.962,Mantequilla sin sal añadida Hacendado
+mercadona:20716,69,no_relevante,0.962,Mantequilla sin sal añadida Hacendado
+mercadona:20852,69,no_relevante,0.962,Mantequilla en porciones Hacendado sin sal añadida
+mercadona:20722,69,no_relevante,0.962,Mantequilla con sal Hacendado
+mercadona:20727,69,no_relevante,0.962,Mantequilla con sal Hacendado
+mercadona:90933,69,no_relevante,0.962,Mantequilla light Hacendado
+mercadona:20991,69,no_relevante,0.962,Mantequilla sin lactosa Hacendado
+mercadona:20846,69,no_relevante,0.962,Margarina Hacendado
+mercadona:86505,69,no_relevante,0.962,Margarina Tulipán Original
+mercadona:60307,69,no_relevante,0.962,Margarina con sal Hacendado
+mercadona:20876,69,no_relevante,0.962,Margarina ligera Hacendado
+mercadona:15909,69,no_relevante,0.962,Margarina Flora Proactiv
+mercadona:20196,69,no_relevante,0.962,Margarina 100% vegetal Hacendado
+mercadona:86503,69,no_relevante,0.962,Margarina Flora Original
+mercadona:10199,66,no_relevante,0.925,Nata ligera para cocinar Hacendado
+mercadona:10161,66,no_relevante,0.925,Nata ligera para cocinar Hacendado
+mercadona:13598,66,no_relevante,0.925,Nata montada azucarada Hacendado
+mercadona:10276,66,no_relevante,0.925,Nata para montar Hacendado
+mercadona:10275,66,no_relevante,0.925,Nata para montar Hacendado
+mercadona:60988,66,no_relevante,0.925,Bechamel Hacendado
+mercadona:10117,66,no_relevante,0.925,Nata fresca para cocinar Hacendado
+mercadona:10376,66,no_relevante,0.925,Crema de soja Hacendado
+mercadona:17174,66,no_relevante,0.925,Preparado de coco Hacendado
+mercadona:10320,66,no_relevante,0.925,Nata ligera para cocinar sin lactosa Hacendado
+mercadona:10814,200,leche_semidesnatada,1.0,Bebida láctea semidesnatada con fibra Hacendado
+mercadona:10826,200,leche_semidesnatada,1.0,Bebida láctea semidesnatada con fibra Hacendado
+mercadona:23908,70,no_relevante,0.654,Bebida de avena Alitey
+mercadona:23912,70,no_relevante,0.654,Bebida de avena Alitey
+mercadona:23046,70,no_relevante,0.654,Bebida de avena Alitey
+mercadona:86168,70,no_relevante,0.654,Bebida de avena con calcio sin azúcares añadidos Hacendado
+mercadona:86167,70,no_relevante,0.654,Bebida de avena con calcio barista Hacendado sin azúcares añadidos
+mercadona:14706,70,no_relevante,0.654,Bebida de soja con calcio y vitaminas sin azúcares añadidos Hacendado
+mercadona:14707,70,no_relevante,0.654,Bebida de soja con calcio y vitaminas sin azúcares añadidos Hacendado
+mercadona:29322,70,no_relevante,0.654,Bebida de soja 0% azúcar Hacendado
+mercadona:29314,70,no_relevante,0.654,Bebida de soja 0% azúcar Hacendado
+mercadona:23925,70,no_relevante,0.654,Bebida de almendras 0% azúcar Hacendado
+mercadona:23926,70,no_relevante,0.654,Bebida de almendras 0% azúcar Hacendado
+mercadona:15647,70,no_relevante,0.654,Bebida de almendras con calcio Hacendado
+mercadona:15648,70,no_relevante,0.654,Bebida de almendras con calcio Hacendado
+mercadona:5673,157,no_relevante,0.968,Horchata de chufa Hacendado
+mercadona:10688,70,no_relevante,0.654,Bebida de avena con café Hacendado
+mercadona:67950,70,no_relevante,0.654,Bebida de soja sabor vainilla Hacendado 0% azúcar
+mercadona:67949,70,no_relevante,0.654,Bebida de soja sabor vainilla Hacendado 0% azúcar
+mercadona:52639,70,no_relevante,0.654,Bebida de avena Hacendado 0% azúcar
+mercadona:52640,70,no_relevante,0.654,Bebida de avena Hacendado 0% azúcar
+mercadona:52633,70,no_relevante,0.654,Bebida de avena con chocolate sin azúcares añadidos Hacendado
+mercadona:52634,70,no_relevante,0.654,Bebida de avena con chocolate sin azúcares añadidos Hacendado
+mercadona:60926,70,no_relevante,0.654,Bebida de avena con chocolate sin azúcares añadidos Hacendado
+mercadona:10050,157,no_relevante,0.968,Batido de chocolate Hacendado
+mercadona:23049,157,no_relevante,0.968,Batido de chocolate Hacendado
+mercadona:10066,157,no_relevante,0.968,Batido de chocolate ColaCao Energy
+mercadona:23052,157,no_relevante,0.968,Batido sabor vainilla Hacendado
+mercadona:10051,157,no_relevante,0.968,Batido de vainilla Hacendado
+mercadona:23051,157,no_relevante,0.968,Batido sabor fresa Hacendado
+mercadona:10054,157,no_relevante,0.968,Batido sabor fresa Hacendado
+mercadona:22967,157,no_relevante,0.968,Batido de chocolate Hacendado 0% sin azúcares añadidos
+mercadona:10726,294,no_relevante,0.737,Bebida láctea crecimiento y desarrollo Puleva Max
+mercadona:10723,294,no_relevante,0.737,Bebida láctea crecimiento y desarrollo Puleva Max
+mercadona:10820,294,no_relevante,0.737,Bebida láctea con cereales crecimiento y desarrollo Puleva Max
+mercadona:10781,294,no_relevante,0.737,Bebida láctea con cereales crecimiento y desarrollo Puleva Max
+mercadona:9049,294,no_relevante,0.737,Preparado lácteo crecimiento Peques 3 Puleva
+mercadona:9040,294,no_relevante,0.737,Preparado lácteo crecimiento Peques 3 Puleva
+mercadona:9057,294,no_relevante,0.737,Preparado lácteo con cereales crecimiento Peques 3 Puleva
+mercadona:9034,294,no_relevante,0.737,Preparado lácteo con cereales crecimiento Peques 3 Puleva
+mercadona:9187,294,no_relevante,0.737,Preparado lácteo Hacendado +1 año
+mercadona:9188,294,no_relevante,0.737,Preparado lácteo Hacendado +1 año
+mercadona:9398,294,no_relevante,0.737,Preparado lácteo con cereales Hacendado +1 año
+mercadona:9397,294,no_relevante,0.737,Preparado lácteo con cereales Hacendado +1 año
+mercadona:31312,160,huevos_gallina,0.778,Claras de huevo líquidas pasteurizadas
+mercadona:31309,160,huevos_gallina,0.778,Claras de huevo líquidas pasteurizadas
+mercadona:69139,231,no_relevante,0.833,Cebollas tiernas
+mercadona:69079,231,no_relevante,0.833,Cebollas
+mercadona:69089,231,no_relevante,0.833,Cebollas
+mercadona:69297,231,no_relevante,0.833,Ajos morados
+mercadona:69155,231,no_relevante,0.833,Cebollas dulces
+mercadona:69162,231,no_relevante,0.833,Cebollas rojas
+mercadona:69695,231,no_relevante,0.833,Ajo negro dientes pelados
+mercadona:40475,231,no_relevante,0.833,Picada de ajo y perejil
+mercadona:69586,311,no_relevante,1.0,Zanahorias
+mercadona:69584,311,no_relevante,1.0,Pepino
+mercadona:69964,311,no_relevante,1.0,Pepino holandés
+mercadona:69669,311,no_relevante,1.0,Zanahorias
+mercadona:69877,311,no_relevante,1.0,Palitos de zanahoria
+mercadona:69722,311,no_relevante,1.0,Zanahoria rallada lavada
+mercadona:69338,311,no_relevante,1.0,Calabacín verde
+mercadona:69320,311,no_relevante,1.0,Pimiento verde freír
+mercadona:69339,311,no_relevante,1.0,Calabacín blanco
+mercadona:69220,311,no_relevante,1.0,Coliflor
+mercadona:68462,311,no_relevante,1.0,Repollo liso partido
+mercadona:68463,311,no_relevante,1.0,Medio repollo rizado
+mercadona:69379,311,no_relevante,1.0,Coles de bruselas
+mercadona:69251,311,no_relevante,1.0,Col lombarda
+mercadona:69519,138,no_relevante,1.0,Champiñones laminados limpios
+mercadona:69653,138,no_relevante,1.0,Setas
+mercadona:69616,138,no_relevante,1.0,Seta laminada
+mercadona:69664,138,no_relevante,1.0,Champiñones Portobello
+mercadona:69647,138,no_relevante,1.0,Setas shiitake
+mercadona:69657,138,no_relevante,1.0,Mix de setas intenso
+mercadona:26951,138,no_relevante,1.0,Champiñones blancos
+mercadona:69701,231,no_relevante,0.833,Perejil troceado lavado
+mercadona:69289,231,no_relevante,0.833,Jengibre
+mercadona:69690,231,no_relevante,0.833,Cilantro
+mercadona:69287,231,no_relevante,0.833,Albahaca
+mercadona:68037,231,no_relevante,0.833,Hierbabuena
+mercadona:69286,231,no_relevante,0.833,Cebollino
+mercadona:17818,311,no_relevante,1.0,Preparado de verdura Tradicional cortado y lavado
+mercadona:69580,311,no_relevante,1.0,Brócoli
+mercadona:69326,311,no_relevante,1.0,Berenjena
+mercadona:68408,311,no_relevante,1.0,Puerros
+mercadona:3527,311,no_relevante,1.0,Calabaza cacahuete cortada a trozos
+mercadona:69275,311,no_relevante,1.0,Apio verde
+mercadona:69245,311,no_relevante,1.0,Apio cortado lavado
+mercadona:69853,311,no_relevante,1.0,Media calabaza cacahuete
+mercadona:5940,311,no_relevante,1.0,Castañas
+mercadona:69433,311,no_relevante,1.0,Preparado de verduras para sofreír cortado y lavado
+mercadona:69423,311,no_relevante,1.0,Salteado de pimientos y cebolla cortado y lavado
+mercadona:69484,311,no_relevante,1.0,Patatas para microondas
+mercadona:68130,196,no_relevante,1.0,Lechuga Iceberg
+mercadona:69706,196,no_relevante,1.0,Ensalada mezcla 4 estaciones lavada
+mercadona:69121,196,no_relevante,1.0,Lechugas corazón romana
+mercadona:69757,196,no_relevante,1.0,Ensalada mezcla brotes tiernos lavada
+mercadona:69719,196,no_relevante,1.0,Canónigos lavados
+mercadona:69670,196,no_relevante,1.0,Lechuga iceberg cortada y lavada
+mercadona:69744,196,no_relevante,1.0,Ensalada mezcla gourmet lavada
+mercadona:69581,196,no_relevante,1.0,Cogollos de lechuga
+mercadona:69122,196,no_relevante,1.0,Lechuga corazón romana
+mercadona:69591,196,no_relevante,1.0,Endibias
+mercadona:69810,196,no_relevante,1.0,Ensalada mezcla brotes tiernos maxi lavada
+mercadona:69741,196,no_relevante,1.0,Ensalada mezcla gourmet maxi lavada
+mercadona:69840,196,no_relevante,1.0,Ensalada mezcla tierna lavada
+mercadona:69753,196,no_relevante,1.0,Rúcula lavada
+mercadona:69582,196,no_relevante,1.0,Cogollos corazón de lechuga
+mercadona:69697,196,no_relevante,1.0,Ensalada mezcla dúo canónigos y rúcula lavada
+mercadona:69114,196,no_relevante,1.0,Lechuga hoja roble
+mercadona:69720,196,no_relevante,1.0,Escarola rizada cortada y lavada
+mercadona:68233,196,no_relevante,1.0,Escarola rizada
+mercadona:69984,196,no_relevante,1.0,Espinacas baby lavadas
+mercadona:69435,196,no_relevante,1.0,Lechuga romana cortada y lavada
+mercadona:69849,196,no_relevante,1.0,Ensalada César
+mercadona:69714,196,no_relevante,1.0,Ensalada California
+mercadona:69850,196,no_relevante,1.0,Wraps Texas
+mercadona:69756,196,no_relevante,1.0,Ensalada de la casa
+mercadona:69872,196,no_relevante,1.0,Ensalada ensatún
+mercadona:3506,312,no_relevante,1.0,Melón piel de sapo
+mercadona:3236,312,no_relevante,1.0,Limones
+mercadona:3210,312,no_relevante,1.0,Limón
+mercadona:3238,312,no_relevante,1.0,Mandarina
+mercadona:5503,312,no_relevante,1.0,Mandarina
+mercadona:30501,312,no_relevante,1.0,Mandarinas
+mercadona:3235,312,no_relevante,1.0,Naranja de mesa
+mercadona:3277,312,no_relevante,1.0,Naranjas
+mercadona:3485,312,no_relevante,1.0,Naranjas
+mercadona:3202,312,no_relevante,1.0,Pomelo
+mercadona:3820,312,no_relevante,1.0,Kiwi verde
+mercadona:3832,312,no_relevante,1.0,Kiwis verdes
+mercadona:3839,312,no_relevante,1.0,Kiwis amarillos
+mercadona:3830,312,no_relevante,1.0,Aguacate
+mercadona:3858,312,no_relevante,1.0,Aguacates
+mercadona:3076,312,no_relevante,1.0,Piña
+mercadona:3840,312,no_relevante,1.0,Guacamole Hacendado
+mercadona:3852,312,no_relevante,1.0,Guacamole Hacendado
+mercadona:3050,312,no_relevante,1.0,Mango
+mercadona:3026,312,no_relevante,1.0,Papaya
+mercadona:5500,312,no_relevante,1.0,Frambuesas
+mercadona:14379,312,no_relevante,1.0,Moras
+mercadona:5501,312,no_relevante,1.0,Arándanos
+mercadona:5507,312,no_relevante,1.0,Arándanos
+mercadona:3915,312,no_relevante,1.0,Granada
+mercadona:3914,312,no_relevante,1.0,Kaki
+mercadona:3928,312,no_relevante,1.0,Kakis
+mercadona:17112,131,tomate_triturado,0.611,Fritada pisto Hacendado
+mercadona:60587,83,no_relevante,0.775,Sopa maravilla Hacendado
+mercadona:80057,83,no_relevante,0.775,Sopa de miso
+mercadona:52956,83,no_relevante,0.775,Sopa de cocido Hacendado
+mercadona:60595,83,no_relevante,0.775,Sopa de cebolla Hacendado
+mercadona:19882,83,no_relevante,0.775,Sopa hortelana Hacendado
+mercadona:7325,83,no_relevante,0.775,Caldo de pescado Hacendado
+mercadona:18480,83,no_relevante,0.775,Caldo de verduras casero Gallina blanca
+mercadona:22081,83,no_relevante,0.775,Fumet caldo de pescado Hacendado
+mercadona:52768,83,no_relevante,0.775,Caldo de cocido Hacendado
+mercadona:13998,83,no_relevante,0.775,Caldo de carne con sofrito Hacendado
+mercadona:18499,83,no_relevante,0.775,Caldo de pescado con bogavante Gourmet Gallina blanca
+mercadona:22860,83,no_relevante,0.775,Caldo de carne Hacendado en pastillas
+mercadona:7305,83,no_relevante,0.775,Caldo de pescado Hacendado en pastillas
+mercadona:7331,83,no_relevante,0.775,Doble caldo sabor clásico carne Knorr en pastillas
+mercadona:15592,83,no_relevante,0.775,Caldo de verduras Hacendado en pastillas
+mercadona:16040,299,no_relevante,0.966,Corazones de alcachofa Hacendado
+mercadona:19959,299,no_relevante,0.966,Corazones de alcachofa Hacendado
+mercadona:16008,273,no_relevante,1.0,Pimientos del piquillo en tiras con ajo Hacendado
+mercadona:11958,299,no_relevante,0.966,Corazones de alcachofa Hacendado
+mercadona:15203,169,no_relevante,1.0,Piña en su jugo Hacendado rodajas
+mercadona:15220,169,no_relevante,1.0,Piña en su jugo Hacendado rodajas
+mercadona:60918,169,no_relevante,1.0,Melocotón en almíbar Hacendado
+mercadona:15206,169,no_relevante,1.0,Melocotón en almíbar Hacendado
+mercadona:15260,169,no_relevante,1.0,Melocotón light Hacendado sin azúcares añadidos
+mercadona:52896,169,no_relevante,1.0,Macedonia mix de frutas en almíbar Hacendado
+mercadona:22189,102,no_relevante,0.873,Papilla fruta variada Hacendado +4 meses
+mercadona:22191,102,no_relevante,0.873,Papilla frutas con avena Hacendado +8 meses
+mercadona:22178,102,no_relevante,0.873,Bolsita puré fruta variada Hacendado +6 meses
+mercadona:18509,89,no_relevante,0.909,Berberecho al natural XS Hacendado
+mercadona:18553,89,no_relevante,0.909,Berberechos al natural S Hacendado
+mercadona:18564,89,no_relevante,0.909,Berberechos al natural M Hacendado
+mercadona:18552,89,no_relevante,0.909,Almejones al natural Hacendado
+mercadona:23531,89,no_relevante,0.909,Zamburiñas en salsa de vieira Hacendado
+mercadona:18615,89,no_relevante,0.909,Mejillones de Chile en escabeche Hacendado pequeños
+mercadona:18619,89,no_relevante,0.909,Mejillones en escabeche Hacendado pequeños
+mercadona:18602,89,no_relevante,0.909,Mejillones en escabeche Hacendado medianos
+mercadona:18620,89,no_relevante,0.909,Mejillones al natural Hacendado pequeños
+mercadona:18621,89,no_relevante,0.909,Mejillones picantes en escabeche Hacendado pequeños
+mercadona:18622,89,no_relevante,0.909,Mejillones en salsa de vieira Hacendado pequeños
+mercadona:18211,72,no_relevante,0.97,Sardinillas en escabeche Hacendado
+mercadona:14344,124,no_relevante,1.0,Tarta de la abuela Hacendado congelada
+mercadona:15545,124,no_relevante,1.0,Churros Hacendado ultracongelados
+mercadona:15137,124,no_relevante,1.0,Porras Hacendado congeladas
+mercadona:63528,124,no_relevante,1.0,Crepes Hacendado ultracongelados
+mercadona:24069,268,no_relevante,0.767,Empanadillas Rissóis de carne Hacendado ultracongeladas
+mercadona:13496,268,no_relevante,0.767,Croquetas de cocido Hacendado ultracongeladas
+mercadona:63400,268,no_relevante,0.767,Croquetas de jamón Hacendado ultracongeladas
+mercadona:63007,268,no_relevante,0.767,Nuggets de pavo Hacendado ultracongelados
+mercadona:23127,268,no_relevante,0.767,Croquetas caprichos de jamón Hacendado ultracongeladas
+mercadona:21571,268,no_relevante,0.767,Croquetas caprichos de camembert Hacendado ultracongelados
+mercadona:17995,260,no_relevante,0.913,Baguette ajo y finas hierbas Hacendado ultracongeladas
+mercadona:26760,210,no_relevante,1.0,Filetes de merluza  grandes del Cabo sin piel Hacendado ultracongelados
+mercadona:64133,75,no_relevante,0.714,Cubos de hielo Hacendado
+mercadona:64126,75,no_relevante,0.714,Cubos de hielo Hacendado
+mercadona:64139,75,no_relevante,0.714,Hielo cocktail
+mercadona:64001,75,no_relevante,0.714,Mini helado bombón surtido Hacendado
+mercadona:64000,75,no_relevante,0.714,Helado bombón almendrado Hacendado sabor vainilla
+mercadona:64066,75,no_relevante,0.714,Mini helado bombón almendrado Hacendado sabor vainilla
+mercadona:64102,75,no_relevante,0.714,Mini helado bombón surtido Hacendado sin azúcares añadidos
+mercadona:64499,75,no_relevante,0.714,Mini helado bombón sabor nocciola Hacendado
+mercadona:23850,75,no_relevante,0.714,Mini helado bombón vegetal pistacho Hacendado a base de anacardos
+mercadona:64248,75,no_relevante,0.714,Helado bombón negro sabor nata Hacendado
+mercadona:23851,75,no_relevante,0.714,Mini helado bombón vegetal triple chocolate Hacendado a base de anacardos
+mercadona:64246,75,no_relevante,0.714,Mini helado cucurucho sabor nata Hacendado
+mercadona:86236,75,no_relevante,0.714,Helado cucurucho sabor vainilla Hacendado
+mercadona:64196,75,no_relevante,0.714,Helado cucurucho sabor nata Hacendado
+mercadona:64251,75,no_relevante,0.714,Helado cucurucho sabor choco nata Hacendado
+mercadona:64087,75,no_relevante,0.714,Mini helados hielo sorbetes Hacendado
+mercadona:64127,75,no_relevante,0.714,Granizado de limón Hacendado sin azúcares añadidos
+mercadona:64705,75,no_relevante,0.714,Granizado de limón Hacendado
+mercadona:64128,75,no_relevante,0.714,Granizado de café Hacendado
+mercadona:64195,75,no_relevante,0.714,Helado hielo sabor chocolate Hacendado
+mercadona:64179,75,no_relevante,0.714,Helado hielo sorbete con horchata Hacendado
+mercadona:64419,75,no_relevante,0.714,Helado hielo sorbete con fresa Hacendado
+mercadona:64013,75,no_relevante,0.714,Helado hielo con limón Hacendado
+mercadona:35955,75,no_relevante,0.714,Helado Dochi cheesecake Hacendado con salsa de frambuesa
+mercadona:64491,75,no_relevante,0.714,Helado Mochi coco Hacendado
+mercadona:64492,75,no_relevante,0.714,Helado Mochi mango Hacendado
+mercadona:23280,75,no_relevante,0.714,Helado barrita sabor cacahuete Hacendado con salsa de caramelo salado
+mercadona:64146,75,no_relevante,0.714,Helado sándwich sabor nata Hacendado
+mercadona:64450,75,no_relevante,0.714,Mini helado sándwich sabor nata Hacendado
+mercadona:64200,75,no_relevante,0.714,Super helado sándwich sabor nata Hacendado
+mercadona:64520,75,no_relevante,0.714,Mini helado sándwich sabor vainilla y cookie Hacendado
+mercadona:8966,75,no_relevante,0.714,Helado de vainilla Hacendado
+mercadona:64400,75,no_relevante,0.714,Helado de chocolate Hacendado con trocitos sabor chocolate
+mercadona:64445,75,no_relevante,0.714,Helado de turrón Hacendado
+mercadona:64424,75,no_relevante,0.714,Helado choco cookies Hacendado con sirope y galletas de chocolate
+mercadona:52560,75,no_relevante,0.714,Helado sabor vainilla praliné con nueces pecán Hacendado y sirope de caramelo
+mercadona:22996,75,no_relevante,0.714,Helado salted caramel Hacendado con salsa de caramelo salado
+mercadona:64509,75,no_relevante,0.714,Helado sorbete con limón Hacendado
+mercadona:52563,75,no_relevante,0.714,Helado capuccino Hacendado con sirope de café
+mercadona:64436,75,no_relevante,0.714,Helado de cheesecake Hacendado con salsa de fresa
+mercadona:52561,75,no_relevante,0.714,Helado sabor huevo de chocolate Hacendado
+mercadona:64166,75,no_relevante,0.714,Medios cocos helados Hacendado
+mercadona:60683,75,no_relevante,0.714,Helado peanut butter cups Hacendado mantequilla de cacahuete con trocitos de tartaletas
+mercadona:60684,75,no_relevante,0.714,Helado cookie dough Hacendado vainilla con trozos de galleta y salsa de caramelo
+mercadona:12821,75,no_relevante,0.714,Helado duo brownie Hacendado sabor vainilla con trozos de bizcocho
+mercadona:86631,75,no_relevante,0.714,Sorbete de açaí Hacendado sabor guaraná
+mercadona:70711,75,no_relevante,0.714,Tarta helada sabor nata y chocolate Hacendado
+mercadona:64214,75,no_relevante,0.714,"Barra de helado sabor vainilla, chocolate y nata Hacendado"
+mercadona:15953,75,no_relevante,0.714,Obleas para helado Hacendado
+mercadona:61089,303,no_relevante,1.0,Mix frutos rojos Hacendado ultracongeladas
+mercadona:61092,303,no_relevante,1.0,Fresas enteras Hacendado ultracongeladas
+mercadona:61093,303,no_relevante,1.0,Arándanos enteros Hacendado ultracongelados
+mercadona:86403,303,no_relevante,1.0,Mix frutas tropical Hacendado ultracongeladas
+mercadona:14283,312,no_relevante,1.0,Aguacate en dados Hacendado congelado
+mercadona:17581,303,no_relevante,1.0,Patatas troceadas Hacendado ultracongeladas
+mercadona:24562,303,no_relevante,1.0,Verduras & salsa Hacendado ultracongelada
+mercadona:61101,303,no_relevante,1.0,Ensaladilla Hacendado ultracongelada
+mercadona:61270,303,no_relevante,1.0,Garrofón Hacendado ultracongelado
+mercadona:61200,303,no_relevante,1.0,Guisante muy tierno Hacendado ultracongelado
+mercadona:61215,303,no_relevante,1.0,Guisante fino Hacendado ultracongelado
+mercadona:61283,303,no_relevante,1.0,Judía verde plana Hacendado ultracongelada
+mercadona:13568,303,no_relevante,1.0,Cebolla troceada Hacendado ultracongelada
+mercadona:61282,303,no_relevante,1.0,Judía verde redonda Hacendado ultracongelada
+mercadona:61288,303,no_relevante,1.0,Ajo tierno Hacendado ultracongelado
+mercadona:13865,303,no_relevante,1.0,Alcachofa troceada Hacendado ultracongelada
+mercadona:61279,303,no_relevante,1.0,Espinaca en porciones Hacendado ultracongelada
+mercadona:35781,303,no_relevante,1.0,Espinaca picada en porciones Hacendado ultracongelada
+mercadona:52534,303,no_relevante,1.0,Menestra de verduras Hacendado ultracongelada
+mercadona:61233,303,no_relevante,1.0,Habas fina Hacendado ultracongelada
+mercadona:61252,303,no_relevante,1.0,Habas baby Hacendado ultracongelada
+mercadona:61025,303,no_relevante,1.0,Salteado de setas Hacendado ultracongeladas
+mercadona:16334,303,no_relevante,1.0,Salteado de verduras asadas Hacendado ultracongeladas
+mercadona:61034,303,no_relevante,1.0,Parrillada de verduras Hacendado ultracongeladas
+mercadona:61238,303,no_relevante,1.0,Espárrago verde troceado Hacendado ultracongelado
+mercadona:35900,303,no_relevante,1.0,"Salteado de gambas, espárragos verdes, ajos tiernos, champiñón y cebolla Hacendado ultracongelado"
+mercadona:61261,303,no_relevante,1.0,Brócoli Hacendado ultracongelado
+mercadona:21538,303,no_relevante,1.0,Salteado de patata y salchicha frankfurt Hacendado ultracongelado
+mercadona:61251,303,no_relevante,1.0,Ajo troceado Hacendado ultracongelado
+mercadona:61205,303,no_relevante,1.0,Alcachofa baby Hacendado ultracongelada
+mercadona:61300,303,no_relevante,1.0,Tempura de verduras Hacendado ultracongelada
+mercadona:35653,303,no_relevante,1.0,Pisto de verduras Hacendado ultracongelado
+mercadona:21639,303,no_relevante,1.0,Rollitos primavera de verduras Hacendado ultracongelados
+mercadona:61006,303,no_relevante,1.0,"Coliflor, brócoli y zanahoria Hacendado ultracongelada"
+mercadona:61248,303,no_relevante,1.0,Coles de Bruselas Hacendado ultracongeladas
+mercadona:61231,303,no_relevante,1.0,Coliflor Hacendado ultracongelada
+mercadona:70740,303,no_relevante,1.0,Edamame soja verde Hacendado ultracongelada
+mercadona:11617,303,no_relevante,1.0,Wok de verduras Hacendado ultracongelado
+mercadona:69383,303,no_relevante,1.0,Wakame ensalada de alga marina Hacendado congelada
+mercadona:61368,303,no_relevante,1.0,Espinacas a la crema Hacendado ultracongeladas
+mercadona:61065,303,no_relevante,1.0,Salteado de verduras Hacendado ultracongelado
+mercadona:35773,303,no_relevante,1.0,Migas de coliflor Hacendado ultracongeladas
+mercadona:20271,303,no_relevante,1.0,Parmigiana de berenjena Hacendado congelada
+mercadona:21537,303,no_relevante,1.0,Salteado rústico Hacendado ultracongelado
+mercadona:4176,309,no_relevante,1.0,Medallones preparado de solomillo cerdo congelados marinados
+mercadona:25353,309,no_relevante,1.0,Solomillo de pavo marinado congelado
+mercadona:2228,309,no_relevante,1.0,Solomillo de cerdo marinado congelado
+mercadona:4334,309,no_relevante,1.0,Chuletas cordero de lechal congeladas
+mercadona:4425,309,no_relevante,1.0,Carrillada de cerdo congelada
+mercadona:35767,222,no_relevante,0.932,Lasaña boloñesa familiar Hacendado ultracongelada
+mercadona:86597,222,no_relevante,0.932,Lasaña a la boloñesa Hacendado ultracongelada
+mercadona:86600,222,no_relevante,0.932,Canelones de carne Hacendado ultracongelados
+mercadona:51050,109,queso_tierno_fresco,0.722,Mozzarella fresca de vaca Hacendado
+mercadona:51052,109,queso_tierno_fresco,0.722,Mozzarella fresca de vaca Hacendado en perlas
+mercadona:51201,109,queso_tierno_fresco,0.722,Mozzarella fresca di bufala campana Hacendado
+mercadona:51012,109,queso_tierno_fresco,0.722,Requesón mezcla Hacendado
+mercadona:51230,109,queso_tierno_fresco,0.722,Mozzarella fresca light de vaca Hacendado
+mercadona:16272,150,no_relevante,0.714,Paté de cerdo La Piara tapa negra
+mercadona:14739,150,no_relevante,0.714,Paté de cerdo sabor suave Hacendado
+mercadona:52307,150,no_relevante,0.714,Paté de cerdo con finas hierbas Hacendado
+mercadona:52311,150,no_relevante,0.714,Paté de cerdo con pimienta Hacendado
+mercadona:52099,150,no_relevante,0.714,Paté de cerdo con pimienta verde Hacendado
+mercadona:52100,150,no_relevante,0.714,Paté de cerdo con finas hierbas Hacendado
+mercadona:52335,150,no_relevante,0.714,Paté de jamón Hacendado
+mercadona:52337,150,no_relevante,0.714,Paté de anchoa Hacendado
+mercadona:21633,150,no_relevante,0.714,Paté de hígado de cerdo ibérico Hacendado
+mercadona:21634,150,no_relevante,0.714,Paté de hígado de cerdo sabor intenso Hacendado
+mercadona:52167,150,no_relevante,0.714,Mousse de pato Hacendado
+mercadona:52170,150,no_relevante,0.714,Foie gras entero de pato Hacendado
+mercadona:52171,150,no_relevante,0.714,Bloc foie gras de pato Hacendado
+mercadona:53116,150,no_relevante,0.714,Sobrasada selecta L'Illa especialidades
+mercadona:53122,150,no_relevante,0.714,Sobrasada ibérica L'Illa especialidades
+mercadona:12053,150,no_relevante,0.714,Sobrasada picante L'Illa especialidades
+mercadona:16252,166,no_relevante,0.875,Bacón Hacendado cintas
+mercadona:18444,166,no_relevante,0.875,Bacón ahumado natural Oscar Mayer lonchas
+mercadona:21629,166,no_relevante,0.875,Bacón ahumado Monells lonchas
+mercadona:59170,166,no_relevante,0.875,Bacón ahumado sin corteza Monells
+mercadona:59103,166,no_relevante,0.875,Bacón adobado curado La Alegría
+mercadona:1894,166,no_relevante,0.875,Panceta oreada
+mercadona:58112,166,no_relevante,0.875,Bacón adobado curado La Alegría lonchas
+mercadona:29606,166,no_relevante,0.875,Panceta curada sin corteza La Selva lonchas
+mercadona:21549,166,no_relevante,0.875,Torrezno precocinado Hacendado
+mercadona:21892,166,no_relevante,0.875,Guanciale Hacendado
+mercadona:53012,165,no_relevante,0.944,Salchichas cocidas Schara de cerdo ahumadas
+mercadona:53143,165,no_relevante,0.944,Salchichas cocidas bocata gourmet Hacendado de cerdo sabor ahumado
+mercadona:5815,165,no_relevante,0.944,Salchichas cocidas de cerdo estilo Bratwurst Hacendado
+mercadona:53032,165,no_relevante,0.944,Salchichas cocidas bocata Hacendado
+mercadona:53041,165,no_relevante,0.944,Salchichas cocidas Frankfurt La Selva
+mercadona:53007,165,no_relevante,0.944,Salchichas cocidas estilo Frankfurt Campofrío sabor ahumado
+mercadona:11516,165,no_relevante,0.944,Salchichas cocidas de cerdo Hacendado estilo parrillero
+mercadona:17578,165,no_relevante,0.944,Salchichas cocidas cocktail Hacendado de cerdo
+mercadona:14158,78,no_relevante,0.938,Tortitas de maíz Hacendado
+mercadona:14015,78,no_relevante,0.938,Tortitas de maíz con chocolate Hacendado
+mercadona:35776,78,no_relevante,0.938,Tortitas de maíz con sabor a jamón Hacendado
+mercadona:14786,78,no_relevante,0.938,Tortitas de maíz campestre Hacendado
+mercadona:13502,258,no_relevante,0.824,Galletas María dorada Hacendado 0% azúcares añadidos
+mercadona:14235,258,no_relevante,0.824,Galletas María sin gluten y sin lactosa Hacendado
+mercadona:14212,174,no_relevante,0.991,Galletas Cookies Hacendado
+mercadona:14161,174,no_relevante,0.991,Mini galletas Cookies Hacendado
+mercadona:14157,174,no_relevante,0.991,Galletas rebuenas Hacendado rellenas sabor chocolate
+mercadona:14030,174,no_relevante,0.991,Mini galletas Oreo
+mercadona:14159,174,no_relevante,0.991,Galletas Chocominis sabor chocolate Hacendado
+mercadona:13811,174,no_relevante,0.991,Galletas Roditas bañadas con chocolate blanco Hacendado
+mercadona:14085,174,no_relevante,0.991,Mini galletas caritas Hacendado con crema de cacao
+mercadona:15597,174,no_relevante,0.991,Galletas de cacao Caocream Hacendado rellenas de crema
+mercadona:20277,174,no_relevante,0.991,Mini galletas de cacao Caocream Hacendado rellenas de crema
+mercadona:14639,174,no_relevante,0.991,Galletas Choco negro con chocolatina Hacendado
+mercadona:14153,174,no_relevante,0.991,Galletas de cacao Caocream bañadas de chocolate blanco Hacendado rellenas de crema
+mercadona:15844,174,no_relevante,0.991,Galletas rellenas de chocolate Hacendado 0% azúcares añadidos
+mercadona:14576,161,no_relevante,1.0,Barquillos rellenos sabor nata Hacendado
+mercadona:14239,161,no_relevante,1.0,Barquillos rellenos con crema de cacao Hacendado
+mercadona:14151,174,no_relevante,0.991,Galletas con chocolate blanco Hacendado
+mercadona:14136,161,no_relevante,1.0,Barquillos rellenos de nata Hacendado 0% azúcares añadidos
+mercadona:14637,174,no_relevante,0.991,Galletas cookies sin gluten y sin lactosa Hacendado
+mercadona:36204,161,no_relevante,1.0,Barquillos rellenos de crema de chocolate Hacendado
+mercadona:36203,161,no_relevante,1.0,Barquillos rellenos de crema turrón Hacendado
+mercadona:14173,174,no_relevante,0.991,Tartaletas con relleno de fresa Hacendado
+mercadona:14241,161,no_relevante,1.0,Barquillos con crema de avellanas Hacendado
+mercadona:23064,174,no_relevante,0.991,Galletas Crunchy Choc Hacendado
+mercadona:14993,161,no_relevante,1.0,Barquillos con chocolate Neules Hacendado
+mercadona:21986,174,no_relevante,0.991,Galletas Classic Choc Hacendado
+mercadona:17922,174,no_relevante,0.991,Galletas con avena sabor Choco Orange con relleno de crema de chocolate Hacendado
+mercadona:17929,174,no_relevante,0.991,Galletas rebuenas Hacendado rellenas de chocolate blanco
+mercadona:17928,174,no_relevante,0.991,Galletas Choco Bom Gullón con chips de chocolate recubiertas de chocolate blanco
+mercadona:9377,144,no_relevante,0.95,Cereales rellenos de cacao y avellana Hacendado
+mercadona:80515,144,no_relevante,0.95,Cereales estrellas de maíz Stars Hacendado con miel
+mercadona:22966,145,no_relevante,0.75,Cereales copos de maíz Corn Flakes Hacendado 0% azúcares añadidos
+mercadona:9508,145,no_relevante,0.75,Cereales copos de trigo Chocodays Hacendado con chocolate
+mercadona:9547,144,no_relevante,0.95,Cereales rellenos de crema de cacao y avellana Hacendado sin gluten
+mercadona:86368,145,no_relevante,0.75,Copos de avena sin gluten Hacendado
+mercadona:86341,145,no_relevante,0.75,Copos de avena Brüggen
+mercadona:9355,145,no_relevante,0.75,Muesli Crunchy Hacendado con chocolate
+mercadona:9571,145,no_relevante,0.75,Cereales copos de trigo espelta integral Hacendado 0% azúcares añadidos
+mercadona:9357,145,no_relevante,0.75,Muesli Crunchy Hacendado con frutos secos
+mercadona:35892,145,no_relevante,0.75,Muesli Crunchy Hacendado sin azúcares añadidos
+mercadona:9356,145,no_relevante,0.75,Muesli Crunchy Hacendado con fruta
+mercadona:16807,145,no_relevante,0.75,Avena molida Hacendado
+mercadona:9474,145,no_relevante,0.75,Cereales crujientes avena tostada Hacendado con semillas y frutos secos
+mercadona:60236,145,no_relevante,0.75,Cereales con salvado de trigo Fibra Sticks Hacendado
+mercadona:9491,145,no_relevante,0.75,Muesli Hacendado con frutas
+mercadona:9492,145,no_relevante,0.75,Muesli Hacendado 50% frutas y frutos secos
+mercadona:9536,145,no_relevante,0.75,"Muesli Hacendado con quinoa, chía y chocolate negro"
+mercadona:9532,145,no_relevante,0.75,Cereales Cereal Mix Hacendado 0% azúcares añadidos
+mercadona:15611,145,no_relevante,0.75,Cereales avena Crunchy Hacendado
+mercadona:52751,145,no_relevante,0.75,Cereales avena Crunchy Hacendado de cacao
+mercadona:20292,145,no_relevante,0.75,Copos de avena integral con chocolate Hacendado
+mercadona:24563,145,no_relevante,0.75,Muesli Crunchy Hacendado con legumbres
+mercadona:73249,156,no_relevante,1.0,Barritas de cereales y chocolate blanco Hacendado
+mercadona:9349,156,no_relevante,1.0,Barritas de cereales muesli y chocolate Hacendado
+mercadona:52493,156,no_relevante,1.0,Barritas de cereales y frutos secos Hacendado
+mercadona:14713,156,no_relevante,1.0,Barritas de avena y chocolate negro Crunchy Nature Valley
+mercadona:21760,156,no_relevante,1.0,Barritas de cereales avena y cacao Hacendado
+mercadona:17676,156,no_relevante,1.0,Barritas de galleta y frutos rojos Hacendado
+mercadona:24565,156,no_relevante,1.0,Barritas de cereales avellana y cacao Hacendado
+mercadona:2715,309,no_relevante,1.0,Filetes lomo de cerdo adobado
+mercadona:5046,309,no_relevante,1.0,Filetes lomo de cerdo adobado familiar
+mercadona:14298,309,no_relevante,1.0,San Jacobos de cerdo sin gluten
+mercadona:2839,309,no_relevante,1.0,Pinchos de cerdo adobado sin varilla
+mercadona:4152,309,no_relevante,1.0,Medallones preparado de solomillo cerdo provenzal
+mercadona:23308,309,no_relevante,1.0,Fiambre de magro de cerdo adobado
+mercadona:1564,309,no_relevante,1.0,Costilla de cerdo ibérico adobada
+mercadona:23305,309,no_relevante,1.0,Chuletas de cerdo sajonia
+mercadona:1886,309,no_relevante,1.0,Filetes lomo de cerdo ibérico adobado
+mercadona:2179,309,no_relevante,1.0,Callos preparados de ternera Rogusa
+mercadona:2185,309,no_relevante,1.0,Oreja de cerdo cocida adobada Rogusa
+mercadona:53025,192,no_relevante,1.0,Panceta adobada torrezno
+mercadona:23307,309,no_relevante,1.0,Fiambre de magreta de cerdo adobada
+mercadona:14266,309,no_relevante,1.0,Lomo de cerdo marinado empanado sin gluten
+mercadona:60633,309,no_relevante,1.0,Filetes de vacuno marinado extra tiernos
+mercadona:8931,309,no_relevante,1.0,Solomillo de vacuno
+mercadona:21836,309,no_relevante,1.0,Chuletas de cordero pierna
+mercadona:21837,309,no_relevante,1.0,Chuletas de cordero palo y riñonada
+mercadona:2811,309,no_relevante,1.0,Costillas de cerdo carnosas a tacos
+mercadona:3395,309,no_relevante,1.0,Filetes lomo de cerdo familiar
+mercadona:2810,309,no_relevante,1.0,Carrillada de cerdo
+mercadona:35286,309,no_relevante,1.0,Costilla de cerdo churrasco
+mercadona:2851,309,no_relevante,1.0,Manos de cerdo
+mercadona:2813,309,no_relevante,1.0,Cerdo a tacos
+mercadona:2817,309,no_relevante,1.0,Filetes lomo de cerdo cabeza
+mercadona:2859,309,no_relevante,1.0,Filetes hígado de cerdo
+mercadona:4900,309,no_relevante,1.0,Chuletas aguja de cerdo
+mercadona:4570,309,no_relevante,1.0,Solomillo de cerdo
+mercadona:4949,309,no_relevante,1.0,Lagarto de cerdo
+mercadona:1154,309,no_relevante,1.0,Codillo de cerdo semicocido al estilo Alemán
+mercadona:2849,309,no_relevante,1.0,Filetes lomo de cerdo extra tiernos
+mercadona:4590,309,no_relevante,1.0,Lomo de cerdo trozo
+mercadona:3554,309,no_relevante,1.0,Pieza cabeza lomo de cerdo
+mercadona:13046,309,no_relevante,1.0,Secreto de cerdo
+mercadona:86395,309,no_relevante,1.0,Filetes lomo de cerdo corte fino
+mercadona:12792,309,no_relevante,1.0,Chuletas lomo de cerdo finas
+mercadona:12793,309,no_relevante,1.0,Filetes secreto de cerdo
+mercadona:14943,309,no_relevante,1.0,Taquitos de cerdo
+mercadona:14968,309,no_relevante,1.0,Manteca de cerdo Hacendado
+mercadona:13651,42,no_relevante,1.0,Té verde Hacendado
+mercadona:11433,42,no_relevante,1.0,Té Chai Hacendado
+mercadona:52967,42,no_relevante,1.0,Té negro PG tips
+mercadona:35727,42,no_relevante,1.0,Té negro con canela Hacendado
+mercadona:15099,42,no_relevante,1.0,Té Matcha en polvo Hacendado
+mercadona:8804,42,no_relevante,1.0,Té negro Hacendado
+mercadona:11175,42,no_relevante,1.0,Té verde con hierbabuena Hacendado
+mercadona:11168,42,no_relevante,1.0,Infusión Manzanilla Hacendado
+mercadona:60671,42,no_relevante,1.0,Infusión Menta Poleo Hacendado
+mercadona:11431,42,no_relevante,1.0,Infusión Tila Hacendado
+mercadona:11447,42,no_relevante,1.0,Infusión Cola de caballo Hacendado
+mercadona:11430,42,no_relevante,1.0,Infusión Manzanilla con anís Hacendado
+mercadona:11408,42,no_relevante,1.0,Infusión Relax Hacendado
+mercadona:11470,42,no_relevante,1.0,Infusión Laxsen sabor menta Hacendado
+mercadona:11453,42,no_relevante,1.0,Infusión Tomillo Hacendado
+mercadona:11427,42,no_relevante,1.0,Infusión Dormir Hacendado
+mercadona:13652,42,no_relevante,1.0,Infusión Rooibos cítricos Hacendado
+mercadona:15726,42,no_relevante,1.0,Infusión Digest Hacendado
+mercadona:8805,42,no_relevante,1.0,Infusión frutos rojos Hacendado
+mercadona:11415,42,no_relevante,1.0,Infusión Respir Hacendado
+mercadona:11400,42,no_relevante,1.0,Infusión Jengibre Hacendado
+mercadona:11454,42,no_relevante,1.0,Infusión Manzanilla sabor a miel Hacendado
+mercadona:60672,42,no_relevante,1.0,Infusión quema grasas Hacendado
+mercadona:11468,42,no_relevante,1.0,Infusión Hinojo Hacendado
+mercadona:86632,42,no_relevante,1.0,Infusión Yerba Mate Amanda
+mercadona:22163,116,no_relevante,1.0,Café soluble Classic Hacendado
+mercadona:22718,116,no_relevante,1.0,Café soluble Classic Hacendado
+mercadona:14349,116,no_relevante,1.0,Café soluble classic en sobres Hacendado
+mercadona:11136,116,no_relevante,1.0,Café soluble natural Nescafé classic
+mercadona:11111,116,no_relevante,1.0,Café soluble natural Nescafé classic
+mercadona:22164,116,no_relevante,1.0,Café soluble descafeinado Hacendado
+mercadona:22719,116,no_relevante,1.0,Café soluble descafeinado Hacendado
+mercadona:14350,116,no_relevante,1.0,Café soluble descafeinado en sobres Hacendado
+mercadona:11101,116,no_relevante,1.0,Café soluble descafeinado Nescafé classic
+mercadona:11104,116,no_relevante,1.0,Café soluble descafeinado Nescafé classic
+mercadona:11123,116,no_relevante,1.0,Café soluble Espresso Creme Hacendado
+mercadona:23406,116,no_relevante,1.0,Café soluble cappuccino Hacendado
+mercadona:67660,116,no_relevante,1.0,Café soluble cappuccino caramelo Hacendado
+mercadona:11187,116,no_relevante,1.0,Cereales solubles con achicoria Hacendado
+mercadona:11178,133,no_relevante,1.0,Café molido natural Hacendado
+mercadona:11172,133,no_relevante,1.0,Café molido natural Hacendado
+mercadona:15922,133,no_relevante,1.0,Café molido mezcla Hacendado
+mercadona:15923,133,no_relevante,1.0,Café molido mezcla Hacendado
+mercadona:13700,133,no_relevante,1.0,Café molido fuerte Hacendado
+mercadona:11171,133,no_relevante,1.0,Café molido fuerte Hacendado
+mercadona:13593,133,no_relevante,1.0,Café molido descafeinado Hacendado
+mercadona:13592,133,no_relevante,1.0,Café molido descafeinado Hacendado
+mercadona:11715,133,no_relevante,1.0,Café molido Colombia Hacendado
+mercadona:11847,133,no_relevante,1.0,Café molido mezcla Marcilla gran aroma
+mercadona:11793,133,no_relevante,1.0,Café molido mezcla intensa La Estrella
+mercadona:14799,133,no_relevante,1.0,Café en grano natural Hacendado
+mercadona:11021,133,no_relevante,1.0,Café en grano Hacendado descafeinado
+mercadona:14798,133,no_relevante,1.0,Café en grano Colombia Hacendado
+mercadona:19924,133,no_relevante,1.0,Café en grano fuerte Hacendado
+mercadona:17670,133,no_relevante,1.0,Café en grano Brasil Hacendado
+mercadona:17671,47,no_relevante,1.0,Café en cápsula sabor Biscuit Hacendado
+mercadona:10350,47,no_relevante,1.0,Café en cápsula extra fuerte Hacendado
+mercadona:10355,47,no_relevante,1.0,Café en cápsula descafeinado Hacendado
+mercadona:9847,47,no_relevante,1.0,Café en cápsula Colombia Hacendado
+mercadona:10352,47,no_relevante,1.0,Café en cápsula espresso Hacendado
+mercadona:19940,47,no_relevante,1.0,Café en cápsula ristretto Hacendado
+mercadona:52774,47,no_relevante,1.0,Café en cápsulas doble espresso Hacendado
+mercadona:17674,47,no_relevante,1.0,Café en cápsula Perú Hacendado
+mercadona:11931,47,no_relevante,1.0,Café en cápsula espresso intenso Dolce Gusto
+mercadona:16363,47,no_relevante,1.0,Café en cápsula extra forte Hacendado
+mercadona:13635,47,no_relevante,1.0,Café en cápsula forte Hacendado
+mercadona:13634,47,no_relevante,1.0,Café en cápsula classic Hacendado
+mercadona:11869,47,no_relevante,1.0,Café en cápsula descafeinado espresso intenso Dolce Gusto
+mercadona:11918,47,no_relevante,1.0,Café en cápsula ristretto napoli Dolce Gusto
+mercadona:11785,47,no_relevante,1.0,Café en cápsula cortado Dolce Gusto
+mercadona:23293,47,no_relevante,1.0,Café en cápsula descafeinado Hacendado
+mercadona:67659,47,no_relevante,1.0,Café cortado en cápsula Hacendado
+mercadona:23404,47,no_relevante,1.0,Cortado en cápsula descafeinado Hacendado
+mercadona:22801,47,no_relevante,1.0,Café en cápsula doble espresso Hacendado
+mercadona:52775,47,no_relevante,1.0,Café en cápsula cappuccino Hacendado
+mercadona:11873,47,no_relevante,1.0,Café en cápsula espresso Tassimo
+mercadona:13216,87,no_relevante,1.0,Cacao soluble instantáneo Nesquik
+mercadona:19846,87,no_relevante,1.0,Cacao soluble ColaCao original
+mercadona:13006,87,no_relevante,1.0,Cacao soluble cero ColaCao
+mercadona:13021,87,no_relevante,1.0,Cacao soluble ColaCao original
+mercadona:13019,87,no_relevante,1.0,Cacao soluble ColaCao original
+mercadona:20919,87,no_relevante,1.0,Cacao soluble instantáneo Hacendado
+mercadona:8914,87,no_relevante,1.0,Cacao soluble instantáneo Hacendado
+mercadona:13037,87,no_relevante,1.0,Cacao soluble Hacendado
+mercadona:13038,87,no_relevante,1.0,Cacao soluble Hacendado
+mercadona:21985,87,no_relevante,1.0,Cacao soluble instantáneo Nesquik
+mercadona:18235,87,no_relevante,1.0,Cacao soluble instantáneo Nesquik
+mercadona:22580,87,no_relevante,1.0,Cacao puro en polvo La Chocolatera
+mercadona:12017,87,no_relevante,1.0,Cacao en polvo a la taza Valor
+mercadona:10005,87,no_relevante,1.0,Chocolate líquido a la taza Hacendado
+mercadona:12129,87,no_relevante,1.0,Chocolate para hacer a la taza Valor
+mercadona:11609,87,no_relevante,1.0,Cacao en polvo a la taza Hacendado
+mercadona:66211,91,no_relevante,1.0,Vino tinto Casón Histórico
+mercadona:66107,91,no_relevante,1.0,Vino tinto Don Simón
+mercadona:66710,91,no_relevante,1.0,Vino tinto tempranillo Elegido
+mercadona:37808,91,no_relevante,1.0,Vino tinto Dominio de Borgia
+mercadona:37804,91,no_relevante,1.0,Vino tinto tempranillo Hacienda Zargón
+mercadona:66320,91,no_relevante,1.0,Vino tinto crianza El Coto DO Rioja
+mercadona:67112,91,no_relevante,1.0,Vino tinto cosecha Comportillo DO Rioja
+mercadona:66314,91,no_relevante,1.0,Vino tinto crianza Cune DO Rioja
+mercadona:35710,91,no_relevante,1.0,Vino tinto crianza Comportillo DO Rioja
+mercadona:66325,91,no_relevante,1.0,Vino tinto reserva Comportillo DO Rioja
+mercadona:66346,91,no_relevante,1.0,Vino tinto reserva Coto de Imaz DO Rioja
+mercadona:52786,91,no_relevante,1.0,Vino tinto Pieza Rey DO Rioja
+mercadona:19849,91,no_relevante,1.0,Vino tinto crianza Pieza Rey DO Rioja
+mercadona:37134,91,no_relevante,1.0,Vino tinto crianza Viña Albali DO Valdepeñas
+mercadona:13875,91,no_relevante,1.0,Vino tinto tempranillo reserva Pata Negra DO Valdepeñas
+mercadona:35730,91,no_relevante,1.0,Vino tinto tempranillo crianza Señorío de los Llanos DO Valdepeñas
+mercadona:37164,91,no_relevante,1.0,Vino tinto crianza Fidencio DO La Mancha
+mercadona:86340,91,no_relevante,1.0,Vino tinto cosecha Fidencio DO La Mancha
+mercadona:86416,91,no_relevante,1.0,Vino tinto crianza Abadía Mantrús DO Ribera del Duero
+mercadona:37277,91,no_relevante,1.0,Vino tinto reserva Abadía Mantrús DO Ribera del Duero
+mercadona:22500,91,no_relevante,1.0,Vino tinto roble Atardecer DO Ribera del Duero
+mercadona:52785,91,no_relevante,1.0,Vino tinto roble 13 Hectáreas DO Ribera del Duero
+mercadona:24529,91,no_relevante,1.0,Vino tinto roble Pata Negra DO Ribera del Duero
+mercadona:67024,91,no_relevante,1.0,Vino tinto Borsao DO Campo de Borja
+mercadona:23677,91,no_relevante,1.0,Vino tinto Merlot Mar de Uvas
+mercadona:23676,91,no_relevante,1.0,Vino tinto Syrah Mar de Uvas
+mercadona:66349,91,no_relevante,1.0,Vino tinto tempranillo syrah suave Caperucita tinta Torre Oria
+mercadona:66295,91,no_relevante,1.0,Vino tinto crianza Torre Oria DO Utiel-Requena
+mercadona:37217,91,no_relevante,1.0,Vino tinto roble Fariña DO Dama de Toro
+mercadona:9964,91,no_relevante,1.0,Vino tinto Colección de parcelas Borsao DO Campo de Borja
+mercadona:11583,91,no_relevante,1.0,Vino tinto Fariña DO Gran Dama de Toro
+mercadona:19989,91,no_relevante,1.0,Vino tinto 7 meses Barril Nº7
+mercadona:21518,91,no_relevante,1.0,Vino tinto 18 meses Barril Nº7
+mercadona:37153,91,no_relevante,1.0,Vino rosado tempranillo syrah Fidencio DO La Mancha
+mercadona:37802,91,no_relevante,1.0,Vino rosado Dominio de Borgia
+mercadona:67119,91,no_relevante,1.0,Vino rosado Clarete Arteso DO Rioja
+mercadona:24078,91,no_relevante,1.0,Vino rosado tempranillo garnacha Mar De Uvas DO Navarra
+mercadona:52533,91,no_relevante,1.0,Lambrusco rosado dell'Emilia Piccolo Giovanni
+mercadona:66332,91,no_relevante,1.0,Frizzante blanco verdejo DulZ.Ze
+mercadona:21972,91,no_relevante,1.0,Frizzante sabor sandía Piccolo Giovanni
+mercadona:24532,91,no_relevante,1.0,Frizzante dulce sin alcohol Piccolo Giovanni
+mercadona:66127,91,no_relevante,1.0,Vino blanco Casón Histórico
+mercadona:66124,91,no_relevante,1.0,Vino blanco Don Simón chardonnay airén
+mercadona:66905,91,no_relevante,1.0,Bebida aromatizada a base de vino para cocinar Abuela Carola
+mercadona:66105,91,no_relevante,1.0,Vino blanco Don Simón
+mercadona:66711,91,no_relevante,1.0,Vino blanco airén verdejo Elegido
+mercadona:37138,91,no_relevante,1.0,Vino blanco Airén Sauvignon Blanc Fidencio DO La Mancha
+mercadona:66324,91,no_relevante,1.0,Vino blanco El Coto DO Rioja
+mercadona:67125,91,no_relevante,1.0,Vino blanco albariño Pazo de Orantes DO Rías Baixas
+mercadona:67123,91,no_relevante,1.0,Vino blanco dulce Finca La Malcriada DO Valencia
+mercadona:66836,91,no_relevante,1.0,Vino blanco albariño Ponte Tamuxe DO Rías Baixas
+mercadona:16819,91,no_relevante,1.0,Vino blanco Chardonnay Atardecer DO Somontano
+mercadona:66851,91,no_relevante,1.0,Vino verde Loureiro Castelo de Moinhos DO Portugal
+mercadona:86547,91,no_relevante,1.0,Vino blanco viura y tempranillo Ponce de Albayda DO Rioja
+mercadona:52926,91,no_relevante,1.0,Vino blanco Treixadura Da Feira DO Ribeiro
+mercadona:11968,91,no_relevante,1.0,Vino blanco Chardonnay Mar de Uvas
+mercadona:37229,91,no_relevante,1.0,Vino blanco verdejo Arribeño DO Rueda
+mercadona:66369,91,no_relevante,1.0,Vino blanco verdejo Abadía Mantrús DO Rueda
+mercadona:23279,91,no_relevante,1.0,Vino blanco verdejo Condado de Teón DO Rueda
+mercadona:66495,91,no_relevante,1.0,Vino blanco suave y afrutado El Pescaito
+mercadona:66352,91,no_relevante,1.0,Vino blanco semidulce Diamante DO Rioja
+mercadona:24077,91,no_relevante,1.0,Vino blanco semidulce verdejo Finca La Malcriada
+mercadona:66907,91,no_relevante,1.0,Vino fino Corredera DO Montilla-Moriles
+mercadona:39488,91,no_relevante,1.0,Bebida refrescante aromatizada tinto sin alcohol light Castillo de Salobreña
+mercadona:21779,91,no_relevante,1.0,Mosto tinto Casón Histórico
+mercadona:18698,91,no_relevante,1.0,Tinto de verano limón Don Simón
+mercadona:18699,91,no_relevante,1.0,Tinto de verano sin alcohol limón Don Simón
+mercadona:60748,91,no_relevante,1.0,Tinto de verano zero limón Casón Histórico
+mercadona:66944,91,no_relevante,1.0,Sangría Don Simón
+mercadona:66746,91,no_relevante,1.0,Tinto de verano sin alcohol limón Don Simón
+mercadona:66747,91,no_relevante,1.0,Tinto de verano limón Don Simón
+mercadona:67818,91,no_relevante,1.0,Tinto de verano limón Casón Histórico
+mercadona:11564,91,no_relevante,1.0,Tinto de verano Casón Histórico
+mercadona:66739,91,no_relevante,1.0,Tinto de verano sabor limón Casón Histórico
+mercadona:66738,91,no_relevante,1.0,Tinto de verano limón Casón Histórico
+mercadona:28059,91,no_relevante,1.0,Tinto de verano limón La Casera
+mercadona:27843,91,no_relevante,1.0,Tinto de verano sabor limón La Casera
+mercadona:52920,206,no_relevante,1.0,Malta Maltín Polar
+mercadona:52921,206,no_relevante,1.0,Malta Maltín Polar
+mercadona:66560,206,no_relevante,1.0,Cerveza sin alcohol Mahou
+mercadona:27126,206,no_relevante,1.0,Cerveza sin alcohol Mahou
+mercadona:11620,206,no_relevante,1.0,"Cerveza sin gluten 0,0% sin alcohol tostada Mahou"
+mercadona:17629,206,no_relevante,1.0,"Cerveza 0,0% sin alcohol rubia Mahou"
+mercadona:17630,206,no_relevante,1.0,"Cerveza 0,0% sin alcohol rubia Mahou"
+mercadona:66462,206,no_relevante,1.0,Cerveza Clásica Steinburg
+mercadona:66463,206,no_relevante,1.0,Cerveza Clásica Steinburg
+mercadona:27679,206,no_relevante,1.0,Cerveza Heineken
+mercadona:27100,206,no_relevante,1.0,Cerveza Heineken
+mercadona:9826,206,no_relevante,1.0,Cerveza especial Mahou
+mercadona:27136,206,no_relevante,1.0,Cerveza especial Mahou
+mercadona:66027,206,no_relevante,1.0,Cerveza clásica Mahou
+mercadona:27178,206,no_relevante,1.0,Cerveza clásica Mahou
+mercadona:28057,206,no_relevante,1.0,Cerveza doble malta Voll-Damm
+mercadona:27137,206,no_relevante,1.0,Cerveza doble malta Voll-Damm
+mercadona:66485,206,no_relevante,1.0,Cerveza Suave Steinburg
+mercadona:66486,206,no_relevante,1.0,Cerveza Suave Steinburg
+mercadona:66026,206,no_relevante,1.0,Cerveza especial San Miguel
+mercadona:27103,206,no_relevante,1.0,Cerveza especial San Miguel
+mercadona:12033,206,no_relevante,1.0,Cerveza especial Steinburg
+mercadona:12036,206,no_relevante,1.0,Cerveza especial Steinburg
+mercadona:21740,206,no_relevante,1.0,Cerveza doble malta 1897
+mercadona:21741,206,no_relevante,1.0,Cerveza doble malta 1897
+mercadona:66586,206,no_relevante,1.0,Cerveza especial Estrella Galicia
+mercadona:27357,206,no_relevante,1.0,Cerveza especial Estrella Galicia
+mercadona:17820,206,no_relevante,1.0,Cerveza El Águila dorada
+mercadona:17821,206,no_relevante,1.0,Cerveza El Águila dorada
+mercadona:66465,206,no_relevante,1.0,Cerveza Clásica Steinburg
+mercadona:66466,206,no_relevante,1.0,Cerveza Clásica Steinburg
+mercadona:22467,206,no_relevante,1.0,Cerveza Clásica Steinburg
+mercadona:22489,206,no_relevante,1.0,Cerveza Clásica Steinburg
+mercadona:66518,206,no_relevante,1.0,Cerveza reserva 1925 Alhambra
+mercadona:66588,206,no_relevante,1.0,Cerveza clásica Mahou
+mercadona:27151,206,no_relevante,1.0,Cerveza clásica Mahou
+mercadona:66344,206,no_relevante,1.0,Cerveza clásica Mahou
+mercadona:60549,206,no_relevante,1.0,Cerveza clásica Mahou
+mercadona:66028,206,no_relevante,1.0,Cerveza especial Mahou
+mercadona:22524,206,no_relevante,1.0,Cerveza especial Mahou
+mercadona:66584,206,no_relevante,1.0,Cerveza sin gluten Mahou
+mercadona:66585,206,no_relevante,1.0,Cerveza sin gluten Mahou
+mercadona:66587,206,no_relevante,1.0,Cerveza especial Estrella Galicia
+mercadona:15936,206,no_relevante,1.0,Cerveza especial Estrella Galicia
+mercadona:67092,206,no_relevante,1.0,Cerveza extra 1906 reserva especial
+mercadona:52853,206,no_relevante,1.0,Cerveza de trigo Paulaner
+mercadona:52854,206,no_relevante,1.0,Cerveza de trigo Paulaner
+mercadona:52653,206,no_relevante,1.0,Cerveza especial Steinburg
+mercadona:52723,206,no_relevante,1.0,Cerveza Corona
+mercadona:52724,206,no_relevante,1.0,Cerveza Corona
+mercadona:66770,206,no_relevante,1.0,Cerveza Shandy Steinburg sabor limón
+mercadona:5396,206,no_relevante,1.0,Cerveza aromatizada Desperados
+mercadona:5397,206,no_relevante,1.0,Cerveza aromatizada Desperados
+mercadona:67875,115,no_relevante,0.947,Turrón de chocolate crujiente Hacendado
+mercadona:8950,115,no_relevante,0.947,Turrón de chocolate Suchard
+mercadona:36014,115,no_relevante,0.947,Turrón blando de almendras Hacendado
+mercadona:36333,115,no_relevante,0.947,Turrón de yema tostada Hacendado
+mercadona:36017,115,no_relevante,0.947,Turrón duro de almendras Hacendado
+mercadona:36313,115,no_relevante,0.947,Turrón de chocolate con almendras Hacendado
+mercadona:14250,115,no_relevante,0.947,Turrón de chocolate negro crujiente Hacendado
+mercadona:36127,115,no_relevante,0.947,Turrón de chocolate blanco crujiente Hacendado
+mercadona:36020,115,no_relevante,0.947,Turrón blando de Jijona Antiu Xixona
+mercadona:36030,115,no_relevante,0.947,Turrón tres chocolates con trozos de galleta Hacendado
+mercadona:36334,115,no_relevante,0.947,Turrón de fruta Hacendado
+mercadona:36029,115,no_relevante,0.947,Turrón de guirlache Hacendado
+mercadona:36143,115,no_relevante,0.947,Turrón de pistacho Hacendado
+mercadona:15848,115,no_relevante,0.947,Turrón duro de almendras Hacendado 0% azúcares añadidos
+mercadona:15847,115,no_relevante,0.947,Turrón blando de almendras Hacendado 0% azúcares añadidos
+mercadona:67835,115,no_relevante,0.947,Torta imperial Hacendado
+mercadona:15901,115,no_relevante,0.947,Turrón de chocolate Cream Avellana Hacendado con galleta crujiente
+mercadona:52419,115,no_relevante,0.947,Turrón de cheesecake Hacendado
+mercadona:22099,115,no_relevante,0.947,Surtido de mini turrones Hacendado
+mercadona:14248,115,no_relevante,0.947,Turrón imperial de cacahuete Hacendado
+mercadona:14249,115,no_relevante,0.947,Turrón crema de cacahuete Hacendado
+mercadona:17701,115,no_relevante,0.947,Turrón chocolate blanco Cookies & Cream Hacendado relleno de crema de galletas y cacao
+mercadona:86755,106,no_relevante,0.946,Mermelada de fresa Hacendado
+mercadona:13441,106,no_relevante,0.946,Mermelada de fresa monodosis Hacendado
+mercadona:35932,106,no_relevante,0.946,Mermelada de arándanos Hacendado
+mercadona:86684,106,no_relevante,0.946,Mermelada de melocotón Hacendado
+mercadona:13444,106,no_relevante,0.946,Mermelada de melocotón monodosis Hacendado
+mercadona:15076,106,no_relevante,0.946,Mermelada de naranja amarga Hacendado
+mercadona:15068,106,no_relevante,0.946,Mermelada de albaricoque Hacendado
+mercadona:67753,106,no_relevante,0.946,Mermelada de higo Hacendado
+mercadona:22476,106,no_relevante,0.946,Mermelada de ciruela y kiwi Hacendado
+mercadona:86033,106,no_relevante,0.946,Mermelada de frambuesa Hacendado
+mercadona:15436,106,no_relevante,0.946,Miel de flores Hacendado
+mercadona:15430,106,no_relevante,0.946,Miel de flores Hacendado
+mercadona:15448,106,no_relevante,0.946,Miel de naranjo Hacendado
+mercadona:15450,106,no_relevante,0.946,Miel de montaña Hacendado
+mercadona:15093,106,no_relevante,0.946,Confitura de fresa Hacendado 0% azúcares añadidos
+mercadona:15094,106,no_relevante,0.946,Confitura de melocotón Hacendado 0% azúcares añadidos
+mercadona:18334,121,no_relevante,1.0,Golosinas rellenas bolas de Navidad Trolli Jingle Balls
+mercadona:65077,121,no_relevante,1.0,Golosinas Moras Hacendado
+mercadona:65088,121,no_relevante,1.0,Golosinas Nubi Mallow Hacendado
+mercadona:65064,121,no_relevante,1.0,Golosinas tubos Hacendado sabor fresa y nata
+mercadona:65070,121,no_relevante,1.0,Golosinas Boca Fruit Hacendado
+mercadona:65158,121,no_relevante,1.0,Grageas de regaliz Hacendado
+mercadona:14934,121,no_relevante,1.0,Surtido de caramelos Diver Xuxes Hacendado
+mercadona:23528,121,no_relevante,1.0,Golosinas Dentaduras Hacendado
+mercadona:86288,121,no_relevante,1.0,Golosinas Mix Hacendado
+mercadona:67736,121,no_relevante,1.0,Golosinas Fresi Pink Mix Hacendado
+mercadona:60384,121,no_relevante,1.0,Golosinas Mix azúcar Hacendado
+mercadona:67968,121,no_relevante,1.0,"Golosinas Rega Red Mix Hacendado sabor fresa, nata y tutti frutti"
+mercadona:35856,121,no_relevante,1.0,Golosinas Mix con pica Hacendado
+mercadona:9792,121,no_relevante,1.0,Cono de golosinas celebración Hacendado
+mercadona:8819,121,no_relevante,1.0,Golosinas Halloween BOO! Mix Hacendado
+mercadona:8946,121,no_relevante,1.0,Golosinas Mini Mix con pica Hacendado
+mercadona:24541,121,no_relevante,1.0,Golosinas tubos rellenos Hacendado sabor nata y fresa
+mercadona:13042,121,no_relevante,1.0,Golosinas Tropical Jelly Hacendado
+mercadona:17807,121,no_relevante,1.0,Golosinas llaves super ácidas Hacendado
+mercadona:24543,121,no_relevante,1.0,Snacks de golosinas Top Xuxes Hacendado
+mercadona:17719,121,no_relevante,1.0,Golosinas Jelly Beans ácidas Hacendado
+mercadona:60722,234,no_relevante,1.0,Chocolate negro 85% cacao Hacendado
+mercadona:12495,234,no_relevante,1.0,Porciones de chocolate negro 72% cacao extrafino Hacendado
+mercadona:23773,234,no_relevante,1.0,Chocolate negro 72% de cacao Hacendado
+mercadona:40358,234,no_relevante,1.0,Chocolate negro 55% cacao Hacendado con almendras
+mercadona:12126,234,no_relevante,1.0,Chocolate puro Valor
+mercadona:12130,234,no_relevante,1.0,Chocolate puro Valor con almendras enteras
+mercadona:12431,234,no_relevante,1.0,Chocolatinas de chocolate negro Royal Mints 49% rellenas de crema sabor a menta
+mercadona:29062,234,no_relevante,1.0,Chocolate negro 72% de cacao Hacendado con almendras enteras
+mercadona:12493,234,no_relevante,1.0,Porciones de Chocolate negro 85% cacao extrafino Hacendado
+mercadona:22703,234,no_relevante,1.0,Chocolate negro 72% cacao Hacendado con trozos de naranja
+mercadona:12524,234,no_relevante,1.0,Chocolate negro 85% cacao extrafino y edulcorante Hacendado 0% azúcares añadidos
+mercadona:12586,234,no_relevante,1.0,99% cacao negro Hacendado
+mercadona:70652,234,no_relevante,1.0,Chocolate negro 55% cacao Hacendado
+mercadona:9820,234,no_relevante,1.0,Chocolate negro 72% de cacao Hacendado con almendras enteras
+mercadona:12509,155,no_relevante,1.0,Barritas de barquillo Tokke original
+mercadona:12348,250,no_relevante,1.0,Cacahuetes Hacendado chocolate negro
+mercadona:36307,250,no_relevante,1.0,Trufas clásicas al cacao Hacendado
+mercadona:24568,155,no_relevante,1.0,Barritas de barquillo Cheesecake Caramel Hacendado con cobertura blanca y relleno sabor cheesecake
+mercadona:12157,218,no_relevante,1.0,Bombones Ferrero Rocher
+mercadona:35909,218,no_relevante,1.0,Bombones cereza al licor Hacendado con chocolate
+mercadona:8920,218,no_relevante,1.0,Surtido bombones Caja Roja Nestlé
+mercadona:14221,218,no_relevante,1.0,Surtido bombones Senzza de chocolate negro 70%
+mercadona:12471,218,no_relevante,1.0,Bombones delicias de avellana Delizze Hacendado
+mercadona:86406,218,no_relevante,1.0,Bombones de coco Cocolizze Hacendado
+mercadona:14484,218,no_relevante,1.0,Surtido bombones Senzza de chocolate
+mercadona:14468,218,no_relevante,1.0,Surtido bombones de chocolate Belga Hacendado
+mercadona:14469,218,no_relevante,1.0,Bolitas de coco Hacendado
+mercadona:17947,218,no_relevante,1.0,Bombones de pistacho Hacendado
+mercadona:67416,141,no_relevante,0.917,Crema al cacao con avellanas Hacendado
+mercadona:11630,141,no_relevante,0.917,Crema de avellanas y cacao Hacendado
+mercadona:67409,141,no_relevante,0.917,Crema al cacao con avellanas Nutella
+mercadona:16264,141,no_relevante,0.917,Crema al cacao con avellanas Nocilla original
+mercadona:67417,141,no_relevante,0.917,Crema al cacao con avellanas Hacendado de 2 sabores
+mercadona:16883,141,no_relevante,0.917,Crema de cacahuete 100% Hacendado
+mercadona:65302,34,no_relevante,1.0,Caramelos nata Hacendado 0% azúcares
+mercadona:65123,34,no_relevante,1.0,Caramelos café Hacendado 0% azúcares
+mercadona:65138,34,no_relevante,1.0,Caramelos sabor eucalipto y mentol Hacendado 0% azúcares
+mercadona:65311,34,no_relevante,1.0,Caramelos blandos Fruits Hacendado
+mercadona:65324,34,no_relevante,1.0,Caramelos miel sabor limón Pifarré
+mercadona:65327,34,no_relevante,1.0,Caramelos regaliz mentol Respiral Halls
+mercadona:65143,34,no_relevante,1.0,Caramelos jengibre y própolis Hacendado 0% azúcares
+mercadona:12771,34,no_relevante,1.0,Caramelos sabor eucalipto y mentol Hacendado 0% azúcares
+mercadona:12766,34,no_relevante,1.0,Caramelos sabor lima Hacendado 0% azúcares
+mercadona:19909,34,no_relevante,1.0,Caramelos Fruits & Flowers Hacendado 0% azúcares
+mercadona:17704,34,no_relevante,1.0,Caramelos blandos Palotes Damel
+mercadona:13577,244,pasta_larga,0.632,Fideo cabello de ángel Hacendado
+mercadona:6253,244,pasta_larga,0.632,Fideuá Hacendado
+mercadona:6261,244,pasta_larga,0.632,Fideo grueso Hacendado
+mercadona:6256,244,pasta_larga,0.632,Fideo mediano Hacendado
+mercadona:6305,262,pasta_corta,1.0,Pajaritas vegetales Hacendado
+mercadona:35777,262,pasta_corta,1.0,Macarrón rayado integral Hacendado
+mercadona:6344,262,pasta_corta,1.0,Hélices con vegetales Hacendado
+mercadona:6260,262,pasta_corta,1.0,Macarrón fino Hacendado
+mercadona:6300,262,pasta_corta,1.0,Macarrón al huevo Hacendado
+mercadona:6250,262,pasta_corta,1.0,Macarrón Hacendado
+mercadona:6238,262,pasta_corta,1.0,Hélices Hacendado
+mercadona:6326,262,pasta_corta,1.0,Macarrón Hacendado
+mercadona:13025,262,pasta_corta,1.0,Macarrón grueso Hacendado
+mercadona:6246,245,no_relevante,0.667,Tallarines Hacendado
+mercadona:35778,245,no_relevante,0.667,Spaghetti integral Hacendado
+mercadona:6277,245,no_relevante,0.667,Spaghetti fino Hacendado
+mercadona:6321,245,no_relevante,0.667,Nidos al huevo Hacendado
+mercadona:6302,245,no_relevante,0.667,Spaghetti al huevo Hacendado
+mercadona:6245,245,no_relevante,0.667,Spaghetti Hacendado
+mercadona:6331,245,no_relevante,0.667,Spaghetti Hacendado
+mercadona:35670,245,no_relevante,0.667,Spaghetti sin gluten Felicia
+mercadona:35904,245,no_relevante,0.667,Spaghetti Armando
+mercadona:21988,245,no_relevante,0.667,Pappardelle Hacendado
+mercadona:6565,205,pasta_fresca_rellena,0.857,Tortellini carne Pagani
+mercadona:24528,244,pasta_larga,0.632,Noodles orientales Hacendado
+mercadona:9861,244,pasta_larga,0.632,Noodles Ramen Hacendado
+mercadona:6856,222,no_relevante,0.932,Placas para lasaña precocidas El Pavo
+mercadona:52889,222,no_relevante,0.932,Placas para canelones El Pavo
+mercadona:26019,96,no_relevante,1.0,Alubia cocida blanca Hacendado
+mercadona:26028,96,no_relevante,1.0,Alubia cocida blanca Hacendado
+mercadona:26000,96,no_relevante,1.0,Alubia cocida roja Hacendado
+mercadona:26001,96,no_relevante,1.0,Alubia cocida pinta Hacendado
+mercadona:5124,96,no_relevante,1.0,Alubia blanca Hacendado
+mercadona:67608,96,no_relevante,1.0,Alubia negra Hacendado
+mercadona:67609,96,no_relevante,1.0,Alubia roja Hacendado
+mercadona:26002,96,no_relevante,1.0,Alubia cocida granja Hacendado
+mercadona:23453,96,no_relevante,1.0,Alubia pinta Hacendado
+mercadona:5330,94,no_relevante,1.0,Lenteja pardina Hacendado
+mercadona:26030,94,no_relevante,1.0,Lenteja cocida Hacendado
+mercadona:26011,94,no_relevante,1.0,Lenteja cocida Hacendado
+mercadona:13926,94,no_relevante,1.0,Soja texturizada Luengo
+mercadona:86146,104,no_relevante,0.857,Patatas fritas extra crujientes Hacendado
+mercadona:22245,104,no_relevante,0.857,Patatas fritas clásicas Hacendado
+mercadona:86145,104,no_relevante,0.857,Patatas fritas onduladas sabor jamón serrano Hacendado
+mercadona:15589,104,no_relevante,0.857,Patatas fritas onduladas Hacendado
+mercadona:15810,104,no_relevante,0.857,Patatas light Hacendado
+mercadona:33555,104,no_relevante,0.857,Aperitivo de patata sabor original Pringles
+mercadona:33556,104,no_relevante,0.857,Aperitivo de patata sabor crema agria y cebolla Pringles
+mercadona:19976,104,no_relevante,0.857,Patatas fritas onduladas sabor sal y vinagre
+mercadona:8243,104,no_relevante,0.857,Patatas fritas sabor chili y lima Hacendado
+mercadona:8953,104,no_relevante,0.857,Aperitivo de patata con sabor a nata agria y cebolla
+mercadona:19975,104,no_relevante,0.857,Patatas fritas onduladas sabor campestre Hacendado
+mercadona:20931,104,no_relevante,0.857,Aperitivo de patata sabor barbacoa Hacendado
+mercadona:17754,104,no_relevante,0.857,Nachos Hacendado
+mercadona:33639,104,no_relevante,0.857,Tiras de maíz frito sabor barbacoa Hacendado
+mercadona:14216,104,no_relevante,0.857,Galletitas saladas Hacendado
+mercadona:33581,104,no_relevante,0.857,Cuquis Hacendado
+mercadona:22177,104,no_relevante,0.857,Combinado de aperitivos Hacendado
+mercadona:16860,104,no_relevante,0.857,Bombitas de maíz sabor mantequilla Hacendado
+mercadona:33436,104,no_relevante,0.857,Cortezas de cerdo fritas sabor barbacoa Hacendado
+mercadona:33633,104,no_relevante,0.857,Trigo snack sabor ahumado Hacendado
+mercadona:33624,104,no_relevante,0.857,Patatas fritas paja Hacendado
+mercadona:14467,104,no_relevante,0.857,Torreznos Hacendado
+mercadona:33440,104,no_relevante,0.857,Piña deshidratada Hacendado
+mercadona:22568,104,no_relevante,0.857,Sticks de patata Hacendado
+mercadona:15757,104,no_relevante,0.857,Aros de maíz Hacendado
+mercadona:34811,104,no_relevante,0.857,Palomitas caramelo Hacendado
+mercadona:9903,104,no_relevante,0.857,Snack de maíz Stars sabor mantequilla Hacendado
+mercadona:16387,104,no_relevante,0.857,Nachos Padrísimos Hacendado sabor guacamole
+mercadona:12960,104,no_relevante,0.857,Snack de maíz Crunchy sabor agridulce picante Hacendado
+mercadona:60323,104,no_relevante,0.857,Snack de maíz Redes sabor barbacoa Hacendado
+mercadona:52686,104,no_relevante,0.857,Sticks vegetales Hacendado
+mercadona:8915,104,no_relevante,0.857,Súper Cuquis
+mercadona:16253,104,no_relevante,0.857,Snack de lentejas horneado Lentils Hacendado
+mercadona:21927,104,no_relevante,0.857,Torreznillos Hacendado cortezas de cerdo fritas ahumadas
+mercadona:34024,114,no_relevante,1.0,Nuez natural Hacendado pelada
+mercadona:34865,114,no_relevante,1.0,Almendra natural Hacendado
+mercadona:86202,114,no_relevante,1.0,Pistacho tostado Hacendado con sal
+mercadona:86190,114,no_relevante,1.0,Pistacho tostado Hacendado 0% sal añadida
+mercadona:34079,114,no_relevante,1.0,Pipas girasol tostadas Hacendado gigante con sal
+mercadona:34820,114,no_relevante,1.0,Cacahuete frito con sal Hacendado pelado
+mercadona:34078,114,no_relevante,1.0,Pipas girasol tostadas Hacendado gigante aguasal
+mercadona:23365,114,no_relevante,1.0,Anacardo natural Hacendado
+mercadona:34822,114,no_relevante,1.0,Palomitas de maíz con sal Hacendado para microondas
+mercadona:34027,114,no_relevante,1.0,Anacardo frito salado Hacendado
+mercadona:34025,114,no_relevante,1.0,Avellana tostada Hacendado 0% sal añadida
+mercadona:11960,114,no_relevante,1.0,Almendra tostada y salada Hacendado con piel
+mercadona:34868,114,no_relevante,1.0,Cacahuete frito y salado Hacendado con piel
+mercadona:34821,114,no_relevante,1.0,Maíz frito crujiente y tierno Hacendado
+mercadona:34009,114,no_relevante,1.0,Almendra frita y salada Hacendado pelada
+mercadona:34031,114,no_relevante,1.0,Cacahuete tostado Hacendado 0% sal añadida
+mercadona:34014,114,no_relevante,1.0,Almendra tostada Hacendado 0% sal añadida con piel
+mercadona:14347,114,no_relevante,1.0,Maíz palomitas Hacendado
+mercadona:13597,114,no_relevante,1.0,Maíz frito gigante Hacendado
+mercadona:34838,114,no_relevante,1.0,Nuez macadamia Hacendado tostada con sal
+mercadona:34963,114,no_relevante,1.0,Mezcla semillas Hacendado
+mercadona:18259,114,no_relevante,1.0,Pipas de calabaza natural Hacendado peladas
+mercadona:34194,114,no_relevante,1.0,Castañas cocidas y peladas Hacendado
+mercadona:34143,114,no_relevante,1.0,Cacahuete frito con miel Hacendado
+mercadona:34016,114,no_relevante,1.0,Cacahuete tostado con sal Hacendado
+mercadona:24561,114,no_relevante,1.0,Semillas de chía Hacendado
+mercadona:34145,114,no_relevante,1.0,Pipas de girasol fritas Hacendado peladas
+mercadona:34212,114,no_relevante,1.0,Palomitas de maíz sabor mantequilla Hacendado para microondas
+mercadona:34964,114,no_relevante,1.0,Semillas sésamo tostado Hacendado
+mercadona:34043,114,no_relevante,1.0,Pipas girasol barbacoa Hacendado
+mercadona:34193,114,no_relevante,1.0,Pipas girasol naturales Hacendado peladas
+mercadona:34962,114,no_relevante,1.0,Semillas lino dorado Hacendado
+mercadona:34606,114,no_relevante,1.0,Nuez natural Hacendado
+mercadona:34095,114,no_relevante,1.0,Pipas calabaza tostadas Hacendado aguasal
+mercadona:23059,114,no_relevante,1.0,Pipas girasol tostadas Hacendado 0% sal añadida
+mercadona:34236,114,no_relevante,1.0,Nuez de Brasil natural Hacendado
+mercadona:34262,114,no_relevante,1.0,Pistacho natural Hacendado pelado
+mercadona:34997,114,no_relevante,1.0,Nuez Pecana natural Hacendado pelada
+mercadona:34817,114,no_relevante,1.0,Palomitas de maíz dulces Hacendado para microondas
+mercadona:13451,114,no_relevante,1.0,Cacahuete tostado Hacendado 0% sal añadida pelado
+mercadona:15896,114,no_relevante,1.0,Habas fritas con sal Hacendado
+mercadona:52668,114,no_relevante,1.0,Anacardo tostado 0% sal añadida Hacendado
+mercadona:17668,114,no_relevante,1.0,Almendra tostada Hacendado 0% sal añadida pelada
+mercadona:18341,114,no_relevante,1.0,Nuez troceada pelada Hacendado
+mercadona:21928,114,no_relevante,1.0,Cocktail frutos secos tostados con sal Hacendado
+mercadona:34231,114,no_relevante,1.0,Cocktail frutos secos mezcla Hacendado
+mercadona:16833,114,no_relevante,1.0,Combinado frutos secos Hacendado
+mercadona:34924,114,no_relevante,1.0,Cocktail de fruta deshidratada Hacendado
+mercadona:34047,114,no_relevante,1.0,"Cocktail frutos secos Crunchy Hacendado sabores a barbacoa, Tex-Mex, miel y sal"
+mercadona:11513,114,no_relevante,1.0,Cocktail frutos secos Rodeo Hacendado
+mercadona:86809,114,no_relevante,1.0,Cocktail frutos secos natural Hacendado
+mercadona:60015,114,no_relevante,1.0,Cocktail frutos secos tostados 0% sal añadida Hacendado
+mercadona:60009,114,no_relevante,1.0,Cocktail frutos secos tostados Hacendado sabor ahumado
+mercadona:80450,114,no_relevante,1.0,Cocktail frutos secos Rumba Hacendado
+mercadona:17666,114,no_relevante,1.0,Cocktail frutos secos Twist Up Hacendado sabor lima y pimienta
+mercadona:23010,114,no_relevante,1.0,Pasas sultanas sin semillas Hacendado
+mercadona:23003,114,no_relevante,1.0,Pasas moscatel sin semillas Hacendado
+mercadona:34209,114,no_relevante,1.0,Mango deshidratado Hacendado
+mercadona:20020,114,no_relevante,1.0,Ciruelas desecadas sin hueso Hacendado
+mercadona:34605,114,no_relevante,1.0,Arándanos deshidratados Hacendado
+mercadona:13877,114,no_relevante,1.0,Orejones albaricoque Hacendado
+mercadona:22606,114,no_relevante,1.0,Dátiles en rama Hacendado
+mercadona:18369,114,no_relevante,1.0,Higos secos Villacruz
+mercadona:22974,114,no_relevante,1.0,Dátiles Medjoul con hueso Hacendado
+mercadona:15301,114,no_relevante,1.0,Dátiles desecados sin hueso Hacendado
+mercadona:22910,30,no_relevante,1.0,Aceitunas verdes rellenas de anchoa Hacendado
+mercadona:23217,30,no_relevante,1.0,Aceitunas verdes rellenas de anchoa Hacendado
+mercadona:22911,30,no_relevante,1.0,Aceitunas verdes rellenas de anchoa Hacendado
+mercadona:21896,30,no_relevante,1.0,Aceitunas verdes sin hueso Hacendado
+mercadona:33168,30,no_relevante,1.0,Aceitunas verdes Chupadedos Huerta de Barros partidas aliñadas
+mercadona:23961,30,no_relevante,1.0,Aceitunas verdes Gazpacha Hacendado partidas
+mercadona:12764,30,no_relevante,1.0,Aceitunas verdes rellenas de anchoa Hacendado
+mercadona:33114,30,no_relevante,1.0,Aceitunas verdes sin hueso Hacendado
+mercadona:13422,30,no_relevante,1.0,Aceitunas verdes estilo casero Hacendado partidas aliñadas
+mercadona:33121,30,no_relevante,1.0,Aceitunas verdes sin hueso aliñadas Hacendado
+mercadona:33178,30,no_relevante,1.0,Aceitunas verdes rellenas de jalapeño Hacendado
+mercadona:19883,30,no_relevante,1.0,Aceitunas verdes campo real Guerra
+mercadona:33205,30,no_relevante,1.0,Aceitunas verdes con hueso Hacendado
+mercadona:52622,30,no_relevante,1.0,Aceitunas verdes Picadedos sin hueso Hacendado aliñadas
+mercadona:52783,30,no_relevante,1.0,Aceitunas verdes Hacendado con hueso
+mercadona:11946,30,no_relevante,1.0,Aceitunas verdes rellenas de pepinillo Hacendado
+mercadona:13914,30,no_relevante,1.0,Aceitunas verdes rellenas de pimiento asado Hacendado
+mercadona:52734,30,no_relevante,1.0,Aceitunas negras sin hueso Hacendado
+mercadona:52733,30,no_relevante,1.0,Aceitunas negras sin hueso Hacendado
+mercadona:8309,30,no_relevante,1.0,Aceitunas negras en rodajas Hacendado
+mercadona:21791,30,no_relevante,1.0,Aceitunas negras naturales de Aragón con hueso Hacendado
+mercadona:33235,29,no_relevante,1.0,Banderillas picantes Hacendado
+mercadona:22154,29,no_relevante,1.0,Banderillas dulces Hacendado
+mercadona:73331,29,no_relevante,1.0,Mix de encurtidos Hacendado
+mercadona:60320,29,no_relevante,1.0,"Banderillas Gildas Hacendado pinchos de aceituna, anchoa y guindilla"
+mercadona:29540,29,no_relevante,1.0,Pepinillos pequeños Hacendado
+mercadona:33136,29,no_relevante,1.0,Altramuces Hacendado
+mercadona:33190,29,no_relevante,1.0,Alcaparras Hacendado
+mercadona:4868,29,no_relevante,1.0,Picadillo de variantes Hacendado
+mercadona:33100,29,no_relevante,1.0,Pepinillos agridulces laminados Hacendado
+mercadona:33141,29,no_relevante,1.0,Cebollitas Hacendado
+mercadona:15966,29,no_relevante,1.0,Guindillas picantes Hacendado
+mercadona:33022,29,no_relevante,1.0,Ajos aliñados Hacendado
+mercadona:33189,29,no_relevante,1.0,Jalapeños picantes en vinagre Hacendado
+mercadona:33026,29,no_relevante,1.0,Mix de pepinillos y cebollitas Hacendado
+mercadona:15967,29,no_relevante,1.0,Piparra Hacendado
+mercadona:5480,29,no_relevante,1.0,Pepinillos agridulces Hacendado
+mercadona:11565,29,no_relevante,1.0,Pepinillos en vinagre Hacendado
+mercadona:14474,29,no_relevante,1.0,Pepinillos agridulces Hacendado
+mercadona:19958,29,no_relevante,1.0,Berenjenas de Almagro aliñada Antonio
+mercadona:27832,142,no_relevante,0.625,Refresco té verde Hacendado
+mercadona:67938,142,no_relevante,0.625,Refresco té sabor limón Hacendado
+mercadona:67939,142,no_relevante,0.625,Refresco té sabor limón Hacendado
+mercadona:67940,142,no_relevante,0.625,Refresco té sabor limón Hacendado
+mercadona:11307,142,no_relevante,0.625,Refresco té soluble limón Hacendado
+mercadona:21709,142,no_relevante,0.625,Refresco té  zero sabor melocotón Hacendado
+mercadona:11319,142,no_relevante,0.625,Refresco té soluble melocotón Hacendado
+mercadona:11097,142,no_relevante,0.625,Refresco té sabor mango y piña Hacendado
+mercadona:21711,142,no_relevante,0.625,Refresco té zero sabor mango Hacendado
+mercadona:5546,142,no_relevante,0.625,Refresco té zero sabor limón Hacendado
+mercadona:21710,142,no_relevante,0.625,Refresco té verde Zero Hacendado sabor maracuyá y mango
+mercadona:21827,142,no_relevante,0.625,Refresco té verde Zero Hacendado sabor maracuyá y mango
+mercadona:21828,142,no_relevante,0.625,Refresco té verde Zero Hacendado sabor maracuyá y mango
+mercadona:11688,142,no_relevante,0.625,Refresco té sabor limón Fuze Tea
+mercadona:11690,142,no_relevante,0.625,Refresco té sabor limón Fuze Tea
+mercadona:11691,142,no_relevante,0.625,Refresco té sabor limón Fuze Tea
+mercadona:21653,142,no_relevante,0.625,"Refresco té rojo Zero Hacendado sabor frutos rojos, hibisco y granada"
+mercadona:18768,142,no_relevante,0.625,Naranjada natural sin gas light Don Simón
+mercadona:18769,142,no_relevante,0.625,Naranjada natural sin gas light Don Simón
+mercadona:18770,142,no_relevante,0.625,Naranjada natural sin gas light Don Simón
+mercadona:27965,142,no_relevante,0.625,Limonada natural sin gas light Don Simón
+mercadona:27951,142,no_relevante,0.625,Refresco sin gas de naranja Simon Life
+mercadona:13947,142,no_relevante,0.625,Refresco sin gas cero fusión de frutas Hacendado
+mercadona:27759,142,no_relevante,0.625,Bebida Florida Sunny Delight
+mercadona:13946,142,no_relevante,0.625,Refresco sin gas cero piña-coco Hacendado
+mercadona:21732,142,no_relevante,0.625,Refresco sin gas Tropical Hacendado
+mercadona:21734,142,no_relevante,0.625,Limonada sin gas light Hacendado
+mercadona:21735,142,no_relevante,0.625,Limonada  sin gas light Hacendado
+mercadona:24546,142,no_relevante,0.625,Refresco sin gas mango Simon Life
+mercadona:17650,142,no_relevante,0.625,Refresco sin gas de melón y piña Hacendado
+mercadona:21729,142,no_relevante,0.625,Refresco de naranja Hacendado fresh gas
+mercadona:21719,142,no_relevante,0.625,Refresco de naranja Hacendado fresh gas
+mercadona:21720,142,no_relevante,0.625,Refresco de naranja Hacendado fresh gas
+mercadona:21730,142,no_relevante,0.625,Refresco de naranja Hacendado zero fresh gas
+mercadona:21721,142,no_relevante,0.625,Refresco de naranja Hacendado zero fresh gas
+mercadona:21733,1,agua_con_gas,1.0,Gaseosa grande Hacendado
+mercadona:27972,1,agua_con_gas,1.0,Gaseosa pequeña Hacendado
+mercadona:27971,1,agua_con_gas,1.0,Gaseosa pequeña Hacendado
+mercadona:27733,1,agua_con_gas,1.0,Gaseosa grande La Casera
+mercadona:27735,1,agua_con_gas,1.0,Gaseosa grande La Casera
+mercadona:17346,276,no_relevante,0.957,Salsa Barbacoa Hacendado
+mercadona:17502,276,no_relevante,0.957,Salsa pimienta verde Hacendado
+mercadona:17347,276,no_relevante,0.957,Salsa Burger Hacendado
+mercadona:17396,276,no_relevante,0.957,Salsa Piri Piri Hacendado
+mercadona:35412,276,no_relevante,0.957,Salsa curry Tikka Masala Hacendado picante
+mercadona:35438,276,no_relevante,0.957,Salsa Pesto con albahaca Hacendado
+mercadona:35186,276,no_relevante,0.957,Salsa fresca Pesto con albahaca Hacendado
+mercadona:35183,276,no_relevante,0.957,Salsa fresca Carbonara Hacendado
+mercadona:20889,276,no_relevante,0.957,Salsa fresca Trufa Hacendado
+mercadona:17360,276,no_relevante,0.957,Salsa de Soja Hacendado
+mercadona:17362,276,no_relevante,0.957,Salsa Teriyaki Hacendado
+mercadona:22613,276,no_relevante,0.957,Salsa Thai Chili dulce J-Lek
+mercadona:17382,276,no_relevante,0.957,Salsa de Soja sin gluten Hacendado
+mercadona:18288,276,no_relevante,0.957,Salsa especiada y agridulce Hannibal Hacendado
+mercadona:16827,276,no_relevante,0.957,Salsa Mexicana Hacendado
+mercadona:17386,276,no_relevante,0.957,Salsa Ranch Hacendado
+mercadona:17366,276,no_relevante,0.957,Salsa César Hacendado
+mercadona:17259,276,no_relevante,0.957,Salsa de Trufa
+mercadona:23137,276,no_relevante,0.957,Chili con carne Hacendado
+mercadona:7307,276,no_relevante,0.957,Extracto original de buey Bovril
+mercadona:11552,276,no_relevante,0.957,Salsa Cocktail Hacendado
+mercadona:34157,276,no_relevante,0.957,Carne de pimiento choricero Hacendado
+mercadona:13406,227,no_relevante,1.0,Mayonesa Hacendado
+mercadona:52728,227,no_relevante,1.0,Mayonesa Hacendado
+mercadona:11550,227,no_relevante,1.0,Mayonesa Hacendado
+mercadona:23816,227,no_relevante,1.0,Mayonesa en sobres individuales Hacendado
+mercadona:35840,227,no_relevante,1.0,Mayonesa Hellmann's
+mercadona:35839,227,no_relevante,1.0,Salsa Original Ligeresa
+mercadona:17039,227,no_relevante,1.0,Salsa Original Ligeresa
+mercadona:17038,227,no_relevante,1.0,Mayonesa Ybarra
+mercadona:15793,227,no_relevante,1.0,Salsa Light Hacendado
+mercadona:11551,227,no_relevante,1.0,Salsa Light Hacendado
+mercadona:23579,227,no_relevante,1.0,Ketchup Hacendado
+mercadona:67586,227,no_relevante,1.0,Ketchup en sobres individuales Hacendado
+mercadona:17228,227,no_relevante,1.0,Mostaza de Dijon Hacendado
+mercadona:23410,227,no_relevante,1.0,Mostaza clásica Hacendado
+mercadona:17150,227,no_relevante,1.0,Allioli Chovi
+mercadona:17172,227,no_relevante,1.0,Allioli Hacendado
+mercadona:17173,227,no_relevante,1.0,Allioli en sobres individuales Hacendado
+mercadona:7973,227,no_relevante,1.0,Alioli con perejil Hacendado
+mercadona:5598,274,no_relevante,1.0,Orégano Hacendado
+mercadona:5599,274,no_relevante,1.0,Perejil Hacendado
+mercadona:47994,274,no_relevante,1.0,Hoja de laurel Hacendado
+mercadona:34131,274,no_relevante,1.0,Hierbas provenzales Hacendado
+mercadona:34128,274,no_relevante,1.0,Albahaca Hacendado
+mercadona:5547,274,no_relevante,1.0,Tomillo Hacendado
+mercadona:52739,274,no_relevante,1.0,Eneldo Hacendado
+mercadona:34721,274,no_relevante,1.0,Cilantro Hacendado
+mercadona:60873,274,no_relevante,1.0,Ajo y Perejil Hacendado
+mercadona:14981,274,no_relevante,1.0,Romero Hacendado
+mercadona:34182,275,no_relevante,1.0,Colorante alimentario Hacendado
+mercadona:34102,275,no_relevante,1.0,Pimentón dulce de la Vera Hacendado
+mercadona:34116,275,no_relevante,1.0,Azafrán molido Hacendado
+mercadona:34183,275,no_relevante,1.0,Pimentón picante Hacendado
+mercadona:60573,275,no_relevante,1.0,Pimentón dulce Hacendado
+mercadona:34171,271,no_relevante,1.0,Pimienta negra molida Hacendado
+mercadona:67693,271,no_relevante,1.0,Molinillo pimienta negra Hacendado
+mercadona:34172,271,no_relevante,1.0,Pimienta negra en grano Hacendado
+mercadona:67694,271,no_relevante,1.0,Molinillo mix pimientas Hacendado
+mercadona:34170,271,no_relevante,1.0,Pimienta blanca molida Hacendado
+mercadona:86656,274,no_relevante,1.0,Ajo granulado Hacendado
+mercadona:34208,274,no_relevante,1.0,Cebolla frita crujiente Hacendado
+mercadona:34177,274,no_relevante,1.0,Canela molida Hacendado
+mercadona:52880,274,no_relevante,1.0,Canela Ceylan en rama Hacendado
+mercadona:34120,274,no_relevante,1.0,Comino molido Hacendado
+mercadona:34121,274,no_relevante,1.0,Comino en grano Hacendado
+mercadona:34125,274,no_relevante,1.0,Curry Hacendado
+mercadona:34173,274,no_relevante,1.0,Nuez moscada molida Hacendado
+mercadona:21552,274,no_relevante,1.0,Cayena guindillas Hacendado
+mercadona:37417,274,no_relevante,1.0,Cayena molida Hacendado
+mercadona:34163,274,no_relevante,1.0,Cúrcuma molida Hacendado
+mercadona:34149,274,no_relevante,1.0,Jengibre molido Hacendado
+mercadona:34113,274,no_relevante,1.0,Ñoras Hacendado
+mercadona:34122,274,no_relevante,1.0,Clavo en grano Hacendado
+mercadona:60869,274,no_relevante,1.0,Piñones Hacendado
+mercadona:86427,274,no_relevante,1.0,Pimientos secos Hacendado
+mercadona:23353,79,no_relevante,1.0,Sazonador para fajitas Hacendado sabor tex-mex
+mercadona:11971,79,no_relevante,1.0,Sazonador ajo y limón Hacendado para carne y pescado
+mercadona:34702,79,no_relevante,1.0,Sazonador para paella Hacendado
+mercadona:17147,79,no_relevante,1.0,Sazonador para burritos Hacendado
+mercadona:13936,79,no_relevante,1.0,Sazonador Topping Hacendado
+mercadona:4940,126,no_relevante,0.895,Vinagre de vino blanco Hacendado
+mercadona:4903,126,no_relevante,0.895,Limón exprimido Hacendado
+mercadona:4908,126,no_relevante,0.895,Crema de vinagre balsámico de Módena Hacendado
+mercadona:13609,126,no_relevante,0.895,Vinagre de Jerez reserva Hacendado
+mercadona:4905,126,no_relevante,0.895,Reducción bálsamica de vinagre Pedro Ximénez Hacendado
+mercadona:26496,126,no_relevante,0.895,Vinagre balsámico de Módena Hacendado
+mercadona:19731,119,no_relevante,1.0,Sal fina Hacendado
+mercadona:16864,119,no_relevante,1.0,Sal fina de mesa Hacendado
+mercadona:19732,119,no_relevante,1.0,Sal yodada fina Hacendado
+mercadona:19733,119,no_relevante,1.0,Sal gruesa Hacendado
+mercadona:29007,119,no_relevante,1.0,Bicarbonato de sódio Hacendado
+mercadona:29006,119,no_relevante,1.0,Bicarbonato de sódio Hacendado
+mercadona:19740,119,no_relevante,1.0,Escamas de sal marina natural Polasal
+mercadona:19734,119,no_relevante,1.0,Sal gruesa para hornear Hacendado
+mercadona:29016,119,no_relevante,1.0,Sal de frutas sabor limón Hacendado
+mercadona:19713,119,no_relevante,1.0,Sal 60% menos de sodio Hacendado
+mercadona:19726,119,no_relevante,1.0,Preparado para ahumar Hacendado
+mercadona:8930,119,no_relevante,1.0,Sal rosa del Himalaya Hacendado
+mercadona:20536,287,yogur_natural,0.647,Petit sabores Hacendado
+mercadona:14438,198,no_relevante,1.0,Postre lácteo Lemon Cake Hacendado
+mercadona:34035,140,no_relevante,0.914,Coco rallado Hacendado
+mercadona:17626,124,no_relevante,1.0,Tarta infantil deportes Hacendado congelada
+mercadona:17627,124,no_relevante,1.0,Tarta infantil cantantes Hacendado congelada
+mercadona:17628,124,no_relevante,1.0,Tarta infantil Paw Patrol Hacendado congelada
+mercadona:15193,182,no_relevante,0.6,Coquito
+mercadona:18158,182,no_relevante,0.6,Bollo bañado de chocolate y huevo con disquitos
+mercadona:24549,182,no_relevante,0.6,Bizcocho relleno de caramelo salado
+mercadona:84940,182,no_relevante,0.6,Napolitana mixta
+mercadona:26981,211,no_relevante,1.0,Boquerón sin limpiar
+mercadona:87929,211,no_relevante,1.0,Boquerón limpio sin cabeza
+mercadona:87930,211,no_relevante,1.0,Boquerón limpio sin espina
+mercadona:87916,211,no_relevante,1.0,Sardina sin limpiar
+mercadona:87995,211,no_relevante,1.0,Sardina limpia descongelada
+mercadona:87185,211,no_relevante,1.0,Gallo limpio del norte
+mercadona:87305,211,no_relevante,1.0,Rodaja bonito del norte
+mercadona:72064,13,no_relevante,1.0,Insecticida barrera antimosquitos Bosque Verde
+mercadona:72056,13,no_relevante,1.0,Insecticida avispas Bosque Verde
+mercadona:72034,13,no_relevante,1.0,Insecticida antimosquitos eléctrico recambio pastillas
+mercadona:72035,13,no_relevante,1.0,Espirales antimosquitos Bosque Verde para exteriores
+mercadona:35550,13,no_relevante,1.0,Vela citronela antimosquitos y moscas Bosque Verde
+mercadona:67997,13,no_relevante,1.0,Ambientador spray Sweet Blossom Bosque Verde
+mercadona:13789,13,no_relevante,1.0,Ambientador varitas Frambuesa Bosque Verde
+mercadona:13788,13,no_relevante,1.0,Ambientador varitas Bambú Bosque Verde
+mercadona:13780,13,no_relevante,1.0,Ambientador varitas Fruta Tropical Bosque Verde
+mercadona:13055,13,no_relevante,1.0,Ambientador varitas Magnolia Bosque Verde
+mercadona:13056,13,no_relevante,1.0,Ambientador varitas Pistacho Bosque Verde
+mercadona:22825,93,no_relevante,1.0,Bayeta cristales y espejos Bosque Verde microfibra
+mercadona:3897,312,no_relevante,1.0,Lima
+mercadona:3723,312,no_relevante,1.0,Fresas
+mercadona:3601,312,no_relevante,1.0,Ciruela roja
+mercadona:3649,312,no_relevante,1.0,Ciruela amarilla
+mercadona:8905,312,no_relevante,1.0,Higos
+mercadona:8906,312,no_relevante,1.0,Higos blancos
+mercadona:64230,75,no_relevante,0.714,Helado crocan choc vainilla Hacendado con lengua sabor chocolate
+mercadona:64249,75,no_relevante,0.714,Helado bombón blanco Hacendado sabor vainilla
+mercadona:60690,75,no_relevante,0.714,Helado bombón mango blanco Hacendado con salsa de mango
+mercadona:21604,75,no_relevante,0.714,Helado bombón pistacho Hacendado sabor almendra con salsa de pistacho
+mercadona:64221,75,no_relevante,0.714,Helado cucurucho sabor fresa nata Hacendado
+mercadona:64522,75,no_relevante,0.714,Helado hielo sorbete con lima limón Hacendado
+mercadona:64012,75,no_relevante,0.714,Helado hielo sorbete con naranja Hacendado
+mercadona:64220,75,no_relevante,0.714,Helado hielo sorbete con mango Hacendado
+mercadona:35534,75,no_relevante,0.714,Mini helado sándwich choco cream Hacendado
+mercadona:64147,75,no_relevante,0.714,Helado sándwich sabor nata Hacendado sin azúcares añadidos
+mercadona:52562,75,no_relevante,0.714,Helado stracciatella Hacendado con sirope de chocolate
+mercadona:64464,75,no_relevante,0.714,Helado menta choco Hacendado con trocitos sabor chocolate
+mercadona:64459,75,no_relevante,0.714,"Helado 3 sabores Hacendado vainilla, chocolate y fresa"
+mercadona:60680,75,no_relevante,0.714,Helado Biscuit Hacendado sabor galleta caramelizada
+mercadona:21578,75,no_relevante,0.714,"Helado golden pecan Hacendado sabor vainilla con trozos de nueces de pecán, salsa dulce de arce y caramelo"
+mercadona:17816,309,no_relevante,1.0,Costilla de cerdo marinada congelada
+mercadona:51218,109,queso_tierno_fresco,0.722,Burrata fresca Hacendado
+mercadona:12786,309,no_relevante,1.0,Solomillo de cerdo adobado
+mercadona:60651,42,no_relevante,1.0,Infusión fría Hacendado con sabor a piña y coco
+mercadona:52491,133,no_relevante,1.0,Café en grano Hacendado descafeinado
+mercadona:14383,47,no_relevante,1.0,Café en cápsula sabor Caramel Hacendado
+mercadona:17730,47,no_relevante,1.0,Café en cápsula ristretto ardenza Dolce Gusto
+mercadona:23972,91,no_relevante,1.0,Frizzante blanco verdejo DulZ.Ze
+mercadona:23967,91,no_relevante,1.0,Frizzante sabor mango Piccolo Giovanni
+mercadona:66202,91,no_relevante,1.0,Vino blanco Marina Alta DO Alicante
+mercadona:67933,91,no_relevante,1.0,Vino blanco Chardonnay Atardecer DO Somontano
+mercadona:67664,91,no_relevante,1.0,Vino dulce Pedro Ximénez Panda Verdia DO Málaga
+mercadona:66922,91,no_relevante,1.0,Sangría Casón Histórico
+mercadona:17805,121,no_relevante,1.0,Golosinas ojos rellenos Halloween Trolli Spooky Balls
+mercadona:17806,121,no_relevante,1.0,Golosinas calaveras Halloween super ácidas Hacendado
+mercadona:8820,34,no_relevante,1.0,Surtido de caramelos Mix El Conde Drácula y Zombie Lokopop Cerdán
+mercadona:8244,104,no_relevante,0.857,Patatas fritas sabor sal y vinagre Hacendado
+mercadona:33640,104,no_relevante,0.857,Nachos Hacendado
+mercadona:5464,114,no_relevante,1.0,Semillas de chía Hacendado
+mercadona:52667,114,no_relevante,1.0,Nuez troceada pelada Hacendado
+mercadona:33053,30,no_relevante,1.0,Aceitunas verdes sin hueso Hacendado
+mercadona:80478,142,no_relevante,0.625,Refresco té sabor melocotón Hacendado
+mercadona:13944,142,no_relevante,0.625,Refresco sin gas de naranja Hacendado
+mercadona:27842,142,no_relevante,0.625,Refresco sin gas de naranja Hacendado
+mercadona:14313,142,no_relevante,0.625,Refresco sin gas de naranja Hacendado
+mercadona:12847,276,no_relevante,0.957,Salsa Chimichurri Hacendado
+mercadona:7972,276,no_relevante,0.957,Salsa fresca Setas Hacendado

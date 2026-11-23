@@ -1,0 +1,8 @@
+metric,n,value
+fleiss_kappa_humans,39,0.683
+fleiss_kappa_humans+gemini,39,0.656
+unanimous_share,39,0.641
+gemini_equals_majority,35,0.8
+precision_high_vs_majority,11,0.909
+precision_balanced_vs_majority,9,0.889
+rejected_but_majority_match,15,0.533

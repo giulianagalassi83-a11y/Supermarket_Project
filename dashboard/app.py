@@ -30,6 +30,7 @@ from dashboard import charts  # noqa: E402
 from src.analysis import history, insights  # noqa: E402
 from src.analysis import optimizer as opt  # noqa: E402
 from src.analysis import prices as pricing  # noqa: E402
+from src.analysis import matched  # noqa: E402
 
 # Theme for this app only (a .streamlit/config.toml would also change app_legacy.py)
 from streamlit import config as st_config  # noqa: E402
@@ -1385,7 +1386,78 @@ def section_barcode():
     show(charts.barcode_gap(pairs))
     same = (pairs["gap_pct"].abs() <= 0.5).mean()
     st.caption(f"{len(pairs)} products with the same barcode at both chains; {100 * same:.0f}% have the same price. "
-               "This is the only exact comparison possible today, and it is why product matching comes next.")
+               "Only BM and Consum publish barcodes, so this check covers those two chains.")
+    section_matched()
+
+
+@st.cache_resource(show_spinner="Loading product search…")
+def load_searcher():
+    from src.pipeline import config
+    from src.pipeline.classify import load_taxonomy, types_for_db
+    from src.similarity.search import Searcher
+
+    try:
+        from src.similarity.encoder import load_encoder
+        encoder = load_encoder("finetuned")
+    except Exception:  # no torch / model on this computer: text search
+        encoder = None
+    products = df.rename(columns={"supermarket": "chain_id", "product_type": "type_id"})
+    return Searcher(products, encoder, types_for_db(load_taxonomy(config.TAXONOMY_PATH)))
+
+
+@st.cache_data
+def load_matched():
+    from src.pipeline import config
+
+    if not (config.SIM_MATCHES_PATH.exists() and config.SIM_CANONICAL_PATH.exists()):
+        return None
+    canonical = pd.read_csv(config.SIM_CANONICAL_PATH)
+    table = matched.same_product_table(df, pd.read_csv(config.SIM_MATCHES_PATH), canonical)
+    return table, canonical.set_index("product_key")["canonical_id"]
+
+
+RELEVANT_SHARE = 0.85  # matched products scoring below 85 % of the best matched one are not shown
+MATCHED_FLOOR = 0.7  # ... nor below 70 % of the best product overall (19 Nov, 10 queries: relevant ≥ .82, unrelated ≤ .53)
+
+
+def section_matched():
+    loaded = load_matched()
+    if loaded is None:
+        return
+    table, canonical_of = loaded
+    chains = [c for c in table.columns if c in CHAINS]
+    st.markdown(f"### {len(table):,} products matched across chains by our similarity engine")
+    query = st.text_input("Find a product", placeholder="e.g. leche sin lactosa, atún claro, yogur griego")
+    searcher = load_searcher()
+    if searcher.mode == "tfidf":
+        st.caption("Search runs in text mode: the embedding model isn't installed on this computer.")
+    if query.strip():
+        hits = searcher.search(query, k=400)
+        found = hits[hits["product_key"].isin(canonical_of.index)]  # own brands are never matched: skip them
+        floor = max(RELEVANT_SHARE * found["score"].max(), MATCHED_FLOOR * hits["score"].max())
+        found = found[found["score"] >= floor]  # drop the weak tail, and unrelated products when none fits
+        ids = list(dict.fromkeys(canonical_of.reindex(found["product_key"])))
+        shown = table.set_index("canonical_id").reindex(ids).dropna(how="all").reset_index()
+        if shown.empty:
+            st.write("No matched product for this search. These are the closest products we found:")
+            found = hits.head(10).merge(df[["product_key", "price"]], on="product_key", how="left")
+            found["chain_id"] = found["chain_id"].replace(CHAIN_NAMES)
+            st.dataframe(found.rename(columns={"name": "Product", "chain_id": "Chain", "price": "Price"})
+                         [["Product", "Chain", "Price"]], hide_index=True, width="stretch")
+            return
+    else:
+        shown = table.sort_values(["chains", "gap_pct"], ascending=False).head(50)
+    shown = shown.assign(cheapest=shown["cheapest"].replace(CHAIN_NAMES),
+                         unit=shown["unit"].map(lambda u: "€/" + UNIT_TEXT.get(u, str(u).lower())))
+    view = shown[["name", "unit", *chains, "cheapest", "gap_pct"]].rename(
+        columns={"name": "Product", "unit": "Price per", "cheapest": "Cheapest", "gap_pct": "Dearest vs cheapest",
+                 **CHAIN_NAMES})
+    st.dataframe(view, hide_index=True, width="stretch", column_config={
+        **{CHAIN_NAMES.get(c, c): st.column_config.NumberColumn(format="%.2f €") for c in chains},
+        "Dearest vs cheapest": st.column_config.NumberColumn(format="+%.0f%%")})
+    st.caption("Same brand, variant and size at each chain, as matched by the engine, compared per kilo, litre or "
+               "unit. Without a search, the 50 products sold at the most chains. Ahorramás is left out: some of its "
+               "scraped prices are per kilo instead of per item.")
 
 
 def section_route():

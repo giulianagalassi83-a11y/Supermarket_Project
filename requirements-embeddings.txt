@@ -1,1 +1,11 @@
+# Similarity engine (laptop only; CI does not install this file).
+# Install torch first (RTX 5070 / Blackwell needs CUDA 12.8):
+#   pip install "torch>=2.7" --index-url https://download.pytorch.org/whl/cu128
 sentence-transformers>=3
+datasets>=2.19
+accelerate>=1.0
+umap-learn>=0.5
+anthropic>=0.40
+google-genai>=3.3
+python-dotenv>=1.0
+openpyxl>=3.1      # audit spreadsheets (src/similarity/audit.py)

@@ -1,0 +1,5 @@
+truth,decider,threshold,n,accepted,precision,recall
+gemini,equivalent (OOF),0.535,340,189,0.852,0.789
+gemini,same-product,0.428,340,209,0.761,0.779
+felipe audit,equivalent (OOF),0.535,100,52,0.942,0.613
+felipe audit,same-product,0.428,100,75,0.893,0.838
