@@ -24,6 +24,7 @@ import streamlit as st
 from streamlit_folium import st_folium
 
 ROOT_DIR = Path(__file__).resolve().parents[1]
+LOGO_BASKIT = ROOT_DIR / "assets" / "baskit.jpg"
 sys.path.insert(0, str(ROOT_DIR))
 from dashboard import charts  # noqa: E402
 from src.analysis import history, insights  # noqa: E402
@@ -33,8 +34,13 @@ from src.analysis import prices as pricing  # noqa: E402
 # Theme for this app only (a .streamlit/config.toml would also change app_legacy.py)
 from streamlit import config as st_config  # noqa: E402
 
-for option, value in {"theme.base": "light", "theme.primaryColor": "#17242D", "theme.backgroundColor": "#F1F4F1",
-                      "theme.secondaryBackgroundColor": "#E6EBE7", "theme.textColor": "#17242D"}.items():
+for option, value in {
+    "theme.base": "light",
+    "theme.primaryColor": "#13301F",
+    "theme.backgroundColor": "#F4EFE4",
+    "theme.secondaryBackgroundColor": "#FFFFFF",
+    "theme.textColor": "#1A211E",
+}.items():
     st_config.set_option(option, value)
 
 st.set_page_config(page_title="Supermarket comparison", page_icon="🛒", layout="wide")
@@ -59,12 +65,24 @@ INK, MUTED, BEST, TAG = "#17242D", "#5F6E78", "#12805C", "#FFD60A"
 st.markdown(
     """<style>
 @import url('https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,300..900&display=swap');
-:root{--shelf:#F1F4F1;--surface:#FFFFFF;--ink:#17242D;--muted:#5F6E78;--line:#DCE3DE;--tag:#FFD60A;--best:#12805C;--best-bg:#E3F3EA;}
+:root{
+    --shelf:#F4EFE4;
+    --surface:#FFFFFF;
+    --ink:#26332D;
+    --muted:#64736B;
+    --line:#E2DACC;
+    --tag:#F2A65A;
+    --best:#13301F;
+    --best-bg:#E8E3D8;
+    --accent:#F2A65A;
+}
 html,body,.stApp,[data-testid="stAppViewContainer"]{background:var(--shelf);color:var(--ink);font-family:'Archivo',sans-serif;}
 .stApp *:not([data-testid="stIconMaterial"]),[role="dialog"] *:not([data-testid="stIconMaterial"]){font-family:'Archivo',sans-serif;}
-span[data-baseweb="tag"]{background:var(--ink)!important;color:#fff!important;}
-button[data-testid="stBaseButton-segmented_controlActive"],button[data-testid="stBaseButton-pillsActive"]{background:var(--ink)!important;color:#fff!important;border-color:var(--ink)!important;}
-button[data-testid="stBaseButton-segmented_controlActive"] *,button[data-testid="stBaseButton-pillsActive"] *{color:#fff!important;}
+span[data-baseweb="tag"]{
+    background:#2E7D5B!important;
+    color:#fff!important;
+}
+
 .block-container{padding-top:4.2rem;max-width:1240px;}
 h1,h2,h3{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:750;color:var(--ink);letter-spacing:-0.01em;}
 .hero{font-stretch:108%;font-weight:760;font-size:clamp(1.7rem,3.4vw,2.7rem);line-height:1.08;margin:0.2rem 0 0.4rem;max-width:26ch;}
@@ -74,9 +92,9 @@ h1,h2,h3{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:750;colo
 .price.sm .eu{font-size:2.2rem;} .price.sm .ct{font-size:1rem;vertical-align:1rem;} .price.sm .cur{font-size:0.95rem;}
 .tags{display:grid;grid-template-columns:repeat(auto-fill,minmax(205px,1fr));gap:14px;margin:0.6rem 0 1.6rem;}
 .tag{background:var(--surface);border:1px solid var(--line);border-left:7px solid var(--chain);border-radius:4px 10px 10px 4px;padding:14px 16px 12px;position:relative;}
-.tag.win{background:var(--tag);border-color:#E9BE00;border-left-color:var(--chain);box-shadow:0 6px 18px -10px rgba(120,90,0,.55);}
+.tag.win{background:#FFE599;border-color:#E9BE00;border-left-color:var(--chain);box-shadow:0 6px 18px -10px rgba(120,90,0,.55);}
 .tag .chain{font-stretch:115%;font-weight:760;font-size:1.05rem;}
-.tag .badge{position:absolute;top:12px;right:12px;font-size:.78rem;font-weight:700;background:var(--ink);color:var(--tag);padding:2px 8px;border-radius:20px;}
+.tag .badge{position:absolute;top:12px;right:12px;font-size:.78rem;font-weight:700; background:#2E7D5B; color:white; padding:2px 8px; border-radius:20px;}
 .tag .diff{font-weight:650;font-size:.95rem;color:#A23B2A;margin:2px 0 8px;}
 .tag.win .diff{color:var(--ink);}
 .tag .meta{display:flex;justify-content:space-between;font-size:.88rem;color:var(--muted);border-top:1px dashed rgba(23,36,45,.25);padding-top:7px;margin-top:8px;}
@@ -84,14 +102,15 @@ h1,h2,h3{font-family:'Archivo',sans-serif;font-stretch:112%;font-weight:750;colo
 .tag.partial{opacity:.72;} .tag.partial .diff{color:var(--muted);}
 .dot{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--chain);margin-right:6px;vertical-align:1px;}
 .panel{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:18px 20px;}
-.matrix-wrap{overflow-x:auto;background:var(--surface);border:1px solid var(--line);border-radius:12px;}
-table.matrix{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.95rem;}
+.matrix-wrap{overflow-x:auto;background:#ffe6cc;border:1px solid #D8D0C2;border-radius:12px;}
+table.matrix{border-collapse:collapse;width:100%;font-variant-numeric:tabular-nums;font-size:.95rem;background:transparent;}
 table.matrix th,table.matrix td{padding:10px 12px;text-align:right;border-bottom:1px solid var(--line);white-space:nowrap;}
-table.matrix th{font-stretch:110%;font-weight:700;font-size:.9rem;background:#FAFBFA;}
-table.matrix th:first-child,table.matrix td:first-child{text-align:left;position:sticky;left:0;background:var(--surface);z-index:1;}
-table.matrix th:first-child{background:#FAFBFA;}
+table.matrix th{font-stretch:110%;font-weight:700;font-size:.9rem;background:transparent;}
+table.matrix th:first-child,
+table.matrix td:first-child{text-align:left;position:sticky;left:0;background:#ffe6cc;z-index:1;}
+table.matrix th:first-child{background:#ffe6cc;}
 table.matrix td .u{display:block;color:var(--muted);font-size:.78rem;}
-table.matrix td.best span.v{background:var(--best-bg);color:var(--best);font-weight:750;padding:2px 7px;border-radius:5px;}
+table.matrix td.best span.v{background:#1e5736;color:#FFFFFF;font-weight:750;padding:3px 8px;border-radius:5px;}
 table.matrix td.none{color:#A8B3B9;}
 table.matrix tr.total td{font-weight:800;font-stretch:90%;font-size:1.05rem;border-bottom:none;}
 .route{list-style:none;padding:0;margin:.4rem 0 0;}
@@ -112,8 +131,212 @@ table.matrix tr.total td{font-weight:800;font-stretch:90%;font-size:1.05rem;bord
 .store-row .addr{color:var(--muted);font-size:.82rem;}
 .bar{height:8px;border-radius:4px;background:var(--chain);}
 .pl{display:inline-block;font-size:.72rem;font-weight:700;padding:1px 6px;border-radius:4px;background:#E7ECEF;color:var(--ink);margin-left:6px;}
-.stButton>button[kind="primary"]{background:var(--ink);border-color:var(--ink);font-weight:700;font-stretch:110%;padding:.7rem 1.6rem;font-size:1.05rem;}
-.stButton>button[kind="primary"]:hover{background:#0E7650;border-color:#0E7650;}
+/* Main buttons */
+.stButton>button{
+    background:#13301F !important;
+    border:1px solid #13301F !important;
+    color:white !important;
+}
+
+.stButton>button:hover{
+    background:#24523A !important;
+    border-color:#24523A !important;
+    color:white !important;
+}
+
+.stButton>button[kind="primary"]{
+    background:#13301F !important;
+    border-color:#13301F !important;
+    color:white !important;
+    font-weight:700;
+    font-stretch:110%;
+    padding:.7rem 1.6rem;
+    font-size:1.05rem;
+}
+
+/* ============================================================
+   TOP NAVIGATION
+   ============================================================ */
+
+/* Dark green navigation bar */
+[data-testid="stTopNav"],
+[data-testid="stTopNav"] > div,
+[data-testid="stTopNav"] > div > div {
+    background: #13301F !important;
+    background-color: #13301F !important;
+}
+
+/* Navigation links */
+a[data-testid="stTopNavLink"] {
+    background: transparent !important;
+    color: #F0883E !important;
+    border-radius: 6px !important;
+}
+
+/* Navigation labels */
+a[data-testid="stTopNavLink"] p,
+a[data-testid="stTopNavLink"] span {
+    color: #F0883E !important;
+}
+
+/* Navigation icons */
+a[data-testid="stTopNavLink"] [data-testid="stIconMaterial"] {
+    color: #F0883E !important;
+    -webkit-text-fill-color: #F0883E !important;
+}
+
+/* Hover effect */
+a[data-testid="stTopNavLink"]:hover {
+    background: #24523A !important;
+    background-color: #24523A !important;
+}
+
+/* Selected page */
+a[data-testid="stTopNavLink"][aria-current="page"] {
+    background: #24523A !important;
+    background-color: #24523A !important;
+    border-radius: 6px !important;
+    box-shadow: inset 0 -3px 0 #F0883E !important;
+}
+
+/* Selected page: text and icon */
+a[data-testid="stTopNavLink"][aria-current="page"] p,
+a[data-testid="stTopNavLink"][aria-current="page"] span,
+a[data-testid="stTopNavLink"][aria-current="page"] [data-testid="stIconMaterial"] {
+    color: #F0883E !important;
+    -webkit-text-fill-color: #F0883E !important;
+}
+
+/* Streamlit header */
+header[data-testid="stHeader"],
+[data-testid="stAppHeader"] {
+    background: #13301F !important;
+    background-color: #13301F !important;
+}
+
+/* Streamlit top-right controls: Deploy and menu */
+[data-testid="stAppDeployButton"],
+[data-testid="stToolbar"],
+[data-testid="stToolbar"] button,
+[data-testid="stToolbar"] [data-testid="stIconMaterial"] {
+    color: #F0883E !important;
+    fill: #F0883E !important;
+    -webkit-text-fill-color: #F0883E !important;
+}
+
+/* Keep icons and text orange inside the top-right controls */
+[data-testid="stAppDeployButton"] *,
+[data-testid="stToolbar"] * {
+    color: #F0883E !important;
+    fill: #F0883E !important;
+    -webkit-text-fill-color: #F0883E !important;
+}
+
+/* Calculation settings background */
+div[data-testid="stExpander"] {
+    background-color: #F4EFE4 !important;
+    border: 1px solid #E2DACC !important;
+    border-radius: 10px !important;
+}
+
+div[data-testid="stExpander"] details,
+div[data-testid="stExpander"] [data-testid="stExpanderDetails"] {
+    background-color: #F4EFE4 !important;
+}
+
+
+/* Location popover */
+[data-testid="stPopover"] button {
+    background-color: #FFFFFF !important;
+    color: #13301F !important;
+    border: 1px solid #E2DACC !important;
+}
+
+[data-testid="stPopover"] button:hover {
+    background-color: #E8E3D8 !important;
+    color: #13301F !important;
+}
+
+[data-testid="stPopover"] [data-testid="stPopoverBody"] {
+    background-color: #FFFFFF !important;
+}
+
+/* White input fields and visible numbers */
+.stTextInput input,
+.stNumberInput input,
+.stTextArea textarea,
+.stSelectbox div[data-baseweb="select"] > div,
+.stMultiSelect div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important;
+}
+
+/* Quantity numbers */
+.stNumberInput input {
+    color: #26332D !important;
+    -webkit-text-fill-color: #26332D !important;
+    background-color: #FFFFFF !important;
+    font-weight: 600 !important;
+}
+
+/* Quantity buttons */
+.stNumberInput button {
+    background-color: #FFFFFF !important;
+    color: #13301F !important;
+    border-color: #E2DACC !important;
+}
+
+/* Basket product search */
+.stMultiSelect div[data-baseweb="select"] > div {
+    background-color: #FFFFFF !important;
+    border: 1px solid #E2DACC !important;
+}
+
+/* Search text */
+.stMultiSelect input {
+    background-color: #FFFFFF !important;
+    color: #26332D !important;
+    -webkit-text-fill-color: #26332D !important;
+}
+
+/* Selected basket products: orange */
+div[data-testid="stMultiSelect"] span[data-baseweb="tag"],
+div[data-testid="stMultiSelect"] [data-baseweb="tag"] {
+    background: #F0883E !important;
+    background-color: #F0883E !important;
+    border: 1px solid #F0883E !important;
+    color: #FFFFFF !important;
+}
+
+/* Selected product text and remove icon */
+div[data-testid="stMultiSelect"] span[data-baseweb="tag"] *,
+div[data-testid="stMultiSelect"] [data-baseweb="tag"] * {
+    color: #FFFFFF !important;
+    fill: #FFFFFF !important;
+}
+
+/* Search dropdown */
+[data-baseweb="popover"] {
+    background-color: #FFFFFF !important;
+}
+
+[data-baseweb="popover"] li {
+    background-color: #FFFFFF !important;
+    color: #26332D !important;
+}
+
+[data-baseweb="popover"] li:hover {
+    background-color: #F4EFE4 !important;
+}
+
+/* Cream application background */
+html,
+body,
+.stApp,
+[data-testid="stAppViewContainer"],
+[data-testid="stMain"] {
+    background-color: #F4EFE4 !important;
+}
+
 @media (max-width:640px){.price .eu{font-size:2.6rem;}.block-container{padding-left:16px;padding-right:16px;}}
 </style>""",
     unsafe_allow_html=True,
@@ -370,7 +593,7 @@ def plans_for(cost, stores, home, max_stores):
 # ============================================================
 
 def header():
-    left, mid, right = st.columns([3.3, 4.7, 2], vertical_alignment="center")
+    left, mid, right, logo = st.columns([3.3, 4.7, 2, 2], vertical_alignment="center")
     left.markdown(
         '<div style="font-stretch:118%;font-weight:800;font-size:1.12rem;white-space:nowrap;">🛒 Supermarket comparison</div>',
         unsafe_allow_html=True,
@@ -383,6 +606,9 @@ def header():
             st.write("Your basket is empty.")
         for t in basket:
             st.markdown(f"**{label(t)}** · {st.session_state[f'qty_{t}']:g} {unit(t)}")
+    with logo:
+        if LOGO_BASKIT.exists():
+            st.image(str(LOGO_BASKIT), width=110)
     if offline_geo:
         st.caption("The address service is not responding: using the saved location for this address.")
     if offline_stores:
@@ -471,10 +697,13 @@ def page_basket():
         html('<div class="panel">Your basket is empty. Search for a product above to start.</div>')
         return
 
-    st.write("")
     cheapest_chain = ppu.idxmin(axis=1)
     for type_id in basket:
-        c1, c2, c3 = st.columns([6, 2, 1.3], vertical_alignment="center")
+        c1, c2, c3 = st.columns(
+            [6, 2, 1.3],
+            vertical_alignment="center",
+            gap="small",
+        )
         best = ppu.loc[type_id].min()
         hint = (
             f'from <b>{eur(best)}/{unit(type_id)}</b> at {chain_name(cheapest_chain[type_id])}'
@@ -485,11 +714,26 @@ def page_basket():
             unsafe_allow_html=True,
         )
         is_count = TYPES.at[type_id, "unit"] in ("UNIDAD", "LAVADO")
-        c2.number_input(
-            f"Quantity ({unit(type_id)})", min_value=0.25 if not is_count else 1.0,
-            step=0.5 if not is_count else 1.0, key=f"qty_{type_id}",
-        )
-        c3.button("Details", key=f"sheet_{type_id}", on_click=open_sheet, args=(type_id,), width="stretch")
+
+        with c2:
+            st.caption(f"Quantity ({unit(type_id)})")
+            st.number_input(
+                f"Quantity ({unit(type_id)})",
+                min_value=0.25 if not is_count else 1.0,
+                step=0.5 if not is_count else 1.0,
+                key=f"qty_{type_id}",
+                label_visibility="collapsed",
+            )
+
+        with c3:
+            st.button(
+                "Details",
+                key=f"sheet_{type_id}",
+                on_click=open_sheet,
+                args=(type_id,),
+                width="stretch",
+            )
+
         st.divider()
 
     if st.button("Compare my basket", type="primary"):
@@ -603,15 +847,28 @@ def recommendation_card(ranked, plan_stores):
     """Compact recommendation card with highlighted plan and total cost."""
     best, headline, note, saving = plan_summary(ranked)
 
-    with st.container(border=True):
+    st.markdown(
+        """
+        <style>
+        .st-key-recommended-plan {
+            background-color: #ffe6cc;
+            border: 1px solid #D8D0C2;
+            border-radius: 12px;
+            padding: 1.2rem 1rem;
+        }
+        </style>
+        """,
+        unsafe_allow_html=True,
+    )
 
+    with st.container(key="recommended-plan"):
         # Highlighted recommendation label
         html("""
         <div style="
             display:inline-block;
-            background:rgba(80, 130, 150, 0.16);
-            border:1px solid rgba(100, 160, 180, 0.35);
-            color:#5B9DB5;
+            background:#E3F1E8;
+            border:1px solid #B9D8C5;
+            color:#2E7D5B;
             padding:5px 11px;
             border-radius:7px;
             font-size:0.72rem;
@@ -638,8 +895,8 @@ def recommendation_card(ranked, plan_stores):
         with right:
             html(f"""
             <div style="
-                background:rgba(80, 130, 150, 0.12);
-                border:1px solid rgba(100, 160, 180, 0.35);
+                background:#E3F1E8;
+                border:1px solid #B9D8C5;
                 border-radius:10px;
                 padding:10px 13px;
                 text-align:center;
@@ -648,7 +905,7 @@ def recommendation_card(ranked, plan_stores):
                     font-size:0.68rem;
                     font-weight:750;
                     letter-spacing:0.09em;
-                    color:#5B9DB5;
+                    color:#2E7D5B;
                     margin-bottom:3px;
                 ">TOTAL TRIP COST</div>
                 <div style="
@@ -704,8 +961,50 @@ def recommendation_card(ranked, plan_stores):
         )
         d.metric(
             "Saved vs. best single store",
-            eur(saving) if saving else "—"        )
+            eur(saving) if saving else "—"
+        )
+        st.markdown("#### Your best route")
         html(route_html(best, plan_stores))
+        with st.expander("Calculation settings"):
+                    st.slider(
+                        "Travel cost (€/km)", 0.0, 1.0,
+                        step=0.05, key="cost_per_km",
+                        help="0 if you walk. About 0.25 €/km by car."
+                    )
+                    st.slider(
+                        "Value of your time (€/hour)", 0.0, 30.0,
+                        step=1.0, key="value_of_time",
+                        help="How much an hour of your time is worth. 0 ignores time."
+                    )
+                    st.slider(
+                        "Travel speed (km/h)", 3.0, 40.0,
+                        step=1.0, key="speed_kmh",
+                        help="About 5 km/h walking, 25 km/h by car in the city."
+                    )
+                    st.slider(
+                        "Minutes spent in each store", 0.0, 20.0,
+                        step=1.0, key="min_per_stop",
+                        help="Entering, finding the products, queueing and paying."
+                    )
+                    st.slider(
+                        "Other cost of each extra stop (€)", 0.0, 5.0,
+                        step=0.25, key="cost_per_stop",
+                        help="Fixed costs besides time: parking, bags…"
+                    )
+                    st.radio(
+                        "Maximum stores", [1, 2, 3],
+                        key="max_stores", horizontal=True
+                    )
+                    st.radio(
+                        "Price of each product", ["Typical price", "Cheapest"],
+                        key="stat", horizontal=True,
+                        help="Typical price = median of its type at the chain. Cheapest = the cheapest product of that type."
+                    )
+                    st.caption(
+                        f"Straight-line distances × {opt.DETOUR:.1f}, because streets are not straight. "
+                        "It tries up to 3 stores per chain and every visiting order."
+                    )
+        
         with st.expander("Compare with other options"):
             st.dataframe(alternatives_table(ranked), hide_index=True, width="stretch")
 
@@ -783,43 +1082,33 @@ def page_compare():
              on_change=pick_sheet)
 
     st.write("")
-    right, chart_area = st.columns([2, 3], gap="large")
-    with right:
-        st.markdown("### Your best route")
-        if ranked.empty:
-            st.warning("No combination of nearby stores has your whole basket. Increase the distance or remove products.")
-        else:
-            html(f'<div class="panel">{route_html(ranked.iloc[0], plan_stores)}</div>')
-        with st.expander("Calculation settings"):
-            st.slider("Travel cost (€/km)", 0.0, 1.0, step=0.05, key="cost_per_km",
-                      help="0 if you walk. About 0.25 €/km by car.")
-            st.slider("Value of your time (€/hour)", 0.0, 30.0, step=1.0, key="value_of_time",
-                      help="How much an hour of your time is worth. 0 ignores time.")
-            st.slider("Travel speed (km/h)", 3.0, 40.0, step=1.0, key="speed_kmh",
-                      help="About 5 km/h walking, 25 km/h by car in the city.")
-            st.slider("Minutes spent in each store", 0.0, 20.0, step=1.0, key="min_per_stop",
-                      help="Entering, finding the products, queueing and paying.")
-            st.slider("Other cost of each extra stop (€)", 0.0, 5.0, step=0.25, key="cost_per_stop",
-                      help="Fixed costs besides time: parking, bags…")
-            st.radio("Maximum stores", [1, 2, 3], key="max_stores", horizontal=True)
-            st.radio("Price of each product", ["Typical price", "Cheapest"], key="stat", horizontal=True,
-                     help="Typical price = median of its type at the chain. Cheapest = the cheapest product of that type.")
-            st.caption(f"Straight-line distances × {opt.DETOUR:.1f}, because streets are not straight. "
-                       "It tries up to 3 stores per chain and every visiting order.")
+    left_chart, right_chart = st.columns(2, gap="large")
 
-    with chart_area:
-        st.markdown("### Two questions about your basket")
-        a, b = st.tabs(["Is it worth going further?", "When do two stores pay off?"])
-        with a:
-            st.altair_chart(charts.scatter(cards, CHAIN_COLORS, CHAIN_NAMES, eur, km_text), width="stretch", theme=None)
-            st.caption("Each point is the nearest store of a chain. Faded points have another store that is both cheaper and closer.")
-        with b:
-            if ranked.empty:
-                st.write("This needs at least one combination of stores with your whole basket.")
-            else:
-                chart, threshold = sensitivity_view(plans)
-                st.altair_chart(chart, width="stretch", theme=None)
-                st.caption(threshold)
+    with left_chart:
+        st.markdown("#### Is it worth going further?")
+        st.altair_chart(
+            charts.worth_going_further(
+                cards,
+                CHAIN_COLORS,
+                CHAIN_NAMES,
+                DEFAULTS["cost_per_km"],
+            ),
+            width="stretch",
+            theme=None,
+        )
+        st.caption(
+            "Positive values mean the extra trip is worth it. "
+            "Negative values mean the travel cost exceeds the basket saving."
+        )
+
+    with right_chart:
+        st.markdown("#### When do two stores pay off?")
+        if ranked.empty:
+            st.write("This needs at least one combination of stores with your whole basket.")
+        else:
+            chart, threshold = sensitivity_view(plans)
+            st.altair_chart(chart, width="stretch", theme=None)
+            st.caption(threshold)
     show_pending_sheet()
 
 

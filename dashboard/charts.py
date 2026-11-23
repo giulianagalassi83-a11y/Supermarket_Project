@@ -59,6 +59,81 @@ def scatter(cards, colors, names, money, distance):
     return styled((base.mark_circle(size=230) + labels).properties(height=280))
 
 
+def worth_going_further(cards, colors, names, cost_per_km):
+    """Net saving against the closest store with a complete basket."""
+    c = cards[cards["complete"]].copy()
+
+    if c.empty:
+        return styled(
+            alt.Chart(pd.DataFrame({"message": ["No complete baskets to compare"]}))
+            .mark_text(fontSize=14, color=MUTED)
+            .encode(text="message:N")
+            .properties(height=120)
+        )
+
+    reference = c.loc[c["distance_km"].idxmin()]
+    reference_basket = reference["basket_eur"]
+    reference_distance = reference["distance_km"]
+
+    c["net_saving"] = (
+        reference_basket
+        - c["basket_eur"]
+        - 2 * (c["distance_km"] - reference_distance).clip(lower=0) * cost_per_km
+    )
+
+    c["Chain"] = c["chain"].map(lambda x: names.get(x, x))
+    c["Result"] = c["net_saving"].map(
+        lambda v: f"+€{v:.2f}" if v > 0 else f"-€{abs(v):.2f}" if v < 0 else "€0.00"
+    )
+    c["Travel cost"] = (
+        2 * (c["distance_km"] - reference_distance).clip(lower=0) * cost_per_km
+    )
+    c["Basket saving"] = reference_basket - c["basket_eur"]
+
+    order = c.sort_values("net_saving", ascending=True)["Chain"].tolist()
+
+    base = alt.Chart(c).encode(
+        y=alt.Y("Chain:N", sort=order, axis=_axis(None)),
+        x=alt.X(
+            "net_saving:Q",
+            title="Net saving against the closest store (€)",
+            scale=alt.Scale(zero=True),
+            axis=alt.Axis(tickCount=6),
+        ),
+        color=alt.Color(
+            "Chain:N",
+            scale=chain_scale(colors, names),
+            legend=None,
+        ),
+        tooltip=[
+            "Chain",
+            alt.Tooltip("Basket saving:Q", format="+.2f", title="Basket saving (€)"),
+            alt.Tooltip("Travel cost:Q", format=".2f", title="Extra round-trip cost (€)"),
+            alt.Tooltip("net_saving:Q", format="+.2f", title="Net saving (€)"),
+        ],
+    )
+
+    zero = alt.Chart(pd.DataFrame({"x": [0]})).mark_rule(
+        color=INK, strokeWidth=1.5
+    ).encode(x="x:Q")
+
+    bars = base.mark_bar(cornerRadiusEnd=4, height=20)
+
+    labels = base.mark_text(
+        dx=6, fontSize=11, fontWeight=700, color=INK
+    ).encode(
+        text="Result:N",
+        color=alt.value(INK),
+    )
+
+    return styled(
+        (zero + bars + labels).properties(
+            height=_height(len(order), 38)
+        )
+    )
+
+
+
 def sensitivity(sens, current_km):
     long = pd.concat([
         pd.DataFrame({"cost": sens["cost_per_km"], "Total": sens["best_total"], "Plan": "Best plan", "z": 0}),
