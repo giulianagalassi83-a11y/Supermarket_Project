@@ -285,7 +285,7 @@ def _compare_chain(chain, history):
         )
         return pd.DataFrame()
 
-    old_date, new_date = dates[-2:]
+    old_date, new_date = dates[0], dates[-1]
 
     old = rows[
         rows["collection_date"] == old_date
