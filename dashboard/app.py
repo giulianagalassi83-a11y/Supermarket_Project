@@ -1495,6 +1495,73 @@ def _trend_flag(values):
     return values.astype("string").str.strip().str.lower().isin(["true", "1", "yes"])
 
 
+@st.cache_data(show_spinner=False)
+def load_series():
+    """(exact-product series, product options, product-type series) for the price-over-time chart."""
+    from src.pipeline import config
+
+    hist = history.load_history()
+    types = history.type_series(hist)
+    if not config.SIM_CANONICAL_PATH.exists():
+        return pd.DataFrame(), pd.DataFrame(), types
+    products = history.product_series(hist, pd.read_csv(config.SIM_CANONICAL_PATH))
+    # Most chains first, then most dates, then the products whose prices moved most
+    options = products.groupby("canonical_id").agg(
+        name=("name", "first"), chains=("supermarket", "nunique"), dates=("collection_date", "nunique"),
+        moved=("price", lambda p: p.max() / p.min() - 1),
+    ).sort_values(["chains", "dates", "moved"], ascending=False)
+    return products, options, types
+
+
+def section_price_over_time():
+    st.markdown("### Price over time")
+    products, options, types = load_series()
+    modes = ["Exact product", "Product type"] if not options.empty else ["Product type"]
+    mode = st.segmented_control("Compare", modes, default=modes[0], key="trend_mode", label_visibility="collapsed") or modes[0]
+    if mode == "Exact product":
+        choice = st.selectbox(
+            "Product (same brand and size at every chain, matched by our similarity engine)", options.index,
+            format_func=lambda c: f"{options.at[c, 'name']}  ·  {options.at[c, 'chains']} chains", key="trend_product")
+        series = products[products["canonical_id"] == choice]
+        note = "Engine-matched product: same brand, variant and size at each chain."
+    else:
+        in_basket = [t for t in st.session_state.get("basket", {}) if t in TYPES.index]
+        type_ids = TYPES.index.tolist()
+        choice = st.selectbox("Product type", type_ids, index=type_ids.index(in_basket[0]) if in_basket else 0,
+                              format_func=label, key="trend_type")
+        series = types[types["product_type"] == choice]
+        note = ("Median of the products each chain had on each date. It also moves when a chain's range changes, "
+                "not only when prices change.")
+    if series.empty:
+        st.caption("No price history for this choice yet.")
+        return
+
+    unit_text = UNIT_TEXT.get(series["unit"].iat[0], str(series["unit"].iat[0]).lower())
+    dates = sorted(series["collection_date"].unique())
+    if len(dates) > 2:
+        start, end = st.select_slider("Window", options=dates, value=(dates[0], dates[-1]), format_func=day,
+                                      key=f"trend_window_{mode}_{choice}")
+        series = series[series["collection_date"].between(start, end)]
+    show(charts.price_over_time(series, CHAIN_COLORS, CHAIN_NAMES, unit_text))
+
+    # Change inside the window, per chain: first against last date it was collected
+    tags = []
+    for chain in [c for c in CHAIN_COLORS if c in set(series["supermarket"])]:
+        rows = series[series["supermarket"] == chain].sort_values("collection_date")
+        first, last = rows.iloc[0], rows.iloc[-1]
+        change = 100 * (last.price / first.price - 1)
+        text = "no change" if abs(change) < 0.05 else f"{change:+.1f}%"
+        span = (f"{day(first.collection_date)} to {day(last.collection_date)}" if len(rows) > 1
+                else f"only {day(first.collection_date)}")
+        tags.append(
+            f'<div class="tag" style="--chain:{CHAIN_COLORS[chain]}"><div class="chain">{chain_name(chain)}</div>'
+            f'<div class="price sm"><span class="eu">{last.price:.2f}</span><span class="cur"> €/{unit_text}</span></div>'
+            f'<div class="diff" style="color:var(--muted)">{text} in the window</div>'
+            f'<div class="meta"><span>{span}</span><span>{len(rows)} dates</span></div></div>')
+    html(f'<div class="tags">{"".join(tags)}</div>')
+    st.caption(f"{note} Prices per {unit_text}. Chains are only drawn on the dates we collected them.")
+
+
 def page_trends():
     header()
     try:
@@ -1553,6 +1620,8 @@ def page_trends():
             f'<div class="meta"><span>{day(r.old_date)} to {day(r.new_date)}</span><span>{r.products} comparable products</span></div></div>'
         )
     html(f'<div class="tags">{"".join(tags)}</div>')
+
+    section_price_over_time()
 
     st.markdown("### How many prices moved")
     show(charts.moved_share(summary, CHAIN_NAMES, fall_color="#1E5736", rise_color="#F0883E", same_color="#ABB4AD"))
@@ -1690,12 +1759,9 @@ def section_own_brand():
     table = insights.own_brand_gap(df)
     best = table.iloc[0]
     st.markdown(f"### Own brand saves most at {chain_name(best.chain)}: {best.gap_pct:.0f}% on a typical type")
-    left, right = st.columns(2, gap="large")
-    with left:
-        show(charts.own_brand(table, CHAIN_COLORS, CHAIN_NAMES))
-    with right:
-        show(charts.own_share(table, CHAIN_COLORS, CHAIN_NAMES))
-    st.caption("Saving: median across the types where the chain sells both own and national brands.")
+    show(charts.own_brand_map(table, CHAIN_COLORS, CHAIN_NAMES))
+    st.caption("Saving: median across the types where the chain sells both own and national brands. Share: own-brand "
+               "products among the chain's comparable products. Top right = a big own-brand shelf that also saves a lot.")
 
 
 def section_spread():
@@ -1709,6 +1775,16 @@ def section_spread():
 
 def section_barcode():
     section_matched()
+    loaded = load_matched()
+    if loaded is not None:
+        premium = matched.chain_premium(loaded[0])
+        enough = premium[premium["products"] >= 100]
+        top = (enough if not enough.empty else premium).sort_values("cheapest_pct", ascending=False).iloc[0]
+        st.markdown(f"#### On identical products, {chain_name(top.chain)} is the cheapest chain "
+                    f"{top.cheapest_pct:.0f}% of the time")
+        show(charts.chain_premium(premium, CHAIN_COLORS, CHAIN_NAMES))
+        st.caption("Each chain is scored only on the matched products it sells, so a chain with few matches "
+                   "(Aldi, Mercadona: mostly own brand) rests on little data. Ties count for every tied chain.")
     st.divider()
     pairs = insights.same_barcode()
     gap, by_type = pairs["gap_pct"].median(), insights.type_gap(df)
@@ -1790,14 +1866,9 @@ def matched_view(shown, chains):
         "Dearest vs cheapest": st.column_config.NumberColumn(format="+%.0f%%")})
 
 
-def section_matched():
-    loaded = load_matched()
-    if loaded is None:
-        return
-    table, _ = loaded
-    chains = [c for c in table.columns if c in CHAINS]
-    st.markdown(f"### {len(table):,} products matched across chains by our similarity engine")
-    query = st.text_input("Find a product", placeholder="e.g. leche sin lactosa, atún claro, yogur griego")
+def matched_search(chains, key="matched_query"):
+    """Search box over the engine-matched products; shows the product × chain table for a query."""
+    query = st.text_input("Find a product", placeholder="e.g. leche sin lactosa, atún claro, yogur griego", key=key)
     if load_searcher().mode == "tfidf":
         st.caption("Search runs in text mode: the embedding model isn't installed on this computer.")
     if query.strip():
@@ -1810,15 +1881,21 @@ def section_matched():
                          [["Product", "Chain", "Price"]], hide_index=True, width="stretch")
         else:
             matched_view(found, chains)
+        return True
+    return False
+
+
+def section_matched():
+    loaded = load_matched()
+    if loaded is None:
+        return
+    table, _ = loaded
+    chains = [c for c in table.columns if c in CHAINS]
+    st.markdown(f"### {len(table):,} products matched across chains by our similarity engine")
+    if matched_search(chains):
         st.divider()
 
-    show(charts.matched_gap(table))
-    st.caption(
-        "Distribution of price differences between the dearest and cheapest chain "
-        "for similarity-matched products"
-    )
-
-    shown = table.sort_values(["chains", "gap_pct"], ascending=False).head(50).assign(
+    shown =table.sort_values(["chains", "gap_pct"], ascending=False).head(50).assign(
         cheapest=lambda d: d["cheapest"].replace(CHAIN_NAMES),
         unit=lambda d: d["unit"].map(lambda u: "€/" + UNIT_TEXT.get(u, str(u).lower())),
     )
@@ -1899,8 +1976,8 @@ def section_route():
     )
     html(kpis_html)
 
-    st.markdown("#### Cost improvement by basket")
-    show(charts.route_dumbbell(table))
+    st.markdown("#### Saving per basket")
+    show(charts.optimizer_savings(table))
 
     st.caption(
         f"{total_baskets} random baskets of 5 product types. "
@@ -1919,13 +1996,101 @@ def section_coverage():
     st.caption("Number of products per category and chain. Small numbers mean a price here rests on few products.")
 
 
+# ---------- Shopper view: plain questions, answers in euros ----------
+
+def shopper_list():
+    table, n_types = insights.list_cost(df)
+    best, worst = table.iloc[0], table.iloc[-1]
+    st.markdown(f"### The same shopping list is cheapest at {chain_name(best.chain)}: "
+                f"{eur(worst.extra)} less than at {chain_name(worst.chain)}")
+    st.caption(f"One kg, litre or unit of each of the {n_types} product types all 7 chains sell, "
+               "buying the cheapest product of each type at that chain.")
+    show(charts.list_cost(table, CHAIN_COLORS, CHAIN_NAMES))
+    typical = table.sort_values("typical").iloc[0]
+    st.caption(f"If you pick typical (median) products instead of the cheapest, {chain_name(typical.chain)} "
+               f"comes out cheapest ({eur(typical.typical)}). A chain with a large range can be cheap at the bottom "
+               "and dear in the middle; the Analyst view shows both.")
+
+
+def shopper_aisles():
+    table = insights.category_prices(df, "min")
+    table = table[~table["low_data"]]
+    st.markdown("### Where to buy each aisle")
+    st.caption("Cheapest chain per category, buying the cheapest product of each type. "
+               "The runner-up shows how much more the next best chain costs.")
+    cards = []
+    for category, group in sorted(table.groupby("category"), key=lambda g: insights.category_name(g[0])):
+        group = group.sort_values("relative")
+        win = group.iloc[0]
+        if len(group) > 1:
+            second = group.iloc[1]
+            extra = 100 * (second.relative / win.relative - 1)
+            runner = f"next: {chain_name(second.chain)} " + ("same price" if extra < 0.5 else f"+{extra:.0f}%")
+        else:
+            runner = "only chain with enough data"
+        cards.append(
+            f'<div class="tag" style="--chain:{CHAIN_COLORS.get(win.chain, INK)}">'
+            f'<div class="small">{insights.category_name(category)}</div>'
+            f'<div class="chain">{chain_name(win.chain)}</div>'
+            f'<div class="diff" style="color:var(--muted)">{runner}</div>'
+            f'<div class="meta"><span>{len(group)} chains compared</span></div></div>')
+    html(f'<div class="tags">{"".join(cards)}</div>')
+
+
+def shopper_same_product():
+    loaded = load_matched()
+    if loaded is None:
+        return
+    table, _ = loaded
+    chains = [c for c in table.columns if c in CHAINS]
+    st.markdown("### Same product, different price: check before you buy")
+    st.caption("Identical products (same brand, variant and size) found at several chains by our similarity engine.")
+    if not matched_search(chains, key="shopper_query"):
+        sure = table[(table["confidence"] == "high") & (table["chains"] >= 3)]
+        st.markdown("**Biggest gaps on identical products**")
+        matched_view(sure.sort_values("gap_pct", ascending=False).head(10), chains)
+        st.caption("Only products found at 3 or more chains with a high-confidence match. Prices per kg, litre or unit.")
+
+
+def shopper_own_brand():
+    table = insights.own_brand_gap(df)
+    best = table.iloc[0]
+    st.markdown(f"### Switching to own brand saves {table['gap_pct'].min():.0f}–{best.gap_pct:.0f}%, "
+                f"most at {chain_name(best.chain)}")
+    show(charts.own_brand(table, CHAIN_COLORS, CHAIN_NAMES))
+    st.caption("How much cheaper a chain's own brand is than the national brands it sells, on a typical product type.")
+
+
+def shopper_product_or_store():
+    table = insights.price_spread(df).head(3)
+    st.markdown("### Within one chain, the product you pick matters more than the store")
+    cards = [
+        f'<div class="tag" style="--chain:{BEST}"><div class="chain">{insights.category_name(r.category)}</div>'
+        f'<div class="price sm"><span class="eu">{r.within:.1f}</span><span class="cur">×</span></div>'
+        f'<div class="diff" style="color:var(--muted)">dearest vs cheapest product in one chain</div>'
+        f'<div class="meta"><span>between chains: {r.between:.1f}×</span></div></div>'
+        for r in table.itertuples()]
+    html(f'<div class="tags">{"".join(cards)}</div>')
+    st.caption("Typical spread inside one chain (90th against 10th percentile price) against the spread between "
+               "chains' typical prices, for the three categories where it is widest.")
+
+
 def page_analysis():
     header()
     html('<div class="hero">What the prices tell us</div>')
+    view = st.segmented_control("View", ["Shopper", "Analyst"], default="Shopper", key="analysis_view",
+                                label_visibility="collapsed") or "Shopper"
+    if view == "Shopper":
+        html('<div class="lede">Where to shop, in euros. Across all products we collected, not just your basket.</div>')
+        for section in (shopper_list, shopper_aisles, shopper_same_product, shopper_own_brand, shopper_product_or_store):
+            section()
+            st.divider()
+        return
+
     html('<div class="lede">Across all products, not just your basket. These results are provisional until '
          "the product classifier is fully evaluated.</div>")
-    tabs = st.tabs(["Same product", "Chains", "Categories", "Own brand", "Product or store", "Optimizer gain", "Data coverage"])
-    sections = [section_barcode, section_chains, section_categories, section_own_brand, section_spread,
+    tabs = st.tabs(["Chains", "Categories", "Same product", "Own brand", "Product or store", "Optimizer gain", "Data coverage"])
+    sections = [section_chains, section_categories, section_barcode, section_own_brand, section_spread,
                 section_route, section_coverage]
     for tab, section in zip(tabs, sections):
         with tab:

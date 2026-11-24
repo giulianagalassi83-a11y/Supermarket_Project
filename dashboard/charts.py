@@ -304,89 +304,24 @@ def coverage(table, names, categories):
 
 
 def index_dumbbell(table, colors, names):
-    """Compare supermarket price indices using typical and cheapest product prices."""
-    t = table.copy()
-    t["Chain"] = t["chain"].map(lambda x: names.get(x, x))
-
-    # Sort supermarkets by typical price index.
-    order = (
-        t.sort_values("median", ascending=True)["Chain"]
-        .tolist()
+    """Price index per chain: typical (median) and cheapest product, joined by a line (Mercadona = 100)."""
+    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)))
+    order = t.sort_values("median")["Chain"].tolist()
+    long = t.melt(id_vars="Chain", value_vars=["cheapest", "median"], var_name="m", value_name="Index")
+    domain = ["Cheapest product", "Typical product (median)"]
+    long["Measure"] = long["m"].map({"cheapest": domain[0], "median": domain[1]})
+    y = alt.Y("Chain:N", sort=order, axis=_axis(None))
+    x = alt.X("Index:Q", title="Price index (Mercadona = 100)", scale=alt.Scale(zero=False, nice=True))
+    ref = alt.Chart(pd.DataFrame({"Index": [100]})).mark_rule(color=QUIET, strokeDash=[4, 4]).encode(x="Index:Q")
+    link = alt.Chart(t).mark_rule(color="#C9D2CD", strokeWidth=2).encode(x="cheapest:Q", x2="median:Q", y=y)
+    dots = alt.Chart(long).mark_circle(size=140, opacity=1, stroke=SURFACE, strokeWidth=2).encode(
+        x=x, y=y,
+        color=alt.Color("Measure:N", scale=alt.Scale(domain=domain, range=[BEST, INK]), legend=alt.Legend(orient="top", title=None)),
+        tooltip=["Chain", "Measure", alt.Tooltip("Index:Q", format=".0f")],
     )
-
-    long = t.melt(
-        id_vars=["Chain"],
-        value_vars=["median", "cheapest"],
-        var_name="Method",
-        value_name="Index",
-    )
-
-    long["Method"] = long["Method"].map({
-        "median": "Typical price",
-        "cheapest": "Cheapest option",
-    })
-
-    domain = ["Typical price", "Cheapest option"]
-
-    y = alt.Y(
-        "Chain:N",
-        sort=order,
-        title=None,
-        axis=_axis(None),
-    )
-
-    x = alt.X(
-        "Index:Q",
-        title="Price index (Mercadona = 100)",
-        scale=alt.Scale(zero=False, nice=True),
-        axis=alt.Axis(tickCount=8),
-    )
-
-    reference = alt.Chart(
-        pd.DataFrame({"Index": [100]})
-    ).mark_rule(
-        color=QUIET,
-        strokeDash=[5, 4],
-        strokeWidth=1.5,
-    ).encode(
-        x="Index:Q"
-    )
-
-    bars = alt.Chart(long).mark_bar(
-        cornerRadiusEnd=4,
-        height=13,
-    ).encode(
-        x=x,
-        y=y,
-        yOffset=alt.YOffset(
-            "Method:N",
-            scale=alt.Scale(domain=domain),
-        ),
-        color=alt.Color(
-            "Method:N",
-            scale=alt.Scale(
-                domain=domain,
-                range=[BEST, "#F0883E"],
-            ),
-            legend=alt.Legend(
-                orient="top",
-                title=None,
-                labelFontSize=11,
-            ),
-        ),
-        tooltip=[
-            alt.Tooltip("Chain:N", title="Supermarket"),
-            alt.Tooltip("Method:N", title="Price measure"),
-            alt.Tooltip("Index:Q", title="Price index", format=".1f"),
-        ],
-    )
-
-    return styled(
-        (reference + bars).properties(
-            height=_height(len(order), 48)
-        )
-    )
-
+    text = alt.Chart(t).mark_text(align="left", dx=10, fontSize=12, color=MUTED).encode(
+        x="median:Q", y=y, text=alt.Text("median:Q", format=".0f"))
+    return styled((ref + link + dots + text).properties(height=_height(len(order), 40)))
 
 
 def category_heatmap(table, names, categories):
@@ -825,3 +760,133 @@ def basket_category_donut(basket_df, categories=None, bg_color="#F4EFE4"):
 
     chart_height = max(225, min(420, len(grouped) * 26))
     return _donut_style((arcs + pct_labels + center_amount + center_sub).properties(height=chart_height))
+
+
+# ============================================================
+# SHOPPER VIEW AND NEW ANALYST CHARTS (24 Nov)
+# ============================================================
+
+def list_cost(table, colors, names):
+    """What the same shopping list costs at each chain, buying the cheapest product of each type."""
+    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)))
+    t["text"] = [f"{c:.2f} €" + ("  cheapest" if e < 0.005 else f"  +{e:.2f} €")
+                 for c, e in zip(t["cheapest"], t["extra"])]
+    order = t["Chain"].tolist()
+    y = alt.Y("Chain:N", sort=order, axis=_axis(None, labelFontSize=13, labelColor=INK))
+    bars = alt.Chart(t).mark_bar(cornerRadiusEnd=4, height=22).encode(
+        x=alt.X("cheapest:Q", title="List cost (€)", axis=alt.Axis(tickCount=5),
+                scale=alt.Scale(domain=[0, float(t["cheapest"].max()) * 1.3])),
+        y=y, color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None),
+        tooltip=["Chain", alt.Tooltip("cheapest:Q", format=".2f", title="Cheapest products (€)"),
+                 alt.Tooltip("typical:Q", format=".2f", title="Typical products (€)"),
+                 alt.Tooltip("extra:Q", format="+.2f", title="Over the cheapest chain (€)")],
+    )
+    text = alt.Chart(t).mark_text(align="left", dx=6, fontSize=12, color=INK).encode(x="cheapest:Q", y=y, text="text:N")
+    return styled((bars + text).properties(height=_height(len(order), 38)))
+
+
+def chain_premium(table, colors, names, min_products=100):
+    """On identical (engine-matched) products: share of them where each chain is the cheapest.
+
+    Chains with fewer than min_products matched products are faded: their share rests on little data."""
+    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)))
+    t["text"] = [f"{c:.0f}%  ·  avg +{p:.0f}% over cheapest  ·  {n} products" + ("  (few)" if n < min_products else "")
+                 for c, p, n in zip(t["cheapest_pct"], t["premium_pct"], t["products"])]
+    order = t.sort_values("cheapest_pct", ascending=False)["Chain"].tolist()
+    y = alt.Y("Chain:N", sort=order, axis=_axis(None))
+    bars = alt.Chart(t).mark_bar(cornerRadiusEnd=4, height=18).encode(
+        x=alt.X("cheapest_pct:Q", title="Share of its matched products where the chain is the cheapest (%)",
+                scale=alt.Scale(domain=[0, 140]), axis=alt.Axis(values=[0, 25, 50, 75, 100])),
+        y=y, color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None),
+        opacity=alt.condition(f"datum.products < {min_products}", alt.value(0.4), alt.value(1)),
+        tooltip=["Chain", alt.Tooltip("cheapest_pct:Q", format=".0f", title="Cheapest (%)"),
+                 alt.Tooltip("premium_pct:Q", format=".1f", title="Average % over cheapest"),
+                 alt.Tooltip("products:Q", title="Matched products")],
+    )
+    text = alt.Chart(t).mark_text(align="left", dx=6, fontSize=11.5, color=INK).encode(x="cheapest_pct:Q", y=y, text="text:N")
+    return styled((bars + text).properties(height=_height(len(order), 34)))
+
+
+def own_brand_map(table, colors, names):
+    """Own brand: how much of the shelf it is (x) against how much it saves (y). One dot per chain."""
+    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x))).reset_index(drop=True)
+    # Labels go right of the dot; if that box would hit another dot or label, try left, above, below.
+    # Boxes in data units (x 0–70 ≈ 900 px, y 0–60 ≈ 380 px).
+    placed, sides = [], []
+    offsets = {"right": (1.0, 0), "left": (-1.0, 0), "above": (0, 3.2), "below": (0, -3.2)}
+    for r in t.itertuples():
+        w = 0.62 * len(r.Chain)
+        for side, (dx, dy) in offsets.items():
+            x0 = r.own_share_pct + (dx if side != "left" else dx - w) - (w / 2 if dx == 0 else 0)
+            box = (x0, x0 + w, r.gap_pct + dy - 1.3, r.gap_pct + dy + 1.3)
+            hits_dot = any(box[0] - 0.8 <= o.own_share_pct <= box[1] + 0.8 and box[2] - 1 <= o.gap_pct <= box[3] + 1
+                           for o in t.itertuples() if o.Index != r.Index)
+            hits_label = any(box[0] < b[1] and b[0] < box[1] and box[2] < b[3] and b[2] < box[3] for b in placed)
+            if not (hits_dot or hits_label):
+                break
+        placed.append(box)
+        sides.append(side)
+    t["side"] = sides
+    base = alt.Chart(t).encode(
+        x=alt.X("own_share_pct:Q", title="Own brand share of the shelf (%)", scale=alt.Scale(domain=[0, 70])),
+        y=alt.Y("gap_pct:Q", title="Saving against national brands (%)", scale=alt.Scale(domain=[0, 60])),
+        tooltip=["Chain", alt.Tooltip("own_share_pct:Q", format=".0f", title="Own brand share (%)"),
+                 alt.Tooltip("gap_pct:Q", format=".0f", title="Saving (%)"), alt.Tooltip("types:Q", title="Types compared")],
+    )
+    dots = base.mark_circle(size=220, opacity=1, stroke=SURFACE, strokeWidth=2).encode(
+        color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None))
+    layers = [dots]
+    for side, mark in {"right": dict(align="left", dx=12), "left": dict(align="right", dx=-12),
+                       "above": dict(align="center", dy=-16), "below": dict(align="center", dy=16)}.items():
+        if (t["side"] == side).any():
+            layers.append(alt.Chart(t[t["side"] == side]).mark_text(fontSize=12, fontWeight=600, color=INK, **mark).encode(
+                x="own_share_pct:Q", y="gap_pct:Q", text="Chain:N"))
+    return styled(alt.layer(*layers).properties(height=320))
+
+
+def optimizer_savings(table):
+    """Saving of the exact optimizer over the price list, one column per random basket (largest first)."""
+    t = table.sort_values("saving_eur", ascending=False).reset_index(drop=True)
+    t["rank"] = range(1, len(t) + 1)
+    t["Result"] = t["saving_eur"].map(lambda v: "Cheaper with the optimizer" if v > 0.005 else "Same cost")
+    t["plot"] = t["saving_eur"].clip(lower=0.05)  # a stub so "same cost" baskets stay visible
+    domain = ["Cheaper with the optimizer", "Same cost"]
+    bars = alt.Chart(t).mark_bar(cornerRadiusEnd=3, width=alt.RelativeBandSize(0.8)).encode(
+        x=alt.X("rank:O", title="Random baskets, largest saving first", axis=alt.Axis(labels=False, ticks=False)),
+        y=alt.Y("plot:Q", title="Saving (€)"),
+        color=alt.Color("Result:N", scale=alt.Scale(domain=domain, range=[BEST, QUIET]), legend=alt.Legend(orient="top", title=None)),
+        tooltip=[alt.Tooltip("saving_eur:Q", format=".2f", title="Saving (€)"),
+                 alt.Tooltip("greedy_eur:Q", format=".2f", title="Price list total (€)"),
+                 alt.Tooltip("exact_eur:Q", format=".2f", title="Optimizer total (€)"),
+                 alt.Tooltip("greedy_stops:Q", title="Price list stops"), alt.Tooltip("exact_stops:Q", title="Optimizer stops")],
+    )
+    return styled(bars.properties(height=240))
+
+
+def price_over_time(series, colors, names, unit_text):
+    """One line per chain over the collection dates; every chain that sells the product is in the legend."""
+    t = series.assign(Chain=series["supermarket"].map(lambda x: names.get(x, x)),
+                      date=pd.to_datetime(series["collection_date"]))
+    present = [k for k in colors if k in set(series["supermarket"])]
+    scale = alt.Scale(domain=[names.get(k, k) for k in present], range=[colors[k] for k in present])
+    tips = [alt.Tooltip("Chain:N"), alt.Tooltip("date:T", format="%d %b %Y", title="Date"),
+            alt.Tooltip("price:Q", format=".2f", title=f"€/{unit_text}")]
+    if "pack_price" in t:
+        tips.append(alt.Tooltip("pack_price:Q", format=".2f", title="Pack price (€)"))
+    if "products" in t:
+        tips.append(alt.Tooltip("products:Q", title="Products in the median"))
+    hover = alt.selection_point(fields=["Chain"], on="pointerover", nearest=True, empty=False)
+    # The axis spans at least ±10% of the middle price, so a 5-cent move doesn't look like a crash
+    lo, hi = float(t["price"].min()), float(t["price"].max())
+    mid, half = (lo + hi) / 2, max((hi - lo) / 2 * 1.15, 0.1 * (lo + hi) / 2)
+    base = alt.Chart(t).encode(
+        x=alt.X("date:T", title=None, axis=alt.Axis(format="%d %b", labelAngle=0, grid=False,
+                                                     tickCount={"interval": "week", "step": 1}, labelOverlap=True)),
+        y=alt.Y("price:Q", title=f"€ per {unit_text}", scale=alt.Scale(domain=[max(0, mid - half), mid + half], nice=True)),
+        color=alt.Color("Chain:N", scale=scale,
+                        legend=alt.Legend(orient="top", title=None, symbolType="stroke", symbolStrokeWidth=3)),
+    )
+    lines = base.mark_line().encode(strokeWidth=alt.condition(hover, alt.value(3.5), alt.value(2)))
+    points = base.mark_circle(size=80, opacity=1, stroke=SURFACE, strokeWidth=2).encode(tooltip=tips)
+    hits = base.mark_circle(size=500, opacity=0).encode(tooltip=tips).add_params(hover)  # bigger hover target
+    return styled((lines + points + hits).properties(height=340))

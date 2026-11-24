@@ -47,6 +47,18 @@ def basket_index(df):
     return out.sort_values("median", ascending=False).reset_index(drop=True), len(common)
 
 
+def list_cost(df):
+    """Cost of one kg / l / unit of every type all chains sell, per chain: cheapest product and typical (median) product."""
+    usable = prices.usable(df)
+    groups = usable.groupby(["product_type", "supermarket"])["price_per_unit"]
+    median, cheapest = groups.median().unstack(), groups.min().unstack()
+    common = median.dropna().index
+    out = pd.DataFrame({"cheapest": cheapest.loc[common].sum(), "typical": median.loc[common].sum()})
+    out = out.rename_axis("chain").reset_index().sort_values("cheapest").reset_index(drop=True)
+    out["extra"] = out["cheapest"] - out["cheapest"].min()
+    return out, len(common)
+
+
 def category_prices(df, stat="median"):
     """Long table per category and chain: price against the cheapest chain (1.0 = cheapest).
 

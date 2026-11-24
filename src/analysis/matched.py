@@ -71,3 +71,18 @@ def matched_gap(a="Bm", b="Consum", df=None, matches=None, canonical=None):
     return {"a": a, "b": b, "n": int(len(both)), "median_gap_pct": float(gap.median()) if len(gap) else float("nan"),
             "same_price_share": float((gap.abs() <= 0.5).mean()) if len(gap) else float("nan"),
             "a_cheaper_share": float((gap < -0.5).mean()) if len(gap) else float("nan")}
+
+
+def chain_premium(table):
+    """Per chain, over the matched products it sells: how often it is the cheapest and its median % above the cheapest."""
+    chains = [c for c in table.columns if c not in
+              ("canonical_id", "name", "unit", "chains", "cheapest", "gap_pct", "confidence")]
+    rows = []
+    for chain in chains:
+        sold = table[table[chain].notna()]
+        if sold.empty:
+            continue
+        above = 100 * (sold[chain] / sold[chains].min(axis=1) - 1)
+        rows.append({"chain": chain, "products": len(sold), "cheapest_pct": 100 * (sold["cheapest"] == chain).mean(),
+                     "premium_pct": above.mean()})
+    return pd.DataFrame(rows).sort_values("premium_pct").reset_index(drop=True)

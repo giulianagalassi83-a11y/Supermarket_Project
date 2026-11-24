@@ -266,6 +266,43 @@ def available_dates(history):
 
 
 # --------------------------------------------------
+# PRICE OVER TIME (one line per chain, for the Trends chart)
+# --------------------------------------------------
+
+def _series_rows(history):
+    """Observations with a usable price per unit."""
+    ok = _quality_ok(history) & history["price_per_unit"].notna() & (history["price_per_unit"] > 0)
+    return history[ok]
+
+
+def type_series(history):
+    """Per product type, chain and date: median € per unit and number of products, in the type's main unit."""
+    rows = _series_rows(history)
+    main_unit = rows.groupby("product_type")["unit"].agg(lambda u: u.mode().iat[0])
+    rows = rows[rows["unit"] == rows["product_type"].map(main_unit)]
+    out = rows.groupby(["product_type", "supermarket", "collection_date"]).agg(
+        price=("price_per_unit", "median"), products=("product_key", "nunique"), unit=("unit", "first"),
+        label=("product_type_label", "first"),
+    )
+    return out.reset_index()
+
+
+def product_series(history, canonical):
+    """Per engine-matched product (canonical_id), chain and date: € per unit and pack price."""
+    rows = _series_rows(history).merge(canonical[["canonical_id", "product_key"]], on="product_key")
+    main_unit = rows.groupby("canonical_id")["unit"].agg(lambda u: u.mode().iat[0])
+    rows = rows[rows["unit"] == rows["canonical_id"].map(main_unit)]
+    out = rows.groupby(["canonical_id", "supermarket", "collection_date"]).agg(
+        price=("price_per_unit", "median"), pack_price=("price", "median"), unit=("unit", "first"),
+        name=("name", "first"),
+    ).reset_index()
+    # Only products with a real comparison: 2+ chains and 2+ dates
+    shape = out.groupby("canonical_id").agg(chains=("supermarket", "nunique"), dates=("collection_date", "nunique"))
+    keep = shape[(shape["chains"] >= 2) & (shape["dates"] >= 2)].index
+    return out[out["canonical_id"].isin(keep)]
+
+
+# --------------------------------------------------
 # PRICE COMPARISONS
 # --------------------------------------------------
 
