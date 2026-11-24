@@ -206,10 +206,23 @@ def apply_rule(cands, products, taxonomy, thresholds, vectorizer):
     return out.drop(columns="chain_category").reset_index()
 
 
+def apply_keyword_rules(out, products, rules=None):
+    """Re-split sibling types by a name keyword (config.KEYWORD_RULES), e.g. sparkling vs still water."""
+    rules = config.KEYWORD_RULES if rules is None else rules
+    names = products.set_index("product_key")["name_clean"].reindex(out["product_key"]).fillna("")
+    names = names.map(strip_accents).str.lower().to_numpy()
+    for rule in rules:
+        inside = out["type_id"].isin(rule["types"]).to_numpy()
+        match = pd.Series(names).str.contains(rule["pattern"], regex=True).to_numpy()
+        out.loc[inside & match, "type_id"] = rule["if_match"]
+        out.loc[inside & ~match, "type_id"] = rule["otherwise"]
+    return out
+
+
 def decide(products, hits, taxonomy, vectorizer, thresholds):
-    """Classify every product: candidate scores + decision rule."""
+    """Classify every product: candidate scores + decision rule + keyword rules."""
     cands = candidate_scores(products, hits, taxonomy, vectorizer)
-    return apply_rule(cands, products, taxonomy, thresholds, vectorizer)
+    return apply_keyword_rules(apply_rule(cands, products, taxonomy, thresholds, vectorizer), products)
 
 
 # ---------------------------------------------------------------- similar-product search

@@ -25,7 +25,7 @@ neg_platano_infantil,plátano,(ruido) bolsitas de fruta,"bolsita de fruta tritur
 neg_platano_otros,plátano,(ruido) otros,"champú, mermelada, barritas de cereales",1,
 tomate_fresco,tomate,Tomate fresco,"tomate fresco de ensalada, pera o en rama",0,KILO
 tomate_cherry,tomate,Tomate cherry,tomate cherry bandeja,0,KILO
-tomate_triturado,tomate,Tomate triturado / natural,tomate triturado o natural en conserva lata,0,KILO
+tomate_triturado,tomate,Tomate triturado / natural,"tomate triturado, troceado o natural en conserva lata",0,KILO
 tomate_frito,tomate,Tomate frito,tomate frito en brik o frasco,0,KILO
 neg_tomate_salsas,tomate,(ruido) salsas,"ketchup, salsa para pasta, pesto, mostaza",1,
 neg_tomate_platos,tomate,(ruido) platos con tomate,"sardinas en tomate, albóndigas con tomate, pizza, alubias",1,
@@ -67,9 +67,9 @@ salmon_fresco,salmón,Salmón fresco,"salmón fresco en lomos, rodajas o porcion
 salmon_ahumado,salmón,Salmón ahumado,salmón ahumado en lonchas,0,KILO
 neg_salmon_mascotas,salmón,(ruido) comida para mascotas,comida para gatos o perros con salmón,1,
 neg_salmon_otros,salmón,(ruido) otros,"pepino, mostaza, cebolla, salsas",1,
-yogur_natural,yogur,Yogur natural,yogur natural pack de 4,0,KILO
+yogur_natural,yogur,Yogur natural,yogur natural o natural azucarado pack de 4,0,KILO
 yogur_sabores,yogur,Yogur de sabores / frutas,yogur de sabores o con trozos de fruta,0,KILO
-yogur_griego,yogur,Yogur griego,yogur griego natural o azucarado,0,KILO
+yogur_griego,yogur,Yogur griego,"yogur griego, estilo griego",0,KILO
 yogur_bifidus,yogur,Yogur bífidus,yogur bífidus activo,0,KILO
 yogur_proteico,yogur,Yogur proteico / skyr,"yogur proteico, skyr alto en proteínas",0,KILO
 yogur_vegetal,yogur,Yogur vegetal,yogur vegetal de soja o coco,0,KILO
@@ -109,8 +109,8 @@ neg_aceite_conservas,aceite,(ruido) conservas en aceite,"atún, bonito, sardinas
 neg_aceite_salsas,aceite,(ruido) salsas y especias,"mayonesa, alioli, salsas, especias, colorante",1,
 neg_aceite_cosmetica,aceite,(ruido) cosmética,"aceite corporal, aceite esencial, rosa mosqueta",1,
 neg_aceite_otros,aceite,(ruido) otros,"verduras en conserva, pan con aceite, sal de frutas",1,
-neg_aceite_orujo,aceite,(ruido) aceite de orujo,"aceite de orujo de oliva",1,
-neg_aceite_alto_oleico,aceite,(ruido) girasol alto oleico,"aceite de girasol alto oleico para freír",1,
+neg_aceite_orujo,aceite,(ruido) aceite de orujo,aceite de orujo de oliva,1,
+neg_aceite_alto_oleico,aceite,(ruido) girasol alto oleico,aceite de girasol alto oleico para freír,1,
 detergente_liquido,detergente,Detergente líquido,detergente líquido para lavadora,0,LAVADO
 detergente_capsulas,detergente,Detergente en cápsulas,detergente en cápsulas para lavadora,0,LAVADO
 detergente_polvo,detergente,Detergente en polvo,detergente en polvo para lavadora,0,LAVADO
@@ -124,4 +124,33 @@ neg_papel_otros,papel higiénico,(ruido) otros,"suavizante, compresas, toallitas
 neg_manzana_bolsitas,manzana,(ruido) bolsitas y smoothies,"bolsita pouch de fruta triturada infantil, smoothie de frutas",1,
 neg_pasta_fideos_orientales,pasta,(ruido) fideos orientales,"fideos orientales instantáneos, noodles, ramen sabor carne o verduras",1,
 neg_pollo_fiambre,pollo,(ruido) fiambre de pavo / pollo,"pechuga de pavo en lonchas, fiambre de pavo braseado o ahumado, pechuga para sándwich",1,
-neg_zumo_limon,zumo,(ruido) zumo de limón para cocinar,"zumo de limón o de lima concentrado para cocinar",1,
+neg_zumo_limon,zumo,(ruido) zumo de limón para cocinar,zumo de limón o de lima concentrado para cocinar,1,
+neg_huevos_codorniz,huevos,(ruido) huevos de codorniz,"codorniz, huevo de codorniz",1,
+neg_atun_pate,atún,(ruido) paté de atún,paté de atún untable,1,
+neg_atun_tomate,atún,(ruido) atún en tomate,atún en tomate frito,1,
+neg_arroz_tostadas,arroz,(ruido) tostadas y tortitas de arroz,"tostadas ligeras, tortitas o rollitos de arroz",1,
+neg_arroz_vinagre_mascotas,arroz,(ruido) vinagre y comida de mascotas,"vinagre de arroz, comida para perros",1,
+neg_arroz_platos_listos,arroz,(ruido) platos de arroz listos,"arroz a banda con gambas, arroz con pollo al curry",1,
+neg_pasta_galleta_maria,pasta,(ruido) galleta María,galleta maría,1,
+neg_pasta_arroz_risotto,pasta,(ruido) arroz y risotto,"arroz integral, risotto",1,
+neg_pan_dulce,pan,(ruido) bollería dulce,"trenza dulce, cookie, palmera, caracola, pepito de crema, flauta de chocolate, hoops glaseados",1,
+neg_pan_rallado,pan,(ruido) pan rallado,pan rallado,1,
+neg_picada_empanada,carne picada,"(ruido) empanada, membrillo y consomé","empanada de carne, carne de membrillo, consomé",1,
+neg_platano_snacks,plátano,(ruido) chips y chocolate,"chips crujientes deshidratados, recubierta de chocolate con leche",1,
+neg_aceite_capilar,aceite,(ruido) aceite capilar y desmaquillante,"aceite capilar para el cabello, desmaquillante, centella asiática",1,
+neg_aceite_picante,aceite,(ruido) aceite aromático picante,"aceite aromático picante con especias, cayena",1,
+neg_tomate_conservas,tomate,(ruido) pescado en tomate,"atún, caballa, sardinas o paté en conserva",1,
+neg_tomate_secos,tomate,(ruido) tomate seco y concentrado,"seco deshidratado, doble concentrado",1,
+neg_tomate_snacks,tomate,(ruido) snacks y untables,"patatas fritas, crackers, galletas saladas, bruschetta, focaccia, hummus",1,
+neg_pollo_carcasas,pollo,(ruido) carcasas de pollo,"carcasas de pollo, carcasa y espinazo",1,
+neg_pollo_sazonador,pollo,(ruido) sazonador y snacks,"sazonador para pollo, snack de fuet, pollo en escabeche",1,
+neg_leche_fermentada,leche,(ruido) leche fermentada,"leche fermentada, actimel, danacol",1,
+neg_leche_bebidas_cafe,leche,(ruido) bebidas de café y chocolate,"bebida de chocolate, café latte, té matcha, starbucks",1,
+neg_leche_fruta,leche,(ruido) fruta con leche,"fruta con leche, zumo con leche",1,
+neg_manzana_snacks,manzana,(ruido) turrón y snacks de manzana,"turrón de feria, snack crujiente o chips",1,
+neg_salmon_ahumados_otros,salmón,(ruido) bacon y anchoa ahumados,"bacon, panceta, anchoa",1,
+neg_garbanzos_snacks,garbanzos,(ruido) hummus y snacks de garbanzo,"hummus, tempeh, tostadas de garbanzo, fideos de garbanzo",1,
+neg_garbanzos_cocido,garbanzos,(ruido) cocido preparado,cocido madrileño o andaluz en lata,1,
+neg_yogur_gatos_bolsitas,yogur,(ruido) yogur para gatos y bolsitas,"snack para gatos, bolsita infantil",1,
+neg_zumo_shots,zumo,(ruido) shots y naranjada,"shot de jengibre o cúrcuma, naranjada",1,
+neg_queso_porciones,queso,(ruido) quesitos en porciones,"queso fundido en porciones, quesitos",1,

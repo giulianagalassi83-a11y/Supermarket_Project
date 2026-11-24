@@ -68,6 +68,18 @@ EXCLUDED_CATEGORIES = [
 NO_RELEVANTE = "no_relevante"
 SEED = 42
 
+# Keyword rules applied after the classifier, for sibling types that TF-IDF character n-grams cannot tell
+# apart (24 Nov: 207 of 315 "agua_con_gas" products were still water). Within `types`, a product whose
+# accent-free name matches `pattern` gets `if_match`, any other gets `otherwise`.
+KEYWORD_RULES = [
+    {
+        "types": ["agua_sin_gas", "agua_con_gas"],
+        "pattern": r"con gas|gasificad|carbonatad|\bsoda\b|vichy|perrier|pellegrino|sifon|burbuja|sparkling",
+        "if_match": "agua_con_gas",
+        "otherwise": "agua_sin_gas",
+    },
+]
+
 # ---------------------------------------------------------------- similarity engine (src/similarity)
 SIM_DIR = DATA_DIR / "similarity"
 SIM_RESULTS_DIR = SIM_DIR / "results"

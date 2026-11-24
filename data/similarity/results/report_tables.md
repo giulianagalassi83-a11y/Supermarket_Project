@@ -121,9 +121,9 @@ Consensus of the human raters (majority = more than half; Gemini is not a voter)
 
 | vectorizer | model | test_n | test_accuracy | test_accuracy_ci95 | test_macro_f1 | relevant_precision | relevant_recall |
 |---|---|---|---|---|---|---|---|
-| tfidf | tfidf-char-3-5 | 97 | 0.732 | 0.64–0.81 | 0.587 | 0.912 | 0.852 |
-| base | BAAI/bge-m3 | 97 | 0.680 | 0.58–0.76 | 0.424 | 0.941 | 0.787 |
-| finetuned | encoder_final | 97 | 0.732 | 0.64–0.81 | 0.533 | 0.918 | 0.918 |
+| tfidf | tfidf-char-3-5 | 97 | 0.732 | 0.64–0.81 | 0.586 | 0.927 | 0.836 |
+| base | BAAI/bge-m3 | 97 | 0.722 | 0.63–0.80 | 0.519 | 0.927 | 0.836 |
+| finetuned | encoder_final | 97 | 0.753 | 0.66–0.83 | 0.549 | 0.947 | 0.885 |
 
 Production classifier: TF-IDF (confirmed 19 Nov); confusion matrix in results/confusion.png.
 
@@ -161,27 +161,27 @@ BM vs Consum, % BM is dearer (median over shared rows):
 
 | comparison | n | median_gap_pct | a_cheaper_share |
 |---|---|---|---|
-| before: type medians | 62 | 24.130 | 0.145 |
-| after: same product | 284 | 5.481 | 0.120 |
+| before: type medians | 61 | 19.857 | 0.131 |
+| after: same product | 290 | 3.914 | 0.141 |
 
 Chain ranking: median € per unit relative to the cheapest chain on each row (1.00 = cheapest). 
 
 | chain | median_vs_cheapest (types) | rows (types) | cheapest_share (types) | median_vs_cheapest (same product) | rows (same product) | cheapest_share (same product) |
 |---|---|---|---|---|---|---|
-| Aldi | 1.000 | 53 | 0.509 | 1.000 | 38 | 0.737 |
-| Mercadona | 1.030 | 53 | 0.358 | 1.003 | 77 | 0.364 |
-| Ahorramás | 1.323 | 63 | 0.206 | 1.017 | 284 | 0.444 |
-| Dia | 1.329 | 66 | 0.076 | 1.043 | 295 | 0.197 |
-| Consum | 1.466 | 66 | 0.061 | 1.000 | 466 | 0.406 |
-| Alcampo | 1.806 | 67 | 0.000 | 1.000 | 569 | 0.515 |
-| Bm | 1.839 | 65 | 0.015 | 1.084 | 478 | 0.224 |
+| Aldi | 1.011 | 53 | 0.491 | 1.000 | 35 | 0.714 |
+| Mercadona | 1.047 | 54 | 0.389 | 1.004 | 73 | 0.356 |
+| Ahorramás | 1.256 | 63 | 0.175 | 1.026 | 285 | 0.428 |
+| Dia | 1.305 | 67 | 0.090 | 1.046 | 295 | 0.180 |
+| Consum | 1.438 | 66 | 0.076 | 1.000 | 453 | 0.404 |
+| Alcampo | 1.790 | 67 | 0.000 | 1.000 | 567 | 0.501 |
+| Bm | 1.791 | 64 | 0.000 | 1.086 | 474 | 0.234 |
 
 Matches in matches.csv:
 
 | level | confidence | pairs |
 |---|---|---|
-| equivalent | balanced | 1126 |
-| same | balanced | 1424 |
-| same | high | 973 |
+| equivalent | balanced | 1131 |
+| same | balanced | 1437 |
+| same | high | 1009 |
 
-Canonical groups: 976; comparable on € per unit (≥ 2 chains): 829.
+Canonical groups: 948; comparable on € per unit (≥ 2 chains): 804.

@@ -1,4 +1,4 @@
 vectorizer,model,tau,delta,tune_n,tune_accuracy,tune_macro_f1,test_n,test_accuracy,test_accuracy_ci95,test_macro_f1,relevant_precision,relevant_recall
-tfidf,tfidf-char-3-5,0.12,0.035,300,0.73,0.573,97,0.732,0.64–0.81,0.587,0.912,0.852
-base,BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181,0.56,0.01,300,0.783,0.595,97,0.68,0.58–0.76,0.424,0.941,0.787
-finetuned,encoder_final@344f8753b9c2,0.28,0.015,300,0.733,0.556,97,0.732,0.64–0.81,0.533,0.918,0.918
+tfidf,tfidf-char-3-5,0.12,0.025,299,0.756,0.583,97,0.732,0.64–0.81,0.586,0.927,0.836
+base,BAAI/bge-m3@5617a9f61b028005a4858fdac845db406aefb181,0.53,0.01,299,0.776,0.608,97,0.722,0.63–0.80,0.519,0.927,0.836
+finetuned,encoder_final@344f8753b9c2,0.28,0.015,299,0.749,0.584,97,0.753,0.66–0.83,0.549,0.947,0.885
