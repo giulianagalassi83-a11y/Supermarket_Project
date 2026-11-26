@@ -7,6 +7,7 @@ use two hues around a grey midpoint.
 
 import altair as alt
 import pandas as pd
+import numpy as np
 
 INK, MUTED, BEST = "#17242D", "#5F6E78", "#12805C"
 QUIET = "#9AA7AE"
@@ -35,28 +36,6 @@ def _axis(title, **kwargs):
 
 def _height(rows, step=34, extra=44):
     return rows * step + extra
-
-
-def scatter(cards, colors, names, money, distance):
-    """Basket price against distance; stores beaten on both are faded."""
-    c = cards[cards["complete"]].copy()
-    c["Chain"] = c["chain"].map(lambda x: names.get(x, x))
-    c["dominated"] = [
-        bool(((c["basket_eur"] <= r.basket_eur) & (c["distance_km"] <= r.distance_km)
-              & ((c["basket_eur"] < r.basket_eur) | (c["distance_km"] < r.distance_km))).any())
-        for r in c.itertuples()
-    ]
-    c["Basket"] = c["basket_eur"].map(money)
-    c["Distance"] = c["distance_km"].map(distance)
-    base = alt.Chart(c).encode(
-        x=alt.X("distance_km:Q", title="Distance to the store (km)", scale=alt.Scale(zero=True)),
-        y=alt.Y("basket_eur:Q", title="Basket price (€)", scale=alt.Scale(zero=False)),
-        color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None),
-        opacity=alt.condition("datum.dominated", alt.value(0.28), alt.value(1)),
-        tooltip=["Chain", "Basket", "Distance"],
-    )
-    labels = base.mark_text(align="left", dx=11, fontSize=12, fontWeight=700, color=INK).encode(text="Chain", color=alt.value(INK))
-    return styled((base.mark_circle(size=230) + labels).properties(height=280))
 
 def _unwrap_scalar(val, default=None):
     while isinstance(val, (pd.DataFrame, pd.Series, list, tuple)):
@@ -177,13 +156,7 @@ def worth_going_further(cards, colors, names, cost_per_km, cost_matrix=None):
         per_item = net_saving / max(1, n_comp)
 
         is_closest = (chain == closest_chain) and abs(dist_km - closest_dist) < 1e-6
-        if is_closest:
-            val_label = f"Closest ({have_n}/{total_basket_items} items)"
-            plot_val = 0.0
-        else:
-            sign = "+" if per_item >= 0 else "-"
-            val_label = f"{sign}€{abs(per_item):.2f}/item ({have_n}/{total_basket_items} items)"
-            plot_val = round(per_item, 3)
+        plot_val = 0.0 if is_closest else round(per_item, 3)
 
         rows.append({
             "Chain": name,
@@ -285,200 +258,6 @@ def sensitivity(sens, current_km):
     return styled((lines + now).properties(height=280))
 
 
-def coverage(table, names, categories):
-    """Comparable products per category and chain."""
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)), Category=table["category"].map(categories))
-    order = t.groupby("Category")["products"].sum().sort_values(ascending=False).index.tolist()
-    base = alt.Chart(t).encode(
-        x=alt.X("Chain:N", axis=_axis(None, orient="top", labelAngle=0)),
-        y=alt.Y("Category:N", sort=order, axis=_axis(None)),
-    )
-    cells = base.mark_rect(cornerRadius=4, stroke=SURFACE, strokeWidth=2).encode(
-        color=alt.condition("datum.products == 0", alt.value(EMPTY), alt.Color(
-            "products:Q", scale=alt.Scale(type="sqrt", range=SEQUENTIAL), legend=alt.Legend(title="Products", orient="right"))),
-        tooltip=["Category", "Chain", alt.Tooltip("products:Q", title="Products")],
-    )
-    text = base.mark_text(fontSize=12).encode(
-        text="products:Q", color=alt.condition("datum.products >= 40", alt.value("#FFFFFF"), alt.value(INK)))
-    return styled((cells + text).properties(height=_height(len(order), 30)))
-
-
-def index_dumbbell(table, colors, names):
-    """Price index per chain: typical (median) and cheapest product, joined by a line (Mercadona = 100)."""
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)))
-    order = t.sort_values("median")["Chain"].tolist()
-    long = t.melt(id_vars="Chain", value_vars=["cheapest", "median"], var_name="m", value_name="Index")
-    domain = ["Cheapest product", "Typical product (median)"]
-    long["Measure"] = long["m"].map({"cheapest": domain[0], "median": domain[1]})
-    y = alt.Y("Chain:N", sort=order, axis=_axis(None))
-    x = alt.X("Index:Q", title="Price index (Mercadona = 100)", scale=alt.Scale(zero=False, nice=True))
-    ref = alt.Chart(pd.DataFrame({"Index": [100]})).mark_rule(color=QUIET, strokeDash=[4, 4]).encode(x="Index:Q")
-    link = alt.Chart(t).mark_rule(color="#C9D2CD", strokeWidth=2).encode(x="cheapest:Q", x2="median:Q", y=y)
-    dots = alt.Chart(long).mark_circle(size=140, opacity=1, stroke=SURFACE, strokeWidth=2).encode(
-        x=x, y=y,
-        color=alt.Color("Measure:N", scale=alt.Scale(domain=domain, range=[BEST, INK]), legend=alt.Legend(orient="top", title=None)),
-        tooltip=["Chain", "Measure", alt.Tooltip("Index:Q", format=".0f")],
-    )
-    text = alt.Chart(t).mark_text(align="left", dx=10, fontSize=12, color=MUTED).encode(
-        x="median:Q", y=y, text=alt.Text("median:Q", format=".0f"))
-    return styled((ref + link + dots + text).properties(height=_height(len(order), 40)))
-
-
-def category_heatmap(table, names, categories):
-    """Price against the cheapest chain, per category. Chains with too little data are left grey."""
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)), Category=table["category"].map(categories))
-    t["Compared"] = t["relative"].map(lambda v: "cheapest" if v <= 1.0005 else f"+{100 * (v - 1):.0f}%")
-    t["shown"] = t["Compared"].where(~t["low_data"], "few")
-    t["capped"] = t["relative"].clip(upper=2.5)
-    order = sorted(t["Category"].unique())
-    chains = t.groupby("Chain")["relative"].median().sort_values().index.tolist()
-    base = alt.Chart(t).encode(
-        x=alt.X("Chain:N", sort=chains, axis=_axis(None, orient="top", labelAngle=0)),
-        y=alt.Y("Category:N", sort=order, axis=_axis(None)),
-    )
-    cells = base.mark_rect(cornerRadius=4, stroke=SURFACE, strokeWidth=2).encode(
-        color=alt.condition("datum.low_data", alt.value(EMPTY), alt.Color(
-            "capped:Q", scale=alt.Scale(domain=[1, 2.5], range=SEQUENTIAL),
-            legend=alt.Legend(title="Times the cheapest", format=".1f", orient="right"))),
-        tooltip=["Category", "Chain", alt.Tooltip("Compared:N", title="Against cheapest"), alt.Tooltip("products:Q", title="Products")],
-    )
-    text = base.mark_text(fontSize=11.5).encode(
-        text="shown:N", color=alt.condition("datum.capped >= 1.8 && !datum.low_data", alt.value("#FFFFFF"), alt.value(INK)))
-    return styled((cells + text).properties(height=_height(len(order), 30)))
-
-
-def _chain_bars(table, value, title, colors, names, tooltip, fmt):
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)))
-    t["text"] = t[value].map(fmt)
-    order = t.sort_values(value, ascending=False)["Chain"].tolist()
-    y = alt.Y("Chain:N", sort=order, axis=_axis(None))
-    bars = alt.Chart(t).mark_bar(cornerRadiusEnd=4, height=18).encode(
-        x=alt.X(f"{value}:Q", title=title, axis=alt.Axis(tickCount=5)), y=y,
-        color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None), tooltip=tooltip,
-    )
-    return styled((bars + alt.Chart(t).mark_text(align="left", dx=6, color=INK, fontSize=12).encode(
-        x=f"{value}:Q", y=y, text="text:N")).properties(height=_height(len(order))))
-
-
-def own_brand(table, colors, names):
-    return _chain_bars(
-        table, "gap_pct", "Own brand saving against national brands (%)", colors, names,
-        ["Chain", alt.Tooltip("gap_pct:Q", format=".0f", title="Saving (%)"), alt.Tooltip("types:Q", title="Types compared")],
-        lambda v: f"{v:.0f}%")
-
-
-def own_share(table, colors, names):
-    return _chain_bars(
-        table, "own_share_pct", "Own brand share of comparable products (%)", colors, names,
-        ["Chain", alt.Tooltip("own_share_pct:Q", format=".0f", title="Own brand (%)")], lambda v: f"{v:.0f}%")
-
-
-def spread(table, categories):
-    """Within-chain spread against between-chain spread, per category."""
-    t = table.assign(Category=table["category"].map(categories))
-    order = t["Category"].tolist()
-    long = t.melt(id_vars="Category", value_vars=["within", "between"], var_name="m", value_name="Spread")
-    domain = ["Between products of one chain", "Between chains"]
-    long["Choice"] = long["m"].map({"within": domain[0], "between": domain[1]})
-    x = alt.X("Spread:Q", title="Dearest against cheapest (times)", scale=alt.Scale(type="log", domain=[1, 12]),
-              axis=alt.Axis(values=[1, 2, 3, 5, 10]))
-    y = alt.Y("Category:N", sort=order, axis=_axis(None))
-    link = alt.Chart(t).mark_rule(color="#C9D2CD", strokeWidth=2).encode(x="within:Q", x2="between:Q", y=y)
-    dots = alt.Chart(long).mark_circle(size=120, opacity=1, stroke=SURFACE, strokeWidth=2).encode(
-        x=x, y=y,
-        color=alt.Color("Choice:N", scale=alt.Scale(domain=domain, range=[BEST, QUIET]), legend=alt.Legend(orient="top", title=None)),
-        tooltip=["Category", "Choice", alt.Tooltip("Spread:Q", format=".1f", title="Times")],
-    )
-    return styled((link + dots).properties(height=_height(len(order), 26)))
-
-
-def barcode_gap(pairs):
-    """Histogram of BM against Consum on the same barcode."""
-    width = 4
-    centre = ((pairs["gap_pct"].clip(-40, 40) + width / 2) // width * width).astype(int)
-    t = centre.value_counts().rename_axis("gap").reset_index(name="products")
-    t["side"] = t["gap"].map(lambda v: "BM dearer" if v > 0 else ("Consum dearer" if v < 0 else "About the same (±2%)"))
-    domain = ["Consum dearer", "About the same (±2%)", "BM dearer"]
-    bars = alt.Chart(t).mark_bar(cornerRadiusEnd=4, width=alt.RelativeBandSize(band=0.9)).encode(
-        x=alt.X("gap:O", sort="ascending", title="BM price against Consum (%), capped at ±40",
-                scale=alt.Scale(domain=list(range(-40, 41, width))), axis=alt.Axis(labelAngle=0, values=list(range(-40, 41, 20)))),
-        y=alt.Y("products:Q", title="Products"),
-        color=alt.Color("side:N", scale=alt.Scale(domain=domain, range=[FALL, QUIET, RISE]), legend=alt.Legend(orient="top", title=None)),
-        tooltip=[alt.Tooltip("side:N", title="Result"), alt.Tooltip("gap:O", title="Gap (%)"), alt.Tooltip("products:Q", title="Products")],
-    )
-    return styled(bars.properties(height=280))
-
-
-
-def route_dumbbell(table):
-    """Compare Price list and exact optimizer costs for every basket."""
-    data = table.copy().sort_values("saving_eur", ascending=False).reset_index(drop=True)
-    data["basket"] = [f"Basket {i + 1:02d}" for i in range(len(data))]
-
-    y = alt.Y(
-        "basket:N",
-        sort=alt.SortField(field="saving_eur", order="descending"),
-        axis=alt.Axis(title=None, labelLimit=120),
-    )
-
-    # A connecting line joins the two total costs for each basket.
-    lines = (
-        alt.Chart(data)
-        .mark_rule(color=QUIET, strokeWidth=2)
-        .encode(
-            y=y,
-            x=alt.X("exact_eur:Q", title="Total basket cost (€)", scale=alt.Scale(zero=False)),
-            x2="greedy_eur:Q",
-        )
-    )
-
-    # Each dot represents one method's total cost.
-    points = (
-        alt.Chart(data)
-        .transform_fold(
-            ["greedy_eur", "exact_eur"],
-            as_=["method", "cost"],
-        )
-        .transform_calculate(
-            method_label=(
-                "datum.method === 'greedy_eur' "
-                "? 'Price list' : 'Exact optimizer'"
-            ),
-            stops=(
-                "datum.method === 'greedy_eur' "
-                "? datum.greedy_stops : datum.exact_stops"
-            ),
-        )
-        .mark_circle(size=85, opacity=1)
-        .encode(
-            y=y,
-            x=alt.X("cost:Q", scale=alt.Scale(zero=False)),
-            color=alt.Color(
-                "method_label:N",
-                scale=alt.Scale(
-                    domain=["Price list", "Exact optimizer"],
-                    range=[QUIET, "#1E5736"],
-                ),
-                legend=alt.Legend(title=None, orient="top"),
-            ),
-            tooltip=[
-                alt.Tooltip("basket:N", title="Basket"),
-                alt.Tooltip("method_label:N", title="Method"),
-                alt.Tooltip("cost:Q", title="Total cost (€)", format=".2f"),
-                alt.Tooltip("saving_eur:Q", title="Saving (€)", format="+.2f"),
-                alt.Tooltip("greedy_stops:Q", title="Price list stops"),
-                alt.Tooltip("exact_stops:Q", title="Exact optimizer stops"),
-            ],
-        )
-    )
-
-    chart = (lines + points).properties(
-        height=max(420, min(780, len(data) * 22)),
-    )
-
-    return styled(chart)
-
-
 def moved_share(summary, names, fall_color="#1E5736", rise_color="#F0883E", same_color="#ABB4AD"):
     """Share of prices that rose, stayed and fell, per chain."""
     t = summary.assign(Chain=summary["chain"].map(lambda x: names.get(x, x)))
@@ -517,77 +296,6 @@ def moves(table, names, color, rounded_left=False):
     )
     return styled(bars.properties(height=_height(len(t), 28)))
 
-
-def category_change(table, names, categories):
-    """Average price change per category and chain; only cells with enough products exist."""
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)), Category=table["category"].map(categories))
-    t["text"] = t["average_pct"].map(lambda v: "0.0%" if abs(v) < 0.05 else f"{v:+.1f}%")
-    limit = max(5, t["average_pct"].abs().max())
-    base = alt.Chart(t).encode(
-        x=alt.X("Chain:N", axis=_axis(None, orient="top", labelAngle=0)),
-        y=alt.Y("Category:N", sort=sorted(t["Category"].unique()), axis=_axis(None)),
-    )
-    cells = base.mark_rect(cornerRadius=4, stroke=SURFACE, strokeWidth=2).encode(
-        color=alt.Color("average_pct:Q", scale=alt.Scale(domain=[-limit, 0, limit], range=[FALL, "#F2F3F1", RISE]),
-                        legend=alt.Legend(title="Change (%)", orient="right")),
-        tooltip=["Category", "Chain", alt.Tooltip("text:N", title="Average change"), alt.Tooltip("products:Q", title="Products")],
-    )
-    text = base.mark_text(fontSize=12).encode(
-        text="text:N", color=alt.condition(f"abs(datum.average_pct) >= {0.6 * limit}", alt.value("#FFFFFF"), alt.value(INK)))
-    return styled((cells + text).properties(height=_height(t["Category"].nunique(), 30)))
-
-def matched_gap(table):
-    """Histogram of price spread (gap_pct) across similarity-matched products."""
-    valid = table["gap_pct"].dropna()
-    if valid.empty:
-        return styled(
-            alt.Chart(pd.DataFrame({"message": ["No price gap data available"]}))
-            .mark_text(fontSize=14, color=MUTED)
-            .encode(text="message:N")
-            .properties(height=120)
-        )
-
-    width = 5
-    capped = valid.clip(0, 100)
-    centre = ((capped // width) * width + width / 2).astype(int)
-    t = centre.value_counts().rename_axis("gap_mid").reset_index(name="products")
-    t["range_label"] = t["gap_mid"].map(
-        lambda v: f"{max(0, v - width // 2)}%–{v + width // 2}%"
-    )
-    t["tier"] = t["gap_mid"].map(
-        lambda v: "Small (≤ 15%)" if v <= 15 else ("Moderate (15%–40%)" if v <= 40 else "Large (> 40%)")
-    )
-
-    bars = (
-        alt.Chart(t)
-        .mark_bar(cornerRadiusEnd=4, width=alt.RelativeBandSize(band=0.88))
-        .encode(
-            x=alt.X(
-                "gap_mid:O",
-                sort="ascending",
-                title="Price gap between dearest and cheapest chain",
-                axis=alt.Axis(
-                    labelAngle=0,
-                    labelExpr="datum.value + '%'",
-                ),
-            ),
-            y=alt.Y("products:Q", title="Matched products"),
-            color=alt.Color(
-                "tier:N",
-                scale=alt.Scale(
-                    domain=["Small (≤ 15%)", "Moderate (15%–40%)", "Large (> 40%)"],
-                    range=["#9CCDBB", "#1E5736", "#F0883E"],
-                ),
-                legend=alt.Legend(title=None, orient="top"),
-            ),
-            tooltip=[
-                alt.Tooltip("range_label:N", title="Gap range"),
-                alt.Tooltip("products:Q", title="Matched products"),
-            ],
-        )
-    )
-
-    return styled(bars.properties(height=250))
 
 def basket_category_donut(basket_df, categories=None, bg_color="#F4EFE4"):
     """Donut chart showing basket spending share (%) and amount (€) by category."""
@@ -785,65 +493,6 @@ def list_cost(table, colors, names):
     return styled((bars + text).properties(height=_height(len(order), 38)))
 
 
-def chain_premium(table, colors, names, min_products=100):
-    """On identical (engine-matched) products: share of them where each chain is the cheapest.
-
-    Chains with fewer than min_products matched products are faded: their share rests on little data."""
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x)))
-    t["text"] = [f"{c:.0f}%  ·  avg +{p:.0f}% over cheapest  ·  {n} products" + ("  (few)" if n < min_products else "")
-                 for c, p, n in zip(t["cheapest_pct"], t["premium_pct"], t["products"])]
-    order = t.sort_values("cheapest_pct", ascending=False)["Chain"].tolist()
-    y = alt.Y("Chain:N", sort=order, axis=_axis(None))
-    bars = alt.Chart(t).mark_bar(cornerRadiusEnd=4, height=18).encode(
-        x=alt.X("cheapest_pct:Q", title="Share of its matched products where the chain is the cheapest (%)",
-                scale=alt.Scale(domain=[0, 140]), axis=alt.Axis(values=[0, 25, 50, 75, 100])),
-        y=y, color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None),
-        opacity=alt.condition(f"datum.products < {min_products}", alt.value(0.4), alt.value(1)),
-        tooltip=["Chain", alt.Tooltip("cheapest_pct:Q", format=".0f", title="Cheapest (%)"),
-                 alt.Tooltip("premium_pct:Q", format=".1f", title="Average % over cheapest"),
-                 alt.Tooltip("products:Q", title="Matched products")],
-    )
-    text = alt.Chart(t).mark_text(align="left", dx=6, fontSize=11.5, color=INK).encode(x="cheapest_pct:Q", y=y, text="text:N")
-    return styled((bars + text).properties(height=_height(len(order), 34)))
-
-
-def own_brand_map(table, colors, names):
-    """Own brand: how much of the shelf it is (x) against how much it saves (y). One dot per chain."""
-    t = table.assign(Chain=table["chain"].map(lambda x: names.get(x, x))).reset_index(drop=True)
-    # Labels go right of the dot; if that box would hit another dot or label, try left, above, below.
-    # Boxes in data units (x 0–70 ≈ 900 px, y 0–60 ≈ 380 px).
-    placed, sides = [], []
-    offsets = {"right": (1.0, 0), "left": (-1.0, 0), "above": (0, 3.2), "below": (0, -3.2)}
-    for r in t.itertuples():
-        w = 0.62 * len(r.Chain)
-        for side, (dx, dy) in offsets.items():
-            x0 = r.own_share_pct + (dx if side != "left" else dx - w) - (w / 2 if dx == 0 else 0)
-            box = (x0, x0 + w, r.gap_pct + dy - 1.3, r.gap_pct + dy + 1.3)
-            hits_dot = any(box[0] - 0.8 <= o.own_share_pct <= box[1] + 0.8 and box[2] - 1 <= o.gap_pct <= box[3] + 1
-                           for o in t.itertuples() if o.Index != r.Index)
-            hits_label = any(box[0] < b[1] and b[0] < box[1] and box[2] < b[3] and b[2] < box[3] for b in placed)
-            if not (hits_dot or hits_label):
-                break
-        placed.append(box)
-        sides.append(side)
-    t["side"] = sides
-    base = alt.Chart(t).encode(
-        x=alt.X("own_share_pct:Q", title="Own brand share of the shelf (%)", scale=alt.Scale(domain=[0, 70])),
-        y=alt.Y("gap_pct:Q", title="Saving against national brands (%)", scale=alt.Scale(domain=[0, 60])),
-        tooltip=["Chain", alt.Tooltip("own_share_pct:Q", format=".0f", title="Own brand share (%)"),
-                 alt.Tooltip("gap_pct:Q", format=".0f", title="Saving (%)"), alt.Tooltip("types:Q", title="Types compared")],
-    )
-    dots = base.mark_circle(size=220, opacity=1, stroke=SURFACE, strokeWidth=2).encode(
-        color=alt.Color("Chain:N", scale=chain_scale(colors, names), legend=None))
-    layers = [dots]
-    for side, mark in {"right": dict(align="left", dx=12), "left": dict(align="right", dx=-12),
-                       "above": dict(align="center", dy=-16), "below": dict(align="center", dy=16)}.items():
-        if (t["side"] == side).any():
-            layers.append(alt.Chart(t[t["side"] == side]).mark_text(fontSize=12, fontWeight=600, color=INK, **mark).encode(
-                x="own_share_pct:Q", y="gap_pct:Q", text="Chain:N"))
-    return styled(alt.layer(*layers).properties(height=320))
-
-
 def optimizer_savings(table):
     """Saving of the exact optimizer over the price list, one column per random basket (largest first)."""
     t = table.sort_values("saving_eur", ascending=False).reset_index(drop=True)
@@ -890,3 +539,122 @@ def price_over_time(series, colors, names, unit_text):
     points = base.mark_circle(size=80, opacity=1, stroke=SURFACE, strokeWidth=2).encode(tooltip=tips)
     hits = base.mark_circle(size=500, opacity=0).encode(tooltip=tips).add_params(hover)  # bigger hover target
     return styled((lines + points + hits).properties(height=340))
+
+def aisle_runnerup_dumbbell(rows_df, chain_colors, chain_names):
+    """Dumbbell chart comparing the cheapest chain (0%) against the runner-up (+%) per aisle."""
+    domain = list(chain_colors.keys())
+    range_colors = [chain_colors[c] for c in domain]
+
+    display_df = rows_df.copy()
+    display_df["winner_label"] = display_df["winner"].replace(chain_names)
+    display_df["runner_label"] = display_df["runner"].fillna("").replace(chain_names)
+    display_df["gap_text"] = display_df.apply(
+        lambda r: (
+            "only 1 chain"
+            if pd.isna(r["extra_pct"])
+            else (
+                f"{r['runner_label']} (same price)"
+                if r["extra_pct"] < 0.5
+                else f"{r['runner_label']} (+{r['extra_pct']:.0f}%)"
+            )
+        ),
+        axis=1,
+    )
+    # Keep a tiny visual offset when tied so both chain colors stay visible
+    display_df["runner_x"] = display_df["extra_pct"].apply(
+        lambda v: np.nan if pd.isna(v) else (0.35 if v < 0.5 else float(v))
+    )
+    display_df["label_x"] = display_df["runner_x"].fillna(0.0)
+
+    order = display_df.sort_values(["extra_pct", "aisle"], ascending=[False, True])["aisle"].tolist()
+
+    # Connecting horizontal segment
+    rule = (
+        alt.Chart(display_df.dropna(subset=["runner_x"]))
+        .mark_rule(strokeWidth=2.5, color="#B9C4C9")
+        .encode(
+            y=alt.Y("aisle:N", sort=order, title=None, axis=alt.Axis(labelFontSize=12, labelFontWeight=600)),
+            x=alt.X(
+                "zero:Q",
+                title="Extra cost at the second cheapest chain (%)",
+                axis=alt.Axis(format=".0f", labelExpr="datum.value + '%'"),
+            ),
+            x2="runner_x:Q",
+        )
+    )
+
+    # Winner dot at 0%
+    winner_pts = (
+        alt.Chart(display_df)
+        .mark_circle(size=130, opacity=1, stroke="#F4EFE4", strokeWidth=1.5)
+        .encode(
+            y=alt.Y("aisle:N", sort=order),
+            x="zero:Q",
+            color=alt.Color(
+                "winner:N",
+                scale=alt.Scale(domain=domain, range=range_colors),
+                legend=alt.Legend(
+                    title="Chain",
+                    orient="top",
+                    labelExpr="datum.label == 'Bm' ? 'BM' : datum.label",
+                ),
+            ),
+            tooltip=[
+                alt.Tooltip("aisle:N", title="Aisle"),
+                alt.Tooltip("winner_label:N", title="Cheapest (0%)"),
+                alt.Tooltip("runner_label:N", title="2nd cheapest"),
+                alt.Tooltip("gap_text:N", title="Comparison"),
+                alt.Tooltip("n_chains:Q", title="Chains compared"),
+            ],
+        )
+    )
+
+    # Winner chain name to the left of the 0% dot
+    winner_labels = (
+        alt.Chart(display_df)
+        .mark_text(align="right", dx=-10, fontSize=11.5, fontWeight=700, color="#26332D")
+        .encode(
+            y=alt.Y("aisle:N", sort=order),
+            x="zero:Q",
+            text="winner_label:N",
+        )
+    )
+
+    # Runner-up dot
+    runner_pts = (
+        alt.Chart(display_df.dropna(subset=["runner_x"]))
+        .mark_circle(size=130, opacity=1, stroke="#F4EFE4", strokeWidth=1.5)
+        .encode(
+            y=alt.Y("aisle:N", sort=order),
+            x="runner_x:Q",
+            color=alt.Color("runner:N", scale=alt.Scale(domain=domain, range=range_colors), legend=None),
+            tooltip=[
+                alt.Tooltip("aisle:N", title="Aisle"),
+                alt.Tooltip("winner_label:N", title="Cheapest (0%)"),
+                alt.Tooltip("runner_label:N", title="2nd cheapest"),
+                alt.Tooltip("gap_text:N", title="Comparison"),
+                alt.Tooltip("n_chains:Q", title="Chains compared"),
+            ],
+        )
+    )
+
+    # Runner-up comparison label to the right
+    runner_labels = (
+        alt.Chart(display_df)
+        .mark_text(align="left", dx=10, fontSize=11.5, color="#5F6E78")
+        .encode(
+            y=alt.Y("aisle:N", sort=order),
+            x="label_x:Q",
+            text="gap_text:N",
+        )
+    )
+
+    max_x = float(display_df["runner_x"].max()) if display_df["runner_x"].notna().any() else 10.0
+
+    return (
+        (rule + winner_pts + runner_pts + winner_labels + runner_labels)
+        .encode(x=alt.X(scale=alt.Scale(domain=[-6.5, max_x + 9])))
+        .properties(height=max(380, len(display_df) * 29), background="#F4EFE4")
+        .configure_view(strokeWidth=0, fill="#F4EFE4")
+        .configure_axis(gridColor="#E2DACC", domainColor="#E2DACC")
+    )

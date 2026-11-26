@@ -710,11 +710,11 @@ def top_bar_logo():
 def header():
     left, mid, right, logo = st.columns([3.3, 4.7, 2, 1.8], vertical_alignment="center")
     left.markdown(
-        '<div style="font-stretch:118%;font-weight:800;font-size:1.12rem;white-space:nowrap;">🛒 Supermarket comparison</div>',
+        '<div style="font-stretch:118%;font-weight:800;font-size:1.12rem;white-space:nowrap;">Supermarket comparison</div>',
         unsafe_allow_html=True,
     )
     top_bar_logo()
-    with mid.popover(f"📍 Shopping near {st.session_state.address}, within {km_text(st.session_state.radius)}", width="stretch"):
+    with mid.popover(f"Shopping near {st.session_state.address}, within {km_text(st.session_state.radius)}", width="stretch"):
         st.text_input("Address", key="address")
         st.slider("Maximum distance to the store (km)", 0.3, 5.0, step=0.1, key="radius")
     with right.popover(f"Basket ({len(basket)})", icon=":material/shopping_basket:", width="stretch"):
@@ -1544,23 +1544,100 @@ def section_price_over_time():
         series = series[series["collection_date"].between(start, end)]
     show(charts.price_over_time(series, CHAIN_COLORS, CHAIN_NAMES, unit_text))
 
-    # Change inside the window, per chain: first against last date it was collected
-    tags = []
+    pills = []
     for chain in [c for c in CHAIN_COLORS if c in set(series["supermarket"])]:
         rows = series[series["supermarket"] == chain].sort_values("collection_date")
         first, last = rows.iloc[0], rows.iloc[-1]
         change = 100 * (last.price / first.price - 1)
-        text = "no change" if abs(change) < 0.05 else f"{change:+.1f}%"
-        span = (f"{day(first.collection_date)} to {day(last.collection_date)}" if len(rows) > 1
-                else f"only {day(first.collection_date)}")
-        tags.append(
-            f'<div class="tag" style="--chain:{CHAIN_COLORS[chain]}"><div class="chain">{chain_name(chain)}</div>'
-            f'<div class="price sm"><span class="eu">{last.price:.2f}</span><span class="cur"> €/{unit_text}</span></div>'
-            f'<div class="diff" style="color:var(--muted)">{text} in the window</div>'
-            f'<div class="meta"><span>{span}</span><span>{len(rows)} dates</span></div></div>')
-    html(f'<div class="tags">{"".join(tags)}</div>')
-    st.caption(f"{note} Prices per {unit_text}. Chains are only drawn on the dates we collected them.")
+        change_text = "0.0%" if abs(change) < 0.05 else f"{change:+.1f}%"
 
+        if abs(change) < 0.05:
+            badge_bg, badge_fg = "#EFECE4", "#5F6E78"
+        elif change > 0:
+            badge_bg, badge_fg = "#E3F1E8", "#1E5736"
+        else:
+            badge_bg, badge_fg = "#F9E4C9", "#6E5844"
+
+        span = (
+            f"{day(first.collection_date)} to {day(last.collection_date)}"
+            if len(rows) > 1
+            else f"only {day(first.collection_date)}"
+        )
+        pills.append(
+            f'<div class="trend-pill" title="{len(rows)} dates">'
+            f'<div class="trend-pill-main">'
+            f'<span class="trend-dot" style="background:{CHAIN_COLORS[chain]};"></span>'
+            f'<span class="trend-chain">{chain_name(chain)}</span>'
+            f'<span class="trend-sep">·</span>'
+            f'<span class="trend-price">{last.price:.2f} €/{unit_text}</span>'
+            f'<span class="trend-badge" style="background:{badge_bg};color:{badge_fg};">({change_text})</span>'
+            f'</div>'
+            f'<div class="trend-date">{span}</div>'
+            f'</div>'
+        )
+
+    html(
+        """
+        <style>
+        .trend-pills {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 12px;
+            margin: 0.85rem 0 0.75rem;
+        }
+        .trend-pill {
+            display: inline-flex;
+            flex-direction: column;
+            align-items: flex-start;
+            gap: 3px;
+            background: #FFFFFF;
+            border: 1px solid #E2DACC;
+            border-radius: 16px;
+            padding: 9px 16px;
+            font-size: 0.98rem;
+            color: #26332D;
+            white-space: nowrap;
+        }
+        .trend-pill-main {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .trend-dot {
+            width: 11px;
+            height: 11px;
+            border-radius: 50%;
+            flex-shrink: 0;
+        }
+        .trend-chain {
+            font-weight: 800;
+        }
+        .trend-sep {
+            color: #64736B;
+            font-weight: 700;
+        }
+        .trend-price {
+            font-weight: 600;
+            font-variant-numeric: tabular-nums;
+        }
+        .trend-badge {
+            font-weight: 700;
+            font-size: 0.86rem;
+            padding: 2px 8px;
+            border-radius: 999px;
+            font-variant-numeric: tabular-nums;
+        }
+        .trend-date {
+            padding-left: 19px;
+            font-size: 0.78rem;
+            color: #64736B;
+        }
+        </style>
+        """
+        + f'<div class="trend-pills">{"".join(pills)}</div>'
+    )
+    st.caption(f"{note} Prices per {unit_text}. Chains are only drawn on the dates we collected them.")
 
 def page_trends():
     header()
@@ -1650,70 +1727,6 @@ def page_trends():
         else:
             st.caption("No price increases available.")
 
-    st.markdown("### Change by category")
-    category_data = history.category_changes(valid_changes)
-    if not category_data.empty:
-        show(charts.category_change(category_data, CHAIN_NAMES, insights.category_name))
-        st.caption(f"Only cells with at least {history.MIN_CATEGORY_PRODUCTS} comparable products. Empty cells have too few.")
-    else:
-        st.caption("Not enough comparable products per category to display this chart yet.")
-
-
-    st.markdown("### Offers today")
-    st.caption("Current promotional activity across supermarkets.")
-
-    try:
-        table, former = history.offers()
-    except FileNotFoundError:
-        st.info("Normalized history for current offers is missing. Run the pipeline first.")
-    else:
-        offer_cards = []
-
-        for r in table.itertuples():
-            discount_text = (
-                f"Median reported discount: {r.median_discount_pct:.0f}%"
-                if pd.notna(r.median_discount_pct)
-                else "No valid discount recorded"
-            )
-            offer_cards.append(
-                f'<div class="offer-card">'
-                f'<div class="offer-chain" style="--chain-color:{CHAIN_COLORS.get(r.chain, INK)}">{chain_name(r.chain)}</div>'
-                f'<div class="offer-number">{r.on_offer_pct:.1f}%</div>'
-                f'<div class="offer-label">Products on offer</div>'
-                f'<div class="offer-detail">{r.on_offer:,} of {r.products:,} products</div>'
-                f'<div class="offer-divider"></div>'
-                f'<div class="offer-discount">{discount_text}</div>'
-                f'</div>'
-            )
-
-        former_text = (
-            f"Median reduction: {former['median_drop_pct']:.0f}%"
-            if pd.notna(former["median_drop_pct"])
-            else "No previous-price reductions recorded"
-        )
-        offer_cards.append(
-            f'<div class="offer-card">'
-            f'<div class="offer-chain" style="--chain-color:{CHAIN_COLORS["Mercadona"]}">Mercadona</div>'
-            f'<div class="offer-number">{former["products"]:,}</div>'
-            f'<div class="offer-label">Products with a previous price</div>'
-            f'<div class="offer-detail">Previous price higher than current</div>'
-            f'<div class="offer-divider"></div>'
-            f'<div class="offer-discount">{former_text}</div>'
-            f'</div>'
-        )
-
-        html(f'<div class="offer-grid">{"".join(offer_cards)}</div>')
-
-        st.caption(
-            "BM and Consum use reported offer prices; Mercadona uses its previous "
-            "selling price. These are not identical promotion definitions."
-        )
-
-    st.caption("Historical comparisons use normalized selling prices matched by product ID, with unchanged pack formats. "
-               "The geometric mean is not a consumption-weighted inflation measure. "
-               "Only products passing comparability checks and the large-change review threshold enter the main charts.")
-
-
 # ============================================================
 # PAGE: ANALYSIS
 # ============================================================
@@ -1721,79 +1734,6 @@ def page_trends():
 @st.cache_data(show_spinner=False)
 def route_comparison(stores, home, cost_per_km, cost_per_stop, **time):
     return insights.greedy_vs_exact(df, stores, home, cost_per_km, cost_per_stop, **time)
-
-
-def section_chains():
-    table, n_types = insights.basket_index(df)
-    bm = table.set_index("chain").loc["Bm"]
-    st.markdown("### How supermarket prices compare")
-    st.caption("Typical prices vs cheapest available options")
-    show(charts.index_dumbbell(table, CHAIN_COLORS, CHAIN_NAMES))
-    st.caption(
-        "Values are indexed to Mercadona (= 100). Higher values indicate "
-        "higher prices. The comparison shows how supermarket price levels "
-        "change when using typical prices versus the cheapest available products."
-    )
-    st.caption(f"Sum of {n_types} product types that all 7 chains sell. A wide gap means a chain's median is pulled up "
-               "by the products it stocks, not only by its prices.")
-
-
-def section_categories():
-    winners = insights.category_winners(df)
-    disagree = int((~winners["agree"]).sum())
-    st.markdown(f"### The cheapest chain depends on the category, and on the method in {disagree} of {len(winners)} categories")
-    choice = st.segmented_control("Price of each type", ["Median", "Cheapest product"], default="Median", key="category_stat")
-    stat = "min" if choice == "Cheapest product" else "median"
-    show(charts.category_heatmap(insights.category_prices(df, stat), CHAIN_NAMES, insights.category_name))
-    st.caption(f'Each type is compared on its own, then a median is taken. "few" means fewer than {insights.MIN_PRODUCTS} '
-               "products. Colors stop at 2.5× the cheapest; very large gaps can be data problems.")
-    table = winners.assign(
-        Category=winners["category"].map(insights.category_name),
-        Median=winners["median"].map(chain_name), Cheapest=winners["min"].map(chain_name),
-    ).sort_values("Category")
-    with st.expander("Winner of each category"):
-        st.dataframe(table[["Category", "Median", "Cheapest"]], hide_index=True, width="stretch")
-
-
-def section_own_brand():
-    table = insights.own_brand_gap(df)
-    best = table.iloc[0]
-    st.markdown(f"### Own brand saves most at {chain_name(best.chain)}: {best.gap_pct:.0f}% on a typical type")
-    show(charts.own_brand_map(table, CHAIN_COLORS, CHAIN_NAMES))
-    st.caption("Saving: median across the types where the chain sells both own and national brands. Share: own-brand "
-               "products among the chain's comparable products. Top right = a big own-brand shelf that also saves a lot.")
-
-
-def section_spread():
-    table = insights.price_spread(df)
-    more = int((table["within"] > table["between"]).sum())
-    st.markdown(f"### In {more} of {len(table)} categories, choosing the product matters more than choosing the store")
-    show(charts.spread(table, insights.category_name))
-    st.caption("Between products: p90 against p10 of a type within one chain. Between chains: dearest against "
-               "cheapest chain median of a type. Both are medians across the category.")
-
-
-def section_barcode():
-    section_matched()
-    loaded = load_matched()
-    if loaded is not None:
-        premium = matched.chain_premium(loaded[0])
-        enough = premium[premium["products"] >= 100]
-        top = (enough if not enough.empty else premium).sort_values("cheapest_pct", ascending=False).iloc[0]
-        st.markdown(f"#### On identical products, {chain_name(top.chain)} is the cheapest chain "
-                    f"{top.cheapest_pct:.0f}% of the time")
-        show(charts.chain_premium(premium, CHAIN_COLORS, CHAIN_NAMES))
-        st.caption("Each chain is scored only on the matched products it sells, so a chain with few matches "
-                   "(Aldi, Mercadona: mostly own brand) rests on little data. Ties count for every tied chain.")
-    st.divider()
-    pairs = insights.same_barcode()
-    gap, by_type = pairs["gap_pct"].median(), insights.type_gap(df)
-    st.markdown(f"#### How we check it: on the same barcode, BM is {gap:.0f}% dearer than Consum; "
-                f"our type medians say {by_type:.0f}%")
-    show(charts.barcode_gap(pairs))
-    same = (pairs["gap_pct"].abs() <= 0.5).mean()
-    st.caption(f"{len(pairs)} products with the same barcode at both chains; {100 * same:.0f}% have the same price. "
-               "Only BM and Consum publish barcodes, so this check covers those two chains.")
 
 
 @st.cache_resource(show_spinner="Loading product search…")
@@ -1988,14 +1928,6 @@ def section_route():
     )
 
 
-
-def section_coverage():
-    table = insights.coverage(df)
-    st.markdown(f"### {int(table['products'].sum()):,} comparable products behind these charts")
-    show(charts.coverage(table, CHAIN_NAMES, insights.category_name))
-    st.caption("Number of products per category and chain. Small numbers mean a price here rests on few products.")
-
-
 # ---------- Shopper view: plain questions, answers in euros ----------
 
 def shopper_list():
@@ -2009,7 +1941,7 @@ def shopper_list():
     typical = table.sort_values("typical").iloc[0]
     st.caption(f"If you pick typical (median) products instead of the cheapest, {chain_name(typical.chain)} "
                f"comes out cheapest ({eur(typical.typical)}). A chain with a large range can be cheap at the bottom "
-               "and dear in the middle; the Analyst view shows both.")
+               "and dear in the middle.")
 
 
 def shopper_aisles():
@@ -2018,23 +1950,33 @@ def shopper_aisles():
     st.markdown("### Where to buy each aisle")
     st.caption("Cheapest chain per category, buying the cheapest product of each type. "
                "The runner-up shows how much more the next best chain costs.")
-    cards = []
+    chart_rows = []
     for category, group in sorted(table.groupby("category"), key=lambda g: insights.category_name(g[0])):
         group = group.sort_values("relative")
         win = group.iloc[0]
+        aisle_label = insights.category_name(category)
         if len(group) > 1:
             second = group.iloc[1]
             extra = 100 * (second.relative / win.relative - 1)
-            runner = f"next: {chain_name(second.chain)} " + ("same price" if extra < 0.5 else f"+{extra:.0f}%")
+            second_chain = second.chain
+            extra_val = float(extra)
         else:
-            runner = "only chain with enough data"
-        cards.append(
-            f'<div class="tag" style="--chain:{CHAIN_COLORS.get(win.chain, INK)}">'
-            f'<div class="small">{insights.category_name(category)}</div>'
-            f'<div class="chain">{chain_name(win.chain)}</div>'
-            f'<div class="diff" style="color:var(--muted)">{runner}</div>'
-            f'<div class="meta"><span>{len(group)} chains compared</span></div></div>')
-    html(f'<div class="tags">{"".join(cards)}</div>')
+            second_chain = None
+            extra_val = np.nan
+
+        chart_rows.append({
+            "aisle": aisle_label,
+            "winner": win.chain,
+            "runner": second_chain,
+            "zero": 0.0,
+            "extra_pct": extra_val,
+            "label_x": extra_val if pd.notna(extra_val) else 0.0,
+            "n_chains": len(group),
+        })
+
+    if chart_rows:
+        show(charts.aisle_runnerup_dumbbell(pd.DataFrame(chart_rows), CHAIN_COLORS, CHAIN_NAMES))
+        st.caption("Left dot (0%): cheapest chain for that aisle. Right dot: second-cheapest chain and how much more it costs.")
 
 
 def shopper_same_product():
@@ -2052,49 +1994,15 @@ def shopper_same_product():
         st.caption("Only products found at 3 or more chains with a high-confidence match. Prices per kg, litre or unit.")
 
 
-def shopper_own_brand():
-    table = insights.own_brand_gap(df)
-    best = table.iloc[0]
-    st.markdown(f"### Switching to own brand saves {table['gap_pct'].min():.0f}–{best.gap_pct:.0f}%, "
-                f"most at {chain_name(best.chain)}")
-    show(charts.own_brand(table, CHAIN_COLORS, CHAIN_NAMES))
-    st.caption("How much cheaper a chain's own brand is than the national brands it sells, on a typical product type.")
-
-
-def shopper_product_or_store():
-    table = insights.price_spread(df).head(3)
-    st.markdown("### Within one chain, the product you pick matters more than the store")
-    cards = [
-        f'<div class="tag" style="--chain:{BEST}"><div class="chain">{insights.category_name(r.category)}</div>'
-        f'<div class="price sm"><span class="eu">{r.within:.1f}</span><span class="cur">×</span></div>'
-        f'<div class="diff" style="color:var(--muted)">dearest vs cheapest product in one chain</div>'
-        f'<div class="meta"><span>between chains: {r.between:.1f}×</span></div></div>'
-        for r in table.itertuples()]
-    html(f'<div class="tags">{"".join(cards)}</div>')
-    st.caption("Typical spread inside one chain (90th against 10th percentile price) against the spread between "
-               "chains' typical prices, for the three categories where it is widest.")
-
-
 def page_analysis():
     header()
     html('<div class="hero">What the prices tell us</div>')
-    view = st.segmented_control("View", ["Shopper", "Analyst"], default="Shopper", key="analysis_view",
-                                label_visibility="collapsed") or "Shopper"
-    if view == "Shopper":
-        html('<div class="lede">Where to shop, in euros. Across all products we collected, not just your basket.</div>')
-        for section in (shopper_list, shopper_aisles, shopper_same_product, shopper_own_brand, shopper_product_or_store):
-            section()
+    html('<div class="lede">Where to shop, in euros. Across all products we collected, not just your basket.</div>')
+    sections = (shopper_list, shopper_aisles, shopper_same_product, section_route)
+    for i, section in enumerate(sections):
+        section()
+        if i < len(sections) - 1:
             st.divider()
-        return
-
-    html('<div class="lede">Across all products, not just your basket. These results are provisional until '
-         "the product classifier is fully evaluated.</div>")
-    tabs = st.tabs(["Chains", "Categories", "Same product", "Own brand", "Product or store", "Optimizer gain", "Data coverage"])
-    sections = [section_chains, section_categories, section_barcode, section_own_brand, section_spread,
-                section_route, section_coverage]
-    for tab, section in zip(tabs, sections):
-        with tab:
-            section()
 
 
 # ============================================================
